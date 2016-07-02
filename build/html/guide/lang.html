@@ -1,0 +1,688 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>Kv language &mdash; Kivy 1.9.1 documentation</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.9.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/kivy.js"></script>
+    <link rel="top" title="Kivy 1.9.1 documentation" href="../index.html" />
+    <link rel="up" title="Programming Guide" href="../guide-index.html" />
+    <link rel="next" title="Integrating with other Frameworks" href="other-frameworks.html" />
+    <link rel="prev" title="Graphics" href="graphics.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="../gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="http://kivy.org/docs/pdf/Kivy-latest.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../index.html">Kv language</a></h3>
+          <ul>
+<li><a class="reference internal" href="#">Kv language</a><ul>
+<li><a class="reference internal" href="#concept-behind-the-language">Concept behind the language</a></li>
+<li><a class="reference internal" href="#how-to-load-kv">How to load KV</a></li>
+<li><a class="reference internal" href="#rule-context">Rule context</a></li>
+<li><a class="reference internal" href="#special-syntaxes">Special syntaxes</a></li>
+<li><a class="reference internal" href="#instantiate-children">Instantiate children</a></li>
+<li><a class="reference internal" href="#event-bindings">Event Bindings</a></li>
+<li><a class="reference internal" href="#extend-canvas">Extend canvas</a></li>
+<li><a class="reference internal" href="#referencing-widgets">Referencing Widgets</a></li>
+<li><a class="reference internal" href="#accessing-widgets-defined-inside-kv-lang-in-your-python-code">Accessing Widgets defined inside Kv lang in your python code</a></li>
+<li><a class="reference internal" href="#dynamic-classes">Dynamic Classes</a></li>
+<li><a class="reference internal" href="#re-using-styles-in-multiple-widgets">Re-using styles in multiple widgets</a></li>
+<li><a class="reference internal" href="#designing-with-the-kivy-language">Designing with the Kivy Language</a><ul>
+<li><a class="reference internal" href="#the-code-goes-in-py-files">The code goes in py files</a></li>
+<li><a class="reference internal" href="#the-layout-goes-in-controller-kv">The layout goes in controller.kv</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          <h3><a href="../index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/first_app.html">A first App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/rules.html">Kv Design Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/events.html">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/layouts.html">Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/diving.html">Diving in</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user-guide.html">User&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../philosophy.html">Philosophy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contact.html">Contact Us</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../guide-index.html">Programming Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basic.html">Kivy Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html">Controlling the environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Configure Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Architectural Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html">Events and Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graphics.html">Graphics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Kv language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="other-frameworks.html">Integrating with other Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bestpractices.html">Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedgraphics.html">Advanced Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="packaging.html">Packaging your application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials-index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/pong.html">Pong Game Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/firstwidget.html">A Simple Paint App</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+              <li>Previous: <a href="graphics.html" title="previous chapter">Graphics</a></li>
+              <li>Next: <a href="other-frameworks.html" title="next chapter">Integrating with other Frameworks</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2><ul>
+<li><a class="reference internal" href="#">Kv language</a><ul>
+<li><a class="reference internal" href="#concept-behind-the-language">Concept behind the language</a></li>
+<li><a class="reference internal" href="#how-to-load-kv">How to load KV</a></li>
+<li><a class="reference internal" href="#rule-context">Rule context</a></li>
+<li><a class="reference internal" href="#special-syntaxes">Special syntaxes</a></li>
+<li><a class="reference internal" href="#instantiate-children">Instantiate children</a></li>
+<li><a class="reference internal" href="#event-bindings">Event Bindings</a></li>
+<li><a class="reference internal" href="#extend-canvas">Extend canvas</a></li>
+<li><a class="reference internal" href="#referencing-widgets">Referencing Widgets</a></li>
+<li><a class="reference internal" href="#accessing-widgets-defined-inside-kv-lang-in-your-python-code">Accessing Widgets defined inside Kv lang in your python code</a></li>
+<li><a class="reference internal" href="#dynamic-classes">Dynamic Classes</a></li>
+<li><a class="reference internal" href="#re-using-styles-in-multiple-widgets">Re-using styles in multiple widgets</a></li>
+<li><a class="reference internal" href="#designing-with-the-kivy-language">Designing with the Kivy Language</a><ul>
+<li><a class="reference internal" href="#the-code-goes-in-py-files">The code goes in py files</a></li>
+<li><a class="reference internal" href="#the-layout-goes-in-controller-kv">The layout goes in controller.kv</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+            
+  <div class="section" id="kv-language">
+<span id="lang"></span><h1>Kv language<a class="headerlink" href="#kv-language" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="concept-behind-the-language">
+<h2>Concept behind the language<a class="headerlink" href="#concept-behind-the-language" title="Permalink to this headline">¶</a></h2>
+<p>As your application grow more complex, it&#8217;s common that the construction of
+widget trees and explicit declaration of bindings, becomes verbose and hard to
+maintain. The <cite>KV</cite> Language is a attempt to overcome these short-comings.</p>
+<p>The <cite>KV</cite> language (sometimes called kvlang, or kivy language), allows you to
+create your widget tree in a declarative way and to bind widget properties
+to each other or to callbacks in a natural manner. It allows for very fast
+prototyping and agile changes to your UI. It also facilitates a good
+separation between the logic of your application and its User Interface.</p>
+</div>
+<div class="section" id="how-to-load-kv">
+<h2>How to load KV<a class="headerlink" href="#how-to-load-kv" title="Permalink to this headline">¶</a></h2>
+<p>There are two ways to load Kv code into your application:</p>
+<ul>
+<li><p class="first">By name convention:</p>
+<p>Kivy looks for a Kv file with the same name as your App class in
+lowercase,  minus &#8220;App&#8221; if it ends with &#8216;App&#8217;. E.g:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">MyApp</span> <span class="o">-&gt;</span> <span class="n">my</span><span class="o">.</span><span class="n">kv</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>If this file defines a <cite>Root Widget</cite> it will be attached to the App&#8217;s <cite>root</cite>
+attribute and used as the base of the application widget tree.</p>
+</li>
+<li><p class="first"><code class="xref py py-obj docutils literal"><span class="pre">Builder</span></code>:
+You can tell Kivy to directly load a string or a file. If this string or file
+defines a root widget, it will be returned by the method:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Builder</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="s1">&#39;path/to/file.kv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Builder</span><span class="o">.</span><span class="n">load_string</span><span class="p">(</span><span class="n">kv_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="rule-context">
+<h2>Rule context<a class="headerlink" href="#rule-context" title="Permalink to this headline">¶</a></h2>
+<p>A Kv source constitutes of <cite>rules</cite>, which are used to describe the content
+of a Widget, you can have one <cite>root</cite> rule, and any number of <cite>class</cite> or
+<cite>template</cite> rules.</p>
+<p>The <cite>root</cite> rule is declared by declaring the class of your root widget, without
+any indentation, followed by <cite>:</cite> and will be set as the <cite>root</cite> attribute of the
+App instance:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Widget</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>A <cite>class</cite> rule, declared by the name of a widget class between <cite>&lt; &gt;</cite> and
+followed by <cite>:</cite>, defines how any instance of that class will be
+graphically represented:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">MyWidget</span><span class="o">&gt;</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>Rules use indentation for delimitation, as python, indentation should be of
+four spaces per level, like the python good practice recommendations.</p>
+<p>There are three keywords specific to Kv language:</p>
+<ul class="simple">
+<li><cite>app</cite>: always refers to the instance of your application.</li>
+<li><cite>root</cite>: refers to the base widget/template in the current rule</li>
+<li><cite>self</cite>: always refer to the current widget</li>
+</ul>
+</div>
+<div class="section" id="special-syntaxes">
+<h2>Special syntaxes<a class="headerlink" href="#special-syntaxes" title="Permalink to this headline">¶</a></h2>
+<p>There are two special syntaxes to define values for the whole Kv context:</p>
+<p>To access python modules and classes from kv,</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#:import name x.y.z</span>
+<span class="c1">#:import isdir os.path.isdir</span>
+<span class="c1">#:import np numpy</span>
+</pre></div>
+</div>
+<p>is equivalent to:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">x.y</span> <span class="k">import</span> <span class="n">z</span> <span class="k">as</span> <span class="n">name</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="k">import</span> <span class="n">isdir</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<p>in python.</p>
+<p>To set a global value,</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#:set name value</span>
+</pre></div>
+</div>
+<p>is equivalent to:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="n">value</span>
+</pre></div>
+</div>
+<p>in python.</p>
+</div>
+<div class="section" id="instantiate-children">
+<h2>Instantiate children<a class="headerlink" href="#instantiate-children" title="Permalink to this headline">¶</a></h2>
+<p>To declare the widget has a child widget, instance of some class, just declare
+this child inside the rule:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nc">MyRootWidget</span><span class="p">:</span>
+    <span class="nc">BoxLayout</span><span class="p">:</span>
+        <span class="nc">Button</span><span class="p">:</span>
+        <span class="nc">Button</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>The example above defines that our root widget, an instance of <cite>MyRootWidget</cite>,
+which has a child that is an instance of the
+<code class="xref py py-class docutils literal"><span class="pre">BoxLayout</span></code>.  That BoxLayout further has two
+children, instances of the <code class="xref py py-class docutils literal"><span class="pre">Button</span></code> class.</p>
+<p>A python equivalent of this code could be:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">root</span> <span class="o">=</span> <span class="n">MyRootWidget</span><span class="p">()</span>
+<span class="n">box</span> <span class="o">=</span> <span class="n">BoxLayout</span><span class="p">()</span>
+<span class="n">box</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">Button</span><span class="p">())</span>
+<span class="n">box</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">Button</span><span class="p">())</span>
+<span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">box</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Which you may find less nice, both to read and to write.</p>
+<p>Of course, in python, you can pass keyword arguments to your widgets at
+creation to specify their behaviour.  For example, to set the number of columns
+of a <code class="xref py py-mod docutils literal"><span class="pre">gridlayout</span></code>, we would do:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">GridLayout</span><span class="p">(</span><span class="n">cols</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To do the same thing in kv, you can set properties of the child widget directly
+in the rule:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nc">GridLayout</span><span class="p">:</span>
+    <span class="na">cols</span><span class="p">:</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>The value is evaluated as a python expression, and all the properties used in
+the expression will be observed, that means that if you had something like this
+in python (this assume <cite>self</cite> is a widget with a <cite>data</cite>
+<code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code>):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">GridLayout</span><span class="p">(</span><span class="n">cols</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">grid</span><span class="o">.</span><span class="n">setter</span><span class="p">(</span><span class="s1">&#39;cols&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>To have your display updated when your data change, you can now have just:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nc">GridLayout</span><span class="p">:</span>
+    <span class="na">cols</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Widget names should start with upper case letters while property names
+should start with lower case ones. Following the <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#naming-conventions">PEP8 Naming Conventions</a>
+is encouraged.</p>
+</div>
+</div>
+<div class="section" id="event-bindings">
+<h2>Event Bindings<a class="headerlink" href="#event-bindings" title="Permalink to this headline">¶</a></h2>
+<p>You can bind to events in Kv using the &#8221;:&#8221; syntax, that is, associating a
+callback to an event:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nc">Widget</span><span class="p">:</span>
+    <span class="na">on_size</span><span class="p">:</span> <span class="n">my_callback</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>You can pass the values dispatched by the signal using the <cite>args</cite> keyword:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nc">TextInput</span><span class="p">:</span>
+    <span class="na">on_text</span><span class="p">:</span> <span class="n">app</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>More complex expressions can be used, like:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="na">pos</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">center_x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">center_y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture_size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mf">2.</span>
+</pre></div>
+</div>
+<p>This expression listens for a change in <code class="docutils literal"><span class="pre">center_x</span></code>, <code class="docutils literal"><span class="pre">center_y</span></code>,
+and <code class="docutils literal"><span class="pre">texture_size</span></code>. If one of them changes, the expression will be
+re-evaluated to update the <code class="docutils literal"><span class="pre">pos</span></code> field.</p>
+<p>You can also handle <code class="docutils literal"><span class="pre">on_</span></code> events inside your kv language.
+For example the TextInput class has a <code class="docutils literal"><span class="pre">focus</span></code> property whose auto-generated
+<code class="docutils literal"><span class="pre">on_focus</span></code> event can be accessed inside the kv language like so:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nc">TextInput</span><span class="p">:</span>
+    <span class="na">on_focus</span><span class="p">:</span> <span class="k">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="extend-canvas">
+<h2>Extend canvas<a class="headerlink" href="#extend-canvas" title="Permalink to this headline">¶</a></h2>
+<p>Kv lang can be used to define the canvas instructions of your widget like this:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nc">MyWidget</span><span class="p">:</span>
+    <span class="nc">canvas</span><span class="p">:</span>
+        <span class="nc">Color</span><span class="p">:</span>
+            <span class="na">rgba</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">3</span><span class="p">,</span> <span class="o">.</span><span class="mi">8</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span>
+        <span class="nc">Line</span><span class="p">:</span>
+            <span class="na">points</span><span class="p">:</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And they get updated when properties values change.</p>
+<p>Of course you can use <cite>canvas.before</cite> and <cite>canvas.after</cite>.</p>
+</div>
+<div class="section" id="referencing-widgets">
+<h2>Referencing Widgets<a class="headerlink" href="#referencing-widgets" title="Permalink to this headline">¶</a></h2>
+<p>In a widget tree there is often a need to access/reference other widgets.
+The Kv Language provides a way to do this using id&#8217;s. Think of them as class
+level variables that can only be used in the Kv language. Consider the
+following:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;MyFirstWidget&gt;</span><span class="p">:</span>
+    <span class="nc">Button</span><span class="p">:</span>
+        <span class="na">id</span><span class="p">:</span> <span class="n">f_but</span>
+    <span class="nc">TextInput</span><span class="p">:</span>
+        <span class="na">text</span><span class="p">:</span> <span class="n">f_but</span><span class="o">.</span><span class="n">state</span>
+
+<span class="nn">&lt;MySecondWidget&gt;</span><span class="p">:</span>
+    <span class="nc">Button</span><span class="p">:</span>
+        <span class="na">id</span><span class="p">:</span> <span class="n">s_but</span>
+    <span class="nc">TextInput</span><span class="p">:</span>
+        <span class="na">text</span><span class="p">:</span> <span class="n">s_but</span><span class="o">.</span><span class="n">state</span>
+</pre></div>
+</div>
+<p>An <code class="docutils literal"><span class="pre">id</span></code> is limited in scope to the rule it is declared in, so in the
+code above <code class="docutils literal"><span class="pre">s_but</span></code> can not be accessed outside the &lt;MySecondWidget&gt;
+rule.</p>
+<p>An <code class="docutils literal"><span class="pre">id</span></code> is a <code class="docutils literal"><span class="pre">weakref</span></code> to the widget and not the widget itself. As a
+consequence, storing the <code class="docutils literal"><span class="pre">id</span></code> is not sufficient to keep the widget from being
+garbage collected. To demonstrate:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;MyWidget&gt;</span><span class="p">:</span>
+    <span class="na">label_widget</span><span class="p">:</span> <span class="n">label_widget</span>
+    <span class="nc">Button</span><span class="p">:</span>
+        <span class="na">text</span><span class="p">:</span> <span class="s1">&#39;Add Button&#39;</span>
+        <span class="na">on_press</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">label_widget</span><span class="p">)</span>
+    <span class="nc">Button</span><span class="p">:</span>
+        <span class="na">text</span><span class="p">:</span> <span class="s1">&#39;Remove Button&#39;</span>
+        <span class="na">on_press</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">remove_widget</span><span class="p">(</span><span class="n">label_widget</span><span class="p">)</span>
+    <span class="nc">Label</span><span class="p">:</span>
+        <span class="na">id</span><span class="p">:</span> <span class="n">label_widget</span>
+        <span class="na">text</span><span class="p">:</span> <span class="s1">&#39;widget&#39;</span>
+</pre></div>
+</div>
+<p>Although a reference to <code class="docutils literal"><span class="pre">label_widget</span></code> is stored in <code class="docutils literal"><span class="pre">MyWidget</span></code>, it is not
+sufficient to keep the object alive once other references have been removed
+because it&#8217;s only a weakref.
+Therefore, after the remove button is clicked (which removes
+any direct reference to the widget) and the window is resized (which calls the
+garbage collector resulting in the deletion of <code class="docutils literal"><span class="pre">label_widget</span></code>), when the add
+button is clicked to add the widget back, a <code class="docutils literal"><span class="pre">ReferenceError:</span> <span class="pre">weakly-referenced</span>
+<span class="pre">object</span> <span class="pre">no</span> <span class="pre">longer</span> <span class="pre">exists</span></code> will be thrown.</p>
+<p>To keep the widget alive, a direct reference to the <code class="docutils literal"><span class="pre">label_widget</span></code> widget
+must be kept. This is achieved using <code class="docutils literal"><span class="pre">id.__self__</span></code> or <code class="docutils literal"><span class="pre">label_widget.__self__</span></code>
+in this case. The correct way to do this would be:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;MyWidget&gt;</span><span class="p">:</span>
+    <span class="na">label_widget</span><span class="p">:</span> <span class="n">label_widget</span><span class="o">.</span><span class="n">__self__</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="accessing-widgets-defined-inside-kv-lang-in-your-python-code">
+<h2>Accessing Widgets defined inside Kv lang in your python code<a class="headerlink" href="#accessing-widgets-defined-inside-kv-lang-in-your-python-code" title="Permalink to this headline">¶</a></h2>
+<p>Consider the code below in my.kv:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;MyFirstWidget&gt;</span><span class="p">:</span>
+    <span class="c1"># both these variables can be the same name and this doesn&#39;t lead to</span>
+    <span class="c1"># an issue with uniqueness as the id is only accessible in kv.</span>
+    <span class="na">txt_inpt</span><span class="p">:</span> <span class="n">txt_inpt</span>
+    <span class="nc">Button</span><span class="p">:</span>
+        <span class="na">id</span><span class="p">:</span> <span class="n">f_but</span>
+    <span class="nc">TextInput</span><span class="p">:</span>
+        <span class="na">id</span><span class="p">:</span> <span class="n">txt_inpt</span>
+        <span class="na">text</span><span class="p">:</span> <span class="n">f_but</span><span class="o">.</span><span class="n">state</span>
+        <span class="na">on_text</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">check_status</span><span class="p">(</span><span class="n">f_but</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In myapp.py:</p>
+<div class="highlight-py"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="k">class</span> <span class="nc">MyFirstWidget</span><span class="p">(</span><span class="n">BoxLayout</span><span class="p">):</span>
+
+    <span class="n">txt_inpt</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">check_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">btn</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;button state is: {state}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="n">btn</span><span class="o">.</span><span class="n">state</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;text input text is: {txt}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">txt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">txt_inpt</span><span class="p">))</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p><cite>txt_inpt</cite> is defined as a <code class="xref py py-class docutils literal"><span class="pre">ObjectProperty</span></code> initialized
+to <cite>None</cite> inside the Class.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">txt_inpt</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>At this point self.txt_inpt is <cite>None</cite>. In Kv lang this property is updated to
+hold the instance of the <code class="xref py py-class docutils literal"><span class="pre">TextInput</span></code> referenced by the id
+<cite>txt_inpt</cite>.:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">txt_inpt</span><span class="p">:</span> <span class="n">txt_inpt</span>
+</pre></div>
+</div>
+<p>From this point onwards, <cite>self.txt_inpt</cite> holds a reference to the widget
+identified by the id <cite>txt_input</cite> and can be used anywhere in the class, as in
+the function <cite>check_status</cite>. In contrast to this method you could also just pass
+the <cite>id</cite> to the function that needs to use it, like in case of <cite>f_but</cite> in the
+code above.</p>
+<p>There is a simpler way to access objects with <cite>id</cite> tags in Kv using the
+<cite>ids</cite> lookup object. You can do this as follows:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;Marvel&gt;</span>
+  <span class="nc">Label</span><span class="p">:</span>
+    <span class="na">id</span><span class="p">:</span> <span class="n">loki</span>
+    <span class="na">text</span><span class="p">:</span> <span class="s1">&#39;loki: I AM YOUR GOD!&#39;</span>
+  <span class="nc">Button</span><span class="p">:</span>
+    <span class="na">id</span><span class="p">:</span> <span class="n">hulk</span>
+    <span class="na">text</span><span class="p">:</span> <span class="s2">&quot;press to smash loki&quot;</span>
+    <span class="na">on_release</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">hulk_smash</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In your python code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Marvel</span><span class="p">(</span><span class="n">BoxLayout</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">hulk_smash</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">hulk</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;hulk: puny god!&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="p">[</span><span class="s2">&quot;loki&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;loki: &gt;_&lt;!!!&quot;</span>  <span class="c1"># alternative syntax</span>
+</pre></div>
+</div>
+<p>When your kv file is parsed, kivy collects all the widgets tagged with id&#8217;s
+and places them in this <cite>self.ids</cite> dictionary type property. That means you
+can also iterate over these widgets and access them dictionary style:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;key=</span><span class="si">{0}</span><span class="s2">, val=</span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although the <cite>self.ids</cite> method is very concise, it is generally regarded as
+&#8216;best practise&#8217; to use the ObjectProperty. This creates a direct reference,
+provides faster access and is more explicit.</p>
+</div>
+</div>
+<div class="section" id="dynamic-classes">
+<h2>Dynamic Classes<a class="headerlink" href="#dynamic-classes" title="Permalink to this headline">¶</a></h2>
+<p>Consider the code below:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;MyWidget&gt;</span><span class="p">:</span>
+    <span class="nc">Button</span><span class="p">:</span>
+        <span class="na">text</span><span class="p">:</span> <span class="s2">&quot;Hello world, watch this text wrap inside the button&quot;</span>
+        <span class="na">text_size</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+        <span class="na">font_size</span><span class="p">:</span> <span class="s1">&#39;25sp&#39;</span>
+        <span class="na">markup</span><span class="p">:</span> <span class="bp">True</span>
+    <span class="nc">Button</span><span class="p">:</span>
+        <span class="na">text</span><span class="p">:</span> <span class="s2">&quot;Even absolute is relative to itself&quot;</span>
+        <span class="na">text_size</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+        <span class="na">font_size</span><span class="p">:</span> <span class="s1">&#39;25sp&#39;</span>
+        <span class="na">markup</span><span class="p">:</span> <span class="bp">True</span>
+    <span class="nc">Button</span><span class="p">:</span>
+        <span class="na">text</span><span class="p">:</span> <span class="s2">&quot;Repeating the same thing over and over in a comp = fail&quot;</span>
+        <span class="na">text_size</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+        <span class="na">font_size</span><span class="p">:</span> <span class="s1">&#39;25sp&#39;</span>
+        <span class="na">markup</span><span class="p">:</span> <span class="bp">True</span>
+    <span class="nc">Button</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>Instead of having to repeat the same values for every button, we can just use a
+template instead, like so:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;MyBigButt@Button&gt;</span><span class="p">:</span>
+    <span class="na">text_size</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+    <span class="na">font_size</span><span class="p">:</span> <span class="s1">&#39;25sp&#39;</span>
+    <span class="na">markup</span><span class="p">:</span> <span class="bp">True</span>
+
+<span class="nn">&lt;MyWidget&gt;</span><span class="p">:</span>
+    <span class="nc">MyBigButt</span><span class="p">:</span>
+        <span class="na">text</span><span class="p">:</span> <span class="s2">&quot;Hello world, watch this text wrap inside the button&quot;</span>
+    <span class="nc">MyBigButt</span><span class="p">:</span>
+        <span class="na">text</span><span class="p">:</span> <span class="s2">&quot;Even absolute is relative to itself&quot;</span>
+    <span class="nc">MyBigButt</span><span class="p">:</span>
+        <span class="na">text</span><span class="p">:</span> <span class="s2">&quot;repeating the same thing over and over in a comp = fail&quot;</span>
+    <span class="nc">MyBigButt</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>This class, created just by the declaration of this rule, inherits from the
+Button class and allows us to change default values and create bindings for all
+its instances without adding any new code on the Python side.</p>
+</div>
+<div class="section" id="re-using-styles-in-multiple-widgets">
+<h2>Re-using styles in multiple widgets<a class="headerlink" href="#re-using-styles-in-multiple-widgets" title="Permalink to this headline">¶</a></h2>
+<p>Consider the code below in my.kv:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;MyFirstWidget&gt;</span><span class="p">:</span>
+    <span class="nc">Button</span><span class="p">:</span>
+        <span class="na">on_press</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">txt_inpt</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="nc">TextInput</span><span class="p">:</span>
+        <span class="na">id</span><span class="p">:</span> <span class="n">txt_inpt</span>
+
+<span class="nn">&lt;MySecondWidget&gt;</span><span class="p">:</span>
+    <span class="nc">Button</span><span class="p">:</span>
+        <span class="na">on_press</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">txt_inpt</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="nc">TextInput</span><span class="p">:</span>
+        <span class="na">id</span><span class="p">:</span> <span class="n">txt_inpt</span>
+</pre></div>
+</div>
+<p>In myapp.py:</p>
+<div class="highlight-py"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyFirstWidget</span><span class="p">(</span><span class="n">BoxLayout</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;text input text is: {txt}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">txt</span><span class="o">=</span><span class="n">val</span><span class="p">))</span>
+
+<span class="k">class</span> <span class="nc">MySecondWidget</span><span class="p">(</span><span class="n">BoxLayout</span><span class="p">):</span>
+
+    <span class="n">writing</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">writing</span> <span class="o">=</span> <span class="n">val</span>
+</pre></div>
+</div>
+<p>Because both classes share the same .kv style, this design can be simplified
+if we reuse the style for both widgets. You can do this in .kv as follows.
+In my.kv:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;MyFirstWidget,MySecondWidget&gt;</span><span class="p">:</span>
+    <span class="nc">Button</span><span class="p">:</span>
+        <span class="na">on_press</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">txt_inpt</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="nc">TextInput</span><span class="p">:</span>
+        <span class="na">id</span><span class="p">:</span> <span class="n">txt_inpt</span>
+</pre></div>
+</div>
+<p>By separating the class names with a comma, all the classes listed in the
+declaration will have the same kv properties.</p>
+</div>
+<div class="section" id="designing-with-the-kivy-language">
+<h2>Designing with the Kivy Language<a class="headerlink" href="#designing-with-the-kivy-language" title="Permalink to this headline">¶</a></h2>
+<p>One of aims of the Kivy language is to
+<a class="reference external" href="https://en.wikipedia.org/wiki/Separation_of_concerns">Separate the concerns</a>
+of presentation and logic. The presentation (layout) side is addressed by your
+kv file and the logic by your py file.</p>
+<div class="section" id="the-code-goes-in-py-files">
+<h3>The code goes in py files<a class="headerlink" href="#the-code-goes-in-py-files" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s start with a little example. First, the Python file named <cite>main.py</cite>:</p>
+<p>In this example, we are creating a Controller class with 2 properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">info</span></code> for receving some text</li>
+<li><code class="docutils literal"><span class="pre">label_wid</span></code> for receving the label widget</li>
+</ul>
+</div></blockquote>
+<p>In addition, we are creating a <code class="docutils literal"><span class="pre">do_action()</span></code> method that will use both of
+these properties. It will change the <code class="docutils literal"><span class="pre">info</span></code> text and change text in the
+<code class="docutils literal"><span class="pre">label_wid</span></code> widget.</p>
+</div>
+<div class="section" id="the-layout-goes-in-controller-kv">
+<h3>The layout goes in controller.kv<a class="headerlink" href="#the-layout-goes-in-controller-kv" title="Permalink to this headline">¶</a></h3>
+<p>Executing this application without a corresponding <cite>.kv</cite> file will work, but
+nothing will be shown on the screen. This is expected, because the
+<code class="docutils literal"><span class="pre">Controller</span></code> class has no widgets in it, it&#8217;s just a <code class="docutils literal"><span class="pre">FloatLayout</span></code>. We can
+create the UI around the <code class="docutils literal"><span class="pre">Controller</span></code> class in a file named <cite>controller.kv</cite>,
+which will be loaded when we run the <code class="docutils literal"><span class="pre">ControllerApp</span></code>. How this is done and
+what files are loaded is described in the <code class="xref py py-meth docutils literal"><span class="pre">kivy.app.App.load_kv()</span></code> method.</p>
+<p>One label and one button in a vertical <code class="docutils literal"><span class="pre">BoxLayout</span></code>. Seems very simple. There
+are 3 things going on here:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">Using data from the <code class="docutils literal"><span class="pre">Controller</span></code>. As soon as the <code class="docutils literal"><span class="pre">info</span></code> property is
+changed in the controller, the expression <code class="docutils literal"><span class="pre">text:</span> <span class="pre">'My</span> <span class="pre">controller</span> <span class="pre">info</span>
+<span class="pre">is:</span> <span class="pre">'</span> <span class="pre">+</span> <span class="pre">root.info</span></code> will automatically be re-evaluated, changing the text
+in the <code class="docutils literal"><span class="pre">Button</span></code>.</p>
+</li>
+<li><p class="first">Giving data to the <code class="docutils literal"><span class="pre">Controller</span></code>. The expression <code class="docutils literal"><span class="pre">id:</span> <span class="pre">my_custom_label</span></code>
+is assigning the created <code class="docutils literal"><span class="pre">Label</span></code> the id of <code class="docutils literal"><span class="pre">my_custom_label</span></code>. Then,
+using <code class="docutils literal"><span class="pre">my_custom_label</span></code> in the expression <code class="docutils literal"><span class="pre">label_wid:</span>
+<span class="pre">my_custom_label</span></code> gives the instance of that <code class="docutils literal"><span class="pre">Label</span></code> widget to your
+<code class="docutils literal"><span class="pre">Controller</span></code>.</p>
+</li>
+<li><p class="first">Creating a custom callback in the <code class="docutils literal"><span class="pre">Button</span></code> using the <code class="docutils literal"><span class="pre">Controller</span></code>&#8216;s
+<code class="docutils literal"><span class="pre">on_press</span></code> method.</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">root</span></code> and <code class="docutils literal"><span class="pre">self</span></code> are reserved keywords, useable anywhere.
+<code class="docutils literal"><span class="pre">root</span></code> represents the top widget in the rule and <code class="docutils literal"><span class="pre">self</span></code> represents
+the current widget.</li>
+<li>You can use any id declared in the rule the same as <code class="docutils literal"><span class="pre">root</span></code> and
+<code class="docutils literal"><span class="pre">self</span></code>. For example, you could do this in the <code class="docutils literal"><span class="pre">on_press()</span></code>:</li>
+</ul>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nc">Button</span><span class="p">:</span>
+    <span class="na">on_press</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">do_action</span><span class="p">();</span> <span class="n">my_custom_label</span><span class="o">.</span><span class="n">font_size</span> <span class="o">=</span> <span class="mi">18</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+<p>And that&#8217;s that. Now when we run <cite>main.py</cite>, <cite>controller.kv</cite> will be loaded so
+that the <code class="docutils literal"><span class="pre">Button</span></code> and <code class="docutils literal"><span class="pre">Label</span></code> will show up and respond to our touch events.</p>
+</div>
+</div>
+</div>
+
+
+            <div class="footerlinks">
+            <table>
+                <tr>
+                    <td class="leftlink">
+                  <a href="graphics.html" title="previous chapter">&laquo; Graphics</a></li>
+                  </td>
+                  <td class="rightlink">
+                  <a href="other-frameworks.html" title="next chapter">Integrating with other Frameworks &raquo;</a>
+                      </td>
+                  </tr>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://txzone.net/piwik/" : "http://txzone.net/piwik/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 8);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="https://txzone.net/piwik/piwik.php?idsite=8" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on Jun 26, 2016.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.4.
+</div>
+-->
+  </body>
+</html>

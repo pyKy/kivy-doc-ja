@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>Kivy on Android &mdash; Kivy 1.9.1 documentation</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.9.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/kivy.js"></script>
+    <link rel="top" title="Kivy 1.9.1 documentation" href="../index.html" />
+    <link rel="up" title="Packaging your application" href="packaging.html" />
+    <link rel="next" title="Creating packages for OS X" href="packaging-osx.html" />
+    <link rel="prev" title="The Kivy Android Virtual Machine" href="packaging-android-vm.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="../gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="http://kivy.org/docs/pdf/Kivy-latest.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../index.html">Kivy on Android</a></h3>
+          <ul>
+<li><a class="reference internal" href="#">Kivy on Android</a><ul>
+<li><a class="reference internal" href="#package-for-android">Package for Android</a></li>
+<li><a class="reference internal" href="#debugging-your-application-on-the-android-platform">Debugging your application on the Android platform</a></li>
+<li><a class="reference internal" href="#using-android-apis">Using Android APIs</a><ul>
+<li><a class="reference internal" href="#plyer">Plyer</a></li>
+<li><a class="reference internal" href="#pyjnius">Pyjnius</a></li>
+<li><a class="reference internal" href="#android-module">Android module</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#status-of-the-project-and-tested-devices">Status of the Project and Tested Devices</a></li>
+</ul>
+</li>
+</ul>
+
+          <h3><a href="../index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/first_app.html">A first App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/rules.html">Kv Design Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/events.html">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/layouts.html">Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/diving.html">Diving in</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user-guide.html">User&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../philosophy.html">Philosophy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contact.html">Contact Us</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../guide-index.html">Programming Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basic.html">Kivy Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html">Controlling the environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Configure Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Architectural Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html">Events and Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lang.html">Kv language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="other-frameworks.html">Integrating with other Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bestpractices.html">Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedgraphics.html">Advanced Graphics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="packaging.html">Packaging your application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials-index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/pong.html">Pong Game Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/firstwidget.html">A Simple Paint App</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+              <li>Previous: <a href="packaging-android-vm.html" title="previous chapter">The Kivy Android Virtual Machine</a></li>
+              <li>Next: <a href="packaging-osx.html" title="next chapter">Creating packages for OS X</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2><ul>
+<li><a class="reference internal" href="#">Kivy on Android</a><ul>
+<li><a class="reference internal" href="#package-for-android">Package for Android</a></li>
+<li><a class="reference internal" href="#debugging-your-application-on-the-android-platform">Debugging your application on the Android platform</a></li>
+<li><a class="reference internal" href="#using-android-apis">Using Android APIs</a><ul>
+<li><a class="reference internal" href="#plyer">Plyer</a></li>
+<li><a class="reference internal" href="#pyjnius">Pyjnius</a></li>
+<li><a class="reference internal" href="#android-module">Android module</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#status-of-the-project-and-tested-devices">Status of the Project and Tested Devices</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+  <div class="section" id="kivy-on-android">
+<span id="android"></span><h1>Kivy on Android<a class="headerlink" href="#kivy-on-android" title="Permalink to this headline">¶</a></h1>
+<p>You can run Kivy applications on Android, on (more or less) any device
+with OpenGL ES 2.0 (Android 2.2 minimum). This is standard on modern
+devices; Google reports the requirement is met by <a class="reference external" href="https://developer.android.com/about/dashboards/index.html">99.9% of devices</a>.</p>
+<p>Kivy APKs are normal Android apps that you can distribute like any
+other, including on stores like the Play store. They behave
+properly when paused or restarted, may utilise Android services and
+have access to most of the normal java API as described below.</p>
+<p>Follow the instructions below to learn how to <a class="reference internal" href="#package-for-android"><span class="std std-ref">package your app
+for Android</span></a>, <a class="reference internal" href="#debug-android"><span class="std std-ref">debug your code on the
+device</span></a>, and <a class="reference internal" href="#using-android-apis"><span class="std std-ref">use Android APIs</span></a> such as for vibration and reading sensors.</p>
+<div class="section" id="package-for-android">
+<span id="id1"></span><h2>Package for Android<a class="headerlink" href="#package-for-android" title="Permalink to this headline">¶</a></h2>
+<p>The Kivy project provides all the necessary tools to package your app
+on Android, including building your own standalone APK that may be
+distributed on a market like the Play store. This is covered fully in
+the <a class="reference internal" href="packaging-android.html#packaging-android"><span class="std std-ref">Create a package for Android</span></a> documentation.</p>
+</div>
+<div class="section" id="debugging-your-application-on-the-android-platform">
+<span id="debug-android"></span><h2>Debugging your application on the Android platform<a class="headerlink" href="#debugging-your-application-on-the-android-platform" title="Permalink to this headline">¶</a></h2>
+<p>You can view the normal output of your code (stdout, stderr), as well
+as the normal Kivy logs, through the Android logcat stream. This is
+accessed through adb, provided by the <a class="reference external" href="http://developer.android.com/sdk/index.html">Android SDK</a>. You may need to
+enable adb in your device&#8217;s developer options, then connect your device
+to your computer and run:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">adb</span> <span class="n">logcat</span>
+</pre></div>
+</div>
+<p>You&#8217;ll see all the logs including your stdout/stderr and Kivy
+logger.</p>
+<p>If you packaged your app with Buildozer, the <cite>adb</cite> tool may not be in
+your <code class="code docutils literal"><span class="pre">$PATH</span></code> and the above command may not work. You can instead run:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">buildozer</span> <span class="n">android</span> <span class="n">logcat</span>
+</pre></div>
+</div>
+<p>to run the version installed by Buildozer, or
+find the SDK tools at
+<code class="code docutils literal"><span class="pre">$HOME/.buildozer/android/platform</span></code>.</p>
+<p>You can also run and debug your application using the <a class="reference external" href="https://play.google.com/store/apps/details?id=org.kivy.pygame&amp;hl=en">Kivy Launcher</a>.
+If you run your application this way, you will find log files inside the
+&#8220;/.kivy/logs&#8221; sub-folder within your application folder.</p>
+</div>
+<div class="section" id="using-android-apis">
+<span id="id2"></span><h2>Using Android APIs<a class="headerlink" href="#using-android-apis" title="Permalink to this headline">¶</a></h2>
+<p>Although Kivy is a Python framework, the Kivy project maintains tools
+to easily use the normal java APIs, for everything from vibration to
+sensors to sending messages through SMS or email.</p>
+<p>For new users, we recommend using <a class="reference internal" href="#plyer"><span class="std std-ref">Plyer</span></a>. For more advanced
+access or for APIs not currently wrapped, you can use <a class="reference internal" href="#pyjnius"><span class="std std-ref">Pyjnius</span></a>
+directly. Kivy also supplies an <a class="reference internal" href="#android-module"><span class="std std-ref">android module</span></a> for basic Android functionality.</p>
+<p>User contributed Android code and examples are available on the
+<a class="reference external" href="https://github.com/kivy/kivy/wiki#mobiles">Kivy wiki</a>.</p>
+<div class="section" id="plyer">
+<span id="id3"></span><h3>Plyer<a class="headerlink" href="#plyer" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/kivy/plyer">Plyer</a> is a pythonic,
+platform-independent API to use features commonly found on various
+platforms, particularly mobile ones. The idea is that your app can
+call simply call a Plyer function, such as to present a notification
+to the user, and Plyer will take care of doing so in the right way
+regardless of the platform or operating system. Internally, Plyer uses
+Pyjnius (on Android), Pyobjus (on iOS) and some platform specific APIs
+on desktop platforms.</p>
+<p>For instance, the following code would make your Android device
+vibrate, or raise a NotImplementedError that you can handle
+appropriately on other platforms such as desktops that don&#8217;t have
+appropriate hardware::</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">plyer</span> <span class="k">import</span> <span class="n">vibrator</span>
+<span class="n">vibrator</span><span class="o">.</span><span class="n">vibrate</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># vibrate for 10 seconds</span>
+</pre></div>
+</div>
+<p>Plyer&#8217;s list of supported APIs is growing quite quickly, you can see
+the full list in the Plyer <a class="reference external" href="https://github.com/kivy/plyer">README</a>.</p>
+</div>
+<div class="section" id="pyjnius">
+<span id="id4"></span><h3>Pyjnius<a class="headerlink" href="#pyjnius" title="Permalink to this headline">¶</a></h3>
+<p>Pyjnius is a Python module that lets you access java classes directly
+from Python, automatically converting arguments to the right type, and
+letting you easily convert the java results to Python.</p>
+<p>Pyjnius can be obtained from <a class="reference external" href="https://github.com/kivy/pyjnius">github</a>, and has its <a class="reference external" href="http://pyjnius.readthedocs.org/en/latest/">own documentation</a>.</p>
+<p>Here is a simple example showing Pyjnius&#8217; ability to access
+the normal Android vibration API, the same result of the plyer code
+above:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># &#39;autoclass&#39; takes a java class and gives it a Python wrapper</span>
+<span class="kn">from</span> <span class="nn">jnius</span> <span class="k">import</span> <span class="n">autoclass</span>
+
+<span class="c1"># Context is a normal java class in the Android API</span>
+<span class="n">Context</span> <span class="o">=</span> <span class="n">autoclass</span><span class="p">(</span><span class="s1">&#39;android.content.Context&#39;</span><span class="p">)</span>
+
+<span class="c1"># PythonActivity is provided by the Kivy bootstrap app in python-for-android</span>
+<span class="n">PythonActivity</span> <span class="o">=</span> <span class="n">autoclass</span><span class="p">(</span><span class="s1">&#39;org.renpy.android.PythonActivity&#39;</span><span class="p">)</span>
+
+<span class="c1"># The PythonActivity stores a reference to the currently running activity</span>
+<span class="c1"># We need this to access the vibrator service</span>
+<span class="n">activity</span> <span class="o">=</span> <span class="n">PythonActivity</span><span class="o">.</span><span class="n">mActivity</span>
+
+<span class="c1"># This is almost identical to the java code for the vibrator</span>
+<span class="n">vibrator</span> <span class="o">=</span> <span class="n">activity</span><span class="o">.</span><span class="n">getSystemService</span><span class="p">(</span><span class="n">Context</span><span class="o">.</span><span class="n">VIBRATOR_SERVICE</span><span class="p">)</span>
+
+<span class="n">vibrator</span><span class="o">.</span><span class="n">vibrate</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>  <span class="c1"># The value is in milliseconds - this is 10s</span>
+</pre></div>
+</div>
+<p>This code directly follows the java API functions to call the
+vibrator, with Pyjnius automatically translating the api to Python
+code and our calls back to the equivalent java. It is much more
+verbose and java-like than Plyer&#8217;s version, for no benefit in this
+case, though Plyer does not wrap every API available to Pyjnius.</p>
+<p>Pyjnius also has powerful abilities to implement java interfaces,
+which is important for wrapping some APIs, but these are not
+documented here - you can see Pyjnius&#8217; <a class="reference external" href="http://pyjnius.readthedocs.org/en/latest/">own documentation</a>.</p>
+</div>
+<div class="section" id="android-module">
+<span id="id5"></span><h3>Android module<a class="headerlink" href="#android-module" title="Permalink to this headline">¶</a></h3>
+<p>Python-for-android includes a python module (actually cython wrapping
+java) to access a limited set of Android APIs. This has been largely
+superseded by the more flexible Pyjnius and Plyer as above, but may
+still occasionally be useful. The available functions are given in the
+<a class="reference external" href="http://python-for-android.readthedocs.org/en/latest/">python-for-android documentation</a>.</p>
+<p>This includes code for billing/IAP and creating/accessing Android
+services, which is not yet available in the other tools above.</p>
+</div>
+</div>
+<div class="section" id="status-of-the-project-and-tested-devices">
+<h2>Status of the Project and Tested Devices<a class="headerlink" href="#status-of-the-project-and-tested-devices" title="Permalink to this headline">¶</a></h2>
+<p>These sections previously described the existence of Kivy&#8217;s Android
+build tools, with their limitations and some devices that were known
+to work.</p>
+<p>The Android tools are now quite stable, and should work with
+practically any device; our minimum requirements are OpenGL ES
+2.0 and Android 2.2. These are very common now - Kivy has
+even been run on an Android smartwatch!</p>
+<p>A current technical limitation is that the Android build tools compile
+only ARM APKs, which will not run on Android devices with x86
+processors (these are currently rare). This should be added soon.</p>
+<p>As Kivy works fine on most devices, the list of supported
+phones/tablets has been retired - all Android devices are likely to
+work if they meet the conditions above.</p>
+</div>
+</div>
+
+
+            <div class="footerlinks">
+            <table>
+                <tr>
+                    <td class="leftlink">
+                  <a href="packaging-android-vm.html" title="previous chapter">&laquo; The Kivy Android Virtual Machine</a></li>
+                  </td>
+                  <td class="rightlink">
+                  <a href="packaging-osx.html" title="next chapter">Creating packages for OS X &raquo;</a>
+                      </td>
+                  </tr>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://txzone.net/piwik/" : "http://txzone.net/piwik/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 8);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="https://txzone.net/piwik/piwik.php?idsite=8" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on Jun 26, 2016.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.4.
+</div>
+-->
+  </body>
+</html>

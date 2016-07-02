@@ -1,0 +1,586 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>Contributing &mdash; Kivy 1.9.1 documentation</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.9.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="_static/kivy.js"></script>
+    <link rel="top" title="Kivy 1.9.1 documentation" href="index.html" />
+    <link rel="up" title="User’s Guide" href="user-guide.html" />
+    <link rel="next" title="Unit tests" href="contribute-unittest.html" />
+    <link rel="prev" title="Philosophy" href="philosophy.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="http://kivy.org/docs/pdf/Kivy-latest.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="index.html">Contributing</a></h3>
+          <ul>
+<li><a class="reference internal" href="#">Contributing</a><ul>
+<li><a class="reference internal" href="#feedback">Feedback</a></li>
+<li><a class="reference internal" href="#reporting-an-issue">Reporting an Issue</a></li>
+<li><a class="reference internal" href="#code-contributions">Code Contributions</a><ul>
+<li><a class="reference internal" href="#coding-style">Coding style</a></li>
+<li><a class="reference internal" href="#performance">Performance</a></li>
+<li><a class="reference internal" href="#git-github">Git &amp; GitHub</a></li>
+<li><a class="reference internal" href="#code-workflow">Code Workflow</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#documentation-contributions">Documentation Contributions</a><ul>
+<li><a class="reference internal" href="#docstrings">Docstrings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#unit-tests-contributions">Unit tests contributions</a></li>
+<li><a class="reference internal" href="#gsoc">GSOC</a></li>
+</ul>
+</li>
+</ul>
+
+          <h3><a href="index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/first_app.html">A first App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/rules.html">Kv Design Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/events.html">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/layouts.html">Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/diving.html">Diving in</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="user-guide.html">User&#8217;s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="philosophy.html">Philosophy</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contact.html">Contact Us</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide-index.html">Programming Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide/basic.html">Kivy Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/environment.html">Controlling the environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/config.html">Configure Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/architecture.html">Architectural Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/events.html">Events and Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/lang.html">Kv language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/other-frameworks.html">Integrating with other Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/bestpractices.html">Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/advancedgraphics.html">Advanced Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/packaging.html">Packaging your application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials-index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/pong.html">Pong Game Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/firstwidget.html">A Simple Paint App</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+              <li>Previous: <a href="philosophy.html" title="previous chapter">Philosophy</a></li>
+              <li>Next: <a href="contribute-unittest.html" title="next chapter">Unit tests</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2><ul>
+<li><a class="reference internal" href="#">Contributing</a><ul>
+<li><a class="reference internal" href="#feedback">Feedback</a></li>
+<li><a class="reference internal" href="#reporting-an-issue">Reporting an Issue</a></li>
+<li><a class="reference internal" href="#code-contributions">Code Contributions</a><ul>
+<li><a class="reference internal" href="#coding-style">Coding style</a></li>
+<li><a class="reference internal" href="#performance">Performance</a></li>
+<li><a class="reference internal" href="#git-github">Git &amp; GitHub</a></li>
+<li><a class="reference internal" href="#code-workflow">Code Workflow</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#documentation-contributions">Documentation Contributions</a><ul>
+<li><a class="reference internal" href="#docstrings">Docstrings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#unit-tests-contributions">Unit tests contributions</a></li>
+<li><a class="reference internal" href="#gsoc">GSOC</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+  <div class="section" id="contributing">
+<span id="id1"></span><h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h1>
+<p>There are many ways in which you can contribute to Kivy.
+Code patches are just one thing amongst others that you can submit to help the
+project. We also welcome feedback, bug reports, feature requests, documentation
+improvements, advertisement &amp; advocating, testing, graphics contributions and
+many other ideas. Just talk to us if you want to help, and we will help you
+help us.</p>
+<div class="section" id="feedback">
+<h2>Feedback<a class="headerlink" href="#feedback" title="Permalink to this headline">¶</a></h2>
+<p>This is by far the easiest way to contribute something. If you&#8217;re using
+Kivy for your own project, don&#8217;t hesitate sharing. It doesn&#8217;t have to be a
+high-class enterprise app, obviously. It&#8217;s just incredibly motivating to
+know that people use the things you develop and what it enables them to
+do. If you have something that you would like to tell us, please don&#8217;t
+hesitate. Screenshots and videos are also very welcome!
+We&#8217;re also interested in the problems you had when getting started. Please
+feel encouraged to report any obstacles you encountered such as missing
+documentation, misleading directions or similar.
+We are perfectionists, so even if it&#8217;s just a typo, let us know.</p>
+</div>
+<div class="section" id="reporting-an-issue">
+<span id="reporting-issues"></span><h2>Reporting an Issue<a class="headerlink" href="#reporting-an-issue" title="Permalink to this headline">¶</a></h2>
+<p>If you found anything wrong, a crash, segfault, missing documentation, invalid
+spelling or just weird examples, please take 2 minutes to report the issue.</p>
+<ol class="arabic">
+<li><p class="first">Move your logging level to debug by editing <cite>&lt;user_directory&gt;/.kivy/config.ini</cite>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">kivy</span><span class="p">]</span>
+<span class="n">log_level</span> <span class="o">=</span> <span class="n">debug</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Execute your code again, and copy/paste the complete output to <a class="reference external" href="http://gist.github.com/">http://gist.github.com/</a>,
+including the log from Kivy and the python backtrace.</p>
+</li>
+<li><p class="first">Open <a class="reference external" href="https://github.com/kivy/kivy/issues/">https://github.com/kivy/kivy/issues/</a></p>
+</li>
+<li><p class="first">Set the title of your issue</p>
+</li>
+<li><p class="first">Explain exactly what to do to reproduce the issue and paste the link of the output
+posted on <a class="reference external" href="http://gist.github.com/">http://gist.github.com/</a></p>
+</li>
+<li><p class="first">Validate the issue and you&#8217;re done!</p>
+</li>
+</ol>
+<p>If you are feeling up to it, you can also try to resolve the bug, and contribute by sending
+us the patch :) Read the next section to find out how to do this.</p>
+</div>
+<div class="section" id="code-contributions">
+<h2>Code Contributions<a class="headerlink" href="#code-contributions" title="Permalink to this headline">¶</a></h2>
+<p>Code contributions (patches, new features) are the most obvious way to help with
+the project&#8217;s development. Since this is so common we ask you to follow our
+workflow to most efficiently work with us. Adhering to our workflow ensures that
+your contribution won&#8217;t be forgotten or lost. Also, your name will always be
+associated with the change you made, which basically means eternal fame in our
+code history (you can opt-out if you don&#8217;t want that).</p>
+<div class="section" id="coding-style">
+<h3>Coding style<a class="headerlink" href="#coding-style" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">If you haven&#8217;t done it yet, read the
+<a class="reference external" href="http://www.python.org/dev/peps/pep-0008/">PEP8</a> about coding style in python.</p>
+</li>
+<li><p class="first">Activate the pep8 check on git commits like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">hook</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>This will pass the code added to the git staging zone (about to be committed)
+through a pep8 checker program when you do a commit, and ensure that you didn&#8217;t
+introduce pep8 errors. If you did, the commit will be rejected: please correct the
+errors and try again.</p>
+</div>
+<div class="section" id="performance">
+<h3>Performance<a class="headerlink" href="#performance" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>take care of performance issues: read
+<a class="reference external" href="http://wiki.python.org/moin/PythonSpeed/PerformanceTips">Python performance tips</a></li>
+<li>cpu intensive parts of Kivy are written in cython: if you are doing a lot of
+computation, consider using it too.</li>
+</ul>
+</div>
+<div class="section" id="git-github">
+<h3>Git &amp; GitHub<a class="headerlink" href="#git-github" title="Permalink to this headline">¶</a></h3>
+<p>We use git as our version control system for our code base. If you have never
+used git or a similar DVCS (or even any VCS) before, we strongly suggest you
+take a look at the great documentation that is available for git online.
+The <a class="reference external" href="http://book.git-scm.com/">Git Community Book</a> or the
+<a class="reference external" href="https://git-scm.com/videos">Git Videos</a> are both great ways to learn git.
+Trust us when we say that git is a great tool. It may seem daunting at first,
+but after a while you&#8217;ll (hopefully) love it as much as we do. Teaching you git,
+however, is well beyond the scope of this document.</p>
+<p>Also, we use <a class="reference external" href="http://github.com">GitHub</a> to host our code. In the following we
+will assume that you have a (free) GitHub account. While this part is optional,
+it allows for a tight integration between your patches and our upstream code
+base. If you don&#8217;t want to use GitHub, we assume you know what you are doing anyway.</p>
+</div>
+<div class="section" id="code-workflow">
+<h3>Code Workflow<a class="headerlink" href="#code-workflow" title="Permalink to this headline">¶</a></h3>
+<p>So here is the initial setup to begin with our workflow (you only need to do
+this once to install Kivy). Basically you follow the installation
+instructions from <a class="reference internal" href="installation/installation.html#dev-install"><span class="std std-ref">Installing Kivy for Development</span></a>, but you don&#8217;t clone our repository,
+you fork it. Here are the steps:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">Log in to GitHub</p>
+</li>
+<li><p class="first">Create a fork of the <a class="reference external" href="https://github.com/kivy/kivy">Kivy repository</a> by
+clicking the <em>fork</em> button.</p>
+</li>
+<li><p class="first">Clone your fork of our repository to your computer. Your fork will have
+the git remote name &#8216;origin&#8217; and you will be on branch &#8216;master&#8217;:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">kivy</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Compile and set up PYTHONPATH or install (see <a class="reference internal" href="installation/installation.html#dev-install"><span class="std std-ref">Installing Kivy for Development</span></a>).</p>
+</li>
+<li><p class="first">Install our pre-commit hook that ensures your code doesn&#8217;t violate our
+styleguide by executing <cite>make hook</cite> from the root directory of your
+clone. This will run our styleguide check whenever you do a commit,
+and if there are violations in the parts that you changed, your commit
+will be aborted. Fix &amp; retry.</p>
+</li>
+<li><p class="first">Add the kivy repo as a remote source:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">kivy</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">kivy</span><span class="o">/</span><span class="n">kivy</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div></blockquote>
+<p>Now, whenever you want to create a patch, you follow the following steps:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">See if there is a ticket in our bug tracker for the fix or feature and
+announce that you&#8217;ll be working on it if it doesn&#8217;t yet have an assignee.</p>
+</li>
+<li><p class="first">Create a new, appropriately named branch in your local repository for
+that specific feature or bugfix.
+(Keeping a new branch per feature makes sure we can easily pull in your
+changes without pulling any other stuff that is not supposed to be pulled.):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">new_feature</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Modify the code to do what you want (e.g. fix it).</p>
+</li>
+<li><p class="first">Test the code. Try to do this even for small fixes. You never know
+whether you have introduced some weird bug without testing.</p>
+</li>
+<li><p class="first">Do one or more minimal, atomic commits per fix or per feature.
+Minimal/Atomic means <em>keep the commit clean</em>. Don&#8217;t commit other stuff that
+doesn&#8217;t logically belong to this fix or feature. This is <strong>not</strong> about
+creating one commit per line changed. Use <code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-p</span></code> if necessary.</p>
+</li>
+<li><p class="first">Give each commit an appropriate commit message, so that others who are
+not familiar with the matter get a good idea of what you changed.</p>
+</li>
+<li><p class="first">Once you are satisfied with your changes, pull our upstream repository and
+merge it with you local repository. We can pull your stuff, but since you know
+exactly what&#8217;s changed, you should do the merge:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span> <span class="n">kivy</span> <span class="n">master</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Push your local branch into your remote repository on GitHub:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">new_feature</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Send a <em>Pull Request</em> with a description of what you changed via the button
+in the GitHub interface of your repository. (This is why we forked
+initially. Your repository is linked against ours.)</p>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you change parts of the code base that require compilation, you
+will have to recompile in order for your changes to take effect. The <code class="docutils literal"><span class="pre">make</span></code>
+command will do that for you (see the Makefile if you want to know
+what it does). If you need to clean your current directory from compiled
+files, execute <code class="docutils literal"><span class="pre">make</span> <span class="pre">clean</span></code>. If you want to get rid of <strong>all</strong> files that are
+not under version control, run <code class="docutils literal"><span class="pre">make</span> <span class="pre">distclean</span></code>
+(<strong>Caution:</strong> If your changes are not under version control, this
+command will delete them!)</p>
+</div>
+</div></blockquote>
+<p>Now we will receive your pull request. We will check whether your changes are
+clean and make sense (if you talked to us before doing all of this we will have
+told you whether it makes sense or not). If so, we will pull them and you will
+get instant karma. Congratulations, you&#8217;re a hero!</p>
+</div>
+</div>
+<div class="section" id="documentation-contributions">
+<h2>Documentation Contributions<a class="headerlink" href="#documentation-contributions" title="Permalink to this headline">¶</a></h2>
+<p>Documentation contributions generally follow the same workflow as code contributions,
+but are just a bit more lax.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">Following the instructions above,</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Fork the repository.</li>
+<li>Clone your fork to your computer.</li>
+<li>Setup kivy repo as a remote source.</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p class="first">Install python-sphinx. (See <code class="docutils literal"><span class="pre">docs/README</span></code> for assistance.)</p>
+</li>
+<li><p class="first">Use <a class="reference external" href="http://docutils.sourceforge.net/rst.html">ReStructuredText_Markup</a> to make changes to the HTML documentation in docs/sources.</p>
+</li>
+</ol>
+</div></blockquote>
+<p>To submit a documentation update, use the following steps:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">Create a new, appropriately named branch in your local repository:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">my_docs_update</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Modify the documentation with your correction or improvement.</p>
+</li>
+<li><p class="first">Re-generate the HTML pages, and review your update:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">html</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Give each commit an appropriate commit message, so that others who are not familiar with
+the matter get a good idea of what you changed.</p>
+</li>
+<li><p class="first">Keep each commit focused on a single related theme. Don&#8217;t commit other stuff that doesn&#8217;t
+logically belong to this update.</p>
+</li>
+<li><p class="first">Push to your remote repository on GitHub:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Send a <em>Pull Request</em> with a description of what you changed via the button in the
+GitHub interface of your repository.</p>
+</li>
+</ol>
+</div></blockquote>
+<p>We don&#8217;t ask you to go through all the hassle just to correct a single typo, but for more
+complex contributions, please follow the suggested workflow.</p>
+<div class="section" id="docstrings">
+<h3>Docstrings<a class="headerlink" href="#docstrings" title="Permalink to this headline">¶</a></h3>
+<p>Every module/class/method/function needs a docstring, so use the following keywords
+when relevant:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">..</span> <span class="pre">versionadded::</span></code> to mark the version in which the feature was added.</li>
+<li><code class="docutils literal"><span class="pre">..</span> <span class="pre">versionchanged::</span></code> to mark the version in which the behaviour of the feature was
+changed.</li>
+<li><code class="docutils literal"><span class="pre">..</span> <span class="pre">note::</span></code> to add additional info about how to use the feature or related
+feature.</li>
+<li><code class="docutils literal"><span class="pre">..</span> <span class="pre">warning::</span></code> to indicate a potential issue the user might run into using
+the feature.</li>
+</ul>
+<p>Examples:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_new_feature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    New feature is awesome</span>
+
+<span class="sd">    .. versionadded:: 1.1.4</span>
+
+<span class="sd">    .. note:: This new feature will likely blow your mind</span>
+
+<span class="sd">    .. warning:: Please take a seat before trying this feature</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Will result in:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>def my_new_feature(self, arg):</dt>
+<dd><p class="first">&#8220;&#8221;&#8221;
+New feature is awesome</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.1.4.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This new feature will likely blow your mind</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Please take a seat before trying this feature</p>
+</div>
+<p class="last">&#8220;&#8221;&#8220;</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>When referring to other parts of the api use:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">:mod:`~kivy.module`</span></code> to refer to a module</li>
+<li><code class="docutils literal"><span class="pre">:class:`~kivy.module.Class`</span></code> to refer to a class</li>
+<li><code class="docutils literal"><span class="pre">:meth:`~kivy.module.Class.method`</span></code> to refer to a method</li>
+<li><code class="docutils literal"><span class="pre">:doc:`api-kivy.module`</span></code> to refer to the documentation of a module (same
+for a class and a method)</li>
+</ul>
+<p>Obviously replacing <cite>module</cite> <cite>Class</cite> and <cite>method</cite> with their real name, and
+using using &#8216;.&#8217; to separate modules referring to imbricated modules, e.g:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>:mod:`~kivy.uix.floatlayout`
+:class:`~kivy.uix.floatlayout.FloatLayout`
+:meth:`~kivy.core.window.WindowBase.toggle_fullscreen`
+:doc:`/api-kivy.core.window`
+</pre></div>
+</div>
+<p>Will result in:</p>
+<blockquote>
+<div><code class="xref py py-mod docutils literal"><span class="pre">floatlayout</span></code>
+<code class="xref py py-class docutils literal"><span class="pre">FloatLayout</span></code>
+<code class="xref py py-meth docutils literal"><span class="pre">toggle_fullscreen()</span></code>
+<span class="xref doc">/api-kivy.core.window</span></div></blockquote>
+<p><cite>:doc:</cite> and <cite>:mod:</cite> are essentially the same, except for an anchor in the url
+which makes <cite>:doc:</cite> prefered for the cleaner url.</p>
+<p>To build your documentation, run:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">html</span>
+</pre></div>
+</div>
+<p>If you updated your kivy install, and have some trouble compiling docs, run:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span> <span class="n">force</span> <span class="n">html</span>
+</pre></div>
+</div>
+<p>The docs will be generated in <code class="docutils literal"><span class="pre">docs/build/html</span></code>. For more information on
+docstring formatting, please refer to the official
+<a class="reference external" href="http://sphinx-doc.org/">Sphinx Documentation</a>.</p>
+</div>
+</div>
+<div class="section" id="unit-tests-contributions">
+<h2>Unit tests contributions<a class="headerlink" href="#unit-tests-contributions" title="Permalink to this headline">¶</a></h2>
+<p>For the testing team, we have the document <a class="reference internal" href="contribute-unittest.html"><span class="doc">Unit tests</span></a> that
+explains how Kivy unit tests work and how you can create your own. Use the
+same approach as the <cite>Code Workflow</cite> to submit new tests.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contribute-unittest.html">Unit tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contribute-unittest.html#how-it-works">How it works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute-unittest.html#gl-unit-tests">GL unit tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute-unittest.html#writing-gl-unit-tests">Writing GL Unit tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute-unittest.html#coverage-reports">Coverage reports</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="gsoc">
+<h2>GSOC<a class="headerlink" href="#gsoc" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="gsoc.html">Google Summer of Code - 2016</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gsoc.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsoc.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsoc.html#how-to-get-started">How to get started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsoc.html#project-ideas">Project Ideas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gsoc.html#beginner-projects">Beginner Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gsoc.html#intermediate-projects">Intermediate Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gsoc.html#advanced-projects">Advanced Projects</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gsoc.html#how-to-contact-devs">How to Contact devs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsoc.html#how-to-be-a-good-student">How to be a good student</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsoc.html#what-to-expect-if-you-are-chosen">What to expect if you are chosen</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            <div class="footerlinks">
+            <table>
+                <tr>
+                    <td class="leftlink">
+                  <a href="philosophy.html" title="previous chapter">&laquo; Philosophy</a></li>
+                  </td>
+                  <td class="rightlink">
+                  <a href="contribute-unittest.html" title="next chapter">Unit tests &raquo;</a>
+                      </td>
+                  </tr>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://txzone.net/piwik/" : "http://txzone.net/piwik/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 8);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="https://txzone.net/piwik/piwik.php?idsite=8" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on Jun 26, 2016.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.4.
+</div>
+-->
+  </body>
+</html>

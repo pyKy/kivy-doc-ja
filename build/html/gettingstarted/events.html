@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>Events &mdash; Kivy 1.9.1 documentation</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.9.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/kivy.js"></script>
+    <link rel="top" title="Kivy 1.9.1 documentation" href="../index.html" />
+    <link rel="up" title="Getting Started" href="index.html" />
+    <link rel="next" title="Non-widget stuff" href="framework.html" />
+    <link rel="prev" title="Kv Design Language" href="rules.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="http://kivy.org/docs/pdf/Kivy-latest.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../index.html">Events</a></h3>
+          <ul>
+<li><a class="reference internal" href="#">Events</a></li>
+</ul>
+
+          <h3><a href="../index.html">Table Of Contents</a></h3>
+          -->
+          <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Getting Started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_app.html">A first App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rules.html">Kv Design Language</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="layouts.html">Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diving.html">Diving in</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide.html">User&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../philosophy.html">Philosophy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contact.html">Contact Us</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guide-index.html">Programming Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guide/basic.html">Kivy Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/environment.html">Controlling the environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/config.html">Configure Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/architecture.html">Architectural Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/events.html">Events and Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/lang.html">Kv language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/other-frameworks.html">Integrating with other Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/bestpractices.html">Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/advancedgraphics.html">Advanced Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/packaging.html">Packaging your application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials-index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/pong.html">Pong Game Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/firstwidget.html">A Simple Paint App</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+              <li>Previous: <a href="rules.html" title="previous chapter">Kv Design Language</a></li>
+              <li>Next: <a href="framework.html" title="next chapter">Non-widget stuff</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2><ul>
+<li><a class="reference internal" href="#">Events</a></li>
+</ul>
+</div>
+            
+  <div class="section" id="events">
+<h1>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h1>
+<p>Kivy is mostly <a class="reference external" href="http://en.wikipedia.org/wiki/Event-driven_programming">event-based</a>, meaning the flow of the program is determined
+by events.</p>
+<p><strong>Clock events</strong></p>
+<img alt="../_images/gs-events-clock.png" class="gs-eleft" src="../_images/gs-events-clock.png" />
+<p>The <span class="xref doc">/api-kivy.clock</span> allows you to schedule a function call in the
+future as a one-time event with <code class="xref py py-meth docutils literal"><span class="pre">schedule_once()</span></code>,
+or as a repetitive event with <code class="xref py py-meth docutils literal"><span class="pre">schedule_interval()</span></code>.</p>
+<p>You can also create Triggered events with
+<code class="xref py py-meth docutils literal"><span class="pre">create_trigger()</span></code>. Triggers have the advantage of
+being called only once per frame, even if you have scheduled multiple triggers
+for the same callback.</p>
+<p><strong>Input events</strong></p>
+<img alt="../_images/gs-events-input.png" class="gs-eleft" src="../_images/gs-events-input.png" />
+<p>All the mouse click, touch and scroll wheel events are part of the
+<code class="xref py py-class docutils literal"><span class="pre">MotionEvent</span></code>, extended by
+<span class="xref doc">/api-kivy.input.postproc</span> and dispatched through the
+<code class="xref py py-attr docutils literal"><span class="pre">on_motion</span></code> event in
+the <code class="xref py py-class docutils literal"><span class="pre">Window</span></code> class. This event then generates the
+<code class="xref py py-meth docutils literal"><span class="pre">on_touch_down()</span></code>,
+<code class="xref py py-meth docutils literal"><span class="pre">on_touch_move()</span></code> and
+<code class="xref py py-meth docutils literal"><span class="pre">on_touch_up()</span></code> events in the
+<code class="xref py py-class docutils literal"><span class="pre">Widget</span></code>.</p>
+<p>For an in-depth explanation, have a look at <span class="xref doc">/api-kivy.input</span>.</p>
+<p><strong>Class events</strong></p>
+<img alt="../_images/gs-events-class.png" class="gs-eleft" src="../_images/gs-events-class.png" />
+<p>Our base class <code class="xref py py-class docutils literal"><span class="pre">EventDispatcher</span></code>, used by
+<code class="xref py py-class docutils literal"><span class="pre">Widget</span></code>, uses the power of our
+<span class="xref doc">/api-kivy.properties</span> for dispatching changes. This means when a widget
+changes its position or size, the corresponding event is automatically fired.</p>
+<p>In addition, you have the ability to create your own events using
+<code class="xref py py-meth docutils literal"><span class="pre">register_event_type()</span></code>, as the
+<cite>on_press</cite> and <cite>on_release</cite> events in the <code class="xref py py-class docutils literal"><span class="pre">Button</span></code>
+widget demonstrate.</p>
+<p>Another thing to note is that if you override an event, you become responsible
+for implementing all its behaviour previously handled by the base class. The
+easiest way to do this is to call <cite>super()</cite>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">super</span><span class="p">(</span><span class="n">OurClassName</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_down</span><span class="p">(</span><span class="n">touch</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">collide_point</span><span class="p">(</span><span class="n">touch</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">y</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;you touched me!&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Get more familiar with events by reading the <a class="reference internal" href="../guide/events.html"><span class="doc">Events and Properties</span></a> documentation.</p>
+</div>
+
+
+            <div class="footerlinks">
+            <table>
+                <tr>
+                    <td class="leftlink">
+                  <a href="rules.html" title="previous chapter">&laquo; Kv Design Language</a></li>
+                  </td>
+                  <td class="rightlink">
+                  <a href="framework.html" title="next chapter">Non-widget stuff &raquo;</a>
+                      </td>
+                  </tr>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://txzone.net/piwik/" : "http://txzone.net/piwik/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 8);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="https://txzone.net/piwik/piwik.php?idsite=8" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on Jun 26, 2016.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.4.
+</div>
+-->
+  </body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>Kivy Basics &mdash; Kivy 1.9.1 documentation</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.9.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/kivy.js"></script>
+    <link rel="top" title="Kivy 1.9.1 documentation" href="../index.html" />
+    <link rel="up" title="Programming Guide" href="../guide-index.html" />
+    <link rel="next" title="Controlling the environment" href="environment.html" />
+    <link rel="prev" title="Programming Guide" href="../guide-index.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="../gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="http://kivy.org/docs/pdf/Kivy-latest.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../index.html">Kivy Basics</a></h3>
+          <ul>
+<li><a class="reference internal" href="#">Kivy Basics</a><ul>
+<li><a class="reference internal" href="#installation-of-the-kivy-environment">Installation of the Kivy environment</a></li>
+<li><a class="reference internal" href="#create-an-application">Create an application</a></li>
+<li><a class="reference internal" href="#kivy-app-life-cycle">Kivy App Life Cycle</a></li>
+<li><a class="reference internal" href="#running-the-application">Running the application</a></li>
+<li><a class="reference internal" href="#customize-the-application">Customize the application</a></li>
+<li><a class="reference internal" href="#platform-specifics">Platform specifics</a></li>
+</ul>
+</li>
+</ul>
+
+          <h3><a href="../index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/first_app.html">A first App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/rules.html">Kv Design Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/events.html">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/layouts.html">Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/diving.html">Diving in</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user-guide.html">User&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../philosophy.html">Philosophy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contact.html">Contact Us</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../guide-index.html">Programming Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Kivy Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html">Controlling the environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Configure Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Architectural Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html">Events and Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lang.html">Kv language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="other-frameworks.html">Integrating with other Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bestpractices.html">Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedgraphics.html">Advanced Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="packaging.html">Packaging your application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials-index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/pong.html">Pong Game Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/firstwidget.html">A Simple Paint App</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+              <li>Previous: <a href="../guide-index.html" title="previous chapter">Programming Guide</a></li>
+              <li>Next: <a href="environment.html" title="next chapter">Controlling the environment</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2><ul>
+<li><a class="reference internal" href="#">Kivy Basics</a><ul>
+<li><a class="reference internal" href="#installation-of-the-kivy-environment">Installation of the Kivy environment</a></li>
+<li><a class="reference internal" href="#create-an-application">Create an application</a></li>
+<li><a class="reference internal" href="#kivy-app-life-cycle">Kivy App Life Cycle</a></li>
+<li><a class="reference internal" href="#running-the-application">Running the application</a></li>
+<li><a class="reference internal" href="#customize-the-application">Customize the application</a></li>
+<li><a class="reference internal" href="#platform-specifics">Platform specifics</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+  <div class="section" id="kivy-basics">
+<span id="basic"></span><h1>Kivy Basics<a class="headerlink" href="#kivy-basics" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation-of-the-kivy-environment">
+<h2>Installation of the Kivy environment<a class="headerlink" href="#installation-of-the-kivy-environment" title="Permalink to this headline">¶</a></h2>
+<p>Kivy depends on many Python libraries, such as pygame, gstreamer, PIL,
+Cairo, and more. They are not all required, but depending on the
+platform you&#8217;re working on, they can be a pain to install. For
+Windows and MacOS X, we provide a portable package that you can just
+unzip and use.</p>
+<ul class="simple">
+<li><a class="reference internal" href="../installation/installation-windows.html#installation-windows"><span class="std std-ref">Installation on Windows</span></a></li>
+<li><a class="reference internal" href="../installation/installation-osx.html#installation-osx"><span class="std std-ref">Installation on OS X</span></a></li>
+<li><a class="reference internal" href="../installation/installation-linux.html#installation-linux"><span class="std std-ref">Installation on Linux</span></a></li>
+</ul>
+<p>If you want to install everything yourself, ensure that you have at
+least <a class="reference external" href="http://cython.org">Cython</a> and <a class="reference external" href="http://pygame.org">Pygame</a>. A
+typical pip installation looks like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">cython</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">hg</span><span class="o">+</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">bitbucket</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">pygame</span><span class="o">/</span><span class="n">pygame</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">kivy</span>
+</pre></div>
+</div>
+<p>The <a class="reference external" href="https://github.com/kivy/kivy">development version</a> can be
+installed with git:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">kivy</span><span class="o">/</span><span class="n">kivy</span>
+<span class="n">make</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-an-application">
+<span id="quickstart"></span><h2>Create an application<a class="headerlink" href="#create-an-application" title="Permalink to this headline">¶</a></h2>
+<p>Creating a kivy application is as simple as:</p>
+<ul class="simple">
+<li>sub-classing the <code class="xref py py-class docutils literal"><span class="pre">App</span></code> class</li>
+<li>implementing its <code class="xref py py-meth docutils literal"><span class="pre">build()</span></code> method so it returns a
+<code class="xref py py-class docutils literal"><span class="pre">Widget</span></code> instance (the root of your widget tree)</li>
+<li>instantiating this class, and calling its <code class="xref py py-meth docutils literal"><span class="pre">run()</span></code>
+method.</li>
+</ul>
+<p>Here is an example of a minimal application:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">kivy</span>
+<span class="n">kivy</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="s1">&#39;1.0.6&#39;</span><span class="p">)</span> <span class="c1"># replace with your current kivy version !</span>
+
+<span class="kn">from</span> <span class="nn">kivy.app</span> <span class="k">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.label</span> <span class="k">import</span> <span class="n">Label</span>
+
+
+<span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello world&#39;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">MyApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>You can save this to a text file, <cite>main.py</cite> for example, and run it.</p>
+</div>
+<div class="section" id="kivy-app-life-cycle">
+<h2>Kivy App Life Cycle<a class="headerlink" href="#kivy-app-life-cycle" title="Permalink to this headline">¶</a></h2>
+<p>First off, let&#8217;s get familiar with the Kivy app life cycle.</p>
+<img alt="../_images/Kivy_App_Life_Cycle.png" src="../_images/Kivy_App_Life_Cycle.png" />
+<p>As you can see above, for all intents and purposes, our entry point into our App
+is the run() method, and in our case that is &#8220;MyApp().run()&#8221;. We will get back
+to this, but let&#8217;s start from the third line:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.app</span> <span class="k">import</span> <span class="n">App</span>
+</pre></div>
+</div>
+<p>It&#8217;s required that the base Class of your App inherits from the <cite>App</cite> class.
+It&#8217;s present in the kivy_installation_dir/kivy/app.py.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Go ahead and open up that file if you want to delve deeper into what the
+Kivy App class does. We encourage you to open the code and read through it.
+Kivy is based on Python and uses Sphinx for documentation, so the
+documentation for each class is in the actual file.</p>
+</div>
+<p>Similarly on line 2:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.uix.label</span> <span class="k">import</span> <span class="n">Label</span>
+</pre></div>
+</div>
+<p>One important thing to note here is the way packages/classes are laid out. The
+<code class="xref py py-class docutils literal"><span class="pre">uix</span></code> module is the section that holds the user interface elements
+like layouts and widgets.</p>
+<p>Moving on to line 5:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>This is where we are <cite>defining</cite> the Base Class of our Kivy App. You should only
+ever need to change the name of your app <cite>MyApp</cite> in this line.</p>
+<p>Further on to line 7:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>As highlighted by the image above, show casing the <cite>Kivy App Life Cycle</cite>, this
+is the function where you should initialize and return your <cite>Root Widget</cite>. This
+is what we do on line 8:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello world&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here we initialize a Label with text &#8216;Hello World&#8217; and return its instance.
+This Label will be the Root Widget of this App.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Python uses indentation to denote code blocks, therefore take note that in
+the code provided above, at line 9 the class and function definition ends.</p>
+</div>
+<p>Now on to the portion that will make our app run at line 11 and 12:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">MyApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Here the class <cite>MyApp</cite> is initialized and its run() method called. This
+initializes and starts our Kivy application.</p>
+</div>
+<div class="section" id="running-the-application">
+<h2>Running the application<a class="headerlink" href="#running-the-application" title="Permalink to this headline">¶</a></h2>
+<p>To run the application, follow the instructions for your operating system:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Linux</dt>
+<dd><p class="first">Follow the instructions for
+<a class="reference internal" href="../installation/installation-linux.html#linux-run-app"><span class="std std-ref">running a Kivy application on Linux</span></a>:</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span>$ python main.py
+</pre></div>
+</div>
+</dd>
+<dt>Windows</dt>
+<dd><p class="first">Follow the instructions for
+<span class="xref std std-ref">running a Kivy application on Windows</span>:</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span>$ python main.py
+# or
+C:\appdir&gt;kivy.bat main.py
+</pre></div>
+</div>
+</dd>
+<dt>Mac OS X</dt>
+<dd><p class="first">Follow the instructions for
+<a class="reference internal" href="../installation/installation-osx.html#osx-run-app"><span class="std std-ref">running a Kivy application on OS X</span></a>:</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span>$ kivy main.py
+</pre></div>
+</div>
+</dd>
+<dt>Android</dt>
+<dd>Your application needs some complementary files to be able to run on
+Android.  See <a class="reference internal" href="packaging-android.html"><span class="doc">Create a package for Android</span></a> for further reference.</dd>
+</dl>
+</div></blockquote>
+<p>A window should open, showing a single Label (with the Text &#8216;Hello World&#8217;) that
+covers the entire window&#8217;s area. That&#8217;s all there is to it.</p>
+<img alt="../_images/quickstart.png" class="align-center" src="../_images/quickstart.png" />
+</div>
+<div class="section" id="customize-the-application">
+<h2>Customize the application<a class="headerlink" href="#customize-the-application" title="Permalink to this headline">¶</a></h2>
+<p>Lets extend this application a bit, say a simple UserName/Password page.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.app</span> <span class="kn">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.gridlayout</span> <span class="kn">import</span> <span class="n">GridLayout</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.label</span> <span class="kn">import</span> <span class="n">Label</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.textinput</span> <span class="kn">import</span> <span class="n">TextInput</span>
+
+
+<span class="k">class</span> <span class="nc">LoginScreen</span><span class="p">(</span><span class="n">GridLayout</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">LoginScreen</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cols</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;User Name&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="n">TextInput</span><span class="p">(</span><span class="n">multiline</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;password&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="n">TextInput</span><span class="p">(</span><span class="n">password</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">multiline</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">password</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">LoginScreen</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">MyApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>At line 2 we import a <code class="xref py py-class docutils literal"><span class="pre">Gridlayout</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.uix.gridlayout</span> <span class="k">import</span> <span class="n">GridLayout</span>
+</pre></div>
+</div>
+<p>This class is used as a Base for our Root Widget (LoginScreen) defined
+at line 9:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LoginScreen</span><span class="p">(</span><span class="n">GridLayout</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>At line 12 in the class LoginScreen, we overload the method
+<code class="xref py py-meth docutils literal"><span class="pre">__init__()</span></code> so as to add widgets and to define their
+behavior:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="nb">super</span><span class="p">(</span><span class="n">LoginScreen</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>One should not forget to call super in order to implement the functionality of
+the original class being overloaded. Also note that it is good practice not to
+omit the <cite>**kwargs</cite> while calling super, as they are sometimes used internally.</p>
+<p>Moving on to Line 15 and beyond:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">cols</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;User Name&#39;</span><span class="p">))</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="n">TextInput</span><span class="p">(</span><span class="n">multiline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;password&#39;</span><span class="p">))</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="n">TextInput</span><span class="p">(</span><span class="n">password</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">multiline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">password</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We ask the GridLayout to manage its children in two columns and add a
+<code class="xref py py-class docutils literal"><span class="pre">Label</span></code> and a <code class="xref py py-class docutils literal"><span class="pre">TextInput</span></code>
+for the username and password.</p>
+<p>Running the above code will give you a window that should look like this:</p>
+<img alt="../_images/guide_customize_step1.png" class="align-center" src="../_images/guide_customize_step1.png" />
+<p>Try re-sizing the window and you will see that the widgets on screen adjust
+themselves according to the size of the window without you having to do
+anything. This is because widgets use size hinting by default.</p>
+<p>The code above doesn&#8217;t handle the input from the user, does no validation or
+anything else. We will delve deeper into this and <code class="xref py py-class docutils literal"><span class="pre">Widget</span></code>
+size and positioning in the coming sections.</p>
+</div>
+<div class="section" id="platform-specifics">
+<h2>Platform specifics<a class="headerlink" href="#platform-specifics" title="Permalink to this headline">¶</a></h2>
+<p>Opening a Terminal application and setting the kivy environment variables.</p>
+<blockquote>
+<div><p>On Windows, just double click the kivy.bat and a terminal will be opened
+with all the required variables already set.</p>
+<p>On nix* systems, open the terminal of your choice and if
+kivy isn&#8217;t installed globally:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>export python=$PYTHONPATH:/path/to/kivy_installation
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+            <div class="footerlinks">
+            <table>
+                <tr>
+                    <td class="leftlink">
+                  <a href="../guide-index.html" title="previous chapter">&laquo; Programming Guide</a></li>
+                  </td>
+                  <td class="rightlink">
+                  <a href="environment.html" title="next chapter">Controlling the environment &raquo;</a>
+                      </td>
+                  </tr>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://txzone.net/piwik/" : "http://txzone.net/piwik/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 8);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="https://txzone.net/piwik/piwik.php?idsite=8" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on Jun 26, 2016.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.4.
+</div>
+-->
+  </body>
+</html>

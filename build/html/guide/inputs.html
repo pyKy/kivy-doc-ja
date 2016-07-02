@@ -1,0 +1,487 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>Input management &mdash; Kivy 1.9.1 documentation</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.9.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/kivy.js"></script>
+    <link rel="top" title="Kivy 1.9.1 documentation" href="../index.html" />
+    <link rel="up" title="Programming Guide" href="../guide-index.html" />
+    <link rel="next" title="Widgets" href="widgets.html" />
+    <link rel="prev" title="Events and Properties" href="events.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="../gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="http://kivy.org/docs/pdf/Kivy-latest.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../index.html">Input management</a></h3>
+          <ul>
+<li><a class="reference internal" href="#">Input management</a><ul>
+<li><a class="reference internal" href="#input-architecture">Input architecture</a></li>
+<li><a class="reference internal" href="#motion-event-profiles">Motion event profiles</a></li>
+<li><a class="reference internal" href="#touch-events">Touch events</a><ul>
+<li><a class="reference internal" href="#touch-event-basics">Touch event basics</a></li>
+<li><a class="reference internal" href="#coordinates">Coordinates</a></li>
+<li><a class="reference internal" href="#touch-shapes">Touch shapes</a></li>
+<li><a class="reference internal" href="#double-tap">Double tap</a></li>
+<li><a class="reference internal" href="#triple-tap">Triple tap</a></li>
+<li><a class="reference internal" href="#grabbing-touch-events">Grabbing touch events</a></li>
+<li><a class="reference internal" href="#touch-event-management">Touch Event Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          <h3><a href="../index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/first_app.html">A first App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/rules.html">Kv Design Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/events.html">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/layouts.html">Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/diving.html">Diving in</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user-guide.html">User&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../philosophy.html">Philosophy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contact.html">Contact Us</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../guide-index.html">Programming Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basic.html">Kivy Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html">Controlling the environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Configure Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Architectural Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html">Events and Properties</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lang.html">Kv language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="other-frameworks.html">Integrating with other Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bestpractices.html">Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedgraphics.html">Advanced Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="packaging.html">Packaging your application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials-index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/pong.html">Pong Game Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/firstwidget.html">A Simple Paint App</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+              <li>Previous: <a href="events.html" title="previous chapter">Events and Properties</a></li>
+              <li>Next: <a href="widgets.html" title="next chapter">Widgets</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2><ul>
+<li><a class="reference internal" href="#">Input management</a><ul>
+<li><a class="reference internal" href="#input-architecture">Input architecture</a></li>
+<li><a class="reference internal" href="#motion-event-profiles">Motion event profiles</a></li>
+<li><a class="reference internal" href="#touch-events">Touch events</a><ul>
+<li><a class="reference internal" href="#touch-event-basics">Touch event basics</a></li>
+<li><a class="reference internal" href="#coordinates">Coordinates</a></li>
+<li><a class="reference internal" href="#touch-shapes">Touch shapes</a></li>
+<li><a class="reference internal" href="#double-tap">Double tap</a></li>
+<li><a class="reference internal" href="#triple-tap">Triple tap</a></li>
+<li><a class="reference internal" href="#grabbing-touch-events">Grabbing touch events</a></li>
+<li><a class="reference internal" href="#touch-event-management">Touch Event Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+            
+  <div class="section" id="input-management">
+<h1>Input management<a class="headerlink" href="#input-management" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="input-architecture">
+<h2>Input architecture<a class="headerlink" href="#input-architecture" title="Permalink to this headline">¶</a></h2>
+<p>Kivy is able to handle most types of input: mouse, touchscreen, accelerometer,
+gyroscope, etc. It handles the native multitouch protocols on the following
+platforms: Tuio, WM_Touch, MacMultitouchSupport, MT Protocol A/B and Android.</p>
+<p>The global architecture can be viewed as:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Input</span> <span class="n">providers</span> <span class="o">-&gt;</span> <span class="n">Motion</span> <span class="n">event</span> <span class="o">-&gt;</span> <span class="n">Post</span> <span class="n">processing</span> <span class="o">-&gt;</span> <span class="n">Dispatch</span> <span class="n">to</span> <span class="n">Window</span>
+</pre></div>
+</div>
+<p>The class of all input events is the
+<code class="xref py py-class docutils literal"><span class="pre">MotionEvent</span></code>. It generates 2 kinds of
+events:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Touch events: a motion event that contains at least an X and Y position.
+All the touch events are dispatched across the Widget tree.</li>
+<li>No-touch events: all the rest. For example, the accelerometer is a
+continuous event, without position. It never starts or stops. These events
+are not dispatched across the Widget tree.</li>
+</ul>
+</div></blockquote>
+<p>A Motion event is generated by an <code class="xref py py-mod docutils literal"><span class="pre">Input</span> <span class="pre">Provider</span></code>.
+An Input Provider is responsible for reading the input event from the operating
+system, the network or even from another application. Several input providers
+exist, such as:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="xref py py-class docutils literal"><span class="pre">TuioMotionEventProvider</span></code>: create a
+UDP server and listen for TUIO/OSC messages.</li>
+<li><code class="xref py py-class docutils literal"><span class="pre">WM_MotionEventProvider</span></code>: use the
+windows API for reading multitouch information and sending it to Kivy.</li>
+<li><code class="xref py py-class docutils literal"><span class="pre">ProbeSysfsHardwareProbe</span></code>:
+In Linux, iterate over all the hardware connected to the computer, and
+attaches a multitouch input provider for each multitouch device found.</li>
+<li>and much more!</li>
+</ul>
+</div></blockquote>
+<p>When you write an application, you don&#8217;t need to create an input provider. Kivy
+tries to automatically detect available hardware. However, if you want to
+support custom hardware, you will need to configure kivy to make it work.</p>
+<p>Before the newly-created Motion Event is passed to the user, Kivy applies
+post-processing to the input. Every motion event is analyzed to detect and
+correct faulty input, as well as make meaningful interpretations like:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Double/triple-tap detection, according to a distance and time threshold</li>
+<li>Making events more accurate when the hardware is not accurate</li>
+<li>Reducing the amount of generated events if the native touch hardware is
+sending events with nearly the same position</li>
+</ul>
+</div></blockquote>
+<p>After processing, the motion event is dispatched to the Window. As explained
+previously, not all events are dispatched to the whole widget tree: the window
+filters them. For a given event:</p>
+<blockquote>
+<div><ul class="simple">
+<li>if it&#8217;s only a motion event, it will be dispatched to
+<code class="xref py py-meth docutils literal"><span class="pre">on_motion()</span></code></li>
+<li>if it&#8217;s a touch event, the (x,y) position of the touch (0-1 range) will be
+scaled to the Window size (width/height), and dispatched to:<ul>
+<li><code class="xref py py-meth docutils literal"><span class="pre">on_touch_down()</span></code></li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">on_touch_move()</span></code></li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">on_touch_up()</span></code></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="motion-event-profiles">
+<h2>Motion event profiles<a class="headerlink" href="#motion-event-profiles" title="Permalink to this headline">¶</a></h2>
+<p>Depending on your hardware and the input providers used, more information may be
+made available to you. For example, a touch input has an (x,y) position, but
+might also have pressure information, blob size, an acceleration vector, etc.</p>
+<p>A profile is a string that indicates what features are available inside the
+motion event. Let&#8217;s imagine that you are in an <code class="docutils literal"><span class="pre">on_touch_move</span></code> method:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_touch_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">touch</span><span class="o">.</span><span class="n">profile</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_move</span><span class="p">(</span><span class="n">touch</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The print could output:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;pos&#39;</span><span class="p">,</span> <span class="s1">&#39;angle&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Many people mix up the profile&#8217;s name and the name of the corresponding
+property. Just because <code class="docutils literal"><span class="pre">'angle'</span></code> is in the available profile doesn&#8217;t
+mean that the touch event object will have an <code class="docutils literal"><span class="pre">angle</span></code> property.</p>
+</div>
+<p>For the <code class="docutils literal"><span class="pre">'pos'</span></code> profile, the properties <code class="docutils literal"><span class="pre">pos</span></code>, <code class="docutils literal"><span class="pre">x</span></code>, and <code class="docutils literal"><span class="pre">y</span></code> will be
+available. With the <code class="docutils literal"><span class="pre">'angle'</span></code> profile, the property <code class="docutils literal"><span class="pre">a</span></code> will be available.
+As we said, for touch events <code class="docutils literal"><span class="pre">'pos'</span></code> is a mandatory profile, but not
+<code class="docutils literal"><span class="pre">'angle'</span></code>. You can extend your interaction by checking if the <code class="docutils literal"><span class="pre">'angle'</span></code>
+profile exists:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_touch_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The touch is at position&#39;</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s1">&#39;angle&#39;</span> <span class="ow">in</span> <span class="n">touch</span><span class="o">.</span><span class="n">profile</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The touch angle is&#39;</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can find a list of available profiles in the
+<code class="xref py py-mod docutils literal"><span class="pre">motionevent</span></code> documentation.</p>
+</div>
+<div class="section" id="touch-events">
+<h2>Touch events<a class="headerlink" href="#touch-events" title="Permalink to this headline">¶</a></h2>
+<p>A touch event is a specialized <code class="xref py py-class docutils literal"><span class="pre">MotionEvent</span></code>
+where the property <code class="xref py py-attr docutils literal"><span class="pre">is_touch</span></code>
+evaluates to True. For all touch events, you automatically have the X and Y
+positions available, scaled to the Window width and height. In other words, all
+touch events have the <code class="docutils literal"><span class="pre">'pos'</span></code> profile.</p>
+<div class="section" id="touch-event-basics">
+<h3>Touch event basics<a class="headerlink" href="#touch-event-basics" title="Permalink to this headline">¶</a></h3>
+<p>By default, touch events are dispatched to all currently displayed widgets.
+This means widgets receive the touch event whether it occurs within their
+physical area or not.</p>
+<p>This can be counter intuitive if you have experience with other GUI toolkits.
+These typically divide the screen into geometric areas and only dispatch
+touch or mouse events to the widget if the coordinate lies within the
+widgets area.</p>
+<p>This requirement becomes very restrictive when working with touch input.
+Swipes, pinches and long presses may well originate from outside of the widget
+that wants to know about them and react to them.</p>
+<p>In order to provide the maximum flexibility, Kivy dispatches the events to
+all the widgets and lets them decide how to react to them. If you only want
+to respond to touch events inside the widget, you simply check:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">collide_point</span><span class="p">(</span><span class="o">*</span><span class="n">touch</span><span class="o">.</span><span class="n">pos</span><span class="p">):</span>
+        <span class="c1"># The touch has occurred inside the widgets area. Do stuff!</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="coordinates">
+<h3>Coordinates<a class="headerlink" href="#coordinates" title="Permalink to this headline">¶</a></h3>
+<p>You must take care of matrix transformation in your touch as soon as you use
+a widget with matrix transformation. Some widgets such as
+<code class="xref py py-class docutils literal"><span class="pre">Scatter</span></code> have their own matrix transformation,
+meaning the touch must be multiplied by the scatter
+matrix to be able to correctly dispatch touch positions to the Scatter&#8217;s
+children.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Get coordinate from parent space to local space:
+<code class="xref py py-meth docutils literal"><span class="pre">to_local()</span></code></li>
+<li>Get coordinate from local space to parent space:
+<code class="xref py py-meth docutils literal"><span class="pre">to_parent()</span></code></li>
+<li>Get coordinate from local space to window space:
+<code class="xref py py-meth docutils literal"><span class="pre">to_window()</span></code></li>
+<li>Get coordinate from window space to local space:
+<code class="xref py py-meth docutils literal"><span class="pre">to_widget()</span></code></li>
+</ul>
+</div></blockquote>
+<p>You must use one of them to scale coordinates correctly to the context.
+Let&#8217;s look the scatter implementation:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+    <span class="c1"># push the current coordinate, to be able to restore it later</span>
+    <span class="n">touch</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+
+    <span class="c1"># transform the touch coordinate to local space</span>
+    <span class="n">touch</span><span class="o">.</span><span class="n">apply_transform_2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_local</span><span class="p">)</span>
+
+    <span class="c1"># dispatch the touch as usual to children</span>
+    <span class="c1"># the coordinate in the touch is now in local space</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_down</span><span class="p">(</span><span class="n">touch</span><span class="p">)</span>
+
+    <span class="c1"># whatever the result, don&#39;t forget to pop your transformation</span>
+    <span class="c1"># after the call, so the coordinate will be back in parent space</span>
+    <span class="n">touch</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+    <span class="c1"># return the result (depending what you want.)</span>
+    <span class="k">return</span> <span class="n">ret</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="touch-shapes">
+<h3>Touch shapes<a class="headerlink" href="#touch-shapes" title="Permalink to this headline">¶</a></h3>
+<p>If the touch has a shape, it will be reflected in the &#8216;shape&#8217; property. Right
+now, only a <code class="xref py py-class docutils literal"><span class="pre">ShapeRect</span></code> can be exposed:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.input.shape</span> <span class="k">import</span> <span class="n">ShapeRect</span>
+
+<span class="k">def</span> <span class="nf">on_touch_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">touch</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">ShapeRect</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My touch have a rectangle shape of size&#39;</span><span class="p">,</span>
+            <span class="p">(</span><span class="n">touch</span><span class="o">.</span><span class="n">shape</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">shape</span><span class="o">.</span><span class="n">height</span><span class="p">))</span>
+    <span class="c1"># ...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="double-tap">
+<h3>Double tap<a class="headerlink" href="#double-tap" title="Permalink to this headline">¶</a></h3>
+<p>A double tap is the action of tapping twice within a time and a distance.
+It&#8217;s calculated by the doubletap post-processing module. You can test if the
+current touch is one of a double tap or not:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">touch</span><span class="o">.</span><span class="n">is_double_tap</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Touch is a double tap !&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; - interval is&#39;</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">double_tap_time</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; - distance between previous is&#39;</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">double_tap_distance</span><span class="p">)</span>
+    <span class="c1"># ...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="triple-tap">
+<h3>Triple tap<a class="headerlink" href="#triple-tap" title="Permalink to this headline">¶</a></h3>
+<p>A triple tap is the action of tapping thrice within a time and a distance.
+It&#8217;s calculated by the tripletap post-processing module. You can test if the
+current touch is one of a triple tap or not:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">touch</span><span class="o">.</span><span class="n">is_triple_tap</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Touch is a triple tap !&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; - interval is&#39;</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">triple_tap_time</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; - distance between previous is&#39;</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">triple_tap_distance</span><span class="p">)</span>
+    <span class="c1"># ...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="grabbing-touch-events">
+<h3>Grabbing touch events<a class="headerlink" href="#grabbing-touch-events" title="Permalink to this headline">¶</a></h3>
+<p>It&#8217;s possible for the parent widget to dispatch a touch event to a child
+widget from within <code class="docutils literal"><span class="pre">on_touch_down</span></code>, but not from <code class="docutils literal"><span class="pre">on_touch_move</span></code> or
+<code class="docutils literal"><span class="pre">on_touch_up</span></code>. This can happen in certain scenarios, like when a touch
+movement is outside the bounding box of the parent, so the parent decides not to
+notify its children of the movement.</p>
+<p>But you might want to do something in <code class="docutils literal"><span class="pre">on_touch_up</span></code>. Say you started something in
+the <code class="docutils literal"><span class="pre">on_touch_down</span></code> event, like playing a sound, and you&#8217;d like to finish things
+on the <code class="docutils literal"><span class="pre">on_touch_up</span></code> event. Grabbing is what you need.</p>
+<p>When you grab a touch, you will always receive the move and up event. But there
+are some limitations to grabbing:</p>
+<blockquote>
+<div><ul class="simple">
+<li>You will receive the event at least twice: one time from your parent (the
+normal event), and one time from the window (grab).</li>
+<li>You might receive an event with a grabbed touch, but not from you: it can be
+because the parent has sent the touch to its children while it was in
+the grabbed state.</li>
+<li>The touch coordinate is not translated to your widget space because the
+touch is coming directly from the Window. It&#8217;s your job to convert the
+coordinate to your local space.</li>
+</ul>
+</div></blockquote>
+<p>Here is an example of how to use grabbing:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">collide_point</span><span class="p">(</span><span class="o">*</span><span class="n">touch</span><span class="o">.</span><span class="n">pos</span><span class="p">):</span>
+
+        <span class="c1"># if the touch collides with our widget, let&#39;s grab it</span>
+        <span class="n">touch</span><span class="o">.</span><span class="n">grab</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="c1"># and accept the touch.</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+<span class="k">def</span> <span class="nf">on_touch_up</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+    <span class="c1"># here, you don&#39;t check if the touch collides or things like that.</span>
+    <span class="c1"># you just need to check if it&#39;s a grabbed touch event</span>
+    <span class="k">if</span> <span class="n">touch</span><span class="o">.</span><span class="n">grab_current</span> <span class="ow">is</span> <span class="bp">self</span><span class="p">:</span>
+
+        <span class="c1"># ok, the current touch is dispatched for us.</span>
+        <span class="c1"># do something interesting here</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">)</span>
+
+        <span class="c1"># don&#39;t forget to ungrab ourself, or you might have side effects</span>
+        <span class="n">touch</span><span class="o">.</span><span class="n">ungrab</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="c1"># and accept the last up</span>
+        <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="touch-event-management">
+<h3>Touch Event Management<a class="headerlink" href="#touch-event-management" title="Permalink to this headline">¶</a></h3>
+<p>In order to see how touch events are controlled and propagated between
+widgets, please refer to the
+<span class="xref std std-ref">Widget touch event bubbling</span> section.</p>
+</div>
+</div>
+</div>
+
+
+            <div class="footerlinks">
+            <table>
+                <tr>
+                    <td class="leftlink">
+                  <a href="events.html" title="previous chapter">&laquo; Events and Properties</a></li>
+                  </td>
+                  <td class="rightlink">
+                  <a href="widgets.html" title="next chapter">Widgets &raquo;</a>
+                      </td>
+                  </tr>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://txzone.net/piwik/" : "http://txzone.net/piwik/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 8);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="https://txzone.net/piwik/piwik.php?idsite=8" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on Jun 26, 2016.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.4.
+</div>
+-->
+  </body>
+</html>
