@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../../source/guide/lang.rst:7
 msgid "Concept behind the language"
-msgstr ""
+msgstr "背景とコンセンプト"
 
 #: ../../source/guide/lang.rst:9
 msgid ""
@@ -32,6 +32,10 @@ msgid ""
 " hard to maintain. The `KV` Language is a attempt to overcome these "
 "short-comings."
 msgstr ""
+"アプリケーションがより複雑になるにつれて、widgetツリーとバインディングの"
+"明示的な宣言の構築は、一般的に冗長になり保守が困難となります。"
+"`KV` Language はこの問題を克服しようとする試みです。"
+
 
 #: ../../source/guide/lang.rst:13
 msgid ""
@@ -42,30 +46,39 @@ msgid ""
 "facilitates a good separation between the logic of your application and "
 "its User Interface."
 msgstr ""
+"`KV` language（kvlang、またはkivy言語と呼ばれることがあります）、"
+"宣言型でwidgetツリーを作成し、自然な方法でwidgetのプロパティを"
+"相互またはコールバックしてバインドできます。 "
+"これはUIにアジャイル的な変更と非常に高速なプロトタイプピングを可能にします。"
+"アプリケーションのロジックとユーザーインタフェース間の分離を容易にします。"
 
 #: ../../source/guide/lang.rst:20
 msgid "How to load KV"
-msgstr ""
+msgstr "KV のロードについて"
 
 #: ../../source/guide/lang.rst:22
 msgid "There are two ways to load Kv code into your application:"
-msgstr ""
+msgstr "アプリケーションにKvコードをロードする方法は2つあります。"
 
 #: ../../source/guide/lang.rst:24
 msgid "By name convention:"
-msgstr ""
+msgstr "命名規則から:"
 
 #: ../../source/guide/lang.rst:26
 msgid ""
 "Kivy looks for a Kv file with the same name as your App class in "
 "lowercase,  minus \"App\" if it ends with 'App'. E.g::"
 msgstr ""
+"'App'で終わる場合、Kivyはアプリのクラスから'App'を引いた、小文字で同じ名前を持つKvファイルを検索します。"
+"例えば："
 
 #: ../../source/guide/lang.rst:31
 msgid ""
 "If this file defines a `Root Widget` it will be attached to the App's "
 "`root` attribute and used as the base of the application widget tree."
 msgstr ""
+"このファイルは`Root Widget`を定義している場合には、"
+アプリケーションの `root` 属性に所属しており、アプリケーションのwidgetツリーのベースとして使用されます"
 
 #: ../../source/guide/lang.rst:34
 msgid ""
@@ -74,13 +87,17 @@ msgid ""
 "returned by the method::"
 msgstr ""
 
+":obj:`~kivy.lang.Builder`: 文字列またはファイルをロードしてKivyに直接伝えられます。"
+"文字列またはファイルがroot widgetを定義している場合は、メソッドとして返されます。::"
+
+
 #: ../../source/guide/lang.rst:40
 msgid "or::"
-msgstr ""
+msgstr "または::"
 
 #: ../../source/guide/lang.rst:45
 msgid "Rule context"
-msgstr ""
+msgstr "ルールコンテキスト"
 
 #: ../../source/guide/lang.rst:47
 msgid ""
@@ -88,6 +105,8 @@ msgid ""
 "content of a Widget, you can have one `root` rule, and any number of "
 "`class` or `template` rules."
 msgstr ""
+"KvソースはWidgetのコンテンツを記述するために使用されるルールの構成は、1つの`root` ルール、"
+"およびの任意の`class` または`template`ルールを有します。"
 
 #: ../../source/guide/lang.rst:51
 msgid ""
@@ -95,6 +114,8 @@ msgid ""
 "without any indentation, followed by `:` and will be set as the `root` "
 "attribute of the App instance::"
 msgstr ""
+"`root` ルールは、任意のインデントなしで、「：」と宣言することによって、あなたのroot widgetクラスを"
+"宣言が続いている、Appインスタンスのルート属性として設定されます。::"
 
 #: ../../source/guide/lang.rst:57
 msgid ""
@@ -102,62 +123,69 @@ msgid ""
 "followed by `:`, defines how any instance of that class will be "
 "graphically represented::"
 msgstr ""
+"`class` ルールは、<>の中で、widgetクラスの名前を宣言し、"
+"「:」の後は、クラスのすべてのインスタンスをグラフィカルに表現する方法を定義します。"
 
 #: ../../source/guide/lang.rst:63
 msgid ""
 "Rules use indentation for delimitation, as python, indentation should be "
 "of four spaces per level, like the python good practice recommendations."
 msgstr ""
+"ルールは、Pythonのように区切りのためにインデントを使用し、インデントはPythonのグットプラクティスな"
+"推奨設定のように、レベルごとに4つのスペースでなければなりません。"
 
 #: ../../source/guide/lang.rst:66
 msgid "There are three keywords specific to Kv language:"
-msgstr ""
+msgstr "Kv languageには固有の3つのキーワードがあります:"
 
 #: ../../source/guide/lang.rst:68
 msgid "`app`: always refers to the instance of your application."
-msgstr ""
+msgstr "`app`: 常にアプリケーションのインスタンスを参照します。"
 
 #: ../../source/guide/lang.rst:69
 msgid "`root`: refers to the base widget/template in the current rule"
-msgstr ""
+msgstr "`root`: 現在のルールでベースの「widget/template」を参照します。"
 
 #: ../../source/guide/lang.rst:70
 msgid "`self`: always refer to the current widget"
-msgstr ""
+msgstr "`self`: 常にカレントのwidgetを参照します。"
 
 #: ../../source/guide/lang.rst:73
 msgid "Special syntaxes"
-msgstr ""
+msgstr "特別な構文"
 
 #: ../../source/guide/lang.rst:75
 msgid "There are two special syntaxes to define values for the whole Kv context:"
-msgstr ""
+msgstr "Kvコンテキスト全体を定義するには、2つの特別な構文があります"
 
 #: ../../source/guide/lang.rst:77
 msgid "To access python modules and classes from kv, ::"
-msgstr ""
+msgstr "KvからPythonモジュールとクラスにアクセスするには："
 
 #: ../../source/guide/lang.rst:83 ../../source/guide/lang.rst:95
 msgid "is equivalent to::"
-msgstr ""
+msgstr "これは以下と同等です。"
 
 #: ../../source/guide/lang.rst:89 ../../source/guide/lang.rst:99
 msgid "in python."
-msgstr ""
+msgstr "Pythonでは"
 
 #: ../../source/guide/lang.rst:91
 msgid "To set a global value, ::"
-msgstr ""
+msgstr "グローバルな値をセットするには::"
 
 #: ../../source/guide/lang.rst:102
 msgid "Instantiate children"
-msgstr ""
+msgstr "子らをインスタンス化"
 
 #: ../../source/guide/lang.rst:104
 msgid ""
 "To declare the widget has a child widget, instance of some class, just "
 "declare this child inside the rule:"
 msgstr ""
+"widgetが子widgetを持ついくつかのクラスのインスタンスを宣言するためには、"
+"ルールの内部にこの子を宣言します:"
+""
 
 #: ../../source/guide/lang.rst:114
 msgid ""
@@ -166,14 +194,17 @@ msgid ""
 ":class:`~kivy.uix.boxlayout.BoxLayout`.  That BoxLayout further has two "
 "children, instances of the :class:`~kivy.uix.button.Button` class."
 msgstr ""
+"上記の例では、root widget、`MyRootWidget`のインスタンスは、"
+":class:`~kivy.uix.boxlayout.BoxLayout`の子のインスタンスを有しています 。 "
+"BoxLayoutは、さらに、:class:`~kivy.uix.button.Button` クラスのインスタンスである2つの子の親です。"
 
 #: ../../source/guide/lang.rst:119
 msgid "A python equivalent of this code could be:"
-msgstr ""
+msgstr "Pythonコードでの同じ内容は次のようになります:"
 
 #: ../../source/guide/lang.rst:129
 msgid "Which you may find less nice, both to read and to write."
-msgstr ""
+msgstr "どぢらでも読み込み、書き込みはできます。"
 
 #: ../../source/guide/lang.rst:131
 msgid ""
@@ -181,12 +212,15 @@ msgid ""
 "creation to specify their behaviour.  For example, to set the number of "
 "columns of a :mod:`~kivy.uix.gridlayout`, we would do::"
 msgstr ""
+"もちろん、Pythonでも動作を指定するために、作成時にwidgetにキーワード引数を渡せます。"
+"例えば、列の数を数を設定する :mod:`~kivy.uix.gridlayout` 場合はこうなります："
 
 #: ../../source/guide/lang.rst:137
 msgid ""
 "To do the same thing in kv, you can set properties of the child widget "
 "directly in the rule:"
 msgstr ""
+"KVで同じことを行うには、ルールで直接、子のwidgetのプロパティを設定できます。"
 
 #: ../../source/guide/lang.rst:145
 msgid ""
@@ -195,10 +229,14 @@ msgid ""
 "something like this in python (this assume `self` is a widget with a "
 "`data` :class:`~kivy.property.ListProperty`)::"
 msgstr ""
+"値はPythonの式として評価され、式の中で使用されるすべてのプロパティが表現され、"
+"Pythonでもいくつかを表現出来ることを意味します。"
+"(`self` widget は　:class:`~kivy.property.ListProperty` の`data` を保持していると推測)"
+
 
 #: ../../source/guide/lang.rst:153
 msgid "To have your display updated when your data change, you can now have just:"
-msgstr ""
+msgstr "現在のデータの変更がされたときに、表示が更新されます："
 
 #: ../../source/guide/lang.rst:161
 msgid ""
@@ -207,24 +245,28 @@ msgid ""
 " <https://www.python.org/dev/peps/pep-0008/#naming-conventions>`_ is "
 "encouraged."
 msgstr ""
+"プロパティ名は先頭小文字で、wigdet名の先頭は大文字で書く必要があります。 "
+"以下の`PEP8<https://www.python.org/dev/peps/pep-0008/#naming-conventions>` の命名規則が奨励されています。
+
 
 #: ../../source/guide/lang.rst:167
 msgid "Event Bindings"
-msgstr ""
+msgstr "イベントバインディング"
 
 #: ../../source/guide/lang.rst:169
 msgid ""
 "You can bind to events in Kv using the \":\" syntax, that is, associating"
 " a callback to an event:"
-msgstr ""
+msgstr "構文"："でたKvでイベントにコールバックを関連付けし、イベントにバインドできます:"
+""
 
 #: ../../source/guide/lang.rst:177
 msgid "You can pass the values dispatched by the signal using the `args` keyword:"
-msgstr ""
+msgstr "`args`  キーワードを使用することで、信号によってディスパッチ値を渡せます:"
 
 #: ../../source/guide/lang.rst:184
 msgid "More complex expressions can be used, like:"
-msgstr ""
+msgstr "より複雑な式は次の用に使用できます："
 
 #: ../../source/guide/lang.rst:190
 msgid ""
@@ -232,6 +274,9 @@ msgid ""
 "``texture_size``. If one of them changes, the expression will be re-"
 "evaluated to update the ``pos`` field."
 msgstr ""
+"この式は ``center_x`` 、``center_y`` 、``texture_size`` の変化を表示しています。"
+"一方が変化した場合、再評価され, ``pos`` フィールドは更新されます。"
+
 
 #: ../../source/guide/lang.rst:194
 msgid ""
@@ -239,28 +284,31 @@ msgid ""
 "the TextInput class has a ``focus`` property whose auto-generated "
 "``on_focus`` event can be accessed inside the kv language like so:"
 msgstr ""
+"kv language内で ``on_`` イベントをハンドル出来ます。 "
+"例えばTextInputクラスが持つ`focus``プロパティは、自動生成される ``on_focus``イベントで"
+"kv language の内部にアクセスできます。"
 
 #: ../../source/guide/lang.rst:205
 msgid "Extend canvas"
-msgstr ""
+msgstr "キャンバスを拡張する"
 
 #: ../../source/guide/lang.rst:207
 msgid ""
 "Kv lang can be used to define the canvas instructions of your widget like"
 " this:"
-msgstr ""
+msgstr "KV langは、このようなwidgetのキャンバス命令を定義するために使用できます。"
 
 #: ../../source/guide/lang.rst:218
 msgid "And they get updated when properties values change."
-msgstr ""
+msgstr "プロパティの値が変更されたときに更新されます。"
 
 #: ../../source/guide/lang.rst:220
 msgid "Of course you can use `canvas.before` and `canvas.after`."
-msgstr ""
+msgstr "もちろん、`canvas.before` と `canvas.after`を使用できます 。"
 
 #: ../../source/guide/lang.rst:223
 msgid "Referencing Widgets"
-msgstr ""
+msgstr "Wighetを参照する"
 
 #: ../../source/guide/lang.rst:225
 msgid ""
@@ -269,6 +317,11 @@ msgid ""
 "class level variables that can only be used in the Kv language. Consider "
 "the following:"
 msgstr ""
+"widgetツリーで、他のwidgetにaccess/referenceするのが必要になることがあります。"
+"Kv Languageは「ID」を使用して実行する方法を提供しています。"
+"Kv Languageのみで使用でき、クラスレベルの変数と考えます。"
+"次の点を考慮します。"
+
 
 #: ../../source/guide/lang.rst:244
 msgid ""
@@ -276,6 +329,8 @@ msgid ""
 "code above ``s_but`` can not be accessed outside the <MySecondWidget> "
 "rule."
 msgstr ""
+"``id``はルール内で制限されており、上記のコードでは``s_but``は <MySecondWidget>  ルールの"
+"の外にはアクセス出来ません:"
 
 #: ../../source/guide/lang.rst:248
 msgid ""
@@ -283,6 +338,9 @@ msgid ""
 "consequence, storing the ``id`` is not sufficient to keep the widget from"
 " being garbage collected. To demonstrate:"
 msgstr ""
+"``id`` はwidgetの``weakref（弱い参照）`` でありwidget自身ではありません。"
+"その結果、``id`` はガベージコレクションを行ってからの保存は十分ではありません。"
+"実証するために:"
 
 #: ../../source/guide/lang.rst:266
 msgid ""
@@ -295,6 +353,10 @@ msgid ""
 "widget back, a ``ReferenceError: weakly-referenced object no longer "
 "exists`` will be thrown."
 msgstr ""
+"``MyWidget``ないの``label_widget``参照は 、weakref(弱い参照)のみなので、他の参照が削除された後に生きているオブジェクトを保持するのに十分ではありません。"
+"したがって、削除ボタンをクリックする（ウィジェットへの直接参照を除去する）そしてウィンドウがリサイズされ"
+"（``label_widget``の欠失をもたらすガベージコレクタを呼び出す）、追加ボタンがクリックされ、"
+"widgetを追加するために戻ると、 ``ReferenceError: weakly-referenced object no longer exists``がスローされます。"
 
 #: ../../source/guide/lang.rst:275
 msgid ""
@@ -303,31 +365,39 @@ msgid ""
 "``label_widget.__self__`` in this case. The correct way to do this would "
 "be:"
 msgstr ""
+"生存しているウィジェットを保つために、``label_widget`` widget への直接参照は維持されなければなりません。"
+" このケースでは使用して達成した、``id.__self__`` または``label_widget.__self__``です。
+"これを行うための正しい方法は次のようになります。"
 
 #: ../../source/guide/lang.rst:285
 msgid "Accessing Widgets defined inside Kv lang in your python code"
-msgstr ""
+msgstr "PythonコードからKv lang の内部で定義されたwigetsにアクセスする"
 
 #: ../../source/guide/lang.rst:287 ../../source/guide/lang.rst:421
 msgid "Consider the code below in my.kv:"
-msgstr ""
+msgstr "my.kvで次のコードを考えてみます:"
 
 #: ../../source/guide/lang.rst:303 ../../source/guide/lang.rst:437
 msgid "In myapp.py:"
-msgstr ""
+msgstr "myapp.py では:"
 
 #: ../../source/guide/lang.rst:317
 msgid ""
 "`txt_inpt` is defined as a :class:`~kivy.properties.ObjectProperty` "
 "initialized to `None` inside the Class. ::"
 msgstr ""
+"`txt_inpt`は:class:`~kivy.properties.ObjectProperty`で定義され、"
+"クラス内で `None` に初期化されます。"
 
 #: ../../source/guide/lang.rst:322
 msgid ""
 "At this point self.txt_inpt is `None`. In Kv lang this property is "
 "updated to hold the instance of the :class:`~kivy.uix.TextInput` "
-"referenced by the id `txt_inpt`.::"
+"referenced by the id .::"
 msgstr ""
+"この時点でself.txt_inptは`None`です。"
+"Kv lang プロパティはid `txt_inpt`によって参照された :class:`~kivy.uix.TextInput`インスタンスを。"
+"保持するように更新される。"
 
 #: ../../source/guide/lang.rst:328
 msgid ""
@@ -337,16 +407,22 @@ msgid ""
 "also just pass the `id` to the function that needs to use it, like in "
 "case of `f_but` in the code above."
 msgstr ""
+"これ以降、`self.txt_inpt`は、ID `txt_input`によって識別されるwidgetへの参照を保持し、"
+"`check_status`機能のように、クラス内のどこにでも使用することができます。"
+" この方法とは対照的に、また、単に上記のコードで `f_but` の場合のように、"
+"使用する必要がある関数にIDを渡せます。
 
 #: ../../source/guide/lang.rst:334
 msgid ""
 "There is a simpler way to access objects with `id` tags in Kv using the "
 "`ids` lookup object. You can do this as follows:"
 msgstr ""
+"参照オブジェクト`ids` を使用して、Kvで`id`タグを持つオブジェクトにアクセスするための簡単な方法があります。 "
+"次のように行えます："
 
 #: ../../source/guide/lang.rst:348
 msgid "In your python code:"
-msgstr ""
+msgstr "Pythonコードでは:"
 
 #: ../../source/guide/lang.rst:358
 msgid ""
@@ -355,6 +431,10 @@ msgid ""
 "means you can also iterate over these widgets and access them dictionary "
 "style::"
 msgstr ""
+"KVファイルがパース(解析)されると、kivyは、IDでタグ付けされたすべてのwidgetを収集し、"
+dict型のプロパティ `self.ids` に配置します。"
+"また、widgetを反復処理し、dict形式でアクセスできることを意味します："
+
 
 #: ../../source/guide/lang.rst:367
 msgid ""
@@ -362,20 +442,24 @@ msgid ""
 "as 'best practise' to use the ObjectProperty. This creates a direct "
 "reference, provides faster access and is more explicit."
 msgstr ""
+"`self.ids` の方法は非常に簡潔であるが、通常はObjectPropertyを使用するための"
+'best practise'と見なされます。 "
+"これは直接参照を作成し、より高速なアクセスを提供し、より明示的です。"
 
 #: ../../source/guide/lang.rst:372
 msgid "Dynamic Classes"
-msgstr ""
+msgstr "ダイナミッククラス"
 
 #: ../../source/guide/lang.rst:373
 msgid "Consider the code below:"
-msgstr ""
+msgstr "以下のコードを考えてみましょう："
 
 #: ../../source/guide/lang.rst:395
 msgid ""
 "Instead of having to repeat the same values for every button, we can just"
 " use a template instead, like so:"
 msgstr ""
+"代わりにテンプレートを使用することで、すべてのボタンに対して同じ値を返せます。"
 
 #: ../../source/guide/lang.rst:414
 msgid ""
@@ -384,10 +468,12 @@ msgid ""
 "bindings for all its instances without adding any new code on the Python "
 "side."
 msgstr ""
+"このルールの宣言によって作成されたクラスは、Buttonクラスを継承し、デフォルト値を変更し、"
+"Python側で任意の新しいコードを追加することなく、すべてのインスタンスのバインディングを作成できます。"
 
 #: ../../source/guide/lang.rst:419
 msgid "Re-using styles in multiple widgets"
-msgstr ""
+msgstr "複数のwidgetでのスタイルの再使用"
 
 #: ../../source/guide/lang.rst:453
 msgid ""
@@ -395,16 +481,20 @@ msgid ""
 "simplified if we reuse the style for both widgets. You can do this in .kv"
 " as follows. In my.kv:"
 msgstr ""
+"両方のクラスで同じ.kvスタイルを共有するため、両方のwidgetのスタイルを再利用する"
+"場合は、設計を簡素化することができます。"
+"次のように.kvで行えます。my.kvで:"
 
 #: ../../source/guide/lang.rst:465
 msgid ""
 "By separating the class names with a comma, all the classes listed in the"
 " declaration will have the same kv properties."
 msgstr ""
+"カンマでクラス名を分離することで、宣言に記載されているすべてのクラスが同じkv プロパティを持つことになります"
 
 #: ../../source/guide/lang.rst:469
 msgid "Designing with the Kivy Language"
-msgstr ""
+msgstr "Kivy Languageを使用した設計"
 
 #: ../../source/guide/lang.rst:471
 msgid ""
@@ -413,26 +503,28 @@ msgid ""
 "and logic. The presentation (layout) side is addressed by your kv file "
 "and the logic by your py file."
 msgstr ""
+"Kivy language の目的の一つは、プレゼンテーションとロジックの`問題を分離<https://en.wikipedia.org/wiki/Separation_of_concerns>`_ 、"
+"することになる。 プレゼンテーション（レイアウト）側は、あなたのkvファイル、ロジック側はpyファイルによってロジックによって対処されます。"
 
 #: ../../source/guide/lang.rst:477
 msgid "The code goes in py files"
-msgstr ""
+msgstr "pyファイルのコードにいく"
 
 #: ../../source/guide/lang.rst:479
 msgid "Let's start with a little example. First, the Python file named `main.py`:"
-msgstr ""
+msgstr "少し例を見てみましょう。 まず、main.pyという名前のPythonのファイル："
 
 #: ../../source/guide/lang.rst:484
 msgid "In this example, we are creating a Controller class with 2 properties:"
-msgstr ""
+msgstr "の例では、2つのプロパティを持つControllerクラスを作成しています："
 
 #: ../../source/guide/lang.rst:486
 msgid "``info`` for receving some text"
-msgstr ""
+msgstr "``info``テキストをrecevingしたもの"
 
 #: ../../source/guide/lang.rst:487
 msgid "``label_wid`` for receving the label widget"
-msgstr ""
+msgstr "``label_wid``ラベルwidgetをrecevingしたもの"
 
 #: ../../source/guide/lang.rst:489
 msgid ""
@@ -440,10 +532,12 @@ msgid ""
 "of these properties. It will change the ``info`` text and change text in "
 "the ``label_wid`` widget."
 msgstr ""
+"加えて、``do_action()`` メソッドで両方のプロパティを作成している。"
+"これは``info`` テキストの変更と ``label_wid`` widgetのテキスト変更。"
 
 #: ../../source/guide/lang.rst:494
 msgid "The layout goes in controller.kv"
-msgstr ""
+msgstr "レイアウトはcontroller.kvに行く"
 
 #: ../../source/guide/lang.rst:496
 msgid ""
@@ -455,12 +549,20 @@ msgid ""
 "How this is done and what files are loaded is described in the "
 ":meth:`kivy.app.App.load_kv` method."
 msgstr ""
+"対応する`.kv` ファイルを使用せずに 、アプリケーションを実行すると動作しますが、何も画面に表示されません。 "
+"期待されている``Controller``クラスは、``FloatLayout``のようにwidgetを持っていないためです 。"
+"``Controller``クラス周りのUI、ファイル名が`controller.kv`に実行時にロードする``ControllerApp`` を作成できます。"
+"ファイルのロードや実行方法は　:meth:`kivy.app.App.load_kv` メソッドで説明されます。"
+
 
 #: ../../source/guide/lang.rst:507
 msgid ""
 "One label and one button in a vertical ``BoxLayout``. Seems very simple. "
 "There are 3 things going on here:"
 msgstr ""
+" vertical な``BoxLayout``で一つのラベルと一つのボタンです。
+”非常に単純です。 ”
+”3つの事が起こっています。"
 
 #: ../../source/guide/lang.rst:510
 msgid ""
@@ -469,6 +571,10 @@ msgid ""
 " ' + root.info`` will automatically be re-evaluated, changing the text in"
 " the ``Button``."
 msgstr ""
+"`Controller``からのデータを用います"
+"text: 'My controller info is: ' + root.info`` は自動的にテキストに変更され、"
+"Buttonは再評価され、``info``プロパティはすぐにコントローラに変化します。"
+
 
 #: ../../source/guide/lang.rst:515
 msgid ""
@@ -478,12 +584,17 @@ msgid ""
 "my_custom_label`` gives the instance of that ``Label`` widget to your "
 "``Controller``."
 msgstr ""
+"``Controller``はデータを与えます。"
+" ``id: my_custom_label``は``my_custom_label``の Label ID の作成に割り当てされる。"
+"次に、``label_wid: my_custom_label``式にして``my_custom_label``を使用すると、 "
+"与える``Label`` widgetのインスタンスは``Controller``を与えます 。"
 
 #: ../../source/guide/lang.rst:521
 msgid ""
 "Creating a custom callback in the ``Button`` using the ``Controller``'s "
 "``on_press`` method."
 msgstr ""
+"``Controller``の``on_press``方法を使用して``Button`` のカスタムコールバックを作成します。"
 
 #: ../../source/guide/lang.rst:524
 msgid ""
@@ -491,12 +602,16 @@ msgid ""
 "represents the top widget in the rule and ``self`` represents the current"
 " widget."
 msgstr ""
+"``root`` と ``self`` は予約済みのキーワードで任意の場所で使用可能です。"
+" ``root`` はルールでトップwidgetを表し、 ``self`` は現在のwidgetを表します。"
 
 #: ../../source/guide/lang.rst:528
 msgid ""
 "You can use any id declared in the rule the same as ``root`` and "
 "``self``. For example, you could do this in the ``on_press()``:"
 msgstr ""
+"``root`` と ``self`` 同じルールで宣言されたIDを使用できます。"
+"たとえば、"on_press()" で行えます ："
 
 #: ../../source/guide/lang.rst:536
 msgid ""
@@ -504,4 +619,5 @@ msgid ""
 "loaded so that the ``Button`` and ``Label`` will show up and respond to "
 "our touch events."
 msgstr ""
-
+"それでおしまいです。`main.py`を実行したとき、`controller.kv` がロードされ、"
+"``Button`` や ``Label``が表示され、タッチイベントに応答します。"
