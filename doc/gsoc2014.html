@@ -1,0 +1,557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>Google Summer of Code - 2014 &mdash; Kivy 1.9.1 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.9.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="_static/kivy.js"></script>
+    <link rel="top" title="Kivy 1.9.1 ドキュメント" href="index.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="http://kivy.org/docs/pdf/Kivy-latest.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="index.html">Google Summer of Code - 2014</a></h3>
+          <ul>
+<li><a class="reference internal" href="#">Google Summer of Code - 2014</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#how-to-get-setup">How to get setup</a></li>
+<li><a class="reference internal" href="#project-ideas">Project Ideas</a><ul>
+<li><a class="reference internal" href="#enhancements-to-kivy">Enhancements to Kivy</a></li>
+<li><a class="reference internal" href="#enhancements-to-mobile-platforms">Enhancements to Mobile Platforms</a></li>
+<li><a class="reference internal" href="#enhancements-to-toolchain">Enhancements to Toolchain</a></li>
+<li><a class="reference internal" href="#anything-else">Anything Else ?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#how-to-contact-devs">How to Contact devs</a></li>
+<li><a class="reference internal" href="#how-to-be-a-good-student">How to be a good student</a></li>
+</ul>
+</li>
+</ul>
+
+          <h3><a href="index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted/index.html">入門目次</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/intro.html">導入</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/installation.html">インストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/first_app.html">A first App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/rules.html">Kv Design Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/events.html">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/layouts.html">Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/diving.html">Diving in</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Gallery of Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__animation__animate__py.html">Widget animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_suite__py.html">Suite of Application Builders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_build__py.html">Application example using build() + return</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv__py.html">Application built from a  .kv file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__camera__main__py.html">Camera Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__bezier__py.html">Bezier Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__canvas_stress__py.html">Canvas stress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__circle__py.html">Circle Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__fbo_canvas__py.html">FBO Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines_extended__py.html">Lines Extended Demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__multitexture__py.html">Multitexture Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__rotation__py.html">Rotation Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__stencil_canvas__py.html">Stencil demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__kivycatalog__main__py.html">Kivyカタログ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__pictures__main__py.html">Basic Picture Viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__shadereditor__main__py.html">Live Shader Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="philosophy.html">Philosophy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contact.html">Contact Us</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide-index.html">Programming Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide/basic.html">Kivy Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/environment.html">Controlling the environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/config.html">Configure Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/architecture.html">Architectural Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/events.html">Events and Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/lang.html">Kv language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/other-frameworks.html">Integrating with other Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/bestpractices.html">Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/advancedgraphics.html">Advanced Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/packaging.html">Packaging your application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials-index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/pong.html">Pong Game Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/firstwidget.html">A Simple Paint App</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2><ul>
+<li><a class="reference internal" href="#">Google Summer of Code - 2014</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#how-to-get-setup">How to get setup</a></li>
+<li><a class="reference internal" href="#project-ideas">Project Ideas</a><ul>
+<li><a class="reference internal" href="#enhancements-to-kivy">Enhancements to Kivy</a></li>
+<li><a class="reference internal" href="#enhancements-to-mobile-platforms">Enhancements to Mobile Platforms</a></li>
+<li><a class="reference internal" href="#enhancements-to-toolchain">Enhancements to Toolchain</a></li>
+<li><a class="reference internal" href="#anything-else">Anything Else ?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#how-to-contact-devs">How to Contact devs</a></li>
+<li><a class="reference internal" href="#how-to-be-a-good-student">How to be a good student</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+  <div class="section" id="google-summer-of-code-2014">
+<h1>Google Summer of Code - 2014<a class="headerlink" href="#google-summer-of-code-2014" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Kivy is a cross-platform, business friendly, GPU Accelerated open source
+Python library for rapid development of applications that make use of
+innovative user interfaces, such as multi-touch apps.</p>
+<p>We are hoping to participate in Google Summer of Code 2014 under PSF.
+This page showcases some ideas for gsoc projects and corresponding
+guidelines for students contributing to the Kivy Framework.</p>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>It is assumed that the incoming student meets some basic
+requirements as highlighted here:</p>
+<ul class="simple">
+<li>Intermediate level familiarity with python</li>
+<li>Comfortable with git and github
+(Kivy and its sister projects are all managed on github)</li>
+<li>Comfortable with event driven programming.</li>
+<li>Has suitable tools/environment for kivy or the
+sister project you are going to work on. For example to be
+able to work on pyobjus you would need access to an iOS device,
+mac with xcode and a developer license, to work on pyjnius you
+would need an android device, and to work on plyer you would
+need access to hardware for both platforms.</li>
+</ul>
+<p>Additional desired skills may be listed with specific projects.</p>
+<p>Familiarize yourself with the contributing guide <a class="reference external" href="http://kivy.org/docs/contribute.html">http://kivy.org/docs/contribute.html</a>
+We can help you get up to speed, however students demonstrating ability
+in advance will be given preference.</p>
+</div>
+<div class="section" id="how-to-get-setup">
+<h2>How to get setup<a class="headerlink" href="#how-to-get-setup" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>For Kivy Easiest way is to follow the installation instructions for the
+development version for your specific platform</p>
+<p><a class="reference external" href="http://kivy.org/docs/installation/installation.html#development-version">http://kivy.org/docs/installation/installation.html#development-version</a></p>
+<p>For the rest it&#8217;s usually sufficient to install the relevant project
+from git and add it to your PYTHONPATH.</p>
+<p>eg.. for pyjnius:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>git clone http://github.com/kivy/pyjnius
+export PYTHONPATH=/path/to/pyjnius:$PYTHONPATH
+</pre></div>
+</div>
+</div>
+<div class="section" id="project-ideas">
+<h2>Project Ideas<a class="headerlink" href="#project-ideas" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The mentors list is only of potential mentors for a particular project and not final.</p>
+<div class="section" id="enhancements-to-kivy">
+<h3>Enhancements to Kivy<a class="headerlink" href="#enhancements-to-kivy" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><strong>Inspector:</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Description:</dt>
+<dd><dl class="first last docutils">
+<dt>Redo or improve the inspector module to include the following features:</dt>
+<dd><ul class="first last simple">
+<li>Use Python introspection to enhance current state of inspector.</li>
+<li>Extend Inspectors debugging capabilities to the whole app.</li>
+<li>Introduce automatic crash reporting.</li>
+<li>Possibly launch debugger automatically when Kivy app crashes.</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt>Reference:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://kivy.org/docs/api-kivy.modules.html">http://kivy.org/docs/api-kivy.modules.html</a></li>
+<li><a class="reference external" href="http://kivy.org/docs/api-kivy.modules.inspector.html">http://kivy.org/docs/api-kivy.modules.inspector.html</a></li>
+</ul>
+</dd>
+<dt>Expected Outcome:</dt>
+<dd>A fully functional Inspector module that facilitates debugging at any stage,
+including crash reports and a debugging console.</dd>
+</dl>
+<ul class="simple">
+<li><strong>Mentors</strong>: Akshay Arora, Gabriel Pettier</li>
+<li><strong>Task level</strong>: Intermediate</li>
+</ul>
+</div></blockquote>
+<p><strong>Graphics Pipeline Enhancements:</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Description:</dt>
+<dd><dl class="first last docutils">
+<dt>We have a lot of ideas around the graphics pipeline:</dt>
+<dd><ul class="first last simple">
+<li>Merging instructions</li>
+<li>VBOs to reduce GL calls</li>
+<li>Helpers to create shaders dynamically according to the current vertex format</li>
+<li>Improving 3D support.</li>
+<li>Add Bounding-Box calculation / selection on the tree only if requested</li>
+<li>Unit tests to quantify the amount of improvements achieved.</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt>Reference:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://kivy.org/docs/api-kivy.graphics.html">http://kivy.org/docs/api-kivy.graphics.html</a></li>
+<li><a class="reference external" href="http://www.khronos.org/opengles/">http://www.khronos.org/opengles/</a></li>
+</ul>
+</dd>
+<dt>Expected Outcome:</dt>
+<dd>Significant improvement in the graphics pipeline that can be quantified by tests.</dd>
+</dl>
+<ul class="simple">
+<li><strong>Mentors</strong>: Jacob Kovac, Mathieu Virbel</li>
+<li><strong>Task level</strong>: Intermediate/Advanced</li>
+<li><strong>Desired Skills</strong>: Familiarity with OpenGL ES and Cython, desire to learn about
+advanced rendering algorithms and solve difficult puzzles.</li>
+</ul>
+</div></blockquote>
+<p><strong>Embedded Support:</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Description:</dt>
+<dd>Add full support for major embedded platforms like Beagle Board and Raspberry Pi.
+Kivy already has partial support for RPi. It would be
+great to have support for other major embedded platforms.</dd>
+<dt>This would involve:</dt>
+<dd><ul class="first last simple">
+<li>Native Keyboard Provider.</li>
+<li>Window provider for Beagle board using hooks to the driver for hardware
+acceleration inspiration can be taken from the rpi window provider
+<a class="reference external" href="https://github.com/kivy/kivy/blob/master/kivy/core/window/window_egl_rpi.py">https://github.com/kivy/kivy/blob/master/kivy/core/window/window_egl_rpi.py</a>.</li>
+<li>Ensuring at least one of the backends for each of the core providers work on
+the embedded hardware with acceptable performance. Namely: Text, Window, Audio,
+Video, Keyboard, Clipboard, and Image Providers</li>
+</ul>
+</dd>
+<dt>Reference:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://github.com/kivy/kivy/blob/master/kivy/core/window/window_egl_rpi.py">https://github.com/kivy/kivy/blob/master/kivy/core/window/window_egl_rpi.py</a>.</li>
+<li><a class="reference external" href="http://kivy.org/docs/api-kivy.core.html">http://kivy.org/docs/api-kivy.core.html</a></li>
+<li><a class="reference external" href="http://kivy.org/docs/guide/architecture.html#architecture">http://kivy.org/docs/guide/architecture.html#architecture</a></li>
+<li><a class="reference external" href="http://kivy.org/docs/guide/architecture.html#providers">http://kivy.org/docs/guide/architecture.html#providers</a></li>
+</ul>
+</dd>
+<dt>Expected Outcome:</dt>
+<dd>Full Working support for the embedded platforms. This would include support for
+at least one of the backends for each core providers mentioned above to achieve
+feature parity with other platforms.</dd>
+</dl>
+<ul class="simple">
+<li><strong>Mentors</strong>: Gabriel Pettier, Mathieu Virbel</li>
+<li><strong>Requirements</strong>: Access to specific embedded hardware.</li>
+<li><strong>Task level</strong>: Intermediate/Advanced</li>
+<li><strong>Desired Skills</strong>: Familiarity with programming on the specific embedded hardware.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="enhancements-to-mobile-platforms">
+<h3>Enhancements to Mobile Platforms<a class="headerlink" href="#enhancements-to-mobile-platforms" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><strong>Plyer:</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Description:</dt>
+<dd><p class="first">Plyer is a platform-independent api to use features
+commonly found on various platforms, especially mobile ones, in Python.
+The idea is to provide a stable API to the user for accessing features
+of their desktop or mobile device.</p>
+<p>The student would work on facades and implementation for Accelerometer,
+GPS, SMS, Contact etc., including porting facades from SL4A (Scripting
+Layer for Android) to Plyer for easy integration and compatibility.</p>
+<p class="last">Under the hood you&#8217;ll use PyJNIus and PyOBJus. This probably
+would also include improving PyObjus and PyJnius to handle interfaces that
+they can&#8217;t right now.</p>
+</dd>
+<dt>References:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://github.com/kivy/plyer">https://github.com/kivy/plyer</a></li>
+<li><a class="reference external" href="https://github.com/kivy/pyjnius">https://github.com/kivy/pyjnius</a></li>
+<li><a class="reference external" href="https://github.com/kivy/pyobjus">https://github.com/kivy/pyobjus</a></li>
+</ul>
+</dd>
+<dt>Expected Outcome:</dt>
+<dd>Platform independent api for accessing most platform specific features.</dd>
+</dl>
+<ul class="simple">
+<li><strong>Mentors</strong>: Gabriel Pettier, Akshay Arora, Alexander Taylor, Ben Rousch.</li>
+<li><strong>Requirements</strong>: Access to Linux, Windows, OS X, iOS device, Android device.</li>
+<li><strong>Task level</strong>: Intermediate/Advanced.</li>
+<li><strong>Desired Skills</strong>: Familiarity with Pyjnius, PyObjus.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="enhancements-to-toolchain">
+<h3>Enhancements to Toolchain<a class="headerlink" href="#enhancements-to-toolchain" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><strong>Python-for-iOS:</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Description:</dt>
+<dd>An iOS interface for building a app for the app store based on the idea of
+Python for Android, <a class="reference external" href="https://github.com/kivy/python-for-android">https://github.com/kivy/python-for-android</a></dd>
+<dt>Current state:</dt>
+<dd>Kivy iOS achieves this but in a more restricted monolith manner. We&#8217;d like to
+replace it with a more modular tool that is more extensible.</dd>
+<dt>References:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://github.com/kivy/python-for-android">https://github.com/kivy/python-for-android</a></li>
+<li><a class="reference external" href="https://github.com/kivy/kivy-ios">https://github.com/kivy/kivy-ios</a></li>
+</ul>
+</dd>
+<dt>Expected Outcome:</dt>
+<dd>A new, modular and extendable toolchain.</dd>
+</dl>
+<ul class="simple">
+<li><strong>Mentors</strong>: Thomas Hansen, Mathieu Virbel</li>
+<li><strong>Requirements</strong>: Access to iOS, Android device along with a developer license.</li>
+<li><strong>Task level</strong>: Intermediate/Advanced</li>
+<li><strong>Desired Skills</strong>: Familiarity with xcode, objc. Cross-platform compilation
+skills are heavily required.</li>
+</ul>
+</div></blockquote>
+<p><strong>Buildozer:</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Description:</dt>
+<dd><p class="first">Buildozer is a Python tool for creating application packages easily.
+The goal is to have one &#8220;buildozer.spec&#8221; file in your app directory,
+describing your application requirements and settings such as title, icon,
+included modules etc. Buildozer will use that spec to create a package for
+Android, iOS, Windows, OS X and/or Linux.</p>
+<p>Buildozer currently supports packaging for Android via the python-for-android
+project, and for iOS via the kivy-ios project. This project would involve
+extending this support to other package formats and operating systems,
+e.g. RPM, DEB, DMG, EXE. You will need to write new buildozer target code
+to support these formats.</p>
+<p class="last">This project would also involve optimizations to the final package formats,
+e.g. introspect the python files, extract all the symbols (global
+variables / functions / class / class methods), mark all the necessary
+symbols (whitelist) and generate a stripped version of all the python files
+without the unnecessary symbols.</p>
+</dd>
+<dt>References:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://github.com/kivy/Buildozer">https://github.com/kivy/Buildozer</a></li>
+<li><a class="reference external" href="https://github.com/kivy/buildozer/tree/master/buildozer/targets">https://github.com/kivy/buildozer/tree/master/buildozer/targets</a></li>
+</ul>
+</dd>
+<dt>Expected Outcome:</dt>
+<dd>Running <cite>buildoer deb debug</cite> or <cite>buildozer deb release</cite> should result in a .deb
+package that can be directly be used to install on the target machine,
+or the equivalent for other package and binary formats.</dd>
+</dl>
+<ul class="simple">
+<li><strong>Mentors</strong>: Gabriel Pettier, Akshay Arora, Alexander Taylor, Ben Rousch</li>
+<li><strong>Requirements</strong>: Access to linux, Windows, OS X, iOS, Android.</li>
+<li><strong>Task level</strong>: Intermediate</li>
+</ul>
+</div></blockquote>
+<p><strong>SDL2 Backends:</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Description:</dt>
+<dd><p class="first">SDL2 backend providers for Kivy, including porting the mobile
+toolchains to SDL2. Part of the work is already done. What left is mostly</p>
+<ul class="last simple">
+<li>Hashing out distribution mechanisms for the lib.</li>
+<li>Porting mobile backends for ios and android to SDL2. Partial work on this has
+already been going on.</li>
+<li>Unit tests for the new sdl2 backends making sure apps work the same
+on SDL2 as on other backends.</li>
+<li>Performace testing. Looking at the difference between SDL2 and other providers
+to ascertain wether sdl2 could be used as the default provider giving it priority</li>
+</ul>
+</dd>
+<dt>References:</dt>
+<dd><a class="reference external" href="https://github.com/kivy/kivy/tree/sdl2-support">https://github.com/kivy/kivy/tree/sdl2-support</a></dd>
+<dt>Expected Outcome:</dt>
+<dd>Completing the existing and adding new SDL2 core providers and support for using
+sdl2 on mobiles.</dd>
+</dl>
+<ul class="simple">
+<li><strong>Mentors</strong>: Akshay Arora, Jacob Kovac, Mathieu Virbel</li>
+<li><strong>Requirements:</strong> Access to Linux, Windows, OS X, iOS, Android.</li>
+<li><strong>Task level</strong>: Intermediate/Advanced</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="anything-else">
+<h3>Anything Else ?<a class="headerlink" href="#anything-else" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li>Let your imagination run wild, and show what Kivy is capable of!</li>
+</ul>
+</div>
+</div>
+<div class="section" id="how-to-contact-devs">
+<h2>How to Contact devs<a class="headerlink" href="#how-to-contact-devs" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Ask your questions on the Kivy users forums
+<a class="reference external" href="http://kivy.org/#forum">http://kivy.org/#forum</a></p>
+<p>Or send a mail at <a class="reference external" href="mailto:kivy-users&#37;&#52;&#48;googlegroups&#46;com">kivy-users<span>&#64;</span>googlegroups<span>&#46;</span>com</a></p>
+<p>Make sure to Join kivy-dev user group too &#64;
+<a class="reference external" href="https://groups.google.com/forum/#!forum/kivy-dev">https://groups.google.com/forum/#!forum/kivy-dev</a></p>
+<p>You can also try to contact us on IRC (online chat),
+To get the irc handles of the devs mentioned above visit <a class="reference external" href="http://kivy.org/#aboutus">http://kivy.org/#aboutus</a></p>
+<p>but make sure to read the IRC rules before connecting.
+<a class="reference external" href="http://webchat.freenode.net/?nick=kvuser_GSOC_.&amp;channels=kivy&amp;uio=d4">http://webchat.freenode.net/?nick=kvuser_GSOC_.&amp;channels=kivy&amp;uio=d4</a></p>
+</div>
+<div class="section" id="how-to-be-a-good-student">
+<h2>How to be a good student<a class="headerlink" href="#how-to-be-a-good-student" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>If you want to participate as a student and want to maximize your chances of
+being accepted, start talking to us today and try fixing some smaller problems
+to get used to our workflow. If we know you can work well with us, that&#8217;d be a
+big plus.</p>
+<p>Here&#8217;s a checklist:</p>
+<ul class="simple">
+<li>Make sure to read through the website and at least skim the documentation.</li>
+<li>Look at the source code.</li>
+<li>Read our contribution guidelines.</li>
+<li>Pick an idea that you think is interesting from the ideas list or come up
+with your own idea.</li>
+<li>Do some research <strong>yourself</strong>. GSoC is not about us teaching you something
+and you getting paid for that. It is about you trying to achieve agreed upon
+goals by yourself with our support. The main driving force in this should be,
+obviously, yourself. Many students pop up and ask what they should do. Well,
+we don&#8217;t know because we know neither your interests nor your skills. Show us
+you&#8217;re serious about it and take the initiative.</li>
+<li>Write a draft proposal about what you want to do. Include what you understand
+the current state is (very roughly), what you would like to improve, how,
+etc.</li>
+<li>Discuss that proposal with us in a timely manner. Get feedback.</li>
+<li>Be patient! Especially on IRC. We will try to get to you if we&#8217;re available.
+If not, send an email and just wait. Most questions are already answered in
+the docs or somewhere else and can be found with some research. If your
+questions don&#8217;t reflect that you&#8217;ve actually thought through what you&#8217;re
+asking, it might not be well received.</li>
+</ul>
+</div>
+</div>
+
+
+            <div class="footerlinks">
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://txzone.net/piwik/" : "http://txzone.net/piwik/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 8);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="https://txzone.net/piwik/piwik.php?idsite=8" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 8月 21, 2016.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.2.
+</div>
+-->
+  </body>
+</html>

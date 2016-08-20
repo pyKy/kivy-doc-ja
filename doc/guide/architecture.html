@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>Architectural Overview &mdash; Kivy 1.9.1 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.9.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/kivy.js"></script>
+    <link rel="top" title="Kivy 1.9.1 ドキュメント" href="../index.html" />
+    <link rel="up" title="Programming Guide" href="../guide-index.html" />
+    <link rel="next" title="Events and Properties" href="events.html" />
+    <link rel="prev" title="Configure Kivy" href="config.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="../gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="http://kivy.org/docs/pdf/Kivy-latest.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../index.html">Architectural Overview</a></h3>
+          <ul>
+<li><a class="reference internal" href="#">Architectural Overview</a><ul>
+<li><a class="reference internal" href="#core-providers-and-input-providers">Core Providers and Input Providers</a></li>
+<li><a class="reference internal" href="#graphics">Graphics</a></li>
+<li><a class="reference internal" href="#core">Core</a></li>
+<li><a class="reference internal" href="#uix-widgets-layouts">UIX (Widgets &amp; Layouts)</a></li>
+<li><a class="reference internal" href="#modules">Modules</a></li>
+<li><a class="reference internal" href="#input-events-touches">Input Events (Touches)</a></li>
+<li><a class="reference internal" href="#widgets-and-event-dispatching">Widgets and Event Dispatching</a></li>
+</ul>
+</li>
+</ul>
+
+          <h3><a href="../index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">入門目次</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/intro.html">導入</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/installation.html">インストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/first_app.html">A first App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/rules.html">Kv Design Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/events.html">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/layouts.html">Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/diving.html">Diving in</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Gallery of Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__animation__animate__py.html">Widget animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__application__app_suite__py.html">Suite of Application Builders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__application__app_with_build__py.html">Application example using build() + return</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__application__app_with_kv__py.html">Application built from a  .kv file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__camera__main__py.html">Camera Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__bezier__py.html">Bezier Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__canvas_stress__py.html">Canvas stress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__circle__py.html">Circle Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__fbo_canvas__py.html">FBO Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__lines_extended__py.html">Lines Extended Demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__multitexture__py.html">Multitexture Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__rotation__py.html">Rotation Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__stencil_canvas__py.html">Stencil demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__kivycatalog__main__py.html">Kivyカタログ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__pictures__main__py.html">Basic Picture Viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__shadereditor__main__py.html">Live Shader Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user-guide.html">User&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../philosophy.html">Philosophy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contact.html">Contact Us</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../guide-index.html">Programming Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basic.html">Kivy Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html">Controlling the environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Configure Kivy</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Architectural Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html">Events and Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lang.html">Kv language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="other-frameworks.html">Integrating with other Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bestpractices.html">Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedgraphics.html">Advanced Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="packaging.html">Packaging your application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials-index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/pong.html">Pong Game Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/firstwidget.html">A Simple Paint App</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+              <li>Previous: <a href="config.html" title="previous chapter">Configure Kivy</a></li>
+              <li>Next: <a href="events.html" title="next chapter">Events and Properties</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2><ul>
+<li><a class="reference internal" href="#">Architectural Overview</a><ul>
+<li><a class="reference internal" href="#core-providers-and-input-providers">Core Providers and Input Providers</a></li>
+<li><a class="reference internal" href="#graphics">Graphics</a></li>
+<li><a class="reference internal" href="#core">Core</a></li>
+<li><a class="reference internal" href="#uix-widgets-layouts">UIX (Widgets &amp; Layouts)</a></li>
+<li><a class="reference internal" href="#modules">Modules</a></li>
+<li><a class="reference internal" href="#input-events-touches">Input Events (Touches)</a></li>
+<li><a class="reference internal" href="#widgets-and-event-dispatching">Widgets and Event Dispatching</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+  <div class="section" id="architectural-overview">
+<span id="architecture"></span><h1>Architectural Overview<a class="headerlink" href="#architectural-overview" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>We would like to take a moment to explain how we designed Kivy from a
+software engineering point of view. This is key to understanding how
+everything works together.
+If you just look at the code, chances are you will get a rough idea
+already, but since this approach certainly is daunting for most users,
+this section explains the basic ideas of the implementation in more detail.
+You can skip this section and refer to it later, but we suggest at least
+skimming it for a rough overview.</p>
+<p>Kivy consists of several building blocks that we will explain shortly. Here is a
+graphical summary of the architecture:</p>
+<img alt="../_images/architecture.png" class="align-center" src="../_images/architecture.png" />
+<div class="section" id="core-providers-and-input-providers">
+<span id="providers"></span><h2>Core Providers and Input Providers<a class="headerlink" href="#core-providers-and-input-providers" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>One idea that is key to understanding Kivy&#8217;s internals is that of modularity and
+abstraction. We try to abstract basic tasks such as opening a window,
+displaying images and text, playing audio, getting images from a camera,
+spelling correction and so on. We call these <em>core</em> tasks.
+This makes the API both easy to use and easy to extend. Most importantly, it
+allows us to use &#8211; what we call &#8211; specific providers for the respective
+scenarios in which your app is being run.
+For example, on OSX, Linux and Windows, there are different native APIs for the
+different core tasks. A piece of code that uses one of these specific APIs to
+talk to the operating system on one side and to Kivy on the other (acting as an
+intermediate communication layer) is what we call a <em>core provider</em>.
+The advantage of using specialized core providers for each platform is that we
+can fully leverage the functionality exposed by the operating system and act as
+efficiently as possible. It also gives users a choice. Furthermore, by using
+libraries that are shipped with any one platform, we effectively reduce the size
+of the Kivy distribution and make packaging easier. This also makes it easier to port
+Kivy to other platforms. The Android port benefited greatly from this.</p>
+<p>We follow the same concept with input handling. <em>An input provider</em> is a piece
+of code that adds support for a specific input device, such as Apple&#8217;s
+trackpads, TUIO or a mouse emulator.
+If you need to add support for a new input device, you can simply provide a new
+class that reads your input data from your device and transforms them into Kivy
+basic events.</p>
+</div>
+<div class="section" id="graphics">
+<h2>Graphics<a class="headerlink" href="#graphics" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Kivy&#8217;s graphics API is our abstraction of OpenGL. On the lowest level,
+Kivy issues hardware-accelerated drawing commands using OpenGL. Writing
+OpenGL code however can be a bit confusing, especially to newcomers.
+That&#8217;s why we provide the graphics API that lets you draw things using
+simple metaphors that do not exist as such in OpenGL (e.g. Canvas,
+Rectangle, etc.).</p>
+<p>All of our widgets themselves use this graphics API, which is implemented
+on the C level for performance reasons.</p>
+<p>Another advantage of the graphics API is its ability to automatically
+optimize the drawing commands that your code issues. This is especially
+helpful if you&#8217;re not an expert at tuning OpenGL. This makes your drawing
+code more efficient in many cases.</p>
+<p>You can, of course, still use raw OpenGL commands if you prefer. The
+version we target is OpenGL 2.0 ES (GLES2) on all devices, so if you want to
+stay cross-platform compatible, we advise you to only use the GLES2 functions.</p>
+</div>
+<div class="section" id="core">
+<h2>Core<a class="headerlink" href="#core" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The code in the core package provides commonly used features, such as:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Clock</dt>
+<dd>You can use the clock to schedule timer events. Both one-shot timers
+and periodic timers are supported.</dd>
+<dt>Cache</dt>
+<dd>If you need to cache something that you use often, you can use our
+class for that instead of writing your own.</dd>
+<dt>Gesture Detection</dt>
+<dd>We ship a simple gesture recognizer that you can use to detect
+various kinds of strokes, such as circles or rectangles. You can
+train it to detect your own strokes.</dd>
+<dt>Kivy Language</dt>
+<dd>The kivy language is used to easily and efficiently describe user
+interfaces.</dd>
+<dt>Properties</dt>
+<dd>These are not the normal properties that you may know from python.
+They are our own property classes that link your widget code with
+the user interface description.</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="uix-widgets-layouts">
+<h2>UIX (Widgets &amp; Layouts)<a class="headerlink" href="#uix-widgets-layouts" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The UIX module contains commonly used widgets and layouts that you can
+reuse to quickly create a user interface.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Widgets</dt>
+<dd>Widgets are user interface elements that you add to your program
+to provide some kind of functionality. They may or may not be
+visible. Examples would be a file browser, buttons, sliders, lists
+and so on. Widgets receive MotionEvents.</dd>
+<dt>Layouts</dt>
+<dd>You use layouts to arrange widgets. It is of course possible to
+calculate your widgets&#8217; positions yourself, but often it is more
+convenient to use one of our ready made layouts. Examples would be
+Grid Layouts or Box Layouts.
+You can also nest layouts.</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>If you&#8217;ve ever used a modern web browser and customized it with some
+add-ons then you already know the basic idea behind our module classes.
+Modules can be used to inject functionality into Kivy programs, even if
+the original author did not include it.</p>
+<p>An example would be a module that always shows the FPS of the current
+application and some graph depicting the FPS over time.</p>
+<p>You can also write your own modules.</p>
+</div>
+<div class="section" id="input-events-touches">
+<h2>Input Events (Touches)<a class="headerlink" href="#input-events-touches" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Kivy abstracts different input types and sources such as touches, mice,
+TUIO or similar. What all of these input types have in common is that you
+can associate a 2D onscreen-position with any individual input event. (There are
+other input devices such as accelerometers where you cannot easily find a
+2D position for e.g. a tilt of your device. This kind of input is handled
+separately. In the following we describe the former types.)</p>
+<p>All of these input types are represented by instances of the Touch()
+class. (Note that this does not only refer to finger touches, but all the other
+input types as well. We just called it <em>Touch</em> for the sake of simplicity.
+Think of it of something that <em>touches</em> the user interface or your screen.)
+A touch instance, or object, can be in one of three states. When a touch
+enters one of these states, your program is informed that the event
+occurred.
+The three states a touch can be in are:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Down</dt>
+<dd>A touch is down only once, at the very moment where it first
+appears.</dd>
+<dt>Move</dt>
+<dd>A touch can be in this state for a potentially unlimited time.
+A touch does not have to be in this state during its lifetime.
+A &#8216;Move&#8217; happens whenever the 2D position of a touch changes.</dd>
+<dt>Up</dt>
+<dd>A touch goes up at most once, or never.
+In practice you will almost always receive an up event because
+nobody is going to hold a finger on the screen for all eternity,
+but it is not guaranteed. If you know the input sources your users
+will be using, you will know whether or not you can rely on this
+state being entered.</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="widgets-and-event-dispatching">
+<h2>Widgets and Event Dispatching<a class="headerlink" href="#widgets-and-event-dispatching" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The term <em>widget</em> is often used in GUI programming contexts to describe
+some part of the program that the user interacts with.
+In Kivy, a widget is an object that receives input events. It does not
+necessarily have to have a visible representation on the screen.
+All widgets are arranged in a <em>widget tree</em> (which is a tree data structure
+as known from computer science classes): One widget can have any number of
+child widgets or none. There is exactly one <em>root widget</em> at the top of the
+tree that has no parent widget, and all other widgets are directly or
+indirectly children of this widget (which is why it&#8217;s called the root).</p>
+<p>When new input data is available, Kivy sends out one event per touch.
+The root widget of the widget tree first receives the event.
+Depending on the state of the touch, the on_touch_down,
+on_touch_move or on_touch_up event is dispatched (with the touch as the
+argument) to the root widget, which results in the root widget&#8217;s
+corresponding on_touch_down, on_touch_move or on_touch_up event handler
+being called.</p>
+<p>Each widget (this includes the root widget) in the tree can choose to
+either digest or pass the event on. If an event handler returns True,
+it means that the event has been digested and handled properly. No further
+processing will happen with that event. Otherwise, the event handler
+passes the widget on to its own children by calling its superclass&#8217;s
+implementation of the respective event handler. This goes all the way up
+to the base Widget class, which &#8211; in its touch event handlers &#8211; does
+nothing but pass the touches to its children:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># This is analogous for move/up:</span>
+<span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">[:]:</span>
+        <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="s1">&#39;on_touch_down&#39;</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>This really is much easier than it first seems. An example of how this can
+be used to create nice applications quickly will be given in the following
+section.</p>
+<p>Often times you will want to restrict the <em>area</em> on the screen that a
+widget watches for touches. You can use a widget&#8217;s collide_point() method
+to achieve this. You simply pass it the touch&#8217;s position and it returns
+True if the touch is within the &#8216;watched area&#8217; or False otherwise. By
+default, this checks the rectangular region on the screen that&#8217;s described
+by the widget&#8217;s pos (for position; x &amp; y) and size (width &amp; height), but
+you can override this behaviour in your own class.</p>
+</div>
+</div>
+
+
+            <div class="footerlinks">
+            <table>
+                <tr>
+                    <td class="leftlink">
+                  <a href="config.html" title="previous chapter">&laquo; Configure Kivy</a></li>
+                  </td>
+                  <td class="rightlink">
+                  <a href="events.html" title="next chapter">Events and Properties &raquo;</a>
+                      </td>
+                  </tr>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://txzone.net/piwik/" : "http://txzone.net/piwik/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 8);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="https://txzone.net/piwik/piwik.php?idsite=8" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 8月 21, 2016.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.2.
+</div>
+-->
+  </body>
+</html>
