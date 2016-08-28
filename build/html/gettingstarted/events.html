@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="twitter:site" content="@kivyframework">
     
-    <title>Events &mdash; Kivy 1.9.1 ドキュメント</title>
+    <title>イベント &mdash; Kivy 1.9.1 ドキュメント</title>
     <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../_static/fresh.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -30,7 +30,7 @@
     <link rel="top" title="Kivy 1.9.1 ドキュメント" href="../index.html" />
     <link rel="up" title="入門目次" href="index.html" />
     <link rel="next" title="Non-widget stuff" href="framework.html" />
-    <link rel="prev" title="Kv Design Language" href="rules.html" /> 
+    <link rel="prev" title="Kv デザイン 言語" href="rules.html" /> 
   </head>
   <body>
 
@@ -63,9 +63,9 @@
                 <input type="text" class="text" name="q" />
             </form>
           <!--
-          <h3><a href="../index.html">Events</a></h3>
+          <h3><a href="../index.html">イベント</a></h3>
           <ul>
-<li><a class="reference internal" href="#">Events</a></li>
+<li><a class="reference internal" href="#">イベント</a></li>
 </ul>
 
           <h3><a href="../index.html">Table Of Contents</a></h3>
@@ -74,10 +74,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">入門目次</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="intro.html">導入</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html">インストール</a></li>
-<li class="toctree-l2"><a class="reference internal" href="first_app.html">A first App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="properties.html">Properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rules.html">Kv Design Language</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_app.html">最初のアプリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="properties.html">プロパティ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rules.html">Kv デザイン 言語</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">イベント</a></li>
 <li class="toctree-l2"><a class="reference internal" href="framework.html">Non-widget stuff</a></li>
 <li class="toctree-l2"><a class="reference internal" href="layouts.html">Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drawing.html">Drawing</a></li>
@@ -128,15 +128,15 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../guide-index.html">Programming Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../guide/basic.html">Kivy Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/basic.html">Kivyの基本</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/environment.html">Controlling the environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/config.html">Configure Kivy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/architecture.html">Architectural Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/events.html">Events and Properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/inputs.html">Input management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guide/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/widgets.html">Widgets(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/graphics.html">Graphics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guide/lang.html">Kv language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/lang.html">Kv language(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/other-frameworks.html">Integrating with other Frameworks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/bestpractices.html">Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/advancedgraphics.html">Advanced Graphics</a></li>
@@ -153,7 +153,7 @@
           <!--
           <h3>Related Topics</h3>
           <ul>
-              <li>Previous: <a href="rules.html" title="previous chapter">Kv Design Language</a></li>
+              <li>Previous: <a href="rules.html" title="previous chapter">Kv デザイン 言語</a></li>
               <li>Next: <a href="framework.html" title="next chapter">Non-widget stuff</a></li>
           </ul>
           -->
@@ -165,48 +165,26 @@
         <div class="bodywrapper">
           <div class="body">
             <div class="toc"><h2>Table Of Contents</h2><ul>
-<li><a class="reference internal" href="#">Events</a></li>
+<li><a class="reference internal" href="#">イベント</a></li>
 </ul>
 </div>
             
   <div class="section" id="events">
-<h1>Events<a class="headerlink" href="#events" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Kivy is mostly <a class="reference external" href="http://en.wikipedia.org/wiki/Event-driven_programming">event-based</a>, meaning the flow of the program is determined
-by events.</p>
-<p><strong>Clock events</strong></p>
+<h1>イベント<a class="headerlink" href="#events" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Kivyは`イベントベース&lt;<a class="reference external" href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)">https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)</a>&gt;`で、プログラムの流れを意味するイベントによって決定されます</p>
+<p><strong>クロックイベント</strong></p>
 <img alt="../_images/gs-events-clock.png" class="gs-eleft" src="../_images/gs-events-clock.png" />
-<p>The <span class="xref doc">/api-kivy.clock</span> allows you to schedule a function call in the
-future as a one-time event with <code class="xref py py-meth docutils literal"><span class="pre">schedule_once()</span></code>,
-or as a repetitive event with <code class="xref py py-meth docutils literal"><span class="pre">schedule_interval()</span></code>.</p>
-<p>You can also create Triggered events with
-<code class="xref py py-meth docutils literal"><span class="pre">create_trigger()</span></code>. Triggers have the advantage of
-being called only once per frame, even if you have scheduled multiple triggers
-for the same callback.</p>
-<p><strong>Input events</strong></p>
+<p><span class="xref doc">/api-kivy.clock`は、:meth:`~kivy.clock.ClockBase.schedule_once</span> に将来的に一回限りのイベントを:meth:<cite>~kivy.clock.ClockBase.schedule_interval</cite> に繰り返し行うイベントをスケジュールすることができます。</p>
+<p><code class="xref py py-meth docutils literal"><span class="pre">create_trigger()</span></code> を用いてトリガーイベントを作ることができます。トリガーは、同じコールバックトリガーを複数スケジュールした場合でも各フレームごとに一度、コールされるという利点を有しています。</p>
+<p><strong>入力イベント</strong></p>
 <img alt="../_images/gs-events-input.png" class="gs-eleft" src="../_images/gs-events-input.png" />
-<p>All the mouse click, touch and scroll wheel events are part of the
-<code class="xref py py-class docutils literal"><span class="pre">MotionEvent</span></code>, extended by
-<span class="xref doc">/api-kivy.input.postproc</span> and dispatched through the
-<code class="xref py py-attr docutils literal"><span class="pre">on_motion</span></code> event in
-the <code class="xref py py-class docutils literal"><span class="pre">Window</span></code> class. This event then generates the
-<code class="xref py py-meth docutils literal"><span class="pre">on_touch_down()</span></code>,
-<code class="xref py py-meth docutils literal"><span class="pre">on_touch_move()</span></code> and
-<code class="xref py py-meth docutils literal"><span class="pre">on_touch_up()</span></code> events in the
-<code class="xref py py-class docutils literal"><span class="pre">Widget</span></code>.</p>
-<p>For an in-depth explanation, have a look at <span class="xref doc">/api-kivy.input</span>.</p>
-<p><strong>Class events</strong></p>
+<p>すべてのマウスクリック、タッチとスクロールは <code class="xref py py-class docutils literal"><span class="pre">MotionEvent</span></code> の一部で、<span class="xref doc">/api-kivy.input.postproc`によって拡張され、Window クラスの中で:attr:`~kivy.core.window.WindowBase.on_motion`イベントを通じて送られます。これらのイベントは:class:`~kivy.uix.widget.Widget</span> にて:meth:<cite>~kivy.uix.widget.Widget.on_touch_down</cite> 、:meth:<a href="#id1"><span class="problematic" id="id2">`</span></a>~kivy.uix.widget.Widget.on_touch_move`と:meth:<a href="#id3"><span class="problematic" id="id4">`</span></a>~kivy.uix.widget.Widget.on_touch_up`イベントを生み出します。</p>
+<p>詳細な説明については、:doc:<a href="#id1"><span class="problematic" id="id2">`</span></a>/api-kivy.input`を見ます。</p>
+<p><strong>クラスイベント</strong></p>
 <img alt="../_images/gs-events-class.png" class="gs-eleft" src="../_images/gs-events-class.png" />
-<p>Our base class <code class="xref py py-class docutils literal"><span class="pre">EventDispatcher</span></code>, used by
-<code class="xref py py-class docutils literal"><span class="pre">Widget</span></code>, uses the power of our
-<span class="xref doc">/api-kivy.properties</span> for dispatching changes. This means when a widget
-changes its position or size, the corresponding event is automatically fired.</p>
-<p>In addition, you have the ability to create your own events using
-<code class="xref py py-meth docutils literal"><span class="pre">register_event_type()</span></code>, as the
-<cite>on_press</cite> and <cite>on_release</cite> events in the <code class="xref py py-class docutils literal"><span class="pre">Button</span></code>
-widget demonstrate.</p>
-<p>Another thing to note is that if you override an event, you become responsible
-for implementing all its behaviour previously handled by the base class. The
-easiest way to do this is to call <cite>super()</cite>:</p>
+<p><code class="xref py py-class docutils literal"><span class="pre">EventDispatcher</span></code> は変更を送るために、<span class="xref doc">/api-kivy.properties</span> を使います。これは、Widgetの位置やサイズを変更したときに、対応するイベントが自動的に発生します。</p>
+<p>加えて、<code class="xref py py-class docutils literal"><span class="pre">Button</span></code> widget内の <cite>on_press</cite> と <cite>on_release</cite> のイベントが示すように、:meth:<a href="#id1"><span class="problematic" id="id2">`</span></a>~kivy.event.EventDispatcher.register_event_type`を使用して、独自のイベントを作成する機能を持っています</p>
+<p>注意すべきもう一つのこととして、イベントを上書きした場合は、ベースクラスで以前処理されたビへイビアを実装しなければなりません</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">super</span><span class="p">(</span><span class="n">OurClassName</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_down</span><span class="p">(</span><span class="n">touch</span><span class="p">):</span>
         <span class="k">return</span> <span class="kc">True</span>
@@ -216,7 +194,7 @@ easiest way to do this is to call <cite>super()</cite>:</p>
     <span class="k">return</span> <span class="kc">True</span>
 </pre></div>
 </div>
-<p>Get more familiar with events by reading the <a class="reference internal" href="../guide/events.html"><span class="doc">Events and Properties</span></a> documentation.</p>
+<p>イベントとプロパティのドキュメントを読むことで、イベントに慣れましょう。</p>
 </div>
 
 
@@ -224,7 +202,7 @@ easiest way to do this is to call <cite>super()</cite>:</p>
             <table>
                 <tr>
                     <td class="leftlink">
-                  <a href="rules.html" title="previous chapter">&laquo; Kv Design Language</a></li>
+                  <a href="rules.html" title="previous chapter">&laquo; Kv デザイン 言語</a></li>
                   </td>
                   <td class="rightlink">
                   <a href="framework.html" title="next chapter">Non-widget stuff &raquo;</a>
@@ -254,7 +232,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 8月 21, 2016.
+      Last updated on 8月 28, 2016.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.2.
 </div>
 -->

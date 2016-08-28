@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/gettingstarted/events.rst:2
 msgid "Events"
-msgstr ""
+msgstr "イベント"
 
 #: ../../source/gettingstarted/events.rst:4
 msgid ""
@@ -27,10 +27,12 @@ msgid ""
 "driven_programming>`_, meaning the flow of the program is determined by "
 "events."
 msgstr ""
+"Kivyは`イベントベース<https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)>`"
+"で、プログラムの流れを意味するイベントによって決定されます。
 
 #: ../../source/gettingstarted/events.rst:7
 msgid "**Clock events**"
-msgstr ""
+msgstr "**クロックイベント**"
 
 #: ../../source/gettingstarted/events.rst:12
 msgid ""
@@ -39,6 +41,9 @@ msgid ""
 ":meth:`~kivy.clock.ClockBase.schedule_once`, or as a repetitive event "
 "with :meth:`~kivy.clock.ClockBase.schedule_interval`."
 msgstr ""
+":doc:`/api-kivy.clock`は、:meth:`~kivy.clock.ClockBase.schedule_once` に"
+"将来的に一回限りのイベントを:meth:`~kivy.clock.ClockBase.schedule_interval` "
+"に繰り返し行うイベントをスケジュールすることができます。"
 
 #: ../../source/gettingstarted/events.rst:16
 msgid ""
@@ -47,10 +52,14 @@ msgid ""
 " of being called only once per frame, even if you have scheduled multiple"
 " triggers for the same callback."
 msgstr ""
+":meth:`~kivy.clock.ClockBase.create_trigger` を用いてトリガーイベントを作ることができます。"
+"トリガーは、同じコールバックトリガーを複数スケジュールした場合でも各フレームごとに一度、"
+"コールされるという利点を有しています。"
+"
 
 #: ../../source/gettingstarted/events.rst:21
 msgid "**Input events**"
-msgstr ""
+msgstr "**入力イベント**"
 
 #: ../../source/gettingstarted/events.rst:26
 msgid ""
@@ -64,14 +73,21 @@ msgid ""
 ":meth:`~kivy.uix.widget.Widget.on_touch_up` events in the "
 ":class:`~kivy.uix.widget.Widget`."
 msgstr ""
+"すべてのマウスクリック、タッチとスクロールは :class:`~kivy.input.motionevent.MotionEvent` の一部で、"
+":doc:`/api-kivy.input.postproc`によって拡張され、Window クラスの中で"
+":attr:`~kivy.core.window.WindowBase.on_motion`イベントを通じて送られます。"
+"これらのイベントは:class:`~kivy.uix.widget.Widget` にて:meth:`~kivy.uix.widget.Widget.on_touch_down`"
+" 、:meth:`~kivy.uix.widget.Widget.on_touch_move`と"
+":meth:`~kivy.uix.widget.Widget.on_touch_up`イベントを生み出します。"
 
+"
 #: ../../source/gettingstarted/events.rst:36
 msgid "For an in-depth explanation, have a look at :doc:`/api-kivy.input`."
-msgstr ""
+msgstr "詳細な説明については、:doc:`/api-kivy.input`を見ます。"
 
 #: ../../source/gettingstarted/events.rst:38
 msgid "**Class events**"
-msgstr ""
+msgstr "**クラスイベント**"
 
 #: ../../source/gettingstarted/events.rst:43
 msgid ""
@@ -81,6 +97,10 @@ msgid ""
 "changes its position or size, the corresponding event is automatically "
 "fired."
 msgstr ""
+":class:`~kivy.uix.widget.Widget`により用いられるベースクラスの　`~kivy.event.EventDispatcher` "
+"は変更を送るために、:doc:`/api-kivy.properties` を使います。"
+"これは、Widgetの位置やサイズを変更したときに、対応するイベントが自動的に発生します。"
+
 
 #: ../../source/gettingstarted/events.rst:48
 msgid ""
@@ -89,6 +109,10 @@ msgid ""
 "`on_press` and `on_release` events in the "
 ":class:`~kivy.uix.button.Button` widget demonstrate."
 msgstr ""
+"加えて、:class:`~kivy.uix.button.Button` widget内の `on_press` と `on_release` のイベントが示すように、"
+":meth:`~kivy.event.EventDispatcher.register_event_type`を使用して、独自のイベントを作成する機能を持っています。
+"
+
 
 #: ../../source/gettingstarted/events.rst:53
 msgid ""
@@ -96,10 +120,14 @@ msgid ""
 "responsible for implementing all its behaviour previously handled by the "
 "base class. The easiest way to do this is to call `super()`::"
 msgstr ""
+"注意すべきもう一つのこととして、イベントを上書きした場合は、"
+"ベースクラスで以前処理されたビへイビアを実装しなければなりません。
+これを行う簡単な方法として`super()`を呼び出すことです::"
+
 
 #: ../../source/gettingstarted/events.rst:65
 msgid ""
 "Get more familiar with events by reading the :doc:`/guide/events` "
 "documentation."
-msgstr ""
+msgstr "イベントとプロパティのドキュメントを読むことで、イベントに慣れましょう。"
 
