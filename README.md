@@ -8,6 +8,8 @@ https://github.com/pyKy/translation
 
 # HTMLについて
 暫定的ですがgithubの機能を使用してdocs配下のHTMLを以下のURLで公開しています。
+
+
 https://pyky.github.io/kivy-doc-ja/
 
 2016年8月現在の問題としては別フォルダのCSS/画像ファイルが適用されていません。
