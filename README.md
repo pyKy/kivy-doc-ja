@@ -20,8 +20,10 @@ https://pyky.github.io/kivy-doc-ja/
 
 　https://github.com/pyKy/kivy-doc-ja/blob/master/docs/_images/3Drendering__main__py.png
  
- 以下のURLをしていすると404になってしまいます。
+ 以下のURLを指定すると404になってしまいます。
 
 　https://pyky.github.io/kivy-doc-ja/_images/3Drendering__main__py.png
 　
+
+
 移植完了後、スクリプトで一括変更する予定です。（2016年9月末対応予定）
