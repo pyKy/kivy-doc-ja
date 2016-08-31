@@ -1,0 +1,25 @@
+Tesselate Demonstration
+=======================
+
+.. |pic18| image:: /images/examples/canvas__tesselate__py.png
+   :width: 50%
+   :align: middle
+
+|pic18|
+
+This demonstrates the experimental library for
+tesselating polygons. You should see a hollow
+square with some buttons below it. You can click
+and drag to create additional shapes, watching the
+number of vertexes and elements at the top of the
+screen. The 'debug' button toggles showing the
+mesh in different colors.
+
+
+.. _`canvas_tesselate.py`:
+
+File **canvas\\tesselate.py**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../../examples/canvas\\tesselate.py
+    :code:
