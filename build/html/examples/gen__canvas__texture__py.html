@@ -194,10 +194,153 @@ texture is rendered when more than one copy is in
 the rectangle (the texture_wrap).</p>
 <div class="section" id="file-canvas-texture-py">
 <span id="canvas-texture-py"></span><h2>File <strong>canvas\texture.py</strong><a class="headerlink" href="#file-canvas-texture-py" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Texture Wrapping and Coordinates Example</span>
+<span class="sd">========================================</span>
+
+<span class="sd">This example changes texture properties and the properties</span>
+<span class="sd">of its containing rectangle. You should see some a multicolored</span>
+<span class="sd">texture with sliders to the left and below and buttons at the</span>
+<span class="sd">bottom of the screen. The image texture_example_image.png is</span>
+<span class="sd">rendered into the rectangle. Sliders change the number of copies of the</span>
+<span class="sd">texture (the tex_coords), the size of enclosing rectangle (the taw_height</span>
+<span class="sd">and taw_width) while the buttons change how the texture is rendered when more</span>
+<span class="sd">than one copy is in the rectangle (the</span>
+<span class="sd">texture_wrap).</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+
+<span class="kn">from</span> <span class="nn">kivy.uix.widget</span> <span class="k">import</span> <span class="n">Widget</span>
+<span class="kn">from</span> <span class="nn">kivy.properties</span> <span class="k">import</span> <span class="n">ObjectProperty</span><span class="p">,</span> <span class="n">ListProperty</span><span class="p">,</span> <span class="n">StringProperty</span>
+<span class="kn">from</span> <span class="nn">kivy.lang</span> <span class="k">import</span> <span class="n">Builder</span>
+<span class="kn">from</span> <span class="nn">kivy.clock</span> <span class="k">import</span> <span class="n">Clock</span>
+<span class="kn">from</span> <span class="nn">kivy.base</span> <span class="k">import</span> <span class="n">runTouchApp</span>
+
+
+<span class="k">class</span> <span class="nc">TextureAccessibleWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="n">texture</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">tex_coords</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">texture_wrap</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="s1">&#39;clamp_to_edge&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">TextureAccessibleWidget</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">Clock</span><span class="o">.</span><span class="n">schedule_once</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">texture_init</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">texture_init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">texture</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">texture</span>
+
+    <span class="k">def</span> <span class="nf">on_texture_wrap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">texture</span><span class="o">.</span><span class="n">wrap</span> <span class="o">=</span> <span class="n">value</span>
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">Builder</span><span class="o">.</span><span class="n">load_string</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">&lt;TextureAccessibleWidget&gt;:</span>
+<span class="s1">    canvas:</span>
+<span class="s1">        Rectangle:</span>
+<span class="s1">            pos: self.pos</span>
+<span class="s1">            size: self.size</span>
+<span class="s1">            source: &#39;texture_example_image.png&#39;</span>
+<span class="s1">            tex_coords: root.tex_coords</span>
+
+<span class="s1">&lt;SliderWithValue@BoxLayout&gt;:</span>
+<span class="s1">    min: 0.0</span>
+<span class="s1">    max: 1.0</span>
+<span class="s1">    value: slider.value</span>
+<span class="s1">    Slider:</span>
+<span class="s1">        id: slider</span>
+<span class="s1">        orientation: root.orientation</span>
+<span class="s1">        min: root.min</span>
+<span class="s1">        max: root.max</span>
+<span class="s1">        value: 1.0</span>
+<span class="s1">    Label:</span>
+<span class="s1">        size_hint: None, None</span>
+<span class="s1">        size: min(root.size), min(root.size)</span>
+<span class="s1">        text: str(slider.value)[:4]</span>
+
+<span class="s1">BoxLayout:</span>
+<span class="s1">    orientation: &#39;vertical&#39;</span>
+<span class="s1">    BoxLayout:</span>
+<span class="s1">        SliderWithValue:</span>
+<span class="s1">            orientation: &#39;vertical&#39;</span>
+<span class="s1">            size_hint_x: None</span>
+<span class="s1">            width: dp(40)</span>
+<span class="s1">            min: 0</span>
+<span class="s1">            max: 5</span>
+<span class="s1">            value: 1</span>
+<span class="s1">            on_value: taw.tex_coords[5] = self.value</span>
+<span class="s1">            on_value: taw.tex_coords[7] = self.value</span>
+<span class="s1">        SliderWithValue:</span>
+<span class="s1">            orientation: &#39;vertical&#39;</span>
+<span class="s1">            size_hint_x: None</span>
+<span class="s1">            width: dp(40)</span>
+<span class="s1">            min: 0</span>
+<span class="s1">            max: taw_container.height</span>
+<span class="s1">            value: 0.5*taw_container.height</span>
+<span class="s1">            on_value: taw.height = self.value</span>
+<span class="s1">        AnchorLayout:</span>
+<span class="s1">            id: taw_container</span>
+<span class="s1">            anchor_x: &#39;left&#39;</span>
+<span class="s1">            anchor_y: &#39;bottom&#39;</span>
+<span class="s1">            TextureAccessibleWidget:</span>
+<span class="s1">                id: taw</span>
+<span class="s1">                size_hint: None, None</span>
+<span class="s1">    BoxLayout:</span>
+<span class="s1">        size_hint_y: None</span>
+<span class="s1">        height: dp(80)</span>
+<span class="s1">        BoxLayout:</span>
+<span class="s1">            orientation: &#39;vertical&#39;</span>
+<span class="s1">            size_hint_x: None</span>
+<span class="s1">            width: dp(80)</span>
+<span class="s1">            Label:</span>
+<span class="s1">                text: &#39;size&#39;</span>
+<span class="s1">                text_size: self.size</span>
+<span class="s1">                halign: &#39;right&#39;</span>
+<span class="s1">                valign: &#39;middle&#39;</span>
+<span class="s1">            Label:</span>
+<span class="s1">                text: &#39;tex_coords&#39;</span>
+<span class="s1">                text_size: self.size</span>
+<span class="s1">                halign: &#39;left&#39;</span>
+<span class="s1">                valign: &#39;middle&#39;</span>
+<span class="s1">        BoxLayout:</span>
+<span class="s1">            orientation: &#39;vertical&#39;</span>
+<span class="s1">            SliderWithValue:</span>
+<span class="s1">                min: 0</span>
+<span class="s1">                max: taw_container.width</span>
+<span class="s1">                value: 0.5*taw_container.width</span>
+<span class="s1">                on_value: taw.width = self.value</span>
+<span class="s1">            SliderWithValue:</span>
+<span class="s1">                min: 0.</span>
+<span class="s1">                max: 5.</span>
+<span class="s1">                value: 1.</span>
+<span class="s1">                on_value: taw.tex_coords[2] = self.value</span>
+<span class="s1">                on_value: taw.tex_coords[4] = self.value</span>
+
+<span class="s1">    BoxLayout:</span>
+<span class="s1">        size_hint_y: None</span>
+<span class="s1">        height: dp(50)</span>
+<span class="s1">        Label:</span>
+<span class="s1">            text: &#39;texture wrap:&#39;</span>
+<span class="s1">            text_size: self.size</span>
+<span class="s1">            valign: &#39;middle&#39;</span>
+<span class="s1">            halign: &#39;center&#39;</span>
+<span class="s1">        Button:</span>
+<span class="s1">            text: &#39;clamp_to_edge&#39;</span>
+<span class="s1">            on_press: taw.texture_wrap = &#39;clamp_to_edge&#39;</span>
+<span class="s1">        Button:</span>
+<span class="s1">            text: &#39;repeat&#39;</span>
+<span class="s1">            on_press: taw.texture_wrap = &#39;repeat&#39;</span>
+<span class="s1">        Button:</span>
+<span class="s1">            text: &#39;mirrored_repeat&#39;</span>
+<span class="s1">            on_press: taw.texture_wrap = &#39;mirrored_repeat&#39;</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">runTouchApp</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="image-canvas-texture-example-image-png">
 <span id="canvas-texture-example-image-png"></span><h2>Image <strong>canvas\texture_example_image.png</strong><a class="headerlink" href="#image-canvas-texture-example-image-png" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<img alt="examples\../../../examples/canvas\\texture_example_image.png" class="align-center" src="examples\../../../examples/canvas\\texture_example_image.png" />
+<img alt="../_images/texture_example_image.png" class="align-center" src="../_images/texture_example_image.png" />
 </div>
 </div>
 
@@ -236,7 +379,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 8月 28, 2016.
+      Last updated on 8月 31, 2016.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.2.
 </div>
 -->

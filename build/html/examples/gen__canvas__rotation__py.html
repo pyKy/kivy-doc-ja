@@ -183,6 +183,42 @@ PopMatrix. You should see a static button with the
 words &#8216;hello world&#8217; rotated at a 45 degree angle.</p>
 <div class="section" id="file-canvas-rotation-py">
 <span id="canvas-rotation-py"></span><h2>File <strong>canvas\rotation.py</strong><a class="headerlink" href="#file-canvas-rotation-py" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Rotation Example</span>
+<span class="sd">================</span>
+
+<span class="sd">This example rotates a button using PushMatrix and PopMatrix. You should see</span>
+<span class="sd">a static button with the words &#39;hello world&#39; rotated at a 45 degree angle.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+
+<span class="kn">from</span> <span class="nn">kivy.app</span> <span class="k">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.lang</span> <span class="k">import</span> <span class="n">Builder</span>
+
+<span class="n">kv</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">FloatLayout:</span>
+
+<span class="s1">    Button:</span>
+<span class="s1">        text: &#39;hello world&#39;</span>
+<span class="s1">        size_hint: None, None</span>
+<span class="s1">        pos_hint: {&#39;center_x&#39;: .5, &#39;center_y&#39;: .5}</span>
+<span class="s1">        canvas.before:</span>
+<span class="s1">            PushMatrix</span>
+<span class="s1">            Rotate:</span>
+<span class="s1">                angle: 45</span>
+<span class="s1">                origin: self.center</span>
+<span class="s1">        canvas.after:</span>
+<span class="s1">            PopMatrix</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+
+<span class="k">class</span> <span class="nc">RotationApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Builder</span><span class="o">.</span><span class="n">load_string</span><span class="p">(</span><span class="n">kv</span><span class="p">)</span>
+
+<span class="n">RotationApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -221,7 +257,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 8月 28, 2016.
+      Last updated on 8月 31, 2016.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.2.
 </div>
 -->

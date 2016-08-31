@@ -188,6 +188,91 @@ from the kivy/data directory. The entire example
 is coded in the kv language description.</p>
 <div class="section" id="file-canvas-circle-py">
 <span id="canvas-circle-py"></span><h2>File <strong>canvas\circle.py</strong><a class="headerlink" href="#file-canvas-circle-py" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Circle Example</span>
+<span class="sd">==============</span>
+
+<span class="sd">This example exercises circle (ellipse) drawing. You should see sliders at the</span>
+<span class="sd">top of the screen with the Kivy logo below it. The sliders control the</span>
+<span class="sd">angle start and stop and the height and width scales. There is a button</span>
+<span class="sd">to reset the sliders. The logo used for the circle&#39;s background image is</span>
+<span class="sd">from the kivy/data directory. The entire example is coded in the</span>
+<span class="sd">kv language description.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">from</span> <span class="nn">kivy.app</span> <span class="k">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.lang</span> <span class="k">import</span> <span class="n">Builder</span>
+
+<span class="n">kv</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">BoxLayout:</span>
+<span class="s1">    orientation: &#39;vertical&#39;</span>
+<span class="s1">    BoxLayout:</span>
+<span class="s1">        size_hint_y: None</span>
+<span class="s1">        height: sp(100)</span>
+<span class="s1">        BoxLayout:</span>
+<span class="s1">            orientation: &#39;vertical&#39;</span>
+<span class="s1">            Slider:</span>
+<span class="s1">                id: e1</span>
+<span class="s1">                min: -360.</span>
+<span class="s1">                max: 360.</span>
+<span class="s1">            Label:</span>
+<span class="s1">                text: &#39;angle_start = </span><span class="si">{}</span><span class="s1">&#39;.format(e1.value)</span>
+<span class="s1">        BoxLayout:</span>
+<span class="s1">            orientation: &#39;vertical&#39;</span>
+<span class="s1">            Slider:</span>
+<span class="s1">                id: e2</span>
+<span class="s1">                min: -360.</span>
+<span class="s1">                max: 360.</span>
+<span class="s1">                value: 360</span>
+<span class="s1">            Label:</span>
+<span class="s1">                text: &#39;angle_end = </span><span class="si">{}</span><span class="s1">&#39;.format(e2.value)</span>
+
+<span class="s1">    BoxLayout:</span>
+<span class="s1">        size_hint_y: None</span>
+<span class="s1">        height: sp(100)</span>
+<span class="s1">        BoxLayout:</span>
+<span class="s1">            orientation: &#39;vertical&#39;</span>
+<span class="s1">            Slider:</span>
+<span class="s1">                id: wm</span>
+<span class="s1">                min: 0</span>
+<span class="s1">                max: 2</span>
+<span class="s1">                value: 1</span>
+<span class="s1">            Label:</span>
+<span class="s1">                text: &#39;Width mult. = </span><span class="si">{}</span><span class="s1">&#39;.format(wm.value)</span>
+<span class="s1">        BoxLayout:</span>
+<span class="s1">            orientation: &#39;vertical&#39;</span>
+<span class="s1">            Slider:</span>
+<span class="s1">                id: hm</span>
+<span class="s1">                min: 0</span>
+<span class="s1">                max: 2</span>
+<span class="s1">                value: 1</span>
+<span class="s1">            Label:</span>
+<span class="s1">                text: &#39;Height mult. = </span><span class="si">{}</span><span class="s1">&#39;.format(hm.value)</span>
+<span class="s1">        Button:</span>
+<span class="s1">            text: &#39;Reset ratios&#39;</span>
+<span class="s1">            on_press: wm.value = 1; hm.value = 1</span>
+
+<span class="s1">    FloatLayout:</span>
+<span class="s1">        canvas:</span>
+<span class="s1">            Color:</span>
+<span class="s1">                rgb: 1, 1, 1</span>
+<span class="s1">            Ellipse:</span>
+<span class="s1">                pos: 100, 100</span>
+<span class="s1">                size: 200 * wm.value, 201 * hm.value</span>
+<span class="s1">                source: &#39;data/logo/kivy-icon-512.png&#39;</span>
+<span class="s1">                angle_start: e1.value</span>
+<span class="s1">                angle_end: e2.value</span>
+
+<span class="s1">&#39;&#39;&#39;</span>
+
+
+<span class="k">class</span> <span class="nc">CircleApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Builder</span><span class="o">.</span><span class="n">load_string</span><span class="p">(</span><span class="n">kv</span><span class="p">)</span>
+
+<span class="n">CircleApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -226,7 +311,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 8月 28, 2016.
+      Last updated on 8月 31, 2016.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.2.
 </div>
 -->

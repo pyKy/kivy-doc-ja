@@ -186,6 +186,105 @@ camera feed or double click to scramble the grid
 again.</p>
 <div class="section" id="file-demo-camera-puzzle-py">
 <span id="demo-camera-puzzle-py"></span><h2>File <strong>demo\camera_puzzle.py</strong><a class="headerlink" href="#file-demo-camera-puzzle-py" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Shuffled Camera Feed Puzzle</span>
+<span class="sd">===========================</span>
+
+<span class="sd">This demonstrates using Scatter widgets with a live camera.</span>
+<span class="sd">You should see a shuffled grid of rectangles that make up the</span>
+<span class="sd">camera feed. You can drag the squares around to see the</span>
+<span class="sd">unscrambled camera feed or double click to scramble the grid</span>
+<span class="sd">again.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+
+<span class="kn">from</span> <span class="nn">kivy.app</span> <span class="k">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.camera</span> <span class="k">import</span> <span class="n">Camera</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.widget</span> <span class="k">import</span> <span class="n">Widget</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.slider</span> <span class="k">import</span> <span class="n">Slider</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.scatter</span> <span class="k">import</span> <span class="n">Scatter</span>
+<span class="kn">from</span> <span class="nn">kivy.animation</span> <span class="k">import</span> <span class="n">Animation</span>
+<span class="kn">from</span> <span class="nn">kivy.graphics</span> <span class="k">import</span> <span class="n">Color</span><span class="p">,</span> <span class="n">Rectangle</span>
+<span class="kn">from</span> <span class="nn">kivy.properties</span> <span class="k">import</span> <span class="n">NumericProperty</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="k">import</span> <span class="n">randint</span><span class="p">,</span> <span class="n">random</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">partial</span>
+
+
+<span class="k">class</span> <span class="nc">Puzzle</span><span class="p">(</span><span class="n">Camera</span><span class="p">):</span>
+
+    <span class="n">blocksize</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_texture_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">on_blocksize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clear_widgets</span><span class="p">()</span>
+        <span class="n">texture</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">texture</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">bs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">blocksize</span>
+        <span class="n">tw</span><span class="p">,</span> <span class="n">th</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture_size</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">tw</span> <span class="o">/</span> <span class="n">bs</span><span class="p">)):</span>
+            <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">th</span> <span class="o">/</span> <span class="n">bs</span><span class="p">)):</span>
+                <span class="n">bx</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">bs</span>
+                <span class="n">by</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">bs</span>
+                <span class="n">subtexture</span> <span class="o">=</span> <span class="n">texture</span><span class="o">.</span><span class="n">get_region</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="n">bs</span><span class="p">)</span>
+                <span class="c1">#node = PuzzleNode(texture=subtexture,</span>
+                <span class="c1">#                  size=(bs, bs), pos=(bx, by))</span>
+                <span class="n">node</span> <span class="o">=</span> <span class="n">Scatter</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">bs</span><span class="p">,</span> <span class="n">bs</span><span class="p">))</span>
+                <span class="k">with</span> <span class="n">node</span><span class="o">.</span><span class="n">canvas</span><span class="p">:</span>
+                    <span class="n">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                    <span class="n">Rectangle</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">node</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">texture</span><span class="o">=</span><span class="n">subtexture</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">shuffle</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">shuffle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">texture</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture</span>
+        <span class="n">bs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">blocksize</span>
+        <span class="n">tw</span><span class="p">,</span> <span class="n">th</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture_size</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">tw</span> <span class="o">/</span> <span class="n">bs</span><span class="p">)</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">th</span> <span class="o">/</span> <span class="n">bs</span><span class="p">)</span>
+        <span class="n">indices</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">))</span>
+        <span class="n">childindex</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">indices</span><span class="p">:</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">indices</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">bs</span> <span class="o">*</span> <span class="p">(</span><span class="n">index</span> <span class="o">%</span> <span class="nb">int</span><span class="p">(</span><span class="n">tw</span> <span class="o">/</span> <span class="n">bs</span><span class="p">))</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">bs</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">index</span> <span class="o">/</span> <span class="nb">int</span><span class="p">(</span><span class="n">tw</span> <span class="o">/</span> <span class="n">bs</span><span class="p">))</span>
+            <span class="n">child</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">childindex</span><span class="p">]</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">Animation</span><span class="p">(</span><span class="n">d</span><span class="o">=</span><span class="n">random</span><span class="p">()</span> <span class="o">/</span> <span class="mf">4.</span><span class="p">)</span> <span class="o">+</span> <span class="n">Animation</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span>
+                                                       <span class="n">t</span><span class="o">=</span><span class="s1">&#39;out_quad&#39;</span><span class="p">,</span> <span class="n">d</span><span class="o">=.</span><span class="mi">4</span><span class="p">)</span>
+            <span class="n">a</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+            <span class="n">childindex</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">touch</span><span class="o">.</span><span class="n">is_double_tap</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">shuffle</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Puzzle</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_down</span><span class="p">(</span><span class="n">touch</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">PuzzleApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
+        <span class="n">puzzle</span> <span class="o">=</span> <span class="n">Puzzle</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">),</span> <span class="n">play</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">slider</span> <span class="o">=</span> <span class="n">Slider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
+        <span class="n">slider</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">on_value</span><span class="p">,</span> <span class="n">puzzle</span><span class="p">))</span>
+
+        <span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">puzzle</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">slider</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">root</span>
+
+    <span class="k">def</span> <span class="nf">on_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">puzzle</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">value</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span>
+        <span class="n">puzzle</span><span class="o">.</span><span class="n">blocksize</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="n">instance</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+
+<span class="n">PuzzleApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -224,7 +323,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 8月 28, 2016.
+      Last updated on 8月 31, 2016.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.2.
 </div>
 -->

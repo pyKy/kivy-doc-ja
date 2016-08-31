@@ -191,9 +191,46 @@ the file <a class="reference internal" href="#application-template1-test-kv"><sp
 contains the root widget.</p>
 <div class="section" id="file-application-app-with-kv-in-template1-py">
 <span id="application-app-with-kv-in-template1-py"></span><h2>File <strong>application\app_with_kv_in_template1.py</strong><a class="headerlink" href="#file-application-app-with-kv-in-template1-py" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Application from a .kv in a Template Directory</span>
+<span class="sd">==============================================</span>
+
+<span class="sd">This example shows how you can change the directory for the .kv file. You</span>
+<span class="sd">should see &quot;Hello from template1/test.ky&quot; as a button.</span>
+
+<span class="sd">As kivy instantiates the TestApp subclass of App, the variable kv_directory</span>
+<span class="sd">is set. Kivy then implicitly searches for a .kv file matching the name</span>
+<span class="sd">of the subclass in that directory, finding the file template1/test.kv. That</span>
+<span class="sd">file contains the root widget.</span>
+
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">import</span> <span class="nn">kivy</span>
+<span class="n">kivy</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="s1">&#39;1.0.7&#39;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">kivy.app</span> <span class="k">import</span> <span class="n">App</span>
+
+
+<span class="k">class</span> <span class="nc">TestApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="n">kv_directory</span> <span class="o">=</span> <span class="s1">&#39;template1&#39;</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">TestApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="file-application-template1-test-kv">
 <span id="application-template1-test-kv"></span><h2>File <strong>application\template1/test.kv</strong><a class="headerlink" href="#file-application-template1-test-kv" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="code highlight-kv"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#:kivy 1.0</span>
+
+<span class="nc">Button</span><span class="p">:</span>
+    <span class="na">text</span><span class="p">:</span> <span class="s1">&#39;Hello from template1/test.kv&#39;</span>
+</pre></div>
+</td></tr></table></div>
 </div>
 </div>
 
@@ -232,7 +269,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 8月 28, 2016.
+      Last updated on 8月 31, 2016.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.2.
 </div>
 -->

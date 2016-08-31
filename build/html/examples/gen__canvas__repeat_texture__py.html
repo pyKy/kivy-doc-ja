@@ -191,10 +191,76 @@ transparent background, which makes it hard to
 see.</p>
 <div class="section" id="file-canvas-repeat-texture-py">
 <span id="canvas-repeat-texture-py"></span><h2>File <strong>canvas\repeat_texture.py</strong><a class="headerlink" href="#file-canvas-repeat-texture-py" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Repeat Texture on Resize</span>
+<span class="sd">========================</span>
+
+<span class="sd">This examples repeats the letter &#39;K&#39; (mtexture1.png) 64 times in a window.</span>
+<span class="sd">You should see 8 rows and 8 columns of white K letters, along a label</span>
+<span class="sd">showing the current size. As you resize the window, it stays an 8x8.</span>
+<span class="sd">This example includes a label with a colored background.</span>
+
+<span class="sd">Note the image mtexture1.png is a white &#39;K&#39; on a transparent background, which</span>
+<span class="sd">makes it hard to see.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">from</span> <span class="nn">kivy.app</span> <span class="k">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.image</span> <span class="k">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.label</span> <span class="k">import</span> <span class="n">Label</span>
+<span class="kn">from</span> <span class="nn">kivy.properties</span> <span class="k">import</span> <span class="n">ObjectProperty</span><span class="p">,</span> <span class="n">ListProperty</span>
+<span class="kn">from</span> <span class="nn">kivy.lang</span> <span class="k">import</span> <span class="n">Builder</span>
+
+<span class="n">kv</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">&lt;LabelOnBackground&gt;:</span>
+<span class="s1">    canvas.before:</span>
+<span class="s1">        Color:</span>
+<span class="s1">            rgb: self.background</span>
+<span class="s1">        Rectangle:</span>
+<span class="s1">            pos: self.pos</span>
+<span class="s1">            size: self.size</span>
+
+<span class="s1">FloatLayout:</span>
+<span class="s1">    canvas.before:</span>
+<span class="s1">        Color:</span>
+<span class="s1">            rgb: 1, 1, 1</span>
+<span class="s1">        Rectangle:</span>
+<span class="s1">            pos: self.pos</span>
+<span class="s1">            size: self.size</span>
+<span class="s1">            texture: app.texture</span>
+
+<span class="s1">    LabelOnBackground:</span>
+<span class="s1">        text: &#39;</span><span class="si">{}</span><span class="s1"> (try to resize the window)&#39;.format(root.size)</span>
+<span class="s1">        color: (0.4, 1, 1, 1)</span>
+<span class="s1">        background: (.3, .3, .3)</span>
+<span class="s1">        pos_hint: {&#39;center_x&#39;: .5, &#39;center_y&#39;: .5 }</span>
+<span class="s1">        size_hint: None, None</span>
+<span class="s1">        height: 30</span>
+<span class="s1">        width: 250</span>
+
+<span class="s1">&#39;&#39;&#39;</span>
+
+
+<span class="k">class</span> <span class="nc">LabelOnBackground</span><span class="p">(</span><span class="n">Label</span><span class="p">):</span>
+    <span class="n">background</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">((</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">))</span>
+
+
+<span class="k">class</span> <span class="nc">RepeatTexture</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+
+    <span class="n">texture</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">texture</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="s1">&#39;mtexture1.png&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">texture</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">texture</span><span class="o">.</span><span class="n">wrap</span> <span class="o">=</span> <span class="s1">&#39;repeat&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">texture</span><span class="o">.</span><span class="n">uvsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Builder</span><span class="o">.</span><span class="n">load_string</span><span class="p">(</span><span class="n">kv</span><span class="p">)</span>
+
+<span class="n">RepeatTexture</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="image-canvas-mtexture1-png">
 <span id="canvas-mtexture1-png"></span><h2>Image <strong>canvas\mtexture1.png</strong><a class="headerlink" href="#image-canvas-mtexture1-png" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<img alt="examples\../../../examples/canvas\\mtexture1.png" class="align-center" src="examples\../../../examples/canvas\\mtexture1.png" />
+<img alt="../_images/mtexture1.png" class="align-center" src="../_images/mtexture1.png" />
 </div>
 </div>
 
@@ -233,7 +299,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 8月 28, 2016.
+      Last updated on 8月 31, 2016.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.2.
 </div>
 -->

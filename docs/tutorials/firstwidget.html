@@ -8,8 +8,8 @@
     
     <title>A Simple Paint App &mdash; Kivy 1.9.1 ドキュメント</title>
     <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../static/fresh.css" type="text/css" />
-    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -19,14 +19,14 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../static/jquery.js"></script>
-    <script type="text/javascript" src="../static/underscore.js"></script>
-    <script type="text/javascript" src="../static/doctools.js"></script>
-    <script type="text/javascript" src="../static/translations.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript" src="../static/jquery-effects-core-and-slide.js"></script>
-    <script type="text/javascript" src="../static/jquery.cookie.js"></script>
-    <script type="text/javascript" src="../static/kivy.js"></script>
+    <script type="text/javascript" src="../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/kivy.js"></script>
     <link rel="top" title="Kivy 1.9.1 ドキュメント" href="../index.html" />
     <link rel="up" title="Tutorials" href="../tutorials-index.html" />
     <link rel="prev" title="Pong Game Tutorial" href="pong.html" /> 
@@ -37,7 +37,7 @@
         <div id="topwrapper">
         <div id="toplogo">
             <a href="http://kivy.org/">
-                <img src="../static/logo-kivy.png" alt="Kivy" height="50"/>
+                <img src="../_static/logo-kivy.png" alt="Kivy" height="50"/>
             </a>
         </div>
         <div id="topmenu">
@@ -83,9 +83,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../gettingstarted/intro.html">導入</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gettingstarted/installation.html">インストール</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gettingstarted/first_app.html">最初のアプリ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/properties.html">Properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/rules.html">Kv Design Language</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/events.html">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/properties.html">プロパティ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/rules.html">Kv デザイン 言語</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/events.html">イベント</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gettingstarted/framework.html">Non-widget stuff</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gettingstarted/layouts.html">Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gettingstarted/drawing.html">Drawing</a></li>
@@ -136,15 +136,15 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../guide-index.html">Programming Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../guide/basic.html">Kivy Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/basic.html">Kivyの基本</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/environment.html">Controlling the environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/config.html">Configure Kivy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/architecture.html">Architectural Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/events.html">Events and Properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/inputs.html">Input management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guide/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/widgets.html">Widgets(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/graphics.html">Graphics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guide/lang.html">Kv language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/lang.html">Kv language(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/other-frameworks.html">Integrating with other Frameworks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/bestpractices.html">Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/advancedgraphics.html">Advanced Graphics</a></li>
@@ -240,6 +240,37 @@ all the different pieces of code that are used in this section are also
 available in the <code class="docutils literal"><span class="pre">examples/guide/firstwidget</span></code> directory that comes with Kivy,
 so you don&#8217;t need to copy &amp; paste it all the time.
 Here is the basic code skeleton that we will need:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.app</span> <span class="kn">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.widget</span> <span class="kn">import</span> <span class="n">Widget</span>
+
+
+<span class="k">class</span> <span class="nc">MyPaintWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">MyPaintApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">MyPaintWidget</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">MyPaintApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
 <p>This is actually really simple. Save it as paint.py.
 If you run it, you should only see a black screen.
 As you can see, instead of using a built-in widget such as a Button (see
@@ -266,6 +297,39 @@ faster and cleaner.</p>
 <h3>Adding Behaviour<a class="headerlink" href="#adding-behaviour" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Let&#8217;s now add some actual behaviour to the widget, i.e. make it react to user
 input. Change the code like so:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.app</span> <span class="kn">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.widget</span> <span class="kn">import</span> <span class="n">Widget</span>
+
+
+<span class="k">class</span> <span class="nc">MyPaintWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">touch</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">MyPaintApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">MyPaintWidget</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">MyPaintApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
 <p>This is just to show how easy it is to react to user input. When a
 <code class="xref py py-class docutils literal"><span class="pre">MotionEvent</span></code> (i.e. a touch, click, etc.) occurs,
 we simply print the information about the touch object to the console.
@@ -275,6 +339,51 @@ This also demonstrates that a widget does not have to
 have a visual representation.</p>
 <p>Now that&#8217;s not really an overwhelming user experience. Let&#8217;s add some code
 that actually draws something into our window:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.app</span> <span class="kn">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.widget</span> <span class="kn">import</span> <span class="n">Widget</span>
+<span class="kn">from</span> <span class="nn">kivy.graphics</span> <span class="kn">import</span> <span class="n">Color</span><span class="p">,</span> <span class="n">Ellipse</span>
+
+
+<span class="k">class</span> <span class="nc">MyPaintWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="p">:</span>
+            <span class="n">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="mf">30.</span>
+            <span class="n">Ellipse</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">touch</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">d</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">d</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">d</span><span class="p">))</span>
+
+
+<span class="k">class</span> <span class="nc">MyPaintApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">MyPaintWidget</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">MyPaintApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
 <img alt="../images/guide-3.jpg" class="align-center" src="../images/guide-3.jpg" />
 <p>If you run your code with these modifications, you will see that every time
 you touch, there will be a small yellow circle drawn where you touched.
@@ -311,6 +420,59 @@ centered around our touch.</li>
 </div></blockquote>
 <p>That was easy, wasn&#8217;t it?
 It gets better! Update the code to look like this:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.app</span> <span class="kn">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.widget</span> <span class="kn">import</span> <span class="n">Widget</span>
+<span class="kn">from</span> <span class="nn">kivy.graphics</span> <span class="kn">import</span> <span class="n">Color</span><span class="p">,</span> <span class="n">Ellipse</span><span class="p">,</span> <span class="n">Line</span>
+
+
+<span class="k">class</span> <span class="nc">MyPaintWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="p">:</span>
+            <span class="n">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="mf">30.</span>
+            <span class="n">Ellipse</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">touch</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">d</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">d</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">d</span><span class="p">))</span>
+            <span class="n">touch</span><span class="o">.</span><span class="n">ud</span><span class="p">[</span><span class="s1">&#39;line&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="p">(</span><span class="n">touch</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">y</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">on_touch_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+        <span class="n">touch</span><span class="o">.</span><span class="n">ud</span><span class="p">[</span><span class="s1">&#39;line&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">points</span> <span class="o">+=</span> <span class="p">[</span><span class="n">touch</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">MyPaintApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">MyPaintWidget</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">MyPaintApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
 <img alt="../images/guide-4.jpg" class="align-center" src="../images/guide-4.jpg" />
 <dl class="docutils">
 <dt>This is what has changed:</dt>
@@ -359,6 +521,63 @@ bookkeeping.</li>
 <p>So far so good. This isn&#8217;t exactly beautiful yet, though. It looks a bit
 like spaghetti bolognese. How about giving each touch its own color?
 Great, let&#8217;s do it:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
+<span class="kn">from</span> <span class="nn">kivy.app</span> <span class="kn">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.widget</span> <span class="kn">import</span> <span class="n">Widget</span>
+<span class="kn">from</span> <span class="nn">kivy.graphics</span> <span class="kn">import</span> <span class="n">Color</span><span class="p">,</span> <span class="n">Ellipse</span><span class="p">,</span> <span class="n">Line</span>
+
+
+<span class="k">class</span> <span class="nc">MyPaintWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="n">random</span><span class="p">(),</span> <span class="n">random</span><span class="p">(),</span> <span class="n">random</span><span class="p">())</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="p">:</span>
+            <span class="n">Color</span><span class="p">(</span><span class="o">*</span><span class="n">color</span><span class="p">)</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="mf">30.</span>
+            <span class="n">Ellipse</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">touch</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">d</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">d</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">d</span><span class="p">))</span>
+            <span class="n">touch</span><span class="o">.</span><span class="n">ud</span><span class="p">[</span><span class="s1">&#39;line&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="p">(</span><span class="n">touch</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">y</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">on_touch_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+        <span class="n">touch</span><span class="o">.</span><span class="n">ud</span><span class="p">[</span><span class="s1">&#39;line&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">points</span> <span class="o">+=</span> <span class="p">[</span><span class="n">touch</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">MyPaintApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">MyPaintWidget</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">MyPaintApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
 <img alt="../images/guide-5.jpg" class="align-center" src="../images/guide-5.jpg" />
 <p>Here are the changes:</p>
 <blockquote>
@@ -424,6 +643,83 @@ applications you should give some thought to who does what in your app.
 We&#8217;ll go with the second option here so that you see how you can build up
 your application&#8217;s widget tree in your app class&#8217;s <code class="xref py py-meth docutils literal"><span class="pre">build()</span></code>
 method. We&#8217;ll also change to the HSV color space (see preceding note):</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
+<span class="kn">from</span> <span class="nn">kivy.app</span> <span class="kn">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.widget</span> <span class="kn">import</span> <span class="n">Widget</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.button</span> <span class="kn">import</span> <span class="n">Button</span>
+<span class="kn">from</span> <span class="nn">kivy.graphics</span> <span class="kn">import</span> <span class="n">Color</span><span class="p">,</span> <span class="n">Ellipse</span><span class="p">,</span> <span class="n">Line</span>
+
+
+<span class="k">class</span> <span class="nc">MyPaintWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="n">random</span><span class="p">(),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="p">:</span>
+            <span class="n">Color</span><span class="p">(</span><span class="o">*</span><span class="n">color</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;hsv&#39;</span><span class="p">)</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="mf">30.</span>
+            <span class="n">Ellipse</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">touch</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">d</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">d</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">d</span><span class="p">))</span>
+            <span class="n">touch</span><span class="o">.</span><span class="n">ud</span><span class="p">[</span><span class="s1">&#39;line&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="p">(</span><span class="n">touch</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">y</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">on_touch_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+        <span class="n">touch</span><span class="o">.</span><span class="n">ud</span><span class="p">[</span><span class="s1">&#39;line&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">points</span> <span class="o">+=</span> <span class="p">[</span><span class="n">touch</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">MyPaintApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">parent</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">painter</span> <span class="o">=</span> <span class="n">MyPaintWidget</span><span class="p">()</span>
+        <span class="n">clearbtn</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Clear&#39;</span><span class="p">)</span>
+        <span class="n">clearbtn</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_release</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">clear_canvas</span><span class="p">)</span>
+        <span class="n">parent</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">painter</span><span class="p">)</span>
+        <span class="n">parent</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">clearbtn</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">parent</span>
+
+    <span class="k">def</span> <span class="nf">clear_canvas</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">painter</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">MyPaintApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
 <img alt="../images/guide-6.jpg" class="align-center" src="../images/guide-6.jpg" />
 <p>Here&#8217;s what happens:</p>
 <blockquote>
@@ -512,7 +808,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 8月 21, 2016.
+      Last updated on 8月 31, 2016.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.2.
 </div>
 -->

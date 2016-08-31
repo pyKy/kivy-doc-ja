@@ -194,9 +194,235 @@ the error is visible as logging message in your
 terminal.</p>
 <div class="section" id="file-demo-shadereditor-main-py">
 <span id="demo-shadereditor-main-py"></span><h2>File <strong>demo\shadereditor\main.py</strong><a class="headerlink" href="#file-demo-shadereditor-main-py" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Live Shader Editor</span>
+<span class="sd">==================</span>
+
+<span class="sd">This provides a live editor for vertex and fragment editors.</span>
+<span class="sd">You should see a window with two editable panes on the left</span>
+<span class="sd">and a large kivy logo on the right.The top pane is the</span>
+<span class="sd">Vertex shader and the bottom is the Fragment shader. The file shadereditor.kv</span>
+<span class="sd">describes the interface.</span>
+
+<span class="sd">On each keystroke to either shader, declarations are added and the shaders</span>
+<span class="sd">are compiled. If there are no errors, the screen is updated. Otherwise,</span>
+<span class="sd">the error is visible as logging message in your terminal.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">kivy</span>
+<span class="n">kivy</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="s1">&#39;1.0.6&#39;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">kivy.app</span> <span class="k">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.floatlayout</span> <span class="k">import</span> <span class="n">FloatLayout</span>
+<span class="kn">from</span> <span class="nn">kivy.core.window</span> <span class="k">import</span> <span class="n">Window</span>
+<span class="kn">from</span> <span class="nn">kivy.factory</span> <span class="k">import</span> <span class="n">Factory</span>
+<span class="kn">from</span> <span class="nn">kivy.graphics</span> <span class="k">import</span> <span class="n">RenderContext</span>
+<span class="kn">from</span> <span class="nn">kivy.properties</span> <span class="k">import</span> <span class="n">StringProperty</span><span class="p">,</span> <span class="n">ObjectProperty</span>
+<span class="kn">from</span> <span class="nn">kivy.clock</span> <span class="k">import</span> <span class="n">Clock</span>
+<span class="kn">from</span> <span class="nn">kivy.compat</span> <span class="k">import</span> <span class="n">PY2</span>
+
+<span class="n">fs_header</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">#ifdef GL_ES</span>
+<span class="s1">    precision highp float;</span>
+<span class="s1">#endif</span>
+
+<span class="s1">/* Outputs from the vertex shader */</span>
+<span class="s1">varying vec4 frag_color;</span>
+<span class="s1">varying vec2 tex_coord0;</span>
+
+<span class="s1">/* uniform texture samplers */</span>
+<span class="s1">uniform sampler2D texture0;</span>
+
+<span class="s1">/* custom one */</span>
+<span class="s1">uniform vec2 resolution;</span>
+<span class="s1">uniform float time;</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">vs_header</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">#ifdef GL_ES</span>
+<span class="s1">    precision highp float;</span>
+<span class="s1">#endif</span>
+
+<span class="s1">/* Outputs to the fragment shader */</span>
+<span class="s1">varying vec4 frag_color;</span>
+<span class="s1">varying vec2 tex_coord0;</span>
+
+<span class="s1">/* vertex attributes */</span>
+<span class="s1">attribute vec2     vPosition;</span>
+<span class="s1">attribute vec2     vTexCoords0;</span>
+
+<span class="s1">/* uniform variables */</span>
+<span class="s1">uniform mat4       modelview_mat;</span>
+<span class="s1">uniform mat4       projection_mat;</span>
+<span class="s1">uniform vec4       color;</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+
+<span class="k">class</span> <span class="nc">ShaderViewer</span><span class="p">(</span><span class="n">FloatLayout</span><span class="p">):</span>
+    <span class="n">fs</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">vs</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="n">RenderContext</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ShaderViewer</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">Clock</span><span class="o">.</span><span class="n">schedule_interval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">update_shader</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">update_shader</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span>
+        <span class="n">s</span><span class="p">[</span><span class="s1">&#39;projection_mat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Window</span><span class="o">.</span><span class="n">render_context</span><span class="p">[</span><span class="s1">&#39;projection_mat&#39;</span><span class="p">]</span>
+        <span class="n">s</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Clock</span><span class="o">.</span><span class="n">get_boottime</span><span class="p">()</span>
+        <span class="n">s</span><span class="p">[</span><span class="s1">&#39;resolution&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">ask_update</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">on_fs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">shader</span><span class="o">.</span><span class="n">fs</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">on_vs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">shader</span><span class="o">.</span><span class="n">vs</span> <span class="o">=</span> <span class="n">value</span>
+
+<span class="n">Factory</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;ShaderViewer&#39;</span><span class="p">,</span> <span class="n">cls</span><span class="o">=</span><span class="n">ShaderViewer</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">ShaderEditor</span><span class="p">(</span><span class="n">FloatLayout</span><span class="p">):</span>
+
+    <span class="n">source</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="s1">&#39;data/logo/kivy-icon-512.png&#39;</span><span class="p">)</span>
+
+    <span class="n">fs</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">void main (void){</span>
+<span class="s1">    gl_FragColor = frag_color * texture2D(texture0, tex_coord0);</span>
+<span class="s1">}</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+    <span class="n">vs</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">void main (void) {</span>
+<span class="s1">  frag_color = color;</span>
+<span class="s1">  tex_coord0 = vTexCoords0;</span>
+<span class="s1">  gl_Position = projection_mat * modelview_mat * vec4(vPosition.xy, 0.0, 1.0);</span>
+<span class="s1">}</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+
+    <span class="n">viewer</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ShaderEditor</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">test_canvas</span> <span class="o">=</span> <span class="n">RenderContext</span><span class="p">()</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_canvas</span><span class="o">.</span><span class="n">shader</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">trigger_compile</span> <span class="o">=</span> <span class="n">Clock</span><span class="o">.</span><span class="n">create_trigger</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">compile_shaders</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">fs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">trigger_compile</span><span class="p">,</span> <span class="n">vs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">trigger_compile</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">compile_shaders</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">largs</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;try compile&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="c1"># we don&#39;t use str() here because it will crash with non-ascii char</span>
+        <span class="k">if</span> <span class="n">PY2</span><span class="p">:</span>
+            <span class="n">fs</span> <span class="o">=</span> <span class="n">fs_header</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+            <span class="n">vs</span> <span class="o">=</span> <span class="n">vs_header</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">vs</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fs</span> <span class="o">=</span> <span class="n">fs_header</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">fs</span>
+            <span class="n">vs</span> <span class="o">=</span> <span class="n">vs_header</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">vs</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--&gt;&#39;</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">fs</span> <span class="o">=</span> <span class="n">fs</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--&gt;&#39;</span><span class="p">,</span> <span class="n">vs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">vs</span> <span class="o">=</span> <span class="n">vs</span>
+
+
+<span class="k">class</span> <span class="nc">ShaderEditorApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">ShaderEditor</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">ShaderEditorApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="file-demo-shadereditor-shadereditor-kv">
 <span id="demo-shadereditor-shadereditor-kv"></span><h2>File <strong>demo\shadereditor\shadereditor.kv</strong><a class="headerlink" href="#file-demo-shadereditor-shadereditor-kv" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="code highlight-kv"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#:kivy 1.0</span>
+<span class="cp">#: import GLShaderLexer pygments.lexers.GLShaderLexer</span>
+
+<span class="nn">&lt;ShaderEditor&gt;</span><span class="p">:</span>
+    <span class="na">viewer</span><span class="p">:</span> <span class="n">viewer</span>
+
+    <span class="nc">BoxLayout</span><span class="p">:</span>
+        <span class="nc">BoxLayout</span><span class="p">:</span>
+            <span class="na">orientation</span><span class="p">:</span> <span class="s1">&#39;vertical&#39;</span>
+            <span class="na">size_hint_x</span><span class="p">:</span> <span class="bp">None</span>
+            <span class="na">width</span><span class="p">:</span> <span class="mi">350</span>
+
+            <span class="nc">Label</span><span class="p">:</span>
+                <span class="na">text</span><span class="p">:</span> <span class="s1">&#39;Fragment Shader&#39;</span>
+                <span class="na">size_hint_y</span><span class="p">:</span> <span class="bp">None</span>
+                <span class="na">height</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture_size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">10</span>
+            <span class="nc">CodeInput</span><span class="p">:</span>
+                <span class="na">text</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">fs</span>
+                <span class="na">lexer</span><span class="p">:</span> <span class="n">GLShaderLexer</span><span class="p">()</span>
+                <span class="na">on_text</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">fs</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="nc">Label</span><span class="p">:</span>
+                <span class="na">text</span><span class="p">:</span> <span class="s1">&#39;Vertex Shader&#39;</span>
+                <span class="na">size_hint_y</span><span class="p">:</span> <span class="bp">None</span>
+                <span class="na">height</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture_size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">10</span>
+            <span class="nc">CodeInput</span><span class="p">:</span>
+                <span class="na">text</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">vs</span>
+                <span class="na">lexer</span><span class="p">:</span> <span class="n">GLShaderLexer</span><span class="p">()</span>
+                <span class="na">on_text</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">vs</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="nc">ShaderViewer</span><span class="p">:</span>
+            <span class="na">id</span><span class="p">:</span> <span class="n">viewer</span>
+            <span class="nc">canvas</span><span class="p">:</span>
+                <span class="nc">Color</span><span class="p">:</span>
+                    <span class="na">rgb</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+                <span class="nc">Rectangle</span><span class="p">:</span>
+                    <span class="na">size</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+                    <span class="na">pos</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
+                    <span class="na">source</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">source</span>
+</pre></div>
+</td></tr></table></div>
 </div>
 </div>
 
@@ -235,7 +461,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 8月 28, 2016.
+      Last updated on 8月 31, 2016.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.2.
 </div>
 -->

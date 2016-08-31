@@ -184,6 +184,190 @@ rectangles. You should see a static image of
 labelled shapes on the screen.</p>
 <div class="section" id="file-canvas-lines-extended-py">
 <span id="canvas-lines-extended-py"></span><h2>File <strong>canvas\lines_extended.py</strong><a class="headerlink" href="#file-canvas-lines-extended-py" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Lines Extended Demo</span>
+<span class="sd">===================</span>
+
+<span class="sd">This demonstrates how to use the extended line drawing routines such</span>
+<span class="sd">as circles, elipses, and rectangles. You should see a static image of</span>
+<span class="sd">labelled shapes on the screen.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">from</span> <span class="nn">kivy.app</span> <span class="k">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.gridlayout</span> <span class="k">import</span> <span class="n">GridLayout</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.widget</span> <span class="k">import</span> <span class="n">Widget</span>
+<span class="kn">from</span> <span class="nn">kivy.lang</span> <span class="k">import</span> <span class="n">Builder</span>
+
+<span class="n">Builder</span><span class="o">.</span><span class="n">load_string</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">&lt;LineEllipse1&gt;:</span>
+<span class="s1">    canvas:</span>
+<span class="s1">        Color:</span>
+<span class="s1">            rgba: 1, .1, .1, .9</span>
+<span class="s1">        Line:</span>
+<span class="s1">            width: 2.</span>
+<span class="s1">            ellipse: (self.x, self.y, self.width, self.height)</span>
+<span class="s1">    Label:</span>
+<span class="s1">        center: root.center</span>
+<span class="s1">        text: &#39;Ellipse&#39;</span>
+
+<span class="s1">&lt;LineEllipse2&gt;:</span>
+<span class="s1">    canvas:</span>
+<span class="s1">        Color:</span>
+<span class="s1">            rgba: 1, .1, .1, .9</span>
+<span class="s1">        Line:</span>
+<span class="s1">            width: 2.</span>
+<span class="s1">            ellipse: (self.x, self.y, self.width, self.height, 90, 180)</span>
+<span class="s1">    Label:</span>
+<span class="s1">        center: root.center</span>
+<span class="s1">        text: &#39;Ellipse from 90 to 180&#39;</span>
+
+<span class="s1"># fun result with low segments!</span>
+<span class="s1">&lt;LineEllipse3&gt;:</span>
+<span class="s1">    canvas:</span>
+<span class="s1">        Color:</span>
+<span class="s1">            rgba: 1, .1, .1, .9</span>
+<span class="s1">        Line:</span>
+<span class="s1">            width: 2.</span>
+<span class="s1">            ellipse: (self.x, self.y, self.width, self.height, 90, 720, 10)</span>
+<span class="s1">    Label:</span>
+<span class="s1">        center: root.center</span>
+<span class="s1">        text: &#39;Ellipse from 90 to 720</span><span class="se">\\</span><span class="s1">n10 segments&#39;</span>
+<span class="s1">        halign: &#39;center&#39;</span>
+
+<span class="s1">&lt;LineCircle1&gt;:</span>
+<span class="s1">    canvas:</span>
+<span class="s1">        Color:</span>
+<span class="s1">            rgba: .1, 1, .1, .9</span>
+<span class="s1">        Line:</span>
+<span class="s1">            width: 2.</span>
+<span class="s1">            circle:</span>
+<span class="s1">                (self.center_x, self.center_y, min(self.width, self.height)</span>
+<span class="s1">                / 2)</span>
+<span class="s1">    Label:</span>
+<span class="s1">        center: root.center</span>
+<span class="s1">        text: &#39;Circle&#39;</span>
+
+<span class="s1">&lt;LineCircle2&gt;:</span>
+<span class="s1">    canvas:</span>
+<span class="s1">        Color:</span>
+<span class="s1">            rgba: .1, 1, .1, .9</span>
+<span class="s1">        Line:</span>
+<span class="s1">            width: 2.</span>
+<span class="s1">            circle:</span>
+<span class="s1">                (self.center_x, self.center_y, min(self.width, self.height)</span>
+<span class="s1">                / 2, 90, 180)</span>
+<span class="s1">    Label:</span>
+<span class="s1">        center: root.center</span>
+<span class="s1">        text: &#39;Circle from 90 to 180&#39;</span>
+
+<span class="s1">&lt;LineCircle3&gt;:</span>
+<span class="s1">    canvas:</span>
+<span class="s1">        Color:</span>
+<span class="s1">            rgba: .1, 1, .1, .9</span>
+<span class="s1">        Line:</span>
+<span class="s1">            width: 2.</span>
+<span class="s1">            circle:</span>
+<span class="s1">                (self.center_x, self.center_y, min(self.width, self.height)</span>
+<span class="s1">                / 2, 90, 180, 10)</span>
+<span class="s1">    Label:</span>
+<span class="s1">        center: root.center</span>
+<span class="s1">        text: &#39;Circle from 90 to 180</span><span class="se">\\</span><span class="s1">n10 segments&#39;</span>
+<span class="s1">        halign: &#39;center&#39;</span>
+
+<span class="s1">&lt;LineCircle4&gt;:</span>
+<span class="s1">    canvas:</span>
+<span class="s1">        Color:</span>
+<span class="s1">            rgba: .1, 1, .1, .9</span>
+<span class="s1">        Line:</span>
+<span class="s1">            width: 2.</span>
+<span class="s1">            circle:</span>
+<span class="s1">                (self.center_x, self.center_y, min(self.width, self.height)</span>
+<span class="s1">                / 2, 0, 360)</span>
+<span class="s1">    Label:</span>
+<span class="s1">        center: root.center</span>
+<span class="s1">        text: &#39;Circle from 0 to 360&#39;</span>
+<span class="s1">        halign: &#39;center&#39;</span>
+
+<span class="s1">&lt;LineRectangle&gt;:</span>
+<span class="s1">    canvas:</span>
+<span class="s1">        Color:</span>
+<span class="s1">            rgba: .1, .1, 1, .9</span>
+<span class="s1">        Line:</span>
+<span class="s1">            width: 2.</span>
+<span class="s1">            rectangle: (self.x, self.y, self.width, self.height)</span>
+<span class="s1">    Label:</span>
+<span class="s1">        center: root.center</span>
+<span class="s1">        text: &#39;Rectangle&#39;</span>
+
+<span class="s1">&lt;LineBezier&gt;:</span>
+<span class="s1">    canvas:</span>
+<span class="s1">        Color:</span>
+<span class="s1">            rgba: .1, .1, 1, .9</span>
+<span class="s1">        Line:</span>
+<span class="s1">            width: 2.</span>
+<span class="s1">            bezier:</span>
+<span class="s1">                (self.x, self.y, self.center_x - 40, self.y + 100,</span>
+<span class="s1">                self.center_x + 40, self.y - 100, self.right, self.y)</span>
+<span class="s1">    Label:</span>
+<span class="s1">        center: root.center</span>
+<span class="s1">        text: &#39;Bezier&#39;</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">LineEllipse1</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">LineEllipse2</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">LineEllipse3</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">LineCircle1</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">LineCircle2</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">LineCircle3</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">LineCircle4</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">LineRectangle</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">LineBezier</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">LineExtendedApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">GridLayout</span><span class="p">(</span><span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">LineEllipse1</span><span class="p">())</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">LineEllipse2</span><span class="p">())</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">LineEllipse3</span><span class="p">())</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">LineCircle1</span><span class="p">())</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">LineCircle2</span><span class="p">())</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">LineCircle3</span><span class="p">())</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">LineCircle4</span><span class="p">())</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">LineRectangle</span><span class="p">())</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">LineBezier</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">root</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">LineExtendedApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -222,7 +406,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 8月 28, 2016.
+      Last updated on 8月 31, 2016.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.2.
 </div>
 -->

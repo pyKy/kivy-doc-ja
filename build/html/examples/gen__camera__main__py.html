@@ -186,6 +186,47 @@ not installed, will throw an exception during the
 kv language processing.</p>
 <div class="section" id="file-camera-main-py">
 <span id="camera-main-py"></span><h2>File <strong>camera\main.py</strong><a class="headerlink" href="#file-camera-main-py" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Camera Example</span>
+<span class="sd">==============</span>
+
+<span class="sd">This example demonstrates a simple use of the camera. It shows a window with</span>
+<span class="sd">a buttoned labelled &#39;play&#39; to turn the camera on and off. Note that</span>
+<span class="sd">not finding a camera, perhaps because gstreamer is not installed, will</span>
+<span class="sd">throw an exception during the kv language processing.</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="c1"># Uncomment these lines to see all the messages</span>
+<span class="c1">#from kivy.logger import Logger</span>
+<span class="c1">#import logging</span>
+<span class="c1">#Logger.setLevel(logging.TRACE)</span>
+
+<span class="kn">from</span> <span class="nn">kivy.app</span> <span class="k">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.lang</span> <span class="k">import</span> <span class="n">Builder</span>
+
+<span class="n">kv</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">BoxLayout:</span>
+<span class="s1">    orientation: &#39;vertical&#39;</span>
+<span class="s1">    Camera:</span>
+<span class="s1">        id: camera</span>
+<span class="s1">        resolution: (640, 480)</span>
+<span class="s1">        play: False</span>
+<span class="s1">    ToggleButton:</span>
+<span class="s1">        text: &#39;Play&#39;</span>
+<span class="s1">        on_press: camera.play = not camera.play</span>
+<span class="s1">        size_hint_y: None</span>
+<span class="s1">        height: &#39;48dp&#39;</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+
+<span class="k">class</span> <span class="nc">TestCamera</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Builder</span><span class="o">.</span><span class="n">load_string</span><span class="p">(</span><span class="n">kv</span><span class="p">)</span>
+
+<span class="n">TestCamera</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -224,7 +265,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 8月 28, 2016.
+      Last updated on 8月 31, 2016.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.2.
 </div>
 -->
