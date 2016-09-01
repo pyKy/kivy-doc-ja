@@ -12,6 +12,20 @@ https://github.com/pyKy/translation
 
 https://pyky.github.io/kivy-doc-ja/
 
-2016年8月現在の問題としては一部リンクがおかしいところがあるかと思います
+2016年9月現在の問題としては一部リンクがおかしいところと強調などの記法が適用されていません。
 
 移植完了後、対応する予定です。（2016年9月末対応予定）
+
+
+# 移植待ち項目について
+
+translationリポジトリで翻訳済みで移植待ちの項目は以下の通りです。
+
+* Getting Started(「Non-widget stuff」以降すべて）
+* Gallery of Examples（「Kivy カタログ」以外すべて）
+* Programming Guide(「Architectural Overview」のみ)
+* Tutorials(「Pong Game Tutorial」,「A Simple Paint App」の両方とも)
+
+# 目標
+
+2016年中に「Getting started into Kivy」の翻訳を完了させる。
