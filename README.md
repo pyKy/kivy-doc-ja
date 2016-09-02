@@ -23,7 +23,6 @@ translationリポジトリで翻訳済みで移植待ちの項目は以下の通
 
 * Getting Started(「Non-widget stuff」以降すべて）
 * Gallery of Examples（「Kivy カタログ」以外すべて）
-* Programming Guide(「Architectural Overview」のみ)
 * Tutorials(「Pong Game Tutorial」,「A Simple Paint App」の両方とも)
 
 # 目標
