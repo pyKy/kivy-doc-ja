@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="twitter:site" content="@kivyframework">
     
-    <title>Layouts &mdash; Kivy 1.9.1 ドキュメント</title>
+    <title>Layouts(翻訳済み) &mdash; Kivy 1.9.1 ドキュメント</title>
     <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../static/fresh.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
@@ -29,7 +29,7 @@
     <script type="text/javascript" src="../static/kivy.js"></script>
     <link rel="top" title="Kivy 1.9.1 ドキュメント" href="../index.html" />
     <link rel="up" title="Getting Started(翻訳中)" href="index.html" />
-    <link rel="next" title="Drawing" href="drawing.html" />
+    <link rel="next" title="描画" href="drawing.html" />
     <link rel="prev" title="Non-widget stuff" href="framework.html" /> 
   </head>
   <body>
@@ -63,9 +63,9 @@
                 <input type="text" class="text" name="q" />
             </form>
           <!--
-          <h3><a href="../index.html">Layouts</a></h3>
+          <h3><a href="../index.html">Layouts(翻訳済み)</a></h3>
           <ul>
-<li><a class="reference internal" href="#">Layouts</a></li>
+<li><a class="reference internal" href="#">Layouts(翻訳済み)</a></li>
 </ul>
 
           <h3><a href="../index.html">Table Of Contents</a></h3>
@@ -79,11 +79,11 @@
 <li class="toctree-l2"><a class="reference internal" href="rules.html">Kv デザイン 言語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="events.html">イベント</a></li>
 <li class="toctree-l2"><a class="reference internal" href="framework.html">Non-widget stuff</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Layouts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="drawing.html">Drawing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drawing.html">描画</a></li>
 <li class="toctree-l2"><a class="reference internal" href="packaging.html">Packaging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html">Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="diving.html">Diving in</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diving.html">ダイビング</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Gallery of Examples</a><ul>
@@ -131,7 +131,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../guide/basic.html">Kivyの基本</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/environment.html">Controlling the environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/config.html">Configure Kivy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guide/architecture.html">Architectural Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/events.html">Events and Properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/inputs.html">Input management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/widgets.html">Widgets(翻訳済み)</a></li>
@@ -154,7 +154,7 @@
           <h3>Related Topics</h3>
           <ul>
               <li>Previous: <a href="framework.html" title="previous chapter">Non-widget stuff</a></li>
-              <li>Next: <a href="drawing.html" title="next chapter">Drawing</a></li>
+              <li>Next: <a href="drawing.html" title="next chapter">描画</a></li>
           </ul>
           -->
         </div>
@@ -165,51 +165,47 @@
         <div class="bodywrapper">
           <div class="body">
             <div class="toc"><h2>Table Of Contents</h2><ul>
-<li><a class="reference internal" href="#">Layouts</a></li>
+<li><a class="reference internal" href="#">Layouts(翻訳済み)</a></li>
 </ul>
 </div>
             
   <div class="section" id="layouts">
-<h1>Layouts<a class="headerlink" href="#layouts" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Layouts are containers used to arrange widgets in a particular manner.</p>
+<h1>Layouts(翻訳済み)<a class="headerlink" href="#layouts" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Layoutsは特定の記法でwidgetを配置するために用いられるコンテナです。:</p>
 <blockquote>
 <div><dl class="docutils">
 <dt><code class="xref py py-mod docutils literal"><span class="pre">AnchorLayout</span></code>:</dt>
-<dd>Widgets can be anchored to the &#8216;top&#8217;, &#8216;bottom&#8217;, &#8216;left&#8217;,
-&#8216;right&#8217; or &#8216;center&#8217;.</dd>
+<dd><p class="first last">Widgetは、「top」、「bottom」、「left」、「right」または「Center」に固定することが可能です</p>
+</dd>
 <dt><code class="xref py py-mod docutils literal"><span class="pre">BoxLayout</span></code>:</dt>
-<dd>Widgets are arranged sequentially, in either a &#8216;vertical&#8217;
-or a &#8216;horizontal&#8217; orientation.</dd>
+<dd><p class="first last">Widgetは「vertical」きでも「horizontal」でも順番に配置されます。</p>
+</dd>
 <dt><code class="xref py py-mod docutils literal"><span class="pre">FloatLayout</span></code>:</dt>
-<dd>Widgets are essentially unrestricted.</dd>
+<dd><p class="first last">Widgetの数に制限はありません。</p>
+</dd>
 <dt><code class="xref py py-mod docutils literal"><span class="pre">RelativeLayout</span></code>:</dt>
-<dd>Child widgets are positioned relative to the layout.</dd>
+<dd><p class="first last">子に当たるウィジェットはレイアウトと比較して配置されます。</p>
+</dd>
 <dt><code class="xref py py-mod docutils literal"><span class="pre">GridLayout</span></code>:</dt>
-<dd>Widgets are arranged in a grid defined by the <cite>rows</cite> and
-<cite>cols</cite> properties.</dd>
+<dd><p class="first last">widgetは、「rows」と「cols」のプロパティによって定義されるグリッドに配置されます。</p>
+</dd>
 <dt><code class="xref py py-mod docutils literal"><span class="pre">PageLayout</span></code>:</dt>
-<dd>Used to create simple multi-page layouts, in a way that
-allows easy flipping from one page to another using
-borders.</dd>
+<dd><p class="first last">単純な複数ページのレイアウトをつくるのに用いられます。現在のページから他ページへの即時移動を可能にします</p>
+</dd>
 <dt><code class="xref py py-mod docutils literal"><span class="pre">ScatterLayout</span></code>:</dt>
 <dd>Widgets are positioned similarly to a RelativeLayout, but
 they can be translated, rotate and scaled.</dd>
 <dt><code class="xref py py-mod docutils literal"><span class="pre">StackLayout</span></code>:</dt>
-<dd>Widgets are stacked in a <cite>lr-tb</cite> (left to right then top to
-bottom) or <cite>tb-lr</cite> order.</dd>
+<dd><p class="first last">widgetは、lr-tb(左上から右下へ)またはtb-lr(右下から左上へ)の順序で配置されます。</p>
+</dd>
 </dl>
 </div></blockquote>
-<p>When you add a widget to a layout, the following properties are used to
-determine the widget&#8217;s size and position, depending on the type of layout:</p>
+<p>widgetをレイアウトに加える時、レイアウトのタイプによって以下の特性が装置のサイズと位置を決定するのに用いられます</p>
 <blockquote>
-<div><p><strong>size_hint</strong>: defines the size of a widget in its parent space as a percentage.
-Values are restricted to the range 0.0 - 1.0 i.e. 0.01 = 1% and 1. = 100%.</p>
-<p><strong>pos_hint</strong>: is used to place the widget relative to the parent.</p>
+<div><p><strong>size_hint</strong>: 親に当たるスペースでウィジェットのサイズをパーセンテージとして定義します。その値は、範囲0.0 から 1.0（0.01 = 1%、1.=100%）に制限されます</p>
+<p><strong>pos_hint</strong>: 親と比較してウィジェットを置くのに用いられます。</p>
 </div></blockquote>
-<p>The <strong>size_hint</strong> and <strong>pos_hint</strong> are used to calculate a widget&#8217;s size and
-position only if the value(s) are not set to <code class="docutils literal"><span class="pre">None</span></code>. If you set these values to
-<code class="docutils literal"><span class="pre">None</span></code>, the layout will not position/size the widget and you can specify the
-values (x, y, width, height) directly in screen coordinates.</p>
+<p><strong>size_hint</strong> と <strong>pos_hint</strong> は値が何らかに決まる場合のみwidgetのサイズと位置を計算するのに用いられます。値を設定しない場合(<code class="docutils literal"><span class="pre">None</span></code>)は、レイアウトはwidgetの位置・大きさを設定しません。その場合、直接、&#8221;</p>
 </div>
 
 
@@ -220,7 +216,7 @@ values (x, y, width, height) directly in screen coordinates.</p>
                   <a href="framework.html" title="previous chapter">&laquo; Non-widget stuff</a></li>
                   </td>
                   <td class="rightlink">
-                  <a href="drawing.html" title="next chapter">Drawing &raquo;</a>
+                  <a href="drawing.html" title="next chapter">描画 &raquo;</a>
                       </td>
                   </tr>
               </table>
@@ -247,7 +243,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 9月 01, 2016.
+      Last updated on 9月 03, 2016.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.2.
 </div>
 -->
