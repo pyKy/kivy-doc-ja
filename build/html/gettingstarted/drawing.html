@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="twitter:site" content="@kivyframework">
     
-    <title>Drawing &mdash; Kivy 1.9.1 ドキュメント</title>
+    <title>描画 &mdash; Kivy 1.9.1 ドキュメント</title>
     <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../_static/fresh.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -30,7 +30,7 @@
     <link rel="top" title="Kivy 1.9.1 ドキュメント" href="../index.html" />
     <link rel="up" title="Getting Started(翻訳中)" href="index.html" />
     <link rel="next" title="Packaging" href="packaging.html" />
-    <link rel="prev" title="Layouts" href="layouts.html" /> 
+    <link rel="prev" title="Layouts(翻訳済み)" href="layouts.html" /> 
   </head>
   <body>
 
@@ -63,9 +63,9 @@
                 <input type="text" class="text" name="q" />
             </form>
           <!--
-          <h3><a href="../index.html">Drawing</a></h3>
+          <h3><a href="../index.html">描画</a></h3>
           <ul>
-<li><a class="reference internal" href="#">Drawing</a></li>
+<li><a class="reference internal" href="#">描画</a></li>
 </ul>
 
           <h3><a href="../index.html">Table Of Contents</a></h3>
@@ -79,11 +79,11 @@
 <li class="toctree-l2"><a class="reference internal" href="rules.html">Kv デザイン 言語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="events.html">イベント</a></li>
 <li class="toctree-l2"><a class="reference internal" href="framework.html">Non-widget stuff</a></li>
-<li class="toctree-l2"><a class="reference internal" href="layouts.html">Layouts</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">描画</a></li>
 <li class="toctree-l2"><a class="reference internal" href="packaging.html">Packaging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html">Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="diving.html">Diving in</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diving.html">ダイビング</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Gallery of Examples</a><ul>
@@ -153,7 +153,7 @@
           <!--
           <h3>Related Topics</h3>
           <ul>
-              <li>Previous: <a href="layouts.html" title="previous chapter">Layouts</a></li>
+              <li>Previous: <a href="layouts.html" title="previous chapter">Layouts(翻訳済み)</a></li>
               <li>Next: <a href="packaging.html" title="next chapter">Packaging</a></li>
           </ul>
           -->
@@ -165,30 +165,18 @@
         <div class="bodywrapper">
           <div class="body">
             <div class="toc"><h2>Table Of Contents</h2><ul>
-<li><a class="reference internal" href="#">Drawing</a></li>
+<li><a class="reference internal" href="#">描画</a></li>
 </ul>
 </div>
             
   <div class="section" id="drawing">
-<h1>Drawing<a class="headerlink" href="#drawing" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Each widget has a canvas, i.e. a place to draw on. The canvas is a group of
-drawing instructions that should be executed whenever there is a change to the
-widget&#8217;s graphical representation.</p>
-<p>You can add two types of instructions to the canvas: <em>context</em> instructions and
-<em>vertex</em> instructions. You can add instructions either from Python code or from
-the kv file (the preferred way).
-If you add them via the kv file, the advantage is that they are automatically
-updated when any property they depend on changes. In Python, you need to do
-this yourself.</p>
+<h1>描画<a class="headerlink" href="#drawing" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>各Widgetは、キャンバス(例:描画スペース)を持っています。キャンバスは、描画命令の集まりです。Widgetのグラフィカルな表現が再描画がされるたびに実行されるべきものです。</p>
+<p><em>context</em> 命令と <em>vertex</em> 命令：キャンバスに2種類の命令を追加することができます。変化した場合に自動的に更新されることです。 Pythonの場合、自分で行う必要があります。</p>
 <img alt="../_images/gs-drawing.png" src="../_images/gs-drawing.png" />
-<p>In both cases, the canvas of <cite>MyWidget</cite> is re-drawn whenever the <code class="docutils literal"><span class="pre">position</span></code>
-or the <code class="docutils literal"><span class="pre">size</span></code> of the widget changes.</p>
-<p>You can use the
-<code class="xref py py-attr docutils literal"><span class="pre">canvas.before</span></code> or
-<code class="xref py py-attr docutils literal"><span class="pre">canvas.after</span></code> groups to separate
-your instructions based on when you want them to be executed.</p>
-<p>For an in-depth look at how Kivy&#8217;s graphics are handled, look
-<code class="xref py py-mod docutils literal"><span class="pre">here</span></code>.</p>
+<p>どちらの場合も、<cite>MyWidget`の ``position`</cite> や <code class="docutils literal"><span class="pre">size</span></code> が変更されるたびに、キャンバスは再描画されます。</p>
+<p>それらを実行したいときに基づき、あなたの指示で別個にするために <code class="xref py py-attr docutils literal"><span class="pre">canvas.before</span></code> または <code class="xref py py-attr docutils literal"><span class="pre">canvas.after</span></code> グループを使用することができます。Kivyグラフィックスの処理方法での詳細な外観については、こちらをご覧ください。</p>
+<p>Kivyグラフィックスの処理方法での詳細な外観については、:mod:<a href="#id1"><span class="problematic" id="id2">`</span></a>こちら &lt;kivy.graphics&gt;`をご覧ください。</p>
 </div>
 
 
@@ -196,7 +184,7 @@ your instructions based on when you want them to be executed.</p>
             <table>
                 <tr>
                     <td class="leftlink">
-                  <a href="layouts.html" title="previous chapter">&laquo; Layouts</a></li>
+                  <a href="layouts.html" title="previous chapter">&laquo; Layouts(翻訳済み)</a></li>
                   </td>
                   <td class="rightlink">
                   <a href="packaging.html" title="next chapter">Packaging &raquo;</a>
