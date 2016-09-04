@@ -51,7 +51,6 @@ https://pyky.github.io/kivy-doc-ja/
 translationリポジトリで翻訳済みで移植待ちの項目は以下の通りです。
 
 * Gallery of Examples（「Kivy カタログ」以外すべて）
-* Tutorials(「Pong Game Tutorial」,「A Simple Paint App」の両方とも)
 
 # 目標
 

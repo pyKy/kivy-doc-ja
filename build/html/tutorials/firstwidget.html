@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="twitter:site" content="@kivyframework">
     
-    <title>A Simple Paint App &mdash; Kivy 1.9.1 ドキュメント</title>
+    <title>A Simple Paint App(翻訳中) &mdash; Kivy 1.9.1 ドキュメント</title>
     <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../_static/fresh.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -29,7 +29,8 @@
     <script type="text/javascript" src="../_static/kivy.js"></script>
     <link rel="top" title="Kivy 1.9.1 ドキュメント" href="../index.html" />
     <link rel="up" title="Tutorials" href="../tutorials-index.html" />
-    <link rel="prev" title="Pong Game Tutorial" href="pong.html" /> 
+    <link rel="next" title="Crash Course" href="crashcourse.html" />
+    <link rel="prev" title="Pong Game Tutorial(翻訳中)" href="pong.html" /> 
   </head>
   <body>
 
@@ -62,9 +63,9 @@
                 <input type="text" class="text" name="q" />
             </form>
           <!--
-          <h3><a href="../index.html">A Simple Paint App</a></h3>
+          <h3><a href="../index.html">A Simple Paint App(翻訳中)</a></h3>
           <ul>
-<li><a class="reference internal" href="#">A Simple Paint App</a><ul>
+<li><a class="reference internal" href="#">A Simple Paint App(翻訳中)</a><ul>
 <li><a class="reference internal" href="#basic-considerations">Basic Considerations</a></li>
 <li><a class="reference internal" href="#paint-widget">Paint Widget</a><ul>
 <li><a class="reference internal" href="#initial-structure">Initial Structure</a></li>
@@ -152,8 +153,9 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../tutorials-index.html">Tutorials</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="pong.html">Pong Game Tutorial</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">A Simple Paint App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pong.html">Pong Game Tutorial(翻訳中)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">A Simple Paint App(翻訳中)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crashcourse.html">Crash Course</a></li>
 </ul>
 </li>
 </ul>
@@ -161,7 +163,8 @@
           <!--
           <h3>Related Topics</h3>
           <ul>
-              <li>Previous: <a href="pong.html" title="previous chapter">Pong Game Tutorial</a></li>
+              <li>Previous: <a href="pong.html" title="previous chapter">Pong Game Tutorial(翻訳中)</a></li>
+              <li>Next: <a href="crashcourse.html" title="next chapter">Crash Course</a></li>
           </ul>
           -->
         </div>
@@ -172,7 +175,7 @@
         <div class="bodywrapper">
           <div class="body">
             <div class="toc"><h2>Table Of Contents</h2><ul>
-<li><a class="reference internal" href="#">A Simple Paint App</a><ul>
+<li><a class="reference internal" href="#">A Simple Paint App(翻訳中)</a><ul>
 <li><a class="reference internal" href="#basic-considerations">Basic Considerations</a></li>
 <li><a class="reference internal" href="#paint-widget">Paint Widget</a><ul>
 <li><a class="reference internal" href="#initial-structure">Initial Structure</a></li>
@@ -186,40 +189,23 @@
 </div>
             
   <div class="section" id="a-simple-paint-app">
-<h1>A Simple Paint App<a class="headerlink" href="#a-simple-paint-app" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>In the following tutorial, you will be guided through the creation of your
-first widget. This provides powerful and important knowledge when
-programming Kivy applications, as it lets you create completely new user
-interfaces with custom elements for your specific purpose.</p>
+<h1>A Simple Paint App(翻訳中)<a class="headerlink" href="#a-simple-paint-app" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>このチュートリアルでは、最初にwidgetを作成する方法を教えます。Kivyアプリケーションをプログラミングする際、あなたが特定の目的ためにカスタム要素で新しいユーザーインターフェースを作成するための最も重要な知識を提供します。</p>
 <div class="section" id="basic-considerations">
 <h2>Basic Considerations<a class="headerlink" href="#basic-considerations" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>When creating an application, you have to ask yourself three important questions:</p>
+<p>アプリケーションを作成する前に、自分自身で重要な3つの項目を確かめる必要があります。</p>
 <blockquote>
 <div><ul class="simple">
-<li>What data does my application process?</li>
-<li>How do I visually represent that data?</li>
-<li>How does the user interact with that data?</li>
+<li><p class="first">アプリケーション・プロセスはどのようなデータですか？</p>
+</li>
+<li><p class="first">どのようにしてそのデータを視覚的に表現しますか？</p>
+</li>
+<li><p class="first">ユーザーはどのようにデータと相互作用しますか？</p>
+</li>
 </ul>
 </div></blockquote>
-<p>If you want to write a very simple line drawing application for example, you
-most likely want the user to just draw on the screen with his/her fingers.
-That&#8217;s how the user <em>interacts</em> with your application. While doing so,
-your application would memorize the positions where the user&#8217;s finger were,
-so that you can later draw lines between those positions. So the points
-where the fingers were would be your <em>data</em> and the lines that you draw
-between them would be your <em>visual representation</em>.</p>
-<p>In Kivy, an application&#8217;s user interface is composed of Widgets. Everything
-that you see on the screen is somehow drawn by a widget. Often you would
-like to be able to reuse code that you already wrote in a different
-context, which is why widgets typically represent one specific instance
-that answers the three questions above. A widget encapsulates data,
-defines the user&#8217;s interaction with that data and draws its visual
-representation.
-You can build anything from simple to complex user interfaces by
-nesting widgets. There are many widgets built in, such as buttons, sliders
-and other common stuff. In many cases, however, you need a custom widget
-that is beyond the scope of what is shipped with Kivy (e.g. a
-medical visualization widget).</p>
+<p>たとえば、非常に単純な線画アプリケーションを記述したいのであれば、ユーザーは指でスクリーンに描画することをたぶん望みます。 それは、ユーザーがアプリケーションと <em>相互作用</em> する方法です。その一方で、アプリケーションは後からユーザーの指があった位置を記憶します。そのため、あなたは後からそれらの位置の間に線を描くことができます。つまり、指のあった点はあなたの <em>データ</em> であり、それらの間に描く線は <em>視覚的な表現</em> です。</p>
+<p>Kivyでは、アプリケーションのユーザーインタフェースはwidgetから構成されています。画面に表示されるすべてが何らかの形でwidgetによって描かれています。しばしば、異なる文脈で書いたコードを再利用したいと思うでしょう。widgetはデータをカプセル化し、そのデータとユーザの対話を定義します。そしてその視覚的な表現を描画します。あなたは、入れ子のwidgetによって、単純なインターフェースから複雑なインタフェースまで、何でも構築することができます。これには、ボタン、スライダーや他の一般的なもの、として構築された多くのwidgetがあります。しかし、多くの場合、Kivyに同胞されているウィジェットの範囲を超えたcustom widget(例えば、医療を視覚化するためのウィジェット)が必要となります。</p>
 <p>So keep these three questions in mind when you design your widgets. Try to
 write them in a minimal and reusable manner (i.e. a widget does exactly
 what its supposed to do and nothing more. If you need more, write more
@@ -779,9 +765,10 @@ are ready for more, we encourage you to read on.</p>
             <table>
                 <tr>
                     <td class="leftlink">
-                  <a href="pong.html" title="previous chapter">&laquo; Pong Game Tutorial</a></li>
+                  <a href="pong.html" title="previous chapter">&laquo; Pong Game Tutorial(翻訳中)</a></li>
                   </td>
                   <td class="rightlink">
+                  <a href="crashcourse.html" title="next chapter">Crash Course &raquo;</a>
                       </td>
                   </tr>
               </table>
@@ -808,7 +795,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 9月 03, 2016.
+      Last updated on 9月 04, 2016.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.2.
 </div>
 -->

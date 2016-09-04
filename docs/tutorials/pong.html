@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="twitter:site" content="@kivyframework">
     
-    <title>Pong Game Tutorial &mdash; Kivy 1.9.1 ドキュメント</title>
+    <title>Pong Game Tutorial(翻訳中) &mdash; Kivy 1.9.1 ドキュメント</title>
     <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../static/fresh.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
@@ -29,7 +29,7 @@
     <script type="text/javascript" src="../static/kivy.js"></script>
     <link rel="top" title="Kivy 1.9.1 ドキュメント" href="../index.html" />
     <link rel="up" title="Tutorials" href="../tutorials-index.html" />
-    <link rel="next" title="A Simple Paint App" href="firstwidget.html" />
+    <link rel="next" title="A Simple Paint App(翻訳中)" href="firstwidget.html" />
     <link rel="prev" title="Tutorials" href="../tutorials-index.html" /> 
   </head>
   <body>
@@ -63,9 +63,9 @@
                 <input type="text" class="text" name="q" />
             </form>
           <!--
-          <h3><a href="../index.html">Pong Game Tutorial</a></h3>
+          <h3><a href="../index.html">Pong Game Tutorial(翻訳中)</a></h3>
           <ul>
-<li><a class="reference internal" href="#">Pong Game Tutorial</a><ul>
+<li><a class="reference internal" href="#">Pong Game Tutorial(翻訳中)</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#getting-started">Getting Started</a></li>
 <li><a class="reference internal" href="#add-simple-graphics">Add Simple Graphics</a><ul>
@@ -163,8 +163,9 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../tutorials-index.html">Tutorials</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Pong Game Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="firstwidget.html">A Simple Paint App</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Pong Game Tutorial(翻訳中)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firstwidget.html">A Simple Paint App(翻訳中)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crashcourse.html">Crash Course</a></li>
 </ul>
 </li>
 </ul>
@@ -173,7 +174,7 @@
           <h3>Related Topics</h3>
           <ul>
               <li>Previous: <a href="../tutorials-index.html" title="previous chapter">Tutorials</a></li>
-              <li>Next: <a href="firstwidget.html" title="next chapter">A Simple Paint App</a></li>
+              <li>Next: <a href="firstwidget.html" title="next chapter">A Simple Paint App(翻訳中)</a></li>
           </ul>
           -->
         </div>
@@ -184,7 +185,7 @@
         <div class="bodywrapper">
           <div class="body">
             <div class="toc"><h2>Table Of Contents</h2><ul>
-<li><a class="reference internal" href="#">Pong Game Tutorial</a><ul>
+<li><a class="reference internal" href="#">Pong Game Tutorial(翻訳中)</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#getting-started">Getting Started</a></li>
 <li><a class="reference internal" href="#add-simple-graphics">Add Simple Graphics</a><ul>
@@ -208,24 +209,23 @@
 </div>
             
   <div class="section" id="pong-game-tutorial">
-<h1>Pong Game Tutorial<a class="headerlink" href="#pong-game-tutorial" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<h1>Pong Game Tutorial(翻訳中)<a class="headerlink" href="#pong-game-tutorial" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="title container">
-Welcome to the Pong tutorial</div>
-<p>This tutorial will teach you how to write pong using Kivy. We&#8217;ll start with
-a basic application like the one described in the <a class="reference internal" href="../guide/basic.html#quickstart"><span class="std std-ref">アプリケーションを作成する</span></a> and turn
-it into a playable pong game, describing each step along the way.</p>
+<p>ようこそポンのチュートリアルへ</p>
+</div>
+<p>このチュートリアルでは、Kivyを使ってポンゲームを作成する方法を教えます。私たちは、アプリケーションを作成で説明したようなアプリケーションの基礎(<a class="reference internal" href="../guide/basic.html#quickstart"><span class="std std-ref">アプリケーションを作成する</span></a>)から始めましょう。そして、プレイすることが可能なポンゲームを各工程に沿って説明します。</p>
 <a class="reference internal image-reference" href="../images/pong.jpg"><img alt="../images/pong.jpg" class="align-center" src="../images/pong.jpg" style="height: 392px;" /></a>
-<p>Here is a check list before starting this tutorial:</p>
+<p>まず、チュートリアルを開始する前に以下をチェックしてください:</p>
 <ul class="simple">
-<li>You have a working Kivy installation. See the <a class="reference internal" href="../installation/installation.html"><span class="doc">Installation</span></a>
-section for detailed descriptions</li>
-<li>You know how to run a basic Kivy application. See <a class="reference internal" href="../guide/basic.html#quickstart"><span class="std std-ref">アプリケーションを作成する</span></a>
-if you don&#8217;t.</li>
+<li><p class="first">Kivyをインストールしていますか？ 詳細な説明は <a class="reference internal" href="../installation/installation.html"><span class="doc">Installation</span></a>  の項を参照してください。</p>
+</li>
+<li><p class="first">基本的なKivyのアプリケーションの実行方法をしていますか？ わからない場合は、<a class="reference internal" href="../guide/basic.html#quickstart"><span class="std std-ref">アプリケーションを作成する</span></a> を参照してください。</p>
+</li>
 </ul>
 <p>If you have read the programming guide, and understand both basic Widget
-concepts (<a class="reference internal" href="firstwidget.html"><span class="doc">A Simple Paint App</span></a>) and basic concepts of the kv language
+concepts (<a class="reference internal" href="firstwidget.html"><span class="doc">A Simple Paint App(翻訳中)</span></a>) and basic concepts of the kv language
 (<a class="reference internal" href="../guide/lang.html"><span class="doc">Kv language(翻訳済み)</span></a>), you can probably skip the first 2
 steps and go straight to step 3.</p>
 <div class="admonition note">
@@ -1255,7 +1255,7 @@ the Kivy examples directory under tutorials/pong/</p>
                   <a href="../tutorials-index.html" title="previous chapter">&laquo; Tutorials</a></li>
                   </td>
                   <td class="rightlink">
-                  <a href="firstwidget.html" title="next chapter">A Simple Paint App &raquo;</a>
+                  <a href="firstwidget.html" title="next chapter">A Simple Paint App(翻訳中) &raquo;</a>
                       </td>
                   </tr>
               </table>
@@ -1282,7 +1282,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 9月 03, 2016.
+      Last updated on 9月 04, 2016.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.2.
 </div>
 -->
