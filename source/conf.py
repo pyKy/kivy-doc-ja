@@ -156,6 +156,7 @@ htmlhelp_basename = 'Kivydoc'
 
 locale_dirs = ['locale/']   # path is example but recommended.
 gettext_compact = False
+language = "ja"
 
 # Options for LaTeX output
 # ------------------------
