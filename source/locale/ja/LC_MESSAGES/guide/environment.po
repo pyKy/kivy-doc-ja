@@ -19,23 +19,23 @@ msgstr ""
 
 #: ../../source/guide/environment.rst:4
 msgid "Controlling the environment"
-msgstr ""
+msgstr "Controlling the environment(翻訳済み)"
 
 #: ../../source/guide/environment.rst:6
 msgid ""
 "Many environment variables are available to control the initialization "
 "and behavior of Kivy."
-msgstr ""
+msgstr "多くの環境変数はKivyの初期化と動作を制御するために利用可能です。"
 
 #: ../../source/guide/environment.rst:9
 msgid ""
 "For example, in order to restrict text rendering to the PIL "
 "implementation::"
-msgstr ""
+msgstr "例えば、PILのテキストのレンダリングの実装を制限するために："
 
 #: ../../source/guide/environment.rst:13
 msgid "Environment variables should be set before importing kivy::"
-msgstr ""
+msgstr "環境変数はkivyインポートする前に設定する必要があります :"
 
 #: ../../source/guide/environment.rst:20
 msgid "Path control"
@@ -46,6 +46,8 @@ msgid ""
 "You can control the default directories where config files, modules, "
 "extensions, and kivy data are located."
 msgstr ""
+"設定ファイル、モジュール、拡張機能、およびkivyデータが配置されている"
+"デフォルトのディレクトリを制御することができます。"
 
 #: ../../source/guide/environment.rst:28
 msgid "KIVY_DATA_DIR"
@@ -53,7 +55,7 @@ msgstr ""
 
 #: ../../source/guide/environment.rst:28
 msgid "Location of the Kivy data, defaults to `<kivy path>/data`"
-msgstr ""
+msgstr "Kivyのデータが格納されている場所です。デフォルトは `<kivy path>/data` です。"
 
 #: ../../source/guide/environment.rst:31
 msgid "KIVY_EXTS_DIR"
@@ -61,7 +63,7 @@ msgstr ""
 
 #: ../../source/guide/environment.rst:31
 msgid "Location of the Kivy extensions, defaults to `<kivy path>/extensions`"
-msgstr ""
+msgstr "Kivyの拡張データが格納されている場所です。デフォルトは `<kivy path>/extensions` です。"
 
 #: ../../source/guide/environment.rst:34
 msgid "KIVY_MODULES_DIR"
@@ -69,7 +71,7 @@ msgstr ""
 
 #: ../../source/guide/environment.rst:34
 msgid "Location of the Kivy modules, defaults to `<kivy path>/modules`"
-msgstr ""
+msgstr "Kivyのmoduleが格納されている場所です。デフォルトは `<kivy path>/modules` です。"
 
 #: ../../source/guide/environment.rst:45
 msgid "KIVY_HOME"
@@ -80,10 +82,12 @@ msgid ""
 "Location of the Kivy home. This directory is used for local "
 "configuration, and must be in a writable location."
 msgstr ""
+"Kivyホームの場所。このディレクトリは、ローカル設定のために使用され、"
+"書き込み可能な場所になければなりません。"
 
 #: ../../source/guide/environment.rst:43
 msgid "Defaults to:"
-msgstr ""
+msgstr "デフォルトは以下の通りです："
 
 #: ../../source/guide/environment.rst:41
 msgid "Desktop: `<user home>/.kivy`"
@@ -108,12 +112,15 @@ msgid ""
 " libraries while running a kivy app, this path must be added at the start"
 " of the PATH environment variable."
 msgstr ""
+"設定した場合、システム全体でインストールの代わりにkivyコンパイルするときに、
+このパスからSDL2のライブラリやヘッダが使用されています。"
+" kivyアプリの実行中に同じライブラリを使用するには、パスをPATH環境変数の先頭に追加する必要があります。"
 
 #: ../../source/guide/environment.rst:57
 msgid ""
 "This path is required for the compilation of Kivy. It is not required for"
 " program execution."
-msgstr ""
+msgstr "このパスはKivyのコンパイルに必要になります。プログラムの実行では必要ではないです。"
 
 #: ../../source/guide/environment.rst:62
 msgid "Configuration"
@@ -125,7 +132,7 @@ msgstr ""
 
 #: ../../source/guide/environment.rst:65
 msgid "If this name is found in environ, Kivy will not read the user config file."
-msgstr ""
+msgstr "この名前を環境で発見された場合、Kivyは、ユーザーの設定ファイルを読みません。"
 
 #: ../../source/guide/environment.rst:69
 msgid "KIVY_NO_CONFIG"
@@ -136,6 +143,7 @@ msgid ""
 "If set, no configuration file will be read or writen to. This also "
 "applies to the user configuration directory."
 msgstr ""
+"設定すると、設定ファイルが読み込み書き込みが行われません。これはユーザー設定ディレクトリに適用されます。"
 
 #: ../../source/guide/environment.rst:72
 msgid "KIVY_NO_FILELOG"
@@ -143,7 +151,7 @@ msgstr ""
 
 #: ../../source/guide/environment.rst:72
 msgid "If set, logs will be not print to a file"
-msgstr ""
+msgstr "設定すると、ログが書き込まれません"
 
 #: ../../source/guide/environment.rst:75
 msgid "KIVY_NO_CONSOLELOG"
@@ -151,7 +159,7 @@ msgstr ""
 
 #: ../../source/guide/environment.rst:75
 msgid "If set, logs will be not print to the console"
-msgstr ""
+msgstr "設定すると、コンソールにログが出力されません"
 
 #: ../../source/guide/environment.rst:86
 msgid "KIVY_NO_ARGS"
@@ -163,6 +171,8 @@ msgid ""
 "by Kivy. Ie, you can safely make a script or an app with your own "
 "arguments without requiring the `--` delimiter::"
 msgstr ""
+"設定した場合は、コマンドラインで渡された引数が解析され、Kivyによって使用されることはありません。"
+"安全にスクリプトまたは必要とせず、独自の引数を使ってアプリを作ることができます - 区切り文字："
 
 #: ../../source/guide/environment.rst:89
 msgid "Restrict core to specific implementation"
@@ -174,6 +184,9 @@ msgid ""
 " platform. For testing or custom installation, you might want to restrict"
 " the selector to a specific implementation."
 msgstr ""
+"使用しているプラットフォームで:mod:`kivy.core`の利用可能で最善の実装を選択してみてください。"
+"テストまたはカスタムインストールでは、特定の実装にセレクタを制限する場合があります。"
+
 
 #: ../../source/guide/environment.rst:98
 msgid "KIVY_WINDOW"
@@ -181,11 +194,11 @@ msgstr ""
 
 #: ../../source/guide/environment.rst:96
 msgid "Implementation to use for creating the Window"
-msgstr ""
+msgstr "ウィンドウ作成の実装に使用します"
 
 #: ../../source/guide/environment.rst:98
 msgid "Values: sdl2, pygame, x11, egl_rpi"
-msgstr ""
+msgstr "値: sdl2, pygame, x11, egl_rpi"
 
 #: ../../source/guide/environment.rst:103
 msgid "KIVY_TEXT"
@@ -193,11 +206,11 @@ msgstr ""
 
 #: ../../source/guide/environment.rst:101
 msgid "Implementation to use for rendering text"
-msgstr ""
+msgstr "テキストレンダリングの実装に使用します。"
 
 #: ../../source/guide/environment.rst:103
 msgid "Values: sdl2, pil, pygame, sdlttf"
-msgstr ""
+msgstr "値：Values: sdl2, pil, pygame, sdlttf"
 
 #: ../../source/guide/environment.rst:108
 msgid "KIVY_VIDEO"
@@ -205,11 +218,11 @@ msgstr ""
 
 #: ../../source/guide/environment.rst:106
 msgid "Implementation to use for rendering video"
-msgstr ""
+msgstr "ビデオのレンダリングの実装に使用します"
 
 #: ../../source/guide/environment.rst:108
 msgid "Values: pygst, gstplayer, pyglet, ffpyplayer, null"
-msgstr ""
+msgstr "値: pygst, gstplayer, pyglet, ffpyplayer, null"
 
 #: ../../source/guide/environment.rst:113
 msgid "KIVY_AUDIO"
@@ -217,11 +230,11 @@ msgstr ""
 
 #: ../../source/guide/environment.rst:111
 msgid "Implementation to use for playing audio"
-msgstr ""
+msgstr "オーディオ再生の実装に使用します"
 
 #: ../../source/guide/environment.rst:113
 msgid "Values: sdl2, gstplayer, pygst, ffpyplayer, pygame"
-msgstr ""
+msgstr "値: sdl2, gstplayer, pygst, ffpyplayer, pygame"
 
 #: ../../source/guide/environment.rst:118
 msgid "KIVY_IMAGE"
@@ -229,11 +242,11 @@ msgstr ""
 
 #: ../../source/guide/environment.rst:116
 msgid "Implementation to use for reading image"
-msgstr ""
+msgstr "画像のレンダリングの実装に使用します"
 
 #: ../../source/guide/environment.rst:118
 msgid "Values: sdl2, pil, pygame, imageio, tex, dds, gif"
-msgstr ""
+msgstr "値: sdl2, pil, pygame, imageio, tex, dds, gif"
 
 #: ../../source/guide/environment.rst:123
 msgid "KIVY_CAMERA"
@@ -241,11 +254,11 @@ msgstr ""
 
 #: ../../source/guide/environment.rst:121
 msgid "Implementation to use for reading camera"
-msgstr ""
+msgstr "カメラのレンダリングの実装に使用します"
 
 #: ../../source/guide/environment.rst:123
 msgid "Values: videocapture, avfoundation, pygst, opencv"
-msgstr ""
+msgstr "値: videocapture, avfoundation, pygst, opencv"
 
 #: ../../source/guide/environment.rst:128
 msgid "KIVY_SPELLING"
@@ -253,11 +266,11 @@ msgstr ""
 
 #: ../../source/guide/environment.rst:126
 msgid "Implementation to use for spelling"
-msgstr ""
+msgstr "文字の実装に使用します"
 
 #: ../../source/guide/environment.rst:128
 msgid "Values: enchant, osxappkit"
-msgstr ""
+msgstr "値: enchant, osxappkit"
 
 #: ../../source/guide/environment.rst:133
 msgid "KIVY_CLIPBOARD"
@@ -265,11 +278,11 @@ msgstr ""
 
 #: ../../source/guide/environment.rst:131
 msgid "Implementation to use for clipboard management"
-msgstr ""
+msgstr "クリップボード管理の実装に使用します"
 
 #: ../../source/guide/environment.rst:133
 msgid "Values: sdl2, pygame, dummy, android"
-msgstr ""
+msgstr "値: sdl2, pygame, dummy, android"
 
 #: ../../source/guide/environment.rst:136
 msgid "Metrics"
@@ -281,7 +294,7 @@ msgstr ""
 
 #: ../../source/guide/environment.rst:139
 msgid "If set, the value will be used for :attr:`Metrics.dpi`."
-msgstr ""
+msgstr "設定すると:attr:`Metrics.dpi`の値に使用されます。"
 
 #: ../../source/guide/environment.rst:146
 msgid "KIVY_METRICS_DENSITY"
@@ -289,7 +302,7 @@ msgstr ""
 
 #: ../../source/guide/environment.rst:144
 msgid "If set, the value will be used for :attr:`Metrics.density`."
-msgstr ""
+msgstr "設定すると:attr:`Metrics.density`の値に使用されます。"
 
 #: ../../source/guide/environment.rst:148
 msgid "KIVY_METRICS_FONTSCALE"
@@ -297,7 +310,7 @@ msgstr ""
 
 #: ../../source/guide/environment.rst:150
 msgid "If set, the value will be used for :attr:`Metrics.fontscale`."
-msgstr ""
+msgstr "設定すると、:attr:`Metrics.fontscale`の値にしようされます"
 
 #: ../../source/guide/environment.rst:155
 msgid "Graphics"
@@ -312,24 +325,27 @@ msgid ""
 "Whether the GLES2 restrictions are enforced (the default, or if set to "
 "1). If set to false, Kivy will not be truly GLES2 compatible."
 msgstr ""
+"GLES2制限が適用されるかどうか（デフォルト、または1に設定されている場合）。 "
+"falseに設定すると、KivyはGLES2互換性がなくなります。"
 
 #: ../../source/guide/environment.rst:161
 msgid ""
 "Following is a list of the potential incompatibilities that result when "
 "set to true."
 msgstr ""
+"trueに設定する場合に生じる潜在的な非互換性の問題のリストを以下に示します。"
 
 #: ../../source/guide/environment.rst:165
 msgid "Mesh indices"
-msgstr ""
+msgstr "メッシュのインデックス"
 
 #: ../../source/guide/environment.rst:165
 msgid "If true, the number of indices in a mesh is limited to 65535"
-msgstr ""
+msgstr "設定するとメッシュのインデックスは65535に制限されます"
 
 #: ../../source/guide/environment.rst:167
 msgid "Texture blit"
-msgstr ""
+msgstr "テクスチャのビット"
 
 #: ../../source/guide/environment.rst:167
 msgid ""
@@ -339,6 +355,11 @@ msgid ""
 "on Android, most of devices fail to do it. Ref: "
 "https://github.com/kivy/kivy/issues/1600"
 msgstr ""
+"テクスチャにブリットすると、データフォーマット（色やバッファ）は、"
+"テクスチャの作成時に使用されるものと同じ形式でなければなりません。 "
+"Android上で、デバイスのほとんどは実行に失敗しながら、"
+"デスクトップ上に、異なる色の変換が正しく、ドライバによって処理されます。参考："
+"https://github.com/kivy/kivy/issues/1600"
 
 #: ../../source/guide/environment.rst:188
 msgid "KIVY_BCM_DISPMANX_ID"
@@ -349,6 +370,9 @@ msgid ""
 "Change the default Raspberry Pi display to use. The list of available "
 "value is accessible in `vc_dispmanx_types.h`. Default value is 0:"
 msgstr ""
+"使用するデフォルトのラズベリーパイの表示を変更します。"
+"使用可能な値のリストは、`vc_dispmanx_types.h` でアクセス可能です。デフォルト値は0です。"
+
 
 #: ../../source/guide/environment.rst:182
 msgid "0: DISPMANX_ID_MAIN_LCD"
