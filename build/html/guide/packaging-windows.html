@@ -66,11 +66,11 @@
           <h3><a href="../index.html">Create a package for Windows</a></h3>
           <ul>
 <li><a class="reference internal" href="#">Create a package for Windows</a><ul>
-<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#requirements">Requirements(要件)</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#pyinstaller-default-hook">PyInstaller default hook</a><ul>
-<li><a class="reference internal" href="#packaging-a-simple-app">Packaging a simple app</a></li>
+<li><a class="reference internal" href="#packaging-a-simple-app">Packaging a simple app(シンプルなアプリをパッケージ化)</a></li>
 <li><a class="reference internal" href="#packaging-a-video-app-with-gstreamer">Packaging a video app with gstreamer</a></li>
 </ul>
 </li>
@@ -143,12 +143,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../guide-index.html">Programming Guide(翻訳中)</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="basic.html">Kivyの基本</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environment.html">Controlling the environment(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="config.html">Configure Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Configure Kivy(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="architecture.html">Architectural Overview(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="events.html">Events and Properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inputs.html">Input management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graphics.html">Graphics (翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lang.html">Kv language(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="other-frameworks.html">Integrating with other Frameworks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bestpractices.html">Best Practices</a></li>
@@ -180,11 +180,11 @@
           <div class="body">
             <div class="toc"><h2>Table Of Contents</h2><ul>
 <li><a class="reference internal" href="#">Create a package for Windows</a><ul>
-<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#requirements">Requirements(要件)</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#pyinstaller-default-hook">PyInstaller default hook</a><ul>
-<li><a class="reference internal" href="#packaging-a-simple-app">Packaging a simple app</a></li>
+<li><a class="reference internal" href="#packaging-a-simple-app">Packaging a simple app(シンプルなアプリをパッケージ化)</a></li>
 <li><a class="reference internal" href="#packaging-a-video-app-with-gstreamer">Packaging a video app with gstreamer</a></li>
 </ul>
 </li>
@@ -200,35 +200,28 @@
 <h1>Create a package for Windows<a class="headerlink" href="#create-a-package-for-windows" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">This document only applies for kivy <code class="docutils literal"><span class="pre">1.9.1</span></code> and greater.</p>
+<p class="last">この文章はkivy <code class="docutils literal"><span class="pre">1.9.1</span></code> 以降のバージョンが対象です。</p>
 </div>
-<p>Packaging your application for the Windows platform can only be done inside the
-Windows OS. The following process has been tested on Windows with the Kivy
-<strong>wheels</strong> installation, see at the end for alternate installations.</p>
-<p>The package will be either 32 or 64 bits depending on which version of Python
-you ran it with.</p>
+<p>Windowsプラットフォーム用のアプリケーションのパッケージは、Windows OS内でできます。次のプロセスはKivy wheelsのインストールをwindowsにインストールし、インストールの終了までテストされています。</p>
+<p>パッケージは実行したPythonのバージョンに応じて32bit,64bitのどちらかになります。</p>
 <div class="section" id="requirements">
-<span id="packaging-windows-requirements"></span><h2>Requirements<a class="headerlink" href="#requirements" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<span id="packaging-windows-requirements"></span><h2>Requirements(要件)<a class="headerlink" href="#requirements" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li>Latest Kivy (installed as described in <a class="reference internal" href="../installation/installation-windows.html#installation-windows"><span class="std std-ref">Installation on Windows</span></a>).</li>
-<li>PyInstaller 3.1+ (<code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">pyinstaller</span></code>).</li>
+<li><p class="first">Kivyの最新バージョン（ <a class="reference internal" href="../installation/installation-windows.html#installation-windows"><span class="std std-ref">Installation on Windows</span></a> の記載の通りインストール ）。</p>
+</li>
+<li><p class="first">PyInstallerは3.1以上 (<code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">pyinstaller</span></code>)</p>
+</li>
 </ul>
 </div></blockquote>
 </div>
 </div>
 <div class="section" id="pyinstaller-default-hook">
 <span id="create-the-spec-file"></span><h1>PyInstaller default hook<a class="headerlink" href="#pyinstaller-default-hook" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>This section applies to PyInstaller (&gt;= 3.1) that includes the kivy hooks.
-To overwrite the default hook the
-following examples need to be slightly modified. See <a class="reference internal" href="#overwrite-win-hook"><span class="std std-ref">Overwriting the default hook</span></a>.</p>
+<p>このセクションでは、kivyフックを含むためpyInstallerの（&gt; = 3.1）に適用されます。デフォルトのフックを上書きするには次の例のように少し修正する必要があります。 「 <a class="reference internal" href="#overwrite-win-hook"><span class="std std-ref">Overwriting the default hook</span></a> 」を参照してください。</p>
 <div class="section" id="packaging-a-simple-app">
-<h2>Packaging a simple app<a class="headerlink" href="#packaging-a-simple-app" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>For this example, we&#8217;ll package the <strong>touchtracer</strong> example project and embed a custom icon.
-The location of the kivy examples is, when using the wheels, installed to <code class="docutils literal"><span class="pre">python\\share\\kivy-examples</span></code>
-and when using the github source code installed as <code class="docutils literal"><span class="pre">kivy\\examples</span></code>. We&#8217;ll just refer to the full
-path leading to the examples as <code class="docutils literal"><span class="pre">examples-path</span></code>. The touchtracer example is in
-<code class="docutils literal"><span class="pre">examples-path\\demo\\touchtracer</span></code> and the main file is named <code class="docutils literal"><span class="pre">main.py</span></code>.</p>
+<h2>Packaging a simple app(シンプルなアプリをパッケージ化)<a class="headerlink" href="#packaging-a-simple-app" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>この例では、touchtracerサンプルプロジェクトをパッケージ化し、カスタムアイコンを埋め込みます。wheelを使用してインストールしている場合、kivyのサンプルコードの場所は <code class="docutils literal"><span class="pre">python\\share\\kivy-examples</span></code> にgithubのソースコードをインストールして使用するときは <cite>kivy\examples`</cite> にあります 。サンプルコードに至る絶対パスexamples-pathパスを参照します。touchtracerの例があるexamples-pathdemotouchtracerとメインファイルは``main.py``です。</p>
 <ol class="arabic">
 <li><p class="first">Open your command line shell and ensure that python is on the path (i.e. <code class="docutils literal"><span class="pre">python</span></code> works).</p>
 </li>
@@ -439,7 +432,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 9月 10, 2016.
+      Last updated on 9月 11, 2016.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.2.
 </div>
 -->

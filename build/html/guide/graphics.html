@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="twitter:site" content="@kivyframework">
     
-    <title>Graphics &mdash; Kivy 1.9.1 ドキュメント</title>
+    <title>Graphics (翻訳済み) &mdash; Kivy 1.9.1 ドキュメント</title>
     <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../_static/fresh.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -63,13 +63,13 @@
                 <input type="text" class="text" name="q" />
             </form>
           <!--
-          <h3><a href="../index.html">Graphics</a></h3>
+          <h3><a href="../index.html">Graphics (翻訳済み)</a></h3>
           <ul>
-<li><a class="reference internal" href="#">Graphics</a><ul>
-<li><a class="reference internal" href="#introduction-to-canvas">Introduction to Canvas</a></li>
-<li><a class="reference internal" href="#context-instructions">Context instructions</a></li>
-<li><a class="reference internal" href="#drawing-instructions">Drawing instructions</a></li>
-<li><a class="reference internal" href="#manipulating-instructions">Manipulating instructions</a></li>
+<li><a class="reference internal" href="#">Graphics (翻訳済み)</a><ul>
+<li><a class="reference internal" href="#introduction-to-canvas">Introduction to Canvas (Canvas入門)</a></li>
+<li><a class="reference internal" href="#context-instructions">Context instructions (コンテキスト・インストラクション)</a></li>
+<li><a class="reference internal" href="#drawing-instructions">Drawing instructions (ドローイング・インストラクション)</a></li>
+<li><a class="reference internal" href="#manipulating-instructions">Manipulating instructions (マニピュレーティング・インストラクション)</a></li>
 </ul>
 </li>
 </ul>
@@ -136,12 +136,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../guide-index.html">Programming Guide(翻訳中)</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="basic.html">Kivyの基本</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environment.html">Controlling the environment(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="config.html">Configure Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Configure Kivy(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="architecture.html">Architectural Overview(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="events.html">Events and Properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inputs.html">Input management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets(翻訳済み)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Graphics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Graphics (翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lang.html">Kv language(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="other-frameworks.html">Integrating with other Frameworks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bestpractices.html">Best Practices</a></li>
@@ -172,37 +172,30 @@
         <div class="bodywrapper">
           <div class="body">
             <div class="toc"><h2>Table Of Contents</h2><ul>
-<li><a class="reference internal" href="#">Graphics</a><ul>
-<li><a class="reference internal" href="#introduction-to-canvas">Introduction to Canvas</a></li>
-<li><a class="reference internal" href="#context-instructions">Context instructions</a></li>
-<li><a class="reference internal" href="#drawing-instructions">Drawing instructions</a></li>
-<li><a class="reference internal" href="#manipulating-instructions">Manipulating instructions</a></li>
+<li><a class="reference internal" href="#">Graphics (翻訳済み)</a><ul>
+<li><a class="reference internal" href="#introduction-to-canvas">Introduction to Canvas (Canvas入門)</a></li>
+<li><a class="reference internal" href="#context-instructions">Context instructions (コンテキスト・インストラクション)</a></li>
+<li><a class="reference internal" href="#drawing-instructions">Drawing instructions (ドローイング・インストラクション)</a></li>
+<li><a class="reference internal" href="#manipulating-instructions">Manipulating instructions (マニピュレーティング・インストラクション)</a></li>
 </ul>
 </li>
 </ul>
 </div>
             
   <div class="section" id="graphics">
-<span id="id1"></span><h1>Graphics<a class="headerlink" href="#graphics" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<span id="id1"></span><h1>Graphics (翻訳済み)<a class="headerlink" href="#graphics" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="introduction-to-canvas">
-<h2>Introduction to Canvas<a class="headerlink" href="#introduction-to-canvas" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Widgets graphical representation is done using a canvas, which you can see both
-as an unlimited drawing board, and as a set of drawing instructions. There are
-numerous different instructions you can apply (add) to your canvas, but there
-are two main kinds of them:</p>
+<h2>Introduction to Canvas (Canvas入門)<a class="headerlink" href="#introduction-to-canvas" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Widget をグラフィカルに表現するには、Canvas (キャンバス) を使用します。Canvas は無限の描画板であり、かつ描画のための Instruction (インストラクション) の集まりとみなすことができます。Canvas に適用、もしくは追加できる Instruction にはいろいろなものがありますが、主に次の2種類に分けられます。</p>
 <ul class="simple">
-<li><code class="xref py py-mod docutils literal"><span class="pre">context</span> <span class="pre">instructions</span></code></li>
-<li><code class="xref py py-mod docutils literal"><span class="pre">vertex</span> <span class="pre">instructions</span></code></li>
+<li><p class="first"><code class="xref py py-mod docutils literal"><span class="pre">context</span> <span class="pre">instructions</span></code>  (コンテキスト・インストラクション)</p>
+</li>
+<li><p class="first"><code class="xref py py-mod docutils literal"><span class="pre">vertex</span> <span class="pre">instructions</span></code>  (ヴァーテックス・インストラクション)</p>
+</li>
 </ul>
-<p>Context instructions don&#8217;t draw anything, but they change the results of the
-vertex instructions.</p>
-<p>Canvasses can contain two subsets of instructions. They are the
-<code class="xref py py-mod docutils literal"><span class="pre">canvas.before</span></code> and the <code class="xref py py-mod docutils literal"><span class="pre">canvas.after</span></code> instruction groups.  The instructions in these
-groups will be executed before and after the <code class="xref py py-mod docutils literal"><span class="pre">canvas</span></code> group
-respectively. This means that they will appear under (be executed before) and
-above (be executed after) them.
-Those groups are not created until the user accesses them.</p>
-<p>To add a canvas instruction to a widget, you use the canvas context:</p>
+<p>Context instruction は何も描くことはありませんが、Vertex instruction の表示結果 (書式など) を変更します。</p>
+<p>Canvas は2種類の Instruction グループを含むことができます。それは:mod:<cite>canvas.before &lt;kivy.graphics.Canvas.before&gt;</cite> と:mod:<cite>canvas.after &lt;kivy.graphics.Canvas.after&gt;</cite> です。これらのグループは、それぞれ:mod:<cite>~kivy.graphics.canvas</cite> の前と後で実行されます。これにより、canvas.before は canvas の下側に、canvas.after は canvas の上側に現れるように見えます。ユーザがアクセスするまで、これらのグループを作ることはできません。</p>
+<p>Widget に instruction を追加するには、次のように canvas を使います。</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">MyWidget</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -218,19 +211,16 @@ Those groups are not created until the user accesses them.</p>
 </div>
 </div>
 <div class="section" id="context-instructions">
-<h2>Context instructions<a class="headerlink" href="#context-instructions" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Context instructions manipulate the opengl context. You can rotate, translate,
-and scale your canvas. You can also attach a texture or change the drawing color. This one
-is the most commonly used, but others are really useful too:</p>
+<h2>Context instructions (コンテキスト・インストラクション)<a class="headerlink" href="#context-instructions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Context instruction は openGL コンテキストを操作します。Canvas を回転したり、別の形に変形したり、スケーリングすることができます。さらにテクスチャを追加したり、描画色を変更することもできます。描画色の変更は最もよく使われるものですが、その他の Context instruction も本当に役立つものです。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">before</span><span class="p">:</span>
     <span class="n">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">4</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;rgb&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="drawing-instructions">
-<h2>Drawing instructions<a class="headerlink" href="#drawing-instructions" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Drawing instructions range from very simple ones, like drawing a line or a
-polygon, to more complex ones, like meshes or bezier curves:</p>
+<h2>Drawing instructions (ドローイング・インストラクション)<a class="headerlink" href="#drawing-instructions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>描画のための Instruction は、直線や多角形などのとてもシンプルなものから、メッシュやベジエ曲線といったより複雑なものまで、多岐に渡ります。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="p">:</span>
    <span class="c1"># draw a line using the default color</span>
    <span class="n">Line</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">y3</span><span class="p">))</span>
@@ -242,10 +232,9 @@ polygon, to more complex ones, like meshes or bezier curves:</p>
 </div>
 </div>
 <div class="section" id="manipulating-instructions">
-<h2>Manipulating instructions<a class="headerlink" href="#manipulating-instructions" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Sometime, you want to update or remove the instructions you added to a canvas,
-this can be done in various ways depending on your needs:</p>
-<p>You can keep a reference to your instructions and update them:</p>
+<h2>Manipulating instructions (マニピュレーティング・インストラクション)<a class="headerlink" href="#manipulating-instructions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>そのうち、Canvas に追加した Instruction を更新したり、あるいは削除したりしたくなるでしょう。これはその内容によりますが、様々な方法で実現することができます。</p>
+<p>Instruction への参照をキープし、その参照を使って更新することができます:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">MyWidget</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -260,7 +249,7 @@ this can be done in various ways depending on your needs:</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
 </pre></div>
 </div>
-<p>Or you can clean your canvas and start fresh:</p>
+<p>あるいは、一度 Canvas をクリーンし、Instruction を新規に作ることもできます:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">MyWidget</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -276,8 +265,7 @@ this can be done in various ways depending on your needs:</p>
             <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Note that updating the instructions is considered the best practice as it
-involves less overhead and avoids creating new instructions.</p>
+<p>実際には、最初の例のように Instruction を更新するのが最良の方法と考えられます。なぜならオーバーヘッドがより少なく、新しい Instruction をわざわざ作ることをしないからです。</p>
 </div>
 </div>
 
@@ -316,7 +304,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 9月 10, 2016.
+      Last updated on 9月 11, 2016.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.2.
 </div>
 -->

@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="twitter:site" content="@kivyframework">
     
-    <title>Configure Kivy &mdash; Kivy 1.9.1 ドキュメント</title>
+    <title>Configure Kivy(翻訳済み) &mdash; Kivy 1.9.1 ドキュメント</title>
     <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../_static/fresh.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -63,11 +63,11 @@
                 <input type="text" class="text" name="q" />
             </form>
           <!--
-          <h3><a href="../index.html">Configure Kivy</a></h3>
+          <h3><a href="../index.html">Configure Kivy(翻訳済み)</a></h3>
           <ul>
-<li><a class="reference internal" href="#">Configure Kivy</a><ul>
-<li><a class="reference internal" href="#locating-the-configuration-file">Locating the configuration file</a></li>
-<li><a class="reference internal" href="#understanding-config-tokens">Understanding config tokens</a></li>
+<li><a class="reference internal" href="#">Configure Kivy(翻訳済み)</a><ul>
+<li><a class="reference internal" href="#locating-the-configuration-file">Locating the configuration file(設定ファイルの配置)</a></li>
+<li><a class="reference internal" href="#understanding-config-tokens">Understanding config tokens(トークン設定を理解する)</a></li>
 </ul>
 </li>
 </ul>
@@ -134,12 +134,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../guide-index.html">Programming Guide(翻訳中)</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="basic.html">Kivyの基本</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environment.html">Controlling the environment(翻訳済み)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Configure Kivy</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Configure Kivy(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="architecture.html">Architectural Overview(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="events.html">Events and Properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inputs.html">Input management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graphics.html">Graphics (翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lang.html">Kv language(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="other-frameworks.html">Integrating with other Frameworks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bestpractices.html">Best Practices</a></li>
@@ -170,52 +170,50 @@
         <div class="bodywrapper">
           <div class="body">
             <div class="toc"><h2>Table Of Contents</h2><ul>
-<li><a class="reference internal" href="#">Configure Kivy</a><ul>
-<li><a class="reference internal" href="#locating-the-configuration-file">Locating the configuration file</a></li>
-<li><a class="reference internal" href="#understanding-config-tokens">Understanding config tokens</a></li>
+<li><a class="reference internal" href="#">Configure Kivy(翻訳済み)</a><ul>
+<li><a class="reference internal" href="#locating-the-configuration-file">Locating the configuration file(設定ファイルの配置)</a></li>
+<li><a class="reference internal" href="#understanding-config-tokens">Understanding config tokens(トークン設定を理解する)</a></li>
 </ul>
 </li>
 </ul>
 </div>
             
   <div class="section" id="configure-kivy">
-<span id="id1"></span><h1>Configure Kivy<a class="headerlink" href="#configure-kivy" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>The configuration file for kivy is named <cite>config.ini</cite>, and adheres
-to the <a class="reference external" href="http://en.wikipedia.org/wiki/INI_file">standard INI</a> format.</p>
+<span id="id1"></span><h1>Configure Kivy(翻訳済み)<a class="headerlink" href="#configure-kivy" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>kivy用の設定ファイルはconfig.iniの名前の <cite>標準のINI形式 &lt;http://en.wikipedia.org/wiki/INI_file&gt;</cite> ファイルです。</p>
 <div class="section" id="locating-the-configuration-file">
-<h2>Locating the configuration file<a class="headerlink" href="#locating-the-configuration-file" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The location of the configuration file is controlled by the
-environment variable <cite>KIVY_HOME</cite>:</p>
+<h2>Locating the configuration file(設定ファイルの配置)<a class="headerlink" href="#locating-the-configuration-file" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>設定ファイルの場所は、環境変数 <cite>KIVY_HOME</cite> によって制御されます:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">KIVY_HOME</span><span class="o">&gt;/</span><span class="n">config</span><span class="o">.</span><span class="n">ini</span>
 </pre></div>
 </div>
-<p>On desktop, this defaults to:</p>
+<p>デスクトップ上でこの設定は次のようになります:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">HOME_DIRECTORY</span><span class="o">&gt;/.</span><span class="n">kivy</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">ini</span>
 </pre></div>
 </div>
-<p>Therefore, if your user is named &#8220;tito&#8221;, the file will be here:</p>
+<p>ユーザーが  &#8220;tito&#8221; という名前の場合、ファイルの場所はここになります:</p>
 <ul class="simple">
 <li>Windows: <code class="docutils literal"><span class="pre">C:\Users\tito\.kivy\config.ini</span></code></li>
 <li>OS X: <code class="docutils literal"><span class="pre">/Users/tito/.kivy/config.ini</span></code></li>
 <li>Linux: <code class="docutils literal"><span class="pre">/home/tito/.kivy/config.ini</span></code></li>
 </ul>
-<p>On Android, this defaults to:</p>
+<p>Androidはデフォルトはこのようになります:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ANDROID_APP_PATH</span><span class="o">&gt;/.</span><span class="n">kivy</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">ini</span>
 </pre></div>
 </div>
-<p>If your app is named &#8220;org.kivy.launcher&#8221;, the file will be here:</p>
+<p>アプリ名が「&#8221;org.kivy.launcher
+」の場合は、ファイルはここになります。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">org</span><span class="o">.</span><span class="n">kivy</span><span class="o">.</span><span class="n">launcher</span><span class="o">/</span><span class="n">files</span><span class="o">/.</span><span class="n">kivy</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">ini</span>
 </pre></div>
 </div>
-<p>On iOS, this defaults to:</p>
+<p>iOSではデフォルトはこのようになります:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">HOME_DIRECTORY</span><span class="o">&gt;/</span><span class="n">Documents</span><span class="o">/.</span><span class="n">kivy</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">ini</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="understanding-config-tokens">
-<h2>Understanding config tokens<a class="headerlink" href="#understanding-config-tokens" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>All the configuration tokens are explained in the <code class="xref py py-mod docutils literal"><span class="pre">kivy.config</span></code>
-module.</p>
+<h2>Understanding config tokens(トークン設定を理解する)<a class="headerlink" href="#understanding-config-tokens" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>すべての構成トークンは <code class="xref py py-mod docutils literal"><span class="pre">kivy.config</span></code> モジュールで説明されています。</p>
 </div>
 </div>
 
@@ -254,7 +252,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 9月 10, 2016.
+      Last updated on 9月 11, 2016.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.2.
 </div>
 -->
