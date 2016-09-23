@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/guide/events.rst:5
 msgid "Events and Properties"
-msgstr ""
+msgstr "Events and Properties (翻訳済み)"
 
 #: ../../source/guide/events.rst:7
 msgid ""
@@ -29,16 +29,24 @@ msgid ""
 "how to bind to them, you will see them everywhere in Kivy. They make it "
 "easy to build whatever behavior you want into Kivy."
 msgstr ""
+"Event (イベント) は Kivy プログラミングの重要な部分の1つです。"
+"GUI開発の経験がある人にとっては驚くことではないかもしれませんが、"
+"初めての人にとっては重要なコンセプトです。"
+"イベントがどのように働き、それらをどうやってバインド (紐付け) するかを一度理解できれば、"
+"Kivy の至る所に Event が現れることがわかるでしょう。"
+"あなたが Kivy で組み込みたいあらゆる挙動や振る舞いは、Event を用いることで簡単に実現できます。"
+
 
 #: ../../source/guide/events.rst:13
 msgid ""
 "The following illustration shows how events are handled in the Kivy "
 "framework."
 msgstr ""
+"次の図は、EventがKivyフレームワークの中でどのように取り扱われるのかを示したものです。"
 
 #: ../../source/guide/events.rst:19
 msgid "Introduction to the Event Dispatcher"
-msgstr ""
+msgstr "Introduction to the Event Dispatcher (イベント・ディスパッチャ入門)"
 
 #: ../../source/guide/events.rst:21
 msgid ""
@@ -49,16 +57,27 @@ msgid ""
 ":class:`~kivy.animation.Animation` and :obj:`~kivy.clock.Clock` classes "
 "are examples of event dispatchers."
 msgstr ""
+"Kivyフレームワークの中で最も重要な基盤クラスの1つが、"
+":class:`~kivy.event.EventDispatcher` (イベント・ディスパッチャ) です。このクラスを用いることにより、"
+"イベントタイプを登録し、またそれらを関心ある集まり (普通は他のEventDispatcherです) "
+"にディスパッチ (送り出す) ことができます。たとえば、"
+":class:`~kivy.uix.widget.Widget`、 "
+":class:`~kivy.animation.Animation` や :obj:`~kivy.clock.Clock` "
+"などがEventDispatcherの例です。"
+
+
 
 #: ../../source/guide/events.rst:28
 msgid ""
 "EventDispatcher objects depend on the main loop to generate and handle "
 "events."
 msgstr ""
+"EventDispatcherのオブジェクトは、Main Loop (メイン・ループ) にしたがって、"
+"Event を生成し、操作します。"
 
 #: ../../source/guide/events.rst:32
 msgid "Main loop"
-msgstr ""
+msgstr "Main loop (メイン・ループ)"
 
 #: ../../source/guide/events.rst:34
 msgid ""
@@ -66,6 +85,9 @@ msgid ""
 "is running during all of the application's lifetime and only quits when "
 "exiting the application."
 msgstr ""
+"上に示した図のように、Kivyは Main Loop を持ちます。"
+"このループはアプリが動いている間ずっとまわり続け、"
+"それが停まるのはアプリが終了するときのみです。"
 
 #: ../../source/guide/events.rst:38
 msgid ""
@@ -73,6 +95,10 @@ msgid ""
 "input, hardware sensors or a couple of other sources, and frames are "
 "rendered to the display."
 msgstr ""
+"Main Loop の内部では、毎回の反復において、Event が生成されます。"
+"Event はユーザの入力、ハードウェアのセンサ、その他のソースに対して生成されます。"
+"また、フレームがディスプレイにレンダリングされます。"
+
 
 #: ../../source/guide/events.rst:42
 msgid ""
@@ -80,12 +106,18 @@ msgid ""
 "called by the main loop. If a callback takes too long or doesn't quit at "
 "all, the main loop is broken and your app doesn't work properly anymore."
 msgstr ""
+"あなたはアプリの中で callback (コールバック, これについては後で詳しく述べます) を規定するでしょう。"
+"この callback というのは Main Loop に呼び出されます。"
+"もし callback があまりに長い時間を要し、停止しようとしなければ、Main Loop は壊れ、あなたのアプリはそれ以上適切に動作することはありません。"
+
 
 #: ../../source/guide/events.rst:46
 msgid ""
 "In Kivy applications, you have to avoid long/infinite loops or sleeping. "
 "For example the following code does both::"
 msgstr ""
+"Kivyで作るアプリの中では、長時間もしくは無限のループやスリープを避けなければなりません。"
+"たとえば次のコードでは、その忌避すべき両方のことを行っています::"
 
 #: ../../source/guide/events.rst:53
 msgid ""
@@ -95,10 +127,16 @@ msgid ""
 "Instead, you need to \"schedule\" your ``animate_something()`` function "
 "to be called repeatedly."
 msgstr ""
+"このコードを走らせると、プログラムは決してループを抜けません。"
+"それによりKivyは、本来なすべき他のすべてのことができなくなってしまうのです。"
+"その結果、あなたは何もインタラクトできない、真っ黒なウィンドウを目撃することになるでしょう。"
+"これを防ぐには、上記の ``animate_something()`` 関数が"
+"繰り返し呼び出されるように \"schedule\" (スケジュール) する必要があります。"
+
 
 #: ../../source/guide/events.rst:60
 msgid "Scheduling a repetitive event"
-msgstr ""
+msgstr "Scheduling a repetitive event (繰り返しイベントをスケジュールする)"
 
 #: ../../source/guide/events.rst:62
 msgid ""
@@ -106,28 +144,38 @@ msgid ""
 ":meth:`~kivy.clock.Clock.schedule_interval`. Here is an example of "
 "calling a function named my_callback 30 times per second::"
 msgstr ""
+":meth:`~kivy.clock.Clock.schedule_interval` を使えば、"
+"関数あるいはメソッドを1秒間あたりX回呼び出す、といったことが可能になります。"
+"以下は my_callback という関数を、1/30秒ごとに1回呼び出すという例です。"
 
 #: ../../source/guide/events.rst:70
 msgid ""
 "You have two ways of unscheduling a previously scheduled event. The first"
 " would be to use :meth:`~kivy.clock.Clock.unschedule`::"
 msgstr ""
+"スケジュールされたイベントを解除するには、2通りの方法があります。"
+"1つは :meth:`~kivy.clock.Clock.unschedule` を使う方法です。"
 
 #: ../../source/guide/events.rst:75
 msgid ""
 "Or, you can return False in your callback, and your event will be "
 "automatically unscheduled::"
 msgstr ""
+"もう1つの方法は、当該 callback 関数において False を返すことです。"
+"False を返せば、その関数に関するイベントは自動的に解除されます。"
 
 #: ../../source/guide/events.rst:90
 msgid "Scheduling a one-time event"
-msgstr ""
+msgstr "Scheduling a one-time event (1回切りのイベント)"
 
 #: ../../source/guide/events.rst:92
 msgid ""
 "Using :meth:`~kivy.clock.Clock.schedule_once`, you can call a function "
 "\"later\", like in the next frame, or in X seconds::"
 msgstr ""
+":meth:`~kivy.clock.Clock.schedule_once` を使えば、"
+"関数を「後で」1回呼び出すことができます。"
+"「後で」の意味は、たとえば次のフレームや、X秒後、などを指します::"
 
 #: ../../source/guide/events.rst:99
 msgid ""
@@ -136,24 +184,32 @@ msgid ""
 "you can achieve some other results with special values for the second "
 "argument:"
 msgstr ""
+"このスケジュールは、\"my_callback\" を1秒後に呼び出します。"
+"2つ目の引数で、関数を呼び出すまでの時間を秒単位で指定します。"
+"2つ目の引数については、特別な値を与えることによって、以下のように動作させることもできます。"
 
 #: ../../source/guide/events.rst:103
 msgid "If X is greater than 0, the callback will be called in X seconds"
-msgstr ""
+msgstr "もし X>0 ならば、callbackはX秒後に呼び出される (上記の通り)"
 
 #: ../../source/guide/events.rst:104
 msgid "If X is 0, the callback will be called after the next frame"
-msgstr ""
+msgstr "もし X=0 ならば、callbackは次のフレームの「後で」呼び出される"
 
 #: ../../source/guide/events.rst:105
 msgid "If X is -1, the callback will be called before the next frame"
-msgstr ""
+msgstr "もし X=-1 ならば、callbackは次のフレームの「前に」呼び出される"
 
 #: ../../source/guide/events.rst:107
 msgid ""
 "The -1 is mostly used when you are already in a scheduled event, and if "
 "you want to schedule a call BEFORE the next frame is happening."
 msgstr ""
+""
+"すでにスケジュールされたイベントの中にいるとき、あるいは"
+"次のフレームが発生する前にイベントをスケジュールしたいとき、"
+"ほとんどの場合-1が用いられます。"
+
 
 #: ../../source/guide/events.rst:110
 msgid ""
@@ -161,6 +217,9 @@ msgid ""
 "callback once with :meth:`~kivy.clock.Clock.schedule_once`, and a second "
 "call to this function inside the callback itself::"
 msgstr ""
+"関数呼び出しを繰り返すための2つ目の方法は、まず"
+":meth:`~kivy.clock.Clock.schedule_once` を用いてコールバックを1回だけスケジュールし、"
+"2回目の呼び出しは、このコールバック自身の中でスケジュールする、というものです::"
 
 #: ../../source/guide/events.rst:120
 msgid ""
@@ -170,6 +229,10 @@ msgid ""
 "will take longer than anticipated and thus the timing can be a little "
 "off."
 msgstr ""
+"Main loop は、要求通りにスケジュールが実行されるようにつとめますが、"
+"スケジュールされたコールバックが実際にいつ呼び出されるかは、多少不確かです。"
+"ときには他のコールバックやタスクが予定より長くかかってしまい、"
+"実行のタイミングが少し遅れることもあるでしょう。"
 
 #: ../../source/guide/events.rst:125
 msgid ""
@@ -178,16 +241,22 @@ msgid ""
 "ends. With :meth:`~kivy.clock.Clock.schedule_interval` however, the "
 "callback is called every second."
 msgstr ""
+"コールバックを繰り返し呼び出すための2つ目の方法では、"
+"次の呼び出しは、直近の呼び出しの「少なくとも」1秒後です。"
+"しかし :meth:`~kivy.clock.Clock.schedule_interval` を用いれば、"
+"1秒ごとにコールバックが呼び出されます。"
 
 #: ../../source/guide/events.rst:131
 msgid "Trigger events"
-msgstr ""
+msgstr "Trigger events (Trigger を用いてイベントをスケジュールする)"
 
 #: ../../source/guide/events.rst:133
 msgid ""
 "If you want to schedule a function to be called only once for the next "
 "frame, like a trigger, you might be tempted to achieve that like so::"
 msgstr ""
+"もし Trigger (トリガ) のように、次のフレームの後に1回だけ関数を呼び出すことを"
+"スケジュールしたい場合は、次のように書きたくなるかもしれません::"
 
 #: ../../source/guide/events.rst:139
 msgid ""
@@ -196,32 +265,44 @@ msgid ""
 "unschedule needs to iterate the weakref list of the Clock in order to "
 "find your callback and remove it. Use a trigger instead::"
 msgstr ""
+"このようにトリガを書くと、実行に時間がかかってしまい、良くありません。"
+"なぜなら、イベントをそれまでにスケジュールしたかどうかに関わらず、"
+"いつも unschedule を呼び出すことになるからです。"
+"しかも unschedule は、コールバックをイベントから外すために、
+"Clock の中にある workref リストを走査しなければならないのです。"
+"代わりに次のトリガを使いましょう::"
 
 #: ../../source/guide/events.rst:148
 msgid ""
 "Each time you call trigger(), it will schedule a single call of your "
 "callback. If it was already scheduled, it will not be rescheduled."
 msgstr ""
+"trigger() を呼び出すたび、あなたの callback は1回だけスケジュールされるでしょう。"
+"もし既にスケジュール済であれば、再度スケジュールされることはありません。"
 
 #: ../../source/guide/events.rst:153
 msgid "Widget events"
-msgstr ""
+msgstr "Widget events (Widgetに関するイベント)"
 
 #: ../../source/guide/events.rst:155
 msgid "A widget has 2 default types of events:"
-msgstr ""
+msgstr "Widget に関するイベントには、デフォルトで2つのタイプがあります。"
 
 #: ../../source/guide/events.rst:157
 msgid ""
 "Property event: if your widget changes its position or size, an event is "
 "fired."
 msgstr ""
+"Property event (プロパティ・イベント): "
+"ウィジェットの位置やサイズなどの「プロパティ」が変わったときに発生するイベントを指します。"
 
 #: ../../source/guide/events.rst:158
 msgid ""
 "Widget-defined event: e.g. an event will be fired for a Button when it's "
 "pressed or released."
 msgstr ""
+"Widget-defined event (ウィジェットに定義されたイベント): "
+"たとえば Button が押されたときや離されたときに発生するようなイベントを指します。"
 
 #: ../../source/guide/events.rst:161
 msgid ""
@@ -229,10 +310,13 @@ msgid ""
 "please refer to the :ref:`Widget touch event bubbling <widget-event-"
 "bubbling>` section."
 msgstr ""
+"ウィジェットのタッチイベントがどのように管理され、伝播されるかの議論については、"
+":ref:`Widget touch event bubbling <widget-event-bubbling>` を参照してください。"
+
 
 #: ../../source/guide/events.rst:165
 msgid "Creating custom events"
-msgstr ""
+msgstr "Creating custom events (独自イベントの作成)"
 
 #: ../../source/guide/events.rst:167
 msgid ""
@@ -240,14 +324,16 @@ msgid ""
 "the name of the event in the class and then create a method of the same "
 "name."
 msgstr ""
+"独自イベントを持つ EventDispatcher を作るには、クラス内でそのイベントの名前を登録し、"
+"同じ名前を持つメソッドを定義する必要があります。"
 
 #: ../../source/guide/events.rst:170
 msgid "See the following example::"
-msgstr ""
+msgstr "次の例では、独自イベントの名前は on_test です::"
 
 #: ../../source/guide/events.rst:187
 msgid "Attaching callbacks"
-msgstr ""
+msgstr "Attaching callbacks (コールバック関数を紐付けする)"
 
 #: ../../source/guide/events.rst:189
 msgid ""
@@ -255,6 +341,9 @@ msgid ""
 "dispatched, your callbacks will be called with the parameters relevant to"
 " that specific event."
 msgstr ""
+"イベントを使うには、コールバック関数を紐付けする必要があります。"
+"イベントがディスパッチされると、紐付けされたコールバック関数が、"
+"イベントに関連したパラメータとともに呼びされます。"
 
 #: ../../source/guide/events.rst:193
 msgid ""
@@ -263,20 +352,28 @@ msgid ""
 "accept the `*args` argument, which will catch all arguments in the `args`"
 " list."
 msgstr ""
+"コールバックにはあらゆる callable (呼び出し可能なオブジェクト) を用いることができますが、"
+"そのコールバックが、イベントの発する引数を確実に受け付けるようにしなければなりません。"
+"このため、普通は `*args` 引数を受け付けるようにするのが最も安全です。"
+"この引数は `args` リストの中にすべての引数を捕まえることができます。"
+
 
 #: ../../source/guide/events.rst:197
 msgid "Example::"
-msgstr ""
+msgstr "たとえば::"
 
 #: ../../source/guide/events.rst:207
 msgid ""
 "Pleases refer to the :meth:`kivy.event.EventDispatcher.bind` method "
 "documentation for more examples on how to attach callbacks."
 msgstr ""
+"コールバックの紐付けについては、 より多くの例が :meth:`kivy.event.EventDispatcher.bind` "
+"にあります。"
+
 
 #: ../../source/guide/events.rst:211
 msgid "Introduction to Properties"
-msgstr ""
+msgstr "Introduction to Properties (プロパティ入門)"
 
 #: ../../source/guide/events.rst:213
 msgid ""
@@ -285,56 +382,62 @@ msgid ""
 "object changes, all properties that reference that attribute are "
 "automatically updated."
 msgstr ""
+"Property (プロパティ) は、イベント、およびそのイベントへの紐付けを定義するための素晴らしい手段です。"
+"基本的には、プロパティはイベントを生成します。"
+"どのようなイベントかというと、オブジェクトの属性に変更 (値の代入など) があったとき、"
+"その属性にリファレンスを持つすべてのプロパティも、自動的に更新されるようなイベントです。"
+
 
 #: ../../source/guide/events.rst:217
 msgid ""
 "There are different kinds of properties to describe the type of data you "
 "want to handle."
 msgstr ""
+"異なる種類のプロパティがあり、それらを用いて、取り扱うデータの種類を記述することになります。"
 
 #: ../../source/guide/events.rst:220
 msgid ":class:`~kivy.properties.StringProperty`"
-msgstr ""
+msgstr ":class:`~kivy.properties.StringProperty`"
 
 #: ../../source/guide/events.rst:221
 msgid ":class:`~kivy.properties.NumericProperty`"
-msgstr ""
+msgstr ":class:`~kivy.properties.NumericProperty`"
 
 #: ../../source/guide/events.rst:222
 msgid ":class:`~kivy.properties.BoundedNumericProperty`"
-msgstr ""
+msgstr ":class:`~kivy.properties.BoundedNumericProperty`"
 
 #: ../../source/guide/events.rst:223
 msgid ":class:`~kivy.properties.ObjectProperty`"
-msgstr ""
+msgstr ":class:`~kivy.properties.ObjectProperty`"
 
 #: ../../source/guide/events.rst:224
 msgid ":class:`~kivy.properties.DictProperty`"
-msgstr ""
+msgstr ":class:`~kivy.properties.DictProperty`"
 
 #: ../../source/guide/events.rst:225
 msgid ":class:`~kivy.properties.ListProperty`"
-msgstr ""
+msgstr ":class:`~kivy.properties.ListProperty`"
 
 #: ../../source/guide/events.rst:226
 msgid ":class:`~kivy.properties.OptionProperty`"
-msgstr ""
+msgstr ":class:`~kivy.properties.OptionProperty`"
 
 #: ../../source/guide/events.rst:227
 msgid ":class:`~kivy.properties.AliasProperty`"
-msgstr ""
+msgstr ":class:`~kivy.properties.AliasProperty`"
 
 #: ../../source/guide/events.rst:228
 msgid ":class:`~kivy.properties.BooleanProperty`"
-msgstr ""
+msgstr ":class:`~kivy.properties.BooleanProperty`"
 
 #: ../../source/guide/events.rst:229
 msgid ":class:`~kivy.properties.ReferenceListProperty`"
-msgstr ""
+msgstr ":class:`~kivy.properties.ReferenceListProperty`"
 
 #: ../../source/guide/events.rst:233
 msgid "Declaration of a Property"
-msgstr ""
+msgstr "Declaration of a Property (プロパティの宣言)"
 
 #: ../../source/guide/events.rst:235
 msgid ""
@@ -343,36 +446,45 @@ msgid ""
 "object is created. These properties are not attributes: they are "
 "mechanisms for creating events based on your attributes::"
 msgstr ""
+"プロパティを宣言するには、クラスレベルで行わなければなりません。"
+"そうすると、オブジェクトが作られる際に、(プロパティと紐付けされた) 実際の属性がインスタンス化されます。"
+”プロパティは属性ではありません: プロパティは、属性に基づいてイベントを生成するメカニズムなのです::"
 
 #: ../../source/guide/events.rst:245
 msgid ""
 "When overriding `__init__`, *always* accept `**kwargs` and use `super()` "
 "to call the parent's `__init__` method, passing in your class instance::"
 msgstr ""
+"`__init__` をオーバーライドするときは、*常に* `**kwargs` を引数として受け付けるようにし、"
+"`super()` を用いて親クラスの `__init__` を呼び出し、あなたのクラスインスタンスを渡すようにしてください。"
 
 #: ../../source/guide/events.rst:253
 msgid "Dispatching a Property event"
-msgstr ""
+msgstr "Dispatching a Property event (プロパティイベントをディスパッチする)"
 
 #: ../../source/guide/events.rst:255
 msgid ""
 "Kivy properties, by default, provide an `on_<property_name>` event. This "
 "event is called when the value of the property is changed."
 msgstr ""
+"Kivyプロパティは、デフォルトで、 `on_<プロパティ名>` のイベントを提供します。"
+"このイベントは、プロパティの値が変更されたときに呼び出されます。"
 
 #: ../../source/guide/events.rst:259
 msgid ""
 "If the new value for the property is equal to the current value, then the"
 " `on_<property_name>` event will not be called."
 msgstr ""
+"ただし、プロパティに新しく与えた値が、元の値と変わらない場合は、"
+" `on_<プロパティ名>` のイベントは呼び出されません。"
 
 #: ../../source/guide/events.rst:262 ../../source/guide/events.rst:328
 msgid "For example, consider the following code:"
-msgstr ""
+msgstr "たとえば、次のコードを見てください::"
 
 #: ../../source/guide/events.rst:280
 msgid "In the code above at line 3::"
-msgstr ""
+msgstr "上のコードの3行目は::"
 
 #: ../../source/guide/events.rst:284
 msgid ""
@@ -381,16 +493,21 @@ msgid ""
 " 0]`. From this point forward, the `on_pressed` event will be called "
 "whenever the value of this property is changed."
 msgstr ""
+":class:`~kivy.properties.ListProperty` 型の `pressed` プロパティを定義し、"
+"デフォルト値として`[0,0]`を与えています。これより先、"
+"このプロパティの値が変更されたときはいつでも、`on_pressed` イベントが呼び出されるのです。"
 
 #: ../../source/guide/events.rst:288
 msgid "At Line 5::"
-msgstr ""
+msgstr "5行目では::"
 
 #: ../../source/guide/events.rst:296
 msgid ""
 "We override the :meth:`on_touch_down` method of the Widget class. Here, "
 "we check for collision of the `touch` with our widget."
 msgstr ""
+"Widget クラスの :meth:`on_touch_down` メソッドをオーバーライドしています。"
+"ここでは、`touch` がウィジェットの上でなされたかどうかをチェックしています。"
 
 #: ../../source/guide/events.rst:299
 msgid ""
@@ -398,6 +515,10 @@ msgid ""
 " to touch.pos and return True, indicating that we have consumed the touch"
 " and don't want it to propagate any further."
 msgstr ""
+"もしタッチがウィジェット内部でなされた場合は、`pressed` の値を"
+"touch.pos に変更し、True を返します。"
+"True を返すことによって、touchを「使い切り」、それ以上伝播させないようにします。"
+
 
 #: ../../source/guide/events.rst:303
 msgid ""
@@ -405,16 +526,21 @@ msgid ""
 "event using `super(...)` and return the result. This allows the touch "
 "event propagation to continue as it would normally have occured."
 msgstr ""
+"そして、もしタッチがウィジェットの外部でなされた場合は、"
+"Widget クラス本来のイベント `super(...)` を呼び出し、その結果を返すようにします。"
+"これにより、通常の場合同様、タッチイベントは (子ウィジェットに対して) 伝播します。"
 
 #: ../../source/guide/events.rst:307
 msgid "Finally on line 11::"
-msgstr ""
+msgstr "そして最後に11行目では::"
 
 #: ../../source/guide/events.rst:312
 msgid ""
 "We define an `on_pressed` function that will be called by the property "
 "whenever the property value is changed."
 msgstr ""
+"`on_pressed` 関数を定義しています。"
+"この関数は `pressed` プロパティの値が変更されたときに呼び出されます。"
 
 #: ../../source/guide/events.rst:316
 msgid ""
@@ -422,16 +548,23 @@ msgid ""
 " is defined. To monitor/observe any change to a property outside of the "
 "class where it's defined, you should bind to the property as shown below."
 msgstr ""
+"この `on_<プロパティ名>` イベントは、そのプロパティが定義されたクラスの中で呼び出されます。"
+"クラスの外からプロパティの値の変化を監視したい場合は、この後説明するように、そのプロパティ"
+"に対してバインド (紐付け) を行う必要があります。"
 
 #: ../../source/guide/events.rst:321
 msgid "**Binding to the property**"
-msgstr ""
+msgstr "**Binding to the property (プロパティへのバインド)**"
 
 #: ../../source/guide/events.rst:323
 msgid ""
 "How to monitor changes to a property when all you have access to is a "
 "widget instance? You *bind* to the property::"
 msgstr ""
+"アクセスできるのがウィジェットインスタンスだけの場合、" 
+"どうやってそのプロパティの変化を監視すればいいでしょうか。"
+"答えは、そのプロパティに *バインド* することです。"
+
 
 #: ../../source/guide/events.rst:346
 msgid ""
@@ -440,6 +573,9 @@ msgid ""
 "`CustomBtn` class and another from the `btn_pressed` function that we "
 "bind to the property change."
 msgstr ""
+"このコードをそのまま走らせ、ボタンをクリックすると、コンソールには2つのprintの出力が"
+"現れるでしょう。1つは `CustomBtn` の中で呼び出された `on_pressed` イベントによるものであり、"
+"もう1つは `pressed` にバインドした、 `btn_pressed` 関数によるものです。"
 
 #: ../../source/guide/events.rst:350
 msgid ""
@@ -448,50 +584,64 @@ msgid ""
 "generally only use one of the methods of listening/reacting to property "
 "changes."
 msgstr ""
+"2つの関数が両方とも呼び出される理由は単純です。"
+"バインドは、オーバーライドを行うわけでは無いのです。"
+"これらの関数を両方とも作ることは冗長であり、"
+"一般には、プロパティの変化を監視し、反応する手法のうち1つを用いるべきです。"
 
 #: ../../source/guide/events.rst:354
 msgid ""
 "You should also take note of the parameters that are passed to the "
 "`on_<property_name>` event or the function bound to the property."
 msgstr ""
+"`on_<プロパティ名>` 関数や、プロパティにバインドされた関数に渡される引数についても"
+"知っておくべきでしょう。"
 
 #: ../../source/guide/events.rst:361
 msgid ""
 "The first parameter is `self`, which is the instance of the class where "
 "this function is defined. You can use an in-line function as follows:"
 msgstr ""
+"最初の引数は `self` で、これには当該関数が定義されたクラスのインスタンス自身が入ります。"
+"次のようにインライン関数にすることもできます。"
 
 #: ../../source/guide/events.rst:375
 msgid ""
 "The first parameter would be the `instance` of the class the property is "
 "defined."
 msgstr ""
+"この場合、最初の引数 `instance` には当該プロパティの定義されたクラスのインスタンスが入ります。"
 
 #: ../../source/guide/events.rst:378
 msgid ""
 "The second parameter would be the `value`, which is the new value of the "
 "property."
 msgstr ""
+"2つ目の引数 `value` には、当該プロパティの新しい値が入ります。"
 
 #: ../../source/guide/events.rst:380
 msgid ""
 "Here is the complete example, derived from the snippets above, that you "
 "can use to copy and paste into an editor to experiment."
 msgstr ""
+"これまでに述べたスニペットコードをまとめておきます。"
+”これをあなたのエディタにコピペすれば、試しに実行することができるでしょう。”
 
 #: ../../source/guide/events.rst:430
 msgid "Running the code above will give you the following output:"
-msgstr ""
+msgstr "このコードを実行すると、次のような出力が現れます:"
 
 #: ../../source/guide/events.rst:434
 msgid ""
 "Our CustomBtn has no visual representation and thus appears black. You "
 "can touch/click on the black area to see the output on your console."
 msgstr ""
+"`CustomBtn` はビジュアルを何ら持たないため、真っ黒で現れます。"
+"この黒い領域をタッチもしくはクリックすれば、コンソールに print 文の出力が現れるでしょう。"
 
 #: ../../source/guide/events.rst:438
 msgid "Compound Properties"
-msgstr ""
+msgstr "Compound Properties (複合的なプロパティ)"
 
 #: ../../source/guide/events.rst:440
 msgid ""
@@ -500,10 +650,15 @@ msgid ""
 "to define when the getter and the setter functions are called using the "
 "`bind` argument."
 msgstr ""
+":class:`~kivy.properties.AliasProperty` を定義する際は、"
+"普通 getter と setter を自分自身で定義します。"
+"この場合、getter/setter がいつ呼び出されるかを `bind` 引数を用いて定義するのは、"
+"あなた次第です。"
+
 
 #: ../../source/guide/events.rst:444
 msgid "Consider the following code."
-msgstr ""
+msgstr "次のコードを見てみましょう。"
 
 #: ../../source/guide/events.rst:457
 msgid ""
@@ -511,6 +666,9 @@ msgid ""
 " the `getter` `_get_cursor_pos` with the `setter` part set to None, "
 "implying this is a read only Property."
 msgstr ""
+"ここでは `cursor_pos` は :class:`~kivy.properties.AliasProperty` クラスで、"
+"その getter は `_get_cursor_pos`、その setter は None に設定されています。"
+"このことは、`cursor_pos` がリードオンリー (書き込み不可) なプロパティであることを意味しています。"
 
 #: ../../source/guide/events.rst:461
 msgid ""
@@ -518,4 +676,5 @@ msgid ""
 "dispatched when any of the properties used in the `bind=` argument "
 "change."
 msgstr ""
-
+"最後の `bind` 引数は、そこに与えられたプロパティのうちどれかが変化した場合に、"
+"`on_cursor_pos` イベントがディスパッチされるということを定義します。"
