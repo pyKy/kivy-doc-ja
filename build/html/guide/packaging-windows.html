@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="twitter:site" content="@kivyframework">
     
-    <title>Create a package for Windows &mdash; Kivy 1.9.1 ドキュメント</title>
+    <title>Create a package for Windows（翻訳済み） &mdash; Kivy 1.9.1 ドキュメント</title>
     <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../_static/fresh.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -63,20 +63,20 @@
                 <input type="text" class="text" name="q" />
             </form>
           <!--
-          <h3><a href="../index.html">Create a package for Windows</a></h3>
+          <h3><a href="../index.html">Create a package for Windows（翻訳済み）</a></h3>
           <ul>
-<li><a class="reference internal" href="#">Create a package for Windows</a><ul>
+<li><a class="reference internal" href="#">Create a package for Windows（翻訳済み）</a><ul>
 <li><a class="reference internal" href="#requirements">Requirements(要件)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#pyinstaller-default-hook">PyInstaller default hook</a><ul>
-<li><a class="reference internal" href="#packaging-a-simple-app">Packaging a simple app(シンプルなアプリをパッケージ化)</a></li>
-<li><a class="reference internal" href="#packaging-a-video-app-with-gstreamer">Packaging a video app with gstreamer</a></li>
+<li><a class="reference internal" href="#pyinstaller-default-hook">PyInstaller default hook(PyInstallerのデフォルトhookについて)</a><ul>
+<li><a class="reference internal" href="#packaging-a-simple-app">Packaging a simple app(シンプルなアプリのパッケージ化)</a></li>
+<li><a class="reference internal" href="#packaging-a-video-app-with-gstreamer">Packaging a video app with gstreamer(gstreamerのビデオアプリをパッケージ化)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#overwriting-the-default-hook">Overwriting the default hook</a><ul>
-<li><a class="reference internal" href="#including-excluding-video-and-audio-and-reducing-app-size">Including/excluding video and audio and reducing app size</a></li>
-<li><a class="reference internal" href="#alternate-installations">Alternate installations</a></li>
+<li><a class="reference internal" href="#overwriting-the-default-hook">Overwriting the default hook(デフォルトhookを上書きします)</a><ul>
+<li><a class="reference internal" href="#including-excluding-video-and-audio-and-reducing-app-size">Including/excluding video and audio and reducing app size（Videoとaudioを引き込む、のぞくことでアプリのサイズを縮小する）</a></li>
+<li><a class="reference internal" href="#alternate-installations">Alternate installations(インストールの代替)</a></li>
 </ul>
 </li>
 </ul>
@@ -145,7 +145,7 @@
 <li class="toctree-l2"><a class="reference internal" href="environment.html">Controlling the environment(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html">Configure Kivy(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="architecture.html">Architectural Overview(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="events.html">Events and Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html">Events and Properties (翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inputs.html">Input management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="graphics.html">Graphics (翻訳済み)</a></li>
@@ -159,7 +159,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials-index.html">Tutorials</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/pong.html">Pong Game Tutorial(翻訳中)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/firstwidget.html">A Simple Paint App(翻訳中)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/crashcourse.html">Crash Course</a></li>
 </ul>
 </li>
 </ul>
@@ -179,25 +178,25 @@
         <div class="bodywrapper">
           <div class="body">
             <div class="toc"><h2>Table Of Contents</h2><ul>
-<li><a class="reference internal" href="#">Create a package for Windows</a><ul>
+<li><a class="reference internal" href="#">Create a package for Windows（翻訳済み）</a><ul>
 <li><a class="reference internal" href="#requirements">Requirements(要件)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#pyinstaller-default-hook">PyInstaller default hook</a><ul>
-<li><a class="reference internal" href="#packaging-a-simple-app">Packaging a simple app(シンプルなアプリをパッケージ化)</a></li>
-<li><a class="reference internal" href="#packaging-a-video-app-with-gstreamer">Packaging a video app with gstreamer</a></li>
+<li><a class="reference internal" href="#pyinstaller-default-hook">PyInstaller default hook(PyInstallerのデフォルトhookについて)</a><ul>
+<li><a class="reference internal" href="#packaging-a-simple-app">Packaging a simple app(シンプルなアプリのパッケージ化)</a></li>
+<li><a class="reference internal" href="#packaging-a-video-app-with-gstreamer">Packaging a video app with gstreamer(gstreamerのビデオアプリをパッケージ化)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#overwriting-the-default-hook">Overwriting the default hook</a><ul>
-<li><a class="reference internal" href="#including-excluding-video-and-audio-and-reducing-app-size">Including/excluding video and audio and reducing app size</a></li>
-<li><a class="reference internal" href="#alternate-installations">Alternate installations</a></li>
+<li><a class="reference internal" href="#overwriting-the-default-hook">Overwriting the default hook(デフォルトhookを上書きします)</a><ul>
+<li><a class="reference internal" href="#including-excluding-video-and-audio-and-reducing-app-size">Including/excluding video and audio and reducing app size（Videoとaudioを引き込む、のぞくことでアプリのサイズを縮小する）</a></li>
+<li><a class="reference internal" href="#alternate-installations">Alternate installations(インストールの代替)</a></li>
 </ul>
 </li>
 </ul>
 </div>
             
   <div class="section" id="create-a-package-for-windows">
-<h1>Create a package for Windows<a class="headerlink" href="#create-a-package-for-windows" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<h1>Create a package for Windows（翻訳済み）<a class="headerlink" href="#create-a-package-for-windows" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">この文章はkivy <code class="docutils literal"><span class="pre">1.9.1</span></code> 以降のバージョンが対象です。</p>
@@ -217,29 +216,23 @@
 </div>
 </div>
 <div class="section" id="pyinstaller-default-hook">
-<span id="create-the-spec-file"></span><h1>PyInstaller default hook<a class="headerlink" href="#pyinstaller-default-hook" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>このセクションでは、kivyフックを含むためpyInstallerの（&gt; = 3.1）に適用されます。デフォルトのフックを上書きするには次の例のように少し修正する必要があります。 「 <a class="reference internal" href="#overwrite-win-hook"><span class="std std-ref">Overwriting the default hook</span></a> 」を参照してください。</p>
+<span id="create-the-spec-file"></span><h1>PyInstaller default hook(PyInstallerのデフォルトhookについて)<a class="headerlink" href="#pyinstaller-default-hook" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>このセクションでは、kivyフックを含むためpyInstallerの（&gt; = 3.1）に適用されます。デフォルトのフックを上書きするには次の例のように少し修正する必要があります。 「 <a class="reference internal" href="#overwrite-win-hook"><span class="std std-ref">Overwriting the default hook(デフォルトhookを上書きします)</span></a> 」を参照してください。</p>
 <div class="section" id="packaging-a-simple-app">
-<h2>Packaging a simple app(シンプルなアプリをパッケージ化)<a class="headerlink" href="#packaging-a-simple-app" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Packaging a simple app(シンプルなアプリのパッケージ化)<a class="headerlink" href="#packaging-a-simple-app" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>この例では、touchtracerサンプルプロジェクトをパッケージ化し、カスタムアイコンを埋め込みます。wheelを使用してインストールしている場合、kivyのサンプルコードの場所は <code class="docutils literal"><span class="pre">python\\share\\kivy-examples</span></code> にgithubのソースコードをインストールして使用するときは <cite>kivy\examples`</cite> にあります 。サンプルコードに至る絶対パスexamples-pathパスを参照します。touchtracerの例があるexamples-pathdemotouchtracerとメインファイルは``main.py``です。</p>
 <ol class="arabic">
-<li><p class="first">Open your command line shell and ensure that python is on the path (i.e. <code class="docutils literal"><span class="pre">python</span></code> works).</p>
+<li><p class="first">コマンドラインシェルを開き、pythonのパス（<a href="#id1"><span class="problematic" id="id2">``</span></a>python``上にある)</p>
 </li>
-<li><p class="first">Create a folder into which the packaged app will be created. For example create a <code class="docutils literal"><span class="pre">TouchApp</span></code>
-folder and <a class="reference external" href="http://www.computerhope.com/cdhlp.htm">change to that directory</a> with e.g.
-<code class="docutils literal"><span class="pre">cd</span> <span class="pre">TouchApp</span></code>. Then type:</p>
+<li><p class="first">パッケージ化するアプリを作成するフォルダを作成します。例えば``TouchApp`` フォルダを作成し、  <a href="#id1"><span class="problematic" id="id2">``</span></a>cd TouchApp``のように入力してその`ディレクトリに移動します&lt;<a class="reference external" href="http://www.computerhope.com/cdhlp.htm">http://www.computerhope.com/cdhlp.htm</a>&gt;`。以下のように入力します</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">PyInstaller</span> <span class="o">--</span><span class="n">name</span> <span class="n">touchtracer</span> <span class="n">examples</span><span class="o">-</span><span class="n">path</span>\<span class="n">demo</span>\<span class="n">touchtracer</span>\<span class="n">main</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
-<p>You can also add an <cite>icon.ico</cite> file to the application folder in order to create an icon
-for the executable. If you don&#8217;t have a .ico file available, you can convert your
-<cite>icon.png</cite> file to ico using the web app <a class="reference external" href="http://www.convertico.com">ConvertICO</a>.
-Save the <cite>icon.ico</cite> in the touchtracer directory and type:</p>
+<p>また、実行可能ファイルのアイコンを作成するために、アプリケーションフォルダに <cite>icon.ico</cite> ファイルを追加することができます。利用可能な.icoファイルがない場合は、Webアプリケーションの`ConvertICO &lt;<a class="reference external" href="http://www.convertico.com">http://www.convertico.com</a>&gt;`を使用してicon.pngファイルを変換することができます。touchtracerディレクトリに <cite>icon.ico</cite> を保存して入力します:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">PyInstaller</span> <span class="o">--</span><span class="n">name</span> <span class="n">touchtracer</span> <span class="o">--</span><span class="n">icon</span> <span class="n">examples</span><span class="o">-</span><span class="n">path</span>\<span class="n">demo</span>\<span class="n">touchtracer</span>\<span class="n">icon</span><span class="o">.</span><span class="n">ico</span> <span class="n">examples</span><span class="o">-</span><span class="n">path</span>\<span class="n">demo</span>\<span class="n">touchtracer</span>\<span class="n">main</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
-<p>For more options, please consult the
-<a class="reference external" href="http://pythonhosted.org/PyInstaller/">PyInstaller Manual</a>.</p>
+<p>より多くのオプションについては、<a href="#id1"><span class="problematic" id="id2">`</span></a>pyInstallerのマニュアル&lt;<a class="reference external" href="http://pythonhosted.org/PyInstaller/">http://pythonhosted.org/PyInstaller/</a>&gt;`を参照してください 。</p>
 </li>
 <li><p class="first">The spec file will be <code class="docutils literal"><span class="pre">touchtracer.spec</span></code> located in <code class="docutils literal"><span class="pre">TouchApp</span></code>. Now we need to
 edit the spec file to add the dependencies hooks to correctly build the exe.
@@ -248,13 +241,8 @@ beginning of the spec (assuming sdl2 is used, the default now):</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.deps</span> <span class="k">import</span> <span class="n">sdl2</span><span class="p">,</span> <span class="n">glew</span>
 </pre></div>
 </div>
-<p>Then, find <code class="docutils literal"><span class="pre">COLLECT()</span></code> and add the data for touchtracer
-(<cite>touchtracer.kv</cite>, <cite>particle.png</cite>, ...): Change the line to add a <code class="docutils literal"><span class="pre">Tree()</span></code>
-object, e.g. <code class="docutils literal"><span class="pre">Tree('examples-path\\demo\\touchtracer\\')</span></code>. This Tree will
-search and add every file found in the touchtracer directory to your final package.</p>
-<p>To add the dependencies, before the first keyword argument in COLLECT add a
-Tree object for every path of the dependecies. E.g.
-<code class="docutils literal"><span class="pre">*[Tree(p)</span> <span class="pre">for</span> <span class="pre">p</span> <span class="pre">in</span> <span class="pre">(sdl2.dep_bins</span> <span class="pre">+</span> <span class="pre">glew.dep_bins)]</span></code> so it&#8217;ll look something like:</p>
+<p><code class="docutils literal"><span class="pre">COLLECT()</span></code> にtouchtracerのデータ（<cite>touchtracer.kv</cite>, <cite>particle.png</cite>、...）を追加します。<code class="docutils literal"><span class="pre">Tree()``オブジェクトに追加する行を加えます（例：``Tree('examples-path\\demo\\touchtracer\\')）</span></code>。Treeはtouchtracerディレクトリにあるすべてのファイルを検索して最終的なパッケージに追加します。</p>
+<p>COLLECT依存関係の最初のキーワード引数の前にTreeオブジェクトのすべてのパスに依存関係を追加します。 例えば``*[Tree(p) for p in (sdl2.dep_bins + glew.dep_bins)]`` の場合は次のようになります：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">coll</span> <span class="o">=</span> <span class="n">COLLECT</span><span class="p">(</span><span class="n">exe</span><span class="p">,</span> <span class="n">Tree</span><span class="p">(</span><span class="s1">&#39;examples-path</span><span class="se">\\</span><span class="s1">demo</span><span class="se">\\</span><span class="s1">touchtracer</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">),</span>
                <span class="n">a</span><span class="o">.</span><span class="n">binaries</span><span class="p">,</span>
                <span class="n">a</span><span class="o">.</span><span class="n">zipfiles</span><span class="p">,</span>
@@ -266,31 +254,26 @@ Tree object for every path of the dependecies. E.g.
 </pre></div>
 </div>
 </li>
-<li><p class="first">Now we build the spec file in <code class="docutils literal"><span class="pre">TouchApp</span></code> with:</p>
+<li><p class="first">今、<code class="docutils literal"><span class="pre">TouchApp</span></code> のspecファイルをビルドします:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">PyInstaller</span> <span class="n">touchtracer</span><span class="o">.</span><span class="n">spec</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">The compiled package will be in the <cite>TouchApp\dist\touchtracer</cite> directory.</p>
+<li><p class="first">コンパイルされたパッケージは <a href="#id1"><span class="problematic" id="id2">`</span></a>TouchApp\dist\touchtracer`ディレクトリに生成されます。</p>
 </li>
 </ol>
 </div>
 <div class="section" id="packaging-a-video-app-with-gstreamer">
-<h2>Packaging a video app with gstreamer<a class="headerlink" href="#packaging-a-video-app-with-gstreamer" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Following we&#8217;ll slightly modify the example above to package a app that uses gstreamer
-for video. We&#8217;ll use the <code class="docutils literal"><span class="pre">videoplayer</span></code> example found at <code class="docutils literal"><span class="pre">examples-path\widgets\videoplayer.py</span></code>.
-Create a folder somewhere called <code class="docutils literal"><span class="pre">VideoPlayer</span></code> and on the command line change your current
-directory to that folder and do:</p>
+<h2>Packaging a video app with gstreamer(gstreamerのビデオアプリをパッケージ化)<a class="headerlink" href="#packaging-a-video-app-with-gstreamer" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>後はビデオ用のgstreamerを使用するアプリケーションをパッケージ化するために上記の例を少し修正します。使用する <code class="docutils literal"><span class="pre">videoplayer</span></code> は``examples-pathwidgetsvideoplayer.py`` にありますVideoPlayerフォルダを作成してコマンドラインでそのフォルダにカレントディレクトリを変更し次を実行します:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">PyInstaller</span> <span class="o">--</span><span class="n">name</span> <span class="n">gstvideo</span> <span class="n">examples</span><span class="o">-</span><span class="n">path</span>\<span class="n">widgets</span>\<span class="n">videoplayer</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
-<p>to create the <code class="docutils literal"><span class="pre">gstvideo.spec</span></code> file. Edit as above and this time include the
-gstreamer dependency as well:</p>
+<p><code class="docutils literal"><span class="pre">gstvideo.spec</span></code> ファイルを作成します。そのうえで、この時gstreamerをインクルードするように編集してください。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.deps</span> <span class="k">import</span> <span class="n">sdl2</span><span class="p">,</span> <span class="n">glew</span><span class="p">,</span> <span class="n">gstreamer</span>
 </pre></div>
 </div>
-<p>and add the <code class="docutils literal"><span class="pre">Tree()</span></code> to include the video files, e.g. <code class="docutils literal"><span class="pre">Tree('examples-path\\widgets')</span></code>
-as well as the gstreamer dependencies so it should look something like:</p>
+<p><code class="docutils literal"><span class="pre">Tree()</span></code> にビデオファイルをインクルードしたように追加をします。gstreamerの依存関係と同様に <code class="docutils literal"><span class="pre">Tree('examples-path\\widgets')</span></code> にこのように追加します。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">coll</span> <span class="o">=</span> <span class="n">COLLECT</span><span class="p">(</span><span class="n">exe</span><span class="p">,</span> <span class="n">Tree</span><span class="p">(</span><span class="s1">&#39;examples-path</span><span class="se">\\</span><span class="s1">widgets&#39;</span><span class="p">),</span>
                <span class="n">a</span><span class="o">.</span><span class="n">binaries</span><span class="p">,</span>
                <span class="n">a</span><span class="o">.</span><span class="n">zipfiles</span><span class="p">,</span>
@@ -301,17 +284,14 @@ as well as the gstreamer dependencies so it should look something like:</p>
                <span class="n">name</span><span class="o">=</span><span class="s1">&#39;gstvideo&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Then build the spec file in <code class="docutils literal"><span class="pre">VideoPlayer</span></code> with:</p>
+<p><code class="docutils literal"><span class="pre">VideoPlayer</span></code> のspecファイルをビルドします。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">PyInstaller</span> <span class="n">gstvideo</span><span class="o">.</span><span class="n">spec</span>
 </pre></div>
 </div>
-<p>and you should find gstvideo.exe in <code class="docutils literal"><span class="pre">VideoPlayer\dist\gstvideo</span></code>,
-which when run will play a video.</p>
+<p>ビデオを再生するときには <a href="#id1"><span class="problematic" id="id2">``</span></a>VideoPlayerdistgstvideo``のgstvideo.exeが存在する必要があります。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p>If you&#8217;re using Pygame and need PyGame in your packaging app, you&#8217;ll have to add the
-following code to your spec file due to kivy issue #1638. After the imports add the
-following:</p>
+<p>Pygameを使用していて、アプリのパッケージにPygameが必要な場合は、 kivy issue #1638にあるようにspecファイルに次のコードを追加してください。importの後に追加します:</p>
 <div class="last highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">getResource</span><span class="p">(</span><span class="n">identifier</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">identifier</span> <span class="o">==</span> <span class="s1">&#39;pygame_icon.tiff&#39;</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">IOError</span><span class="p">()</span>
@@ -326,37 +306,16 @@ following:</p>
 </div>
 </div>
 <div class="section" id="overwriting-the-default-hook">
-<span id="overwrite-win-hook"></span><h1>Overwriting the default hook<a class="headerlink" href="#overwriting-the-default-hook" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<span id="overwrite-win-hook"></span><h1>Overwriting the default hook(デフォルトhookを上書きします)<a class="headerlink" href="#overwriting-the-default-hook" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="including-excluding-video-and-audio-and-reducing-app-size">
-<h2>Including/excluding video and audio and reducing app size<a class="headerlink" href="#including-excluding-video-and-audio-and-reducing-app-size" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>PyInstaller includes a hook for kivy that by default adds <strong>all</strong> the core modules
-used by kivy, e.g. audio, video, spelling etc (you still need to package
-the gstreamer dlls manually with <code class="docutils literal"><span class="pre">Tree()</span></code> - see the example above) and their
-dependencies. If the hook is not installed or to reduce app size some of these
-modules may be excluded, e.g. if no audio/video is used, with a alternative hook.</p>
-<p>Kivy provides the alternate hook at
-<code class="xref py py-func docutils literal"><span class="pre">hookspath()</span></code>. In addition, if and only
-if PyInstaller doesn&#8217;t have the default hooks
-<code class="xref py py-func docutils literal"><span class="pre">runtime_hooks()</span></code> must also be provided.
-When overwriting the hook, the latter one typically is not required to be overwritten.</p>
-<p>The alternate <code class="xref py py-func docutils literal"><span class="pre">hookspath()</span></code> hook
-does not include any of the kivy providers. To add them, they have to be added with
-<code class="xref py py-func docutils literal"><span class="pre">get_deps_minimal()</span></code> or
-<code class="xref py py-func docutils literal"><span class="pre">get_deps_all()</span></code>. See
-their documentation and <code class="xref py py-mod docutils literal"><span class="pre">pyinstaller_hooks</span></code> for more
-details. But essentially, <code class="xref py py-func docutils literal"><span class="pre">get_deps_all()</span></code>
-add all the providers like in the default hook while
-<code class="xref py py-func docutils literal"><span class="pre">get_deps_minimal()</span></code> only adds those
-that are loaded when the app is run. Each method provides a list of hidden kivy imports
-and excluded imports that can be passed on to <code class="docutils literal"><span class="pre">Analysis</span></code>.</p>
-<p>One can also generate a alternate hook which literally lists every kivy provider
-module and those not required can be commented out. See
-<code class="xref py py-mod docutils literal"><span class="pre">pyinstaller_hooks</span></code>.</p>
-<p>To use the the alternate hooks with the examples above modify as following to
-add the hooks with <code class="docutils literal"><span class="pre">hookspath()</span></code> and <code class="docutils literal"><span class="pre">runtime_hooks</span></code> (if required)
-and <code class="docutils literal"><span class="pre">**get_deps_minimal()</span></code> or <code class="docutils literal"><span class="pre">**get_deps_all()</span></code> to specify the providers.</p>
+<h2>Including/excluding video and audio and reducing app size（Videoとaudioを引き込む、のぞくことでアプリのサイズを縮小する）<a class="headerlink" href="#including-excluding-video-and-audio-and-reducing-app-size" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>PyInstallerのデフォルトはkivy、例えばオーディオ、ビデオ、スペルなど使用される <a href="#id1"><span class="problematic" id="id2">**</span></a>すべての**のコアモジュールをhookに追加します。（ツリー（）を使用して手動でgstreamerのDLLをパッケージ化する必要があります - 下記の例を参照してください。）。フックがインストールされていないか、オーディオ/ビデオを使用しない場合でアプリケーションサイズを縮小する場合は、これらのモジュールのいくつかは、別のフックにするか、除外してもよいです</p>
+<p>Kivyは:func:<a href="#id1"><span class="problematic" id="id2">`</span></a>~kivy.tools.packaging.pyinstaller_hooks.hookspath`で代替hookを提供します 。 PyInstallerのデフォルトのhookがない場合に限り、:func:<a href="#id3"><span class="problematic" id="id4">`</span></a>~kivy.tools.packaging.pyinstaller_hooks.runtime_hooks`も提供されなければなりません。 hookを上書きするときに、 runtime_hooks()は通常は上書きする必要はありません。</p>
+<p><code class="xref py py-func docutils literal"><span class="pre">hookspath()</span></code> の代替hockはkivyプロバイダのどれかが含まれてません。追加するには、<code class="xref py py-func docutils literal"><span class="pre">get_deps_all()</span></code> で追加する必要があります。詳細については、 get_deps_minimal()と get_deps_all()ドキュメントと:mod:<cite>~kivy.tools.packaging.pyinstaller_hooks</cite> を参照してください。しかしながら本質的には、<code class="xref py py-func docutils literal"><span class="pre">get_deps_all()</span></code> でデフォルトhookにすべてのプロバイダを追加するか:func:<cite>~kivy.tools.packaging.pyinstaller_hooks.get_deps_minimal</cite> でアプリの実行時にロードされているものを追加します。それぞれの方法は、<a href="#id1"><span class="problematic" id="id2">``</span></a>Analysis``に渡せます。そしてkivyの隠れたimport、または除外されたimportのリストを提供します。</p>
+<p>1つの方法は、文字通りすべてのkivyプロバイダモジュールをリスト化し、必要でないものはコメントアウトして代替hookを生成します。<code class="xref py py-mod docutils literal"><span class="pre">pyinstaller_hooks</span></code> を参照してください。</p>
+<p>上記の例と代替hookにhookを追加するには、次のように``hookspath()`` と <code class="docutils literal"><span class="pre">runtime_hooks</span></code>  （必要な場合）と``**get_deps_minimal()``または``**get_deps_all()``プロバイダを指定して使用します。</p>
 <p>For example, add the import statement
-<code class="docutils literal"><span class="pre">from</span> <span class="pre">kivy.tools.packaging.pyinstaller_hooks</span> <span class="pre">import</span>&nbsp; <span class="pre">get_deps_minimal,</span>
+<code class="docutils literal"><span class="pre">from</span> <span class="pre">kivy.tools.packaging.pyinstaller_hooks</span> <span class="pre">import</span>&#160; <span class="pre">get_deps_minimal,</span>
 <span class="pre">get_deps_all,</span> <span class="pre">hookspath,</span> <span class="pre">runtime_hooks</span></code>
 and then modify <code class="docutils literal"><span class="pre">Analysis</span></code> as follows:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Analysis</span><span class="p">([</span><span class="s1">&#39;examples-path</span><span class="se">\\</span><span class="s1">demo</span><span class="se">\\</span><span class="s1">touchtracer</span><span class="se">\\</span><span class="s1">main.py&#39;</span><span class="p">],</span>
@@ -367,7 +326,7 @@ and then modify <code class="docutils literal"><span class="pre">Analysis</span>
              <span class="o">**</span><span class="n">get_deps_all</span><span class="p">())</span>
 </pre></div>
 </div>
-<p>to include everything like the default hook. Or:</p>
+<p>デフォルトhookのようにすべてもの含めます。 または:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Analysis</span><span class="p">([</span><span class="s1">&#39;examples-path</span><span class="se">\\</span><span class="s1">demo</span><span class="se">\\</span><span class="s1">touchtracer</span><span class="se">\\</span><span class="s1">main.py&#39;</span><span class="p">],</span>
              <span class="o">...</span>
              <span class="n">hookspath</span><span class="o">=</span><span class="n">hookspath</span><span class="p">(),</span>
@@ -376,24 +335,12 @@ and then modify <code class="docutils literal"><span class="pre">Analysis</span>
              <span class="o">**</span><span class="n">get_deps_minimal</span><span class="p">(</span><span class="n">video</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">audio</span><span class="o">=</span><span class="kc">None</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>e.g. to exclude the audio and video providers and for the other core modules
-only use those loaded.</p>
-<p>The key points is to provide the alternate
-<code class="xref py py-func docutils literal"><span class="pre">hookspath()</span></code> which does not list
-by default all the kivy providers and instead manually to hiddenimports
-add the required providers while removing the undesired ones (audio and
-video in this example) with
-<code class="xref py py-func docutils literal"><span class="pre">get_deps_minimal()</span></code>.</p>
+<p>例えば、audioとvideoのプロバイダーを除外し、他のコアモジュールで使用されるプロパイダーだけがロードされて使用します。</p>
+<p>キーポイントは、代替を提供する <code class="xref py py-func docutils literal"><span class="pre">hookspath()</span></code> を:func:<a href="#id1"><span class="problematic" id="id2">`</span></a>~kivy.tools.packaging.pyinstaller_hooks.get_deps_minimal`で除去し、</p>
 </div>
 <div class="section" id="alternate-installations">
-<h2>Alternate installations<a class="headerlink" href="#alternate-installations" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The previous examples used e.g.
-<code class="docutils literal"><span class="pre">*[Tree(p)</span> <span class="pre">for</span> <span class="pre">p</span> <span class="pre">in</span> <span class="pre">(sdl2.dep_bins</span> <span class="pre">+</span> <span class="pre">glew.dep_bins</span> <span class="pre">+</span> <span class="pre">gstreamer.dep_bins)],</span></code>
-to make PyInstaller add all the dlls used by these dependencies. If kivy
-was not installed using the wheels method these commands will not work and e.g.
-<code class="docutils literal"><span class="pre">kivy.deps.sdl2</span></code> will fail to import. Instead, one must find the location
-of these dlls and manually pass them to the <code class="docutils literal"><span class="pre">Tree</span></code> class in a similar fashion
-as the example.</p>
+<h2>Alternate installations(インストールの代替)<a class="headerlink" href="#alternate-installations" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>前の例は、<code class="docutils literal"><span class="pre">*[Tree(p)</span> <span class="pre">for</span> <span class="pre">p</span> <span class="pre">in</span> <span class="pre">(sdl2.dep_bins</span> <span class="pre">+</span> <span class="pre">glew.dep_bins</span> <span class="pre">+</span> <span class="pre">gstreamer.dep_bins)],</span></code> を使用する場合 pyInstallerでの作成ですべてのDLLを追加し、依存関係で使用されます。 kivy wheel メソッドを使用してインストールされていない場合、これらのコマンドは動作しませんし、例えば``kivy.deps.sdl2`` のimportに失敗します。その代わりに、一つの方法としてはこれらのDLLの場所を見つけて``Tree`クラスの例と同様の方法で手動に渡す必要があります。</p>
 </div>
 </div>
 
@@ -432,8 +379,8 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 9月 11, 2016.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.2.
+      Last updated on 9月 24, 2016.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.6.
 </div>
 -->
   </body>
