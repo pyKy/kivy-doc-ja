@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/guide/packaging-windows.rst:2
 msgid "Create a package for Windows"
-msgstr ""
+msgstr "Create a package for Windows（翻訳済み）"
 
 #: ../../source/guide/packaging-windows.rst:6
 msgid "This document only applies for kivy ``1.9.1`` and greater."
@@ -58,7 +58,7 @@ msgstr "PyInstallerは3.1以上 (``pip install --upgrade pyinstaller``)"
 
 #: ../../source/guide/packaging-windows.rst:26
 msgid "PyInstaller default hook"
-msgstr "PyInstaller default hook"
+msgstr "PyInstaller default hook(PyInstallerのデフォルトhookについて)"
 
 #: ../../source/guide/packaging-windows.rst:28
 msgid ""
@@ -73,7 +73,7 @@ msgstr ""
 
 #: ../../source/guide/packaging-windows.rst:33
 msgid "Packaging a simple app"
-msgstr "Packaging a simple app(シンプルなアプリをパッケージ化)"
+msgstr "Packaging a simple app(シンプルなアプリのパッケージ化)"
 
 #: ../../source/guide/packaging-windows.rst:35
 msgid ""
@@ -190,12 +190,18 @@ msgid ""
 "called ``VideoPlayer`` and on the command line change your current "
 "directory to that folder and do::"
 msgstr ""
+"後はビデオ用のgstreamerを使用するアプリケーションをパッケージ化するために上記の例を少し修正します。"
+"使用する ``videoplayer`` は``examples-path\\widgets\\videoplayer.py`` にあります"
+"VideoPlayerフォルダを作成してコマンドラインでそのフォルダにカレントディレクトリを変更し次を実行します::"
+
 
 #: ../../source/guide/packaging-windows.rst:99
 msgid ""
 "to create the ``gstvideo.spec`` file. Edit as above and this time include"
 " the gstreamer dependency as well::"
 msgstr ""
+"``gstvideo.spec`` ファイルを作成します。そのうえで、この時gstreamerをインクルードするように編集してください。"
+""
 
 #: ../../source/guide/packaging-windows.rst:104
 msgid ""
@@ -203,16 +209,18 @@ msgid ""
 "path\\\\widgets')`` as well as the gstreamer dependencies so it should "
 "look something like::"
 msgstr ""
+"``Tree()`` にビデオファイルをインクルードしたように追加をします。"
+"gstreamerの依存関係と同様に ``Tree('examples-path\\\\widgets')`` にこのように追加します。"
 
 #: ../../source/guide/packaging-windows.rst:116
 msgid "Then build the spec file in ``VideoPlayer`` with::"
-msgstr ""
+msgstr "``VideoPlayer`` のspecファイルをビルドします。"
 
 #: ../../source/guide/packaging-windows.rst:120
 msgid ""
 "and you should find gstvideo.exe in ``VideoPlayer\\dist\\gstvideo``, "
 "which when run will play a video."
-msgstr ""
+msgstr "ビデオを再生するときには ``VideoPlayer\\dist\\gstvideo``のgstvideo.exeが存在する必要があります。"
 
 #: ../../source/guide/packaging-windows.rst:125
 msgid ""
@@ -220,14 +228,17 @@ msgid ""
 " to add the following code to your spec file due to kivy issue #1638. "
 "After the imports add the following::"
 msgstr ""
+"Pygameを使用していて、アプリのパッケージにPygameが必要な場合は、 kivy issue #1638にあるようにspecファイルに次のコードを追加してください。"
+"importの後に追加します::"
+
 
 #: ../../source/guide/packaging-windows.rst:141
 msgid "Overwriting the default hook"
-msgstr ""
+msgstr "Overwriting the default hook(デフォルトhookを上書きします)"
 
 #: ../../source/guide/packaging-windows.rst:144
 msgid "Including/excluding video and audio and reducing app size"
-msgstr ""
+msgstr "Including/excluding video and audio and reducing app size（Videoとaudioを引き込む、のぞくことでアプリのサイズを縮小する）"
 
 #: ../../source/guide/packaging-windows.rst:146
 msgid ""
@@ -238,6 +249,11 @@ msgid ""
 " reduce app size some of these modules may be excluded, e.g. if no "
 "audio/video is used, with a alternative hook."
 msgstr ""
+"PyInstallerのデフォルトはkivy、例えばオーディオ、ビデオ、スペルなど"
+"使用される **すべての**のコアモジュールをhookに追加します。"
+"（ツリー（）を使用して手動でgstreamerのDLLをパッケージ化する必要があります - 下記の例を参照してください。）。"
+"フックがインストールされていないか、オーディオ/ビデオを使用しない場合でアプリケーションサイズを縮小する場合は、"
+"これらのモジュールのいくつかは、別のフックにするか、除外してもよいです"
 
 #: ../../source/guide/packaging-windows.rst:152
 msgid ""
@@ -248,6 +264,10 @@ msgid ""
 "be provided. When overwriting the hook, the latter one typically is not "
 "required to be overwritten."
 msgstr ""
+"Kivyは:func:`~kivy.tools.packaging.pyinstaller_hooks.hookspath`で代替hookを提供します 。 "
+"PyInstallerのデフォルトのhookがない場合に限り、"
+":func:`~kivy.tools.packaging.pyinstaller_hooks.runtime_hooks`も提供されなければなりません。"
+" hookを上書きするときに、 runtime_hooks()は通常は上書きする必要はありません。"
 
 #: ../../source/guide/packaging-windows.rst:158
 msgid ""
@@ -265,6 +285,19 @@ msgid ""
 "list of hidden kivy imports and excluded imports that can be passed on to"
 " ``Analysis``."
 msgstr ""
+":func:`~kivy.tools.packaging.pyinstaller_hooks.hookspath` の代替hockは"
+"kivyプロバイダのどれかが含まれてません。"
+"追加するには、:func:`~kivy.tools.packaging.pyinstaller_hooks.get_deps_minimal`"
+"または:func:`~kivy.tools.packaging.pyinstaller_hooks.get_deps_all` で追加する"
+"必要があります。"
+"詳細については、 get_deps_minimal()と get_deps_all()ドキュメントと"
+":mod:`~kivy.tools.packaging.pyinstaller_hooks` を参照してください。"
+"しかしながら本質的には、"
+":func:`~kivy.tools.packaging.pyinstaller_hooks.get_deps_all` でデフォルトhookにすべてのプロバイダを追加するか"
+":func:`~kivy.tools.packaging.pyinstaller_hooks.get_deps_minimal` でアプリの実行時にロードされているものを追加します。"
+"それぞれの方法は、``Analysis``に渡せます。そしてkivyの隠れたimport、または除外されたimportのリストを提供します。"
+
+
 
 #: ../../source/guide/packaging-windows.rst:169
 msgid ""
@@ -272,6 +305,9 @@ msgid ""
 "provider module and those not required can be commented out. See "
 ":mod:`~kivy.tools.packaging.pyinstaller_hooks`."
 msgstr ""
+"1つの方法は、文字通りすべてのkivyプロバイダモジュールをリスト化し、必要でないものはコメントアウトして代替hookを生成します。"
+":mod:`~kivy.tools.packaging.pyinstaller_hooks` を参照してください。"
+
 
 #: ../../source/guide/packaging-windows.rst:173
 msgid ""
@@ -280,6 +316,9 @@ msgid ""
 " required) and ``**get_deps_minimal()`` or ``**get_deps_all()`` to "
 "specify the providers."
 msgstr ""
+"上記の例と代替hookにhookを追加するには、次のように``hookspath()`` と ``runtime_hooks``  （必要な場合）"
+"と``**get_deps_minimal()``または``**get_deps_all()``プロバイダを指定して使用します。"
+
 
 #: ../../source/guide/packaging-windows.rst:177
 msgid ""
@@ -288,16 +327,19 @@ msgid ""
 "get_deps_all, hookspath, runtime_hooks`` and then modify ``Analysis`` as "
 "follows::"
 msgstr ""
+例えば、``Analysis``に　importで``from kivy.tools.packaging.pyinstaller_hooks import get_deps_minimal,"
+" get_deps_all, hookspath, runtime_hooks`` で追加して、``Analysis``を以下のように変更します::"
+
 
 #: ../../source/guide/packaging-windows.rst:189
 msgid "to include everything like the default hook. Or::"
-msgstr ""
+msgstr "デフォルトhookのようにすべてもの含めます。 または::"
 
 #: ../../source/guide/packaging-windows.rst:198
 msgid ""
 "e.g. to exclude the audio and video providers and for the other core "
 "modules only use those loaded."
-msgstr ""
+msgstr "例えば、audioとvideoのプロバイダーを除外し、他のコアモジュールで使用されるプロパイダーだけがロードされて使用します。"
 
 #: ../../source/guide/packaging-windows.rst:201
 msgid ""
@@ -308,10 +350,15 @@ msgid ""
 "ones (audio and video in this example) with "
 ":func:`~kivy.tools.packaging.pyinstaller_hooks.get_deps_minimal`."
 msgstr ""
+"キーポイントは、代替を提供する :func:`~kivy.tools.packaging.pyinstaller_hooks.hookspath` "
+代わりに手動でhiddenimportsには、とデフォルトで表示されないすべてのkivy"プロバイダーと望ましくないもの（この例ではaudioとvideo）"
+"を:func:`~kivy.tools.packaging.pyinstaller_hooks.get_deps_minimal`で除去し、"
+必要なプロバイダを追加します。"
+
 
 #: ../../source/guide/packaging-windows.rst:209
 msgid "Alternate installations"
-msgstr ""
+msgstr "Alternate installations(インストールの代替)"
 
 #: ../../source/guide/packaging-windows.rst:211
 msgid ""
@@ -323,4 +370,8 @@ msgid ""
 "and manually pass them to the ``Tree`` class in a similar fashion as the "
 "example."
 msgstr ""
-
+"前の例は、``*[Tree(p) for p in (sdl2.dep_bins + glew.dep_bins + gstreamer.dep_bins)],`` を使用する場合"
+" pyInstallerでの作成ですべてのDLLを追加し、依存関係で使用されます。 "
+"kivy wheel メソッドを使用してインストールされていない場合、これらのコマンドは動作しませんし、"
+"例えば``kivy.deps.sdl2`` のimportに失敗します。"
+"その代わりに、一つの方法としてはこれらのDLLの場所を見つけて``Tree`クラスの例と同様の方法で手動に渡す必要があります。"
