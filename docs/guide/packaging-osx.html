@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="twitter:site" content="@kivyframework">
     
-    <title>Creating packages for OS X &mdash; Kivy 1.9.1 ドキュメント</title>
+    <title>Creating packages for OS X(翻訳済み) &mdash; Kivy 1.9.1 ドキュメント</title>
     <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../static/fresh.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
@@ -28,8 +28,8 @@
     <script type="text/javascript" src="../static/jquery.cookie.js"></script>
     <script type="text/javascript" src="../static/kivy.js"></script>
     <link rel="top" title="Kivy 1.9.1 ドキュメント" href="../index.html" />
-    <link rel="up" title="Packaging your application" href="packaging.html" />
-    <link rel="next" title="Create a package for IOS" href="packaging-ios.html" />
+    <link rel="up" title="Packaging your application(翻訳中)" href="packaging.html" />
+    <link rel="next" title="Create a package for IOS(翻訳済み)" href="packaging-ios.html" />
     <link rel="prev" title="Kivy on Android" href="android.html" /> 
   </head>
   <body>
@@ -63,24 +63,24 @@
                 <input type="text" class="text" name="q" />
             </form>
           <!--
-          <h3><a href="../index.html">Creating packages for OS X</a></h3>
+          <h3><a href="../index.html">Creating packages for OS X(翻訳済み)</a></h3>
           <ul>
-<li><a class="reference internal" href="#">Creating packages for OS X</a><ul>
-<li><a class="reference internal" href="#using-buildozer">Using Buildozer</a></li>
-<li><a class="reference internal" href="#using-the-kivy-sdk">Using the Kivy SDK</a><ul>
-<li><a class="reference internal" href="#installing-modules">Installing modules</a></li>
-<li><a class="reference internal" href="#where-are-the-modules-files-installed">Where are the modules/files installed?</a></li>
-<li><a class="reference internal" href="#to-install-binary-files">To install binary files</a></li>
-<li><a class="reference internal" href="#to-include-other-frameworks">To include other frameworks</a><ul>
-<li><a class="reference internal" href="#shrinking-the-app-size">Shrinking the app size</a></li>
-<li><a class="reference internal" href="#adjust-settings">Adjust settings</a></li>
-<li><a class="reference internal" href="#create-a-dmg">Create a DMG</a></li>
+<li><a class="reference internal" href="#">Creating packages for OS X(翻訳済み)</a><ul>
+<li><a class="reference internal" href="#using-buildozer">Using Buildozer(Buildozerを使用)</a></li>
+<li><a class="reference internal" href="#using-the-kivy-sdk">Using the Kivy SDK(Kivy SDKを使用しています)</a><ul>
+<li><a class="reference internal" href="#installing-modules">Installing modules (モジュール群のインストール)</a></li>
+<li><a class="reference internal" href="#where-are-the-modules-files-installed">モジュール/ファイルはどこにインストールされているか？</a></li>
+<li><a class="reference internal" href="#to-install-binary-files">バイナリファイルをインストールするには</a></li>
+<li><a class="reference internal" href="#to-include-other-frameworks">他のフレームワークを含めるには</a><ul>
+<li><a class="reference internal" href="#shrinking-the-app-size">アプリのサイズを縮小</a></li>
+<li><a class="reference internal" href="#adjust-settings">設定を調整する</a></li>
+<li><a class="reference internal" href="#create-a-dmg">DMGの作成</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#using-pyinstaller-without-homebrew">Using PyInstaller without Homebrew</a></li>
-<li><a class="reference internal" href="#using-pyinstaller-and-homebrew">Using PyInstaller and Homebrew</a></li>
+<li><a class="reference internal" href="#using-pyinstaller-without-homebrew">Using PyInstaller without Homebrew(HomebrewなしでPyInstallerを使用する)</a></li>
+<li><a class="reference internal" href="#using-pyinstaller-and-homebrew">Using PyInstaller and Homebrew(PyInstallerとHomebrewを使用する)</a></li>
 </ul>
 </li>
 </ul>
@@ -157,7 +157,7 @@
 <li class="toctree-l2"><a class="reference internal" href="other-frameworks.html">Integrating with other Frameworks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bestpractices.html">Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advancedgraphics.html">Advanced Graphics</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="packaging.html">Packaging your application</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="packaging.html">Packaging your application(翻訳中)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials-index.html">Tutorials</a><ul>
@@ -171,7 +171,7 @@
           <h3>Related Topics</h3>
           <ul>
               <li>Previous: <a href="android.html" title="previous chapter">Kivy on Android</a></li>
-              <li>Next: <a href="packaging-ios.html" title="next chapter">Create a package for IOS</a></li>
+              <li>Next: <a href="packaging-ios.html" title="next chapter">Create a package for IOS(翻訳済み)</a></li>
           </ul>
           -->
         </div>
@@ -182,77 +182,59 @@
         <div class="bodywrapper">
           <div class="body">
             <div class="toc"><h2>Table Of Contents</h2><ul>
-<li><a class="reference internal" href="#">Creating packages for OS X</a><ul>
-<li><a class="reference internal" href="#using-buildozer">Using Buildozer</a></li>
-<li><a class="reference internal" href="#using-the-kivy-sdk">Using the Kivy SDK</a><ul>
-<li><a class="reference internal" href="#installing-modules">Installing modules</a></li>
-<li><a class="reference internal" href="#where-are-the-modules-files-installed">Where are the modules/files installed?</a></li>
-<li><a class="reference internal" href="#to-install-binary-files">To install binary files</a></li>
-<li><a class="reference internal" href="#to-include-other-frameworks">To include other frameworks</a><ul>
-<li><a class="reference internal" href="#shrinking-the-app-size">Shrinking the app size</a></li>
-<li><a class="reference internal" href="#adjust-settings">Adjust settings</a></li>
-<li><a class="reference internal" href="#create-a-dmg">Create a DMG</a></li>
+<li><a class="reference internal" href="#">Creating packages for OS X(翻訳済み)</a><ul>
+<li><a class="reference internal" href="#using-buildozer">Using Buildozer(Buildozerを使用)</a></li>
+<li><a class="reference internal" href="#using-the-kivy-sdk">Using the Kivy SDK(Kivy SDKを使用しています)</a><ul>
+<li><a class="reference internal" href="#installing-modules">Installing modules (モジュール群のインストール)</a></li>
+<li><a class="reference internal" href="#where-are-the-modules-files-installed">モジュール/ファイルはどこにインストールされているか？</a></li>
+<li><a class="reference internal" href="#to-install-binary-files">バイナリファイルをインストールするには</a></li>
+<li><a class="reference internal" href="#to-include-other-frameworks">他のフレームワークを含めるには</a><ul>
+<li><a class="reference internal" href="#shrinking-the-app-size">アプリのサイズを縮小</a></li>
+<li><a class="reference internal" href="#adjust-settings">設定を調整する</a></li>
+<li><a class="reference internal" href="#create-a-dmg">DMGの作成</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#using-pyinstaller-without-homebrew">Using PyInstaller without Homebrew</a></li>
-<li><a class="reference internal" href="#using-pyinstaller-and-homebrew">Using PyInstaller and Homebrew</a></li>
+<li><a class="reference internal" href="#using-pyinstaller-without-homebrew">Using PyInstaller without Homebrew(HomebrewなしでPyInstallerを使用する)</a></li>
+<li><a class="reference internal" href="#using-pyinstaller-and-homebrew">Using PyInstaller and Homebrew(PyInstallerとHomebrewを使用する)</a></li>
 </ul>
 </li>
 </ul>
 </div>
             
   <div class="section" id="creating-packages-for-os-x">
-<h1>Creating packages for OS X<a class="headerlink" href="#creating-packages-for-os-x" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<h1>Creating packages for OS X(翻訳済み)<a class="headerlink" href="#creating-packages-for-os-x" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Packaging Kivy applications with the following methods must be done inside
-OS X, 32-bit platforms are no longer supported.</p>
+<p class="last">以下の方法でKivyアプリケーションのパッケージ化ははOS X内で行ないます。また32ビットプラットフォームではサポートされなくなりました</p>
 </div>
 <div class="section" id="using-buildozer">
-<span id="osx-kivy-sdk-packager"></span><h2>Using Buildozer<a class="headerlink" href="#using-buildozer" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<span id="osx-kivy-sdk-packager"></span><h2>Using Buildozer(Buildozerを使用)<a class="headerlink" href="#using-buildozer" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <blockquote>
 <div>pip install git+http://github.com/kivy/buildozer
 cd /to/where/I/Want/to/package
 buildozer init</div></blockquote>
-<p>Edit the buildozer.spec and add the details for your app.
-Dependencies can be added to the <cite>requirements=</cite> section.</p>
-<p>By default the kivy version specified in the requirements is ignored.</p>
-<p>If you have a Kivy.app at /Applications/Kivy.app then that is used,
-for packaging. Otherwise the latest build from kivy.org using Kivy
-master will be downloaded and used.</p>
-<p>If you want to package for python 3.x.x simply download the package
-named Kivy3.7z from the download section of kivy.org and extract it
-to Kivy.app in /Applications, then run:</p>
+<p>buildozer.specを編集して、アプリの詳細情報を追加します。<cite>requirements=</cite> sectionに追加します。</p>
+<p>デフォルトでは要件に指定されたkivyバージョンは無視されます。</p>
+<p>あなたは/Applications/Kivy.appでKivy.appを持っている場合はパッケージングのために使用されます。それ以外の場合はKivy masterを使用してkivy.orgから最新のビルドをダウンロードして使用されます。</p>
+<p>Python3.xxのためにパッケージ化したい場合は、単純にkivy.orgのダウンロードセクションからKivy3.7zという名前のパッケージをダウンロードして実行し、/Applications の Kivy.appに抽出します。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">buildozer</span> <span class="n">osx</span> <span class="n">debug</span>
 </pre></div>
 </div>
-<p>Once the app is packaged, you might want to remove unneeded
-packages like gstreamer, if you don&#8217;t need video support.
-Same logic applies for other things you do not use, just reduce
-the package to its minimal state that is needed for the app to run.</p>
-<p>As an example we are including the showcase example packaged using
-this method for both Python 2 (9.xMB) and 3 (15.xMB), you can find the
-packages here:
-<a class="reference external" href="https://drive.google.com/drive/folders/0B1WO07-OL50_alFzSXJUajBFdnc">https://drive.google.com/drive/folders/0B1WO07-OL50_alFzSXJUajBFdnc</a> .</p>
-<p>That&#8217;s it. Enjoy!</p>
-<p>Buildozer right now uses the Kivy SDK to package your app.
-If you want to control more details about your app than buildozer
-currently offers then you can use the SDK directly, as detailed in the
-section below.</p>
+<p>アプリがパッケージ化され、ビデオサポートを必要としない場合、gstreamerのような不要なパッケージを削除する場合があります。同一のロジックはアプリを実行するために必要とされ、最小の状態にパッケージの容量を減らし、使用していない他のパッケージにも適用されます。</p>
+<p>Python 2（9.xMB）と3（15.xMB）の両方のために、このメソッドを使用してパッケージ化されたショーケースの例として、ここでパッケージを見つけられます::<a class="reference external" href="https://drive.google.com/drive/folders/0B1WO07-OL50_alFzSXJUajBFdnc">https://drive.google.com/drive/folders/0B1WO07-OL50_alFzSXJUajBFdnc</a></p>
+<p>それでおしまい。 お楽しみください！</p>
+<p>Buildozerは、アプリをパッケージ化する際にKivy SDKを使用しています。Buildozerよりも、アプリの詳細を制御したい場合は、以下のセクションで説明するように、直接SDKを使用する方法を提供しています。</p>
 </div>
 <div class="section" id="using-the-kivy-sdk">
-<h2>Using the Kivy SDK<a class="headerlink" href="#using-the-kivy-sdk" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Since version 1.9.0, Kivy is released for the OS X platform in a
-self-contained, portable distribution.</p>
-<p>Apps can be packaged and distributed with the Kivy SDK using the method
-described below, making it easier to include frameworks like SDL2 and
-GStreamer.</p>
+<h2>Using the Kivy SDK(Kivy SDKを使用しています)<a class="headerlink" href="#using-the-kivy-sdk" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>バージョン1.9.0以来、KivyはOS Xプラットフォームにインストールするタイプと、ポータブルでの配布がリリースされます。</p>
+<p>下記の方法を使用して、アプリはパッケージ化され、SDL2とのGStreamerのようなフレームワークが簡単に含めて、Kivy SDKと一緒に配布できます。</p>
 <ol class="arabic">
-<li><p class="first">Make sure you have the unmodified Kivy SDK (Kivy.app) from the download page.</p>
+<li><p class="first">ダウンロードページから変更されていないKivy SDK（Kivy.appを）を持っていることを確認してください。</p>
 </li>
-<li><p class="first">Run the following commands:</p>
+<li><p class="first">次のコマンドを実行してください:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">mkdir</span> <span class="n">packaging</span>
 <span class="o">&gt;</span> <span class="n">cd</span> <span class="n">packaging</span>
 <span class="n">packaging</span><span class="o">&gt;</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">kivy</span><span class="o">/</span><span class="n">kivy</span><span class="o">-</span><span class="n">sdk</span><span class="o">-</span><span class="n">packager</span>
@@ -265,61 +247,53 @@ GStreamer.</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">This step above is important, you have to make sure to preserve the paths
-and permissions. A command like <code class="docutils literal"><span class="pre">cp</span> <span class="pre">-rf</span></code> will copy but make the app
-unusable and lead to error later on.</p>
+<p class="last">上記のこのステップでは、パスと権限を確認することが重要です。以下のようなコマンド``cp -rf``などでコピーしますが、アプリケーションが使用できなくなると後でエラーになります。&#8221;</p>
 </div>
 </div></blockquote>
 <ol class="arabic" start="3">
-<li><p class="first">Now all you need to do is to include your compiled app in the Kivy.app
-by running the following command:</p>
+<li><p class="first">今、必要があるのは、次のコマンドを実行してKivy.appでコンパイルされたアプリケーションを含めることです。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">osx</span><span class="o">&gt;</span> <span class="o">./</span><span class="n">package</span><span class="o">-</span><span class="n">app</span><span class="o">.</span><span class="n">sh</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">your</span><span class="o">/&lt;</span><span class="n">app_folder_name</span><span class="o">&gt;/</span>
 </pre></div>
 </div>
 </li>
 </ol>
 <blockquote>
-<div><p>Where &lt;app_folder_name&gt; is the name of your app.</p>
-<p>This copies Kivy.app to <cite>&lt;app_folder_name&gt;.app</cite> and includes a compiled copy
-of your app into this package.</p>
+<div><p>ここでの&lt;app_folder_name&gt;はアプリの名前です。</p>
+<p>Kivy.appのコピーの`&lt;app_folder_name&gt;.app`ファイルのパッケージにアプリケーションのコンパイル済みのコピーが含まれています。</p>
 </div></blockquote>
 <ol class="arabic simple" start="4">
-<li>That&#8217;s it, your self-contained package is ready to be deployed!
-You can now further customize your app as described bellow.</li>
+<li><p class="first">自己完結パッケージを展開する準備ができました！以下の説明でさらにアプリをカスタマイズできます。</p>
+</li>
 </ol>
 <div class="section" id="installing-modules">
-<h3>Installing modules<a class="headerlink" href="#installing-modules" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Kivy package on osx uses its own virtual env that is activated when you run your app using <cite>kivy</cite> command.
-To install any module you need to install the module like so:</p>
+<h3>Installing modules (モジュール群のインストール)<a class="headerlink" href="#installing-modules" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>OSX上のKivyパッケージには、<cite>kivy</cite> コマンドを使用してアプリケーションを実行したときに有効化する独自のvirtual envを使用しています。 インストールする必要がある任意のモジュールをインストールするには次のようにします:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ kivy -m pip install &lt;modulename&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="where-are-the-modules-files-installed">
-<h3>Where are the modules/files installed?<a class="headerlink" href="#where-are-the-modules-files-installed" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Inside the portable venv within the app at:</p>
+<h3>モジュール/ファイルはどこにインストールされているか？<a class="headerlink" href="#where-are-the-modules-files-installed" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>アプリ内のポータブルvirtual env内にあります：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Kivy</span><span class="o">.</span><span class="n">app</span><span class="o">/</span><span class="n">Contents</span><span class="o">/</span><span class="n">Resources</span><span class="o">/</span><span class="n">venv</span><span class="o">/</span>
 </pre></div>
 </div>
-<p>If you install a module that installs a binary for example like kivy-garden
-That binary will be only available from the venv above, as in after you do:</p>
+<p>例えばkivyガーデンのようなバイナリをインストールした場合virtual envないで後から利用できるようになります：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">kivy</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">kivy</span><span class="o">-</span><span class="n">garden</span>
 </pre></div>
 </div>
-<p>The garden lib will be only available when you activate this env.</p>
+<p>このenvをアクティブにした場合、Kivyガーデンのlibが使用可能になります。</p>
 <blockquote>
-<div>source /Applications/Kivy.app/Contents/Resources/venv/bin/activate
-garden install mapview
-deactivate</div></blockquote>
+<div><p>ソース、/Applications/Kivy.app/Contents/Resources/venv/bin/activate のmapview　の非アクティブ化をコントロール。</p>
+</div></blockquote>
 </div>
 <div class="section" id="to-install-binary-files">
-<h3>To install binary files<a class="headerlink" href="#to-install-binary-files" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Just copy the binary to the Kivy.app/Contents/Resources/venv/bin/ directory.</p>
+<h3>バイナリファイルをインストールするには<a class="headerlink" href="#to-install-binary-files" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Kivy.app/Contents/Resources/venv/bin/ のディレクトリにバイナリをコピーするだけです。</p>
 </div>
 <div class="section" id="to-include-other-frameworks">
-<h3>To include other frameworks<a class="headerlink" href="#to-include-other-frameworks" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Kivy.app comes with SDL2 and Gstreamer frameworks provided.
-To include frameworks other than the ones provided do the following:</p>
+<h3>他のフレームワークを含めるには<a class="headerlink" href="#to-include-other-frameworks" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Kivy.appはSDL2とのGStreamerフレームワークが付属して提供されます。 他のフレームワークを含めるには次の方法で行います：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">tito</span><span class="o">/</span><span class="n">osxrelocator</span>
 <span class="n">export</span> <span class="n">PYTHONPATH</span><span class="o">=~/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">osxrelocator</span>
 <span class="n">cd</span> <span class="n">Kivy</span><span class="o">.</span><span class="n">app</span>
@@ -327,50 +301,37 @@ To include frameworks other than the ones provided do the following:</p>
 <span class="nd">@executable_path</span><span class="o">/../</span><span class="n">Frameworks</span><span class="o">/&lt;</span><span class="n">Framework_name</span><span class="o">&gt;.</span><span class="n">framework</span><span class="o">/</span>
 </pre></div>
 </div>
-<p>Do not forget to replace &lt;Framework_name&gt; with your framework.
-This tool <cite>osxrelocator</cite> essentially changes the path for the
-libs in the framework such that they are relative to the executable
-within the .app, making the Framework portable with the .app.</p>
+<p>&lt;Framework_name&gt;を使用するフレームワークで置換することを忘れないでください <a href="#id1"><span class="problematic" id="id2">`</span></a>osxrelocator`ツール は.appファイル内の実行可能ファイルへの相対的な枠組みの中でLIBSのパスを変更し、.appでフレームワークポータブルを作ります。</p>
 <div class="section" id="shrinking-the-app-size">
-<h4>Shrinking the app size<a class="headerlink" href="#shrinking-the-app-size" title="このヘッドラインへのパーマリンク">¶</a></h4>
-<p>The app has a considerable size right now, however the unneeded parts can be
-removed from the package.</p>
-<p>For example if you don&#8217;t use GStreamer, simply remove it from
-YourApp.app/Contents/Frameworks.
-Similarly you can remove the examples folder from
-/Applications/Kivy.app/Contents/Resources/kivy/examples/ or kivy/tools,
-kivy/docs etc.</p>
-<p>This way the package can be made to only include the parts that are needed for
-your app.</p>
+<h4>アプリのサイズを縮小<a class="headerlink" href="#shrinking-the-app-size" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>現在のアプリはかなりの大きさを持っていますが、不要な部分をパッケージから削除できます。</p>
+<p>例えばGStreamerを使用しない場合、単純にYourApp.app/Contents/Frameworksから削除します。同様に、/Applications/Kivy.app/Contents/Resources/kivy/examples/ または kivy/tools, kivy/docs などからexamplesフォルダを削除できます。</p>
+<p>このように、パッケージはあなたのアプリケーションのために必要とされる部分を含めることができます。</p>
 </div>
 <div class="section" id="adjust-settings">
-<h4>Adjust settings<a class="headerlink" href="#adjust-settings" title="このヘッドラインへのパーマリンク">¶</a></h4>
-<p>Icons and other settings of your app can be changed by editing
-YourApp/Contents/info.plist to suit your needs.</p>
+<h4>設定を調整する<a class="headerlink" href="#adjust-settings" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>アイコンとアプリの他の設定は、ニーズに合わせてYourApp/Contents/info.plistファイルを編集することで変更します。</p>
 </div>
 <div class="section" id="create-a-dmg">
-<h4>Create a DMG<a class="headerlink" href="#create-a-dmg" title="このヘッドラインへのパーマリンク">¶</a></h4>
-<p>To make a DMG of your app use the following command:</p>
+<h4>DMGの作成<a class="headerlink" href="#create-a-dmg" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>アプリのDMGを作成するには、次のコマンドを使用します:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">osx</span><span class="o">&gt;</span> <span class="o">./</span><span class="n">create</span><span class="o">-</span><span class="n">osx</span><span class="o">-</span><span class="n">dmg</span><span class="o">.</span><span class="n">sh</span> <span class="n">YourApp</span><span class="o">.</span><span class="n">app</span>
 </pre></div>
 </div>
-<p>Note the lack of <cite>/</cite> at the end.
-This should give you a compressed dmg that will further shrink the size of your distributed app.</p>
+<p>最後に <cite>/</cite> がないことを注意してください。 これは開発したアプリのサイズをさらに縮小する圧縮されたdmgを与えます。</p>
 </div>
 </div>
 </div>
 <div class="section" id="using-pyinstaller-without-homebrew">
-<span id="osx-pyinstaller"></span><h2>Using PyInstaller without Homebrew<a class="headerlink" href="#using-pyinstaller-without-homebrew" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>First install Kivy and its dependencies without using Homebrew as mentioned here
-<a class="reference external" href="http://kivy.org/docs/installation/installation.html#development-version">http://kivy.org/docs/installation/installation.html#development-version</a>.</p>
-<p>Once you have kivy and its deps installed, you need to install PyInstaller.</p>
-<p>Let&#8217;s assume we use a folder like <cite>testpackaging</cite>:</p>
+<span id="osx-pyinstaller"></span><h2>Using PyInstaller without Homebrew(HomebrewなしでPyInstallerを使用する)<a class="headerlink" href="#using-pyinstaller-without-homebrew" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>まず、ここで述べたようにHomebrewを使用せずにKivyとその依存関係をインストールします。<a class="reference external" href="http://kivy.org/docs/installation/installation.html#development-version">http://kivy.org/docs/installation/installation.html#development-version</a> 。</p>
+<p>kivyを持っており、そのdepsをインストールしたら、pyInstallerをインストールする必要があります。</p>
+<p><a href="#id1"><span class="problematic" id="id2">`</span></a>testpackaging`フォルダを使用すると仮定しましょう：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">testpackaging</span>
 <span class="n">git</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pyinstaller</span><span class="o">/</span><span class="n">pyinstaller</span>
 </pre></div>
 </div>
-<p>Create a file named touchtracer.spec in this directory and add the following
-code to it:</p>
+<p>このディレクトリにtouchtracer.specという名前のファイルを作成し、そこに次のコードを追加します:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># -*- mode: python -*-</span>
 
 <span class="n">block_cipher</span> <span class="o">=</span> <span class="kc">None</span>
@@ -409,7 +370,7 @@ code to it:</p>
          <span class="n">bundle_identifier</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Change the paths with your relevant paths:</p>
+<p>パスを関連するパスに変更します</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Analysis</span><span class="p">([</span><span class="s1">&#39;/path/to/yout/folder/containing/examples/demo/touchtracer/main.py&#39;</span><span class="p">],</span>
             <span class="n">pathex</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;/path/to/yout/folder/containing/testpackaging&#39;</span><span class="p">],</span>
 <span class="o">...</span>
@@ -417,55 +378,51 @@ code to it:</p>
 <span class="n">coll</span> <span class="o">=</span> <span class="n">COLLECT</span><span class="p">(</span><span class="n">exe</span><span class="p">,</span> <span class="n">Tree</span><span class="p">(</span><span class="s1">&#39;../kivy/examples/demo/touchtracer/&#39;</span><span class="p">),</span>
 </pre></div>
 </div>
-<p>Then run the following command:</p>
+<p>次に、以下のコマンドを実行します:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pyinstaller</span><span class="o">/</span><span class="n">pyinstaller</span><span class="o">.</span><span class="n">py</span> <span class="n">touchtracer</span><span class="o">.</span><span class="n">spec</span>
 </pre></div>
 </div>
-<p>Replace <cite>touchtracer</cite> with your app where appropriate.
-This will give you a &lt;yourapp&gt;.app in the dist/ folder.</p>
+<p>アプリを作る際に`touchtracer`を置換してください。 これは、あなたの dist/ folderの&lt;yourapp&gt; .appファイルを提供します。</p>
 </div>
 <div class="section" id="using-pyinstaller-and-homebrew">
-<h2>Using PyInstaller and Homebrew<a class="headerlink" href="#using-pyinstaller-and-homebrew" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Using PyInstaller and Homebrew(PyInstallerとHomebrewを使用する)<a class="headerlink" href="#using-pyinstaller-and-homebrew" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Package your app on the oldest OS X version you want to support.</p>
+<p class="last">サポートする最も古いOS Xのバージョンでアプリをパッケージ化します。</p>
 </div>
 <ol class="arabic">
-<li><p class="first">Install <a class="reference external" href="http://brew.sh">Homebrew</a></p>
+<li><p class="first"><a href="#id1"><span class="problematic" id="id2">`</span></a>Homebrew &lt;<a class="reference external" href="http://brew.sh">http://brew.sh</a>&gt;`をインストールします。</p>
 </li>
-<li><p class="first">Install Python:</p>
+<li><p class="first">Pythonをインストールします:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ brew install python
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">To use Python 3, <code class="docutils literal"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">python3</span></code> and replace <code class="docutils literal"><span class="pre">pip</span></code> with <code class="docutils literal"><span class="pre">pip3</span></code>
-in the guide below.</p>
+<p class="last">Python3を使用するには、<a href="#id1"><span class="problematic" id="id2">``</span></a>brew install python3``と``pip``を``pip3``と置換してガイドに従ってください。</p>
 </div>
 </li>
-<li><p class="first">(Re)install your dependencies with <code class="docutils literal"><span class="pre">--build-bottle</span></code> to make sure they can be
-used on other machines:</p>
+<li><p class="first">（再）``&#8211;build-bottle``を使用して依存関係をインストール、他のマシンで使用することができるかを確認します：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ brew reinstall --build-bottle sdl2 sdl2_image sdl2_ttf sdl2_mixer
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">If your project depends on GStreamer or other additional libraries (re)install
-them with <code class="docutils literal"><span class="pre">--build-bottle</span></code> as described <a href="#id2"><span class="problematic" id="id3">`below &lt;additional libraries_&gt;`_</span></a>.</p>
+<p class="last">プロジェクトがGStreamerまたは他の追加のライブラリに依存する場合（再）``&#8211;build-bottle`でインストールして記載されているように`従います&lt;<a href="#id2"><span class="problematic" id="id3">additionallibraries_</span></a>&gt;` 。</p>
 </div>
 </li>
-<li><p class="first">Install Cython and Kivy:</p>
+<li><p class="first">CythonとKivyをインストールします:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install -I Cython==0.23
 $ USE_OSX_FRAMEWORKS=0 pip install -U kivy
 </pre></div>
 </div>
 </li>
-<li><p class="first">Install PyInstaller:</p>
+<li><p class="first">PyInstallerをインストールします:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install -U pyinstaller
 </pre></div>
 </div>
 </li>
-<li><p class="first">Package your app using the path to your main.py:</p>
+<li><p class="first">main.pyへのパスを使用してアプリをパッケージ化します:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ pyinstaller -y --clean --windowed --name touchtracer \
   --exclude-module _tkinter \
   --exclude-module Tkinter \
@@ -476,17 +433,12 @@ $ USE_OSX_FRAMEWORKS=0 pip install -U kivy
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">This will not yet copy additional image or sound files. You would need to adapt the
-created <code class="docutils literal"><span class="pre">.spec</span></code> file for that.</p>
+<p class="last">これは、まだ追加の画像や音声のファイルをコピーしません。<code class="docutils literal"><span class="pre">.spec</span></code> を作成した後そのためのファイルを追加する必要があります。</p>
 </div>
 </li>
 </ol>
-<p>The specs file is named <cite>touchtracer.spec</cite> and is located in the directory where you ran
-the pyinstaller command.</p>
-<p>You need to change the <cite>COLLECT()</cite> call to add the data of touchtracer
-(<cite>touchtracer.kv</cite>, <cite>particle.png</cite>, ...). Change the line to add a Tree()
-object. This Tree will search and add every file found in the touchtracer
-directory to your final package. Your COLLECT section should look something like this:</p>
+<p>スペック・ファイルはtouchtracer.specという名前で、pyInstallerのコマンドを実行したディレクトリに存在します。</p>
+<p><code class="docutils literal"><span class="pre">COLLECT()</span></code> にtouchtracerで呼ばれるデータ（<cite>touchtracer.kv</cite>, <cite>particle.png</cite>、...）を追加する必要があります。<code class="docutils literal"><span class="pre">Tree()``オブジェクトに追加する行を加えます（例：``Tree('examples-path\\demo\\touchtracer\\')）</span></code>。Treeはtouchtracerディレクトリにあるすべてのファイルを検索して最終的なパッケージに追加します。 COLLECTセクションに次のようになります</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">coll</span> <span class="o">=</span> <span class="n">COLLECT</span><span class="p">(</span><span class="n">exe</span><span class="p">,</span> <span class="n">Tree</span><span class="p">(</span><span class="s1">&#39;/usr/local/share/kivy-examples/demo/touchtracer/&#39;</span><span class="p">),</span>
                <span class="n">a</span><span class="o">.</span><span class="n">binaries</span><span class="p">,</span>
                <span class="n">a</span><span class="o">.</span><span class="n">zipfiles</span><span class="p">,</span>
@@ -496,36 +448,34 @@ directory to your final package. Your COLLECT section should look something like
                <span class="n">name</span><span class="o">=</span><span class="s1">&#39;touchtracer&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This will add the required hooks so that PyInstaller gets the required Kivy files.
-We are done. Your spec is ready to be executed.</p>
+<p>pyInstallerが必要なKivyファイルを取得するようにするために必要なhookを追加します。実行します。 スペックを実行する準備ができました。</p>
 <ol class="arabic">
-<li><p class="first">Open a console.</p>
+<li><p class="first">コンソールを開きます。</p>
 </li>
-<li><p class="first">Go to the PyInstaller directory, and build the spec:</p>
+<li><p class="first">PyInstallerのディレクトリに移動し、specを構築します。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ pyinstaller -y --clean --windowed touchtracer.spec
 </pre></div>
 </div>
 </li>
-<li><p class="first">Run:</p>
+<li><p class="first">実行します。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ pushd dist
 $ hdiutil create ./Touchtracer.dmg -srcfolder touchtracer.app -ov
 $ popd
 </pre></div>
 </div>
 </li>
-<li><p class="first">You will now have a Touchtracer.dmg available in the <cite>dist</cite> directory.</p>
+<li><p class="first">これで、<cite>dist</cite> ディレクトリで使用可能なTouchtracer.dmgを持つことになります。</p>
 </li>
 </ol>
-<p>If your project depends on GStreamer:</p>
+<p>プロジェクトが、GStreamerに依存している場合：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ brew reinstall --build-bottle gstreamer gst-plugins-{base,good,bad,ugly}
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">If your Project needs Ogg Vorbis support be sure to add the <code class="docutils literal"><span class="pre">--with-libvorbis</span></code>
-option to the command above.</p>
+<p class="last">プロジェクトのOgg Vorbisのサポートが必要な場合は、上記のコマンドにオプション``&#8211;with-&#8220;libvorbis``を追加して選択します。</p>
 </div>
-<p>If you are using Python from Homebrew you currently also need the following step until <a class="reference external" href="https://github.com/Homebrew/homebrew/pull/46097">this pull request</a> gets merged:</p>
+<p>HomebrewのPythonを使用している場合、あなたは現在、この`プルリクエスト&lt;<a class="reference external" href="https://github.com/Homebrew/homebrew/pull/46097">https://github.com/Homebrew/homebrew/pull/46097</a>&gt;`をマージする必要があります：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ brew reinstall --with-python --build-bottle https://github.com/cbenhagen/homebrew/raw/patch-3/Library/Formula/gst-python.rb
 </pre></div>
 </div>
@@ -540,7 +490,7 @@ option to the command above.</p>
                   <a href="android.html" title="previous chapter">&laquo; Kivy on Android</a></li>
                   </td>
                   <td class="rightlink">
-                  <a href="packaging-ios.html" title="next chapter">Create a package for IOS &raquo;</a>
+                  <a href="packaging-ios.html" title="next chapter">Create a package for IOS(翻訳済み) &raquo;</a>
                       </td>
                   </tr>
               </table>
@@ -567,7 +517,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 9月 24, 2016.
+      Last updated on 9月 26, 2016.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.6.
 </div>
 -->
