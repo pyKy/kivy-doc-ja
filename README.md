@@ -3,8 +3,6 @@ Kivyドキュメンテーションの日本語訳
 
 # 本リポジトリについて
 日本語翻訳の方法を変更しています。  
-以下リポジトリから順次こちらに移動します。  
-https://github.com/pyKy/translation  
 
 # HTMLについて
 暫定的ですがgithubの機能を使用してdocs配下のHTMLを以下のURLで公開しています。
@@ -15,8 +13,6 @@ https://pyky.github.io/kivy-doc-ja/
 
 #問題について
 2016年9月現在の問題としては一部リンクがおかしいところと強調などの記法が適用されていません。
-
-移植完了後、対応する予定です。（2016年9月末対応予定）
 
 
 またAPIが出力できておりません。出力しようするとタッチパネル前提のところでエラーになるので、
@@ -45,12 +41,31 @@ https://pyky.github.io/kivy-doc-ja/
     make: *** [html] Error 1
 
 
+#翻訳について
+翻訳の担当者などのタスクはTrelloにて管理しています。  
+https://trello.com/b/vUxSE4Ks/kivy
 
-# 移植待ち項目について
+以下のリンクから参加することが可能です。 
 
-translationリポジトリで翻訳済みで移植待ちの項目は以下の通りです。
+ https://trello.com/invite/b/vUxSE4Ks/f7ddc4a749099c6854ba2cfca6b0620a/kivy-
+ 
+ 
+作業する際は、【手付かず】となっている箇所から作業したいページを選択して、【作業中】に移動してください。   
+その後、カードのメンバーに自分と、期日を移動した日から10日後に設定して作業してください。  
+期日を過ぎても作業が終わらなかった場合は、一旦メンバーと期日を削除して【手付かず】に戻してください。  
+その際、もし途中まで作業していた場合は、プルリクエストしていただき、その内容をカードのコメントに記載しておいてください。
 
-* Gallery of Examples（「Kivy カタログ」以外すべて）
+
+
+現在の翻訳メンバー
+https://github.com/orgs/pyKy/people
+
+
+Slack作りました
+http://pyky.slack.com
+
+登録用フォーム
+https://docs.google.com/forms/d/1bKv3KtJ6hAgYiuKMeFCm4nd0-9fhkwxdsMCRXsp0wbU/viewform
 
 # 目標
 
