@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="twitter:site" content="@kivyframework">
     
-    <title>Create a package for Android(翻訳中) &mdash; Kivy 1.9.1 ドキュメント</title>
+    <title>Create a package for Android(翻訳済み) &mdash; Kivy 1.9.1 ドキュメント</title>
     <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../_static/fresh.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -65,17 +65,17 @@
                 <input type="text" class="text" name="q" />
             </form>
           <!--
-          <h3><a href="../index.html">Create a package for Android(翻訳中)</a></h3>
+          <h3><a href="../index.html">Create a package for Android(翻訳済み)</a></h3>
           <ul>
-<li><a class="reference internal" href="#">Create a package for Android(翻訳中)</a><ul>
+<li><a class="reference internal" href="#">Create a package for Android(翻訳済み)</a><ul>
 <li><a class="reference internal" href="#buildozer">Buildozer</a></li>
-<li><a class="reference internal" href="#packaging-with-python-for-android">Packaging with python-for-android</a></li>
-<li><a class="reference internal" href="#packaging-your-application-for-the-kivy-launcher">Packaging your application for the Kivy Launcher</a><ul>
-<li><a class="reference internal" href="#installation-of-examples">Installation of Examples</a></li>
+<li><a class="reference internal" href="#packaging-with-python-for-android">Packaging with python-for-android（python-for-androidのパッケージ化）</a></li>
+<li><a class="reference internal" href="#packaging-your-application-for-the-kivy-launcher">Packaging your application for the Kivy Launcher(Kivy Launcherによるアプリのパッケージ化)</a><ul>
+<li><a class="reference internal" href="#installation-of-examples">Installation of Examples(インストールの例)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#release-on-the-market">Release on the market</a></li>
-<li><a class="reference internal" href="#targeting-android">Targeting Android</a></li>
+<li><a class="reference internal" href="#release-on-the-market">Release on the market(マーケットにリリース)</a></li>
+<li><a class="reference internal" href="#targeting-android">Targeting Android(Androidのターゲット設定)</a></li>
 </ul>
 </li>
 </ul>
@@ -109,7 +109,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__circle__py.html">Circle Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
@@ -126,7 +126,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
 </ul>
 </li>
 </ul>
@@ -179,125 +179,91 @@
         <div class="bodywrapper">
           <div class="body">
             <div class="toc"><h2>Table Of Contents</h2><ul>
-<li><a class="reference internal" href="#">Create a package for Android(翻訳中)</a><ul>
+<li><a class="reference internal" href="#">Create a package for Android(翻訳済み)</a><ul>
 <li><a class="reference internal" href="#buildozer">Buildozer</a></li>
-<li><a class="reference internal" href="#packaging-with-python-for-android">Packaging with python-for-android</a></li>
-<li><a class="reference internal" href="#packaging-your-application-for-the-kivy-launcher">Packaging your application for the Kivy Launcher</a><ul>
-<li><a class="reference internal" href="#installation-of-examples">Installation of Examples</a></li>
+<li><a class="reference internal" href="#packaging-with-python-for-android">Packaging with python-for-android（python-for-androidのパッケージ化）</a></li>
+<li><a class="reference internal" href="#packaging-your-application-for-the-kivy-launcher">Packaging your application for the Kivy Launcher(Kivy Launcherによるアプリのパッケージ化)</a><ul>
+<li><a class="reference internal" href="#installation-of-examples">Installation of Examples(インストールの例)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#release-on-the-market">Release on the market</a></li>
-<li><a class="reference internal" href="#targeting-android">Targeting Android</a></li>
+<li><a class="reference internal" href="#release-on-the-market">Release on the market(マーケットにリリース)</a></li>
+<li><a class="reference internal" href="#targeting-android">Targeting Android(Androidのターゲット設定)</a></li>
 </ul>
 </li>
 </ul>
 </div>
             
   <div class="section" id="create-a-package-for-android">
-<span id="packaging-android"></span><h1>Create a package for Android(翻訳中)<a class="headerlink" href="#create-a-package-for-android" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>You can create a package for android using the <a class="reference external" href="https://github.com/kivy/python-for-android">python-for-android</a> project. This page explains how
-to download and use it directly on your own machine (see
-<a class="reference internal" href="#packaging-your-application-into-apk"><span class="std std-ref">Packaging with python-for-android</span></a>), use the prebuilt
-<a class="reference internal" href="packaging-android-vm.html#kivy-android-vm"><span class="std std-ref">Kivy Android VM</span></a> image, or
-use the <a class="reference internal" href="#buildozer"><span class="std std-ref">Buildozer</span></a> tool to automate the entire process. You can also see
-<a class="reference internal" href="#packaging-your-application-for-kivy-launcher"><span class="std std-ref">Packaging your application for the Kivy Launcher</span></a> to run kivy
-programs without compiling them.</p>
-<p>For new users, we recommend using <a class="reference internal" href="#buildozer"><span class="std std-ref">Buildozer</span></a> as the easiest way
-to make a full APK. You can also run your Kivy app without a
-compilation step with the <a class="reference internal" href="#packaging-your-application-for-kivy-launcher"><span class="std std-ref">Kivy Launcher</span></a> app.</p>
-<p>Kivy applications can be <a class="reference internal" href="#release-on-the-market"><span class="std std-ref">released on an Android market</span></a> such as the Play store, with a few extra
-steps to create a fully signed APK.</p>
-<p>The Kivy project includes tools for accessing Android APIs to
-accomplish vibration, sensor access, texting etc. These, along with
-information on debugging on the device, are documented at the
-<a class="reference internal" href="android.html"><span class="doc">main Android page</span></a>.</p>
+<span id="packaging-android"></span><h1>Create a package for Android(翻訳済み)<a class="headerlink" href="#create-a-package-for-android" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>python-for-android &lt;<a class="reference external" href="https://github.com/kivy/python-for-android">https://github.com/kivy/python-for-android</a>&gt;`_ プロジェクトを使用してAndroidのパッケージ化ができます。このページでは、ダウンロードして、自分のマシンで直接それ( <a class="reference internal" href="#packaging-your-application-into-apk"><span class="std std-ref">Packaging with python-for-android（python-for-androidのパッケージ化）</span></a> を参照)を使用して、事前に作成された:ref:<cite>Kivy Android VM &lt;kivy_android_vm&gt;</cite> イメージを使用するか、またはプロセス全体を自動化する <a class="reference internal" href="#buildozer"><span class="std std-ref">Buildozer</span></a> ツールを使用する方法について説明します。 または:ref:<cite>Packaging your application for Kivy Launcher</cite> を参照してしてコンパイルせずにkivyプログラムを実行します。</p>
+<p>新規ユーザーのために、フルAPKを作成する最も簡単な方法として <a class="reference internal" href="#buildozer"><span class="std std-ref">Buildozer</span></a> の使用をお勧めします。 また、<a class="reference internal" href="#packaging-your-application-for-kivy-launcher"><span class="std std-ref">Kivy Launcher</span></a> アプリはコンパイル不要でKivyアプリを実行できます 。</p>
+<p>Kivyアプリケーションは、いくつかの手順をおこない署名ずみのAPKを作成してPlay storeに <a class="reference internal" href="#release-on-the-market"><span class="std std-ref">released on an Android market</span></a> 。</p>
+<p>Kivyプロジェクトは振動、センサー、テキストメッセージへのアクセスを実現するためにAndroidAPIにアクセスするためのツールが含まれていますこれらの事はデバイスのデバッグに関する情報とともに、<a class="reference internal" href="android.html"><span class="doc">main Android page</span></a> に記載されてます。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Python 3 support on Android is now available experimentally.</p>
+<p class="last">Android上でPython3のサポートが実験的に利用できるようになりました。</p>
 </div>
 <div class="section" id="buildozer">
 <span id="id1"></span><h2>Buildozer<a class="headerlink" href="#buildozer" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Buildozer is a tool that automates the entire build process. It
-downloads and sets up all the prequisites for python-for-android,
-including the android SDK and NDK, then builds an apk that can be
-automatically pushed to the device.</p>
-<p>Buildozer currently works only in Linux, and is an alpha
-release, but it already works well and can significantly simplify the
-apk build.</p>
-<p>You can get buildozer at <a class="reference external" href="https://github.com/kivy/buildozer">https://github.com/kivy/buildozer</a>:</p>
+<p>Buildozerは、ビルドプロセス全体を自動化するツールです。 それはandroidSDKとNDKを含むpython-for-androidのためのすべてのprequisitesを、ダウンロードして設定し、その後、自動的にデバイスにプッシュができるAPKをビルドします</p>
+<p>Buildozerは現在、Linux上でしか動作せず、アルファリリースですが、すでに十分に機能しておりAPKビルドを大幅に簡略化できます。</p>
+<p>buildozer は <a class="reference external" href="https://github.com/kivy/buildozer">https://github.com/kivy/buildozer</a> から入手できます:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">kivy</span><span class="o">/</span><span class="n">buildozer</span><span class="o">.</span><span class="n">git</span>
 <span class="n">cd</span> <span class="n">buildozer</span>
 <span class="n">sudo</span> <span class="n">python2</span><span class="o">.</span><span class="mi">7</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
 </pre></div>
 </div>
-<p>This will install buildozer in your system. Afterwards, navigate to
-your project directory and run:</p>
+<p>これはシステムにbuildozerをインストールします。その後、プロジェクトディレクトリと実行をナビゲートします:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">buildozer</span> <span class="n">init</span>
 </pre></div>
 </div>
-<p>This creates a <cite>buildozer.spec</cite> file controlling your build
-configuration. You should edit it appropriately with your app name
-etc. You can set variables to control most or all of the parameters
-passed to python-for-android.</p>
-<p>Install buildozer&#8217;s <a class="reference external" href="https://buildozer.readthedocs.io/en/latest/installation.html#targeting-android">dependencies</a>.</p>
-<p>Finally, plug in your android device and run:</p>
+<p>これはビルド構成を制御する <cite>buildozer.spec</cite> ファイルを作成します。 アプリ名などを適切に編集してください。python-for-androidに渡されるほぼ全ての制御用のパラメタ―に変数を設定できます。</p>
+<p>buildozerの <a class="reference external" href="https://buildozer.readthedocs.io/en/latest/installation.html#targeting-android">dependencies</a> をインストールしてください。</p>
+<p>最後にAndroidデバイスを接続して実行します。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">buildozer</span> <span class="n">android</span> <span class="n">debug</span> <span class="n">deploy</span> <span class="n">run</span>
 </pre></div>
 </div>
-<p>to build, push and automatically run the apk on your device.</p>
-<p>Buildozer has many available options and tools to help you, the steps
-above are just the simplest way to build and run your
-APK. The full documentation is available <a class="reference external" href="http://buildozer.readthedocs.org/en/latest/">here</a>. You can also check
-the Buildozer README at <a class="reference external" href="https://github.com/kivy/buildozer">https://github.com/kivy/buildozer</a>.</p>
+<p>ビルド、プッシュを経て自動的にデバイス上でAPKを実行します。</p>
+<p>Buildozerは、上記のシンプル手順でビルドしてAPKを実行する最も簡単な方法のために、多くの利用可能なオプションとあなたを助けるためのツールを持ってます。 完全なドキュメントが`ここ &lt;<a class="reference external" href="http://buildozer.readthedocs.org/en/latest/">http://buildozer.readthedocs.org/en/latest/</a>&gt;`_ で利用可能です 。 またBuildozer READMEで`&lt;<a class="reference external" href="https://github.com/kivy/buildozer">https://github.com/kivy/buildozer</a>&gt;`_.確認できます。</p>
 </div>
 <div class="section" id="packaging-with-python-for-android">
-<span id="packaging-your-application-into-apk"></span><h2>Packaging with python-for-android<a class="headerlink" href="#packaging-with-python-for-android" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>You can also package directly with python-for-android, which can give
-you more control but requires you to manually download parts of the
-Android toolchain.</p>
-<p>See the <a class="reference external" href="https://python-for-android.readthedocs.io/en/latest/quickstart/">python-for-android documentation</a>
-for full details.</p>
+<span id="packaging-your-application-into-apk"></span><h2>Packaging with python-for-android（python-for-androidのパッケージ化）<a class="headerlink" href="#packaging-with-python-for-android" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>python-for-androidを直接パッケージ化できます。しかしそのためには、より多く制御するために手動でAndroid toolchainをダウンロードする必要があります。</p>
+<p>完全な詳細については <a class="reference external" href="https://python-for-android.readthedocs.io/en/latest/quickstart/">python-for-android documentation</a> を見てください。</p>
 </div>
 <div class="section" id="packaging-your-application-for-the-kivy-launcher">
-<span id="packaging-your-application-for-kivy-launcher"></span><h2>Packaging your application for the Kivy Launcher<a class="headerlink" href="#packaging-your-application-for-the-kivy-launcher" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The <a class="reference external" href="https://play.google.com/store/apps/details?id=org.kivy.pygame&amp;hl=en">Kivy launcher</a>
-is an Android application that runs any Kivy examples stored on your
-SD Card.
-To install the Kivy launcher, you must:</p>
+<span id="packaging-your-application-for-kivy-launcher"></span><h2>Packaging your application for the Kivy Launcher(Kivy Launcherによるアプリのパッケージ化)<a class="headerlink" href="#packaging-your-application-for-the-kivy-launcher" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><a class="reference external" href="https://play.google.com/store/apps/details?id=org.kivy.pygame&amp;hl=en">Kivy launcher</a> は、SDカードに保存されている任意のKivyによるプログラムを実行するAndroidアプリケーションです。Kivyランチャーをインストールするには、以下を実行してください:</p>
 <ol class="arabic simple">
-<li>Go to the <a class="reference external" href="https://market.android.com/details?id=org.kivy.pygame">Kivy Launcher page</a>
-on the Google Play Store</li>
-<li>Click on Install</li>
-<li>Select your phone... And you&#8217;re done!</li>
+<li><p class="first">Google Play Storeの`Kivy Launcher page &lt;<a class="reference external" href="https://market.android.com/details?id=org.kivy.pygame">https://market.android.com/details?id=org.kivy.pygame</a>&gt;`_ にアクセスしてください</p>
+</li>
+<li><p class="first">インストールしてください</p>
+</li>
+<li><p class="first">携帯電話を選択して...実行してください！</p>
+</li>
 </ol>
-<p>If you don&#8217;t have access to the Google Play Store on your phone/tablet,
-you can download and install the APK manually from  <a class="reference external" href="http://kivy.org/#download">http://kivy.org/#download</a>.</p>
-<p>Once the Kivy launcher is installed, you can put your Kivy
-applications in the Kivy directory in your external storage directory
-(often available at <code class="code docutils literal"><span class="pre">/sdcard</span></code> even in devices where this memory
-is internal), e.g.</p>
+<p>携帯電話/タブレット端末でGoogle Play Storeにアクセスできない場合は、<a class="reference external" href="http://kivy.org/#download">http://kivy.org/#download</a> からAPKをダウンロードしてマニュアルでインストールしてください。</p>
+<p>Kivyランチャーがインストールされたら、外部ストレージディレクトリのKivyのディレクトリにKivyアプリケーションを置くことができます。（デバイス内部にあるメモリで:code:<a href="#id1"><span class="problematic" id="id2">`</span></a>/sdcard`で頻繁に利用可能です)例えば:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">sdcard</span><span class="o">/</span><span class="n">kivy</span><span class="o">/&lt;</span><span class="n">yourapplication</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p><code class="code docutils literal"><span class="pre">&lt;yourapplication&gt;</span></code> should be a directory containing:</p>
+<p><code class="code docutils literal"><span class="pre">&lt;yourapplication&gt;</span></code> を含むアプリケーションでなければなりません:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Your main application file:</span>
 <span class="n">main</span><span class="o">.</span><span class="n">py</span>
 <span class="c1"># Some info Kivy requires about your app on android:</span>
 <span class="n">android</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
-<p>The file <cite>android.txt</cite> must contain:</p>
+<p>android.txtファイルが含まれている必要があります：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">title</span><span class="o">=&lt;</span><span class="n">Application</span> <span class="n">Title</span><span class="o">&gt;</span>
 <span class="n">author</span><span class="o">=&lt;</span><span class="n">Your</span> <span class="n">Name</span><span class="o">&gt;</span>
 <span class="n">orientation</span><span class="o">=&lt;</span><span class="n">portrait</span><span class="o">|</span><span class="n">landscape</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>These options are just a very basic configuration. If you create your
-own APK using the tools above, you can choose many other settings.</p>
+<p>このオプションは、非常に基本的な構成です。上記のツールを使用して独自のAPKを作成する場合は、他の多くの設定を選択できます。</p>
 <div class="section" id="installation-of-examples">
-<h3>Installation of Examples<a class="headerlink" href="#installation-of-examples" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Kivy comes with many examples, and these can be a great place to start
-trying the Kivy launcher. You can run them as below:</p>
+<h3>Installation of Examples(インストールの例)<a class="headerlink" href="#installation-of-examples" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Kivyは多くの例が付属しており、これらはKivy launcherを始める絶好のスタート地点です。 以下のようにして実行できます:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#. Download the `Kivy demos for Android &lt;https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/kivy/kivydemo-for-android.zip&gt;`_</span>
 <span class="c1">#. Unzip the contents and go to the folder `kivydemo-for-android`</span>
 <span class="c1">#. Copy all the the subfolders here to</span>
@@ -306,29 +272,19 @@ trying the Kivy launcher. You can run them as below:</p>
 <blockquote>
 <div>/sdcard/kivy</div></blockquote>
 <ol class="arabic simple">
-<li>Run the launcher and select one of the Pictures, Showcase, Touchtracer, Cymunk or other demos...</li>
+<li><p class="first">ランチャーを実行し、 Pictures, Showcase, Touchtracer, Cymunkまたは他のデモのいずれかを選択...</p>
+</li>
 </ol>
 </div>
 </div>
 <div class="section" id="release-on-the-market">
-<span id="id3"></span><h2>Release on the market<a class="headerlink" href="#release-on-the-market" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>If you have built your own APK with Buildozer or with
-python-for-android, you can create a release version that may be
-released on the Play store or other Android markets.</p>
-<p>To do this, you must run Buildozer with the <code class="code docutils literal"><span class="pre">release</span></code> parameter
-(e.g. <code class="code docutils literal"><span class="pre">buildozer</span> <span class="pre">android</span> <span class="pre">release</span></code>), or if using
-python-for-android use the <code class="code docutils literal"><span class="pre">--release</span></code> option to build.py. This
-creates a release APK in the <code class="code docutils literal"><span class="pre">bin</span></code> directory, which you must
-properly sign and zipalign.
-The procedure for doing this is described in the Android documentation
-at <a class="reference external" href="http://developer.android.com/guide/publishing/app-signing.html">http://developer.android.com/guide/publishing/app-signing.html</a> -
-all the necessary tools come with the Android SDK.</p>
+<span id="id3"></span><h2>Release on the market(マーケットにリリース)<a class="headerlink" href="#release-on-the-market" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Buildozerまたはpython-for-androidを使用して独自のAPKをビルドしている場合、Google Play storeまたは他のAndroidマーケット用にリリースバージョンを作成できます。</p>
+<p>Buildozerの:code:<cite>release`パラメータ（例えばbuildozer android release ）、または python-for-androidのbuild.pyのオプションの :code:</cite>&#8211;release` を使用して実行する必要があります。これでリリースするAPKの:code:<cite>bin</cite> ディレクトリが作成されますが、署名とzipalignを行う必要があります。プロデュースする手順はAndroidのドキュメント（<a class="reference external" href="http://developer.android.com/guide/publishing/app-signing.html">http://developer.android.com/guide/publishing/app-signing.html</a>）に記載されおり -すべての必要なツールは、Android SDKに付属しています。</p>
 </div>
 <div class="section" id="targeting-android">
-<span id="targetting-android"></span><h2>Targeting Android<a class="headerlink" href="#targeting-android" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Kivy is designed to operate identically across platforms and as a result, makes
-some clear design decisions. It includes its own set of widgets and by default,
-builds an APK with all the required core dependencies and libraries.</p>
+<span id="targetting-android"></span><h2>Targeting Android(Androidのターゲット設定)<a class="headerlink" href="#targeting-android" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Kivyは、プラットフォーム間で同一に動作するように設計されており、その結果として、いくつかの明確な設計上の決定を下します。これは、widgetの独自設定が含まれており、デフォルトでは、すべての必要なコアの依存関係やライブラリとAPKを構築します。</p>
 <p>It is possible to target specific Android features, both directly and
 in a (somewhat) cross-platform way. See the <cite>Using Android APIs</cite> section
 of the <a class="reference internal" href="android.html"><span class="doc">Kivy on Android documentation</span></a> for more details.</p>
@@ -370,7 +326,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 10月 04, 2016.
+      Last updated on 10月 07, 2016.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
 </div>
 -->
