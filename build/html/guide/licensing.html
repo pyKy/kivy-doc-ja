@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>Package licensing(未翻訳) &mdash; Kivy 1.9.1 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.9.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/kivy.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Kivy 1.9.1 ドキュメント" href="../index.html" />
+    <link rel="up" title="Programming Guide(翻訳中)" href="../guide-index.html" />
+    <link rel="next" title="Tutorials" href="../tutorials-index.html" />
+    <link rel="prev" title="IOS Prerequisites(翻訳済み)" href="packaging-ios-prerequisites.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="../gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="http://kivy.org/docs/pdf/Kivy-latest.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../index.html">Package licensing(未翻訳)</a></h3>
+          <ul>
+<li><a class="reference internal" href="#">Package licensing(未翻訳)</a><ul>
+<li><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li><a class="reference internal" href="#windows-pyinstaller">Windows (PyInstaller)</a><ul>
+<li><a class="reference internal" href="#vs-redistributables">VS redistributables</a></li>
+<li><a class="reference internal" href="#other-libraries">Other libraries</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#linux">Linux</a></li>
+<li><a class="reference internal" href="#android">Android</a></li>
+<li><a class="reference internal" href="#mac">Mac</a></li>
+<li><a class="reference internal" href="#ios">iOS</a></li>
+<li><a class="reference internal" href="#avoiding-binaries">Avoiding binaries</a></li>
+</ul>
+</li>
+</ul>
+
+          <h3><a href="../index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/installation.html">Installation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gallery.html">Gallery(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__mesh__py.html">Mesh test(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__tesselate__py.html">Tesselate Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user-guide.html">User’s Guide(翻訳中)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/installation.html">Installation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contact.html">Contact Us</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../guide-index.html">Programming Guide(翻訳中)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html">Input management (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bestpractices.html">Best Practices(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedgraphics.html">Advanced Graphics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Package licensing(未翻訳)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials-index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/pong.html">Pong Game Tutorial(翻訳中)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/firstwidget.html">A Simple Paint App(翻訳中)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/crashcourse.html">Crash Course</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+              <li>Previous: <a href="packaging-ios-prerequisites.html" title="previous chapter">IOS Prerequisites(翻訳済み)</a></li>
+              <li>Next: <a href="../tutorials-index.html" title="next chapter">Tutorials</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2><ul>
+<li><a class="reference internal" href="#">Package licensing(未翻訳)</a><ul>
+<li><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li><a class="reference internal" href="#windows-pyinstaller">Windows (PyInstaller)</a><ul>
+<li><a class="reference internal" href="#vs-redistributables">VS redistributables</a></li>
+<li><a class="reference internal" href="#other-libraries">Other libraries</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#linux">Linux</a></li>
+<li><a class="reference internal" href="#android">Android</a></li>
+<li><a class="reference internal" href="#mac">Mac</a></li>
+<li><a class="reference internal" href="#ios">iOS</a></li>
+<li><a class="reference internal" href="#avoiding-binaries">Avoiding binaries</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+  <div class="section" id="package-licensing">
+<h1>Package licensing(未翻訳)<a class="headerlink" href="#package-licensing" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">This is not a lawyer consulted guide! Kivy organisation, authors
+or contributors to this guide take no responsibility for any lack of
+information, misleading information presented here or any actions based on
+this guide. The guide is merely informative and is meant to protect
+inexperienced users.</p>
+</div>
+<p>Your code alone may not require including licensing info and copyright notices
+of other used software, but binaries are something else. When a binary (.exe,
+.app, .apk, ...) is created it includes Kivy, its dependencies and other
+packages that your application uses. Some of them are licensed in a way they
+require including a copyright notice somewhere in your app (or more). Before
+distributing any of the binaries, please <strong>check all the created files</strong> that
+don&#8217;t belong to your source (.dll, .pyd, .so, ...) and include approperiate
+copyright notices if required by the license the files belong to. This way you
+may satisfy licensing requirements of the Kivy deps.</p>
+<div class="section" id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>All of the dependencies will jump out at least partially on each platform Kivy
+supports, therefore you need to comply to their licenses, which mostly requires
+only pasting a copyright notice to your app and not pretending you wrote the
+code.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://sf.net/p/docutils/code/HEAD/tree/trunk/docutils/COPYING.txt">docutils</a></li>
+<li><a class="reference external" href="https://bitbucket.org/birkenfeld/pygments-main/src/tip/LICENSE">pygments</a></li>
+<li><a class="reference external" href="https://www.libsdl.org/license.php">sdl2</a></li>
+<li><a class="reference external" href="http://glew.sourceforge.net/glew.txt">glew</a></li>
+<li><a class="reference external" href="https://github.com/GStreamer/gstreamer/blob/master/COPYING">gstreamer</a>
+(if used)</li>
+<li>image &amp; audio libraries(e.g. <a class="reference external" href="http://hg.libsdl.org/SDL_mixer/file/default/VisualC/external/lib/x86">SDL_mixer has them</a>)</li>
+</ul>
+<p>You&#8217;ll probably need to check image and audio libraries manually (mostly begin
+with <code class="docutils literal"><span class="pre">lib</span></code>). The <code class="docutils literal"><span class="pre">LICENSE*</span></code> files that belong to them should be included by
+PyInstaller, but are not by python-for-android and you need to find them.</p>
+</div>
+<div class="section" id="windows-pyinstaller">
+<h2>Windows (PyInstaller)<a class="headerlink" href="#windows-pyinstaller" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>To access some Windows API features, Kivy uses <a class="reference external" href="https://pypi.python.org/pypi/pypiwin32">pypiwin32</a> package. This package
+is released under <a class="reference external" href="https://opensource.org/licenses/Python-2.0">PSF license</a>.</p>
+<div class="section" id="vs-redistributables">
+<h3>VS redistributables<a class="headerlink" href="#vs-redistributables" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Python compiled with Visual Studio (official) has some files from Microsoft and
+you are allowed to redistribute them under specific conditions listed in the
+CRTlicense. Including the names of the files and a reworded version of
+<a class="reference external" href="https://hg.python.org/sandbox/2.7/file/tip/Tools/msi/crtlicense.txt">Py2 CRT license</a> or <a class="reference external" href="https://hg.python.org/cpython/file/tip/Tools/msi/exe/crtlicense.txt">Py3 CRT license</a> depending which interpreter you use, so that it targets
+the end-user of your application may satisfy such requirements.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://msdn.microsoft.com/en-us/library/8kche8ah(v=vs.90).aspx">List of redistributables</a></li>
+</ul>
+</div>
+<div class="section" id="other-libraries">
+<h3>Other libraries<a class="headerlink" href="#other-libraries" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/madler/zlib/blob/master/README">zlib</a></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Please add other libs that you <em>don&#8217;t use directly</em> and are present
+after packaging with e.g. PyInstaller on Windows.</p>
+</div>
+</div>
+</div>
+<div class="section" id="linux">
+<h2>Linux<a class="headerlink" href="#linux" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Linux has many distributions which means there&#8217;s no correct guide for all of
+the distributions. Under this part belongs RPi too. However, it can be
+simplified into two ways of how to create a package (also with PyInstaller):
+with or without including binaries.</p>
+<p>If the binaries are included, you should check every file (e.g. <cite>.so</cite>) that&#8217;s
+not your source and find a license it belongs to. According to that license
+you&#8217;ll probably need to put an attribution into your application or even more.</p>
+<p>If the binaries are excluded (which allows packaging your app as e.g. <cite>.deb</cite>
+package), there&#8217;s a <a class="reference internal" href="#avoid">situation bad for your user</a>. It&#8217;s up to you to decide whether you satisfy
+conditions of other licenses and for example including copyright attribution
+into your app or not.</p>
+</div>
+<div class="section" id="android">
+<h2>Android<a class="headerlink" href="#android" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>As APK is just an archive of files, you can extract files from it and (as in
+Windows part) check all the files.</p>
+<p><code class="docutils literal"><span class="pre">APK/assets/private.mp3/private.mp3/</span></code> contains all the included files. Most
+of them are related to Kivy, Python or your source, but those that aren&#8217;t need
+checking.</p>
+<p>Known packages:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://bitbucket.org/pygame/pygame/src/tip/LGPL">pygame</a>
+(if old_toolchain is used)</li>
+<li><a class="reference external" href="https://github.com/ghaering/pysqlite/blob/master/LICENSE">sqlite3</a></li>
+<li><a class="reference external" href="https://bitbucket.org/gutworth/six/src/tip/LICENSE">six</a></li>
+</ul>
+<p>There are included libraries either Kivy directly or through Pygame/SDL2 uses,
+those are located in <code class="docutils literal"><span class="pre">APK/lib/armeabi/</span></code>. Most of them are related to
+dependencies or are produced from python-for-android and are part of its source
+(and licensing).</p>
+<ul class="simple">
+<li>libapplication.so</li>
+</ul>
+</div>
+<div class="section" id="mac">
+<h2>Mac<a class="headerlink" href="#mac" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Missing.</p>
+</div>
+<div class="section" id="ios">
+<h2>iOS<a class="headerlink" href="#ios" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Missing.</p>
+</div>
+<div class="section" id="avoiding-binaries">
+<span id="avoid"></span><h2>Avoiding binaries<a class="headerlink" href="#avoiding-binaries" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>There might be a way how to avoid this licensing process with avoiding creating
+a distribution with third-party stuff completely. With Python you can create
+a module, which is only your code with <code class="docutils literal"><span class="pre">__main__.py</span></code> + <code class="docutils literal"><span class="pre">setup.py</span></code> that only
+lists required deps.</p>
+<p>This way you can still distribute your app - your <em>code</em> - and you might not
+need to care about other licenses. The combination of your code and the
+dependencies could be specified as a &#8220;usage&#8221; rather than a &#8220;distribution&#8221;. The
+responsibility of satisfying licenses, however, most likely transfers to your
+user, who needs to assemble the environment to even run the module. If you care
+about your users, you might want to slow down a little and read more about
+<a class="reference external" href="http://programmers.stackexchange.com/a/234295">consequences</a>.</p>
+</div>
+</div>
+
+
+            <div class="footerlinks">
+            <table>
+                <tr>
+                    <td class="leftlink">
+                  <a href="packaging-ios-prerequisites.html" title="previous chapter">&laquo; IOS Prerequisites(翻訳済み)</a></li>
+                  </td>
+                  <td class="rightlink">
+                  <a href="../tutorials-index.html" title="next chapter">Tutorials &raquo;</a>
+                      </td>
+                  </tr>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://txzone.net/piwik/" : "http://txzone.net/piwik/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 8);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="https://txzone.net/piwik/piwik.php?idsite=8" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 10月 14, 2016.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

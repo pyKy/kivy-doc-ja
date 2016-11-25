@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-02 17:46+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: JUN OKAZAKI <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../source/guide/packaging-android-vm.rst:4
 msgid "The Kivy Android Virtual Machine"
-msgstr ""
+msgstr "The Kivy Android Virtual Machine(翻訳済み)"
 
 #: ../../source/guide/packaging-android-vm.rst:7
 msgid "Introduction"
-msgstr ""
+msgstr "Introduction(はじめに)"
 
 #: ../../source/guide/packaging-android-vm.rst:9
 msgid ""
@@ -34,17 +34,20 @@ msgid ""
 "configured `VirtualBox <http://www.virtualbox.org>`_ disk image to ease "
 "your building woes."
 msgstr ""
+"現在、Kivy AndroidのアプリケーションはLinux環境のｔpython-for-android、AndroidのSDKとAndroid NDKで構築できます。"
+"不可能ではないが、WindowsまたはMac OS X上でセットアップするのが難しいので、"
+"ビルド環境用の`VirtualBox <http://www.virtualbox.org>`_ディスクイメージを提供します。"
 
 #: ../../source/guide/packaging-android-vm.rst:16
 msgid ""
 "If you are not familiar with virtualization, we encourage you to read the"
 " `Wikipedia Virtualization page. "
 "<http://en.wikipedia.org/wiki/Virtualization>`_"
-msgstr ""
+msgstr "仮想化がよくわかっていない場合、`Wikipediaの仮想化のページ https://ja.wikipedia.org/wiki/%E4%BB%AE%E6%83%B3%E5%8C%96` を読むことをお勧めします"
 
 #: ../../source/guide/packaging-android-vm.rst:20
 msgid "Getting started"
-msgstr ""
+msgstr "Getting started(はじめに)"
 
 #: ../../source/guide/packaging-android-vm.rst:22
 msgid ""
@@ -52,6 +55,8 @@ msgid ""
 "*Virtual Machine* section. The download is >2GB (6GB after extracted). "
 "Extract the file and remember the location of the extracted vdi file."
 msgstr ""
+"ディスクイメージは`ここの <http://kivy.org/#download>`「Virtual Machine」の項目からダウンロードします。"
+"ダウンロードサイズは> 2ギガバイト（解凍後は6ギガバイト）です。 ファイルを抽出し、抽出されたVDIファイルの場所を覚えています。"
 
 #: ../../source/guide/packaging-android-vm.rst:26
 msgid ""
@@ -59,18 +64,21 @@ msgid ""
 "download area <https://www.virtualbox.org/wiki/Downloads>`_ and install "
 "it."
 msgstr ""
+"`VirtualBox download area <https://www.virtualbox.org/wiki/Downloads>`からPCのVirtualBoxのバージョンと同じものをインストールします。"
 
 #: ../../source/guide/packaging-android-vm.rst:30
 msgid ""
 "Start VirtualBox, click on \"New\" in the left top. Then select \"linux\""
 " and \"Ubuntu 64-bit\"."
 msgstr ""
+"VirtualBoxを起動し、左上の「New」をクリックします。その後、「linux」と「Ubuntu 64-bit」を選択します。"
 
 #: ../../source/guide/packaging-android-vm.rst:33
 msgid ""
 "Under \"Hard drive\", choose \"Use an existing virtual hard drive file\"."
 " Search for your vdi file and select it."
 msgstr ""
+"「Hard drive」の「Use an existing virtual hard drive file」を選択してVDIファイルを選択します。"
 
 #: ../../source/guide/packaging-android-vm.rst:36
 msgid ""
@@ -78,16 +86,19 @@ msgid ""
 "Video\" section, increase video ram to 32mb or above. Enable 3d "
 "acceleration to improve the user experience."
 msgstr ""
+"virtual machineの「Settings」に移動します。"
+" 「Display - >Video」セクションで、32メガバイトにまたは上記のビデオRAMを増加させます。 "
+"ユーザーエクスペリエンスを改善するために3D accelerationを有効にします。"
 
 #: ../../source/guide/packaging-android-vm.rst:40
 msgid ""
 "Start the Virtual machine and follow the instructions in the readme file "
 "on the desktop."
-msgstr ""
+msgstr "Virtual machineを起動して、デスクトップ上のREADMEファイルの指示に従ってください。"
 
 #: ../../source/guide/packaging-android-vm.rst:44
 msgid "Building the APK"
-msgstr ""
+msgstr "Building the APK(APKの構築)"
 
 #: ../../source/guide/packaging-android-vm.rst:46
 msgid ""
@@ -96,14 +107,17 @@ msgid ""
 "with `git clone` though, as python-for-android is already installed and "
 "set up in the virtual machine home directory."
 msgstr ""
+"VMがロードされたら、:ref:`Packaging your application into APK`の指示に従います。"
+"python-for-android がすでにインストールされ、virtual machinのホームディレクトリに設定されているようにしてください。"
+"しかし「git clone」でダウンロードする必要はありません。"
 
 #: ../../source/guide/packaging-android-vm.rst:52
 msgid "Hints and tips"
-msgstr ""
+msgstr "Hints and tips(ヒント)"
 
 #: ../../source/guide/packaging-android-vm.rst:54
 msgid "Shared folders"
-msgstr ""
+msgstr "共有フォルダ"
 
 #: ../../source/guide/packaging-android-vm.rst:56
 msgid ""
@@ -112,6 +126,10 @@ msgid ""
 " called 'Shared folders' which allows your guest direct access to a "
 "folder on your host."
 msgstr ""
+"一般的に、開発環境とツールセットは、ホストマシン上で設定されているが、"
+"APKは、ゲストアカウントで構築しています。 "
+"VirtualBoxはホスト上のフォルダへのゲストの直接アクセスを可能にする"
+"「Shared folders」と呼ばれる機能があります。"
 
 #: ../../source/guide/packaging-android-vm.rst:61
 msgid ""
@@ -120,10 +138,15 @@ msgid ""
 " form part of your normal dev environment. A simple script can easily "
 "automate the build and copy/move process."
 msgstr ""
+"この機能を使用する場合、通常のdev環境の一部を形成することができるので、"
+"それはしばしばホストマシンに構築されたAPKをコピーするのに便利です。"
+"（通常の「Permanent」と「Auto-mount」オプション）。 "
+""簡単なスクリプトで、コピー/移動 処理の自動化を簡単に構築します。"
+
 
 #: ../../source/guide/packaging-android-vm.rst:66
 msgid "Copy and paste"
-msgstr ""
+msgstr "コピとペースト"
 
 #: ../../source/guide/packaging-android-vm.rst:68
 msgid ""
@@ -132,6 +155,10 @@ msgid ""
 "directional\" shared clipboard option under \"Settings -> General -> "
 "Advanced\"."
 msgstr ""
+"デフォルトでは、ホストとゲストマシン間でクリップボードの"
+"アイテムを共有することはできません。 "
+"「Settings -> General ->Advanced」の「bidirectional」の共有"
+"クリップボードのオプションを有効にすることによって実現できます。"
 
 #: ../../source/guide/packaging-android-vm.rst:73
 msgid "Snapshots"
@@ -145,16 +172,19 @@ msgid ""
 "to easily restore your machine to its previous state should you have the "
 "need."
 msgstr ""
+"Kivyのdevelopment branchを引っ張ってきて作業している場合、最新バージョンをpullすると物事を破ること(我々はしないようにしようと同じくらい)ができます。
+"その場合はpullを行う前にsnapshotをとることによってこれを防ぐことができます。"
+"これはコンピュータを必要としている以前の状態に復元できます。"
 
 #: ../../source/guide/packaging-android-vm.rst:81
 msgid "Insufficient memory"
-msgstr ""
+msgstr "メモリ不足"
 
 #: ../../source/guide/packaging-android-vm.rst:83
 msgid ""
 "Assigning the Virtual Machine insufficient memory may result in the "
 "compile failing with cryptic errors, such as:"
-msgstr ""
+msgstr "Virtual Machineの割り当てているメモリの不足はコンパイル時に以下のような不可解なエラーにつながる可能性があります："
 
 #: ../../source/guide/packaging-android-vm.rst:86
 msgid "arm-linux-androideabi-gcc: Internal error: Killed (program cc1)"
@@ -164,5 +194,5 @@ msgstr ""
 msgid ""
 "If this occurs, please check the amount of free memory in the Kivy VM and"
 " increase the amount of RAM allocated to it if required."
-msgstr ""
+msgstr "この問題が発生した場合、Kivy VM内の空きメモリの量を確認してください、そして必要であれば割り当てられたRAMの量を増やします。"
 
