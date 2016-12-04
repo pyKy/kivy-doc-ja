@@ -70,3 +70,7 @@ https://docs.google.com/forms/d/1bKv3KtJ6hAgYiuKMeFCm4nd0-9fhkwxdsMCRXsp0wbU/vie
 # 目標
 
 2016年中に「Getting started into Kivy」の翻訳を完了させる。
+
+# LICENCEについて
+
+本ライセンスはMITライセンスとなっております。。
