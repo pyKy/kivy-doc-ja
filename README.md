@@ -73,5 +73,4 @@ https://docs.google.com/forms/d/1bKv3KtJ6hAgYiuKMeFCm4nd0-9fhkwxdsMCRXsp0wbU/vie
 
 # LICENCEについて
 
-本ライセンスはMITライセンスとなっております。
-詳しくはLICENSE.txtをご覧ください。
+本ライセンスはMITライセンスとなっております。。

@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="twitter:site" content="@kivyframework">
     
-    <title>Unit tests &mdash; Kivy 1.9.1 ドキュメント</title>
+    <title>Unit tests(翻訳済み) &mdash; Kivy 1.9.1 ドキュメント</title>
     <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="static/fresh.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
@@ -31,7 +31,7 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="Kivy 1.9.1 ドキュメント" href="index.html" />
     <link rel="up" title="Contributing" href="contribute.html" />
-    <link rel="next" title="Google Summer of Code - 2016" href="gsoc.html" />
+    <link rel="next" title="Google Summer of Code - 2016(翻訳中)" href="gsoc.html" />
     <link rel="prev" title="Contributing" href="contribute.html" /> 
   </head>
   <body>
@@ -65,13 +65,13 @@
                 <input type="text" class="text" name="q" />
             </form>
           <!--
-          <h3><a href="index.html">Unit tests</a></h3>
+          <h3><a href="index.html">Unit tests(翻訳済み)</a></h3>
           <ul>
-<li><a class="reference internal" href="#">Unit tests</a><ul>
-<li><a class="reference internal" href="#how-it-works">How it works</a></li>
+<li><a class="reference internal" href="#">Unit tests(翻訳済み)</a><ul>
+<li><a class="reference internal" href="#how-it-works">How it works(使い方)</a></li>
 <li><a class="reference internal" href="#gl-unit-tests">GL unit tests</a></li>
-<li><a class="reference internal" href="#writing-gl-unit-tests">Writing GL Unit tests</a></li>
-<li><a class="reference internal" href="#coverage-reports">Coverage reports</a></li>
+<li><a class="reference internal" href="#writing-gl-unit-tests">Writing GL Unit tests(GL Unit testの書き方)</a></li>
+<li><a class="reference internal" href="#coverage-reports">Coverage reports(Coverageレポート)</a></li>
 </ul>
 </li>
 </ul>
@@ -164,7 +164,7 @@
           <h3>Related Topics</h3>
           <ul>
               <li>Previous: <a href="contribute.html" title="previous chapter">Contributing</a></li>
-              <li>Next: <a href="gsoc.html" title="next chapter">Google Summer of Code - 2016</a></li>
+              <li>Next: <a href="gsoc.html" title="next chapter">Google Summer of Code - 2016(翻訳中)</a></li>
           </ul>
           -->
         </div>
@@ -175,48 +175,38 @@
         <div class="bodywrapper">
           <div class="body">
             <div class="toc"><h2>Table Of Contents</h2><ul>
-<li><a class="reference internal" href="#">Unit tests</a><ul>
-<li><a class="reference internal" href="#how-it-works">How it works</a></li>
+<li><a class="reference internal" href="#">Unit tests(翻訳済み)</a><ul>
+<li><a class="reference internal" href="#how-it-works">How it works(使い方)</a></li>
 <li><a class="reference internal" href="#gl-unit-tests">GL unit tests</a></li>
-<li><a class="reference internal" href="#writing-gl-unit-tests">Writing GL Unit tests</a></li>
-<li><a class="reference internal" href="#coverage-reports">Coverage reports</a></li>
+<li><a class="reference internal" href="#writing-gl-unit-tests">Writing GL Unit tests(GL Unit testの書き方)</a></li>
+<li><a class="reference internal" href="#coverage-reports">Coverage reports(Coverageレポート)</a></li>
 </ul>
 </li>
 </ul>
 </div>
             
   <div class="section" id="unit-tests">
-<h1>Unit tests<a class="headerlink" href="#unit-tests" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Tests are located in the kivy/tests folder. If you find a bug in Kivy, a good
-thing to do can be to write a minimal case showing the issue and to ask core
-devs if the behaviour shown is intended or a real bug. If you write your code
-as a <a class="reference external" href="http://docs.python.org/2/library/unittest.html">unittest</a>
-, it will prevent the bug from coming back unnoticed in the future,
-and will make Kivy a better, stronger project. Writing a unittest may be a
-really good way to get familiar with Kivy while doing something useful.</p>
-<p>Unit tests are separated into two cases:</p>
+<h1>Unit tests(翻訳済み)<a class="headerlink" href="#unit-tests" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>テストはkivy / testsフォルダにあります。 Kivyでバグを発見した場合は、問題を示す最小限のケースを記述して表示された動作が意図されているかどうかをコアデベロッパーに問い合わできます。<a href="#id1"><span class="problematic" id="id2">`</span></a>unittest &lt;<a class="reference external" href="http://docs.python.org/2/library/unittest.html">http://docs.python.org/2/library/unittest.html</a>&gt;`としてコードを書くと、バグが将来気付かれずに戻ってくるのを防ぎ、Kivyをより良くより強力なプロジェクトにします。unittestを書くことは、役立つことをしながらKivyに慣れるためのには本当に良い方法かもしれません。</p>
+<p>ユニットテストは2つのケースに分かれています：</p>
 <ul class="simple">
-<li>Non graphical unit tests: these are standard unit tests that can run in a
-console</li>
-<li>Graphical unit tests: these need a GL context, and work via image comparison</li>
+<li><p class="first">非グラフィカルユニットテスト：これはコンソールで実行できる標準的なユニットテストです</p>
+</li>
+<li><p class="first">グラフィカルユニットテスト：これらはGLコンテキストが必要であり、画像比較を介して作業します</p>
+</li>
 </ul>
-<p>To be able to run unit tests, you need to install nose
-(<a class="reference external" href="http://code.google.com/p/python-nose/">http://code.google.com/p/python-nose/</a>), and coverage
-(<a class="reference external" href="http://nedbatchelder.com/code/coverage/">http://nedbatchelder.com/code/coverage/</a>). You can use easy_install for that:</p>
+<p>単体テストを実行できるようにするには、nose（<a class="reference external" href="http://code.google.com/p/python-nose/">http://code.google.com/p/python-nose/</a>）とcoverage（<a class="reference external" href="http://nedbatchelder.com/code/coverage/">http://nedbatchelder.com/code/coverage/</a>）をインストールする必要があります。インストールするためにeasy_installを使うことができます：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">easy_install</span> <span class="n">nose</span> <span class="n">coverage</span>
 </pre></div>
 </div>
-<p>Then, in the kivy directory:</p>
+<p>次に、kivyディレクトリに：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">test</span>
 </pre></div>
 </div>
 <div class="section" id="how-it-works">
-<h2>How it works<a class="headerlink" href="#how-it-works" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>All the tests are located in <cite>kivy/tests</cite>, and the filename starts with
-<cite>test_&lt;name&gt;.py</cite>. Nose will automatically gather all the files and classes
-inside this folder, and use them to generate test cases.</p>
-<p>To write a test, create a file that respects the previous naming, then
-start with this template:</p>
+<h2>How it works(使い方)<a class="headerlink" href="#how-it-works" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>すべてのテストは「kivy / tests」にあり、ファイル名は「<a href="#id1"><span class="problematic" id="id2">test_</span></a> &lt;name&gt; .py」で始まります。noseは自動的にこのフォルダ内のすべてのファイルとクラスを収集し、テストケースを生成するために使用します。</p>
+<p>テストを書くには、以前の命名を尊重したファイルを作成し、次にこのテンプレートで始めます：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
 
 <span class="k">class</span> <span class="nc">XXXTestCase</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
@@ -231,59 +221,42 @@ start with this template:</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Replace <cite>XXX</cite> with an appropriate name that covers your tests cases, then
-replace &#8216;YYY&#8217; with the name of your test. If you have any doubts, check how
-the other tests have been written.</p>
-<p>Then, to execute them, just run:</p>
+<p>XXXをテストケースをカバーする適切な名前に置き換えて、「YYY」をテストの名前に置き換えます。疑問がある場合は、他のテストがどのように書かれているかを確認してください。</p>
+<p>実行するには、次のコマンドを実行します：：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">test</span>
 </pre></div>
 </div>
-<p>If you want to execute that file only, you can run:</p>
+<p>のファイルだけを実行したい場合は、以下を実行できます：&#8221;</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">nosetests</span> <span class="n">kivy</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span><span class="n">test_yourtestcase</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="gl-unit-tests">
 <h2>GL unit tests<a class="headerlink" href="#gl-unit-tests" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>GL unit test are more difficult. You must know that even if OpenGL is a
-standard, the output/rendering is not. It depends on your GPU and the driver
-used. For these tests, the goal is to save the output of the rendering at
-frame X, and compare it to a reference image.</p>
-<p>Currently, images are generated at 320x240 pixels, in <em>png</em> format.</p>
+<p>GLユニットテストはより困難です。 OpenGLが標準であっても、出力/レンダリングは標準ではありません。それは使用しているGPUとドライバによって異なります。これらのテストの目的は、フレームXでのレンダリングの出力を保存し、それをリファレンス画像と比較することです。</p>
+<p>現在、画像は320x240ピクセル（png形式）で生成されています。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Currently, image comparison is done per-pixel. This means the reference
-image that you generate will only be correct for your GPU/driver. If
-somebody can implement image comparison with &#8220;delta&#8221; support, patches
-are welcome :)</p>
+<p class="last">現在、画像の比較はピクセルごとに行われます。これは、生成する参照画像がGPU /ドライバに対してのみ正しいことを意味します。誰かが &#8220;デルタ&#8221;サポートで画像比較を実装できるのであれば、パッチは歓迎します:)</p>
 </div>
-<p>To execute GL unit tests, you need to create a directory:</p>
+<p>&#8220;GLユニットテストを実行するには、ディレクトリを作成する必要があります：&#8221;</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">kivy</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span><span class="n">results</span>
 <span class="n">make</span> <span class="n">test</span>
 </pre></div>
 </div>
-<p>The results directory will contain all the reference images and the
-generated images. After the first execution, if the results directory is empty,
-no comparison will be done. It will use the generated images as reference.
-After the second execution, all the images will be compared to the reference
-images.</p>
-<p>A html file is available to show the comparison before/after the test, and a
-snippet of the associated unit test. It will be generated at:</p>
+<p>resultsディレクトリには、すべてのリファレンスイメージと生成されたイメージが含まれます。最初の実行後、resultsディレクトリが空の場合、比較は行われません。生成された画像をリファレンスとして使用します。2回目の実行後、すべてのイメージがリファレンスイメージと比較されます</p>
+<p>htmlファイルを使用して、テストの前後の比較と関連ユニットテストのスニペットを表示できます。それは次の場所で生成されます：</p>
 <blockquote>
 <div>kivy/tests/build/index.html</div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">The build directory is cleaned after each call to <cite>make test</cite>. If you don&#8217;t
-want that, just use nosetests command.</p>
+<p class="last">ビルドディレクトリはmake testの呼び出しのたびに消去されます。あなたがそれを望まないなら、nosetestsコマンドを使用してください。</p>
 </div>
 </div>
 <div class="section" id="writing-gl-unit-tests">
-<h2>Writing GL Unit tests<a class="headerlink" href="#writing-gl-unit-tests" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The idea is to create a root widget, as you would do in
-<code class="xref py py-meth docutils literal"><span class="pre">build()</span></code>, or in <code class="xref py py-func docutils literal"><span class="pre">kivy.base.runTouchApp()</span></code>.
-You&#8217;ll give that root widget to a rendering function which will capture the
-output in X frames.</p>
-<p>Here is an example:</p>
+<h2>Writing GL Unit tests(GL Unit testの書き方)<a class="headerlink" href="#writing-gl-unit-tests" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>このアイデアは、:meth:<a href="#id1"><span class="problematic" id="id2">`</span></a>~kivy.app.App.build`や:func:<a href="#id3"><span class="problematic" id="id4">`</span></a>kivy.base.runTouchApp`のようにroot widgetを作成することです。 root widgetでレンダリング関数に渡し、出力されたXフレームをキャプチャします。</p>
+<p>次に例を示します:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">common</span> <span class="k">import</span> <span class="n">GraphicUnitTest</span>
 
 <span class="k">class</span> <span class="nc">VertexInstructionTestCase</span><span class="p">(</span><span class="n">GraphicUnitTest</span><span class="p">):</span>
@@ -311,28 +284,24 @@ output in X frames.</p>
         <span class="n">r</span><span class="p">(</span><span class="n">wid</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Each call to <cite>self.render</cite> (or <cite>r</cite> in our example) will generate an image named
-as follows:</p>
+<p>「self.render」（またはこの例では「r」）を呼び出すたびに、次の名前の画像が生成されます:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">classname</span><span class="o">&gt;</span><span class="n">_</span><span class="o">&lt;</span><span class="n">funcname</span><span class="o">&gt;-&lt;</span><span class="n">r</span><span class="o">-</span><span class="n">call</span><span class="o">-</span><span class="n">count</span><span class="o">&gt;.</span><span class="n">png</span>
 </pre></div>
 </div>
-<p><cite>r-call-count</cite> represents the number of times that <cite>self.render</cite> is called
-inside the test function.</p>
-<p>The reference images are named:</p>
+<p>「r-call-count」は、「self.render」がテスト関数内で呼び出された回数を表します。</p>
+<p>リファレンス画像の名前は次の通りです:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ref_</span><span class="o">&lt;</span><span class="n">classname</span><span class="o">&gt;</span><span class="n">_</span><span class="o">&lt;</span><span class="n">funcname</span><span class="o">&gt;-&lt;</span><span class="n">r</span><span class="o">-</span><span class="n">call</span><span class="o">-</span><span class="n">count</span><span class="o">&gt;.</span><span class="n">png</span>
 </pre></div>
 </div>
-<p>You can easily replace the reference image with a new one if you wish.</p>
+<p>必要に応じて、リファレンス画像を新しい画像に簡単に置き換えることができます。</p>
 </div>
 <div class="section" id="coverage-reports">
-<h2>Coverage reports<a class="headerlink" href="#coverage-reports" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Coverage is based on the execution of previous tests. Statistics on code
-coverage are automatically calculated during execution. You can generate an html
-report of the coverage with the command:</p>
+<h2>Coverage reports(Coverageレポート)<a class="headerlink" href="#coverage-reports" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>カバレッジは以前のテストの実行に基づいています。コードカバレッジに関する統計は、実行中に自動的に計算されます。コマンドでカバレッジのhtmlレポートを生成することができます</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">cover</span>
 </pre></div>
 </div>
-<p>Then, open <cite>kivy/htmlcov/index.html</cite> with your favorite web browser.</p>
+<p>次に、お気に入りのウェブブラウザでkivy / htmlcov / index.htmlを開きます。</p>
 </div>
 </div>
 
@@ -344,7 +313,7 @@ report of the coverage with the command:</p>
                   <a href="contribute.html" title="previous chapter">&laquo; Contributing</a></li>
                   </td>
                   <td class="rightlink">
-                  <a href="gsoc.html" title="next chapter">Google Summer of Code - 2016 &raquo;</a>
+                  <a href="gsoc.html" title="next chapter">Google Summer of Code - 2016(翻訳中) &raquo;</a>
                       </td>
                   </tr>
               </table>
@@ -371,7 +340,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 12月 04, 2016.
+      Last updated on 12月 19, 2016.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
 </div>
 -->
