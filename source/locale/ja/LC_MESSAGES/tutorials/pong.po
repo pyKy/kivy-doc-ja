@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/tutorials/pong.rst:7
 msgid "Pong Game Tutorial"
-msgstr "Pong Game Tutorial(翻訳中)"
+msgstr "Pong Game Tutorial(翻訳済み)"
 
 #: ../../source/tutorials/pong.rst:10
 msgid "Introduction"
@@ -64,26 +64,28 @@ msgid ""
 "language (:doc:`/guide/lang`), you can probably skip the first 2 steps "
 "and go straight to step 3."
 msgstr ""
+"プログラミングガイドを読んで、Widgetの基本概念（(:doc:`/tutorials/firstwidget`)とkv Languageの基本概念(:doc:`/guide/lang`)の両方を"
+"理解しているならば、最初の2ステップをスキップして、ステップ3に進んでください。"
 
 #: ../../source/tutorials/pong.rst:38
 msgid ""
 "You can find the entire source code, and source code files for each step "
 "in the Kivy examples directory under `tutorials/pong/`"
-msgstr ""
+msgstr "Kivyのexamplesディレクトリ配下の `tutorials/pong/`  に各ステップのソースコードと全体のソースコードのファイルがあります。"
 
 #: ../../source/tutorials/pong.rst:41
 msgid "Ready? Sweet, let's get started!"
-msgstr ""
+msgstr "準備はいいですか？ すてき、では始めましょう!"
 
 #: ../../source/tutorials/pong.rst:44 ../../source/tutorials/pong.rst:48
 msgid "Getting Started"
-msgstr ""
+msgstr "Getting Started(開始)"
 
 #: ../../source/tutorials/pong.rst:50
 msgid ""
 "Let's start by getting a really simple Kivy app up and running. Create a "
 "directory for the game and a file named *main.py*"
-msgstr ""
+msgstr "シンプルなKivyアプリを準備して起動しましょう。ゲーム用のディレクトリと、*main.py* ファイルを作成します。"
 
 #: ../../source/tutorials/pong.rst:57
 msgid ""
@@ -96,14 +98,21 @@ msgid ""
 " will draw the Pong background and scores by defining how the ``PongGame "
 "widget`` looks."
 msgstr ""
+"アプリケーションを実行してください。この時点では黒い画面が表示されます。" 
+"私たちがやったことは、非常にシンプルなKivyクラスの:class: `~kivy.app.App`"
+"を作成することです。これは、``PongGame``Widgetクラスを作成しインスタンスを作成します。"
+"これをアプリケーションUIのルート要素として返します。"
+"また、この時点でウィジェットの階層ツリーとして想像してください。"
+"Kivyはこのウィジェットツリーをデフォルトの画面に配置します。"
+"次のステップでは、PongGameウィジェットの外観を定義し背景とスコアを描画します。"
 
 #: ../../source/tutorials/pong.rst:67
 msgid "Add Simple Graphics"
-msgstr ""
+msgstr "Add Simple Graphics(シンプルなグラフィックの追加)"
 
 #: ../../source/tutorials/pong.rst:71
 msgid "Creation of pong.kv"
-msgstr ""
+msgstr "pong.kvをつくります"
 
 #: ../../source/tutorials/pong.rst:73
 msgid ""
@@ -113,22 +122,31 @@ msgid ""
 "will be automatically loaded when the application is run. So create a new"
 " file called *``pong.kv``* and add the following contents."
 msgstr ""
+".kvファイルを使用して``PongGame``クラスのルック＆フィール（見ため・感じ）を定義します。"
+":class:の`~Kivy.app.App`は`PongApp`という名前なので、同じディレクトリ内に``pong.kv``を作ることで、"
+"アプリケーションが実行されるときに自動的に読み込まれます。"
+"、*``pong.kv``* という名前のファイルを作成して以下の内容を追加してください。"
+
 
 #: ../../source/tutorials/pong.rst:85
 msgid ""
 "COMMON ERROR: The name of the kv file, e.g. pong.kv, must match the name "
 "of the app, e.g. PongApp (the part before the App ending)."
 msgstr ""
+"よくある間違い：kvファイルの名前はpong.kvのようにアプリの"
+"名前と一致する必要があります（例： PongApp（Appの終わりの前の部分）。"
+
 
 #: ../../source/tutorials/pong.rst:88
 msgid ""
 "If you run the app now, you should see a vertical bar in the middle, and "
 "two zeros where the player scores will be displayed."
 msgstr ""
+"アプリを起動すると、真ん中に縦棒が表示されてプレーヤーの得点が2つ表示されます。"
 
 #: ../../source/tutorials/pong.rst:93
 msgid "Explaining the Kv File Syntax"
-msgstr ""
+msgstr "Explaining the Kv File Syntax(Kvファイルの構文の説明)"
 
 #: ../../source/tutorials/pong.rst:95
 msgid ""
@@ -137,10 +155,14 @@ msgid ""
 " on. If you understand what's happening, you can probably skip ahead to "
 "the next step."
 msgstr ""
+"次のステップに進む前に、作成したkvファイルの内容を詳しく見て、"
+"何が起こっているのか理解したいと思っているかもしれません。"
+"何が起きているのかを理解しているならば次のステップに進めますます。"
+
 
 #: ../../source/tutorials/pong.rst:100
 msgid "On the very first line we have::"
-msgstr ""
+msgstr "最初の行には次のものがあります::"
 
 #: ../../source/tutorials/pong.rst:104
 msgid ""
@@ -149,12 +171,15 @@ msgid ""
 "(so Kivy can make sure you have at least the required version, or handle "
 "backwards compatibility later on)."
 msgstr ""
+"この最初の行はすべてのkvファイルに必要です。"
+"「＃：kivy」の後ろにスペースとKivyのバージョンがあるはずです。"
+"（Kivyで必要なバージョンを確認したり、後で後方互換性を扱えます）。"
 
 #: ../../source/tutorials/pong.rst:109
 msgid ""
 "After that, we begin defining rules that are applied to all ``PongGame`` "
 "instances::"
-msgstr ""
+msgstr "その後、すべての「PongGame」インスタンスに適用されるルールの定義を開始します。""
 
 #: ../../source/tutorials/pong.rst:115
 msgid ""
@@ -166,32 +191,42 @@ msgid ""
 "Label widgets inside them because it would define these rules for all "
 "Widget instances."
 msgstr ""
+"Pythonと同様に、kvファイルはインデントを使用してネストされたブロック"
+"を定義します。 「<」と「>」文字の内部にクラス名で定義されたブロックは、"
+":class:`~kivy.uix.widget.Widget`ルールです。"
+"指定されたクラスのインスタンスに適用されます。"
+"今回の例では「PongGame」を「Widget」に置き換えた場合、"
+"すべてのWidgetインスタンスは、これらのルールをすべてのWidgetインスタンス"
+"に対して定義するため、中に縦線と2つのLabelウィジェットを持ちます。"
+
 
 #: ../../source/tutorials/pong.rst:122
 msgid ""
 "Inside a rule section, you can add various blocks to define the style and"
 " contents of the widgets they will be applied to. You can:"
 msgstr ""
+"ルールセクションの中でさまざまなブロックを追加して適用されるwidgetのスタイルと内容を定義します。"
+"いかが可能です:"
 
 #: ../../source/tutorials/pong.rst:125
 msgid "set property values,"
-msgstr ""
+msgstr "propertyの値をセットします"
 
 #: ../../source/tutorials/pong.rst:126
 msgid "add child widgets"
-msgstr ""
+msgstr "widgetの子を追加します"
 
 #: ../../source/tutorials/pong.rst:127
 msgid ""
 "define a `canvas` section in which you can add Graphics instructions that"
 " define how the widget is rendered."
-msgstr ""
+msgstr "widgetのレンダリング方法を定義するGraphics命令を追加できる「canvas」セクションを定義します。"
 
 #: ../../source/tutorials/pong.rst:130
 msgid ""
 "The first block inside the ``<PongGame>`` rule we have is a `canvas` "
 "block:"
-msgstr ""
+msgstr "「<PongGame>」ルール内の最初のブロックは `canvas` ブロックです："
 
 #: ../../source/tutorials/pong.rst:140
 msgid ""
@@ -204,6 +239,13 @@ msgid ""
 "automatically updated when the properties of any widgets used in the "
 "value expression change."
 msgstr ""
+"このキャンバスブロックは、「PongGame」widgetがいくつかのgraphicsの初期値を描くべきです。"
+"この場合、キャンバスにrectangle(長方形)を追加します。rectangleのpos(位置)は、widgetの横方向の"
+"中心から5ピクセル左に設定し、yは0に設定します。"
+"長方形のサイズは幅が10ピクセル、widgetの高さはwidget自身の高さに設定されます。"
+"このようにgraphicsを定義するのは、式で使用されるwidgetの"
+"プpropertyが変更されたときにレンダリングされた長方形を自動的に更新するためです。"
+
 
 #: ../../source/tutorials/pong.rst:150
 #, python-format
@@ -219,6 +261,14 @@ msgid ""
 "properties change. Using the Kv language gives you automatic property "
 "binding. :)"
 msgstr ""
+"アプリケーションウィンドウのサイズを変更して何が起こるかを確認してください。"
+"UI全体が自動的にリサイズされます。 Windowの標準的な動作は、「size_hint」property"
+"に基づいて要素のサイズを変更することです。デフォルトwidgetのsize_hintは（1,1）です。"
+"つまりxy方向の両方に100％伸張され、利用可能なスペースを埋めることを意味します。"
+"長方形とcenter_xの頂点とサイズとスコアラベルの上部は「PongGame」クラスのコンテキスト内"
+"で定義されていたので、対応するwidgetのpropertyが変更されると、これらのpropertyは自動的に更新されます。"
+" Kv languageを使用すると、自動的にpropertyがバインドされます。 :)"
+
 
 #: ../../source/tutorials/pong.rst:162
 msgid ""
@@ -232,9 +282,17 @@ msgid ""
 "(``PongGame`` in this case):"
 msgstr ""
 
+"最後の2つのセクションはかなり類似してます。"
+"それぞれが「PongGame」に子widgetとして「Label widget」を追加します。"
+"今のところ、両方のテキストには 「0」が設定されています。"
+"ロジックが実装されたら、実際のスコアに設定しますが、font_sizeを大きく"
+"設定しているのでLabelはすでに大きく見えていて、root widgetに対して相対的に配置されています。"
+"「root」キーワードは、ルールが適用される親/root widget（この場合は「PongGame」）を参照するために、"
+"子ブロック内で使用できます。"
+
 #: ../../source/tutorials/pong.rst:189 ../../source/tutorials/pong.rst:193
 msgid "Add the Ball"
-msgstr ""
+msgstr "Add the Ball(ボールを追加)"
 
 #: ../../source/tutorials/pong.rst:195
 msgid ""
@@ -243,18 +301,22 @@ msgid ""
 "a new `PongBall` class to create a widget that will be our ball and make "
 "it bounce around."
 msgstr ""
+"
+さて、プレーするための基本的なポンアリーナは持っていますが、"
+"まだプレイヤーとボールを追加する必要があります。ボールから始めましょう。"
+"新たに「PongBall」クラスを追加して、私たちのボールとなるwidgetを作成し、それを跳ね回るようにします。"
 
 #: ../../source/tutorials/pong.rst:200
 msgid "PongBall Class"
-msgstr ""
+msgstr "PongBall Class(PongBallクラス)"
 
 #: ../../source/tutorials/pong.rst:202
 msgid "Here is the Python code for the PongBall class::"
-msgstr ""
+msgstr "PongBallクラスのPythonコードは以下のとおり::"
 
 #: ../../source/tutorials/pong.rst:219
 msgid "And here is the kv rule used to draw the ball as a white circle:"
-msgstr ""
+msgstr "そして、ここにボールとして白い円を描くkvルールがあります"
 
 #: ../../source/tutorials/pong.rst:230
 msgid ""
@@ -262,10 +324,13 @@ msgid ""
 "kivy.properties` Property classes used and the "
 ":class:`~kivy.vector.Vector`."
 msgstr ""
+"すべての機能を有効にするには使用される :doc:`/api-kivy.properties` Propertyクラス"
+"と:class:`~kivy.vector.Vector`のインポートを追加する必要もあります。"
 
 #: ../../source/tutorials/pong.rst:234
 msgid "Here is the entire updated python code and kv file for this step:"
 msgstr ""
+"このステップのための更新されたpythonコードとkvファイルが以下にあります："
 
 #: ../../source/tutorials/pong.rst:238 ../../source/tutorials/pong.rst:350
 #: ../../source/tutorials/pong.rst:425
@@ -282,24 +347,27 @@ msgid ""
 "Note that not only a `<PongBall>` widget rule has been added, but also a "
 "child widget `PongBall` in the `<PongGame>` widget rule."
 msgstr ""
+"「<PongBall>」widgetのルールの追加だけでなく、「<PongGame>」widgetルール"
+"の子widgetである「PongBall」も追加されています。"
 
 #: ../../source/tutorials/pong.rst:249
 msgid "Adding Ball Animation"
-msgstr ""
+msgstr "Adding Ball Animation（ボールのアニメーションを追加する）"
 
 #: ../../source/tutorials/pong.rst:253
 msgid "Making the ball move"
-msgstr ""
+msgstr "ボールの動きを作成します"
 
 #: ../../source/tutorials/pong.rst:255
 msgid ""
 "Cool, so now we have a ball, and it even has a ``move`` function... but "
 "it's not moving yet. Let's fix that."
 msgstr ""
+"現在はボールがあり「move」関数もありますが、まだ動作してません。それを修正しよう。"
 
 #: ../../source/tutorials/pong.rst:259
 msgid "Scheduling Functions on the Clock"
-msgstr ""
+msgstr "Scheduling Functions on the Clock（Clockのスケジューリング関数）"
 
 #: ../../source/tutorials/pong.rst:261
 msgid ""
@@ -307,16 +375,21 @@ msgid ""
 "Kivy makes this pretty easy by letting us schedule any function we want "
 "using the :class:`~kivy.clock.Clock` and specifying the interval::"
 msgstr ""
+"ボールの「移動」方法を定期的にコールする必要があります。"
+"幸いなことにKivyでは、:class:`~kivy.clock.Clock` を使用して必要な機能を"
+"間隔を指定してスケジュールすることで簡単に実行できます。"
 
 #: ../../source/tutorials/pong.rst:267
 msgid ""
 "This line for example, would cause the ``update`` function of the game "
 "object to be called once every 60th of a second (60 times per second)."
 msgstr ""
+"
+例えば、この行は、ゲームオブジェクトの「update」機能が60分の1秒ごとに（毎秒60回）呼び出されることになります。"
 
 #: ../../source/tutorials/pong.rst:271
 msgid "Object Properties/References"
-msgstr ""
+msgstr "Object Properties/References（オブジェクトのプロパティとリファレンス（参照））"
 
 #: ../../source/tutorials/pong.rst:273
 msgid ""
@@ -326,6 +399,9 @@ msgid ""
 "inside the kv rule for the ``PongGame`` class. The only reference to our "
 "game is the one we return in the applications build method."
 msgstr ""
+"別の問題があります。 PongBallには定期的に呼び出される「move」関数があることを確認したいが、"
+”コードでは「PongGame」クラスのkvルールの中のkvファイルを使ってボールオブジェクトへの"
+"参照を追加しているので、ゲームへの唯一の参照は、アプリケーション構築メソッドで返すものです。"
 
 #: ../../source/tutorials/pong.rst:279
 msgid ""
@@ -335,6 +411,9 @@ msgid ""
 "that we have a reference to the game object already, we can easily "
 "schedule its new ``update`` method when the application gets built::"
 msgstr ""
+"ボールを移動するだけではなく、「PongGame」クラスの「update」メソッドが必要になるでしょう。"
+"さらに、ゲームオブジェクトへの参照は既にあるので、"
+"アプリケーションの構築時に新しいupdateメソッドを簡単にスケジュールできます。"
 
 #: ../../source/tutorials/pong.rst:299
 msgid ""
@@ -346,12 +425,18 @@ msgid ""
 "reference the ball property inside the ``update`` method and even make it"
 " bounce off the edges::"
 msgstr ""
+"しかし、それでもkvルールで作成され「PongBall」の子widgetへの参照がないという事実は変わりません。"
+"これを修正するために、PongGameクラスに:class:`ObjectProperty<kivy.properties.ObjectProperty>`  を追加し、"
+"kvルールで作成されたwidgetに接続できます。"
+"それが終わったら、updateメソッド内でballプロパティを簡単に参照できて、エッジからはね返すこともできます："
 
 #: ../../source/tutorials/pong.rst:321
 msgid ""
 "Don't forget to hook it up in the kv file, by giving the child widget an "
 "id and setting the PongGame's ``ball`` ObjectProperty to that id:"
 msgstr ""
+"子のwidgetにidを与え、PongGameの「ball」ObjectPropertyをそのidに設定することによって、"
+"kvファイルに接続することを忘れないでください："
 
 #: ../../source/tutorials/pong.rst:338
 msgid ""
@@ -363,18 +448,25 @@ msgid ""
 " velocity for the ball, and also resets the position, so we can use it "
 "later to reset the ball when a player has scored a point."
 msgstr ""
+"この時点で、ボールが跳ね返るようにすべてが接続されます。"
+"ここまでコーディングしているなら、ボールがどこにも動いていないのが不思議に思うかもしれません。"
+"ボールの速度は、xyの両方で0に設定されます。以下のコードリストでは、「serve_ball」"
+"メソッドが「PongGame」クラスに追加され、アプリケーションの「build」メソッドで呼び出されます。"
+"ボールのxとyのランダムな速度を設定し、位置をリセットするので、"
+"後でボールをリセットしてポイントを獲得することができます。"
 
 #: ../../source/tutorials/pong.rst:346
 msgid "Here is the entire code for this step:"
-msgstr ""
+msgstr "
+このステップのコード全体を以下に示します:"
 
 #: ../../source/tutorials/pong.rst:358
 msgid "Connect Input Events"
-msgstr ""
+msgstr "Connect Input Events(入力イベントの接続)"
 
 #: ../../source/tutorials/pong.rst:362
 msgid "Adding Players and reacting to touch input"
-msgstr ""
+msgstr "プレイヤーを追加してタッチ入力に反応する"
 
 #: ../../source/tutorials/pong.rst:364
 msgid ""
@@ -386,6 +478,12 @@ msgid ""
 " the whole code and kv rules for the ``PongPaddle`` class at the end of "
 "this section."
 msgstr ""
+"素敵です。ボールはバウンドしています。"
+"今足りない機能は可動式のプレーヤーラケットとスコアの記録です。"
+"これらの概念はすでに前のステップでカバーされていたので、"
+"クラスとkvのルールを作成する詳細の全ては説明しません。"
+"代わりに、ユーザの入力に応じてPlayer widgetを移動する方法に焦点を当てましょう。"
+"このセクションの最後に、PongPaddleクラスの全コードとkvルールを得ることができます。"
 
 #: ../../source/tutorials/pong.rst:371
 msgid ""
@@ -397,6 +495,12 @@ msgid ""
 "corresponding method on all its child widgets to pass on the event until "
 "one of the children returns ``True``."
 msgstr ""
+"Kivyのwidgetは、:meth:`on_touch_down <kivy.uix.widget.Widget.on_touch_down>` 、"
+":meth:`on_touch_move <kivy.uix.widget.Widget.on_touch_move>`  、"
+":meth:`on_touch_up <kivy.uix.widget.Widget.on_touch_up>` の各メソッドを実装すること"
+"で入力に反応できます。デフォルトでは、Widgetクラスはいずれかの子が「True」を返すまで"
+"イベントを渡すため、すべての子のwidgetで対応するメソッドを呼び出すだけでこれらのメソッドを実装します。"
+
 
 #: ../../source/tutorials/pong.rst:379
 msgid ""
@@ -407,6 +511,10 @@ msgid ""
 "left or right player based on whether the touch occurred on the left or "
 "right side of the screen."
 msgstr ""
+"Pongはかなりシンプルです。ラケットは上下に動かすだけです。実際とてもシンプルなので、"
+"プレーヤーwidgetがイベント自体を処理する必要はありません。 "
+"PongGameクラスの「on_touch_move」関数を実装して画面の左右にタッチが発生した"
+"かどうかから左右のプレーヤーの位置を設定します。"
 
 #: ../../source/tutorials/pong.rst:385
 msgid "Check the ``on_touch_move`` handler::"
@@ -426,6 +534,15 @@ msgid ""
 "the ball bounces differently based on where it hits the racket. Here is "
 "the code for the `PongPaddle` class::"
 msgstr ""
+":class:`~kivy.properties.NumericProperty` では、各プレイヤーのスコアを"
+"保持します。 「PongGame」のスコアラベルはNumericPropertyスコアを変更する"
+"ことで更新され、「PongGame」の子ラベルのtext propertyが更新されます。"
+"このバインディングは、Kivyプ :mod:`~kivy.properties` が対応するkvファイル"
+"内の任意の参照に自動的にバインドされるために発生します。"
+"ボールが両サイドから飛び出したら「PongGame」クラスの更新メソッドを変更してスコアを更新し、"
+"ボールを再び提供します。また、「PongPaddle」クラスは「bounce_ball」メソッドを実装している"
+"ため、ボールがラケットに当たる場所に応じてボールは違う跳ね方をします。"
+" 「PongPaddle」クラスのコードは以下のとおりです。"
 
 #: ../../source/tutorials/pong.rst:417
 msgid ""
@@ -433,18 +550,22 @@ msgid ""
 "behavior if the ball hits the paddle from the side or bottom...this is "
 "something you could try to fix yourself if you like."
 msgstr ""
+"ボールが跳ねるアルゴリズムは非常に簡単ですが、"
+"ボールがサイドまたはボトムからパドルに当たった場合、おかしなな動作をします..."
+"これはあなたが好きなときに自身で修正する余地があります。
+そして、それは文脈にあります。かなり多く終わった："
 
 #: ../../source/tutorials/pong.rst:421
 msgid "And here it is in context. Pretty much done:"
-msgstr ""
+msgstr "これはコンテキストにあります。大体終わりました："
 
 #: ../../source/tutorials/pong.rst:435
 msgid "Where To Go Now?"
-msgstr ""
+msgstr "Where To Go Now?(どこに行く?)"
 
 #: ../../source/tutorials/pong.rst:439
 msgid "Have some fun"
-msgstr ""
+msgstr "楽しんできてね"
 
 #: ../../source/tutorials/pong.rst:441
 msgid ""
@@ -453,6 +574,10 @@ msgid ""
 "back and think about how you could improve the game. Here are a few ideas"
 " of things you could do:"
 msgstr ""
+"さて、ポンゲームは大体完成しました。"
+"チュートリアルで取り上げている内容をすべて理解しているならば、"
+"今度はゲームを改善する方法について考えてみてください。"
+"改善するにはいくつかのアイデアがあります："
 
 #: ../../source/tutorials/pong.rst:446
 msgid ""
@@ -461,6 +586,11 @@ msgid ""
 "the graphics instructions like :attr:`~kivy.graphics.Line.circle` or "
 ":class:`~kivy.graphics.Rectangle`, to set an image as the texture.)"
 msgstr ""
+"よいグラフィックス/画像をいくつか追加します。 "
+"（ヒント：画像をテクスチャとして設定するには、 :attr:`~kivy.graphics.Line.circle` "
+"や :class:`~kivy.graphics.Rectangle` のようなグラフィックス命令の"
+" :attr:`~kivy.graphics.instructions.VertexInstruction.source` propertyをチェックしてください。）
+"
 
 #: ../../source/tutorials/pong.rst:452
 msgid ""
@@ -471,6 +601,12 @@ msgid ""
 "classes, and figure out how to use their `add_widget` and `remove_widget`"
 " functions to add or remove widgets dynamically."
 msgstr ""
+"特定のスコアの後にゲームを終了させます。プレイヤーが10ポイントを獲得したら、"
+"「PLAYER 1 WINS」ラベルを大きく表示したり、メインメニューを追加してゲームを開始、"
+"一時停止、リセットできるようにします。 "
+"（ヒント： class:`~kivy.uix.button.Button` クラスと :class:`~kivy.uix.label.Label` クラス"
+"をチェックアウトし、「add_widget」と「remove_widget」関数を使ってウィジェットを"
+"動的に追加または削除する方法を解説します。"
 
 #: ../../source/tutorials/pong.rst:460
 msgid ""
@@ -478,16 +614,20 @@ msgid ""
 "wouldn't it be cool to have a player on each side and have four people "
 "play at the same time?"
 msgstr ""
+"4人プレーのPong Gameにしてください。"
+"ほとんどのタブレットにはマルチタッチがサポートされているため、"
+"両面にプレイヤーを置いて4人同時に遊ぶのはクールではないでしょうか？"
 
 #: ../../source/tutorials/pong.rst:464
 msgid ""
 "Fix the simplistic collision check so hitting the ball with an end of the"
 " paddle results in a more realistic bounce."
 msgstr ""
+"単純な衝突チェックを修正して、パドルの終わりでボールを打つと、より現実的な跳ねる動きが得られます。"
 
 #: ../../source/tutorials/pong.rst:469
 msgid ""
 "You can find the entire source code and source code files for each step "
 "in the Kivy examples directory under tutorials/pong/"
 msgstr ""
-
+"各ステップのソースコードとファイル全体のソースコードはKivyのexamplesディレクトリのtutorials / pong / にあります"

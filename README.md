@@ -2,7 +2,7 @@
 Kivyドキュメンテーションの日本語訳
 
 # 本リポジトリについて
-日本語翻訳の方法を変更しています。  
+日本語翻訳の方法を変更しています。  翻訳の元ファイルは2016年3月にkivyのgithubから持ってきているために最新版と内容が違うところがあるので、逐次読みかえてください。
 
 # HTMLについて
 暫定的ですがgithubの機能を使用してdocs配下のHTMLを以下のURLで公開しています。
@@ -45,11 +45,11 @@ https://pyky.github.io/kivy-doc-ja/
 翻訳の担当者などのタスクはTrelloにて管理しています。  
 https://trello.com/b/vUxSE4Ks/kivy
 
-以下のリンクから参加することが可能です。 
+以下のリンクから参加することが可能です。
 
  https://trello.com/invite/b/vUxSE4Ks/f7ddc4a749099c6854ba2cfca6b0620a/kivy-
- 
- 
+
+
 作業する際は、【手付かず】となっている箇所から作業したいページを選択して、【作業中】に移動してください。   
 その後、カードのメンバーに自分と、期日を移動した日から10日後に設定して作業してください。  
 期日を過ぎても作業が終わらなかった場合は、一旦メンバーと期日を削除して【手付かず】に戻してください。  
@@ -67,10 +67,6 @@ http://pyky.slack.com
 登録用フォーム
 https://docs.google.com/forms/d/1bKv3KtJ6hAgYiuKMeFCm4nd0-9fhkwxdsMCRXsp0wbU/viewform
 
-# 目標
-
-2016年中に「Getting started into Kivy」の翻訳を完了させる。
-
 # LICENCEについて
 
-本ライセンスはMITライセンスとなっております。。
+本ライセンスはMITライセンスとなっております。
