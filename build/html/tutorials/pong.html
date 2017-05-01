@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="twitter:site" content="@kivyframework">
     
-    <title>Pong Game Tutorial(翻訳中) &mdash; Kivy 1.9.1 ドキュメント</title>
+    <title>Pong Game Tutorial(翻訳済み) &mdash; Kivy 1.9.1 ドキュメント</title>
     <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../_static/fresh.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -30,9 +30,9 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="top" title="Kivy 1.9.1 ドキュメント" href="../index.html" />
-    <link rel="up" title="Tutorials" href="../tutorials-index.html" />
-    <link rel="next" title="A Simple Paint App(翻訳中)" href="firstwidget.html" />
-    <link rel="prev" title="Tutorials" href="../tutorials-index.html" /> 
+    <link rel="up" title="Tutorials(翻訳済み)" href="../tutorials-index.html" />
+    <link rel="next" title="A Simple Paint App(翻訳済み)" href="firstwidget.html" />
+    <link rel="prev" title="Tutorials(翻訳済み)" href="../tutorials-index.html" /> 
   </head>
   <body>
 
@@ -65,26 +65,26 @@
                 <input type="text" class="text" name="q" />
             </form>
           <!--
-          <h3><a href="../index.html">Pong Game Tutorial(翻訳中)</a></h3>
+          <h3><a href="../index.html">Pong Game Tutorial(翻訳済み)</a></h3>
           <ul>
-<li><a class="reference internal" href="#">Pong Game Tutorial(翻訳中)</a><ul>
+<li><a class="reference internal" href="#">Pong Game Tutorial(翻訳済み)</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
-<li><a class="reference internal" href="#add-simple-graphics">Add Simple Graphics</a><ul>
-<li><a class="reference internal" href="#explaining-the-kv-file-syntax">Explaining the Kv File Syntax</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started(開始)</a></li>
+<li><a class="reference internal" href="#add-simple-graphics">Add Simple Graphics(シンプルなグラフィックの追加)</a><ul>
+<li><a class="reference internal" href="#explaining-the-kv-file-syntax">Explaining the Kv File Syntax(Kvファイルの構文の説明)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#add-the-ball">Add the Ball</a><ul>
-<li><a class="reference internal" href="#pongball-class">PongBall Class</a></li>
+<li><a class="reference internal" href="#add-the-ball">Add the Ball(ボールを追加)</a><ul>
+<li><a class="reference internal" href="#pongball-class">PongBall Class(PongBallクラス)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#adding-ball-animation">Adding Ball Animation</a><ul>
-<li><a class="reference internal" href="#scheduling-functions-on-the-clock">Scheduling Functions on the Clock</a></li>
-<li><a class="reference internal" href="#object-properties-references">Object Properties/References</a></li>
+<li><a class="reference internal" href="#adding-ball-animation">Adding Ball Animation（ボールのアニメーションを追加する）</a><ul>
+<li><a class="reference internal" href="#scheduling-functions-on-the-clock">Scheduling Functions on the Clock（Clockのスケジューリング関数）</a></li>
+<li><a class="reference internal" href="#object-properties-references">Object Properties/References（オブジェクトのプロパティとリファレンス（参照））</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#connect-input-events">Connect Input Events</a></li>
-<li><a class="reference internal" href="#where-to-go-now">Where To Go Now?</a></li>
+<li><a class="reference internal" href="#connect-input-events">Connect Input Events(入力イベントの接続)</a></li>
+<li><a class="reference internal" href="#where-to-go-now">Where To Go Now?(どこに行く?)</a></li>
 </ul>
 </li>
 </ul>
@@ -165,9 +165,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../guide/licensing.html">Package licensing (翻訳済み)</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="../tutorials-index.html">Tutorials</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Pong Game Tutorial(翻訳中)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="firstwidget.html">A Simple Paint App(翻訳中)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials-index.html">Tutorials(翻訳済み)</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="crashcourse.html">Crash Course(翻訳済み)</a></li>
 </ul>
 </li>
@@ -176,8 +176,8 @@
           <!--
           <h3>Related Topics</h3>
           <ul>
-              <li>Previous: <a href="../tutorials-index.html" title="previous chapter">Tutorials</a></li>
-              <li>Next: <a href="firstwidget.html" title="next chapter">A Simple Paint App(翻訳中)</a></li>
+              <li>Previous: <a href="../tutorials-index.html" title="previous chapter">Tutorials(翻訳済み)</a></li>
+              <li>Next: <a href="firstwidget.html" title="next chapter">A Simple Paint App(翻訳済み)</a></li>
           </ul>
           -->
         </div>
@@ -188,31 +188,31 @@
         <div class="bodywrapper">
           <div class="body">
             <div class="toc"><h2>Table Of Contents</h2><ul>
-<li><a class="reference internal" href="#">Pong Game Tutorial(翻訳中)</a><ul>
+<li><a class="reference internal" href="#">Pong Game Tutorial(翻訳済み)</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
-<li><a class="reference internal" href="#add-simple-graphics">Add Simple Graphics</a><ul>
-<li><a class="reference internal" href="#explaining-the-kv-file-syntax">Explaining the Kv File Syntax</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started(開始)</a></li>
+<li><a class="reference internal" href="#add-simple-graphics">Add Simple Graphics(シンプルなグラフィックの追加)</a><ul>
+<li><a class="reference internal" href="#explaining-the-kv-file-syntax">Explaining the Kv File Syntax(Kvファイルの構文の説明)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#add-the-ball">Add the Ball</a><ul>
-<li><a class="reference internal" href="#pongball-class">PongBall Class</a></li>
+<li><a class="reference internal" href="#add-the-ball">Add the Ball(ボールを追加)</a><ul>
+<li><a class="reference internal" href="#pongball-class">PongBall Class(PongBallクラス)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#adding-ball-animation">Adding Ball Animation</a><ul>
-<li><a class="reference internal" href="#scheduling-functions-on-the-clock">Scheduling Functions on the Clock</a></li>
-<li><a class="reference internal" href="#object-properties-references">Object Properties/References</a></li>
+<li><a class="reference internal" href="#adding-ball-animation">Adding Ball Animation（ボールのアニメーションを追加する）</a><ul>
+<li><a class="reference internal" href="#scheduling-functions-on-the-clock">Scheduling Functions on the Clock（Clockのスケジューリング関数）</a></li>
+<li><a class="reference internal" href="#object-properties-references">Object Properties/References（オブジェクトのプロパティとリファレンス（参照））</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#connect-input-events">Connect Input Events</a></li>
-<li><a class="reference internal" href="#where-to-go-now">Where To Go Now?</a></li>
+<li><a class="reference internal" href="#connect-input-events">Connect Input Events(入力イベントの接続)</a></li>
+<li><a class="reference internal" href="#where-to-go-now">Where To Go Now?(どこに行く?)</a></li>
 </ul>
 </li>
 </ul>
 </div>
             
   <div class="section" id="pong-game-tutorial">
-<h1>Pong Game Tutorial(翻訳中)<a class="headerlink" href="#pong-game-tutorial" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<h1>Pong Game Tutorial(翻訳済み)<a class="headerlink" href="#pong-game-tutorial" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="title container">
@@ -227,23 +227,19 @@
 <li><p class="first">基本的なKivyのアプリケーションの実行方法をしていますか？ わからない場合は、<a class="reference internal" href="../guide/basic.html#quickstart"><span class="std std-ref">アプリケーションを作成する</span></a> を参照してください。</p>
 </li>
 </ul>
-<p>If you have read the programming guide, and understand both basic Widget
-concepts (<a class="reference internal" href="firstwidget.html"><span class="doc">A Simple Paint App(翻訳中)</span></a>) and basic concepts of the kv language
-(<a class="reference internal" href="../guide/lang.html"><span class="doc">Kv language(翻訳済み)</span></a>), you can probably skip the first 2
-steps and go straight to step 3.</p>
+<p>プログラミングガイドを読んで、Widgetの基本概念（(<a class="reference internal" href="firstwidget.html"><span class="doc">A Simple Paint App(翻訳済み)</span></a>)とkv Languageの基本概念(<a class="reference internal" href="../guide/lang.html"><span class="doc">Kv language(翻訳済み)</span></a>)の両方を理解しているならば、最初の2ステップをスキップして、ステップ3に進んでください。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">You can find the entire source code, and source code files for each step in
-the Kivy examples directory under <cite>tutorials/pong/</cite></p>
+<p class="last">Kivyのexamplesディレクトリ配下の <cite>tutorials/pong/</cite>  に各ステップのソースコードと全体のソースコードのファイルがあります。</p>
 </div>
-<p>Ready? Sweet, let&#8217;s get started!</p>
+<p>準備はいいですか？ すてき、では始めましょう!</p>
 </div>
 <div class="section" id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Getting Started(開始)<a class="headerlink" href="#getting-started" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="title container">
-Getting Started</div>
-<p>Let&#8217;s start by getting a really simple Kivy app up and running. Create a
-directory for the game and a file named <em>main.py</em></p>
+<p>Getting Started(開始)</p>
+</div>
+<p>シンプルなKivyアプリを準備して起動しましょう。ゲーム用のディレクトリと、<em>main.py</em> ファイルを作成します。</p>
 <div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -275,23 +271,14 @@ directory for the game and a file named <em>main.py</em></p>
     <span class="n">PongApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></div>
-<p>Go ahead and run the application. It should just show a black window at this
-point. What we&#8217;ve done is create a very simple Kivy <code class="xref py py-class docutils literal"><span class="pre">App</span></code>,
-which creates an instance of our <code class="docutils literal"><span class="pre">PongGame</span></code> Widget class and returns it as
-the root element for the applications UI, which you should imagine at this
-point as a hierarchical tree of Widgets. Kivy places this widget-tree in the
-default Window. In the next step, we will draw the
-Pong background and scores by defining how the <code class="docutils literal"><span class="pre">PongGame</span> <span class="pre">widget</span></code> looks.</p>
+<p>アプリケーションを実行してください。この時点では黒い画面が表示されます。私たちがやったことは、非常にシンプルなKivyクラスの:class: <a href="#id1"><span class="problematic" id="id2">`</span></a>~kivy.app.App`を作成することです。これは、<a href="#id3"><span class="problematic" id="id4">``</span></a>PongGame``Widgetクラスを作成しインスタンスを作成します。これをアプリケーションUIのルート要素として返します。また、この時点でウィジェットの階層ツリーとして想像してください。Kivyはこのウィジェットツリーをデフォルトの画面に配置します。次のステップでは、PongGameウィジェットの外観を定義し背景とスコアを描画します。</p>
 </div>
 <div class="section" id="add-simple-graphics">
-<h2>Add Simple Graphics<a class="headerlink" href="#add-simple-graphics" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Add Simple Graphics(シンプルなグラフィックの追加)<a class="headerlink" href="#add-simple-graphics" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="title container">
-Creation of pong.kv</div>
-<p>We will use a .kv file to define the look and feel of the <code class="docutils literal"><span class="pre">PongGame</span></code> class.
-Since our <code class="xref py py-class docutils literal"><span class="pre">App</span></code> class is called <code class="docutils literal"><span class="pre">PongApp</span></code>, we can simply create a file
-called <code class="docutils literal"><span class="pre">pong.kv</span></code> in the same directory that will be automatically loaded
-when the application is run. So create a new file called <em>``pong.kv``</em> and add
-the following contents.</p>
+<p>pong.kvをつくります</p>
+</div>
+<p>.kvファイルを使用して``PongGame``クラスのルック＆フィール（見ため・感じ）を定義します。:class:の`~Kivy.app.App`は`PongApp`という名前なので、同じディレクトリ内に``pong.kv``を作ることで、アプリケーションが実行されるときに自動的に読み込まれます。、<em>``pong.kv``</em> という名前のファイルを作成して以下の内容を追加してください。</p>
 <div class="highlight-kv"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -333,46 +320,33 @@ the following contents.</p>
 </td></tr></table></div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">COMMON ERROR: The name of the kv file, e.g. pong.kv, must match the name of the app,
-e.g. PongApp (the part before the App ending).</p>
+<p class="last">よくある間違い：kvファイルの名前はpong.kvのようにアプリの名前と一致する必要があります（例： PongApp（Appの終わりの前の部分）。</p>
 </div>
-<p>If you run the app now, you should see a vertical bar in the middle, and two
-zeros where the player scores will be displayed.</p>
+<p>アプリを起動すると、真ん中に縦棒が表示されてプレーヤーの得点が2つ表示されます。</p>
 <div class="section" id="explaining-the-kv-file-syntax">
-<h3>Explaining the Kv File Syntax<a class="headerlink" href="#explaining-the-kv-file-syntax" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Before going on to the next step, you might want to take a closer look at
-the contents of the kv file we just created and figure out what is going on.
-If you understand what&#8217;s happening, you can probably skip ahead to the next
-step.</p>
-<p>On the very first line we have:</p>
+<h3>Explaining the Kv File Syntax(Kvファイルの構文の説明)<a class="headerlink" href="#explaining-the-kv-file-syntax" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>次のステップに進む前に、作成したkvファイルの内容を詳しく見て、何が起こっているのか理解したいと思っているかもしれません。何が起きているのかを理解しているならば次のステップに進めますます。</p>
+<p>最初の行には次のものがあります:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">#:kivy 1.0.9</span>
 </pre></div>
 </div>
-<p>This first line is required in every kv file. It should start with <code class="docutils literal"><span class="pre">#:kivy</span></code>
-followed by a space and the Kivy version it is intended for (so Kivy can make
-sure you have at least the required version, or handle backwards compatibility
-later on).</p>
-<p>After that, we begin defining rules that are applied to all <code class="docutils literal"><span class="pre">PongGame</span></code>
-instances:</p>
+<p>この最初の行はすべてのkvファイルに必要です。「＃：kivy」の後ろにスペースとKivyのバージョンがあるはずです。（Kivyで必要なバージョンを確認したり、後で後方互換性を扱えます）。</p>
+<p>その後、すべての「PongGame」インスタンスに適用されるルールの定義を開始します。&#8221;</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">PongGame</span><span class="o">&gt;</span><span class="p">:</span>
     <span class="o">...</span>
 </pre></div>
 </div>
-<p>Like Python, kv files use indentation to define nested blocks. A block defined
-with a class name inside the <code class="docutils literal"><span class="pre">&lt;</span></code> and <code class="docutils literal"><span class="pre">&gt;</span></code> characters is a
-<code class="xref py py-class docutils literal"><span class="pre">Widget</span></code> rule. It will be applied to any instance of
-the named class. If you replaced <code class="docutils literal"><span class="pre">PongGame</span></code> with <code class="docutils literal"><span class="pre">Widget</span></code> in our example, all
-Widget instances would have the vertical line and the two Label widgets inside
-them because it would define these rules for all Widget instances.</p>
-<p>Inside a rule section, you can add various blocks to define the style and
-contents of the widgets they will be applied to. You can:</p>
+<p>Pythonと同様に、kvファイルはインデントを使用してネストされたブロックを定義します。 「&lt;」と「&gt;」文字の内部にクラス名で定義されたブロックは、:class:<a href="#id1"><span class="problematic" id="id2">`</span></a>~kivy.uix.widget.Widget`ルールです。指定されたクラスのインスタンスに適用されます。今回の例では「PongGame」を「Widget」に置き換えた場合、すべてのWidgetインスタンスは、これらのルールをすべてのWidgetインスタンスに対して定義するため、中に縦線と2つのLabelウィジェットを持ちます。</p>
+<p>ルールセクションの中でさまざまなブロックを追加して適用されるwidgetのスタイルと内容を定義します。いかが可能です:</p>
 <ul class="simple">
-<li>set property values,</li>
-<li>add child widgets</li>
-<li>define a <cite>canvas</cite> section in which you can add Graphics instructions that
-define how the widget is rendered.</li>
+<li><p class="first">propertyの値をセットします</p>
+</li>
+<li><p class="first">widgetの子を追加します</p>
+</li>
+<li><p class="first">widgetのレンダリング方法を定義するGraphics命令を追加できる「canvas」セクションを定義します。</p>
+</li>
 </ul>
-<p>The first block inside the <code class="docutils literal"><span class="pre">&lt;PongGame&gt;</span></code> rule we have is a <cite>canvas</cite> block:</p>
+<p>「&lt;PongGame&gt;」ルール内の最初のブロックは <cite>canvas</cite> ブロックです：</p>
 <div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;PongGame&gt;</span><span class="p">:</span>
     <span class="nc">canvas</span><span class="p">:</span>
         <span class="nc">Rectangle</span><span class="p">:</span>
@@ -380,34 +354,12 @@ define how the widget is rendered.</li>
             <span class="na">size</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span>
 </pre></div>
 </div>
-<p>So this canvas block says that the <code class="docutils literal"><span class="pre">PongGame</span></code> widget should draw some
-graphics primitives. In this case, we add a rectangle to the canvas. We set
-the pos of the rectangle to be 5 pixels left of the horizontal center of
-the widget, and 0 for y. The size of the rectangle is set to 10 pixels
-in width, and the widget&#8217;s height in height. The nice thing about defining the
-graphics like this, is that the rendered rectangle will be automatically
-updated when the properties of any widgets used in the value expression change.</p>
+<p>このキャンバスブロックは、「PongGame」widgetがいくつかのgraphicsの初期値を描くべきです。この場合、キャンバスにrectangle(長方形)を追加します。rectangleのpos(位置)は、widgetの横方向の中心から5ピクセル左に設定し、yは0に設定します。長方形のサイズは幅が10ピクセル、widgetの高さはwidget自身の高さに設定されます。このようにgraphicsを定義するのは、式で使用されるwidgetのプpropertyが変更されたときにレンダリングされた長方形を自動的に更新するためです。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Try to resize the application window and notice what happens. That&#8217;s
-right, the entire UI resizes automatically. The standard behaviour of the
-Window is to resize an element based on its property <cite>size_hint</cite>. The
-default widget size_hint is (1,1), meaning it will be stretched 100% in both
-x-direction and y-direction and hence fill the available space.
-Since the pos and size of the rectangle and center_x and top of the score
-labels were defined within
-the context of the <code class="docutils literal"><span class="pre">PongGame</span></code> class, these properties will automatically
-update when the corresponding widget properties change. Using the Kv
-language gives you automatic property binding. :)</p>
+<p class="last">アプリケーションウィンドウのサイズを変更して何が起こるかを確認してください。UI全体が自動的にリサイズされます。 Windowの標準的な動作は、「size_hint」propertyに基づいて要素のサイズを変更することです。デフォルトwidgetのsize_hintは（1,1）です。つまりxy方向の両方に100％伸張され、利用可能なスペースを埋めることを意味します。長方形とcenter_xの頂点とサイズとスコアラベルの上部は「PongGame」クラスのコンテキスト内で定義されていたので、対応するwidgetのpropertyが変更されると、これらのpropertyは自動的に更新されます。 Kv languageを使用すると、自動的にpropertyがバインドされます。 :)</p>
 </div>
-<p>The last two sections we add look pretty similar. Each of them adds a Label
-widget as a child widget to the <code class="docutils literal"><span class="pre">PongGame</span></code> widget. For now, the text on
-both of them is just set to <em>&#8220;0&#8221;</em>. We&#8217;ll hook that up to the actual
-score once we have the logic implemented, but the labels already
-look good since we set a bigger font_size, and positioned them relatively
-to the root widget. The <code class="docutils literal"><span class="pre">root</span></code> keyword can be used inside the child block to
-refer back to the parent/root widget the rule applies to (<code class="docutils literal"><span class="pre">PongGame</span></code> in this
-case):</p>
+<p>最後の2つのセクションはかなり類似してます。それぞれが「PongGame」に子widgetとして「Label widget」を追加します。今のところ、両方のテキストには 「0」が設定されています。ロジックが実装されたら、実際のスコアに設定しますが、font_sizeを大きく設定しているのでLabelはすでに大きく見えていて、root widgetに対して相対的に配置されています。「root」キーワードは、ルールが適用される親/root widget（この場合は「PongGame」）を参照するために、子ブロック内で使用できます。</p>
 <div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;PongGame&gt;</span><span class="p">:</span>
     <span class="c1"># ...</span>
 
@@ -427,15 +379,14 @@ case):</p>
 </div>
 </div>
 <div class="section" id="add-the-ball">
-<h2>Add the Ball<a class="headerlink" href="#add-the-ball" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Add the Ball(ボールを追加)<a class="headerlink" href="#add-the-ball" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="title container">
-Add the Ball</div>
-<p>Ok, so we have a basic pong arena to play in, but we still need the players and
-a ball to hit around.  Let&#8217;s start with the ball.  We&#8217;ll add a new <cite>PongBall</cite>
-class to create a widget that will be our ball and make it bounce around.</p>
+<p>Add the Ball(ボールを追加)</p>
+</div>
+<p>まだプレイヤーとボールを追加する必要があります。ボールから始めましょう。新たに「PongBall」クラスを追加して、私たちのボールとなるwidgetを作成し、それを跳ね回るようにします。</p>
 <div class="section" id="pongball-class">
-<h3>PongBall Class<a class="headerlink" href="#pongball-class" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Here is the Python code for the PongBall class:</p>
+<h3>PongBall Class(PongBallクラス)<a class="headerlink" href="#pongball-class" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>PongBallクラスのPythonコードは以下のとおり:</p>
 <div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -465,7 +416,7 @@ class to create a widget that will be our ball and make it bounce around.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">velocity</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
 </pre></div>
 </td></tr></table></div>
-<p>And here is the kv rule used to draw the ball as a white circle:</p>
+<p>そして、ここにボールとして白い円を描くkvルールがあります</p>
 <div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;PongBall&gt;</span><span class="p">:</span>
     <span class="na">size</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span>
     <span class="nc">canvas</span><span class="p">:</span>
@@ -474,10 +425,8 @@ class to create a widget that will be our ball and make it bounce around.</p>
             <span class="na">size</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
 </pre></div>
 </div>
-<p>To make it all work, you also have to add the imports for the
-<span class="xref doc">/api-kivy.properties</span> Property classes used and the
-<code class="xref py py-class docutils literal"><span class="pre">Vector</span></code>.</p>
-<p>Here is the entire updated python code and kv file for this step:</p>
+<p>すべての機能を有効にするには使用される <span class="xref doc">/api-kivy.properties</span> Propertyクラスと:class:<a href="#id1"><span class="problematic" id="id2">`</span></a>~kivy.vector.Vector`のインポートを追加する必要もあります。</p>
+<p>このステップのための更新されたpythonコードとkvファイルが以下にあります：</p>
 <dl class="docutils">
 <dt>main.py:</dt>
 <dd><div class="first last highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -598,21 +547,18 @@ class to create a widget that will be our ball and make it bounce around.</p>
 </td></tr></table></div>
 </dd>
 </dl>
-<p>Note that not only a <cite>&lt;PongBall&gt;</cite> widget rule has been added, but also a
-child widget <cite>PongBall</cite> in the <cite>&lt;PongGame&gt;</cite> widget rule.</p>
+<p>「&lt;PongBall&gt;」widgetのルールの追加だけでなく、「&lt;PongGame&gt;」widgetルールの子widgetである「PongBall」も追加されています。</p>
 </div>
 </div>
 <div class="section" id="adding-ball-animation">
-<h2>Adding Ball Animation<a class="headerlink" href="#adding-ball-animation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Adding Ball Animation（ボールのアニメーションを追加する）<a class="headerlink" href="#adding-ball-animation" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="title container">
-Making the ball move</div>
-<p>Cool, so now we have a ball, and it even has a <code class="docutils literal"><span class="pre">move</span></code> function... but it&#8217;s not
-moving yet. Let&#8217;s fix that.</p>
+<p>ボールの動きを作成します</p>
+</div>
+<p>現在はボールがあり「move」関数もありますが、まだ動作してません。それを修正しよう。</p>
 <div class="section" id="scheduling-functions-on-the-clock">
-<h3>Scheduling Functions on the Clock<a class="headerlink" href="#scheduling-functions-on-the-clock" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>We need the <code class="docutils literal"><span class="pre">move</span></code> method of our ball to be called regularly. Luckily, Kivy
-makes this pretty easy by letting us schedule any function we want using the
-<code class="xref py py-class docutils literal"><span class="pre">Clock</span></code> and specifying the interval:</p>
+<h3>Scheduling Functions on the Clock（Clockのスケジューリング関数）<a class="headerlink" href="#scheduling-functions-on-the-clock" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ボールの「移動」方法を定期的にコールする必要があります。幸いなことにKivyでは、<code class="xref py py-class docutils literal"><span class="pre">Clock</span></code> を使用して必要な機能を間隔を指定してスケジュールすることで簡単に実行できます。</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Clock</span><span class="o">.</span><span class="n">schedule_interval</span><span class="p">(</span><span class="n">game</span><span class="o">.</span><span class="n">update</span><span class="p">,</span> <span class="mf">1.0</span><span class="o">/</span><span class="mf">60.0</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -620,17 +566,9 @@ makes this pretty easy by letting us schedule any function we want using the
 be called once every 60th of a second (60 times per second).</p>
 </div>
 <div class="section" id="object-properties-references">
-<h3>Object Properties/References<a class="headerlink" href="#object-properties-references" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>We have another problem though.  We&#8217;d like to make sure the PongBall has its
-<code class="docutils literal"><span class="pre">move</span></code> function called regularly, but in our code we don&#8217;t have any references
-to the ball object since we just added it via the kv file
-inside the kv rule for the <code class="docutils literal"><span class="pre">PongGame</span></code> class. The only reference to our
-game is the one we return in the applications build method.</p>
-<p>Since we&#8217;re going to have to do more than just move the ball (e.g.
-bounce it off the walls and later the players racket), we&#8217;ll probably need
-an <code class="docutils literal"><span class="pre">update</span></code> method for our <code class="docutils literal"><span class="pre">PongGame</span></code> class anyway. Furthermore, given that
-we have a reference to the game object already, we can easily schedule its new
-<code class="docutils literal"><span class="pre">update</span></code> method when the application gets built:</p>
+<h3>Object Properties/References（オブジェクトのプロパティとリファレンス（参照））<a class="headerlink" href="#object-properties-references" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>別の問題があります。 PongBallには定期的に呼び出される「move」関数があることを確認したいが、参照を追加しているので、ゲームへの唯一の参照は、アプリケーション構築メソッドで返すものです。</p>
+<p>ボールを移動するだけではなく、「PongGame」クラスの「update」メソッドが必要になるでしょう。さらに、ゲームオブジェクトへの参照は既にあるので、アプリケーションの構築時に新しいupdateメソッドを簡単にスケジュールできます。</p>
 <div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -656,12 +594,7 @@ we have a reference to the game object already, we can easily schedule its new
         <span class="k">return</span> <span class="n">game</span>
 </pre></div>
 </td></tr></table></div>
-<p>However, that still doesn&#8217;t change the fact that we don&#8217;t have a reference to the
-<code class="docutils literal"><span class="pre">PongBall</span></code> child widget created by the kv rule.  To fix this, we can add an
-<code class="xref py py-class docutils literal"><span class="pre">ObjectProperty</span></code>
-to the PongGame class, and hook it up to the widget created in
-the kv rule. Once that&#8217;s done, we can easily reference the ball property
-inside the <code class="docutils literal"><span class="pre">update</span></code> method and even make it bounce off the edges:</p>
+<p>しかし、それでもkvルールで作成され「PongBall」の子widgetへの参照がないという事実は変わりません。これを修正するために、PongGameクラスに:class:<cite>ObjectProperty&lt;kivy.properties.ObjectProperty&gt;</cite>  を追加し、kvルールで作成されたwidgetに接続できます。それが終わったら、updateメソッド内でballプロパティを簡単に参照できて、エッジからはね返すこともできます：</p>
 <div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -689,8 +622,7 @@ inside the <code class="docutils literal"><span class="pre">update</span></code>
             <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">velocity_x</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
 </pre></div>
 </td></tr></table></div>
-<p>Don&#8217;t forget to hook it up in the kv file, by giving the child widget an id
-and setting the PongGame&#8217;s <code class="docutils literal"><span class="pre">ball</span></code> ObjectProperty to that id:</p>
+<p>子のwidgetにidを与え、PongGameの「ball」ObjectPropertyをそのidに設定することによって、kvファイルに接続することを忘れないでください：</p>
 <div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;PongGame&gt;</span><span class="p">:</span>
     <span class="na">ball</span><span class="p">:</span> <span class="n">pong_ball</span>
 
@@ -703,13 +635,7 @@ and setting the PongGame&#8217;s <code class="docutils literal"><span class="pre
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">At this point everything is hooked up for the ball to bounce around. If
-you&#8217;re coding along as we go, you might be wondering why the ball isn&#8217;t
-moving anywhere.  The ball&#8217;s velocity is set to 0 on both x and y.
-In the code listing below, a <code class="docutils literal"><span class="pre">serve_ball</span></code> method is
-added to the <code class="docutils literal"><span class="pre">PongGame</span></code> class and called in the app&#8217;s <code class="docutils literal"><span class="pre">build</span></code> method. It sets a
-random x and y velocity for the ball, and also resets the position, so we
-can use it later to reset the ball when a player has scored a point.</p>
+<p class="last">この時点で、ボールが跳ね返るようにすべてが接続されます。ここまでコーディングしているなら、ボールがどこにも動いていないのが不思議に思うかもしれません。ボールの速度は、xyの両方で0に設定されます。以下のコードリストでは、「serve_ball」メソッドが「PongGame」クラスに追加され、アプリケーションの「build」メソッドで呼び出されます。ボールのxとyのランダムな速度を設定し、位置をリセットするので、後でボールをリセットしてポイントを獲得することができます。</p>
 </div>
 <p>Here is the entire code for this step:</p>
 <dl class="docutils">
@@ -883,27 +809,13 @@ can use it later to reset the ball when a player has scored a point.</p>
 </div>
 </div>
 <div class="section" id="connect-input-events">
-<h2>Connect Input Events<a class="headerlink" href="#connect-input-events" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Connect Input Events(入力イベントの接続)<a class="headerlink" href="#connect-input-events" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="title container">
-Adding Players and reacting to touch input</div>
-<p>Sweet, our ball is bouncing around. The only things missing now are the movable
-player rackets and keeping track of the score.  We won&#8217;t go over all the
-details of creating the class and kv rules again, since those concepts were
-already covered in the previous steps. Instead, let&#8217;s focus on how to move the
-Player widgets in response to user input. You can get the whole code and kv
-rules for the <code class="docutils literal"><span class="pre">PongPaddle</span></code> class at the end of this section.</p>
-<p>In Kivy, a widget can react to input by implementing the
-<code class="xref py py-meth docutils literal"><span class="pre">on_touch_down</span></code>, the
-<code class="xref py py-meth docutils literal"><span class="pre">on_touch_move</span></code> and the
-<code class="xref py py-meth docutils literal"><span class="pre">on_touch_up</span></code>
-methods. By default, the Widget class
-implements these methods by just calling the corresponding method on all its
-child widgets to pass on the event until one of the children returns <code class="docutils literal"><span class="pre">True</span></code>.</p>
-<p>Pong is pretty simple. The rackets just need to move up and down. In fact it&#8217;s
-so simple, we don&#8217;t even really need to have the player widgets handle the
-events themselves. We&#8217;ll just implement the <code class="docutils literal"><span class="pre">on_touch_move</span></code> function for the
-<code class="docutils literal"><span class="pre">PongGame</span></code> class and have it set the position of the left or right player based
-on whether the touch occurred on the left or right side of the screen.</p>
+<p>プレイヤーを追加してタッチ入力に反応する</p>
+</div>
+<p>素敵です。ボールはバウンドしています。今足りない機能は可動式のプレーヤーラケットとスコアの記録です。これらの概念はすでに前のステップでカバーされていたので、クラスとkvのルールを作成する詳細の全ては説明しません。代わりに、ユーザの入力に応じてPlayer widgetを移動する方法に焦点を当てましょう。このセクションの最後に、PongPaddleクラスの全コードとkvルールを得ることができます。</p>
+<p>Kivyのwidgetは、<code class="xref py py-meth docutils literal"><span class="pre">on_touch_down</span></code> 、<code class="xref py py-meth docutils literal"><span class="pre">on_touch_move</span></code>  、<code class="xref py py-meth docutils literal"><span class="pre">on_touch_up</span></code> の各メソッドを実装することで入力に反応できます。デフォルトでは、Widgetクラスはいずれかの子が「True」を返すまでイベントを渡すため、すべての子のwidgetで対応するメソッドを呼び出すだけでこれらのメソッドを実装します。</p>
+<p>Pongはかなりシンプルです。ラケットは上下に動かすだけです。実際とてもシンプルなので、プレーヤーwidgetがイベント自体を処理する必要はありません。 PongGameクラスの「on_touch_move」関数を実装して画面の左右にタッチが発生したかどうかから左右のプレーヤーの位置を設定します。</p>
 <p>Check the <code class="docutils literal"><span class="pre">on_touch_move</span></code> handler:</p>
 <div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -916,17 +828,7 @@ on whether the touch occurred on the left or right side of the screen.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">player2</span><span class="o">.</span><span class="n">center_y</span> <span class="o">=</span> <span class="n">touch</span><span class="o">.</span><span class="n">y</span>
 </pre></div>
 </td></tr></table></div>
-<p>We&#8217;ll keep the score for each player in a
-<code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code>. The score labels of the <code class="docutils literal"><span class="pre">PongGame</span></code>
-are kept updated by changing the NumericProperty <code class="docutils literal"><span class="pre">score</span></code>, which in turn
-updates the <code class="docutils literal"><span class="pre">PongGame</span></code> child labels text property. This binding
-occurs because Kivy <code class="xref py py-mod docutils literal"><span class="pre">properties</span></code> automatically bind to any references
-in their corresponding kv files. When the ball
-escapes out of the sides, we&#8217;ll update the score and serve the ball
-again by changing the <code class="docutils literal"><span class="pre">update</span></code> method in the <code class="docutils literal"><span class="pre">PongGame</span></code> class. The <code class="docutils literal"><span class="pre">PongPaddle</span></code>
-class also implements a <code class="docutils literal"><span class="pre">bounce_ball</span> <span class="pre">method</span></code>, so that the ball bounces
-differently based on where it hits the racket. Here is the code for the
-<cite>PongPaddle</cite> class:</p>
+<p><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code> では、各プレイヤーのスコアを保持します。 「PongGame」のスコアラベルはNumericPropertyスコアを変更することで更新され、「PongGame」の子ラベルのtext propertyが更新されます。このバインディングは、Kivyプ <code class="xref py py-mod docutils literal"><span class="pre">properties</span></code> が対応するkvファイル内の任意の参照に自動的にバインドされるために発生します。ボールが両サイドから飛び出したら「PongGame」クラスの更新メソッドを変更してスコアを更新し、ボールを再び提供します。また、「PongPaddle」クラスは「bounce_ball」メソッドを実装しているため、ボールがラケットに当たる場所に応じてボールは違う跳ね方をします。 「PongPaddle」クラスのコードは以下のとおりです。</p>
 <div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -948,11 +850,9 @@ differently based on where it hits the racket. Here is the code for the
 </td></tr></table></div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">This algorithm for ball bouncing is very simple, but will have strange behavior
-if the ball hits the paddle from the side or bottom...this is something you could
-try to fix yourself if you like.</p>
+<p class="last">ボールが跳ねるアルゴリズムは非常に簡単ですが、ボールがサイドまたはボトムからパドルに当たった場合、おかしなな動作をします...これはあなたが好きなときに自身で修正する余地があります</p>
 </div>
-<p>And here it is in context. Pretty much done:</p>
+<p>これはコンテキストにあります。大体終わりました：</p>
 <dl class="docutils">
 <dt>main.py:</dt>
 <dd><div class="first last highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -1216,36 +1116,24 @@ try to fix yourself if you like.</p>
 </div></blockquote>
 </div>
 <div class="section" id="where-to-go-now">
-<h2>Where To Go Now?<a class="headerlink" href="#where-to-go-now" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Where To Go Now?(どこに行く?)<a class="headerlink" href="#where-to-go-now" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="title container">
-Have some fun</div>
-<p>Well, the pong game is pretty much complete. If you understood all of the
-things that are covered in this tutorial, give yourself a pat on the back and
-think about how you could improve the game. Here are a few ideas of things
-you could do:</p>
+<p>楽しんできてね</p>
+</div>
+<p>さて、ポンゲームは大体完成しました。チュートリアルで取り上げている内容をすべて理解しているならば、今度はゲームを改善する方法について考えてみてください。改善するにはいくつかのアイデアがあります：</p>
 <ul class="simple">
-<li>Add some nicer graphics / images. (Hint: check out the
-<code class="xref py py-attr docutils literal"><span class="pre">source</span></code> property on
-the graphics instructions like <code class="xref py py-attr docutils literal"><span class="pre">circle</span></code> or
-<code class="xref py py-class docutils literal"><span class="pre">Rectangle</span></code>, to set an image as the
-texture.)</li>
-<li>Make the game end after a certain score. Maybe once a player has 10
-points, you can display a large &#8220;PLAYER 1 WINS&#8221; label and/or add a main menu
-to start, pause and reset the game. (Hint: check out the
-<code class="xref py py-class docutils literal"><span class="pre">Button</span></code> and
-<code class="xref py py-class docutils literal"><span class="pre">Label</span></code>
-classes, and figure out how to use their <cite>add_widget</cite> and <cite>remove_widget</cite>
-functions to add or remove widgets dynamically.</li>
-<li>Make it a 4 player Pong Game.  Most tablets have Multi-Touch support, so
-wouldn&#8217;t it be cool to have a player on each side and have four
-people play at the same time?</li>
-<li>Fix the simplistic collision check so hitting the ball with an end of
-the paddle results in a more realistic bounce.</li>
+<li><p class="first">よいグラフィックス/画像をいくつか追加します。 （ヒント：画像をテクスチャとして設定するには、 <code class="xref py py-attr docutils literal"><span class="pre">circle</span></code> や <code class="xref py py-class docutils literal"><span class="pre">Rectangle</span></code> のようなグラフィックス命令の <code class="xref py py-attr docutils literal"><span class="pre">source</span></code> propertyをチェックしてください。</p>
+</li>
+<li><p class="first">特定のスコアの後にゲームを終了させます。プレイヤーが10ポイントを獲得したら、「PLAYER 1 WINS」ラベルを大きく表示したり、メインメニューを追加してゲームを開始、一時停止、リセットできるようにします。 （ヒント： class:<cite>~kivy.uix.button.Button</cite> クラスと <code class="xref py py-class docutils literal"><span class="pre">Label</span></code> クラスをチェックアウトし、「add_widget」と「remove_widget」関数を使ってウィジェットを動的に追加または削除する方法を解説します。</p>
+</li>
+<li><p class="first">4人プレーのPong Gameにしてください。ほとんどのタブレットにはマルチタッチがサポートされているため、両面にプレイヤーを置いて4人同時に遊ぶのはクールではないでしょうか？</p>
+</li>
+<li><p class="first">単純な衝突チェックを修正して、パドルの終わりでボールを打つと、より現実的な跳ねる動きが得られます。</p>
+</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">You can find the entire source code and source code files for each step in
-the Kivy examples directory under tutorials/pong/</p>
+<p class="last">各ステップのソースコードとファイル全体のソースコードはKivyのexamplesディレクトリのtutorials / pong / にあります</p>
 </div>
 </div>
 </div>
@@ -1255,10 +1143,10 @@ the Kivy examples directory under tutorials/pong/</p>
             <table>
                 <tr>
                     <td class="leftlink">
-                  <a href="../tutorials-index.html" title="previous chapter">&laquo; Tutorials</a></li>
+                  <a href="../tutorials-index.html" title="previous chapter">&laquo; Tutorials(翻訳済み)</a></li>
                   </td>
                   <td class="rightlink">
-                  <a href="firstwidget.html" title="next chapter">A Simple Paint App(翻訳中) &raquo;</a>
+                  <a href="firstwidget.html" title="next chapter">A Simple Paint App(翻訳済み) &raquo;</a>
                       </td>
                   </tr>
               </table>
@@ -1285,7 +1173,7 @@ piwikTracker.enableLinkTracking();
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 2月 03, 2017.
+      Last updated on 5月 02, 2017.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
 </div>
 -->

@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/tutorials/firstwidget.rst:7
 msgid "A Simple Paint App"
-msgstr "A Simple Paint App(翻訳中)"
+msgstr "A Simple Paint App(翻訳済み)"
 
 #: ../../source/tutorials/firstwidget.rst:9
 msgid ""
@@ -106,10 +106,15 @@ msgid ""
 "adhere to the `Single Responsibility Principle "
 "<http://en.wikipedia.org/wiki/Single_responsibility_principle>`_)."
 msgstr ""
+"widgetをデザインするときは、この3つの質問に留意してください。最小限かつ再利用可能な方法で書き込むようにしてください"
+"(widgetはまさにそれが何をすべきか、それ以上のことはしません。もっと必要な場合は、"
+"より多くのwidgetを作成するか、小さなwidgetか他のwidgetを作成してください。"
+"単一責任の原則(`Single Responsibility Principle <http://en.wikipedia.org/wiki/Single_responsibility_principle>`_ )"
+"に従ってください）。"
 
 #: ../../source/tutorials/firstwidget.rst:54
 msgid "Paint Widget"
-msgstr ""
+msgstr "Paint Widget(ペイント widget)"
 
 #: ../../source/tutorials/firstwidget.rst:56
 msgid ""
@@ -119,10 +124,16 @@ msgid ""
 "like that using Kivy. Make sure that you have read and understood "
 ":ref:`quickstart`. You have? Great! Let's get started!"
 msgstr ""
+"私たちはあなたの子供のころの夢の一つに、マルチタッチのペイントプログラムを作りたいと思っていたと確信しています。"
+"その夢を実現させるために私たちに手助けさせてください。"
+"次のセクションでは、Kivyを使ってペイントプログラムを書く方法を順を追って学習します。"
+"まずは :ref:`quickstart`  を読んで基本的な内容を理解していることを確認してください。"
+"すでに読んでいる？すばらしいです！始めましょう！"
+
 
 #: ../../source/tutorials/firstwidget.rst:65
 msgid "Initial Structure"
-msgstr ""
+msgstr "Initial Structure(初期構造)"
 
 #: ../../source/tutorials/firstwidget.rst:67
 msgid ""
@@ -132,6 +143,11 @@ msgid ""
 "comes with Kivy, so you don't need to copy & paste it all the time. Here "
 "is the basic code skeleton that we will need:"
 msgstr ""
+"必要ですがとても基本的な構造のコードを書くことから始めましょう。"
+"ところで、このセクションで使用されているさまざまなコードは、Kivyに付属している"
+"「examples/guide/firstwidget」ディレクトリにもありますので、"
+"コピー＆ペーストする必要はありません。"
+"ここに必要なコードの基本的な構造は以下のとおりです。"
 
 #: ../../source/tutorials/firstwidget.rst:77
 msgid ""
@@ -147,6 +163,16 @@ msgid ""
 "won't do something unexpected but just nicely provide the classes defined"
 " in the file."
 msgstr ""
+"
+これは実際にはとても簡単です。このコードをpaint.pyとして保存します。"
+"paint.pyを実行すると黒い画面しか表示されません。"
+"ご覧のように、Button（:ref:`quickstart`を参照）などの"
+"組み込みwidgetを使用する代わりに、独自のwidgetを作成して描画を行います。"
+"widgetから継承するクラス（5-6行目）を作成することで描画を行いますが、"
+"独自クラスはまだ何もしませんが、通常のKivyウィジェット（11行目）のように扱います。"
+"「if __name__」 ...構造体（14行目）は、ファイルからインポートするときにif文でコード"
+"を実行できないようにするPythonの仕組みです。"
+"``import paint``を書くと、予期せぬことが起きないようにファイルに定義されたクラスを提供します。"
 
 #: ../../source/tutorials/firstwidget.rst:91
 #, python-format
@@ -160,16 +186,22 @@ msgid ""
 "frowned upon in the Python community. The way we do it is faster and "
 "cleaner."
 msgstr ""
+"「from kivy import *」のようなことをするのではなく、"
+"AppとWidgetを別々にインポートする必要があるのか​もしれません。短くすると、"
+"「`ネームスペースを汚染<http://en.wikipedia.org/wiki/Namespace_%28computer_science%29#Python>`_」し、"
+"アプリケーションの開始を潜在的には非常に遅くするという欠点があります。"
+"また、クラスと変数のネーミングにあいまいさをもたらす可能性があるため、"
+"一般的にPythonコミュニティではお勧めされていません。今回のやり方はより速くよりクリーンです。"
 
 #: ../../source/tutorials/firstwidget.rst:103
 msgid "Adding Behaviour"
-msgstr ""
+msgstr "Adding Behaviour(動作の追加)"
 
 #: ../../source/tutorials/firstwidget.rst:105
 msgid ""
 "Let's now add some actual behaviour to the widget, i.e. make it react to "
 "user input. Change the code like so:"
-msgstr ""
+msgstr "widgetに実際の動作を追加しましょう。ユーザーの入力に反応させます。 以下のようにコードを変更します。"
 
 #: ../../source/tutorials/firstwidget.rst:112
 msgid ""
@@ -181,12 +213,23 @@ msgid ""
 "message for every touch. This also demonstrates that a widget does not "
 "have to have a visual representation."
 msgstr ""
+"ここではユーザーの入力にどのように反応するのかを簡単に説明しています。"
+":class:`~kivy.input.motionevent.MotionEvent` （タッチ、クリックなど）が発生すると、"
+"タッチオブジェクトに関する情報がコンソールに表示されます。"
+"画面上では表示されませんが、"
+"プログラムを実行しているコマンドラインを確認すると、"
+"すべてのタッチに関するメッセージが表示されます。"
+"これはまたwidgetが視覚的表現を持つ必要がないことを示しています。"
+
+
 
 #: ../../source/tutorials/firstwidget.rst:120
 msgid ""
 "Now that's not really an overwhelming user experience. Let's add some "
 "code that actually draws something into our window:"
 msgstr ""
+"今はあまりユーザーエクスペリエンスではありません。"
+"実際に何かをウィンドウに描画するコードを追加しましょう："
 
 #: ../../source/tutorials/firstwidget.rst:129
 msgid ""
@@ -194,6 +237,9 @@ msgid ""
 "time you touch, there will be a small yellow circle drawn where you "
 "touched. How does it work?"
 msgstr ""
+"これらの変更を加えてコードを実行すると、"
+"タッチするたびにタッチした場所に小さな黄色の円が描かれます。"
+"どのように機能しているのですか？"
 
 #: ../../source/tutorials/firstwidget.rst:133
 msgid ""
@@ -205,6 +251,13 @@ msgid ""
 "statement also makes sure that after our drawing, internal state can be "
 "cleaned up properly."
 msgstr ""
+"9行目：ウィジェットの :class:`~kivy.graphics.instructions.Canvas` "
+"オブジェクトでPythonの「with」コマンドを使用します。"
+"これはwidgetが画面上に自分自身を表すために物を描く領域のようなものです。 "
+"「with」ステートメントを使用すると、適切に字下げされたすべての連続した"
+"描画コマンドがこのcanvasを変更します。 withステートメントは、描画後、"
+"内部状態を適切にクリーンアップできることも保証します。"
+
 
 #: ../../source/tutorials/firstwidget.rst:140
 msgid ""
@@ -216,6 +269,11 @@ msgid ""
 "as dipping your brushes in that color, which you can then use to draw on "
 "a canvas until you dip the brushes into another color."
 msgstr ""
+"10行目：すでに推測しているかもしれません：これは、連続した描画操作の"
+":class:`~kivy.graphics.context_instructions.Color` を黄色に設定します"
+"（デフォルトの色形式はRGBですので、（1,1,0）は黄色です）。"
+"別の色が設定されるまでは黄色のままです。"
+"これでブラシを黄色にしてそれを別の色に塗りつぶすまでキャンバスに描画できます。"
 
 #: ../../source/tutorials/firstwidget.rst:147
 msgid ""
@@ -224,6 +282,9 @@ msgid ""
 "that value multiple times and we don't want to have to change it in "
 "several places if we want the circle bigger or smaller."
 msgstr ""
+"11行目：描画する円の直径を指定します。"
+"円の値を複数回参照する必要があるので変数を使用することが望ましいです。"
+"円を大きくするか小さくするかで複数の場所で変数を変更する必要はありません。"
 
 #: ../../source/tutorials/firstwidget.rst:151
 msgid ""
@@ -235,16 +296,21 @@ msgid ""
 "because the position specifies the bottom left corner of the ellipse's "
 "bounding box, and we want it to be centered around our touch."
 msgstr ""
+"12行目：円を描画するには":class:`~kivy.graphics.vertex_instructions.Ellipse` で、"
+"幅と高さが等しいシンプルな円を描画します。"
+"ユーザーがタッチする場所に円を描きたいので、タッチの位置を円に渡します。"
+"位置は円の境界ボックスのを指定するため、"
+"円をx方向とy方向の「2/d」（つまり左下隅）に移動する必要があることに注意してください。"
 
 #: ../../source/tutorials/firstwidget.rst:161
 msgid ""
 "That was easy, wasn't it? It gets better! Update the code to look like "
 "this:"
-msgstr ""
+msgstr "簡単でしたね。 さらに良くなります！ 以下のようにコードを更新します。"
 
 #: ../../source/tutorials/firstwidget.rst:209
 msgid "This is what has changed:"
-msgstr ""
+msgstr "以下は変更された内容です："
 
 #: ../../source/tutorials/firstwidget.rst:171
 msgid ""
@@ -256,6 +322,11 @@ msgid ""
 "accepts a ``points`` argument that has to be a list of 2D point "
 "coordinates, like ``(x1, y1, x2, y2, ..., xN, yN)``."
 msgstr ""
+"3行目：`~kivy.graphics.vertex_instructions.Ellipse` の描画コマンドだけでなく、"
+" :class:`~kivy.graphics.vertex_instructions.Line` 描画コマンドもインポートしました。"
+" :class:`~kivy.graphics.vertex_instructions.Line` のドキュメンテーションを見ると、"
+"（x1、y1、x2、y2、...、xN、yN）のような2Dポイント座標のリストの引数「points」を受け取ることがわかります。"
+
 
 #: ../../source/tutorials/firstwidget.rst:178
 msgid ""
@@ -263,6 +334,8 @@ msgid ""
 "dictionary (type <dict>) that allows us to store *custom attributes* for "
 "a touch."
 msgstr ""
+"13行目：これは興味深い箇所です。"
+"「touch.ud」は、タッチ用のカスタム属性を格納するPythoの辞書型（type <dict>）です。"
 
 #: ../../source/tutorials/firstwidget.rst:181
 msgid ""
@@ -275,6 +348,13 @@ msgid ""
 "aptly named key 'line'. We pass the line that we're creating the initial "
 "touch position because that's where our line will begin."
 msgstr ""
+"13行目：インポートしたLine命令を使用して、描画用にLineのupを設定します。"
+"これはon_touch_downで行われるので、新しいタッチのたびに新しい行が表示されます。"
+"withブロックの中の線を作成するコードにより、"
+"canvasは自動的にその線を知り描画します。"
+"後でその行を修正したいので、任意に選択して適切に名前を付けたキーの '"
+"line'の下でtouch.ud辞書に参照を格納します。"
+"最初のタッチ位置を作成する線を渡します。これは線の開始部分であるからです。"
 
 #: ../../source/tutorials/firstwidget.rst:190
 msgid ""
@@ -287,6 +367,14 @@ msgid ""
 "attributes. This is something we found incredibly handy and you will "
 "shortly see why."
 msgstr ""
+"15行目：ウィジェットに新しいメソッドを追加します。これは「on_touch_down」"
+"メソッドに似ていますが、*新しい* タッチが発生したときに呼び出される代わりに、"
+"（on_touch_downが既に呼び出されている）既存のタッチが移動したとき、"
+"つまりタッチの位置が変更されたときに呼び出されます。"
+"これは、更新された属性を持つ同じ :class:`~kivy.input.motionevent.MotionEvent` "
+"オブジェクトであることに注意してください。"
+"これは信じられないぐらい便利だと分かったことであり、すぐにその理由がわかるでしょう。"
+
 
 #: ../../source/tutorials/firstwidget.rst:198
 msgid ""
@@ -300,6 +388,12 @@ msgid ""
 "whole lot easier for us as we don't have to maintain our own touch-to-"
 "line bookkeeping."
 msgstr ""
+"16行目：覚えておいてください：これは「on_touch_down」に入ったのと同じ"
+"タッチオブジェクトなので、辞書型の変数touch.udに保存したデータに簡単にアクセスできます！"
+"先にこのタッチのために設定した行に現在のタッチの位置を新しいポイントとして追加します。 "
+"「on_touch_move」ではタッチが移動したときにのみ呼び出されるので、延長する必要があることはわかっています。"
+"正確にはラインを更新する理由です。 touch.udに線を保存することで、"
+"私たち自身のタッチ・ツー・ラインの位置を保持する必要がなくなるのでずっと簡単になります"
 
 #: ../../source/tutorials/firstwidget.rst:211
 msgid ""
@@ -307,16 +401,20 @@ msgid ""
 "like spaghetti bolognese. How about giving each touch its own color? "
 "Great, let's do it:"
 msgstr ""
+"ここまでは順調ですね。しかし今の状態はまったく美しくないです。"
+"それはスパゲッティのボローニャのようなものです。"
+"それぞれのタッチに独自の色を付けるのはどうですか？グレート、実装しましょう："
 
 #: ../../source/tutorials/firstwidget.rst:221
 msgid "Here are the changes:"
-msgstr ""
+msgstr "変更点は以下の通りです:"
 
 #: ../../source/tutorials/firstwidget.rst:223
 msgid ""
 "Line 1: We import Python's random() function that will give us random "
 "values in the range of [0., 1.)."
 msgstr ""
+"1行目：Pythonのrandom()関数をインポートして、[0.、1]の範囲でランダムな値を与えます。"
 
 #: ../../source/tutorials/firstwidget.rst:225
 msgid ""
@@ -328,6 +426,13 @@ msgid ""
 "sequences>`_. We're just binding the tuple to ``color`` for use as a "
 "shortcut within this method because we're lazy."
 msgstr ""
+"10行目：この場合ランダムなRGBカラーを表す3つのランダムな浮動小数点値"
+"をもつ新しいタプルを作成するだけです。 「on_touch_down」でこれを行う"
+"ので、すべての新しいタッチが独自の色を取得します。"
+"`タプル<http://docs.python.org/2/tutorial/datastructures.html#tuples-and-"
+"sequences>`_ の使用によって混乱することはありません。 "
+"私たちは怠け者ですのでこのメソッド内のショートカットとして使用するためにタプルを色付けします。"
+
 
 #: ../../source/tutorials/firstwidget.rst:232
 msgid ""
@@ -338,12 +443,20 @@ msgid ""
 "tuple directly, that would be just 1 value being passed, regardless of "
 "the fact that the tuple itself contains 3 values)."
 msgstr ""
+12行目：上と同じように、キャンバスの色を設定します。"
+"今度は、私たちが生成したランダムな値を使用し、"
+"Pythonのタプル展開構文を使用してcolorクラスに値を渡します"
+"（Colorクラスはただ1つではなく3つの個別のカラーコンポーネントを必要とするためです）。"
+"タプルを直接渡すと、 タプル自体に3つの値が含まれているかどうかに関係なく、1の値が渡されます）。
 
 #: ../../source/tutorials/firstwidget.rst:241
 msgid ""
 "This looks a lot nicer already! With a lot of skill and patience, you "
 "might even be able to create a nice little drawing!"
 msgstr ""
+"この時点でかなり良くなりまいた！多くのスキルと忍耐があれば、ちょっと素敵な絵を描くこと"
+"もできるかもしれません"
+
 
 #: ../../source/tutorials/firstwidget.rst:245
 msgid ""
@@ -360,10 +473,19 @@ msgid ""
 "colors, but the colors that you get will always be equally bright: only "
 "the hue changes."
 msgstr ""
+"デフォルトでは、:class:`~kivy.graphics.context_instructions.Color 命令は"
+"RGBモードを想定しており、3つのランダムな浮動小数点値を持つタプルを供給し"
+"ているので、運が悪いときにには暗い色や黒の色が多くなることがあります。"
+"デフォルトでは背景色も暗いため、描画する線を（簡単に）見れないために"
+"このことは悪いことです。"
+"これを防ぐには素晴らしいトリックがあります：3つのランダムな値を持つタプルを作成する代わりに、"
+"「(random(), 1., 1.)」のようなタプルを作成します。次に、カラー命令に渡すときは、"
+"モードをHSVカラースペース：Color(*color, mode='hsv')に設定します。"
+"この方法を使用することで可能な色の数は少なくなりますが、得られる色は常に明るくなり色相のみが変化します。"
 
 #: ../../source/tutorials/firstwidget.rst:260
 msgid "Bonus Points"
-msgstr ""
+msgstr "Bonus Points(ボーナスポイント)"
 
 #: ../../source/tutorials/firstwidget.rst:262
 msgid ""
@@ -371,6 +493,8 @@ msgid ""
 "supposed to do: it traces the touches and draws lines. It even draws "
 "circles at the positions where a line begins."
 msgstr ""
+"この時点で完成と言えるでしょう。widgetはそれぞれの役割をおこないます："
+"タッチをトレースし、ラインを描画します。また線が始まる位置に円を描画することもできます。"
 
 #: ../../source/tutorials/firstwidget.rst:266
 msgid ""
@@ -380,6 +504,11 @@ msgid ""
 "erases all the lines and circles that have been drawn so far. There are "
 "two options now:"
 msgstr ""
+"しかし、ユーザーが新らしく作画を開始したい場合はどうなりますか？"
+"現在のコードでは、ウィンドウを消去する唯一の方法は、アプリケーション全体を再起動することです。"
+"幸いにももっと良い案があります。"
+"今まで描かれているすべての線と円を消去するクリアボタンを追加しましょう。"
+"現在次の2つのオプションがあります。"
 
 #: ../../source/tutorials/firstwidget.rst:272
 msgid ""
@@ -388,12 +517,16 @@ msgid ""
 "button. If you're not careful, this will also allow users to draw on top "
 "of the button, which might not be what you want."
 msgstr ""
+"widgetの子としてボタンを作成できます。"
+"それは複数のwidgetを作成すると、すべてのwidgetが独自のボタンを取得すること"
+"を意味します。注意しないとユーザーはボタンの上に描画できます。"
 
 #: ../../source/tutorials/firstwidget.rst:276
 msgid ""
 "Or we set up the button only once, initially, in our app class and when "
 "it's pressed we clear the widget."
 msgstr ""
+"最初にボタンを1回だけアプリケーションクラスに設定して押したときにウィジェットをクリアします。"
 
 #: ../../source/tutorials/firstwidget.rst:279
 msgid ""
@@ -404,16 +537,22 @@ msgid ""
 ":meth:`~kivy.app.App.build` method. We'll also change to the HSV color "
 "space (see preceding note):"
 msgstr ""
+"簡単な例ではさほど重要ではありませんが大規模なアプリケーションの場合、"
+"アプリで誰が何をしているかを考えなければなりません。"
+"ここでは2番目のオプションを使用して、アプリケーションクラスのbuild（）"
+"メソッドでアプリケーションのウィジェットツリーを構築する方法を見ていきます。"
+"また、HSV色空間に変更します（上の注を参照）。"
 
 #: ../../source/tutorials/firstwidget.rst:291
 msgid "Here's what happens:"
-msgstr ""
+msgstr "ここで何が起きたのですか？"
 
 #: ../../source/tutorials/firstwidget.rst:293
 msgid ""
 "Line 4: We added an import statement to be able to use the "
 ":class:`~kivy.uix.button.Button` class."
 msgstr ""
+"4行目：:class:`~kivy.uix.button.Button` クラスを使用できるようにimportステートメントを追加しました。"
 
 #: ../../source/tutorials/firstwidget.rst:295
 msgid ""
@@ -424,18 +563,24 @@ msgid ""
 "absolutely nothing except holding the two widgets we will now add to it "
 "as children."
 msgstr ""
+"25行目：ペイントwidgetと追加しようとしているボタンの親としてダミーのWidget（）"
+"オブジェクトを作成します。これは、widgetのツリー階層を設定するための"
+"安価な方法です。私たちは、レイアウトを使用するだけでなく、他のすばらしい機能を使うこともできます。"
+"再び：このwidgetは、2つのwidgetを子として保持する以外は何もしません。"
 
 #: ../../source/tutorials/firstwidget.rst:301
 msgid ""
 "Line 26: We create our ``MyPaintWidget()`` as usual, only this time we "
 "don't return it directly but bind it to a variable name."
 msgstr ""
+"26行目：私たちは「MyPaintWidget()」いつものように作成しますが、今度は直接返さずに変数名にバインドします。"
 
 #: ../../source/tutorials/firstwidget.rst:303
 msgid ""
 "Line 27: We create a button widget. It will have a label on it that "
 "displays the text 'Clear'."
 msgstr ""
+"27行目：ボタンwidgetを作成します。 テキスト「Clear」が表示されたラベルが表示されます。"
 
 #: ../../source/tutorials/firstwidget.rst:305
 msgid ""
@@ -444,6 +589,9 @@ msgid ""
 "<http://en.wikipedia.org/wiki/Callback_function#Python>`_ `clear_canvas` "
 "defined on below on Lines 33 & 34."
 msgstr ""
+"28行目：ボタンのon_releaseイベント（ボタンが押されて離された時にに起動される）を、"
+"33行目と34行目で定義されている"
+" `コールバック関数 <http://en.wikipedia.org/wiki/Callback_function#Python>`_  の「clear_canvas」にバインドします"
 
 #: ../../source/tutorials/firstwidget.rst:309
 msgid ""
@@ -452,6 +600,9 @@ msgid ""
 "`painter` and `clearbtn` are now siblings in the usual computer science "
 "tree terminology."
 msgstr ""
+"29行目と30行目：ダミーの親widgetのペインターとクリアボタンの両方の子を作成して"
+"widgetの階層を設定します。これは、通常のコンピュータの用語では、"
+"「ペインター」と「クリアボタン」が同じツリー構造にあることを意味します。"
 
 #: ../../source/tutorials/firstwidget.rst:313
 msgid ""
@@ -462,6 +613,11 @@ msgid ""
 "the button is pressed. The function just clears the painter's canvas' "
 "contents, making it black again."
 msgstr ""
+"33行目と34行目：今まではボタンは何もしませんでした。"
+"存在していて目に見えて押すことができましたが、何も起こりません。"
+"ここでは、ボタンを押したときに "
+"`コールバック関数  <http://en.wikipedia.org/wiki/Callback_function#Python>`_ になる小さなゴミ捨て用の関数を作成します。"
+"この関数は、ペインターのキャンバスの内容をクリアして、再び真っ黒にします。"
 
 #: ../../source/tutorials/firstwidget.rst:322
 msgid ""
@@ -476,6 +632,17 @@ msgid ""
 "is offered by a widget, and subclass if you need to add more "
 "functionality."
 msgstr ""
+"Kivy Widgetクラスは、設計上シンプルに保たれています。"
+"背景色や境界色などの一般的なプロパティはありません。"
+"代わりに例とドキュメントでは、今回の例で行ったような簡単な内容、"
+"キャンバスの色を設定し、図形を描画する簡単な方法を示します。"
+"簡単なスタートからより精巧なカスタマイズに移行できます。"
+" Buttonのようなwiggetから派生したより高いレベルの組み込"
+"みwidgetは、background_colorのような便利なプロパティを持っていますが、"
+"そのプロパティがあるかないはwidgetによって異なります。 "
+"APIドキュメントを使用してwidgetが提供するものを確認し、"
+"さらに機能を追加する必要がある場合はサブクラスを使用します"
+
 
 #: ../../source/tutorials/firstwidget.rst:332
 msgid ""
@@ -486,3 +653,8 @@ msgid ""
 "everything and are ready for more, we encourage you to read on."
 msgstr ""
 
+"おめでとう！あなたは最初のKivy widgetを書いています。"
+明らかに、簡単な紹介でした。"
+"発見すべきものはたくさんあります。"
+"私たちはあなたが学んだことがことを理解するために短い休憩を取ることを提案します。"
+"あなたがすべてを理解していてより多くの準備ができていると感じたらお読みください。"
