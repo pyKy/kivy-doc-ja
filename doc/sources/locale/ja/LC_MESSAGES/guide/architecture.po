@@ -1,0 +1,330 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-13 08:22+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../sources/guide/architecture.rst:4
+msgid "Architectural Overview"
+msgstr "Architectural Overview(翻訳済み)"
+
+#: ../../sources/guide/architecture.rst:6
+msgid "We would like to take a moment to explain how we designed Kivy from a software engineering point of view. This is key to understanding how everything works together. If you just look at the code, chances are you will get a rough idea already, but since this approach certainly is daunting for most users, this section explains the basic ideas of the implementation in more detail. You can skip this section and refer to it later, but we suggest at least skimming it for a rough overview."
+msgstr ""
+"ソフトウェアエンジニアリングの始点からKivyの設計方法を説明するための時間を取りたいと思います。"
+"これは全体がどのように機能するかを一緒に理解する鍵です。"
+"コードを見れば、大体のアイデアを取得できますが、そのアプローチではほとんどのユーザーが気力をくじかされるので、"
+"このセクションでは、より詳細に実行する基本的な考え方を説明しています。"
+"このセクションをスキップし、後で参照してもよいですが、大まかなまかな概要の理解のために"
+"流し読みを提案します。"
+
+#: ../../sources/guide/architecture.rst:15
+msgid "Kivy consists of several building blocks that we will explain shortly. Here is a graphical summary of the architecture:"
+msgstr ""
+"Kivyは、後で説明しますいくつかのビルディングブロックで構成されています。"
+"アーキテクチャのグラフィカルな概要は次のとおりです。"
+
+#: ../../sources/guide/architecture.rst:24
+msgid "Core Providers and Input Providers"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:26
+msgid "One idea that is key to understanding Kivy's internals is that of modularity and abstraction. We try to abstract basic tasks such as opening a window, displaying images and text, playing audio, getting images from a camera, spelling correction and so on. We call these *core* tasks. This makes the API both easy to use and easy to extend. Most importantly, it allows us to use -- what we call -- specific providers for the respective scenarios in which your app is being run. For example, on OSX, Linux and Windows, there are different native APIs for the different core tasks. A piece of code that uses one of these specific APIs to talk to the operating system on one side and to Kivy on the other (acting as an intermediate communication layer) is what we call a *core provider*. The advantage of using specialized core providers for each platform is that we can fully leverage the functionality exposed by the operating system and act as efficiently as possible. It also gives users a choice. Furthermore, by using libraries that are shipped with any one platform, we effectively reduce the size of the Kivy distribution and make packaging easier. This also makes it easier to port Kivy to other platforms. The Android port benefited greatly from this."
+msgstr ""
+"Kivyの内部を理解する鍵であるひとつのアイデアは、モジュール性と抽象化です。"
+"私たちは、ウィンドウを開き、画像やテキストを表示するやカメラから画像を取得する、"
+"スペル修正や再生などの抽象的で基本的なタスクを試みてください。"
+"これらの機能はコアタスクを呼び出します。APIは使用しやすく、拡張が簡単という両方を兼ね備えています。"
+"コールするもの - -最も重要なことは、アプリの実行中で、"
+"それぞれのシナリオのおかげで特定のプロバイダで使用できるようになります。"
+"例えば、OSX、Linux、Windows上で、異なるコアタスクのための複数のネイティブAPIがあります。"
+"Kivyの側（中間通信層として機能する）にオペレーティングシステム側と通信するために"
+"特定のAPIのいずれかを使用するコードの一部をコア・プロバイ呼んでます。
+"各プラットフォームに特化した *コア・プロバイダ* を使用することの利点は完全にＯＳに"
+"よって公開される機能を活用してできる限り効率的に動かせる点です。"
+"またユーザーに選択するチャンスを与えます。
+"さらに、いずれかのプラットフォームに入っているライブラリを使用して、"
+"Kivyディストリビューションのサイズを効果的に小さくしてパッケージ化を簡単にします。"
+"これはまた、Kivyの他のプラットフォームへの移植が簡単にします。"
+"Androidのポートは、ここから大幅に恩恵を受けました。"
+"
+
+#: ../../sources/guide/architecture.rst:44
+msgid "We follow the same concept with input handling. *An input provider* is a piece of code that adds support for a specific input device, such as Apple's trackpads, TUIO or a mouse emulator. If you need to add support for a new input device, you can simply provide a new class that reads your input data from your device and transforms them into Kivy basic events."
+msgstr ""
+"入力処理と同じコンセプトに従ってください。"
+" *入力プロバイダは* 、アップルのトラックパッド、TUIOまたはマウスエミュレータとして、"
+"特定の入力デバイスのサポートが追加されたコードの一部です。"
+"新しい入力デバイスのサポートを追加する必要がある場合は、"
+"デバイスからの入力データを読み込んでKivyの基本的なイベントに変換した新しいクラスを提供できます。"
+
+
+#: ../../sources/guide/architecture.rst:53
+msgid "Graphics"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:55
+msgid "Kivy's graphics API is our abstraction of OpenGL. On the lowest level, Kivy issues hardware-accelerated drawing commands using OpenGL. Writing OpenGL code however can be a bit confusing, especially to newcomers. That's why we provide the graphics API that lets you draw things using simple metaphors that do not exist as such in OpenGL (e.g. Canvas, Rectangle, etc.)."
+msgstr ""
+"KivyGraphicsAPIは、OpenGLの私達の抽象化したものです。"
+"最下層レベルでは、Kivyのハードウェアアクセラレータの"
+"描画コマンドissueは、OpenGLを使用しました。"
+"しかし、OpenGLコードを書くのは初心者は特に少し混乱するかもしれません。"
+"グラフィックスAPIを提供する理由は、OpenGL（例：Canvas, Rectangle,など）"
+"では存在しない単純なメタファーを使って描画できるようにするためです。"
+
+#: ../../sources/guide/architecture.rst:62
+msgid "All of our widgets themselves use this graphics API, which is implemented on the C level for performance reasons."
+msgstr ""
+"すべてのwidgetはパフォーマンスの理由から、Cレベルで実装されるgraphics APIを使用します。"
+
+#: ../../sources/guide/architecture.rst:65
+msgid "Another advantage of the graphics API is its ability to automatically optimize the drawing commands that your code issues. This is especially helpful if you're not an expert at tuning OpenGL. This makes your drawing code more efficient in many cases."
+msgstr ""
+"graphicsAPIの別の利点は、問題あるコードを描画コマンドで自動的最適化する機能があります。"
+"OpenGLのチューニングの専門家でないのならば特に便利です。これは、多くの場合、描画コードをより効率的にします。"
+
+#: ../../sources/guide/architecture.rst:70
+msgid "You can, of course, still use raw OpenGL commands if you prefer. The version we target is OpenGL 2.0 ES (GLES2) on all devices, so if you want to stay cross-platform compatible, we advise you to only use the GLES2 functions."
+msgstr ""
+"もちろん希望する場合は、生のOpenGLのコマンドを使用できます。"
+"私たちのターゲットバージョンは、すべてのデバイス上でOpenGL2.0 ES（GLES2）なので、"
+"クロスプラットフォームの互換性を保ちたいのならばGLES2機能を使用することをお勧めします。"
+
+#: ../../sources/guide/architecture.rst:76
+msgid "Core"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:78
+msgid "The code in the core package provides commonly used features, such as:"
+msgstr "Coreパッケージ内のコードは、次のような一般的に使用される機能を提供します：
+"
+
+#: ../../sources/guide/architecture.rst:82
+msgid "Clock"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:81
+msgid "You can use the clock to schedule timer events. Both one-shot timers and periodic timers are supported."
+msgstr ""
+"タイマーイベントをスケジュールするためにClocを使用できます。"
+"ワンショットタイマーと周期タイマーの両方がサポートされています。"
+
+#: ../../sources/guide/architecture.rst:86
+msgid "Cache"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:85
+msgid "If you need to cache something that you use often, you can use our class for that instead of writing your own."
+msgstr ""
+"頻繁に使用するものをキャッシュする必要がある場合はキャッシュは、自分で書くかわりに、クラスを使用できます。"
+
+#: ../../sources/guide/architecture.rst:91
+msgid "Gesture Detection"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:89
+msgid "We ship a simple gesture recognizer that you can use to detect various kinds of strokes, such as circles or rectangles. You can train it to detect your own strokes."
+msgstr ""
+"円や四角形などのストロークの様々な種類を検出するために使用できる簡単なジェスチャー認識を出力します。"
+"自身のストロークを検出することをトレーニングできます。 "
+
+#: ../../sources/guide/architecture.rst:95
+msgid "Kivy Language"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:94
+msgid "The kivy language is used to easily and efficiently describe user interfaces."
+msgstr ""
+"Kivy Languageは容易で効率的にユーザ・インターフェースを記述するために使用されます。"
+
+
+#: ../../sources/guide/architecture.rst:101
+msgid "Properties"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:98
+msgid "These are not the normal properties that you may know from python. They are our own property classes that link your widget code with the user interface description."
+msgstr ""
+"Pythonから知っている可能性がありますが、ここで言っているのは通常のプロパティではありません。"
+"ユーザーインターフェースの説明を使用してwidget コードをリンクする独自のpropertyクラスです。"
+
+#: ../../sources/guide/architecture.rst:104
+msgid "UIX (Widgets & Layouts)"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:106
+msgid "The UIX module contains commonly used widgets and layouts that you can reuse to quickly create a user interface."
+msgstr ""
+"UIXモジュールはユーザー・インターフェースを直ぐに作成するために"
+"再利用できる一般的に使用されるwidgetとlayoutsが含まれています。"
+
+#: ../../sources/guide/architecture.rst:113
+msgid "Widgets"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:110
+msgid "Widgets are user interface elements that you add to your program to provide some kind of functionality. They may or may not be visible. Examples would be a file browser, buttons, sliders, lists and so on. Widgets receive MotionEvents."
+msgstr ""
+"widgetsはいくつかの種類の機能を提供するためにプログログラムに追加するユーザーインターフェイス要素です。"
+"これは目には見えません。例えばファイルブラウザで、ボタン、スライダー、押したときの場合がそうです。"
+"WidgetsはMotionEventsを受信します。"
+
+#: ../../sources/guide/architecture.rst:121
+msgid "Layouts"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:116
+msgid "You use layouts to arrange widgets. It is of course possible to calculate your widgets' positions yourself, but often it is more convenient to use one of our ready made layouts. Examples would be Grid Layouts or Box Layouts. You can also nest layouts."
+msgstr ""
+"widgetsを配置するLayoutsを使用しｗidgetsを配置します。"
+"それはwidgetの座標をもちろん自分で計算することも可能ですが、"
+"多くの場合、既製のレイアウトのいずれかを使用する方が便利です。"
+"例えば、 Grid Layouts や Box Layoutsです。レイアウトをネストすることもできます。"
+
+#: ../../sources/guide/architecture.rst:124
+msgid "Modules"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:126
+msgid "If you've ever used a modern web browser and customized it with some add-ons then you already know the basic idea behind our module classes. Modules can be used to inject functionality into Kivy programs, even if the original author did not include it."
+msgstr ""
+"最新のWebブラウザを使用し、いくつかのアドオンでカスタマイズしたことがある場合は、"
+"モジュールクラスの背後にある基本的な考え方を知っています。"
+"moduleは、オリジナルの作者がmoduleを含まれていない場合でも、"
+"Kivyプログラムに機能を加えるのに使用できます。"
+
+#: ../../sources/guide/architecture.rst:131
+msgid "An example would be a module that always shows the FPS of the current application and some graph depicting the FPS over time."
+msgstr ""
+"例えば、いくつかのグラフのFPSを元のアププリケーションを描画する時間をFPSで表示したmoduleです。"
+
+#: ../../sources/guide/architecture.rst:134
+msgid "You can also write your own modules."
+msgstr ""
+"また、独自のmoduleを作成することができます。"
+
+
+#: ../../sources/guide/architecture.rst:138
+msgid "Input Events (Touches)"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:140
+msgid "Kivy abstracts different input types and sources such as touches, mice, TUIO or similar. What all of these input types have in common is that you can associate a 2D onscreen-position with any individual input event. (There are other input devices such as accelerometers where you cannot easily find a 2D position for e.g. a tilt of your device. This kind of input is handled separately. In the following we describe the former types.)"
+msgstr ""
+"Kivyは、タッチ、マウス、TUIOまたは類似の異なる入力タイプとソースを抽象化します。"
+"これらの入力タイプのすべてに共通しているのは、任意の個々の入力イベントと"
+"2D画面上の座標を関連付けることができるということです。"
+"（例えばこのような簡単にあなたのデバイスの傾きを測定する、"
+"加速度計のような入力デバイスのインプットはこの種の入力が個別に処理されるめ2D座標を見つけることができません。"
+"以下では、我々は前者のタイプについて説明します。）"
+
+#: ../../sources/guide/architecture.rst:147
+msgid "All of these input types are represented by instances of the Touch() class. (Note that this does not only refer to finger touches, but all the other input types as well. We just called it *Touch* for the sake of simplicity. Think of it of something that *touches* the user interface or your screen.) A touch instance, or object, can be in one of three states. When a touch enters one of these states, your program is informed that the event occurred. The three states a touch can be in are:"
+msgstr ""
+"これらの入力タイプはすべて、Touch（）クラスのインスタンスで表現されます。"
+"（注意：これは指のタッチだけでなく他のすべての入力タイプにも参照されます。"
+"簡略化のためにTouchと呼ばれます。"
+"ユーザーインターフェイスや画面を触れる何かを考えてください。）"
+
+#: ../../sources/guide/architecture.rst:157
+msgid "Down"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:157
+msgid "A touch is down only once, at the very moment where it first appears."
+msgstr ""
+"Touchは、それが最初に表示される瞬間に、一度だけダウンします。"
+
+#: ../../sources/guide/architecture.rst:161
+msgid "Move"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:160
+msgid "A touch can be in this state for a potentially unlimited time. A touch does not have to be in this state during its lifetime. A 'Move' happens whenever the 2D position of a touch changes."
+msgstr ""
+"Touchは、潜在的に無限の時間のためにこの状態になることができます。"
+"タッチは、その生存期間中にこの状態にする必要はありません。" 
+"「Move」は、Touchの変更のたびに2次元座標を発生します。"
+
+#: ../../sources/guide/architecture.rst:170
+msgid "Up"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:164
+msgid "A touch goes up at most once, or never. In practice you will almost always receive an up event because nobody is going to hold a finger on the screen for all eternity, but it is not guaranteed. If you know the input sources your users will be using, you will know whether or not you can rely on this state being entered."
+msgstr ""
+"Touchは、最高1回、または必ず上がります。"
+"実際には、誰もが永遠のために画面上で指を保持しようとしないので、"
+"ほとんどの場合、Upイベントを受け取りますが保証されません。"
+"ユーザーが使用する入力ソースを知っている場合、状態が入力に依存するこかどうかを知ることが出来ます。"
+
+#: ../../sources/guide/architecture.rst:173
+msgid "Widgets and Event Dispatching"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:175
+msgid "The term *widget* is often used in GUI programming contexts to describe some part of the program that the user interacts with. In Kivy, a widget is an object that receives input events. It does not necessarily have to have a visible representation on the screen. All widgets are arranged in a *widget tree* (which is a tree data structure as known from computer science classes): One widget can have any number of child widgets or none. There is exactly one *root widget* at the top of the tree that has no parent widget, and all other widgets are directly or indirectly children of this widget (which is why it's called the root)."
+msgstr ""
+"*widgetは、多くの場合、ユーザが対話するプログラムの一部を記述するために、"
+"GUIプログラミングコンテキストで使用されています。 "
+"Kivyで は、widgetは、入力イベントを受け取るのが目的です。"
+"それは必ずしも画面上に表示表現を持っている必要はありません。"
+"全てのwidgetはwidgetツリーに配置されています（コンピュータサイエンスの授業で知るツリーデータ構造がある）"
+"：一つのwidgetは子widgetまたはnoneのいずれかの番号を持つことができます。"
+"正確には親widgetを持っていないツリーの最上部にあるroot widgetは、"
+"すべての他のwidgetは、直接または間接的にこのwidgetの子になりす。（rootと呼ばれる理由である）"
+
+
+#: ../../sources/guide/architecture.rst:185
+msgid "When new input data is available, Kivy sends out one event per touch. The root widget of the widget tree first receives the event. Depending on the state of the touch, the on_touch_down, on_touch_move or on_touch_up event is dispatched (with the touch as the argument) to the root widget, which results in the root widget's corresponding on_touch_down, on_touch_move or on_touch_up event handler being called."
+msgstr ""
+"新たな入力データが利用可能である場合、Kivyは、タッチごとに1つのイベントを送信します。"
+"widgetツリーのroot widgetは、最初のイベントを受け取ります"
+"on_touch_moveまたはon_touch_upイベントハンドラで"
+"on_touch_down対応するroot widgetは、touchの状態に応じて、on_touch_down、on_touch_move"
+"またはon_touch_upイベントで呼び出されることになるroot widgetにディスパッチ（引数としてtouch）されます。"
+
+#: ../../sources/guide/architecture.rst:193
+msgid "Each widget (this includes the root widget) in the tree can choose to either digest or pass the event on. If an event handler returns True, it means that the event has been digested and handled properly. No further processing will happen with that event. Otherwise, the event handler passes the widget on to its own children by calling its superclass's implementation of the respective event handler. This goes all the way up to the base Widget class, which -- in its touch event handlers -- does nothing but pass the touches to its children::"
+msgstr ""
+"ツリー内の各widget（ルートウィジェットが含む）は、イベントを渡すために"
+"ダイジェストまたはパスのどちらかを選択できます。"
+"イベントハンドラがTrueを返した場合は、イベントが消費され、"
+"適切に処理されていることを意味します。"
+それ以上の処理は、このイベントに起こりません。"
+"それ以外の場合は、イベントハンドラは、"
+"各イベントハンドラのスーパークラスの実装を呼び出す"
+"ことによって、自身の子の上のwidgetを渡します."
+"基本Widgetクラスまでのすべての道に対していきます。"
+" - そのtouchイベントハンドラに - しかし、何もその子たちにtouchを渡しません。"
+
+#: ../../sources/guide/architecture.rst:208
+msgid "This really is much easier than it first seems. An example of how this can be used to create nice applications quickly will be given in the following section."
+msgstr ""
+"実際は最初に思っていたよりもはるかに簡単です。"
+"ナイスなアプリケーションを迅速に作成するために使用できる方法の例を次のセクションで説明します。"
+
+#: ../../sources/guide/architecture.rst:212
+msgid "Often times you will want to restrict the *area* on the screen that a widget watches for touches. You can use a widget's collide_point() method to achieve this. You simply pass it the touch's position and it returns True if the touch is within the 'watched area' or False otherwise. By default, this checks the rectangular region on the screen that's described by the widget's pos (for position; x & y) and size (width & height), but you can override this behaviour in your own class."
+msgstr ""
+"しばしば、widgetがtouchを監視する画面の領域を制限することになるでしょう。"
+"実現するために、ウィジェットのcollide_point()メソッドを使用することができます。"
+"単にtouchの座標を通過するとTouchのTrueが、一方「watch」またはFalseの範囲内にある場合にはTrueを返します。"
+
+"デフォルトでは、画面上のwidgetの座標（X＆Y）とサイズ（幅＆高さ）に"
+"よって記述されている矩形領域をチェックしていますが、"
+"独自のクラスでこのビヘイビアをオーバーライドすることができます。"
+

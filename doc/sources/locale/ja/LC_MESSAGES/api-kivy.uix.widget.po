@@ -1,0 +1,805 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-13 08:22+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../sources/api-kivy.uix.widget.rst:3
+msgid "Widget class"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:2
+msgid "The :class:`Widget` class is the base class required for creating Widgets. This widget class was designed with a couple of principles in mind:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:5
+msgid "*Event Driven*"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:7
+msgid "Widget interaction is built on top of events that occur. If a property changes, the widget can respond to the change in the 'on_<propname>' callback. If nothing changes, nothing will be done. That's the main goal of the :class:`~kivy.properties.Property` class."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:12
+msgid "*Separation Of Concerns (the widget and its graphical representation)*"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:14
+msgid "Widgets don't have a `draw()` method. This is done on purpose: The idea is to allow you to create your own graphical representation outside the widget class. Obviously you can still use all the available properties to do that, so that your representation properly reflects the widget's current state. Every widget has its own :class:`~kivy.graphics.Canvas` that you can use to draw. This separation allows Kivy to run your application in a very efficient manner."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:23
+msgid "*Bounding Box / Collision*"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:25
+msgid "Often you want to know if a certain point is within the bounds of your widget. An example would be a button widget where you only want to trigger an action when the button itself is actually touched. For this, you can use the :meth:`~Widget.collide_point` method, which will return True if the point you pass to it is inside the axis-aligned bounding box defined by the widget's position and size. If a simple AABB is not sufficient, you can override the method to perform the collision checks with more complex shapes, e.g. a polygon. You can also check if a widget collides with another widget with :meth:`~Widget.collide_widget`."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:37
+msgid "We also have some default values and behaviors that you should be aware of:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:39
+msgid "A :class:`Widget` is not a :class:`~kivy.uix.layout.Layout`: it will not change the position or the size of its children. If you want control over positioning or sizing, use a :class:`~kivy.uix.layout.Layout`."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:43
+msgid "The default size of a widget is (100, 100). This is only changed if the parent is a :class:`~kivy.uix.layout.Layout`. For example, if you add a :class:`Label` inside a :class:`Button`, the label will not inherit the button's size or position because the button is not a *Layout*: it's just another *Widget*."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:49
+msgid "The default size_hint is (1, 1). If the parent is a :class:`Layout`, then the widget size will be the parent layout's size."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:52
+msgid ":meth:`~Widget.on_touch_down`, :meth:`~Widget.on_touch_move`, :meth:`~Widget.on_touch_up` don't do any sort of collisions. If you want to know if the touch is inside your widget, use :meth:`~Widget.collide_point`."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:57
+msgid "Using Properties"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:59
+msgid "When you read the documentation, all properties are described in the format::"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:63
+msgid "e.g."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:65
+msgid ":attr:`~kivy.uix.label.Label.text` is a :class:`~kivy.properties.StringProperty` and defaults to ''."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:68
+msgid "If you want to be notified when the pos attribute changes, i.e. when the widget moves, you can bind your own callback function like this::"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:77
+msgid "Read more about :doc:`/api-kivy.properties`."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:80
+msgid "Basic drawing"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:82
+msgid "Widgets support a range of drawing instructions that you can use to customize the look of your widgets and layouts. For example, to draw a background image for your widget, you can do the following:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:97
+msgid "To draw a background in kv:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:108
+msgid "These examples only scratch the surface. Please see the :mod:`kivy.graphics` documentation for more information."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:114
+msgid "Widget touch event bubbling"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:116
+msgid "When you catch touch events between multiple widgets, you often need to be aware of the order in which these events are propagated. In Kivy, events bubble up from the first child upwards through the other children. If a widget has children, the event is passed through its children before being passed on to the widget after it."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:122
+msgid "As the :meth:`~kivy.uix.widget.Widget.on_touch_up` method inserts widgets at index 0 by default, this means the event goes from the most recently added widget back to the first one added. Consider the following:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:133
+msgid "The label with text \"c\" gets the event first, \"b\" second and \"a\" last. You can reverse this order by manually specifying the index:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:143
+msgid "Now the order would be \"a\", \"b\" then \"c\". One thing to keep in mind when using kv is that declaring a widget uses the :meth:`~kivy.uix.widget.Widget.add_widget` method for insertion. Hence, using"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:157
+msgid "would result in the event order \"c\", \"b\" then \"a\" as \"c\" was actually the last added widget. It thus has index 0, \"b\" index 1 and \"a\" index 2. Effectively, the child order is the reverse of its listed order."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:161
+msgid "This ordering is the same for the :meth:`~kivy.uix.widget.Widget.on_touch_move` and :meth:`~kivy.uix.widget.Widget.on_touch_up` events."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:164
+msgid "In order to stop this event bubbling, a method can return `True`. This tells Kivy the event has been handled and the event propagation stops. For example:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:177
+msgid "This approach gives you good control over exactly how events are dispatched and managed. Sometimes, however, you may wish to let the event be completely propagated before taking action. You can use the :class:`~kivy.clock.Clock` to help you here:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:193
+msgid "Usage of :attr:`Widget.center`, :attr:`Widget.right`, and :attr:`Widget.top`"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:195
+msgid "A common mistake when using one of the computed properties such as :attr:`Widget.right` is to use it to make a widget follow its parent with a KV rule such as `right: self.parent.right`. Consider, for example:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:208
+msgid "The (mistaken) expectation is that this rule ensures that wid's right will always be whatever layout's right is - that is wid.right and layout.right will always be identical. In actual fact, this rule only says that \"whenever layout's `right` changes, wid's right will be set to that value\". The difference being that as long as `layout.right` doesn't change, `wid.right` could be anything, even a value that will make them different."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:215
+msgid "Specifically, for the KV code above, consider the following example::"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:223
+msgid "As can be seen, initially they are in sync, however, when we change `wid.x` they go out of sync because `layout.right` is not changed and the rule is not triggered."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget:227
+msgid "The proper way to make the widget follow its parent's right is to use :attr:`Widget.pos_hint`. If instead of `right: layout.right` we did `pos_hint: {'right': 1}`, then the widgets right will always be set to be at the parent's right at each layout update."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "ベースクラス: :class:`kivy.uix.widget.WidgetBase`"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget:1
+msgid "Widget class. See module documentation for more information."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget:4
+msgid "`on_touch_down`:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget:5
+msgid "Fired when a new touch event occurs"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget:6
+msgid "`on_touch_move`:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget:7
+msgid "Fired when an existing touch moves"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget:9
+msgid "`on_touch_up`:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget:9
+msgid "Fired when an existing touch disappears"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget:12
+msgid "Adding a `__del__` method to a class derived from Widget with Python prior to 3.4 will disable automatic garbage collection for instances of that class. This is because the Widget class creates reference cycles, thereby `preventing garbage collection <https://docs.python.org/2/library/gc.html#gc.garbage>`_."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget:18
+msgid "Everything related to event properties has been moved to the :class:`~kivy.event.EventDispatcher`. Event properties can now be used when contructing a simple class without subclassing :class:`Widget`."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget:23
+msgid "The constructor now accepts on_* arguments to automatically bind callbacks to properties or events, as in the Kv language."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.add_widget:1
+msgid "Add a new widget as a child of this widget."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.add_widget:4
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.remove_widget:5
+msgid "`widget`: :class:`Widget`"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.add_widget:5
+msgid "Widget to add to our list of children."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.add_widget:12
+msgid "`index`: int, defaults to 0"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.add_widget:7
+msgid "Index to insert the widget in the list. Notice that the default of 0 means the widget is inserted at the beginning of the list and will thus be drawn on top of other sibling widgets. For a full discussion of the index and widget hierarchy, please see the :doc:`Widgets Programming Guide <guide/widgets>`."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.add_widget:18
+msgid "`canvas`: str, defaults to None"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.add_widget:15
+msgid "Canvas to add widget's canvas to. Can be 'before', 'after' or None for the default canvas."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.canvas:1
+msgid "Canvas of the widget."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.canvas:3
+msgid "The canvas is a graphics object that contains all the drawing instructions for the graphical representation of the widget."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.canvas:6
+msgid "There are no general properties for the Widget class, such as background color, to keep the design simple and lean. Some derived classes, such as Button, do add such convenience properties but generally the developer is responsible for implementing the graphics representation for a custom widget from the ground up. See the derived widget classes for patterns to follow and extend."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.canvas:13
+msgid "See :class:`~kivy.graphics.Canvas` for more information about the usage."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.center:1
+msgid "Center position of the widget."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.center:3
+msgid ":attr:`center` is a :class:`~kivy.properties.ReferenceListProperty` of (:attr:`center_x`, :attr:`center_y`) properties."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.center_x:1
+msgid "X center position of the widget."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.center_x:3
+msgid ":attr:`center_x` is an :class:`~kivy.properties.AliasProperty` of (:attr:`x` + :attr:`width` / 2.)."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.center_y:1
+msgid "Y center position of the widget."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.center_y:3
+msgid ":attr:`center_y` is an :class:`~kivy.properties.AliasProperty` of (:attr:`y` + :attr:`height` / 2.)."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.children:1
+msgid "List of children of this widget."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.children:3
+msgid ":attr:`children` is a :class:`~kivy.properties.ListProperty` and defaults to an empty list."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.children:6
+msgid "Use :meth:`add_widget` and :meth:`remove_widget` for manipulating the children list. Don't manipulate the children list directly unless you know what you are doing."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.clear_widgets:1
+msgid "Remove all (or the specified) :attr:`~Widget.children` of this widget. If the 'children' argument is specified, it should be a list (or filtered list) of children of the current widget."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.clear_widgets:5
+msgid "The `children` argument can be used to specify the children you want to remove."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.cls:1
+msgid "Class of the widget, used for styling."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.collide_point:1
+msgid "Check if a point (x, y) is inside the widget's axis aligned bounding box."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.collide_point:5
+msgid "`x`: numeric"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.collide_point:6
+msgid "x position of the point (in parent coordinates)"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.collide_point:8
+msgid "`y`: numeric"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.collide_point:8
+msgid "y position of the point (in parent coordinates)"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.collide_point:11
+msgid "A bool. True if the point is inside the bounding box, False otherwise."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.collide_widget:1
+msgid "Check if another widget collides with this widget. This function performs an axis-aligned bounding box intersection test by default."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.collide_widget:6
+msgid "`wid`: :class:`Widget` class"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.collide_widget:6
+msgid "Widget to test collision with."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.collide_widget:9
+msgid "bool. True if the other widget collides with this widget, False otherwise."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.disabled:1
+msgid "Indicates whether this widget can interact with input or not."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.disabled:5
+msgid "Child Widgets, when added to a disabled widget, will be disabled automatically."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.disabled:7
+msgid "Disabling/enabling a parent disables/enables all of its children."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.disabled:12
+msgid ":attr:`disabled` is a :class:`~kivy.properties.BooleanProperty` and defaults to False."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.export_to_png:1
+msgid "Saves an image of the widget and its children in png format at the specified filename. Works by removing the widget canvas from its parent, rendering to an :class:`~kivy.graphics.fbo.Fbo`, and calling :meth:`~kivy.graphics.texture.Texture.save`."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.export_to_png:8
+msgid "The image includes only this widget and its children. If you want to include widgets elsewhere in the tree, you must call :meth:`~Widget.export_to_png` from their common parent, or use :meth:`~kivy.core.window.WindowBase.screenshot` to capture the whole window."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.export_to_png:16
+msgid "The image will be saved in png format, you should include the extension in your filename."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.get_parent_window:1
+msgid "Return the parent window."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.get_parent_window:4
+msgid "Instance of the parent window. Can be a :class:`~kivy.core.window.WindowBase` or :class:`Widget`."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.get_root_window:1
+msgid "Return the root window."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.get_root_window:4
+msgid "Instance of the root window. Can be a :class:`~kivy.core.window.WindowBase` or :class:`Widget`."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.get_window_matrix:1
+msgid "Calculate the transformation matrix to convert between window and widget coordinates."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.get_window_matrix:5
+msgid "`x`: float, defaults to 0"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.get_window_matrix:6
+msgid "Translates the matrix on the x axis."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.get_window_matrix:7
+msgid "`y`: float, defaults to 0"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.get_window_matrix:8
+msgid "Translates the matrix on the y axis."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.height:1
+msgid "Height of the widget."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.height:3
+msgid ":attr:`height` is a :class:`~kivy.properties.NumericProperty` and defaults to 100."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.height:7
+msgid "Keep in mind that the `height` property is subject to layout logic and that this has not yet happened at the time of the widget's `__init__` method."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.id:1
+msgid "Unique identifier of the widget in the tree."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.id:3
+msgid ":attr:`id` is a :class:`~kivy.properties.StringProperty` and defaults to None."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.id:8
+msgid "If the :attr:`id` is already used in the tree, an exception will be raised."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.ids:1
+msgid "This is a dictionary of ids defined in your kv language. This will only be populated if you use ids in your kv language code."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.ids:6
+msgid ":attr:`ids` is a :class:`~kivy.properties.DictProperty` and defaults to an empty dict {}."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.ids:9
+msgid "The :attr:`ids` are populated for each root level widget definition. For example:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.ids:36
+msgid "Then, in python:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.on_touch_down:1
+msgid "Receive a touch down event."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.on_touch_down:7
+msgid "`touch`: :class:`~kivy.input.motionevent.MotionEvent` class"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.on_touch_down:5
+msgid "Touch received. The touch is in parent coordinates. See :mod:`~kivy.uix.relativelayout` for a discussion on coordinate systems."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.on_touch_down:9
+msgid "bool If True, the dispatching of the touch event will stop. If False, the event will continue to be dispatched to the rest of the widget tree."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.on_touch_move:1
+msgid "Receive a touch move event. The touch is in parent coordinates."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.on_touch_move:3
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.on_touch_up:3
+msgid "See :meth:`on_touch_down` for more information."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.on_touch_up:1
+msgid "Receive a touch up event. The touch is in parent coordinates."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.opacity:1
+msgid "Opacity of the widget and all its children."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.opacity:5
+msgid "The opacity attribute controls the opacity of the widget and its children. Be careful, it's a cumulative attribute: the value is multiplied by the current global opacity and the result is applied to the current context color."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.opacity:10
+msgid "For example, if the parent has an opacity of 0.5 and a child has an opacity of 0.2, the real opacity of the child will be 0.5 * 0.2 = 0.1."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.opacity:13
+msgid "Then, the opacity is applied by the shader as:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.opacity:19
+msgid ":attr:`opacity` is a :class:`~kivy.properties.NumericProperty` and defaults to 1.0."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.parent:1
+msgid "Parent of this widget. The parent of a widget is set when the widget is added to another widget and unset when the widget is removed from its parent."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.parent:5
+msgid ":attr:`parent` is an :class:`~kivy.properties.ObjectProperty` and defaults to None."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.pos:1
+msgid "Position of the widget."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.pos:3
+msgid ":attr:`pos` is a :class:`~kivy.properties.ReferenceListProperty` of (:attr:`x`, :attr:`y`) properties."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.pos_hint:1
+msgid "Position hint. This property allows you to set the position of the widget inside its parent layout, in percent (similar to size_hint)."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.pos_hint:5
+msgid "For example, if you want to set the top of the widget to be at 90% height of its parent layout, you can write::"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.pos_hint:10
+msgid "The keys 'x', 'right' and 'center_x' will use the parent width. The keys 'y', 'top' and 'center_y' will use the parent height."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.pos_hint:13
+msgid "See :doc:`api-kivy.uix.floatlayout` for further reference."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.pos_hint:16
+msgid ":attr:`pos_hint` is not used by all layouts. Check the documentation of the layout in question to see if it supports pos_hint."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.pos_hint:19
+msgid ":attr:`pos_hint` is an :class:`~kivy.properties.ObjectProperty` containing a dict."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.proxy_ref:1
+msgid "Return a proxy reference to the widget, i.e. without creating a reference to the widget. See `weakref.proxy <http://docs.python.org/2/library/weakref.html?highlight        =proxy#weakref.proxy>`_ for more information."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.remove_widget:1
+msgid "Remove a widget from the children of this widget."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.remove_widget:5
+msgid "Widget to remove from our children list."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.right:1
+msgid "Right position of the widget."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.right:3
+msgid ":attr:`right` is an :class:`~kivy.properties.AliasProperty` of (:attr:`x` + :attr:`width`)."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size:1
+msgid "Size of the widget."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size:3
+msgid ":attr:`size` is a :class:`~kivy.properties.ReferenceListProperty` of (:attr:`width`, :attr:`height`) properties."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint:1
+msgid "Size hint."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint:3
+msgid ":attr:`size_hint` is a :class:`~kivy.properties.ReferenceListProperty` of (:attr:`size_hint_x`, :attr:`size_hint_y`) properties."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint:6
+msgid "See :attr:`size_hint_x` for more information."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_max:1
+msgid "Maximum size when using :attr:`size_hint`."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_max:3
+msgid ":attr:`size_hint_max` is a :class:`~kivy.properties.ReferenceListProperty` of (:attr:`size_hint_max_x`, :attr:`size_hint_max_y`) properties."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_max_x:1
+msgid "When not None, the x-direction maximum size (in pixels, like :attr:`width`) when :attr:`size_hint_x` is also not None."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_max_x:4
+msgid "Similar to :attr:`size_hint_min_x`, except that it sets the maximum width."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_max_x:6
+msgid ":attr:`size_hint_max_x` is a :class:`~kivy.properties.NumericProperty` and defaults to None."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_max_y:1
+msgid "When not None, the y-direction maximum size (in pixels, like :attr:`height`) when :attr:`size_hint_y` is also not None."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_max_y:4
+msgid "Similar to :attr:`size_hint_min_y`, except that it sets the maximum height."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_max_y:6
+msgid ":attr:`size_hint_max_y` is a :class:`~kivy.properties.NumericProperty` and defaults to None."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_min:1
+msgid "Minimum size when using :attr:`size_hint`."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_min:3
+msgid ":attr:`size_hint_min` is a :class:`~kivy.properties.ReferenceListProperty` of (:attr:`size_hint_min_x`, :attr:`size_hint_min_y`) properties."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_min_x:1
+msgid "When not None, the x-direction minimum size (in pixels, like :attr:`width`) when :attr:`size_hint_x` is also not None."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_min_x:4
+msgid "When :attr:`size_hint_x` is not None, it is the minimum width that the widget will be set due to the :attr:`size_hint_x`. I.e. when a smaller size would be set, :attr:`size_hint_min_x` is the value used instead for the widget width. When None, or when :attr:`size_hint_x` is None, :attr:`size_hint_min_x` doesn't do anything."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_min_x:10
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_min_y:10
+msgid "Only the :class:`~kivy.uix.layout.Layout` and :class:`~kivy.core.window.Window` classes make use of the hint."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_min_x:13
+msgid ":attr:`size_hint_min_x` is a :class:`~kivy.properties.NumericProperty` and defaults to None."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_min_y:1
+msgid "When not None, the y-direction minimum size (in pixels, like :attr:`height`) when :attr:`size_hint_y` is also not None."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_min_y:4
+msgid "When :attr:`size_hint_y` is not None, it is the minimum height that the widget will be set due to the :attr:`size_hint_y`. I.e. when a smaller size would be set, :attr:`size_hint_min_y` is the value used instead for the widget height. When None, or when :attr:`size_hint_y` is None, :attr:`size_hint_min_y` doesn't do anything."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_min_y:13
+msgid ":attr:`size_hint_min_y` is a :class:`~kivy.properties.NumericProperty` and defaults to None."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_x:1
+msgid "x size hint. Represents how much space the widget should use in the direction of the x axis relative to its parent's width. Only the :class:`~kivy.uix.layout.Layout` and :class:`~kivy.core.window.Window` classes make use of the hint."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_x:6
+msgid "The size_hint is used by layouts for two purposes:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_x:8
+msgid "When the layout considers widgets on their own rather than in relation to its other children, the size_hint_x is a direct proportion of the parent width, normally between 0.0 and 1.0. For instance, a widget with ``size_hint_x=0.5`` in a vertical BoxLayout will take up half the BoxLayout's width, or a widget in a FloatLayout with ``size_hint_x=0.2`` will take up 20% of the FloatLayout width. If the size_hint is greater than 1, the widget will be wider than the parent."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_x:16
+msgid "When multiple widgets can share a row of a layout, such as in a horizontal BoxLayout, their widths will be their size_hint_x as a fraction of the sum of widget size_hints. For instance, if the size_hint_xs are (0.5, 1.0, 0.5), the first widget will have a width of 25% of the parent width."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_x:22
+msgid ":attr:`size_hint_x` is a :class:`~kivy.properties.NumericProperty` and defaults to 1."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_y:1
+msgid "y size hint."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_y:3
+msgid ":attr:`size_hint_y` is a :class:`~kivy.properties.NumericProperty` and defaults to 1."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.size_hint_y:6
+msgid "See :attr:`size_hint_x` for more information, but with widths and heights swapped."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.to_local:1
+msgid "Transform parent coordinates to local coordinates. See :mod:`~kivy.uix.relativelayout` for details on the coordinate systems."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.to_local:6
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.to_parent:6
+msgid "`relative`: bool, defaults to False"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.to_local:6
+msgid "Change to True if you want to translate coordinates to relative widget coordinates."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.to_parent:1
+msgid "Transform local coordinates to parent coordinates. See :mod:`~kivy.uix.relativelayout` for details on the coordinate systems."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.to_parent:6
+msgid "Change to True if you want to translate relative positions from a widget to its parent coordinates."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.to_widget:1
+msgid "Convert the given coordinate from window to local widget coordinates. See :mod:`~kivy.uix.relativelayout` for details on the coordinate systems."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.to_window:1
+msgid "Transform local coordinates to window coordinates. See :mod:`~kivy.uix.relativelayout` for details on the coordinate systems."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.top:1
+msgid "Top position of the widget."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.top:3
+msgid ":attr:`top` is an :class:`~kivy.properties.AliasProperty` of (:attr:`y` + :attr:`height`)."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.walk:1
+msgid "Iterator that walks the widget tree starting with this widget and goes forward returning widgets in the order in which layouts display them."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.walk:7
+msgid "`restrict`: bool, defaults to False"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.walk:7
+msgid "If True, it will only iterate through the widget and its children (or children of its children etc.). Defaults to False."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.walk:13
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.walk_reverse:13
+msgid "`loopback`: bool, defaults to False"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.walk:10
+msgid "If True, when the last widget in the tree is reached, it'll loop back to the uppermost root and start walking until we hit this widget again. Naturally, it can only loop back when `restrict` is False. Defaults to False."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.walk:15
+msgid "A generator that walks the tree, returning widgets in the forward layout order."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.walk:19
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.walk_reverse:19
+msgid "For example, given a tree with the following structure:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.walk:31
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.walk_reverse:31
+msgid "walking this tree:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.walk_reverse:1
+msgid "Iterator that walks the widget tree backwards starting with the widget before this, and going backwards returning widgets in the reverse order in which layouts display them."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.walk_reverse:5
+msgid "This walks in the opposite direction of :meth:`walk`, so a list of the tree generated with :meth:`walk` will be in reverse order compared to the list generated with this, provided `loopback` is True."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.walk_reverse:11
+msgid "If True, when the uppermost root in the tree is reached, it'll loop back to the last widget and start walking back until after we hit widget again. Defaults to False."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.walk_reverse:15
+msgid "A generator that walks the tree, returning widgets in the reverse layout order."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.width:1
+msgid "Width of the widget."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.width:3
+msgid ":attr:`width` is a :class:`~kivy.properties.NumericProperty` and defaults to 100."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.width:7
+msgid "Keep in mind that the `width` property is subject to layout logic and that this has not yet happened at the time of the widget's `__init__` method."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.x:1
+msgid "X position of the widget."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.x:3
+msgid ":attr:`x` is a :class:`~kivy.properties.NumericProperty` and defaults to 0."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.y:1
+msgid "Y position of the widget."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.Widget.y:3
+msgid ":attr:`y` is a :class:`~kivy.properties.NumericProperty` and defaults to 0."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "ベースクラス: :class:`builtins.Exception`"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/widget.py:docstring of kivy.uix.widget.WidgetException:1
+msgid "Fired when the widget gets an exception."
+msgstr ""
+

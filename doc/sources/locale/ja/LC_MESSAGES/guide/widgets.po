@@ -1,0 +1,376 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-13 08:22+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../sources/guide/widgets.rst:4
+msgid "Widgets"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:43
+msgid "Introduction to Widget"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:45
+msgid "A |Widget| is the base building block of GUI interfaces in Kivy. It provides a |Canvas| that can be used to draw on screen. It receives events and reacts to them. For a in-depth explanation about the |Widget| class, look at the module documentation."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:51
+msgid "Manipulating the Widget tree"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:53
+msgid "Widgets in Kivy are organized in trees. Your application has a `root widget`, which usually has |children| that can have |children| of their own. Children of a widget are represented as the |children| attribute, a Kivy |ListProperty|."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:58
+msgid "The widget tree can be manipulated with the following methods:"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:60
+msgid ":meth:`~kivy.uix.widget.Widget.add_widget`: add a widget as a child"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:61
+msgid ":meth:`~kivy.uix.widget.Widget.remove_widget`: remove a widget from the children list"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:63
+msgid ":meth:`~kivy.uix.widget.Widget.clear_widgets`: remove all children from a widget"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:66
+msgid "For example, if you want to add a button inside a BoxLayout, you can do::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:72
+msgid "The button is added to layout: the button's parent property will be set to layout; the layout will have the button added to its children list. To remove the button from the layout::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:78
+msgid "With removal, the button's parent property will be set to None, and the layout will have button removed from its children list."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:81
+msgid "If you want to clear all the children inside a widget, use :meth:`~kivy.uix.widget.Widget.clear_widgets` method::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:88
+msgid "Never manipulate the children list yourself, unless you really know what you are doing. The widget tree is associated with a graphic tree. For example, if you add a widget into the children list without adding its canvas to the graphics tree, the widget will be a child, yes, but nothing will be drawn on the screen. Moreover, you might have issues on further calls of add_widget, remove_widget and clear_widgets."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:96
+msgid "Traversing the Tree"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:98
+msgid "The Widget class instance's :attr:`~kivy.uix.widget.Widget.children` list property contains all the children. You can easily traverse the tree by doing::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:106
+msgid "However, this must be used carefully. If you intend to modify the children list with one of the methods shown in the previous section, you must use a copy of the list like this::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:116
+msgid "Widgets don't influence the size/pos of their children by default. The |pos| attribute is the absolute position in screen co-ordinates (unless, you use the |RelativeLayout|. More on that later) and |size|, is an absolute size."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:121
+msgid "Widgets Z Index"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:123
+msgid "The order of widget drawing is based on the widget's position in the widget tree. The :attr:`~kivy.uix.widget.Widget.add_widget` method takes an `index` parameter which can be used to specify it's position in the widget tree::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:130
+msgid "The lower indexed widgets will be drawn above those with a higher index. Keep in mind that the default for `index` is 0, so widgets added later are drawn on top of the others unless specified otherwise."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:135
+msgid "Organize with Layouts"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:137
+msgid "|Layout| is a special kind of widget that controls the size and position of its children. There are different kinds of layouts, allowing for different automatic organization of their children. Layouts use |size_hint| and |pos_hint| properties to determine the |size| and |pos| of their |children|."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:142
+msgid "**BoxLayout**: Arranges widgets in an adjacent manner (either vertically or horizontally) manner, to fill all the space. The size_hint property of children can be used to change proportions allowed to each child, or set fixed size for some of them."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:164
+msgid "**GridLayout**: Arranges widgets in a grid. You must specify at least one dimension of the grid so kivy can compute the size of the elements and how to arrange them."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:168
+msgid "**StackLayout**: Arranges widgets adjacent to one another, but with a set size in one of the dimensions, without trying to make them fit within the entire space. This is useful to display children of the same predefined size."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:173
+msgid "**AnchorLayout**: A simple layout only caring about children positions. It allows putting the children at a position relative to a border of the layout. `size_hint` is not honored."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:178
+msgid "**FloatLayout**: Allows placing children with arbitrary locations and size, either absolute or relative to the layout size. Default size_hint (1, 1) will make every child the same size as the whole layout, so you probably want to change this value if you have more than one child. You can set size_hint to (None, None) to use absolute size with `size`. This widget honors `pos_hint` also, which as a dict setting position relative to layout position."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:186
+msgid "**RelativeLayout**: Behaves just like FloatLayout, except children positions are relative to layout position, not the screen."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:190
+msgid "Examine the documentation of the individual layouts for a more in-depth understanding."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:193
+msgid "|size_hint| and |pos_hint|:"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:195
+msgid "|FloatLayout|"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:196
+msgid "|BoxLayout|"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:197
+msgid "|GridLayout|"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:198
+msgid "|StackLayout|"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:199
+msgid "|RelativeLayout|"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:200
+msgid "|AnchorLayout|"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:202
+msgid "|size_hint| is a |ReferenceListProperty| of |size_hint_x| and |size_hint_y|. It accepts values from `0` to `1` or `None` and defaults to `(1, 1)`. This signifies that if the widget is in a layout, the layout will allocate it as much place as possible in both directions (relative to the layouts size)."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:208
+msgid "Setting |size_hint| to (0.5, 0.8), for example, will make the widget 50% the width and 80% the height of available size for the |widget| inside a |layout|."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:211
+msgid "Consider the following example:"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:222
+msgid "Now load kivy catalog by typing the following, but replacing $KIVYDIR with the directory of your installation (discoverable via :py:mod:`os.path.dirname(kivy.__file__)`)::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:229
+msgid "A new window will appear. Click in the area below the 'Welcome' |Spinner| on the left and replace the text there with your kv code from above."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:234
+msgid "As you can see from the image above, the `Button` takes up 100% of the layout |size|."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:237
+msgid "Changing the |size_hint_x|/|size_hint_y| to .5 will make the |widget| take 50% of the |layout| |width|/|height|."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:242
+msgid "You can see here that, although we specify |size_hint_x| and |size_hint_y| both to be .5, only |size_hint_y| seems to be honored. That is because |BoxLayout| controls the |size_hint_y| when |orientation| is `vertical` and |size_hint_x| when |orientation| is 'horizontal'. The controlled dimension's size is calculated depending upon the total no. of |children| in the |BoxLayout|. In this example, one child has |size_hint_y| controlled (.5/.5 = 1). Thus, the widget takes 100% of the parent layout's height."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:250
+msgid "Let's add another |Button| to the |layout| and see what happens."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:254
+msgid "|BoxLayout| by its very nature divides the available space between its |children| equally. In our example, the proportion is 50-50, because we have two |children|. Let's use size_hint on one of the children and see the results."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:260
+msgid "If a child specifies |size_hint|, this specifies how much space the |Widget| will take out of the |size| given to it by the |BoxLayout|. In our example, the first |Button| specifies .5 for |size_hint_x|. The space for the widget is calculated like so::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:270
+msgid "The rest of the BoxLayout's |width| is divided among the rest of the |children|. In our example, this means the second |Button| takes up 66.66% of the |layout| |width|."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:274
+msgid "Experiment with |size_hint| to get comfortable with it."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:276
+msgid "If you want to control the absolute |size| of a |Widget|, you can set |size_hint_x|/|size_hint_y| or both to `None` so that the widget's |width| and or |height| attributes will be honored."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:280
+msgid "|pos_hint| is a dict, which defaults to empty. As for |size_hint|, layouts honor |pos_hint| differently, but generally you can add values to any of the |pos| attributes (|x|, |y|, |right|, |top|, |center_x|, |center_y|) to have the |Widget| positioned relative to its |parent|."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:285
+msgid "Let's experiment with the following code in kivycatalog to understand |pos_hint| visually:"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:305
+msgid "This gives us:"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:309
+msgid "As with |size_hint|, you should experiment with |pos_hint| to understand the effect it has on the widget positions."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:315
+msgid "Adding a Background to a Layout"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:317
+msgid "One of the frequently asked questions about layouts is:::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:321
+msgid "Layouts by their nature have no visual representation: they have no canvas instructions by default. However you can add canvas instructions to a layout instance easily, as with adding a colored background:"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:325
+msgid "In Python::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:334
+msgid "Unfortunately, this will only draw a rectangle at the layout's initial position and size. To make sure the rect is drawn inside the layout, when the layout size/pos changes, we need to listen to any changes and update the rectangles size and pos. We can do that as follows::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:351
+msgid "In kv:"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:364
+msgid "The kv declaration sets an implicit binding: the last two kv lines ensure that the |pos| and |size| values of the rectangle will update when the |pos| of the |FloatLayout| changes."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:368
+msgid "Now we put the snippets above into the shell of Kivy App."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:370
+msgid "Pure Python way::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:410
+#: ../../sources/guide/widgets.rst:504
+msgid "Using the kv Language::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:439
+#: ../../sources/guide/widgets.rst:551
+msgid "Both of the Apps should look something like this:"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:444
+msgid "Add a color to the background of a **custom layouts rule/class**"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:446
+msgid "The way we add background to the layout's instance can quickly become cumbersome if we need to use multiple layouts. To help with this, you can subclass the Layout and create your own layout that adds a background."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:450
+msgid "Using Python::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:555
+msgid "Defining the background in the custom layout class, assures that it will be used in every instance of CustomLayout."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:558
+msgid "Now, to add an image or color to the background of a built-in Kivy layout, **globally**, we need to override the kv rule for the layout in question. Consider GridLayout::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:571
+msgid "Then, when we put this snippet into a Kivy app::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:621
+msgid "The result should look something like this:"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:625
+msgid "As we are overriding the rule of the class GridLayout, any use of this class in our app will display that image."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:628
+msgid "How about an **Animated background**?"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:630
+msgid "You can set the drawing instructions like Rectangle/BorderImage/Ellipse/... to use a particular texture::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:636
+msgid "We use this to display an animated background::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:698
+msgid "To try to understand what is happening here, start from line 13::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:702
+msgid "This specifies that the `texture` property of `BorderImage` will be updated whenever the `texture` property of `background_image` updates. We define the background_image property at line 40::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:708
+msgid "This sets up `background_image` as an |ObjectProperty| in which we add an |Image| widget. An image widget has a `texture` property; where you see `self.background_image.texture`, this sets a reference, `texture`, to this property. The |Image| widget supports animation: the texture of the image is updated whenever the animation changes, and the texture of BorderImage instruction is updated in the process."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:715
+msgid "You can also just blit custom data to the texture. For details, look at the documentation of :class:`~kivy.graphics.texture.Texture`."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:719
+msgid "Nesting Layouts"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:721
+msgid "Yes! It is quite fun to see how extensible the process can be."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:725
+msgid "Size and position metrics"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:739
+msgid "Kivy's default unit for length is the pixel, all sizes and positions are expressed in it by default. You can express them in other units, which is useful to achieve better consistency across devices (they get converted to the size in pixels automatically)."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:744
+msgid "Available units are |pt|, |mm|, |cm|, |in|, |dp| and |sp|. You can learn about their usage in the |metrics| documentation."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:747
+msgid "You can also experiment with the |screen| usage to simulate various devices screens for your application."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:751
+msgid "Screen Separation with Screen Manager"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:753
+msgid "If your application is composed of various screens, you likely want an easy way to navigate from one |Screen| to another. Fortunately, there is the |ScreenManager| class, that allows you to define screens separately, and to set the |Transitions| from one to another."
+msgstr ""
+

@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-13 08:22+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../sources/contribute-unittest.rst:2
+msgid "Unit tests"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:4
+msgid "Tests are located in the kivy/tests folder. If you find a bug in Kivy, a good thing to do can be to write a minimal case showing the issue and to ask core devs if the behaviour shown is intended or a real bug. If you write your code as a `unittest <http://docs.python.org/2/library/unittest.html>`_ , it will prevent the bug from coming back unnoticed in the future, and will make Kivy a better, stronger project. Writing a unittest may be a really good way to get familiar with Kivy while doing something useful."
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:12
+msgid "Unit tests are separated into two cases:"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:14
+msgid "Non graphical unit tests: these are standard unit tests that can run in a console"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:16
+msgid "Graphical unit tests: these need a GL context, and work via image comparison"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:18
+msgid "To be able to run unit tests, you need to install nose (http://code.google.com/p/python-nose/), and coverage (http://nedbatchelder.com/code/coverage/). You can use easy_install for that::"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:24
+msgid "Then, in the kivy directory::"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:29
+msgid "How it works"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:31
+msgid "All the tests are located in `kivy/tests`, and the filename starts with `test_<name>.py`. Nose will automatically gather all the files and classes inside this folder, and use them to generate test cases."
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:35
+msgid "To write a test, create a file that respects the previous naming, then start with this template::"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:51
+msgid "Replace `XXX` with an appropriate name that covers your tests cases, then replace 'YYY' with the name of your test. If you have any doubts, check how the other tests have been written."
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:55
+msgid "Then, to execute them, just run::"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:59
+msgid "If you want to execute that file only, you can run::"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:65
+msgid "GL unit tests"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:67
+msgid "GL unit test are more difficult. You must know that even if OpenGL is a standard, the output/rendering is not. It depends on your GPU and the driver used. For these tests, the goal is to save the output of the rendering at frame X, and compare it to a reference image."
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:72
+msgid "Currently, images are generated at 320x240 pixels, in *png* format."
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:76
+msgid "Currently, image comparison is done per-pixel. This means the reference image that you generate will only be correct for your GPU/driver. If somebody can implement image comparison with \"delta\" support, patches are welcome :)"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:81
+msgid "To execute GL unit tests, you need to create a directory::"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:86
+msgid "The results directory will contain all the reference images and the generated images. After the first execution, if the results directory is empty, no comparison will be done. It will use the generated images as reference. After the second execution, all the images will be compared to the reference images."
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:92
+msgid "A html file is available to show the comparison before/after the test, and a snippet of the associated unit test. It will be generated at:"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:95
+msgid "kivy/tests/build/index.html"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:99
+msgid "The build directory is cleaned after each call to `make test`. If you don't want that, just use nosetests command."
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:103
+msgid "Writing GL Unit tests"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:105
+msgid "The idea is to create a root widget, as you would do in :meth:`~kivy.app.App.build`, or in :func:`kivy.base.runTouchApp`. You'll give that root widget to a rendering function which will capture the output in X frames."
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:110
+msgid "Here is an example::"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:138
+msgid "Each call to `self.render` (or `r` in our example) will generate an image named as follows::"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:143
+msgid "`r-call-count` represents the number of times that `self.render` is called inside the test function."
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:146
+msgid "The reference images are named::"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:150
+msgid "You can easily replace the reference image with a new one if you wish."
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:154
+msgid "Coverage reports"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:156
+msgid "Coverage is based on the execution of previous tests. Statistics on code coverage are automatically calculated during execution. You can generate an html report of the coverage with the command::"
+msgstr ""
+
+#: ../../sources/contribute-unittest.rst:162
+msgid "Then, open `kivy/htmlcov/index.html` with your favorite web browser."
+msgstr ""
+

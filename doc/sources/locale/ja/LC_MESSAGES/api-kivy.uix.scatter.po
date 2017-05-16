@@ -1,0 +1,319 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-13 08:22+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../sources/api-kivy.uix.scatter.rst:3
+msgid "Scatter"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:5
+msgid ":class:`Scatter` is used to build interactive widgets that can be translated, rotated and scaled with two or more fingers on a multitouch system."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:8
+msgid "Scatter has its own matrix transformation: the modelview matrix is changed before the children are drawn and the previous matrix is restored when the drawing is finished. That makes it possible to perform rotation, scaling and translation over the entire children tree without changing any widget properties. That specific behavior makes the scatter unique, but there are some advantages / constraints that you should consider:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:15
+msgid "The children are positioned relative to the scatter similarly to a :mod:`~kivy.uix.relativelayout.RelativeLayout`. So when dragging the scatter, the position of the children don't change, only the position of the scatter does."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:19
+msgid "The scatter size has no impact on the size of it's children."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:20
+msgid "If you want to resize the scatter, use scale, not size (read #2). Scale transforms both the scatter and its children, but does not change size."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:22
+msgid "The scatter is not a layout. You must manage the size of the children yourself."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:25
+msgid "For touch events, the scatter converts from the parent matrix to the scatter matrix automatically in on_touch_down/move/up events. If you are doing things manually, you will need to use :meth:`~kivy.uix.widget.Widget.to_parent` and :meth:`~kivy.uix.widget.Widget.to_local`."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:31
+msgid "Usage"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:33
+msgid "By default, the Scatter does not have a graphical representation: it is a container only. The idea is to combine the Scatter with another widget, for example an :class:`~kivy.uix.image.Image`::"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:42
+msgid "Control Interactions"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:44
+msgid "By default, all interactions are enabled. You can selectively disable them using the do_rotation, do_translation and do_scale properties."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:47
+msgid "Disable rotation::"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:51
+msgid "Allow only translation::"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:55
+msgid "Allow only translation on x axis::"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:62
+msgid "Automatic Bring to Front"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:64
+msgid "If the :attr:`Scatter.auto_bring_to_front` property is True, the scatter widget will be removed and re-added to the parent when it is touched (brought to front, above all other widgets in the parent). This is useful when you are manipulating several scatter widgets and don't want the active one to be partially hidden."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:71
+msgid "Scale Limitation"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:73
+msgid "We are using a 32-bit matrix in double representation. That means we have a limit for scaling. You cannot do infinite scaling down/up with our implementation. Generally, you don't hit the minimum scale (because you don't see it on the screen), but the maximum scale is 9.99506983235e+19 (2^66)."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:78
+msgid "You can also limit the minimum and maximum scale allowed::"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:83
+msgid "Behavior"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter:85
+msgid "If no control interactions are enabled, then the touch handler will never return True."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "ベースクラス: :class:`kivy.uix.widget.Widget`"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter:1
+msgid "Scatter class. See module documentation for more information."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter:5
+msgid "`on_transform_with_touch`:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter:5
+msgid "Fired when the scatter has been transformed by user touch or multitouch, such as panning or zooming."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter:8
+msgid "`on_bring_to_front`:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter:8
+msgid "Fired when the scatter is brought to the front."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter:10
+msgid "Event `on_bring_to_front` added."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter:13
+msgid "Event `on_transform_with_touch` added."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.apply_transform:1
+msgid "Transforms the scatter by applying the \"trans\" transformation matrix (on top of its current transformation state). The resultant matrix can be found in the :attr:`~Scatter.transform` property."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.apply_transform:6
+msgid "`trans`: :class:`~kivy.graphics.transformation.Matrix`."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.apply_transform:7
+msgid "Transformation matix to be applied to the scatter widget."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.apply_transform:9
+msgid "`anchor`: tuple, defaults to (0, 0)."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.apply_transform:9
+msgid "The point to use as the origin of the transformation (uses local widget space)."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.apply_transform:13
+msgid "`post_multiply`: bool, defaults to False."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.apply_transform:12
+msgid "If True, the transform matrix is post multiplied (as if applied before the current transform)."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.apply_transform:15
+msgid "Usage example::"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.auto_bring_to_front:1
+msgid "If True, the widget will be automatically pushed on the top of parent widget list for drawing."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.auto_bring_to_front:4
+msgid ":attr:`auto_bring_to_front` is a :class:`~kivy.properties.BooleanProperty` and defaults to True."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.bbox:1
+msgid "Bounding box of the widget in parent space::"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.bbox:6
+msgid ":attr:`bbox` is an :class:`~kivy.properties.AliasProperty`."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.do_collide_after_children:1
+msgid "If True, the collision detection for limiting the touch inside the scatter will be done after dispaching the touch to the children. You can put children outside the bounding box of the scatter and still be able to touch them."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.do_rotation:1
+msgid "Allow rotation."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.do_rotation:3
+msgid ":attr:`do_rotation` is a :class:`~kivy.properties.BooleanProperty` and defaults to True."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.do_scale:1
+msgid "Allow scaling."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.do_scale:3
+msgid ":attr:`do_scale` is a :class:`~kivy.properties.BooleanProperty` and defaults to True."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.do_translation:1
+msgid "Allow translation on the X or Y axis."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.do_translation:3
+msgid ":attr:`do_translation` is an :class:`~kivy.properties.AliasProperty` of (:attr:`do_translation_x` + :attr:`do_translation_y`)"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.do_translation_x:1
+msgid "Allow translation on the X axis."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.do_translation_x:3
+msgid ":attr:`do_translation_x` is a :class:`~kivy.properties.BooleanProperty` and defaults to True."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.do_translation_y:1
+msgid "Allow translation on Y axis."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.do_translation_y:3
+msgid ":attr:`do_translation_y` is a :class:`~kivy.properties.BooleanProperty` and defaults to True."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.on_bring_to_front:1
+msgid "Called when a touch event causes the scatter to be brought to the front of the parent (only if :attr:`auto_bring_to_front` is True)"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.on_bring_to_front:6
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.on_transform_with_touch:8
+msgid "`touch`:"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.on_bring_to_front:6
+msgid "The touch object which brought the scatter to front."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.on_transform_with_touch:1
+msgid "Called when a touch event has transformed the scatter widget. By default this does nothing, but can be overriden by derived classes that need to react to transformations caused by user input."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.on_transform_with_touch:8
+msgid "The touch object which triggered the transformation."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.rotation:1
+msgid "Rotation value of the scatter."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.rotation:3
+msgid ":attr:`rotation` is an :class:`~kivy.properties.AliasProperty` and defaults to 0.0."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.scale:1
+msgid "Scale value of the scatter."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.scale:3
+msgid ":attr:`scale` is an :class:`~kivy.properties.AliasProperty` and defaults to 1.0."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.scale_max:1
+msgid "Maximum scaling factor allowed."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.scale_max:3
+msgid ":attr:`scale_max` is a :class:`~kivy.properties.NumericProperty` and defaults to 1e20."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.scale_min:1
+msgid "Minimum scaling factor allowed."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.scale_min:3
+msgid ":attr:`scale_min` is a :class:`~kivy.properties.NumericProperty` and defaults to 0.01."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.transform:1
+msgid "Transformation matrix."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.transform:3
+msgid ":attr:`transform` is an :class:`~kivy.properties.ObjectProperty` and defaults to the identity matrix."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.transform:8
+msgid "This matrix reflects the current state of the transformation matrix but setting it directly will erase previously applied transformations. To apply a transformation considering context, please use the :attr:`~Scatter.apply_transform` method."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.transform_inv:1
+msgid "Inverse of the transformation matrix."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.transform_inv:3
+msgid ":attr:`transform_inv` is an :class:`~kivy.properties.ObjectProperty` and defaults to the identity matrix."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.translation_touches:1
+msgid "Determine whether translation was triggered by a single or multiple touches. This only has effect when :attr:`do_translation` = True."
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.Scatter.translation_touches:4
+msgid ":attr:`translation_touches` is a :class:`~kivy.properties.NumericProperty` and defaults to 1."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "ベースクラス: :class:`kivy.uix.scatter.Scatter`"
+msgstr ""
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/uix/scatter.py:docstring of kivy.uix.scatter.ScatterPlane:1
+msgid "This is essentially an unbounded Scatter widget. It's a convenience class to make it easier to handle infinite planes."
+msgstr ""
+
