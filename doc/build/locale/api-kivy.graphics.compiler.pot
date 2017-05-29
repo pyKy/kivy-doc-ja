@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-30 06:27+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../sources/api-kivy.graphics.compiler.rst:3
+msgid "Graphics compiler"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.compiler:2
+msgid "Before rendering an :class:`~kivy.graphics.instructions.InstructionGroup`, we compile the group in order to reduce the number of instructions executed at rendering time."
+msgstr ""
+
+#: ../../docstring of kivy.graphics.compiler:7
+msgid "Reducing the context instructions"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.compiler:9
+msgid "Imagine that you have a scheme like this::"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.compiler:18
+msgid "The real instructions seen by the graphics canvas would be::"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.compiler:30
+msgid "Only the first :class:`~kivy.graphics.context_instructions.Color` and :class:`~kivy.graphics.context_instructions.BindTexture` are useful and really change the context. We can reduce them to::"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.compiler:40
+msgid "This is what the compiler does in the first place, by flagging all the unused instruction with GI_IGNORE flag. As soon as a Color content changes, the whole InstructionGroup will be recompiled and a previously unused Color might be used for the next compilation."
+msgstr ""
+
+#: ../../docstring of kivy.graphics.compiler:46
+msgid "Note to any Kivy contributor / internal developer:"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.compiler:48
+msgid "All context instructions are checked to see if they change anything in the cache."
+msgstr ""
+
+#: ../../docstring of kivy.graphics.compiler:50
+msgid "We must ensure that a context instruction is needed for our current Canvas."
+msgstr ""
+
+#: ../../docstring of kivy.graphics.compiler:51
+msgid "We must ensure that we don't depend of any other canvas."
+msgstr ""
+
+#: ../../docstring of kivy.graphics.compiler:52
+msgid "We must reset our cache if one of our children is another instruction group because we don't know whether it might do weird things or not."
+msgstr ""
+

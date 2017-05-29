@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="twitter:site" content="@kivyframework">
     
-    <title>Input management &mdash; Kivy 1.10.0 ドキュメント</title>
+    <title>Input management (翻訳済み) &mdash; Kivy 1.10.0 ドキュメント</title>
     <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../_static/fresh.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -65,28 +65,28 @@
                 <input type="text" class="text" name="q" />
             </form>
           <!--
-          <h3><a href="../index.html">Input management</a></h3>
+          <h3><a href="../index.html">Input management (翻訳済み)</a></h3>
           <ul>
-<li><a class="reference internal" href="#">Input management</a><ul>
-<li><a class="reference internal" href="#input-architecture">Input architecture</a></li>
-<li><a class="reference internal" href="#motion-event-profiles">Motion event profiles</a></li>
-<li><a class="reference internal" href="#touch-events">Touch events</a><ul>
-<li><a class="reference internal" href="#touch-event-basics">Touch event basics</a></li>
-<li><a class="reference internal" href="#coordinates">Coordinates</a></li>
-<li><a class="reference internal" href="#touch-shapes">Touch shapes</a></li>
-<li><a class="reference internal" href="#double-tap">Double tap</a></li>
-<li><a class="reference internal" href="#triple-tap">Triple tap</a></li>
-<li><a class="reference internal" href="#grabbing-touch-events">Grabbing touch events</a></li>
-<li><a class="reference internal" href="#touch-event-management">Touch Event Management</a></li>
+<li><a class="reference internal" href="#">Input management (翻訳済み)</a><ul>
+<li><a class="reference internal" href="#input-architecture">Input architecture (入力のアーキテクチャ)</a></li>
+<li><a class="reference internal" href="#motion-event-profiles">Motion event profiles (モーション・イベント・プロファイル)</a></li>
+<li><a class="reference internal" href="#touch-events">Touch events (タッチ・イベント)</a><ul>
+<li><a class="reference internal" href="#touch-event-basics">Touch event basics (タッチ・イベントの基本)</a></li>
+<li><a class="reference internal" href="#coordinates">Coordinates (座標)</a></li>
+<li><a class="reference internal" href="#touch-shapes">Touch shapes (タッチの成す形)</a></li>
+<li><a class="reference internal" href="#double-tap">Double tap (ダブル・タップ)</a></li>
+<li><a class="reference internal" href="#triple-tap">Triple tap (トリプル・タップ)</a></li>
+<li><a class="reference internal" href="#grabbing-touch-events">Grabbing touch events (タッチ・イベントを、grabによってつかまえる)</a></li>
+<li><a class="reference internal" href="#touch-event-management">Touch Event Management (タッチ・イベントの管理)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#joystick-events">Joystick events</a><ul>
-<li><a class="reference internal" href="#joystick-event-basics">Joystick event basics</a></li>
-<li><a class="reference internal" href="#joystick-input">Joystick input</a><ul>
+<li><a class="reference internal" href="#joystick-events">Joystick events(ジョイスティックのイベント)</a><ul>
+<li><a class="reference internal" href="#joystick-event-basics">Joystick event basics(ジョイスティックとイベントの基本)</a></li>
+<li><a class="reference internal" href="#joystick-input">Joystick input(ジョイスティックの入力)</a><ul>
 <li><a class="reference internal" href="#xbox-360">Xbox 360</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#joystick-debugging">Joystick debugging</a></li>
+<li><a class="reference internal" href="#joystick-debugging">Joystick debugging(ジョイスティックでのデバッグ)</a></li>
 </ul>
 </li>
 </ul>
@@ -158,7 +158,7 @@
 <li class="toctree-l2"><a class="reference internal" href="config.html">Configure Kivy(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="architecture.html">Architectural Overview(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="events.html">Events and Properties (翻訳済み)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Input management</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Input management (翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="graphics.html">Graphics (翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lang.html">Kv language(翻訳済み)</a></li>
@@ -385,26 +385,26 @@
         <div class="bodywrapper">
           <div class="body">
             <div class="toc"><h2>Table Of Contents</h2><ul>
-<li><a class="reference internal" href="#">Input management</a><ul>
-<li><a class="reference internal" href="#input-architecture">Input architecture</a></li>
-<li><a class="reference internal" href="#motion-event-profiles">Motion event profiles</a></li>
-<li><a class="reference internal" href="#touch-events">Touch events</a><ul>
-<li><a class="reference internal" href="#touch-event-basics">Touch event basics</a></li>
-<li><a class="reference internal" href="#coordinates">Coordinates</a></li>
-<li><a class="reference internal" href="#touch-shapes">Touch shapes</a></li>
-<li><a class="reference internal" href="#double-tap">Double tap</a></li>
-<li><a class="reference internal" href="#triple-tap">Triple tap</a></li>
-<li><a class="reference internal" href="#grabbing-touch-events">Grabbing touch events</a></li>
-<li><a class="reference internal" href="#touch-event-management">Touch Event Management</a></li>
+<li><a class="reference internal" href="#">Input management (翻訳済み)</a><ul>
+<li><a class="reference internal" href="#input-architecture">Input architecture (入力のアーキテクチャ)</a></li>
+<li><a class="reference internal" href="#motion-event-profiles">Motion event profiles (モーション・イベント・プロファイル)</a></li>
+<li><a class="reference internal" href="#touch-events">Touch events (タッチ・イベント)</a><ul>
+<li><a class="reference internal" href="#touch-event-basics">Touch event basics (タッチ・イベントの基本)</a></li>
+<li><a class="reference internal" href="#coordinates">Coordinates (座標)</a></li>
+<li><a class="reference internal" href="#touch-shapes">Touch shapes (タッチの成す形)</a></li>
+<li><a class="reference internal" href="#double-tap">Double tap (ダブル・タップ)</a></li>
+<li><a class="reference internal" href="#triple-tap">Triple tap (トリプル・タップ)</a></li>
+<li><a class="reference internal" href="#grabbing-touch-events">Grabbing touch events (タッチ・イベントを、grabによってつかまえる)</a></li>
+<li><a class="reference internal" href="#touch-event-management">Touch Event Management (タッチ・イベントの管理)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#joystick-events">Joystick events</a><ul>
-<li><a class="reference internal" href="#joystick-event-basics">Joystick event basics</a></li>
-<li><a class="reference internal" href="#joystick-input">Joystick input</a><ul>
+<li><a class="reference internal" href="#joystick-events">Joystick events(ジョイスティックのイベント)</a><ul>
+<li><a class="reference internal" href="#joystick-event-basics">Joystick event basics(ジョイスティックとイベントの基本)</a></li>
+<li><a class="reference internal" href="#joystick-input">Joystick input(ジョイスティックの入力)</a><ul>
 <li><a class="reference internal" href="#xbox-360">Xbox 360</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#joystick-debugging">Joystick debugging</a></li>
+<li><a class="reference internal" href="#joystick-debugging">Joystick debugging(ジョイスティックでのデバッグ)</a></li>
 </ul>
 </li>
 </ul>
@@ -413,133 +413,100 @@
 </div>
             
   <div class="section" id="input-management">
-<h1>Input management<a class="headerlink" href="#input-management" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<h1>Input management (翻訳済み)<a class="headerlink" href="#input-management" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="input-architecture">
-<h2>Input architecture<a class="headerlink" href="#input-architecture" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Kivy is able to handle most types of input: mouse, touchscreen, accelerometer,
-gyroscope, etc. It handles the native multitouch protocols on the following
-platforms: Tuio, WM_Touch, MacMultitouchSupport, MT Protocol A/B and Android.</p>
-<p>The global architecture can be viewed as:</p>
+<h2>Input architecture (入力のアーキテクチャ)<a class="headerlink" href="#input-architecture" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Kivyはほぼすべてのタイプの入力、たとえばマウス、タッチスクリーン、加速度センサ、ジャイロスコープといったデバイスからの入力を取り扱うことができます。さらに Tuio、WM_Touch、MacMultitouchSupport、MT Protocol A/BやAndroidといったプラットフォームのネイティヴなマルチタッチのプロトコルをも取り扱います。</p>
+<p>入力に関する全体的なアーキテクチャは、次のようなものと見なすことができます:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Input</span> <span class="n">providers</span> <span class="o">-&gt;</span> <span class="n">Motion</span> <span class="n">event</span> <span class="o">-&gt;</span> <span class="n">Post</span> <span class="n">processing</span> <span class="o">-&gt;</span> <span class="n">Dispatch</span> <span class="n">to</span> <span class="n">Window</span>
 </pre></div>
 </div>
-<p>The class of all input events is the
-<a class="reference internal" href="../api-kivy.input.motionevent.html#kivy.input.motionevent.MotionEvent" title="kivy.input.motionevent.MotionEvent"><code class="xref py py-class docutils literal"><span class="pre">MotionEvent</span></code></a>. It generates 2 kinds of
-events:</p>
+<p>すべての入力イベントを取り扱うクラスが、 <a class="reference internal" href="../api-kivy.input.motionevent.html#kivy.input.motionevent.MotionEvent" title="kivy.input.motionevent.MotionEvent"><code class="xref py py-class docutils literal"><span class="pre">MotionEvent</span></code></a>  です。これは2種類のイベントを生成します:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Touch events: a motion event that contains at least an X and Y position.
-All the touch events are dispatched across the Widget tree.</li>
-<li>No-touch events: all the rest. For example, the accelerometer is a
-continuous event, without position. It never starts or stops. These events
-are not dispatched across the Widget tree.</li>
+<li><p class="first">Touch events (タッチ・イベント): 少なくともx座標とy座標を含むような motion event です。すべての touch event は、ウィジェットツリーに向けてディスパッチされます。</p>
+</li>
+<li><p class="first">No-touch events (ノー・タッチ・イベント):その名の通り、タッチ・イベントでないイベントです。たとえば、加速度センサは位置に依らない連続的なイベントです。それは開始することも停止することもありません。この種のイベントは、ウィジェットツリーに向けてディスパッチされることはありません。</p>
+</li>
 </ul>
 </div></blockquote>
-<p>A Motion event is generated by an <a class="reference internal" href="../api-kivy.input.providers.html#module-kivy.input.providers" title="kivy.input.providers"><code class="xref py py-mod docutils literal"><span class="pre">Input</span> <span class="pre">Provider</span></code></a>.
-An Input Provider is responsible for reading the input event from the operating
-system, the network or even from another application. Several input providers
-exist, such as:</p>
+<p>Motion event は、 <a class="reference internal" href="../api-kivy.input.providers.html#module-kivy.input.providers" title="kivy.input.providers"><code class="xref py py-mod docutils literal"><span class="pre">Input</span> <span class="pre">Provider</span></code></a> によって生成されます。この Input Provider が、OS、ネットワーク、あるいは他のアプリケーションから入力イベントを読みとる任務を担います。たとえば、次のような input provider が存在します:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="../api-kivy.input.providers.tuio.html#kivy.input.providers.tuio.TuioMotionEventProvider" title="kivy.input.providers.tuio.TuioMotionEventProvider"><code class="xref py py-class docutils literal"><span class="pre">TuioMotionEventProvider</span></code></a>: create a
-UDP server and listen for TUIO/OSC messages.</li>
-<li><code class="xref py py-class docutils literal"><span class="pre">WM_MotionEventProvider</span></code>: use the
-windows API for reading multitouch information and sending it to Kivy.</li>
-<li><code class="xref py py-class docutils literal"><span class="pre">ProbeSysfsHardwareProbe</span></code>:
-In Linux, iterate over all the hardware connected to the computer, and
-attaches a multitouch input provider for each multitouch device found.</li>
-<li>and much more!</li>
+<li><p class="first"><a class="reference internal" href="../api-kivy.input.providers.tuio.html#kivy.input.providers.tuio.TuioMotionEventProvider" title="kivy.input.providers.tuio.TuioMotionEventProvider"><code class="xref py py-class docutils literal"><span class="pre">TuioMotionEventProvider</span></code></a>: UDPサーバを生成し、TUIO/OSC メッセージをリッスンします。</p>
+</li>
+<li><p class="first"><code class="xref py py-class docutils literal"><span class="pre">WM_MotionEventProvider</span></code>: マルチタッチ情報を読み込み、それを Kivy に送るために、Windows APIを用います。</p>
+</li>
+<li><p class="first"><code class="xref py py-class docutils literal"><span class="pre">ProbeSysfsHardwareProbe</span></code>: Linuxにおいて、コンピュータに接続するすべてのハードウェアについてイテレートし、見つかったマルチタッチデバイスのそれぞれについて、マルチタッチ input provider を接続します。</p>
+</li>
+<li><p class="first">他にもたくさんあります!</p>
+</li>
 </ul>
 </div></blockquote>
-<p>When you write an application, you don&#8217;t need to create an input provider. Kivy
-tries to automatically detect available hardware. However, if you want to
-support custom hardware, you will need to configure kivy to make it work.</p>
-<p>Before the newly-created Motion Event is passed to the user, Kivy applies
-post-processing to the input. Every motion event is analyzed to detect and
-correct faulty input, as well as make meaningful interpretations like:</p>
+<p>あなたがアプリを作る時には、自分で input provider を作る必要はありません。Kivy は自動的に、利用可能なハードウェアの検知を試みます。しかし、もし自前のハードウェアをサポートしたいときには、うまくいくようにKivyを設定する必要があるでしょう。</p>
+<p>新しく生成された Motion Event がユーザに渡される前に、Kivy は入力に対する後処理を行います。あらゆる Motion Event は分析され、その結果、下記のような意味ある解釈がなされることがあります。また誤った入力が検知されて修正されることもあります。</p>
 <blockquote>
 <div><ul class="simple">
-<li>Double/triple-tap detection, according to a distance and time threshold</li>
-<li>Making events more accurate when the hardware is not accurate</li>
-<li>Reducing the amount of generated events if the native touch hardware is
-sending events with nearly the same position</li>
+<li><p class="first">距離および時間の閾値に基づいた、ダブル/トリプルタップの検知。</p>
+</li>
+<li><p class="first">ハードウェアが正確でないときにイベントをより正確なものに修正する。</p>
+</li>
+<li><p class="first">ハードウェアがほぼ同じ位置からのイベントを送り続けているときは、生成するイベントの量を減らします。</p>
+</li>
 </ul>
 </div></blockquote>
-<p>After processing, the motion event is dispatched to the Window. As explained
-previously, not all events are dispatched to the whole widget tree: the window
-filters them. For a given event:</p>
+<p>上記のような処理を経て、Motion Event は Window にディスパッチされます。上で述べた通り、すべてのイベントがウィジェットツリーにディスパッチされるわけではありません。Window がそのフィルター役となります。与えられたイベントに対して:</p>
 <blockquote>
 <div><ul class="simple">
-<li>if it&#8217;s only a motion event, it will be dispatched to
-<a class="reference internal" href="../api-kivy.core.window.html#kivy.core.window.WindowBase.on_motion" title="kivy.core.window.WindowBase.on_motion"><code class="xref py py-meth docutils literal"><span class="pre">on_motion()</span></code></a></li>
-<li>if it&#8217;s a touch event, the (x,y) position of the touch (0-1 range) will be
-scaled to the Window size (width/height), and dispatched to:<ul>
+<li><p class="first">それがただの Motion Event であれば、<a class="reference internal" href="../api-kivy.core.window.html#kivy.core.window.WindowBase.on_motion" title="kivy.core.window.WindowBase.on_motion"><code class="xref py py-meth docutils literal"><span class="pre">on_motion()</span></code></a>
+にディスパッチされます。</p>
+</li>
+<li><p class="first">もしそれが Touch Event であれば、そのタッチの (x,y) 座標 (0から1の値を取る) がWindow のサイズにスケーリングされ (width/height 属性)、以下のどれかにディスパッチされます。</p>
+<ul>
 <li><a class="reference internal" href="../api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_down" title="kivy.uix.widget.Widget.on_touch_down"><code class="xref py py-meth docutils literal"><span class="pre">on_touch_down()</span></code></a></li>
 <li><a class="reference internal" href="../api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_move" title="kivy.uix.widget.Widget.on_touch_move"><code class="xref py py-meth docutils literal"><span class="pre">on_touch_move()</span></code></a></li>
-<li><a class="reference internal" href="../api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_up" title="kivy.uix.widget.Widget.on_touch_up"><code class="xref py py-meth docutils literal"><span class="pre">on_touch_up()</span></code></a></li>
+<li><p class="first"><a class="reference internal" href="../api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_move" title="kivy.uix.widget.Widget.on_touch_move"><code class="xref py py-meth docutils literal"><span class="pre">on_touch_move()</span></code></a></p>
+</li>
 </ul>
 </li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="motion-event-profiles">
-<h2>Motion event profiles<a class="headerlink" href="#motion-event-profiles" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Depending on your hardware and the input providers used, more information may be
-made available to you. For example, a touch input has an (x,y) position, but
-might also have pressure information, blob size, an acceleration vector, etc.</p>
-<p>A profile is a string that indicates what features are available inside the
-motion event. Let&#8217;s imagine that you are in an <code class="docutils literal"><span class="pre">on_touch_move</span></code> method:</p>
+<h2>Motion event profiles (モーション・イベント・プロファイル)<a class="headerlink" href="#motion-event-profiles" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>使用しているハードウェアや input provider に応じて、より多くの情報が利用可能となるかもしれません。たとえば、タッチによる入力は (x,y) 座標を持ちますが、同時に圧力、ブロブの大きさ、加速度ベクトルなどの情報を持つかもしれません。</p>
+<p>profile は、motion event の中で何の特徴が利用可能であるかを示す文字列です。次の <code class="docutils literal"><span class="pre">on_touch_move</span></code> イベントを想像してください:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_touch_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">touch</span><span class="o">.</span><span class="n">profile</span><span class="p">)</span>
     <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_move</span><span class="p">(</span><span class="n">touch</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The print could output:</p>
+<p>この print 文が出力するのは:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;pos&#39;</span><span class="p">,</span> <span class="s1">&#39;angle&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">警告</p>
-<p class="last">Many people mix up the profile&#8217;s name and the name of the corresponding
-property. Just because <code class="docutils literal"><span class="pre">'angle'</span></code> is in the available profile doesn&#8217;t
-mean that the touch event object will have an <code class="docutils literal"><span class="pre">angle</span></code> property.</p>
+<p class="last">Profileの名前と対応するプロパティの名前を混同してはなりません。<code class="docutils literal"><span class="pre">'angle'</span></code> が利用可能な profile だからと言って、&#8221;touch event が <code class="docutils literal"><span class="pre">angle</span></code> プロパティを持つわけではないのです。</p>
 </div>
-<p>For the <code class="docutils literal"><span class="pre">'pos'</span></code> profile, the properties <code class="docutils literal"><span class="pre">pos</span></code>, <code class="docutils literal"><span class="pre">x</span></code>, and <code class="docutils literal"><span class="pre">y</span></code> will be
-available. With the <code class="docutils literal"><span class="pre">'angle'</span></code> profile, the property <code class="docutils literal"><span class="pre">a</span></code> will be available.
-As we said, for touch events <code class="docutils literal"><span class="pre">'pos'</span></code> is a mandatory profile, but not
-<code class="docutils literal"><span class="pre">'angle'</span></code>. You can extend your interaction by checking if the <code class="docutils literal"><span class="pre">'angle'</span></code>
-profile exists:</p>
+<p><code class="docutils literal"><span class="pre">'pos'</span></code> profile については、　<code class="docutils literal"><span class="pre">pos</span></code>、　<code class="docutils literal"><span class="pre">x</span></code>、　<code class="docutils literal"><span class="pre">y</span></code> という3つのプロパティが利用可能です。 <code class="docutils literal"><span class="pre">'angle'</span></code> profile については、<code class="docutils literal"><span class="pre">a</span></code> というプロパティが利用可能です。すでに述べた通り、touch event にとって <code class="docutils literal"><span class="pre">'pos'</span></code> は必須の profile ですが <code class="docutils literal"><span class="pre">'angle'</span></code> はそうではありません。<code class="docutils literal"><span class="pre">'angle'</span></code> profile が存在するかどうかをチェックすることによりインタラクションを拡張できます:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_touch_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The touch is at position&#39;</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
     <span class="k">if</span> <span class="s1">&#39;angle&#39;</span> <span class="ow">in</span> <span class="n">touch</span><span class="o">.</span><span class="n">profile</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The touch angle is&#39;</span><span class="p">,</span> <span class="n">touch</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You can find a list of available profiles in the
-<a class="reference internal" href="../api-kivy.input.motionevent.html#module-kivy.input.motionevent" title="kivy.input.motionevent"><code class="xref py py-mod docutils literal"><span class="pre">motionevent</span></code></a> documentation.</p>
+<p>利用可能な profile のリストは、 <a class="reference internal" href="../api-kivy.input.motionevent.html#module-kivy.input.motionevent" title="kivy.input.motionevent"><code class="xref py py-mod docutils literal"><span class="pre">motionevent</span></code></a> で確認できます。</p>
 </div>
 <div class="section" id="touch-events">
-<h2>Touch events<a class="headerlink" href="#touch-events" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>A touch event is a specialized <a class="reference internal" href="../api-kivy.input.motionevent.html#kivy.input.motionevent.MotionEvent" title="kivy.input.motionevent.MotionEvent"><code class="xref py py-class docutils literal"><span class="pre">MotionEvent</span></code></a>
-where the property <a class="reference internal" href="../api-kivy.input.motionevent.html#kivy.input.motionevent.MotionEvent.is_touch" title="kivy.input.motionevent.MotionEvent.is_touch"><code class="xref py py-attr docutils literal"><span class="pre">is_touch</span></code></a>
-evaluates to True. For all touch events, you automatically have the X and Y
-positions available, scaled to the Window width and height. In other words, all
-touch events have the <code class="docutils literal"><span class="pre">'pos'</span></code> profile.</p>
+<h2>Touch events (タッチ・イベント)<a class="headerlink" href="#touch-events" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Touch event は、 <a class="reference internal" href="../api-kivy.input.motionevent.html#kivy.input.motionevent.MotionEvent.is_touch" title="kivy.input.motionevent.MotionEvent.is_touch"><code class="xref py py-attr docutils literal"><span class="pre">is_touch</span></code></a> プロパティが True と評価される、特別な <a class="reference internal" href="../api-kivy.input.motionevent.html#kivy.input.motionevent.MotionEvent" title="kivy.input.motionevent.MotionEvent"><code class="xref py py-class docutils literal"><span class="pre">MotionEvent</span></code></a> です。すべての touch event について、Windowの幅と高さにスケーリングされた x,y座標が自動的に利用可能となります。言い換えれば、すべての touch event は <code class="docutils literal"><span class="pre">'pos'</span></code> profile を持ちます。</p>
 <div class="section" id="touch-event-basics">
-<h3>Touch event basics<a class="headerlink" href="#touch-event-basics" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>By default, touch events are dispatched to all currently displayed widgets.
-This means widgets receive the touch event whether it occurs within their
-physical area or not.</p>
-<p>This can be counter intuitive if you have experience with other GUI toolkits.
-These typically divide the screen into geometric areas and only dispatch
-touch or mouse events to the widget if the coordinate lies within the
-widgets area.</p>
-<p>This requirement becomes very restrictive when working with touch input.
-Swipes, pinches and long presses may well originate from outside of the widget
-that wants to know about them and react to them.</p>
-<p>In order to provide the maximum flexibility, Kivy dispatches the events to
-all the widgets and lets them decide how to react to them. If you only want
-to respond to touch events inside the widget, you simply check:</p>
+<h3>Touch event basics (タッチ・イベントの基本)<a class="headerlink" href="#touch-event-basics" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>デフォルトでは、touch event はその時表示されているすべてのウィジェットにディスパッチされます。つまりウィジェットは、touch event がその内部で起きようが起きまいがお構いなしに、その touch event を受け取るのです。</p>
+<p>もし他の GUI ツールキットを使った経験があるなら、これは直感に反することかもしれません。典型的な GUI ツールキットは、スクリーンを分割し、タッチやマウスの座標がウィジェットの内部にあるときのみ、そのウィジェットにイベントをディスパッチするからです。</p>
+<p>しかしこの要求は、タッチによる入力を取り扱うときには極めて厳しいものです。スワイプ、ピンチ、長押しといった操作はウィジェットの外で発生するかもしれませんし、我々はウィジェットにそういった操作を検知させ、反応させたいと考えるかもしれません。</p>
+<p>そこでKivyでは、柔軟性を最大限持たせるために、すべてのウィジェットにイベントをディスパッチするようになっています。そしてどのように反応するかを各ウィジェットで決めることができるのです。もしウィジェットの内部で起きた touch event にのみ反応したいのであれば、以下のように単純なチェックを行いましょう:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">collide_point</span><span class="p">(</span><span class="o">*</span><span class="n">touch</span><span class="o">.</span><span class="n">pos</span><span class="p">):</span>
         <span class="c1"># The touch has occurred inside the widgets area. Do stuff!</span>
@@ -548,27 +515,21 @@ to respond to touch events inside the widget, you simply check:</p>
 </div>
 </div>
 <div class="section" id="coordinates">
-<h3>Coordinates<a class="headerlink" href="#coordinates" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>You must take care of matrix transformation in your touch as soon as you use
-a widget with matrix transformation. Some widgets such as
-<a class="reference internal" href="../api-kivy.uix.scatter.html#kivy.uix.scatter.Scatter" title="kivy.uix.scatter.Scatter"><code class="xref py py-class docutils literal"><span class="pre">Scatter</span></code></a> have their own matrix transformation,
-meaning the touch must be multiplied by the scatter
-matrix to be able to correctly dispatch touch positions to the Scatter&#8217;s
-children.</p>
+<h3>Coordinates (座標)<a class="headerlink" href="#coordinates" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>行列による座標変換をともなうウィジェットを用いる場合、タッチの座標変換に注意する必要があります。たとえば <a class="reference internal" href="../api-kivy.uix.scatter.html#kivy.uix.scatter.Scatter" title="kivy.uix.scatter.Scatter"><code class="xref py py-class docutils literal"><span class="pre">Scatter</span></code></a> クラスは独自の変換行列を持ちますが、タッチの位置を正しく Scatter の子孫に伝えるには、タッチにその行列を乗じなければならないのです。</p>
 <blockquote>
 <div><ul class="simple">
-<li>Get coordinate from parent space to local space:
-<a class="reference internal" href="../api-kivy.uix.widget.html#kivy.uix.widget.Widget.to_local" title="kivy.uix.widget.Widget.to_local"><code class="xref py py-meth docutils literal"><span class="pre">to_local()</span></code></a></li>
+<li><p class="first">親スペースの座標から、局所スペース (当該ウィジェットのスペース) の座標を得る:  <a class="reference internal" href="../api-kivy.uix.widget.html#kivy.uix.widget.Widget.to_local" title="kivy.uix.widget.Widget.to_local"><code class="xref py py-meth docutils literal"><span class="pre">to_local()</span></code></a></p>
+</li>
 <li>Get coordinate from local space to parent space:
 <a class="reference internal" href="../api-kivy.uix.widget.html#kivy.uix.widget.Widget.to_parent" title="kivy.uix.widget.Widget.to_parent"><code class="xref py py-meth docutils literal"><span class="pre">to_parent()</span></code></a></li>
 <li>Get coordinate from local space to window space:
 <a class="reference internal" href="../api-kivy.uix.widget.html#kivy.uix.widget.Widget.to_window" title="kivy.uix.widget.Widget.to_window"><code class="xref py py-meth docutils literal"><span class="pre">to_window()</span></code></a></li>
-<li>Get coordinate from window space to local space:
-<a class="reference internal" href="../api-kivy.uix.widget.html#kivy.uix.widget.Widget.to_widget" title="kivy.uix.widget.Widget.to_widget"><code class="xref py py-meth docutils literal"><span class="pre">to_widget()</span></code></a></li>
+<li><p class="first">ウィンドウ上の座標から、局所スペースの座標を得る: <a class="reference internal" href="../api-kivy.uix.widget.html#kivy.uix.widget.Widget.to_widget" title="kivy.uix.widget.Widget.to_widget"><code class="xref py py-meth docutils literal"><span class="pre">to_widget()</span></code></a></p>
+</li>
 </ul>
 </div></blockquote>
-<p>You must use one of them to scale coordinates correctly to the context.
-Let&#8217;s look the scatter implementation:</p>
+<p>座標を意図したとおりにスケーリングするには、上記のうち1つを用いる必要があります。次の Scatter のインプリを見てください:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
     <span class="c1"># push the current coordinate, to be able to restore it later</span>
     <span class="n">touch</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
@@ -590,9 +551,8 @@ Let&#8217;s look the scatter implementation:</p>
 </div>
 </div>
 <div class="section" id="touch-shapes">
-<h3>Touch shapes<a class="headerlink" href="#touch-shapes" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>If the touch has a shape, it will be reflected in the &#8216;shape&#8217; property. Right
-now, only a <a class="reference internal" href="../api-kivy.input.shape.html#kivy.input.shape.ShapeRect" title="kivy.input.shape.ShapeRect"><code class="xref py py-class docutils literal"><span class="pre">ShapeRect</span></code></a> can be exposed:</p>
+<h3>Touch shapes (タッチの成す形)<a class="headerlink" href="#touch-shapes" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>もしタッチが形を成すならば、それは &#8216;shape&#8217; プロパティに反映されるでしょう。現時点では、 <a class="reference internal" href="../api-kivy.input.shape.html#kivy.input.shape.ShapeRect" title="kivy.input.shape.ShapeRect"><code class="xref py py-class docutils literal"><span class="pre">ShapeRect</span></code></a> のみが公開されています:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.input.shape</span> <span class="k">import</span> <span class="n">ShapeRect</span>
 
 <span class="k">def</span> <span class="nf">on_touch_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
@@ -604,10 +564,8 @@ now, only a <a class="reference internal" href="../api-kivy.input.shape.html#kiv
 </div>
 </div>
 <div class="section" id="double-tap">
-<h3>Double tap<a class="headerlink" href="#double-tap" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>A double tap is the action of tapping twice within a time and a distance.
-It&#8217;s calculated by the doubletap post-processing module. You can test if the
-current touch is one of a double tap or not:</p>
+<h3>Double tap (ダブル・タップ)<a class="headerlink" href="#double-tap" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ダブル・タップとは、短い時間と距離の中で、2度タップを行うことです。ダブル・タップに関する事後処理モジュールによって計算されて今起こったタッチがダブル・タップなのか否かをテストできます:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">touch</span><span class="o">.</span><span class="n">is_double_tap</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Touch is a double tap !&#39;</span><span class="p">)</span>
@@ -618,10 +576,8 @@ current touch is one of a double tap or not:</p>
 </div>
 </div>
 <div class="section" id="triple-tap">
-<h3>Triple tap<a class="headerlink" href="#triple-tap" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>A triple tap is the action of tapping thrice within a time and a distance.
-It&#8217;s calculated by the tripletap post-processing module. You can test if the
-current touch is one of a triple tap or not:</p>
+<h3>Triple tap (トリプル・タップ)<a class="headerlink" href="#triple-tap" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>トリプル・タップとは、短い時間と距離の中で、3度タップを行うことです。トリプル・タップに関する事後処理モジュールによって計算され、今起こったタッチがトリプル・タップなのか否かをテストできます:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">touch</span><span class="o">.</span><span class="n">is_triple_tap</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Touch is a triple tap !&#39;</span><span class="p">)</span>
@@ -632,30 +588,21 @@ current touch is one of a triple tap or not:</p>
 </div>
 </div>
 <div class="section" id="grabbing-touch-events">
-<h3>Grabbing touch events<a class="headerlink" href="#grabbing-touch-events" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>It&#8217;s possible for the parent widget to dispatch a touch event to a child
-widget from within <code class="docutils literal"><span class="pre">on_touch_down</span></code>, but not from <code class="docutils literal"><span class="pre">on_touch_move</span></code> or
-<code class="docutils literal"><span class="pre">on_touch_up</span></code>. This can happen in certain scenarios, like when a touch
-movement is outside the bounding box of the parent, so the parent decides not to
-notify its children of the movement.</p>
-<p>But you might want to do something in <code class="docutils literal"><span class="pre">on_touch_up</span></code>. Say you started something in
-the <code class="docutils literal"><span class="pre">on_touch_down</span></code> event, like playing a sound, and you&#8217;d like to finish things
-on the <code class="docutils literal"><span class="pre">on_touch_up</span></code> event. Grabbing is what you need.</p>
-<p>When you grab a touch, you will always receive the move and up event. But there
-are some limitations to grabbing:</p>
+<h3>Grabbing touch events (タッチ・イベントを、grabによってつかまえる)<a class="headerlink" href="#grabbing-touch-events" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>親ウィジェットは、 <code class="docutils literal"><span class="pre">on_touch_move</span></code> や <code class="docutils literal"><span class="pre">on_touch_up</span></code> からではなく、 <code class="docutils literal"><span class="pre">on_touch_down</span></code> の内部で、touch event をその子ウィジェットにディスパッチする、あるいはしないことを決定することが可能です。これは、たとえば親ウィジェットのバウンディングボックスの外でタッチの動きが始まったときに、その親は子にイベントをディスパッチしないことを決定するといったような文脈において有りえます。</p>
+<p>しかし <code class="docutils literal"><span class="pre">on_touch_up</span></code> において何かをしたいと考えるかもしれません。たとえばサウンドの再生だとかを <code class="docutils literal"><span class="pre">on_touch_down</span></code> において開始し、 <code class="docutils literal"><span class="pre">on_touch_up</span></code> においてそれを停止したい、と考えるかもしれません。その時必要なのが、grab です。</p>
+<p>あなたがタッチを grab するとき、必ず move イベントと up イベントを受け取ることになります。しかし grab にはいくつかの制限があります:</p>
 <blockquote>
 <div><ul class="simple">
-<li>You will receive the event at least twice: one time from your parent (the
-normal event), and one time from the window (grab).</li>
-<li>You might receive an event with a grabbed touch, but not from you: it can be
-because the parent has sent the touch to its children while it was in
-the grabbed state.</li>
-<li>The touch coordinate is not translated to your widget space because the
-touch is coming directly from the Window. It&#8217;s your job to convert the
-coordinate to your local space.</li>
+<li><p class="first">少なくとも2回のイベントを受け取ることになります: 1回は親から (通常のイベント)、そしてもう1回はウィンドウから (grab)。</p>
+</li>
+<li><p class="first">Grab されたタッチからのイベントを受け取るかもしれませんが、それは、親ウィジェットが grab された状態にあったときに、子供たちにタッチをディスパッチしたことによるものかもしれません。</p>
+</li>
+<li><p class="first">タッチの座標はウィジェットスペースのものに変換されません。なぜならタッチはWindowから直接ディスパッチされたものだからです。ウィジェットスペースに変換することはあなたのやるべきことです</p>
+</li>
 </ul>
 </div></blockquote>
-<p>Here is an example of how to use grabbing:</p>
+<p>Grabの使用例を以下に示します:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">collide_point</span><span class="p">(</span><span class="o">*</span><span class="n">touch</span><span class="o">.</span><span class="n">pos</span><span class="p">):</span>
 
@@ -683,16 +630,13 @@ coordinate to your local space.</li>
 </div>
 </div>
 <div class="section" id="touch-event-management">
-<h3>Touch Event Management<a class="headerlink" href="#touch-event-management" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>In order to see how touch events are controlled and propagated between
-widgets, please refer to the
-<a class="reference internal" href="../api-kivy.uix.widget.html#widget-event-bubbling"><span class="std std-ref">Widget touch event bubbling</span></a> section.</p>
+<h3>Touch Event Management (タッチ・イベントの管理)<a class="headerlink" href="#touch-event-management" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Touch event がどのように制御され、またどのようにウィジェット間を伝播するのかについては、<a class="reference internal" href="../api-kivy.uix.widget.html#widget-event-bubbling"><span class="std std-ref">Widget touch event bubbling</span></a>  を参照してください。</p>
 </div>
 </div>
 <div class="section" id="joystick-events">
-<h2>Joystick events<a class="headerlink" href="#joystick-events" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>A joystick input represents raw values received directly from physical
-or virtual controllers through the SDL2 provider via these events:</p>
+<h2>Joystick events(ジョイスティックのイベント)<a class="headerlink" href="#joystick-events" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ジョイスティックの入力は物理的または仮想的なコントローラからSDL2のプロバイダをかいして直接受け取った生の値を、以下のイベントをかいして表します。</p>
 <ul class="simple">
 <li>SDL_JOYAXISMOTION</li>
 <li>SDL_JOYHATMOTION</li>
@@ -700,8 +644,7 @@ or virtual controllers through the SDL2 provider via these events:</p>
 <li>SDL_JOYBUTTONDOWN</li>
 <li>SDL_JOYBUTTONUP</li>
 </ul>
-<p>Every motion event has a minimum, maximum and default value which
-can reach:</p>
+<p>すべてのモーションイベントには最小値、最大値、デフォルト値があります:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="32%" />
@@ -710,10 +653,14 @@ can reach:</p>
 <col width="22%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Event</th>
-<th class="head">Minimum</th>
-<th class="head">Maximum</th>
-<th class="head">Default</th>
+<tr class="row-odd"><th class="head"><p class="first last">イベント</p>
+</th>
+<th class="head"><p class="first last">最小値</p>
+</th>
+<th class="head"><p class="first last">最大値</p>
+</th>
+<th class="head"><p class="first last">デフォルト値</p>
+</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -734,39 +681,28 @@ can reach:</p>
 </tr>
 </tbody>
 </table>
-<p>Button events, on the other hand represent basically only a state of each
-button i.e. <cite>up</cite> and <cite>down</cite>, therefore no such values are present.</p>
+<p>一方、ボタンイベントは基本的に各ボタンの状態のみ、すなわち <cite>up(押す)</cite> および <cite>down（押さない）</cite> のみを表し、そのような値は存在しない。</p>
 <ul class="simple">
 <li>on_joy_button_up</li>
 <li>on_joy_button_down</li>
 </ul>
 <div class="section" id="joystick-event-basics">
-<h3>Joystick event basics<a class="headerlink" href="#joystick-event-basics" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Unlike touch events, joystick events are dispatched directly to the Window,
-which means there&#8217;s only a single value passed for e.g. a specified axis,
-not multiple ones. This makes things harder if you want to separate input
-to different widgets, yet not impossible. You can use <a class="reference external" href="https://github.com/kivy/kivy/blob/master/examples/miscellaneous/multiple_dropfile.py">Multiple dropfile example</a> as an
-inspiration.</p>
-<p>To get a joystick event, you first need to bind some function to the Window
-joystick event like this:</p>
+<h3>Joystick event basics(ジョイスティックとイベントの基本)<a class="headerlink" href="#joystick-event-basics" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>タッチイベントとは異なり、ジョイスティックイベントはWindowに直接送出されます。つまり指定された軸に値が1つだけ渡されます。複数の軸ではありません。入力を別々のウィジェットに分割したいですがこれは不可能ではありません。インスピレーションとして <a class="reference external" href="https://github.com/kivy/kivy/blob/master/examples/miscellaneous/multiple_dropfile.py">Multiple dropfile example</a> を使用できます。</p>
+<p>ジョイスティックのイベントを取得するにはまず次のようなWindowジョイスティックイベントにいくつかの関数をバインドする必要があります:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Window</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_joy_axis</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">on_joy_axis</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Then you need to fetch the parameters specified in
-<code class="xref py py-class docutils literal"><span class="pre">Window</span></code> for each event you use, for example:</p>
+<p>次に、使用するイベントごとに <code class="xref py py-class docutils literal"><span class="pre">Window</span></code>  で指定されたパラメータを取得する必要があります。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_joy_axis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">win</span><span class="p">,</span> <span class="n">stickid</span><span class="p">,</span> <span class="n">axisid</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">stickid</span><span class="p">,</span> <span class="n">axisid</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>A variable <cite>stickid</cite> is an id of a controller that sent the value, <cite>axisid</cite> is
-an id of an axis to which the value belongs.</p>
+<p>変数 <cite>stickid</cite>  は値を送信したコントローラのIDです。<a href="#id1"><span class="problematic" id="id2">`</span></a>axisid`は、値が属する軸のIDです。</p>
 </div>
 <div class="section" id="joystick-input">
-<h3>Joystick input<a class="headerlink" href="#joystick-input" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Kivy should be able to fetch input from any device specified as <cite>gamepad</cite>,
-<cite>joystick</cite> or basically any other type of game controller recognized by the SDL2
-provider. To make things easier, here are layouts of some common controllers
-together with ids for each part.</p>
+<h3>Joystick input(ジョイスティックの入力)<a class="headerlink" href="#joystick-input" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Kivyは、「ゲームパッド」、「ジョイスティック」、またはSDL2プロバイダが認識している基本的に他のタイプのゲームコントローラとして指定された任意のデバイスからの入力を取得できます。気楽に行うために共通のコントローラのレイアウトと各パーツのIDがあります</p>
 <div class="section" id="xbox-360">
 <h4>Xbox 360<a class="headerlink" href="#xbox-360" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <table border="1" class="docutils">
@@ -834,11 +770,8 @@ together with ids for each part.</p>
 </div>
 </div>
 <div class="section" id="joystick-debugging">
-<h3>Joystick debugging<a class="headerlink" href="#joystick-debugging" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Mostly you&#8217;d want to debug your application with multiple controllers, or
-test it against _other_ types of controllers (e.g. different brands).
-As an alternative you might want to use some of the available
-controller emulators, such as <a class="reference external" href="http://vjoystick.sourceforge.net">vJoy</a>.</p>
+<h3>Joystick debugging(ジョイスティックでのデバッグ)<a class="headerlink" href="#joystick-debugging" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>多くの場合で複数のコントローラでアプリケーションをデバッグしたり、他のタイプのコントローラ（たとえば異なるブランドで）に対してテストしたい場合があります。代わりに、<a class="reference external" href="http://vjoystick.sourceforge.net">vJoy</a> など利用可能なコントローラエミュレータを使用することもできます。</p>
 </div>
 </div>
 </div>
@@ -884,7 +817,7 @@ controller emulators, such as <a class="reference external" href="http://vjoysti
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 5月 29, 2017.
+      Last updated on 5月 30, 2017.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
 </div>
 -->

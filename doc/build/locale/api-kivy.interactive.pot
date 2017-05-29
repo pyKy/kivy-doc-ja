@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-30 06:27+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../sources/api-kivy.interactive.rst:3
+msgid "Interactive launcher"
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:4
+msgid "The interactive launcher has been deprecated."
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:7
+msgid "The :class:`InteractiveLauncher` provides a user-friendly python shell interface to an :class:`App` so that it can be prototyped and debugged interactively."
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:13
+msgid "The Kivy API intends for some functions to only be run once or before the main EventLoop has started. Methods that can normally be called during the course of an application will work as intended, but specifically overriding methods such as :meth:`on_touch` dynamically leads to trouble."
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:19
+msgid "Creating an InteractiveLauncher"
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:21
+msgid "Take your existing subclass of :class:`App` (this can be production code) and pass an instance to the :class:`InteractiveLauncher` constructor. ::"
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:35
+msgid "After pressing *enter*, the script will return. This allows the interpreter to continue running. Inspection or modification of the :class:`App` can be done safely through the InteractiveLauncher instance or the provided :class:`SafeMembrane` class instances."
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:42
+msgid "If you want to test this example, start Python without any file to have already an interpreter, and copy/paste all the lines. You'll still have the interpreter at the end + the kivy application running."
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:47
+msgid "Interactive Development"
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:49
+msgid "IPython provides a fast way to learn the Kivy API. The :class:`App` instance and all of it's attributes, including methods and the entire widget tree, can be quickly listed by using the '.' operator and pressing 'tab'. Try this code in an Ipython shell. ::"
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:91
+msgid "All of the proxies used in the module store their referent in the :attr:`_ref` attribute, which can be accessed directly if needed, such as for getting doc strings. :func:`help` and :func:`type` will access the proxy, not its referent."
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:97
+msgid "Directly Pausing the Application"
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:99
+msgid "Both the :class:`InteractiveLauncher` and :class:`SafeMembrane` hold internal references to the :class:`EventLoop`'s 'safe' and 'confirmed' :class:`threading.Event` objects. You can use their safing methods to control the application manually."
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:104
+msgid ":meth:`SafeMembrane.safeIn` will cause the application to pause and :meth:`SafeMembrane.safeOut` will allow a paused application to continue running. This is potentially useful for scripting actions into functions that need the screen to update etc."
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:111
+msgid "The pausing is implemented via the :class:`Clocks' <kivy.clock.Clock>` :meth:`~kivy.clock.ClockBase.schedule_once` method and occurs before the start of each frame."
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:117
+msgid "Adding Attributes Dynamically"
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:121
+msgid "This module uses threading and object proxies to encapsulate the running :class:`App`. Deadlocks and memory corruption can occur if making direct references inside the thread without going through the provided proxy(s)."
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:125
+msgid "The :class:`InteractiveLauncher` can have attributes added to it exactly like a normal object and if these were created from outside the membrane, they will not be threadsafe because the external references to them in the python interpreter do not go through InteractiveLauncher's membrane behavior, inherited from :class:`SafeMembrane`."
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:131
+msgid "To threadsafe these external references, simply assign them to :class:`SafeMembrane` instances of themselves like so::"
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:143
+msgid "TODO"
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:145
+msgid "Unit tests, examples, and a better explanation of which methods are safe in a running application would be nice. All three would be excellent."
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:148
+msgid "Could be re-written with a context-manager style i.e. ::"
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive:153
+msgid "Any use cases besides compacting code?"
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "ベースクラス: :class:`builtins.object`"
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive.SafeMembrane:1
+msgid "This help is for a proxy object. Did you want help on the proxy's referent instead? Try using help(<instance>._ref)"
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive.SafeMembrane:4
+msgid "The SafeMembrane is a threadsafe proxy that also returns attributes as new thread-safe objects and makes thread-safe method calls, preventing thread-unsafe objects from leaking into the user's environment."
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive.SafeMembrane.safeIn:1
+msgid "Provides a thread-safe entry point for interactive launching."
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive.SafeMembrane.safeOut:1
+msgid "Provides a thread-safe exit point for interactive launching."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "ベースクラス: :class:`kivy.interactive.SafeMembrane`"
+msgstr ""
+
+#: ../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/interactive.py:docstring of kivy.interactive.InteractiveLauncher:1
+msgid "Proxy to an application instance that launches it in a thread and then returns and acts as a proxy to the application in the thread."
+msgstr ""
+
