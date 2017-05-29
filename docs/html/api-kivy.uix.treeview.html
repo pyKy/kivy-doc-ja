@@ -1,0 +1,915 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>Tree View &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="_static/kivy.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="index.html" />
+    <link rel="up" title="Widgets" href="api-kivy.uix.html" />
+    <link rel="next" title="Video" href="api-kivy.uix.video.html" />
+    <link rel="prev" title="Toggle button" href="api-kivy.uix.togglebutton.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="index.html">Tree View</a></h3>
+          <ul>
+<li><a class="reference internal" href="#">Tree View</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#creating-your-own-node-widget">Creating Your Own Node Widget</a></li>
+</ul>
+</li>
+</ul>
+
+          <h3><a href="index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="api-index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+              <li>Previous: <a href="api-kivy.uix.togglebutton.html" title="previous chapter">Toggle button</a></li>
+              <li>Next: <a href="api-kivy.uix.video.html" title="next chapter">Video</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2><ul>
+<li><a class="reference internal" href="#">Tree View</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#creating-your-own-node-widget">Creating Your Own Node Widget</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+  <div class="section" id="module-kivy.uix.treeview">
+<span id="tree-view"></span><h1>Tree View<a class="headerlink" href="#module-kivy.uix.treeview" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<img alt="_images/treeview.png" class="align-right" src="_images/treeview.png" />
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.4 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeView" title="kivy.uix.treeview.TreeView"><code class="xref py py-class docutils literal"><span class="pre">TreeView</span></code></a> is a widget used to represent a tree structure. It is
+currently very basic, supporting a minimal feature set.</p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>A <a class="reference internal" href="#kivy.uix.treeview.TreeView" title="kivy.uix.treeview.TreeView"><code class="xref py py-class docutils literal"><span class="pre">TreeView</span></code></a> is populated with <a class="reference internal" href="#kivy.uix.treeview.TreeViewNode" title="kivy.uix.treeview.TreeViewNode"><code class="xref py py-class docutils literal"><span class="pre">TreeViewNode</span></code></a> instances, but you
+cannot use a <a class="reference internal" href="#kivy.uix.treeview.TreeViewNode" title="kivy.uix.treeview.TreeViewNode"><code class="xref py py-class docutils literal"><span class="pre">TreeViewNode</span></code></a> directly. You must combine it with another
+widget, such as <a class="reference internal" href="api-kivy.uix.label.html#kivy.uix.label.Label" title="kivy.uix.label.Label"><code class="xref py py-class docutils literal"><span class="pre">Label</span></code></a>,
+<a class="reference internal" href="api-kivy.uix.button.html#kivy.uix.button.Button" title="kivy.uix.button.Button"><code class="xref py py-class docutils literal"><span class="pre">Button</span></code></a> or even your own widget. The TreeView
+always creates a default root node, based on <a class="reference internal" href="#kivy.uix.treeview.TreeViewLabel" title="kivy.uix.treeview.TreeViewLabel"><code class="xref py py-class docutils literal"><span class="pre">TreeViewLabel</span></code></a>.</p>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeViewNode" title="kivy.uix.treeview.TreeViewNode"><code class="xref py py-class docutils literal"><span class="pre">TreeViewNode</span></code></a> is a class object containing needed properties for
+serving as a tree node. Extend <a class="reference internal" href="#kivy.uix.treeview.TreeViewNode" title="kivy.uix.treeview.TreeViewNode"><code class="xref py py-class docutils literal"><span class="pre">TreeViewNode</span></code></a> to create custom node
+types for use with a <a class="reference internal" href="#kivy.uix.treeview.TreeView" title="kivy.uix.treeview.TreeView"><code class="xref py py-class docutils literal"><span class="pre">TreeView</span></code></a>.</p>
+<p>For constructing your own subclass, follow the pattern of TreeViewLabel which
+combines a Label and a TreeViewNode, producing a <a class="reference internal" href="#kivy.uix.treeview.TreeViewLabel" title="kivy.uix.treeview.TreeViewLabel"><code class="xref py py-class docutils literal"><span class="pre">TreeViewLabel</span></code></a> for
+direct use in a TreeView instance.</p>
+<p>To use the TreeViewLabel class, you could create two nodes directly attached
+to root:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tv</span> <span class="o">=</span> <span class="n">TreeView</span><span class="p">()</span>
+<span class="n">tv</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">TreeViewLabel</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;My first item&#39;</span><span class="p">))</span>
+<span class="n">tv</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">TreeViewLabel</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;My second item&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Or, create two nodes attached to a first:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tv</span> <span class="o">=</span> <span class="n">TreeView</span><span class="p">()</span>
+<span class="n">n1</span> <span class="o">=</span> <span class="n">tv</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">TreeViewLabel</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Item 1&#39;</span><span class="p">))</span>
+<span class="n">tv</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">TreeViewLabel</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;SubItem 1&#39;</span><span class="p">),</span> <span class="n">n1</span><span class="p">)</span>
+<span class="n">tv</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">TreeViewLabel</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;SubItem 2&#39;</span><span class="p">),</span> <span class="n">n1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you have a large tree structure, perhaps you would need a utility function
+to populate the tree view:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">populate_tree_view</span><span class="p">(</span><span class="n">tree_view</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">parent</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">tree_node</span> <span class="o">=</span> <span class="n">tree_view</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">TreeViewLabel</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;node_id&#39;</span><span class="p">],</span>
+                                                     <span class="n">is_open</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tree_node</span> <span class="o">=</span> <span class="n">tree_view</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">TreeViewLabel</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">node</span><span class="p">[</span><span class="s1">&#39;node_id&#39;</span><span class="p">],</span>
+                                                     <span class="n">is_open</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">parent</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">child_node</span> <span class="ow">in</span> <span class="n">node</span><span class="p">[</span><span class="s1">&#39;children&#39;</span><span class="p">]:</span>
+        <span class="n">populate_tree_view</span><span class="p">(</span><span class="n">tree_view</span><span class="p">,</span> <span class="n">tree_node</span><span class="p">,</span> <span class="n">child_node</span><span class="p">)</span>
+
+
+<span class="n">tree</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;node_id&#39;</span><span class="p">:</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;children&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;node_id&#39;</span><span class="p">:</span> <span class="s1">&#39;1.1&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;children&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;node_id&#39;</span><span class="p">:</span> <span class="s1">&#39;1.1.1&#39;</span><span class="p">,</span>
+                                    <span class="s1">&#39;children&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;node_id&#39;</span><span class="p">:</span> <span class="s1">&#39;1.1.1.1&#39;</span><span class="p">,</span>
+                                                  <span class="s1">&#39;children&#39;</span><span class="p">:</span> <span class="p">[]}]},</span>
+                                   <span class="p">{</span><span class="s1">&#39;node_id&#39;</span><span class="p">:</span> <span class="s1">&#39;1.1.2&#39;</span><span class="p">,</span>
+                                    <span class="s1">&#39;children&#39;</span><span class="p">:</span> <span class="p">[]},</span>
+                                   <span class="p">{</span><span class="s1">&#39;node_id&#39;</span><span class="p">:</span> <span class="s1">&#39;1.1.3&#39;</span><span class="p">,</span>
+                                    <span class="s1">&#39;children&#39;</span><span class="p">:</span> <span class="p">[]}]},</span>
+                      <span class="p">{</span><span class="s1">&#39;node_id&#39;</span><span class="p">:</span> <span class="s1">&#39;1.2&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;children&#39;</span><span class="p">:</span> <span class="p">[]}]}</span>
+
+
+<span class="k">class</span> <span class="nc">TreeWidget</span><span class="p">(</span><span class="n">FloatLayout</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">TreeWidget</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="n">tv</span> <span class="o">=</span> <span class="n">TreeView</span><span class="p">(</span><span class="n">root_options</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Tree One&#39;</span><span class="p">),</span>
+                      <span class="n">hide_root</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                      <span class="n">indent_level</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+        <span class="n">populate_tree_view</span><span class="p">(</span><span class="n">tv</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">tree</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">tv</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The root widget in the tree view is opened by default and has text set as
+&#8216;Root&#8217;. If you want to change that, you can use the
+<a class="reference internal" href="#kivy.uix.treeview.TreeView.root_options" title="kivy.uix.treeview.TreeView.root_options"><code class="xref py py-attr docutils literal"><span class="pre">TreeView.root_options</span></code></a>
+property. This will pass options to the root widget:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tv</span> <span class="o">=</span> <span class="n">TreeView</span><span class="p">(</span><span class="n">root_options</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;My root label&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-your-own-node-widget">
+<h2>Creating Your Own Node Widget<a class="headerlink" href="#creating-your-own-node-widget" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>For a button node type, combine a <a class="reference internal" href="api-kivy.uix.button.html#kivy.uix.button.Button" title="kivy.uix.button.Button"><code class="xref py py-class docutils literal"><span class="pre">Button</span></code></a> and a
+<a class="reference internal" href="#kivy.uix.treeview.TreeViewNode" title="kivy.uix.treeview.TreeViewNode"><code class="xref py py-class docutils literal"><span class="pre">TreeViewNode</span></code></a> as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TreeViewButton</span><span class="p">(</span><span class="n">Button</span><span class="p">,</span> <span class="n">TreeViewNode</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>You must know that, for a given node, only the
+<a class="reference internal" href="api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_x" title="kivy.uix.widget.Widget.size_hint_x"><code class="xref py py-attr docutils literal"><span class="pre">size_hint_x</span></code></a> will be honored. The allocated
+width for the node will depend of the current width of the TreeView and the
+level of the node. For example, if a node is at level 4, the width
+allocated will be:</p>
+<blockquote>
+<div>treeview.width - treeview.indent_start - treeview.indent_level * node.level</div></blockquote>
+<p>You might have some trouble with that. It is the developer&#8217;s responsibility to
+correctly handle adapting the graphical representation nodes, if needed.</p>
+<dl class="class">
+<dt id="kivy.uix.treeview.TreeView">
+<em class="property">class </em><code class="descclassname">kivy.uix.treeview.</code><code class="descname">TreeView</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/treeview.html#TreeView"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.treeview.TreeView" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ベースクラス: <a class="reference internal" href="api-kivy.uix.widget.html#kivy.uix.widget.Widget" title="kivy.uix.widget.Widget"><code class="xref py py-class docutils literal"><span class="pre">kivy.uix.widget.Widget</span></code></a></p>
+<p>TreeView class. See module documentation for more information.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Events:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>on_node_expand</cite>: (node, )</dt>
+<dd><p class="first last">Fired when a node is being expanded</p>
+</dd>
+<dt><cite>on_node_collapse</cite>: (node, )</dt>
+<dd><p class="first last">Fired when a node is being collapsed</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="kivy.uix.treeview.TreeView.add_node">
+<code class="descname">add_node</code><span class="sig-paren">(</span><em>node</em>, <em>parent=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/treeview.html#TreeView.add_node"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.treeview.TreeView.add_node" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Add a new node to the tree.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><cite>node</cite>: instance of a <a class="reference internal" href="#kivy.uix.treeview.TreeViewNode" title="kivy.uix.treeview.TreeViewNode"><code class="xref py py-class docutils literal"><span class="pre">TreeViewNode</span></code></a></dt>
+<dd><p class="first last">Node to add into the tree</p>
+</dd>
+<dt><cite>parent</cite>: instance of a <a class="reference internal" href="#kivy.uix.treeview.TreeViewNode" title="kivy.uix.treeview.TreeViewNode"><code class="xref py py-class docutils literal"><span class="pre">TreeViewNode</span></code></a>, defaults to None</dt>
+<dd><p class="first last">Parent node to attach the new node. If <cite>None</cite>, it is added to
+the <a class="reference internal" href="#kivy.uix.treeview.TreeView.root" title="kivy.uix.treeview.TreeView.root"><code class="xref py py-attr docutils literal"><span class="pre">root</span></code></a> node.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">the node <cite>node</cite>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.treeview.TreeView.deselect_node">
+<code class="descname">deselect_node</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/treeview.html#TreeView.deselect_node"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.treeview.TreeView.deselect_node" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Deselect any selected node.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.treeview.TreeView.get_node_at_pos">
+<code class="descname">get_node_at_pos</code><span class="sig-paren">(</span><em>pos</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/treeview.html#TreeView.get_node_at_pos"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.treeview.TreeView.get_node_at_pos" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Get the node at the position (x, y).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeView.hide_root">
+<code class="descname">hide_root</code><a class="headerlink" href="#kivy.uix.treeview.TreeView.hide_root" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Use this property to show/hide the initial root node. If True, the root
+node will be appear as a closed node.</p>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeView.hide_root" title="kivy.uix.treeview.TreeView.hide_root"><code class="xref py py-attr docutils literal"><span class="pre">hide_root</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> and
+defaults to False.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeView.indent_level">
+<code class="descname">indent_level</code><a class="headerlink" href="#kivy.uix.treeview.TreeView.indent_level" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Width used for the indentation of each level except the first level.</p>
+<p>Computation of indent for each level of the tree is:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">indent</span> <span class="o">=</span> <span class="n">indent_start</span> <span class="o">+</span> <span class="n">level</span> <span class="o">*</span> <span class="n">indent_level</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeView.indent_level" title="kivy.uix.treeview.TreeView.indent_level"><code class="xref py py-attr docutils literal"><span class="pre">indent_level</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a> and
+defaults to 16.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeView.indent_start">
+<code class="descname">indent_start</code><a class="headerlink" href="#kivy.uix.treeview.TreeView.indent_start" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Indentation width of the level 0 / root node. This is mostly the initial
+size to accommodate a tree icon (collapsed / expanded). See
+<a class="reference internal" href="#kivy.uix.treeview.TreeView.indent_level" title="kivy.uix.treeview.TreeView.indent_level"><code class="xref py py-attr docutils literal"><span class="pre">indent_level</span></code></a> for more information about the computation of level
+indentation.</p>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeView.indent_start" title="kivy.uix.treeview.TreeView.indent_start"><code class="xref py py-attr docutils literal"><span class="pre">indent_start</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a> and
+defaults to 24.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.treeview.TreeView.iterate_all_nodes">
+<code class="descname">iterate_all_nodes</code><span class="sig-paren">(</span><em>node=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/treeview.html#TreeView.iterate_all_nodes"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.treeview.TreeView.iterate_all_nodes" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Generator to iterate over all nodes from <cite>node</cite> and down whether
+expanded or not. If <cite>node</cite> is <cite>None</cite>, the generator start with
+<a class="reference internal" href="#kivy.uix.treeview.TreeView.root" title="kivy.uix.treeview.TreeView.root"><code class="xref py py-attr docutils literal"><span class="pre">root</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.treeview.TreeView.iterate_open_nodes">
+<code class="descname">iterate_open_nodes</code><span class="sig-paren">(</span><em>node=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/treeview.html#TreeView.iterate_open_nodes"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.treeview.TreeView.iterate_open_nodes" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Generator to iterate over all the expended nodes starting from
+<cite>node</cite> and down. If <cite>node</cite> is <cite>None</cite>, the generator start with
+<a class="reference internal" href="#kivy.uix.treeview.TreeView.root" title="kivy.uix.treeview.TreeView.root"><code class="xref py py-attr docutils literal"><span class="pre">root</span></code></a>.</p>
+<p>To get all the open nodes:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">treeview</span> <span class="o">=</span> <span class="n">TreeView</span><span class="p">()</span>
+<span class="c1"># ... add nodes ...</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">treeview</span><span class="o">.</span><span class="n">iterate_open_nodes</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeView.load_func">
+<code class="descname">load_func</code><a class="headerlink" href="#kivy.uix.treeview.TreeView.load_func" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Callback to use for asynchronous loading. If set, asynchronous loading
+will be automatically done. The callback must act as a Python generator
+function, using yield to send data back to the treeview.</p>
+<p>The callback should be in the format:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">treeview</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;Item 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Item 2&#39;</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">TreeViewLabel</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeView.load_func" title="kivy.uix.treeview.TreeView.load_func"><code class="xref py py-attr docutils literal"><span class="pre">load_func</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ObjectProperty" title="kivy.properties.ObjectProperty"><code class="xref py py-class docutils literal"><span class="pre">ObjectProperty</span></code></a> and
+defaults to None.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeView.minimum_height">
+<code class="descname">minimum_height</code><a class="headerlink" href="#kivy.uix.treeview.TreeView.minimum_height" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Minimum height needed to contain all children.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.9 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeView.minimum_height" title="kivy.uix.treeview.TreeView.minimum_height"><code class="xref py py-attr docutils literal"><span class="pre">minimum_height</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">kivy.properties.NumericProperty</span></code></a> and
+defaults to 0.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeView.minimum_size">
+<code class="descname">minimum_size</code><a class="headerlink" href="#kivy.uix.treeview.TreeView.minimum_size" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Minimum size needed to contain all children.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.9 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeView.minimum_size" title="kivy.uix.treeview.TreeView.minimum_size"><code class="xref py py-attr docutils literal"><span class="pre">minimum_size</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ReferenceListProperty" title="kivy.properties.ReferenceListProperty"><code class="xref py py-class docutils literal"><span class="pre">ReferenceListProperty</span></code></a>
+of (<a class="reference internal" href="#kivy.uix.treeview.TreeView.minimum_width" title="kivy.uix.treeview.TreeView.minimum_width"><code class="xref py py-attr docutils literal"><span class="pre">minimum_width</span></code></a>, <a class="reference internal" href="#kivy.uix.treeview.TreeView.minimum_height" title="kivy.uix.treeview.TreeView.minimum_height"><code class="xref py py-attr docutils literal"><span class="pre">minimum_height</span></code></a>) properties.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeView.minimum_width">
+<code class="descname">minimum_width</code><a class="headerlink" href="#kivy.uix.treeview.TreeView.minimum_width" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Minimum width needed to contain all children.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.9 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeView.minimum_width" title="kivy.uix.treeview.TreeView.minimum_width"><code class="xref py py-attr docutils literal"><span class="pre">minimum_width</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">kivy.properties.NumericProperty</span></code></a> and
+defaults to 0.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.treeview.TreeView.remove_node">
+<code class="descname">remove_node</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/treeview.html#TreeView.remove_node"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.treeview.TreeView.remove_node" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Removes a node from the tree.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.7 で追加.</span></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>node</cite>: instance of a <a class="reference internal" href="#kivy.uix.treeview.TreeViewNode" title="kivy.uix.treeview.TreeViewNode"><code class="xref py py-class docutils literal"><span class="pre">TreeViewNode</span></code></a></dt>
+<dd><p class="first last">Node to remove from the tree. If <cite>node</cite> is <a class="reference internal" href="#kivy.uix.treeview.TreeView.root" title="kivy.uix.treeview.TreeView.root"><code class="xref py py-attr docutils literal"><span class="pre">root</span></code></a>, it is
+not removed.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeView.root">
+<code class="descname">root</code><a class="headerlink" href="#kivy.uix.treeview.TreeView.root" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Root node.</p>
+<p>By default, the root node widget is a <a class="reference internal" href="#kivy.uix.treeview.TreeViewLabel" title="kivy.uix.treeview.TreeViewLabel"><code class="xref py py-class docutils literal"><span class="pre">TreeViewLabel</span></code></a> with text
+&#8216;Root&#8217;. If you want to change the default options passed to the widget
+creation, use the <a class="reference internal" href="#kivy.uix.treeview.TreeView.root_options" title="kivy.uix.treeview.TreeView.root_options"><code class="xref py py-attr docutils literal"><span class="pre">root_options</span></code></a> property:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">treeview</span> <span class="o">=</span> <span class="n">TreeView</span><span class="p">(</span><span class="n">root_options</span><span class="o">=</span><span class="p">{</span>
+    <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s1">&#39;Root directory&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;font_size&#39;</span><span class="p">:</span> <span class="mi">15</span><span class="p">})</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeView.root_options" title="kivy.uix.treeview.TreeView.root_options"><code class="xref py py-attr docutils literal"><span class="pre">root_options</span></code></a> will change the properties of the
+<a class="reference internal" href="#kivy.uix.treeview.TreeViewLabel" title="kivy.uix.treeview.TreeViewLabel"><code class="xref py py-class docutils literal"><span class="pre">TreeViewLabel</span></code></a> instance. However, you cannot change the class used
+for root node yet.</p>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeView.root" title="kivy.uix.treeview.TreeView.root"><code class="xref py py-attr docutils literal"><span class="pre">root</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a> and defaults to
+None. It is read-only. However, the content of the widget can be changed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeView.root_options">
+<code class="descname">root_options</code><a class="headerlink" href="#kivy.uix.treeview.TreeView.root_options" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Default root options to pass for root widget. See <a class="reference internal" href="#kivy.uix.treeview.TreeView.root" title="kivy.uix.treeview.TreeView.root"><code class="xref py py-attr docutils literal"><span class="pre">root</span></code></a> property
+for more information about the usage of root_options.</p>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeView.root_options" title="kivy.uix.treeview.TreeView.root_options"><code class="xref py py-attr docutils literal"><span class="pre">root_options</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ObjectProperty" title="kivy.properties.ObjectProperty"><code class="xref py py-class docutils literal"><span class="pre">ObjectProperty</span></code></a> and
+defaults to {}.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.treeview.TreeView.select_node">
+<code class="descname">select_node</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/treeview.html#TreeView.select_node"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.treeview.TreeView.select_node" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Select a node in the tree.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeView.selected_node">
+<code class="descname">selected_node</code><a class="headerlink" href="#kivy.uix.treeview.TreeView.selected_node" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Node selected by <a class="reference internal" href="#kivy.uix.treeview.TreeView.select_node" title="kivy.uix.treeview.TreeView.select_node"><code class="xref py py-meth docutils literal"><span class="pre">TreeView.select_node()</span></code></a> or by touch.</p>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeView.selected_node" title="kivy.uix.treeview.TreeView.selected_node"><code class="xref py py-attr docutils literal"><span class="pre">selected_node</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a> and
+defaults to None. It is read-only.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.treeview.TreeView.toggle_node">
+<code class="descname">toggle_node</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/treeview.html#TreeView.toggle_node"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.treeview.TreeView.toggle_node" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Toggle the state of the node (open/collapsed).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="kivy.uix.treeview.TreeViewException">
+<em class="property">class </em><code class="descclassname">kivy.uix.treeview.</code><code class="descname">TreeViewException</code><a class="reference internal" href="_modules/kivy/uix/treeview.html#TreeViewException"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.treeview.TreeViewException" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal"><span class="pre">builtins.Exception</span></code></p>
+<p>Exception for errors in the <a class="reference internal" href="#kivy.uix.treeview.TreeView" title="kivy.uix.treeview.TreeView"><code class="xref py py-class docutils literal"><span class="pre">TreeView</span></code></a>.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="kivy.uix.treeview.TreeViewLabel">
+<em class="property">class </em><code class="descclassname">kivy.uix.treeview.</code><code class="descname">TreeViewLabel</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/treeview.html#TreeViewLabel"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.treeview.TreeViewLabel" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ベースクラス: <a class="reference internal" href="api-kivy.uix.label.html#kivy.uix.label.Label" title="kivy.uix.label.Label"><code class="xref py py-class docutils literal"><span class="pre">kivy.uix.label.Label</span></code></a>, <a class="reference internal" href="#kivy.uix.treeview.TreeViewNode" title="kivy.uix.treeview.TreeViewNode"><code class="xref py py-class docutils literal"><span class="pre">kivy.uix.treeview.TreeViewNode</span></code></a></p>
+<p>Combines a <a class="reference internal" href="api-kivy.uix.label.html#kivy.uix.label.Label" title="kivy.uix.label.Label"><code class="xref py py-class docutils literal"><span class="pre">Label</span></code></a> and a <a class="reference internal" href="#kivy.uix.treeview.TreeViewNode" title="kivy.uix.treeview.TreeViewNode"><code class="xref py py-class docutils literal"><span class="pre">TreeViewNode</span></code></a> to
+create a <a class="reference internal" href="#kivy.uix.treeview.TreeViewLabel" title="kivy.uix.treeview.TreeViewLabel"><code class="xref py py-class docutils literal"><span class="pre">TreeViewLabel</span></code></a> that can be used as a text node in the
+tree.</p>
+<p>See module documentation for more information.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="kivy.uix.treeview.TreeViewNode">
+<em class="property">class </em><code class="descclassname">kivy.uix.treeview.</code><code class="descname">TreeViewNode</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/treeview.html#TreeViewNode"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.treeview.TreeViewNode" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal"><span class="pre">builtins.object</span></code></p>
+<p>TreeViewNode class, used to build a node class for a TreeView object.</p>
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeViewNode.color_selected">
+<code class="descname">color_selected</code><a class="headerlink" href="#kivy.uix.treeview.TreeViewNode.color_selected" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Background color of the node when the node is selected.</p>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeViewNode.color_selected" title="kivy.uix.treeview.TreeViewNode.color_selected"><code class="xref py py-attr docutils literal"><span class="pre">color_selected</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a> and
+defaults to [.1, .1, .1, 1].</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeViewNode.even_color">
+<code class="descname">even_color</code><a class="headerlink" href="#kivy.uix.treeview.TreeViewNode.even_color" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Background color of even nodes when the node is not selected.</p>
+<p><code class="xref py py-attr docutils literal"><span class="pre">bg_color</span></code> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a> ans defaults
+to [.5, .5, .5, .1].</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeViewNode.is_leaf">
+<code class="descname">is_leaf</code><a class="headerlink" href="#kivy.uix.treeview.TreeViewNode.is_leaf" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Boolean to indicate whether this node is a leaf or not. Used to adjust
+the graphical representation.</p>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeViewNode.is_leaf" title="kivy.uix.treeview.TreeViewNode.is_leaf"><code class="xref py py-attr docutils literal"><span class="pre">is_leaf</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> and defaults
+to True. It is automatically set to False when child is added.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeViewNode.is_loaded">
+<code class="descname">is_loaded</code><a class="headerlink" href="#kivy.uix.treeview.TreeViewNode.is_loaded" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Boolean to indicate whether this node is already loaded or not. This
+property is used only if the <a class="reference internal" href="#kivy.uix.treeview.TreeView" title="kivy.uix.treeview.TreeView"><code class="xref py py-class docutils literal"><span class="pre">TreeView</span></code></a> uses asynchronous loading.</p>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeViewNode.is_loaded" title="kivy.uix.treeview.TreeViewNode.is_loaded"><code class="xref py py-attr docutils literal"><span class="pre">is_loaded</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> and
+defaults to False.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeViewNode.is_open">
+<code class="descname">is_open</code><a class="headerlink" href="#kivy.uix.treeview.TreeViewNode.is_open" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Boolean to indicate whether this node is opened or not, in case there
+are child nodes. This is used to adjust the graphical representation.</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">This property is automatically set by the <a class="reference internal" href="#kivy.uix.treeview.TreeView" title="kivy.uix.treeview.TreeView"><code class="xref py py-class docutils literal"><span class="pre">TreeView</span></code></a>. You can
+read but not write it.</p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeViewNode.is_open" title="kivy.uix.treeview.TreeViewNode.is_open"><code class="xref py py-attr docutils literal"><span class="pre">is_open</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> and defaults
+to False.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeViewNode.is_selected">
+<code class="descname">is_selected</code><a class="headerlink" href="#kivy.uix.treeview.TreeViewNode.is_selected" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Boolean to indicate whether this node is selected or not. This is used
+adjust the graphical representation.</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">This property is automatically set by the <a class="reference internal" href="#kivy.uix.treeview.TreeView" title="kivy.uix.treeview.TreeView"><code class="xref py py-class docutils literal"><span class="pre">TreeView</span></code></a>. You can
+read but not write it.</p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeViewNode.is_selected" title="kivy.uix.treeview.TreeViewNode.is_selected"><code class="xref py py-attr docutils literal"><span class="pre">is_selected</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> and
+defaults to False.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeViewNode.level">
+<code class="descname">level</code><a class="headerlink" href="#kivy.uix.treeview.TreeViewNode.level" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Level of the node.</p>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeViewNode.level" title="kivy.uix.treeview.TreeViewNode.level"><code class="xref py py-attr docutils literal"><span class="pre">level</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a> and defaults
+to -1.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeViewNode.no_selection">
+<code class="descname">no_selection</code><a class="headerlink" href="#kivy.uix.treeview.TreeViewNode.no_selection" title="この定義へのパーマリンク">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Boolean used to indicate whether selection of the node is allowed or</dt>
+<dd>not.</dd>
+</dl>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeViewNode.no_selection" title="kivy.uix.treeview.TreeViewNode.no_selection"><code class="xref py py-attr docutils literal"><span class="pre">no_selection</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> and
+defaults to False.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeViewNode.nodes">
+<code class="descname">nodes</code><a class="headerlink" href="#kivy.uix.treeview.TreeViewNode.nodes" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>List of nodes. The nodes list is different than the children list. A
+node in the nodes list represents a node on the tree. An item in the
+children list represents the widget associated with the node.</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">This property is automatically set by the <a class="reference internal" href="#kivy.uix.treeview.TreeView" title="kivy.uix.treeview.TreeView"><code class="xref py py-class docutils literal"><span class="pre">TreeView</span></code></a>. You can
+read but not write it.</p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeViewNode.nodes" title="kivy.uix.treeview.TreeViewNode.nodes"><code class="xref py py-attr docutils literal"><span class="pre">nodes</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a> and defaults to
+[].</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeViewNode.odd">
+<code class="descname">odd</code><a class="headerlink" href="#kivy.uix.treeview.TreeViewNode.odd" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>This property is set by the TreeView widget automatically and is read-only.</p>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeViewNode.odd" title="kivy.uix.treeview.TreeViewNode.odd"><code class="xref py py-attr docutils literal"><span class="pre">odd</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> and defaults to
+False.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeViewNode.odd_color">
+<code class="descname">odd_color</code><a class="headerlink" href="#kivy.uix.treeview.TreeViewNode.odd_color" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Background color of odd nodes when the node is not selected.</p>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeViewNode.odd_color" title="kivy.uix.treeview.TreeViewNode.odd_color"><code class="xref py py-attr docutils literal"><span class="pre">odd_color</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a> and defaults
+to [1., 1., 1., 0.].</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.treeview.TreeViewNode.parent_node">
+<code class="descname">parent_node</code><a class="headerlink" href="#kivy.uix.treeview.TreeViewNode.parent_node" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Parent node. This attribute is needed because the <code class="xref py py-attr docutils literal"><span class="pre">parent</span></code> can be
+None when the node is not displayed.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.7 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.treeview.TreeViewNode.parent_node" title="kivy.uix.treeview.TreeViewNode.parent_node"><code class="xref py py-attr docutils literal"><span class="pre">parent_node</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ObjectProperty" title="kivy.properties.ObjectProperty"><code class="xref py py-class docutils literal"><span class="pre">ObjectProperty</span></code></a> and
+defaults to None.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+
+            <div class="footerlinks">
+            <table>
+                <tr>
+                    <td class="leftlink">
+                  <a href="api-kivy.uix.togglebutton.html" title="previous chapter">&laquo; Toggle button</a></li>
+                  </td>
+                  <td class="rightlink">
+                  <a href="api-kivy.uix.video.html" title="next chapter">Video &raquo;</a>
+                      </td>
+                  </tr>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 29, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

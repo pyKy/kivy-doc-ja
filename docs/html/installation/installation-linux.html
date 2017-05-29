@@ -1,0 +1,965 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>Installation on Linux &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/kivy.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="../index.html" />
+    <link rel="up" title="Installation" href="installation.html" />
+    <link rel="next" title="Installation on Android" href="installation-android.html" />
+    <link rel="prev" title="Installation on OS X" href="installation-osx.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="../gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../index.html">Installation on Linux</a></h3>
+          <ul>
+<li><a class="reference internal" href="#">Installation on Linux</a><ul>
+<li><a class="reference internal" href="#using-software-packages">Using software packages</a><ul>
+<li><a class="reference internal" href="#ubuntu-kubuntu-xubuntu-lubuntu-saucy-and-above">Ubuntu / Kubuntu / Xubuntu / Lubuntu (Saucy and above)</a></li>
+<li><a class="reference internal" href="#debian-jessie-or-newer">Debian  (Jessie or newer)</a></li>
+<li><a class="reference internal" href="#linux-mint">Linux Mint</a></li>
+<li><a class="reference internal" href="#bodhi-linux">Bodhi Linux</a></li>
+<li><a class="reference internal" href="#opensuse">OpenSuSE</a></li>
+<li><a class="reference internal" href="#fedora">Fedora</a></li>
+<li><a class="reference internal" href="#gentoo">Gentoo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#installation-in-a-virtual-environment">Installation in a Virtual Environment</a><ul>
+<li><a class="reference internal" href="#common-dependencies">Common dependencies</a><ul>
+<li><a class="reference internal" href="#cython">Cython</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dependencies-with-sdl2">Dependencies with SDL2</a><ul>
+<li><a class="reference internal" href="#ubuntu-example">Ubuntu example</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dependencies-with-legacy-pygame">Dependencies with legacy PyGame</a><ul>
+<li><a class="reference internal" href="#id1">Ubuntu example</a></li>
+<li><a class="reference internal" href="#id2">Fedora</a></li>
+<li><a class="reference internal" href="#id3">OpenSuse</a></li>
+<li><a class="reference internal" href="#id4">Installation</a></li>
+<li><a class="reference internal" href="#install-additional-virtualenv-packages">Install additional Virtualenv packages</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#start-from-the-command-line">Start from the Command Line</a></li>
+<li><a class="reference internal" href="#device-permissions">Device permissions</a></li>
+</ul>
+</li>
+</ul>
+
+          <h3><a href="../index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../user-guide.html">User’s Guide(翻訳済み)</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api-index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+              <li>Previous: <a href="installation-osx.html" title="previous chapter">Installation on OS X</a></li>
+              <li>Next: <a href="installation-android.html" title="next chapter">Installation on Android</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2><ul>
+<li><a class="reference internal" href="#">Installation on Linux</a><ul>
+<li><a class="reference internal" href="#using-software-packages">Using software packages</a><ul>
+<li><a class="reference internal" href="#ubuntu-kubuntu-xubuntu-lubuntu-saucy-and-above">Ubuntu / Kubuntu / Xubuntu / Lubuntu (Saucy and above)</a></li>
+<li><a class="reference internal" href="#debian-jessie-or-newer">Debian  (Jessie or newer)</a></li>
+<li><a class="reference internal" href="#linux-mint">Linux Mint</a></li>
+<li><a class="reference internal" href="#bodhi-linux">Bodhi Linux</a></li>
+<li><a class="reference internal" href="#opensuse">OpenSuSE</a></li>
+<li><a class="reference internal" href="#fedora">Fedora</a></li>
+<li><a class="reference internal" href="#gentoo">Gentoo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#installation-in-a-virtual-environment">Installation in a Virtual Environment</a><ul>
+<li><a class="reference internal" href="#common-dependencies">Common dependencies</a><ul>
+<li><a class="reference internal" href="#cython">Cython</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dependencies-with-sdl2">Dependencies with SDL2</a><ul>
+<li><a class="reference internal" href="#ubuntu-example">Ubuntu example</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dependencies-with-legacy-pygame">Dependencies with legacy PyGame</a><ul>
+<li><a class="reference internal" href="#id1">Ubuntu example</a></li>
+<li><a class="reference internal" href="#id2">Fedora</a></li>
+<li><a class="reference internal" href="#id3">OpenSuse</a></li>
+<li><a class="reference internal" href="#id4">Installation</a></li>
+<li><a class="reference internal" href="#install-additional-virtualenv-packages">Install additional Virtualenv packages</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#start-from-the-command-line">Start from the Command Line</a></li>
+<li><a class="reference internal" href="#device-permissions">Device permissions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+  <div class="section" id="installation-on-linux">
+<span id="installation-linux"></span><h1>Installation on Linux<a class="headerlink" href="#installation-on-linux" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="using-software-packages">
+<h2>Using software packages<a class="headerlink" href="#using-software-packages" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>For installing distribution relative packages .deb/.rpm/...</p>
+<div class="section" id="ubuntu-kubuntu-xubuntu-lubuntu-saucy-and-above">
+<h3>Ubuntu / Kubuntu / Xubuntu / Lubuntu (Saucy and above)<a class="headerlink" href="#ubuntu-kubuntu-xubuntu-lubuntu-saucy-and-above" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Add one of the PPAs as you prefer</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">stable builds:</th><td class="field-body">$ sudo add-apt-repository ppa:kivy-team/kivy</td>
+</tr>
+<tr class="field-even field"><th class="field-name">nightly builds:</th><td class="field-body">$ sudo add-apt-repository ppa:kivy-team/kivy-daily</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</li>
+<li><dl class="first docutils">
+<dt>Update your package list using your package manager</dt>
+<dd><p class="first last">$ sudo apt-get update</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Install Kivy</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Python2 - <strong>python-kivy</strong>:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">$ sudo apt-get install python-kivy</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Python3 - <strong>python3-kivy</strong>:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">$ sudo apt-get install python3-kivy</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">optionally the examples - <strong>kivy-examples</strong>:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">$ sudo apt-get install python-kivy-examples</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="debian-jessie-or-newer">
+<h3>Debian  (Jessie or newer)<a class="headerlink" href="#debian-jessie-or-newer" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Add one of the PPAs to your sources.list in apt manually or via Synaptic</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Jessie/Testing:</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">stable builds:</th><td class="field-body">deb <a class="reference external" href="http://ppa.launchpad.net/kivy-team/kivy/ubuntu">http://ppa.launchpad.net/kivy-team/kivy/ubuntu</a> trusty main</td>
+</tr>
+<tr class="field-even field"><th class="field-name">daily builds:</th><td class="field-body">deb <a class="reference external" href="http://ppa.launchpad.net/kivy-team/kivy-daily/ubuntu">http://ppa.launchpad.net/kivy-team/kivy-daily/ubuntu</a> trusty main</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</li>
+<li><p class="first">Sid/Unstable:</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">stable builds:</th><td class="field-body">deb <a class="reference external" href="http://ppa.launchpad.net/kivy-team/kivy/ubuntu">http://ppa.launchpad.net/kivy-team/kivy/ubuntu</a> utopic main</td>
+</tr>
+<tr class="field-even field"><th class="field-name">daily builds:</th><td class="field-body">deb <a class="reference external" href="http://ppa.launchpad.net/kivy-team/kivy-daily/ubuntu">http://ppa.launchpad.net/kivy-team/kivy-daily/ubuntu</a> utopic main</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notice</strong>: Wheezy is not supported - You&#8217;ll need to upgrade to Jessie at least!</p>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Add the GPG key to your apt keyring by executing</p>
+<blockquote>
+<div><p>as user:</p>
+<p><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-key</span> <span class="pre">adv</span> <span class="pre">--keyserver</span> <span class="pre">keyserver.ubuntu.com</span> <span class="pre">--recv-keys</span> <span class="pre">A863D2D6</span></code></p>
+<p>as root:</p>
+<p><code class="docutils literal"><span class="pre">apt-key</span> <span class="pre">adv</span> <span class="pre">--keyserver</span> <span class="pre">keyserver.ubuntu.com</span> <span class="pre">--recv-keys</span> <span class="pre">A863D2D6</span></code></p>
+</div></blockquote>
+</li>
+<li><p class="first">Refresh your package list and install <strong>python-kivy</strong> and/or <strong>python3-kivy</strong> and optionally the examples
+found in <strong>kivy-examples</strong></p>
+</li>
+</ol>
+</div>
+<div class="section" id="linux-mint">
+<h3>Linux Mint<a class="headerlink" href="#linux-mint" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>Find out on which Ubuntu release your installation is based on, using this
+<a class="reference external" href="https://linuxmint.com/download_all.php">overview</a>.</li>
+<li>Continue as described for Ubuntu above, depending on which version your
+installation is based on.</li>
+</ol>
+</div>
+<div class="section" id="bodhi-linux">
+<h3>Bodhi Linux<a class="headerlink" href="#bodhi-linux" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Find out which version of the distribution you are running and use the table below
+to find out on which Ubuntu LTS it is based.</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Bodhi 1:</th><td class="field-body">Ubuntu 10.04 LTS aka Lucid (No packages, just manual install)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Bodhi 2:</th><td class="field-body">Ubuntu 12.04 LTS aka Precise</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Bodhi 3:</th><td class="field-body">Ubuntu 14.04 LTS aka Trusty</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Bodhi 4:</th><td class="field-body">Ubuntu 16.04 LTS aka Xenial</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</li>
+</ol>
+<ol class="arabic simple" start="2">
+<li>Continue as described for Ubuntu above, depending on which version your installation is based on.</li>
+</ol>
+</div>
+<div class="section" id="opensuse">
+<h3>OpenSuSE<a class="headerlink" href="#opensuse" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic simple">
+<li>To install kivy go to <a class="reference external" href="http://software.opensuse.org/package/python-Kivy">http://software.opensuse.org/package/python-Kivy</a> and use the &#8220;1 Click Install&#8221; for your openSuse version. You might need to make the latest kivy version appear in the list by clicking on &#8220;Show unstable packages&#8221;. We prefer to use packages by &#8221; devel:languages:python&#8221;.</li>
+<li>If you would like access to the examples, please select <strong>python-Kivy-examples</strong> in the upcoming installation wizard.</li>
+</ol>
+</div>
+<div class="section" id="fedora">
+<h3>Fedora<a class="headerlink" href="#fedora" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Adding the repository via the terminal:</p>
+<blockquote>
+<div><p><strong>Fedora 18</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo yum-config-manager  --add-repo=http://download.opensuse.org\
+/repositories/home:/thopiekar:/kivy/Fedora_18/home:thopiekar:kivy.repo
+</pre></div>
+</div>
+<p><strong>Fedora 17</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo yum-config-manager --add-repo=http://download.opensuse.org\
+/repositories/home:/thopiekar:/kivy/Fedora_17/home:thopiekar:kivy.repo
+</pre></div>
+</div>
+<p><strong>Fedora 16</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo yum-config-manager --add-repo=http://download.opensuse.org\
+/repositories/home:/thopiekar:/kivy/Fedora_16/home:thopiekar:kivy.repo
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Use your preferred package-manager to refresh your packagelists</p>
+</li>
+<li><p class="first">Install <strong>python-Kivy</strong> and optionally the examples, as found in <strong>python-Kivy-examples</strong></p>
+</li>
+</ol>
+</div>
+<div class="section" id="gentoo">
+<h3>Gentoo<a class="headerlink" href="#gentoo" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">There is a kivy ebuild (kivy stable version)</p>
+<p>emerge Kivy</p>
+</li>
+<li><p class="first">available USE-flags are:</p>
+<p><cite>cairo: Standard flag, let kivy use cairo graphical libraries.</cite>
+<cite>camera: Install libraries needed to support camera.</cite>
+<cite>doc: Standard flag, will make you build the documentation locally.</cite>
+<cite>examples: Standard flag, will give you kivy examples programs.</cite>
+<cite>garden: Install garden tool to manage user maintained widgets.</cite>
+<cite>gstreamer: Standard flag, kivy will be able to use audio/video streaming libraries.</cite>
+<cite>spell: Standard flag, provide enchant to use spelling in kivy apps.</cite></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="installation-in-a-virtual-environment">
+<h1>Installation in a Virtual Environment<a class="headerlink" href="#installation-in-a-virtual-environment" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="common-dependencies">
+<h2>Common dependencies<a class="headerlink" href="#common-dependencies" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="cython">
+<h3>Cython<a class="headerlink" href="#cython" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Different versions of Kivy have only been tested up to a certain Cython version.
+It may or may not work with a later version.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Kivy</th>
+<th class="head">Cython</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1.8</td>
+<td>0.20.2</td>
+</tr>
+<tr class="row-odd"><td>1.9</td>
+<td>0.21.2</td>
+</tr>
+<tr class="row-even"><td>1.9.1</td>
+<td>0.23</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="dependencies-with-sdl2">
+<h2>Dependencies with SDL2<a class="headerlink" href="#dependencies-with-sdl2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="ubuntu-example">
+<h3>Ubuntu example<a class="headerlink" href="#ubuntu-example" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>In the following command use &#8220;python&#8221; and &#8220;python-dev&#8221; for Python 2, or &#8220;python3&#8221; and &#8220;python3-dev&#8221; for Python 3.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Install necessary system packages</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> \
+    <span class="n">python</span><span class="o">-</span><span class="n">pip</span> \
+    <span class="n">build</span><span class="o">-</span><span class="n">essential</span> \
+    <span class="n">git</span> \
+    <span class="n">python</span> \
+    <span class="n">python</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">ffmpeg</span> \
+    <span class="n">libsdl2</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">libsdl2</span><span class="o">-</span><span class="n">image</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">libsdl2</span><span class="o">-</span><span class="n">mixer</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">libsdl2</span><span class="o">-</span><span class="n">ttf</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">libportmidi</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">libswscale</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">libavformat</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">libavcodec</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">zlib1g</span><span class="o">-</span><span class="n">dev</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong>  Depending on your Linux version, you may receive error messages related to the &#8220;ffmpeg&#8221; package.
+In this scenario, use &#8220;libav-tools &#8221; in place of &#8220;ffmpeg &#8221; (above), or use a PPA (as shown below):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">ppa</span><span class="p">:</span><span class="n">mc3man</span><span class="o">/</span><span class="n">trusty</span><span class="o">-</span><span class="n">media</span>
+<span class="o">-</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="o">-</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ffmpeg</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Make sure Pip, Virtualenv and Setuptools are updated</span>
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span> <span class="n">virtualenv</span> <span class="n">setuptools</span>
+
+<span class="c1"># Then create a virtualenv named &quot;kivyinstall&quot; by either:</span>
+
+<span class="c1"># 1. using the default interpreter</span>
+<span class="n">virtualenv</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span> <span class="n">kivyinstall</span>
+
+<span class="c1"># or 2. using a specific interpreter</span>
+<span class="c1"># (this will use the interpreter in /usr/bin/python2.7)</span>
+<span class="n">virtualenv</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python2</span><span class="o">.</span><span class="mi">7</span> <span class="n">kivyinstall</span>
+
+<span class="c1"># Enter the virtualenv</span>
+<span class="o">.</span> <span class="n">kivyinstall</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+
+<span class="c1"># Use correct Cython version here</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">Cython</span><span class="o">==</span><span class="mf">0.23</span>
+
+<span class="c1"># Install stable version of Kivy into the virtualenv</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">kivy</span>
+<span class="c1"># For the development version of Kivy, use the following command instead</span>
+<span class="c1"># pip install git+https://github.com/kivy/kivy.git@master</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="dependencies-with-legacy-pygame">
+<h2>Dependencies with legacy PyGame<a class="headerlink" href="#dependencies-with-legacy-pygame" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id1">
+<h3>Ubuntu example<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Install necessary system packages</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> \
+    <span class="n">python</span><span class="o">-</span><span class="n">pip</span> \
+    <span class="n">build</span><span class="o">-</span><span class="n">essential</span> \
+    <span class="n">mercurial</span> \
+    <span class="n">git</span> \
+    <span class="n">python</span> \
+    <span class="n">python</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">ffmpeg</span> \
+    <span class="n">libsdl</span><span class="o">-</span><span class="n">image1</span><span class="o">.</span><span class="mi">2</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">libsdl</span><span class="o">-</span><span class="n">mixer1</span><span class="o">.</span><span class="mi">2</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">libsdl</span><span class="o">-</span><span class="n">ttf2</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">libsmpeg</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">libsdl1</span><span class="o">.</span><span class="mi">2</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">libportmidi</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">libswscale</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">libavformat</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">libavcodec</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">zlib1g</span><span class="o">-</span><span class="n">dev</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Fedora<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo yum install \
+    make \
+    mercurial \
+    automake \
+    gcc \
+    gcc-c++ \
+    SDL_ttf-devel \
+    SDL_mixer-devel \
+    khrplatform-devel \
+    mesa-libGLES \
+    mesa-libGLES-devel \
+    gstreamer-plugins-good \
+    gstreamer \
+    gstreamer-python \
+    mtdev-devel \
+    python-devel \
+    python-pip
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>OpenSuse<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo zypper install \
+    python-distutils-extra \
+    python-gstreamer-0_10 \
+    python-enchant \
+    gstreamer-0_10-plugins-good \
+    python-devel \
+    Mesa-devel \
+    python-pip
+$ sudo zypper install -t pattern devel_C_C++
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>Installation<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Make sure Pip, Virtualenv and Setuptools are updated</span>
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span> <span class="n">virtualenv</span> <span class="n">setuptools</span>
+
+<span class="c1"># Then create a virtualenv named &quot;kivyinstall&quot; by either:</span>
+
+<span class="c1"># 1. using the default interpreter</span>
+<span class="n">virtualenv</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span> <span class="n">kivyinstall</span>
+
+<span class="c1"># or 2. using a specific interpreter</span>
+<span class="c1"># (this will use the interpreter in /usr/bin/python2.7)</span>
+<span class="n">virtualenv</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python2</span><span class="o">.</span><span class="mi">7</span> <span class="n">kivyinstall</span>
+
+<span class="c1"># Enter the virtualenv</span>
+<span class="o">.</span> <span class="n">kivyinstall</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+
+<span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span>
+
+<span class="n">pip</span> <span class="n">install</span> <span class="n">Cython</span><span class="o">==</span><span class="mf">0.23</span>
+
+<span class="c1"># If you want to install pygame backend instead of sdl2</span>
+<span class="c1"># you can install pygame using command below and enforce using</span>
+<span class="c1"># export USE_SDL2=0. If kivy&#39;s setup can&#39;t find sdl2 libs it will</span>
+<span class="c1"># automatically set this value to 0 then try to build using pygame.</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">hg</span><span class="o">+</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">bitbucket</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">pygame</span><span class="o">/</span><span class="n">pygame</span>
+
+
+
+<span class="c1"># Install stable version of Kivy into the virtualenv</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">kivy</span>
+<span class="c1"># For the development version of Kivy, use the following command instead</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">kivy</span><span class="o">/</span><span class="n">kivy</span><span class="o">.</span><span class="n">git</span><span class="nd">@master</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-additional-virtualenv-packages">
+<h3>Install additional Virtualenv packages<a class="headerlink" href="#install-additional-virtualenv-packages" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Install development version of buildozer into the virtualenv</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">kivy</span><span class="o">/</span><span class="n">buildozer</span><span class="o">.</span><span class="n">git</span><span class="nd">@master</span>
+
+<span class="c1"># Install development version of plyer into the virtualenv</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">kivy</span><span class="o">/</span><span class="n">plyer</span><span class="o">.</span><span class="n">git</span><span class="nd">@master</span>
+
+<span class="c1"># Install a couple of dependencies for KivyCatalog</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pygments</span> <span class="n">docutils</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="start-from-the-command-line">
+<span id="linux-run-app"></span><h2>Start from the Command Line<a class="headerlink" href="#start-from-the-command-line" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>We ship some examples that are ready-to-run. However, these examples are packaged inside the package.
+This means you must first know where easy_install has installed your current kivy package,
+and then go to the examples directory:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ python -c &quot;import pkg_resources; print(pkg_resources.resource_filename(&#39;kivy&#39;, &#39;../share/kivy-examples&#39;))&quot;
+</pre></div>
+</div>
+<p>And you should have a path similar to:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python2</span><span class="o">.</span><span class="mi">6</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">Kivy</span><span class="o">-</span><span class="mf">1.0</span><span class="o">.</span><span class="mi">4</span><span class="n">_beta</span><span class="o">-</span><span class="n">py2</span><span class="o">.</span><span class="mi">6</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">egg</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">kivy</span><span class="o">-</span><span class="n">examples</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Then you can go to the example directory, and run it:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span># launch touchtracer
+$ cd &lt;path to kivy-examples&gt;
+$ cd demo/touchtracer
+$ python main.py
+
+# launch pictures
+$ cd &lt;path to kivy-examples&gt;
+$ cd demo/pictures
+$ python main.py
+</pre></div>
+</div>
+<p>If you are familiar with Unix and symbolic links, you can create a link directly in your home directory
+for easier access. For example:</p>
+<ol class="arabic">
+<li><p class="first">Get the example path from the command line above</p>
+</li>
+<li><p class="first">Paste into your console:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ln -s &lt;path to kivy-examples&gt; ~/
+</pre></div>
+</div>
+</li>
+<li><p class="first">Then, you can access to kivy-examples directly in your home directory:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cd ~/kivy-examples
+</pre></div>
+</div>
+</li>
+</ol>
+<p>If you wish to start your Kivy programs as scripts (by typing <cite>./main.py</cite>) or by double-clicking them,
+you will want to define the correct version of Python by linking to it. Something like:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo ln -s /usr/bin/python2.7 /usr/bin/kivy
+</pre></div>
+</div>
+<p>Or, if you are running Kivy inside a virtualenv, link to the Python interpreter for it, like:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo ln -s /home/your_username/Envs/kivy/bin/python2.7 /usr/bin/kivy
+</pre></div>
+</div>
+<p>Then, inside each main.py, add a new first line:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/kivy</span>
+</pre></div>
+</div>
+<p>NOTE: Beware of Python files stored with Windows-style line endings (CR-LF). Linux will not ignore the &lt;CR&gt;
+and will try to use it as part of the file name. This makes confusing error messages. Convert to Unix line endings.</p>
+</div>
+<div class="section" id="device-permissions">
+<h2>Device permissions<a class="headerlink" href="#device-permissions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>When you app starts, Kivy uses <a class="reference external" href="http://wiki.ubuntu.com/Multitouch">Mtdev</a> to
+scan for available multi-touch devices to use for input. Access to these
+devices is typically restricted to users or group with the appropriate
+permissions.</p>
+<p>If you do not have access to these devices, Kivy will log an error or warning
+specifying these devices, normally something like:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Permission</span> <span class="n">denied</span><span class="p">:</span><span class="s1">&#39;/dev/input/eventX&#39;</span>
+</pre></div>
+</div>
+<p>In order to use these devices, you need to grant the user or group permission.
+This can be done via:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo chmod u+r /dev/input/eventX
+</pre></div>
+</div>
+<p>for the user or:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo chmod g+r /dev/input/eventX
+</pre></div>
+</div>
+<p>for the group. These permissions will only be effective for the duration of
+your current session. A more permanent solution is to add the user to a group
+that has these permissions. For example, in Ubuntu, you can add the user to
+the &#8216;input&#8217; group:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo adduser $USER input
+</pre></div>
+</div>
+<p>Note that you need to log out then back in again for these permissions to
+be applied.</p>
+</div>
+</div>
+
+
+            <div class="footerlinks">
+            <table>
+                <tr>
+                    <td class="leftlink">
+                  <a href="installation-osx.html" title="previous chapter">&laquo; Installation on OS X</a></li>
+                  </td>
+                  <td class="rightlink">
+                  <a href="installation-android.html" title="next chapter">Installation on Android &raquo;</a>
+                      </td>
+                  </tr>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 29, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>
