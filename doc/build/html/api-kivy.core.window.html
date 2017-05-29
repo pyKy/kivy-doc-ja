@@ -1,0 +1,1666 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>Window &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="_static/kivy.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="index.html" />
+    <link rel="up" title="Core Abstraction" href="api-kivy.core.html" />
+    <link rel="next" title="Kivy module for binary dependencies." href="api-kivy.deps.html" />
+    <link rel="prev" title="Video" href="api-kivy.core.video.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="index.html">Window</a></h3>
+          <ul>
+<li><a class="reference internal" href="#">Window</a></li>
+</ul>
+
+          <h3><a href="index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="api-index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.context.html">Context</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+              <li>Previous: <a href="api-kivy.core.video.html" title="previous chapter">Video</a></li>
+              <li>Next: <a href="api-kivy.deps.html" title="next chapter">Kivy module for binary dependencies.</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2><ul>
+<li><a class="reference internal" href="#">Window</a></li>
+</ul>
+</div>
+            
+  <div class="section" id="module-kivy.core.window">
+<span id="window"></span><h1>Window<a class="headerlink" href="#module-kivy.core.window" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Core class for creating the default Kivy window. Kivy supports only one window
+per application: please don&#8217;t try to create more than one.</p>
+<dl class="class">
+<dt id="kivy.core.window.Keyboard">
+<em class="property">class </em><code class="descclassname">kivy.core.window.</code><code class="descname">Keyboard</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#Keyboard"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.Keyboard" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ベースクラス: <a class="reference internal" href="api-kivy.event.html#kivy.event.EventDispatcher" title="kivy.event.EventDispatcher"><code class="xref py py-class docutils literal"><span class="pre">kivy.event.EventDispatcher</span></code></a></p>
+<p>Keyboard interface that is returned by
+<a class="reference internal" href="#kivy.core.window.WindowBase.request_keyboard" title="kivy.core.window.WindowBase.request_keyboard"><code class="xref py py-meth docutils literal"><span class="pre">WindowBase.request_keyboard()</span></code></a>. When you request a keyboard,
+you&#8217;ll get an instance of this class. Whatever the keyboard input is
+(system or virtual keyboard), you&#8217;ll receive events through this
+instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Events:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>on_key_down</cite>: keycode, text, modifiers</dt>
+<dd><p class="first last">Fired when a new key is pressed down</p>
+</dd>
+<dt><cite>on_key_up</cite>: keycode</dt>
+<dd><p class="first last">Fired when a key is released (up)</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Here is an example of how to request a Keyboard in accordance with the
+current configuration:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">kivy</span>
+<span class="n">kivy</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="s1">&#39;1.0.8&#39;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">kivy.core.window</span> <span class="k">import</span> <span class="n">Window</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.widget</span> <span class="k">import</span> <span class="n">Widget</span>
+
+
+<span class="k">class</span> <span class="nc">MyKeyboardListener</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MyKeyboardListener</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_keyboard</span> <span class="o">=</span> <span class="n">Window</span><span class="o">.</span><span class="n">request_keyboard</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_keyboard_closed</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_keyboard</span><span class="o">.</span><span class="n">widget</span><span class="p">:</span>
+            <span class="c1"># If it exists, this widget is a VKeyboard object which you can use</span>
+            <span class="c1"># to change the keyboard layout.</span>
+            <span class="k">pass</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_keyboard</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_key_down</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_on_keyboard_down</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_keyboard_closed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My keyboard have been closed!&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_keyboard</span><span class="o">.</span><span class="n">unbind</span><span class="p">(</span><span class="n">on_key_down</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_on_keyboard_down</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_keyboard</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_on_keyboard_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyboard</span><span class="p">,</span> <span class="n">keycode</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">modifiers</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The key&#39;</span><span class="p">,</span> <span class="n">keycode</span><span class="p">,</span> <span class="s1">&#39;have been pressed&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; - text is </span><span class="si">%r</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">text</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; - modifiers are </span><span class="si">%r</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">modifiers</span><span class="p">)</span>
+
+        <span class="c1"># Keycode is composed of an integer + a string</span>
+        <span class="c1"># If we hit escape, release the keyboard</span>
+        <span class="k">if</span> <span class="n">keycode</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;escape&#39;</span><span class="p">:</span>
+            <span class="n">keyboard</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+
+        <span class="c1"># Return True to accept the key. Otherwise, it will be used by</span>
+        <span class="c1"># the system.</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">kivy.base</span> <span class="k">import</span> <span class="n">runTouchApp</span>
+    <span class="n">runTouchApp</span><span class="p">(</span><span class="n">MyKeyboardListener</span><span class="p">())</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="kivy.core.window.Keyboard.callback">
+<code class="descname">callback</code><em class="property"> = None</em><a class="headerlink" href="#kivy.core.window.Keyboard.callback" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Callback that will be called when the keyboard is released</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.Keyboard.keycode_to_string">
+<code class="descname">keycode_to_string</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#Keyboard.keycode_to_string"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.Keyboard.keycode_to_string" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Convert a keycode number to a string according to the
+<code class="xref py py-attr docutils literal"><span class="pre">Keyboard.keycodes</span></code>. If the value is not found in the
+keycodes, it will return &#8216;&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.Keyboard.release">
+<code class="descname">release</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#Keyboard.release"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.Keyboard.release" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Call this method to release the current keyboard.
+This will ensure that the keyboard is no longer attached to your
+callback.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.Keyboard.string_to_keycode">
+<code class="descname">string_to_keycode</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#Keyboard.string_to_keycode"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.Keyboard.string_to_keycode" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Convert a string to a keycode number according to the
+<code class="xref py py-attr docutils literal"><span class="pre">Keyboard.keycodes</span></code>. If the value is not found in the
+keycodes, it will return -1.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.Keyboard.target">
+<code class="descname">target</code><em class="property"> = None</em><a class="headerlink" href="#kivy.core.window.Keyboard.target" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Target that have requested the keyboard</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.Keyboard.widget">
+<code class="descname">widget</code><em class="property"> = None</em><a class="headerlink" href="#kivy.core.window.Keyboard.widget" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>VKeyboard widget, if allowed by the configuration</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.Keyboard.window">
+<code class="descname">window</code><em class="property"> = None</em><a class="headerlink" href="#kivy.core.window.Keyboard.window" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Window which the keyboard is attached too</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="kivy.core.window.WindowBase">
+<em class="property">class </em><code class="descclassname">kivy.core.window.</code><code class="descname">WindowBase</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ベースクラス: <a class="reference internal" href="api-kivy.event.html#kivy.event.EventDispatcher" title="kivy.event.EventDispatcher"><code class="xref py py-class docutils literal"><span class="pre">kivy.event.EventDispatcher</span></code></a></p>
+<p>WindowBase is an abstract window widget for any window implementation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><cite>borderless</cite>: str, one of (&#8216;0&#8217;, &#8216;1&#8217;)</dt>
+<dd><p class="first last">Set the window border state. Check the
+<a class="reference internal" href="api-kivy.config.html#module-kivy.config" title="kivy.config"><code class="xref py py-mod docutils literal"><span class="pre">config</span></code></a> documentation for a
+more detailed explanation on the values.</p>
+</dd>
+<dt><cite>fullscreen</cite>: str, one of (&#8216;0&#8217;, &#8216;1&#8217;, &#8216;auto&#8217;, &#8216;fake&#8217;)</dt>
+<dd><p class="first last">Make the window fullscreen. Check the
+<a class="reference internal" href="api-kivy.config.html#module-kivy.config" title="kivy.config"><code class="xref py py-mod docutils literal"><span class="pre">config</span></code></a> documentation for a
+more detailed explanation on the values.</p>
+</dd>
+<dt><cite>width</cite>: int</dt>
+<dd><p class="first last">Width of the window.</p>
+</dd>
+<dt><cite>height</cite>: int</dt>
+<dd><p class="first last">Height of the window.</p>
+</dd>
+<dt><cite>minimum_width</cite>: int</dt>
+<dd><p class="first last">Minimum width of the window (only works for sdl2 window provider).</p>
+</dd>
+<dt><cite>minimum_height</cite>: int</dt>
+<dd><p class="first last">Minimum height of the window (only works for sdl2 window provider).</p>
+</dd>
+<dt><cite>allow_screensaver</cite>: bool</dt>
+<dd><p class="first last">Allow the device to show a screen saver, or to go to sleep
+on mobile devices. Defaults to True. Only works for sdl2 window
+provider.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Events:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>on_motion</cite>: etype, motionevent</dt>
+<dd><p class="first last">Fired when a new <a class="reference internal" href="api-kivy.input.motionevent.html#kivy.input.motionevent.MotionEvent" title="kivy.input.motionevent.MotionEvent"><code class="xref py py-class docutils literal"><span class="pre">MotionEvent</span></code></a> is
+dispatched</p>
+</dd>
+<dt><cite>on_touch_down</cite>:</dt>
+<dd><p class="first last">Fired when a new touch event is initiated.</p>
+</dd>
+<dt><cite>on_touch_move</cite>:</dt>
+<dd><p class="first last">Fired when an existing touch event changes location.</p>
+</dd>
+<dt><cite>on_touch_up</cite>:</dt>
+<dd><p class="first last">Fired when an existing touch event is terminated.</p>
+</dd>
+<dt><cite>on_draw</cite>:</dt>
+<dd><p class="first last">Fired when the <code class="xref py py-class docutils literal"><span class="pre">Window</span></code> is being drawn.</p>
+</dd>
+<dt><cite>on_flip</cite>:</dt>
+<dd><p class="first last">Fired when the <code class="xref py py-class docutils literal"><span class="pre">Window</span></code> GL surface is being flipped.</p>
+</dd>
+<dt><cite>on_rotate</cite>: rotation</dt>
+<dd><p class="first last">Fired when the <code class="xref py py-class docutils literal"><span class="pre">Window</span></code> is being rotated.</p>
+</dd>
+<dt><cite>on_close</cite>:</dt>
+<dd><p class="first last">Fired when the <code class="xref py py-class docutils literal"><span class="pre">Window</span></code> is closed.</p>
+</dd>
+<dt><cite>on_request_close</cite>:</dt>
+<dd><p class="first">Fired when the event loop wants to close the window, or if the
+escape key is pressed and <cite>exit_on_escape</cite> is <cite>True</cite>. If a function
+bound to this event returns <cite>True</cite>, the window will not be closed.
+If the the event is triggered because of the keyboard escape key,
+the keyword argument <cite>source</cite> is dispatched along with a value of
+<cite>keyboard</cite> to the bound functions.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+</dd>
+<dt><cite>on_cursor_enter</cite>:</dt>
+<dd><p class="first">Fired when the cursor enters the window.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">バージョン 1.9.1 で追加.</span></p>
+</div>
+</dd>
+<dt><cite>on_cursor_leave</cite>:</dt>
+<dd><p class="first">Fired when the cursor leaves the window.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">バージョン 1.9.1 で追加.</span></p>
+</div>
+</dd>
+<dt><cite>on_minimize</cite>:</dt>
+<dd><p class="first">Fired when the window is minimized.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+</div>
+</dd>
+<dt><cite>on_maximize</cite>:</dt>
+<dd><p class="first">Fired when the window is maximized.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+</div>
+</dd>
+<dt><cite>on_restore</cite>:</dt>
+<dd><p class="first">Fired when the window is restored.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+</div>
+</dd>
+<dt><cite>on_hide</cite>:</dt>
+<dd><p class="first">Fired when the window is hidden.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+</div>
+</dd>
+<dt><cite>on_show</cite>:</dt>
+<dd><p class="first">Fired when when the window is shown.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+</div>
+</dd>
+<dt><cite>on_keyboard</cite>: key, scancode, codepoint, modifier</dt>
+<dd><p class="first">Fired when the keyboard is used for input.</p>
+<div class="last versionchanged">
+<p><span class="versionmodified">バージョン 1.3.0 で変更: </span>The <em>unicode</em> parameter has been deprecated in favor of
+codepoint, and will be removed completely in future versions.</p>
+</div>
+</dd>
+<dt><cite>on_key_down</cite>: key, scancode, codepoint, modifier</dt>
+<dd><p class="first">Fired when a key pressed.</p>
+<div class="last versionchanged">
+<p><span class="versionmodified">バージョン 1.3.0 で変更: </span>The <em>unicode</em> parameter has been deprecated in favor of
+codepoint, and will be removed completely in future versions.</p>
+</div>
+</dd>
+<dt><cite>on_key_up</cite>: key, scancode, codepoint</dt>
+<dd><p class="first">Fired when a key is released.</p>
+<div class="last versionchanged">
+<p><span class="versionmodified">バージョン 1.3.0 で変更: </span>The <em>unicode</em> parameter has be deprecated in favor of
+codepoint, and will be removed completely in future versions.</p>
+</div>
+</dd>
+<dt><cite>on_dropfile</cite>: str</dt>
+<dd><p class="first">Fired when a file is dropped on the application.</p>
+<div class="last admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">This event doesn&#8217;t work for apps with elevated permissions,
+because the OS API calls are filtered. Check issue
+<a class="reference external" href="https://github.com/kivy/kivy/issues/4999">#4999</a> for
+pointers to workarounds.</p>
+</div>
+</dd>
+<dt><cite>on_memorywarning</cite>:</dt>
+<dd><p class="first">Fired when the platform have memory issue (iOS / Android mostly)
+You can listen to this one, and clean whatever you can.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.add_widget">
+<code class="descname">add_widget</code><span class="sig-paren">(</span><em>widget</em>, <em>canvas=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.add_widget"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.add_widget" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Add a widget to a window</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.allow_screensaver">
+<code class="descname">allow_screensaver</code><a class="headerlink" href="#kivy.core.window.WindowBase.allow_screensaver" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Whether the screen saver is enabled, or on mobile devices whether the
+device is allowed to go to sleep while the app is open.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.allow_screensaver" title="kivy.core.window.WindowBase.allow_screensaver"><code class="xref py py-attr docutils literal"><span class="pre">allow_screensaver</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a>
+and defaults to True.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.borderless">
+<code class="descname">borderless</code><a class="headerlink" href="#kivy.core.window.WindowBase.borderless" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>When set to True, this property removes the window border/decoration.
+Check the <a class="reference internal" href="api-kivy.config.html#module-kivy.config" title="kivy.config"><code class="xref py py-mod docutils literal"><span class="pre">config</span></code></a> documentation for a more detailed
+explanation on the values.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.borderless" title="kivy.core.window.WindowBase.borderless"><code class="xref py py-attr docutils literal"><span class="pre">borderless</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> and
+defaults to False.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.center">
+<code class="descname">center</code><a class="headerlink" href="#kivy.core.window.WindowBase.center" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Center of the rotated window.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.9 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.center" title="kivy.core.window.WindowBase.center"><code class="xref py py-attr docutils literal"><span class="pre">center</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.children">
+<code class="descname">children</code><a class="headerlink" href="#kivy.core.window.WindowBase.children" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>List of the children of this window.</p>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.children" title="kivy.core.window.WindowBase.children"><code class="xref py py-attr docutils literal"><span class="pre">children</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a> instance and
+defaults to an empty list.</p>
+<p>Use <a class="reference internal" href="#kivy.core.window.WindowBase.add_widget" title="kivy.core.window.WindowBase.add_widget"><code class="xref py py-meth docutils literal"><span class="pre">add_widget()</span></code></a> and <a class="reference internal" href="#kivy.core.window.WindowBase.remove_widget" title="kivy.core.window.WindowBase.remove_widget"><code class="xref py py-meth docutils literal"><span class="pre">remove_widget()</span></code></a> to manipulate the list of
+children. Don&#8217;t manipulate the list directly unless you know what you are
+doing.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.clear"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.clear" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Clear the window with the background color</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.clearcolor">
+<code class="descname">clearcolor</code><a class="headerlink" href="#kivy.core.window.WindowBase.clearcolor" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Color used to clear the window.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.core.window</span> <span class="k">import</span> <span class="n">Window</span>
+
+<span class="c1"># red background color</span>
+<span class="n">Window</span><span class="o">.</span><span class="n">clearcolor</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># don&#39;t clear background at all</span>
+<span class="n">Window</span><span class="o">.</span><span class="n">clearcolor</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.7.2 で変更: </span>The clearcolor default value is now: (0, 0, 0, 1).</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.9 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.clearcolor" title="kivy.core.window.WindowBase.clearcolor"><code class="xref py py-attr docutils literal"><span class="pre">clearcolor</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a> and
+defaults to (0, 0, 0, 1).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.close"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.close" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Close the window</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.create_window">
+<code class="descname">create_window</code><span class="sig-paren">(</span><em>*largs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.create_window"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.create_window" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Will create the main window and configure it.</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p>This method is called automatically at runtime. If you call it, it
+will recreate a RenderContext and Canvas. This means you&#8217;ll have a
+new graphics tree, and the old one will be unusable.</p>
+<p>This method exist to permit the creation of a new OpenGL context
+AFTER closing the first one. (Like using runTouchApp() and
+stopTouchApp()).</p>
+<p>This method has only been tested in a unittest environment and
+is not suitable for Applications.</p>
+<p class="last">Again, don&#8217;t use this method unless you know exactly what you are
+doing!</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.dpi">
+<code class="descname">dpi</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.core.window.WindowBase.dpi" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return the DPI of the screen. If the implementation doesn&#8217;t support
+any DPI lookup, it will just return 96.</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">This value is not cross-platform. Use
+<code class="xref py py-attr docutils literal"><span class="pre">kivy.base.EventLoop.dpi</span></code> instead.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.flip">
+<code class="descname">flip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.flip"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.flip" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Flip between buffers</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.focus">
+<code class="descname">focus</code><a class="headerlink" href="#kivy.core.window.WindowBase.focus" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Check whether or not the window currently has focus.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.1 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.focus" title="kivy.core.window.WindowBase.focus"><code class="xref py py-attr docutils literal"><span class="pre">focus</span></code></a> is a read-only <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a> and
+defaults to True.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.fullscreen">
+<code class="descname">fullscreen</code><a class="headerlink" href="#kivy.core.window.WindowBase.fullscreen" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>This property sets the fullscreen mode of the window. Available options
+are: True, False, &#8216;auto&#8217; and &#8216;fake&#8217;. Check the <a class="reference internal" href="api-kivy.config.html#module-kivy.config" title="kivy.config"><code class="xref py py-mod docutils literal"><span class="pre">config</span></code></a>
+documentation for more detailed explanations on these values.</p>
+<p>fullscreen is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.OptionProperty" title="kivy.properties.OptionProperty"><code class="xref py py-class docutils literal"><span class="pre">OptionProperty</span></code></a> and defaults to
+<cite>False</cite>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.2.0 で追加.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">The &#8216;fake&#8217; option has been deprecated, use the <a class="reference internal" href="#kivy.core.window.WindowBase.borderless" title="kivy.core.window.WindowBase.borderless"><code class="xref py py-attr docutils literal"><span class="pre">borderless</span></code></a>
+property instead.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.grab_mouse">
+<code class="descname">grab_mouse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.grab_mouse"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.grab_mouse" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Grab mouse - so won&#8217;t leave window</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">This feature requires the SDL2 window provider.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.height">
+<code class="descname">height</code><a class="headerlink" href="#kivy.core.window.WindowBase.height" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Rotated window height.</p>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.height" title="kivy.core.window.WindowBase.height"><code class="xref py py-attr docutils literal"><span class="pre">height</span></code></a> is a read-only <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.hide">
+<code class="descname">hide</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.hide"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.hide" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Hides the window. This method should be used on desktop
+platforms only.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">This feature requires the SDL2 window provider and is currently
+only supported on desktop platforms.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.icon">
+<code class="descname">icon</code><a class="headerlink" href="#kivy.core.window.WindowBase.icon" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>A path to the window icon.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.1.2 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.icon" title="kivy.core.window.WindowBase.icon"><code class="xref py py-attr docutils literal"><span class="pre">icon</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.keyboard_anim_args">
+<code class="descname">keyboard_anim_args</code><em class="property"> = {'t': 'in_out_quart', 'd': 0.5}</em><a class="headerlink" href="#kivy.core.window.WindowBase.keyboard_anim_args" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>The attributes for animating softkeyboard/IME.
+<cite>t</cite> = <cite>transition</cite>, <cite>d</cite> = <cite>duration</cite>. Will have no effect on desktops.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.keyboard_anim_args" title="kivy.core.window.WindowBase.keyboard_anim_args"><code class="xref py py-attr docutils literal"><span class="pre">keyboard_anim_args</span></code></a> is a dict with values
+&#8216;t&#8217;: &#8216;in_out_quart&#8217;, &#8216;d&#8217;: <cite>.5</cite>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.keyboard_height">
+<code class="descname">keyboard_height</code><a class="headerlink" href="#kivy.core.window.WindowBase.keyboard_height" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns the height of the softkeyboard/IME on mobile platforms.
+Will return 0 if not on mobile platform or if IME is not active.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">This property returns 0 with SDL2 on Android, but setting
+Window.softinput_mode does works.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.keyboard_height" title="kivy.core.window.WindowBase.keyboard_height"><code class="xref py py-attr docutils literal"><span class="pre">keyboard_height</span></code></a> is a read-only
+<a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a> and defaults to 0.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.keyboard_padding">
+<code class="descname">keyboard_padding</code><a class="headerlink" href="#kivy.core.window.WindowBase.keyboard_padding" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>The padding to have between the softkeyboard/IME &amp; target
+or bottom of window. Will have no effect on desktops.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.keyboard_padding" title="kivy.core.window.WindowBase.keyboard_padding"><code class="xref py py-attr docutils literal"><span class="pre">keyboard_padding</span></code></a> is a
+<a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a> and defaults to 0.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.left">
+<code class="descname">left</code><a class="headerlink" href="#kivy.core.window.WindowBase.left" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Left position of the window.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">It&#8217;s an SDL2 property with <cite>[0, 0]</cite> in the top-left corner.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.10.0 で変更: </span><a class="reference internal" href="#kivy.core.window.WindowBase.left" title="kivy.core.window.WindowBase.left"><code class="xref py py-attr docutils literal"><span class="pre">left</span></code></a> is now an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a></p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.1 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.left" title="kivy.core.window.WindowBase.left"><code class="xref py py-attr docutils literal"><span class="pre">left</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a> and defaults to
+position set in <a class="reference internal" href="api-kivy.config.html#kivy.config.Config" title="kivy.config.Config"><code class="xref py py-class docutils literal"><span class="pre">Config</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.maximize">
+<code class="descname">maximize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.maximize"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.maximize" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Maximizes the window. This method should be used on desktop
+platforms only.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">This feature requires the SDL2 window provider and is currently
+only supported on desktop platforms.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.minimize">
+<code class="descname">minimize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.minimize"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.minimize" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Minimizes the window. This method should be used on desktop
+platforms only.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">This feature requires the SDL2 window provider and is currently
+only supported on desktop platforms.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.minimum_height">
+<code class="descname">minimum_height</code><a class="headerlink" href="#kivy.core.window.WindowBase.minimum_height" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>The minimum height to restrict the window to.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.1 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.minimum_height" title="kivy.core.window.WindowBase.minimum_height"><code class="xref py py-attr docutils literal"><span class="pre">minimum_height</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a> and
+defaults to 0.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.minimum_width">
+<code class="descname">minimum_width</code><a class="headerlink" href="#kivy.core.window.WindowBase.minimum_width" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>The minimum width to restrict the window to.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.1 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.minimum_width" title="kivy.core.window.WindowBase.minimum_width"><code class="xref py py-attr docutils literal"><span class="pre">minimum_width</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a> and
+defaults to 0.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.modifiers">
+<code class="descname">modifiers</code><a class="headerlink" href="#kivy.core.window.WindowBase.modifiers" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>List of keyboard modifiers currently active.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.9 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.modifiers" title="kivy.core.window.WindowBase.modifiers"><code class="xref py py-attr docutils literal"><span class="pre">modifiers</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.mouse_pos">
+<code class="descname">mouse_pos</code><a class="headerlink" href="#kivy.core.window.WindowBase.mouse_pos" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>2d position of the mouse within the window.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.2.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.mouse_pos" title="kivy.core.window.WindowBase.mouse_pos"><code class="xref py py-attr docutils literal"><span class="pre">mouse_pos</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ObjectProperty" title="kivy.properties.ObjectProperty"><code class="xref py py-class docutils literal"><span class="pre">ObjectProperty</span></code></a> and
+defaults to [0, 0].</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_close">
+<code class="descname">on_close</code><span class="sig-paren">(</span><em>*largs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_close"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_close" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when the window is closed</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_cursor_enter">
+<code class="descname">on_cursor_enter</code><span class="sig-paren">(</span><em>*largs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_cursor_enter"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_cursor_enter" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when the cursor enters the window.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.1 で追加.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">This feature requires the SDL2 window provider.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_cursor_leave">
+<code class="descname">on_cursor_leave</code><span class="sig-paren">(</span><em>*largs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_cursor_leave"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_cursor_leave" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when the cursor leaves the window.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.1 で追加.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">This feature requires the SDL2 window provider.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_dropfile">
+<code class="descname">on_dropfile</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_dropfile"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_dropfile" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when a file is dropped on the application.</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">This event currently works with sdl2 window provider, on pygame
+window provider and OS X with a patched version of pygame.
+This event is left in place for further evolution
+(ios, android etc.)</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.2.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_flip">
+<code class="descname">on_flip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_flip"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_flip" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Flip between buffers (event)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_hide">
+<code class="descname">on_hide</code><span class="sig-paren">(</span><em>*largs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_hide"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_hide" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when the window is hidden.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">This feature requires the SDL2 window provider.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_joy_axis">
+<code class="descname">on_joy_axis</code><span class="sig-paren">(</span><em>stickid</em>, <em>axisid</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_joy_axis"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_joy_axis" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when a joystick has a stick or other axis moved</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_joy_ball">
+<code class="descname">on_joy_ball</code><span class="sig-paren">(</span><em>stickid</em>, <em>ballid</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_joy_ball"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_joy_ball" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when a joystick has a ball moved</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_joy_button_down">
+<code class="descname">on_joy_button_down</code><span class="sig-paren">(</span><em>stickid</em>, <em>buttonid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_joy_button_down"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_joy_button_down" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when a joystick has a button pressed</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_joy_button_up">
+<code class="descname">on_joy_button_up</code><span class="sig-paren">(</span><em>stickid</em>, <em>buttonid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_joy_button_up"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_joy_button_up" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when a joystick has a button released</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_joy_hat">
+<code class="descname">on_joy_hat</code><span class="sig-paren">(</span><em>stickid</em>, <em>hatid</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_joy_hat"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_joy_hat" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when a joystick has a hat/dpad moved</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_key_down">
+<code class="descname">on_key_down</code><span class="sig-paren">(</span><em>key</em>, <em>scancode=None</em>, <em>codepoint=None</em>, <em>modifier=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_key_down"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_key_down" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when a key is down (same arguments as on_keyboard)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_key_up">
+<code class="descname">on_key_up</code><span class="sig-paren">(</span><em>key</em>, <em>scancode=None</em>, <em>codepoint=None</em>, <em>modifier=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_key_up"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_key_up" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when a key is released (same arguments as on_keyboard)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_keyboard">
+<code class="descname">on_keyboard</code><span class="sig-paren">(</span><em>key</em>, <em>scancode=None</em>, <em>codepoint=None</em>, <em>modifier=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_keyboard"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_keyboard" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when keyboard is used.</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Some providers may omit <cite>scancode</cite>, <cite>codepoint</cite> and/or <cite>modifier</cite>.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_maximize">
+<code class="descname">on_maximize</code><span class="sig-paren">(</span><em>*largs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_maximize"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_maximize" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when the window is maximized.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">This feature requires the SDL2 window provider.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_memorywarning">
+<code class="descname">on_memorywarning</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_memorywarning"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_memorywarning" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when the platform have memory issue.
+Your goal is to clear the cache in your app as much as you can,
+release unused widget, etc.</p>
+<p>Currently, this event is fired only from SDL2 provider, for
+iOS and Android.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_minimize">
+<code class="descname">on_minimize</code><span class="sig-paren">(</span><em>*largs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_minimize"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_minimize" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when the window is minimized.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">This feature requires the SDL2 window provider.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_motion">
+<code class="descname">on_motion</code><span class="sig-paren">(</span><em>etype</em>, <em>me</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_motion"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_motion" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when a Motion Event is received.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>etype</cite>: str</dt>
+<dd><p class="first last">One of &#8216;begin&#8217;, &#8216;update&#8217;, &#8216;end&#8217;</p>
+</dd>
+<dt><cite>me</cite>: <a class="reference internal" href="api-kivy.input.motionevent.html#kivy.input.motionevent.MotionEvent" title="kivy.input.motionevent.MotionEvent"><code class="xref py py-class docutils literal"><span class="pre">MotionEvent</span></code></a></dt>
+<dd><p class="first last">The Motion Event currently dispatched.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_mouse_down">
+<code class="descname">on_mouse_down</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>button</em>, <em>modifiers</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_mouse_down"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_mouse_down" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when the mouse is used (pressed/released)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_mouse_move">
+<code class="descname">on_mouse_move</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>modifiers</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_mouse_move"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_mouse_move" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when the mouse is moved with buttons pressed</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_mouse_up">
+<code class="descname">on_mouse_up</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>button</em>, <em>modifiers</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_mouse_up"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_mouse_up" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when the mouse is moved with buttons pressed</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_request_close">
+<code class="descname">on_request_close</code><span class="sig-paren">(</span><em>*largs</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_request_close"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_request_close" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called before we close the window. If a bound function returns
+<cite>True</cite>, the window will not be closed. If the the event is triggered
+because of the keyboard escape key, the keyword argument <cite>source</cite> is
+dispatched along with a value of <cite>keyboard</cite> to the bound functions.</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">When the bound function returns True the window will not be closed,
+so use with care because the user would not be able to close the
+program, even if the red X is clicked.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_resize">
+<code class="descname">on_resize</code><span class="sig-paren">(</span><em>width</em>, <em>height</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_resize"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_resize" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when the window is resized.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_restore">
+<code class="descname">on_restore</code><span class="sig-paren">(</span><em>*largs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_restore"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_restore" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when the window is restored.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">This feature requires the SDL2 window provider.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_rotate">
+<code class="descname">on_rotate</code><span class="sig-paren">(</span><em>rotation</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_rotate"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_rotate" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when the screen has been rotated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_show">
+<code class="descname">on_show</code><span class="sig-paren">(</span><em>*largs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_show"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_show" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when the window is shown.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">This feature requires the SDL2 window provider.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_textinput">
+<code class="descname">on_textinput</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_textinput"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_textinput" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when text: i.e. alpha numeric non control keys or set
+of keys is entered. As it is not guaranteed whether we get one
+character or multiple ones, this event supports handling multiple
+characters.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_touch_down">
+<code class="descname">on_touch_down</code><span class="sig-paren">(</span><em>touch</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_touch_down"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_touch_down" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when a touch down event is initiated.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.9.0 で変更: </span>The touch <cite>pos</cite> is now transformed to window coordinates before
+this method is called. Before, the touch <cite>pos</cite> coordinate would be
+<cite>(0, 0)</cite> when this method was called.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_touch_move">
+<code class="descname">on_touch_move</code><span class="sig-paren">(</span><em>touch</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_touch_move"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_touch_move" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when a touch event moves (changes location).</p>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.9.0 で変更: </span>The touch <cite>pos</cite> is now transformed to window coordinates before
+this method is called. Before, the touch <cite>pos</cite> coordinate would be
+<cite>(0, 0)</cite> when this method was called.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.on_touch_up">
+<code class="descname">on_touch_up</code><span class="sig-paren">(</span><em>touch</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.on_touch_up"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.on_touch_up" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event called when a touch event is released (terminated).</p>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.9.0 で変更: </span>The touch <cite>pos</cite> is now transformed to window coordinates before
+this method is called. Before, the touch <cite>pos</cite> coordinate would be
+<cite>(0, 0)</cite> when this method was called.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.parent">
+<code class="descname">parent</code><a class="headerlink" href="#kivy.core.window.WindowBase.parent" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Parent of this window.</p>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.parent" title="kivy.core.window.WindowBase.parent"><code class="xref py py-attr docutils literal"><span class="pre">parent</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ObjectProperty" title="kivy.properties.ObjectProperty"><code class="xref py py-class docutils literal"><span class="pre">ObjectProperty</span></code></a> instance and
+defaults to None. When created, the parent is set to the window itself.
+You must take care of it if you are doing a recursive check.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.raise_window">
+<code class="descname">raise_window</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.raise_window"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.raise_window" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Raise the window. This method should be used on desktop
+platforms only.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.1 で追加.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">This feature requires the SDL2 window provider and is currently
+only supported on desktop platforms.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.release_all_keyboards">
+<code class="descname">release_all_keyboards</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.release_all_keyboards"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.release_all_keyboards" title="この定義へのパーマリンク">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.8 で追加.</span></p>
+</div>
+<p>This will ensure that no virtual keyboard / system keyboard is
+requested. All instances will be closed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.release_keyboard">
+<code class="descname">release_keyboard</code><span class="sig-paren">(</span><em>target=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.release_keyboard"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.release_keyboard" title="この定義へのパーマリンク">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.4 で追加.</span></p>
+</div>
+<p>Internal method for the widget to release the real-keyboard. Check
+<a class="reference internal" href="#kivy.core.window.WindowBase.request_keyboard" title="kivy.core.window.WindowBase.request_keyboard"><code class="xref py py-meth docutils literal"><span class="pre">request_keyboard()</span></code></a> to understand how it works.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.remove_widget">
+<code class="descname">remove_widget</code><span class="sig-paren">(</span><em>widget</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.remove_widget"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.remove_widget" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Remove a widget from a window</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.request_keyboard">
+<code class="descname">request_keyboard</code><span class="sig-paren">(</span><em>callback</em>, <em>target</em>, <em>input_type='text'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.request_keyboard"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.request_keyboard" title="この定義へのパーマリンク">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.4 で追加.</span></p>
+</div>
+<p>Internal widget method to request the keyboard. This method is rarely
+required by the end-user as it is handled automatically by the
+<a class="reference internal" href="api-kivy.uix.textinput.html#kivy.uix.textinput.TextInput" title="kivy.uix.textinput.TextInput"><code class="xref py py-class docutils literal"><span class="pre">TextInput</span></code></a>. We expose it in case you want
+to handle the keyboard manually for unique input scenarios.</p>
+<p>A widget can request the keyboard, indicating a callback to call
+when the keyboard is released (or taken by another widget).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><cite>callback</cite>: func</dt>
+<dd><p class="first last">Callback that will be called when the keyboard is
+closed. This can be because somebody else requested the
+keyboard or the user closed it.</p>
+</dd>
+<dt><cite>target</cite>: Widget</dt>
+<dd><p class="first">Attach the keyboard to the specified <cite>target</cite>. This should be
+the widget that requested the keyboard. Ensure you have a
+different target attached to each keyboard if you&#8217;re working in
+a multi user mode.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">バージョン 1.0.8 で追加.</span></p>
+</div>
+</dd>
+<dt><cite>input_type</cite>: string</dt>
+<dd><p class="first">Choose the type of soft keyboard to request. Can be one of
+&#8216;text&#8217;, &#8216;number&#8217;, &#8216;url&#8217;, &#8216;mail&#8217;, &#8216;datetime&#8217;, &#8216;tel&#8217;, &#8216;address&#8217;.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last"><cite>input_type</cite> is currently only honored on mobile devices.</p>
+</div>
+<div class="last versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return:</th><td class="field-body"><p class="first last">An instance of <a class="reference internal" href="#kivy.core.window.Keyboard" title="kivy.core.window.Keyboard"><code class="xref py py-class docutils literal"><span class="pre">Keyboard</span></code></a> containing the callback, target,
+and if the configuration allows it, a
+<a class="reference internal" href="api-kivy.uix.vkeyboard.html#kivy.uix.vkeyboard.VKeyboard" title="kivy.uix.vkeyboard.VKeyboard"><code class="xref py py-class docutils literal"><span class="pre">VKeyboard</span></code></a> instance attached as a
+<em>.widget</em> property.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">The behavior of this function is heavily influenced by the current
+<cite>keyboard_mode</cite>. Please see the Config&#8217;s
+<a class="reference internal" href="api-kivy.config.html#configuration-tokens"><span class="std std-ref">configuration tokens</span></a> section for
+more information.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.restore">
+<code class="descname">restore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.restore"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.restore" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Restores the size and position of a maximized or minimized window.
+This method should be used on desktop platforms only.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">This feature requires the SDL2 window provider and is currently
+only supported on desktop platforms.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.rotation">
+<code class="descname">rotation</code><a class="headerlink" href="#kivy.core.window.WindowBase.rotation" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Get/set the window content rotation. Can be one of 0, 90, 180, 270
+degrees.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.9 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.rotation" title="kivy.core.window.WindowBase.rotation"><code class="xref py py-attr docutils literal"><span class="pre">rotation</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.screenshot">
+<code class="descname">screenshot</code><span class="sig-paren">(</span><em>name='screenshot{:04d}.png'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.screenshot"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.screenshot" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Save the actual displayed image in a file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.set_icon">
+<code class="descname">set_icon</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.set_icon"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.set_icon" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Set the icon of the window.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.5 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.set_title">
+<code class="descname">set_title</code><span class="sig-paren">(</span><em>title</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.set_title"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.set_title" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Set the window title.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.5 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.set_vkeyboard_class">
+<code class="descname">set_vkeyboard_class</code><span class="sig-paren">(</span><em>cls</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.set_vkeyboard_class"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.set_vkeyboard_class" title="この定義へのパーマリンク">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.8 で追加.</span></p>
+</div>
+<p>Set the VKeyboard class to use. If set to <cite>None</cite>, it will use the
+<a class="reference internal" href="api-kivy.uix.vkeyboard.html#kivy.uix.vkeyboard.VKeyboard" title="kivy.uix.vkeyboard.VKeyboard"><code class="xref py py-class docutils literal"><span class="pre">kivy.uix.vkeyboard.VKeyboard</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.show">
+<code class="descname">show</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.show"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.show" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Shows the window. This method should be used on desktop
+platforms only.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">This feature requires the SDL2 window provider and is currently
+only supported on desktop platforms.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.show_cursor">
+<code class="descname">show_cursor</code><a class="headerlink" href="#kivy.core.window.WindowBase.show_cursor" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Set whether or not the cursor is shown on the window.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.1 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.show_cursor" title="kivy.core.window.WindowBase.show_cursor"><code class="xref py py-attr docutils literal"><span class="pre">show_cursor</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> and
+defaults to True.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.size">
+<code class="descname">size</code><a class="headerlink" href="#kivy.core.window.WindowBase.size" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Get the rotated size of the window. If <a class="reference internal" href="#kivy.core.window.WindowBase.rotation" title="kivy.core.window.WindowBase.rotation"><code class="xref py py-attr docutils literal"><span class="pre">rotation</span></code></a> is set, then the
+size will change to reflect the rotation.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.9 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.size" title="kivy.core.window.WindowBase.size"><code class="xref py py-attr docutils literal"><span class="pre">size</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.softinput_mode">
+<code class="descname">softinput_mode</code><a class="headerlink" href="#kivy.core.window.WindowBase.softinput_mode" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>This specifies the behavior of window contents on display of the soft
+keyboard on mobile platforms. It can be one of &#8216;&#8217;, &#8216;pan&#8217;, &#8216;scale&#8217;,
+&#8216;resize&#8217; or &#8216;below_target&#8217;. Their effects are listed below.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Effect</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&#8216;&#8217;</td>
+<td>The main window is left as is, allowing you to use
+the <a class="reference internal" href="#kivy.core.window.WindowBase.keyboard_height" title="kivy.core.window.WindowBase.keyboard_height"><code class="xref py py-attr docutils literal"><span class="pre">keyboard_height</span></code></a> to manage the window
+contents manually.</td>
+</tr>
+<tr class="row-odd"><td>&#8216;pan&#8217;</td>
+<td>The main window pans, moving the bottom part of the
+window to be always on top of the keyboard.</td>
+</tr>
+<tr class="row-even"><td>&#8216;resize&#8217;</td>
+<td>The window is resized and the contents scaled to fit
+the remaining space.</td>
+</tr>
+<tr class="row-odd"><td>&#8216;below_target&#8217;</td>
+<td>The window pans so that the current target TextInput
+widget requesting the keyboard is presented just above
+the soft keyboard.</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.softinput_mode" title="kivy.core.window.WindowBase.softinput_mode"><code class="xref py py-attr docutils literal"><span class="pre">softinput_mode</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.OptionProperty" title="kivy.properties.OptionProperty"><code class="xref py py-class docutils literal"><span class="pre">OptionProperty</span></code></a> and
+defaults to <cite>None</cite>.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">The <cite>resize</cite> option does not currently work with SDL2 on Android.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.9.1 で変更: </span>The &#8216;below_target&#8217; option was added.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.system_size">
+<code class="descname">system_size</code><a class="headerlink" href="#kivy.core.window.WindowBase.system_size" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Real size of the window ignoring rotation.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.9 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.system_size" title="kivy.core.window.WindowBase.system_size"><code class="xref py py-attr docutils literal"><span class="pre">system_size</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.toggle_fullscreen">
+<code class="descname">toggle_fullscreen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.toggle_fullscreen"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.toggle_fullscreen" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Toggle between fullscreen and windowed mode.</p>
+<div class="deprecated">
+<p><span class="versionmodified">バージョン 1.9.0 で撤廃: </span>Use <a class="reference internal" href="#kivy.core.window.WindowBase.fullscreen" title="kivy.core.window.WindowBase.fullscreen"><code class="xref py py-attr docutils literal"><span class="pre">fullscreen</span></code></a> instead.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.top">
+<code class="descname">top</code><a class="headerlink" href="#kivy.core.window.WindowBase.top" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Top position of the window.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">It&#8217;s an SDL2 property with <cite>[0, 0]</cite> in the top-left corner.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.10.0 で変更: </span><a class="reference internal" href="#kivy.core.window.WindowBase.top" title="kivy.core.window.WindowBase.top"><code class="xref py py-attr docutils literal"><span class="pre">top</span></code></a> is now an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a></p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.1 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.top" title="kivy.core.window.WindowBase.top"><code class="xref py py-attr docutils literal"><span class="pre">top</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a> and defaults to
+position set in <a class="reference internal" href="api-kivy.config.html#kivy.config.Config" title="kivy.config.Config"><code class="xref py py-class docutils literal"><span class="pre">Config</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.core.window.WindowBase.ungrab_mouse">
+<code class="descname">ungrab_mouse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/core/window.html#WindowBase.ungrab_mouse"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.core.window.WindowBase.ungrab_mouse" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Ungrab mouse</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">This feature requires the SDL2 window provider.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.core.window.WindowBase.width">
+<code class="descname">width</code><a class="headerlink" href="#kivy.core.window.WindowBase.width" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Rotated window width.</p>
+<p><a class="reference internal" href="#kivy.core.window.WindowBase.width" title="kivy.core.window.WindowBase.width"><code class="xref py py-attr docutils literal"><span class="pre">width</span></code></a> is a read-only <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+
+            <div class="footerlinks">
+            <table>
+                <tr>
+                    <td class="leftlink">
+                  <a href="api-kivy.core.video.html" title="previous chapter">&laquo; Video</a></li>
+                  </td>
+                  <td class="rightlink">
+                  <a href="api-kivy.deps.html" title="next chapter">Kivy module for binary dependencies. &raquo;</a>
+                      </td>
+                  </tr>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 29, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

@@ -1,0 +1,1338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>kivy.uix.label &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../_static/kivy.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="../../../index.html" />
+    <link rel="up" title="kivy" href="../../kivy.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../../../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="../../../gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../../../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../../../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../../../index.html">kivy.uix.label</a></h3>
+          
+          <h3><a href="../../../index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2></div>
+            
+  <h1>kivy.uix.label のソースコード</h1><div class="highlight"><pre>
+<span></span><span class="sd">&#39;&#39;&#39;Label</span>
+<span class="sd">=====</span>
+
+<span class="sd">.. image:: images/label.png</span>
+<span class="sd">    :align: right</span>
+
+<span class="sd">The :class:`Label` widget is for rendering text. It supports ascii and unicode</span>
+<span class="sd">strings::</span>
+
+<span class="sd">    # hello world text</span>
+<span class="sd">    l = Label(text=&#39;Hello world&#39;)</span>
+
+<span class="sd">    # unicode text; can only display glyphs that are available in the font</span>
+<span class="sd">    l = Label(text=u&#39;Hello world &#39; + unichr(2764))</span>
+
+<span class="sd">    # multiline text</span>
+<span class="sd">    l = Label(text=&#39;Multi\\nLine&#39;)</span>
+
+<span class="sd">    # size</span>
+<span class="sd">    l = Label(text=&#39;Hello world&#39;, font_size=&#39;20sp&#39;)</span>
+
+<span class="sd">.. _kivy-uix-label-sizing-and-text-content:</span>
+
+<span class="sd">Sizing and text content</span>
+<span class="sd">---------------------------</span>
+
+<span class="sd">By default, the size of :class:`Label` is not affected by :attr:`~Label.text`</span>
+<span class="sd">content and the text is not affected by the size. In order to control</span>
+<span class="sd">sizing, you must specify :attr:`~Label.text_size` to constrain the text</span>
+<span class="sd">and/or bind :attr:`~Label.size` to :attr:`~Label.texture_size` to grow with</span>
+<span class="sd">the text.</span>
+
+<span class="sd">For example, this label&#39;s size will be set to the text content</span>
+<span class="sd">(plus :attr:`~Label.padding`):</span>
+
+<span class="sd">.. code-block:: kv</span>
+
+<span class="sd">    Label:</span>
+<span class="sd">        size: self.texture_size</span>
+
+<span class="sd">This label&#39;s text will wrap at the specified width and be clipped to the</span>
+<span class="sd">height:</span>
+
+<span class="sd">.. code-block:: kv</span>
+
+<span class="sd">    Label:</span>
+<span class="sd">        text_size: cm(6), cm(4)</span>
+
+<span class="sd">.. note:: The :attr:`~Label.shorten` and :attr:`~Label.max_lines` attributes</span>
+<span class="sd"> control how overflowing text behaves.</span>
+
+<span class="sd">Combine these concepts to create a Label that can grow vertically but wraps the</span>
+<span class="sd">text at a certain width:</span>
+
+<span class="sd">.. code-block:: kv</span>
+
+<span class="sd">    Label:</span>
+<span class="sd">        text_size: root.width, None</span>
+<span class="sd">        size: self.texture_size</span>
+
+<span class="sd">Text alignment and wrapping</span>
+<span class="sd">---------------------------</span>
+
+<span class="sd">The :class:`Label` has :attr:`~Label.halign` and :attr:`~Label.valign`</span>
+<span class="sd">properties to control the alignment of its text. However, by default the text</span>
+<span class="sd">image (:attr:`~Label.texture`) is only just large enough to contain the</span>
+<span class="sd">characters and is positioned in the center of the Label. The valign property</span>
+<span class="sd">will have no effect and halign will only have an effect if your text has</span>
+<span class="sd">newlines; a single line of text will appear to be centered even though halign</span>
+<span class="sd">is set to left (by default).</span>
+
+<span class="sd">In order for the alignment properties to take effect, set the</span>
+<span class="sd">:attr:`~Label.text_size`, which specifies the size of the bounding box within</span>
+<span class="sd">which text is aligned. For instance, the following code binds this size to the</span>
+<span class="sd">size of the Label, so text will be aligned within the widget bounds. This</span>
+<span class="sd">will also automatically wrap the text of the Label to remain within this area.</span>
+
+<span class="sd">.. code-block:: kv</span>
+
+<span class="sd">    Label:</span>
+<span class="sd">        text_size: self.size</span>
+<span class="sd">        halign: &#39;right&#39;</span>
+<span class="sd">        valign: &#39;middle&#39;</span>
+
+<span class="sd">Markup text</span>
+<span class="sd">-----------</span>
+
+<span class="sd">.. versionadded:: 1.1.0</span>
+
+<span class="sd">You can change the style of the text using :doc:`api-kivy.core.text.markup`.</span>
+<span class="sd">The syntax is similar to the bbcode syntax but only the inline styling is</span>
+<span class="sd">allowed::</span>
+
+<span class="sd">    # hello world with world in bold</span>
+<span class="sd">    l = Label(text=&#39;Hello [b]World[/b]&#39;, markup=True)</span>
+
+<span class="sd">    # hello in red, world in blue</span>
+<span class="sd">    l = Label(text=&#39;[color=ff3333]Hello[/color][color=3333ff]World[/color]&#39;,</span>
+<span class="sd">        markup = True)</span>
+
+<span class="sd">If you need to escape the markup from the current text, use</span>
+<span class="sd">:func:`kivy.utils.escape_markup`::</span>
+
+<span class="sd">    text = &#39;This is an important message [1]&#39;</span>
+<span class="sd">    l = Label(text=&#39;[b]&#39; + escape_markup(text) + &#39;[/b]&#39;, markup=True)</span>
+
+<span class="sd">The following tags are available:</span>
+
+<span class="sd">``[b][/b]``</span>
+<span class="sd">    Activate bold text</span>
+<span class="sd">``[i][/i]``</span>
+<span class="sd">    Activate italic text</span>
+<span class="sd">``[u][/u]``</span>
+<span class="sd">    Underlined text</span>
+<span class="sd">``[s][/s]``</span>
+<span class="sd">    Strikethrough text</span>
+<span class="sd">``[font=&lt;str&gt;][/font]``</span>
+<span class="sd">    Change the font</span>
+<span class="sd">``[size=&lt;integer&gt;][/size]``</span>
+<span class="sd">    Change the font size</span>
+<span class="sd">``[color=#&lt;color&gt;][/color]``</span>
+<span class="sd">    Change the text color</span>
+<span class="sd">``[ref=&lt;str&gt;][/ref]``</span>
+<span class="sd">    Add an interactive zone. The reference + bounding box inside the</span>
+<span class="sd">    reference will be available in :attr:`Label.refs`</span>
+<span class="sd">``[anchor=&lt;str&gt;]``</span>
+<span class="sd">    Put an anchor in the text. You can get the position of your anchor within</span>
+<span class="sd">    the text with :attr:`Label.anchors`</span>
+<span class="sd">``[sub][/sub]``</span>
+<span class="sd">    Display the text at a subscript position relative to the text before it.</span>
+<span class="sd">``[sup][/sup]``</span>
+<span class="sd">    Display the text at a superscript position relative to the text before it.</span>
+
+<span class="sd">If you want to render the markup text with a [ or ] or &amp; character, you need to</span>
+<span class="sd">escape them. We created a simple syntax::</span>
+
+<span class="sd">    [   -&gt; &amp;bl;</span>
+<span class="sd">    ]   -&gt; &amp;br;</span>
+<span class="sd">    &amp;   -&gt; &amp;amp;</span>
+
+<span class="sd">Then you can write::</span>
+
+<span class="sd">    &quot;[size=24]Hello &amp;bl;World&amp;bt;[/size]&quot;</span>
+
+<span class="sd">Interactive zone in text</span>
+<span class="sd">------------------------</span>
+
+<span class="sd">.. versionadded:: 1.1.0</span>
+
+<span class="sd">You can now have definable &quot;links&quot; using text markup. The idea is to be able</span>
+<span class="sd">to detect when the user clicks on part of the text and to react.</span>
+<span class="sd">The tag ``[ref=xxx]`` is used for that.</span>
+
+<span class="sd">In this example, we are creating a reference on the word &quot;World&quot;. When</span>
+<span class="sd">this word is clicked, the function ``print_it`` will be called with the</span>
+<span class="sd">name of the reference::</span>
+
+<span class="sd">    def print_it(instance, value):</span>
+<span class="sd">        print(&#39;User clicked on&#39;, value)</span>
+<span class="sd">    widget = Label(text=&#39;Hello [ref=world]World[/ref]&#39;, markup=True)</span>
+<span class="sd">    widget.bind(on_ref_press=print_it)</span>
+
+<span class="sd">For prettier rendering, you could add a color for the reference. Replace the</span>
+<span class="sd">``text=`` in the previous example with::</span>
+
+<span class="sd">    &#39;Hello [ref=world][color=0000ff]World[/color][/ref]&#39;</span>
+
+<span class="sd">Catering for Unicode languages</span>
+<span class="sd">------------------------------</span>
+
+<span class="sd">The font kivy uses does not contain all the characters required for displaying</span>
+<span class="sd">all languages. When you use the built-in widgets, this results in a block being</span>
+<span class="sd">drawn where you expect a character.</span>
+
+<span class="sd">If you want to display such characters, you can chose a font that supports them</span>
+<span class="sd">and deploy it universally via kv:</span>
+
+<span class="sd">.. code-block:: kv</span>
+
+<span class="sd">    &lt;Label&gt;:</span>
+<span class="sd">        font_name: &#39;/&lt;path&gt;/&lt;to&gt;/&lt;font&gt;&#39;</span>
+
+<span class="sd">Note that this needs to be done before your widgets are loaded as kv rules are</span>
+<span class="sd">only applied at load time.</span>
+
+<span class="sd">Usage example</span>
+<span class="sd">-------------</span>
+
+<span class="sd">The following example marks the anchors and references contained in a label::</span>
+
+<span class="sd">    from kivy.app import App</span>
+<span class="sd">    from kivy.uix.label import Label</span>
+<span class="sd">    from kivy.clock import Clock</span>
+<span class="sd">    from kivy.graphics import Color, Rectangle</span>
+
+
+<span class="sd">    class TestApp(App):</span>
+
+<span class="sd">        @staticmethod</span>
+<span class="sd">        def get_x(label, ref_x):</span>
+<span class="sd">            &quot;&quot;&quot; Return the x value of the ref/anchor relative to the canvas &quot;&quot;&quot;</span>
+<span class="sd">            return label.center_x - label.texture_size[0] * 0.5 + ref_x</span>
+
+<span class="sd">        @staticmethod</span>
+<span class="sd">        def get_y(label, ref_y):</span>
+<span class="sd">            &quot;&quot;&quot; Return the y value of the ref/anchor relative to the canvas &quot;&quot;&quot;</span>
+<span class="sd">            # Note the inversion of direction, as y values start at the top of</span>
+<span class="sd">            # the texture and increase downwards</span>
+<span class="sd">            return label.center_y + label.texture_size[1] * 0.5 - ref_y</span>
+
+<span class="sd">        def show_marks(self, label):</span>
+
+<span class="sd">            # Indicate the position of the anchors with a red top marker</span>
+<span class="sd">            for name, anc in label.anchors.items():</span>
+<span class="sd">                with label.canvas:</span>
+<span class="sd">                    Color(1, 0, 0)</span>
+<span class="sd">                    Rectangle(pos=(self.get_x(label, anc[0]),</span>
+<span class="sd">                                   self.get_y(label, anc[1])),</span>
+<span class="sd">                              size=(3, 3))</span>
+
+<span class="sd">            # Draw a green surround around the refs. Note the sizes y inversion</span>
+<span class="sd">            for name, boxes in label.refs.items():</span>
+<span class="sd">                for box in boxes:</span>
+<span class="sd">                    with label.canvas:</span>
+<span class="sd">                        Color(0, 1, 0, 0.25)</span>
+<span class="sd">                        Rectangle(pos=(self.get_x(label, box[0]),</span>
+<span class="sd">                                       self.get_y(label, box[1])),</span>
+<span class="sd">                                  size=(box[2] - box[0],</span>
+<span class="sd">                                        box[1] - box[3]))</span>
+
+<span class="sd">        def build(self):</span>
+<span class="sd">            label = Label(</span>
+<span class="sd">                text=&#39;[anchor=a]a\\nChars [anchor=b]b\\n[ref=myref]ref[/ref]&#39;,</span>
+<span class="sd">                markup=True)</span>
+<span class="sd">            Clock.schedule_once(lambda dt: self.show_marks(label), 1)</span>
+<span class="sd">            return label</span>
+
+<span class="sd">    TestApp().run()</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Label&#39;</span><span class="p">,</span> <span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">kivy.clock</span> <span class="k">import</span> <span class="n">Clock</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.widget</span> <span class="k">import</span> <span class="n">Widget</span>
+<span class="kn">from</span> <span class="nn">kivy.core.text</span> <span class="k">import</span> <span class="n">Label</span> <span class="k">as</span> <span class="n">CoreLabel</span><span class="p">,</span> <span class="n">DEFAULT_FONT</span>
+<span class="kn">from</span> <span class="nn">kivy.core.text.markup</span> <span class="k">import</span> <span class="n">MarkupLabel</span> <span class="k">as</span> <span class="n">CoreMarkupLabel</span>
+<span class="kn">from</span> <span class="nn">kivy.properties</span> <span class="k">import</span> <span class="n">StringProperty</span><span class="p">,</span> <span class="n">OptionProperty</span><span class="p">,</span> \
+    <span class="n">NumericProperty</span><span class="p">,</span> <span class="n">BooleanProperty</span><span class="p">,</span> <span class="n">ReferenceListProperty</span><span class="p">,</span> \
+    <span class="n">ListProperty</span><span class="p">,</span> <span class="n">ObjectProperty</span><span class="p">,</span> <span class="n">DictProperty</span>
+<span class="kn">from</span> <span class="nn">kivy.utils</span> <span class="k">import</span> <span class="n">get_hex_from_color</span>
+
+
+<div class="viewcode-block" id="Label"><a class="viewcode-back" href="../../../api-kivy.uix.label.html#kivy.uix.label.Label">[ドキュメント]</a><span class="k">class</span> <span class="nc">Label</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Label class, see module documentation for more information.</span>
+
+<span class="sd">    :Events:</span>
+<span class="sd">        `on_ref_press`</span>
+<span class="sd">            Fired when the user clicks on a word referenced with a</span>
+<span class="sd">            ``[ref]`` tag in a text markup.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">__events__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;on_ref_press&#39;</span><span class="p">]</span>
+
+    <span class="n">_font_properties</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;font_size&#39;</span><span class="p">,</span> <span class="s1">&#39;font_name&#39;</span><span class="p">,</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="s1">&#39;italic&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;underline&#39;</span><span class="p">,</span> <span class="s1">&#39;strikethrough&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;disabled_color&#39;</span><span class="p">,</span> <span class="s1">&#39;halign&#39;</span><span class="p">,</span> <span class="s1">&#39;valign&#39;</span><span class="p">,</span> <span class="s1">&#39;padding_x&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;padding_y&#39;</span><span class="p">,</span> <span class="s1">&#39;outline_width&#39;</span><span class="p">,</span> <span class="s1">&#39;disabled_outline_color&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;outline_color&#39;</span><span class="p">,</span> <span class="s1">&#39;text_size&#39;</span><span class="p">,</span> <span class="s1">&#39;shorten&#39;</span><span class="p">,</span> <span class="s1">&#39;mipmap&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;line_height&#39;</span><span class="p">,</span> <span class="s1">&#39;max_lines&#39;</span><span class="p">,</span> <span class="s1">&#39;strip&#39;</span><span class="p">,</span> <span class="s1">&#39;shorten_from&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;split_str&#39;</span><span class="p">,</span> <span class="s1">&#39;ellipsis_options&#39;</span><span class="p">,</span> <span class="s1">&#39;unicode_errors&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;markup&#39;</span><span class="p">,</span> <span class="s1">&#39;font_hinting&#39;</span><span class="p">,</span> <span class="s1">&#39;font_kerning&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;font_blended&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_texture</span> <span class="o">=</span> <span class="n">Clock</span><span class="o">.</span><span class="n">create_trigger</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">texture_update</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Label</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># bind all the property for recreating the texture</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">Label</span><span class="o">.</span><span class="n">_font_properties</span>
+        <span class="n">fbind</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fbind</span>
+        <span class="n">update</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_texture_update</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="s1">&#39;disabled&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+            <span class="n">fbind</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_label</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_create_label</span><span class="p">()</span>
+
+        <span class="c1"># force the texture creation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_texture</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_create_label</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># create the core label class according to markup value</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">cls</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="vm">__class__</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">cls</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">markup</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">markup</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">markup</span> <span class="ow">and</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">CoreMarkupLabel</span><span class="p">)</span> <span class="ow">or</span> \
+           <span class="p">(</span><span class="ow">not</span> <span class="n">markup</span> <span class="ow">and</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">CoreLabel</span><span class="p">):</span>
+            <span class="c1"># markup have change, we need to change our rendering method.</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="n">Label</span><span class="o">.</span><span class="n">_font_properties</span>
+            <span class="n">dkw</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="p">[</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">d</span><span class="p">])))</span>
+            <span class="k">if</span> <span class="n">markup</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_label</span> <span class="o">=</span> <span class="n">CoreMarkupLabel</span><span class="p">(</span><span class="o">**</span><span class="n">dkw</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_label</span> <span class="o">=</span> <span class="n">CoreLabel</span><span class="p">(</span><span class="o">**</span><span class="n">dkw</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_trigger_texture_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># check if the label core class need to be switch to a new one</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;markup&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_create_label</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">source</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;text&#39;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;text_size&#39;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">usersize</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;font_size&#39;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;disabled_color&#39;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">disabled</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;disabled_outline_color&#39;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">disabled</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;outline_color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;disabled&#39;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">disabled_color</span> <span class="k">if</span> <span class="n">value</span> \
+                    <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">color</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;outline_color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">disabled_outline_color</span> <span class="k">if</span> <span class="n">value</span> <span class="k">else</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">outline_color</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_texture</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Label.texture_update"><a class="viewcode-back" href="../../../api-kivy.uix.label.html#kivy.uix.label.Label.texture_update">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">texture_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">largs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Force texture recreation with the current Label properties.</span>
+
+<span class="sd">        After this function call, the :attr:`texture` and :attr:`texture_size`</span>
+<span class="sd">        will be updated in this order.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">mrkup</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="vm">__class__</span> <span class="ow">is</span> <span class="n">CoreMarkupLabel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">texture</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">text</span> <span class="ow">or</span>
+                <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">halign</span> <span class="o">==</span> <span class="s1">&#39;justify&#39;</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">strip</span><span class="p">)</span> <span class="ow">and</span>
+                <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">texture_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">is_shortened</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">if</span> <span class="n">mrkup</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">refs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">_refs</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{}</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">anchors</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">_anchors</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">mrkup</span><span class="p">:</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span>
+                <span class="c1"># we must strip here, otherwise, if the last line is empty,</span>
+                <span class="c1"># markup will retain the last empty line since it only strips</span>
+                <span class="c1"># line by line within markup</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">halign</span> <span class="o">==</span> <span class="s1">&#39;justify&#39;</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">strip</span><span class="p">:</span>
+                    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="s1">&#39;[color=&#39;</span><span class="p">,</span>
+                                            <span class="n">get_hex_from_color</span><span class="p">(</span>
+                                                <span class="bp">self</span><span class="o">.</span><span class="n">disabled_color</span> <span class="k">if</span>
+                                                <span class="bp">self</span><span class="o">.</span><span class="n">disabled</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">),</span>
+                                            <span class="s1">&#39;]&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="s1">&#39;[/color]&#39;</span><span class="p">))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+                <span class="c1"># force the rendering to get the references</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">texture</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">texture</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">refs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">refs</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">anchors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">anchors</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+            <span class="n">texture</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">texture</span>
+            <span class="k">if</span> <span class="n">texture</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">texture</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">texture</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">texture_size</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">texture</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">is_shortened</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_label</span><span class="o">.</span><span class="n">is_shortened</span></div>
+
+    <span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">super</span><span class="p">(</span><span class="n">Label</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_down</span><span class="p">(</span><span class="n">touch</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">refs</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">tx</span><span class="p">,</span> <span class="n">ty</span> <span class="o">=</span> <span class="n">touch</span><span class="o">.</span><span class="n">pos</span>
+        <span class="n">tx</span> <span class="o">-=</span> <span class="bp">self</span><span class="o">.</span><span class="n">center_x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mf">2.</span>
+        <span class="n">ty</span> <span class="o">-=</span> <span class="bp">self</span><span class="o">.</span><span class="n">center_y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture_size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mf">2.</span>
+        <span class="n">ty</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture_size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">ty</span>
+        <span class="k">for</span> <span class="n">uid</span><span class="p">,</span> <span class="n">zones</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">refs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">zone</span> <span class="ow">in</span> <span class="n">zones</span><span class="p">:</span>
+                <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">zone</span>
+                <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">tx</span> <span class="o">&lt;=</span> <span class="n">w</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="n">ty</span> <span class="o">&lt;=</span> <span class="n">h</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="s1">&#39;on_ref_press&#39;</span><span class="p">,</span> <span class="n">uid</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">on_ref_press</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ref</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># Properties</span>
+    <span class="c1">#</span>
+
+    <span class="n">disabled_color</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">3</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;The color of the text when the widget is disabled, in the (r, g, b, a)</span>
+<span class="sd">    format.</span>
+
+<span class="sd">    .. versionadded:: 1.8.0</span>
+
+<span class="sd">    :attr:`disabled_color` is a :class:`~kivy.properties.ListProperty` and</span>
+<span class="sd">    defaults to [1, 1, 1, .3].</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">text</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Text of the label.</span>
+
+<span class="sd">    Creation of a simple hello world::</span>
+
+<span class="sd">        widget = Label(text=&#39;Hello world&#39;)</span>
+
+<span class="sd">    If you want to create the widget with an unicode string, use::</span>
+
+<span class="sd">        widget = Label(text=u&#39;My unicode string&#39;)</span>
+
+<span class="sd">    :attr:`text` is a :class:`~kivy.properties.StringProperty` and defaults to</span>
+<span class="sd">    &#39;&#39;.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">text_size</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;By default, the label is not constrained to any bounding box.</span>
+<span class="sd">    You can set the size constraint of the label with this property.</span>
+<span class="sd">    The text will autoflow into the constraints. So although the font size</span>
+<span class="sd">    will not be reduced, the text will be arranged to fit into the box as best</span>
+<span class="sd">    as possible, with any text still outside the box clipped.</span>
+
+<span class="sd">    This sets and clips :attr:`texture_size` to text_size if not None.</span>
+
+<span class="sd">    .. versionadded:: 1.0.4</span>
+
+<span class="sd">    For example, whatever your current widget size is, if you want the label to</span>
+<span class="sd">    be created in a box with width=200 and unlimited height::</span>
+
+<span class="sd">        Label(text=&#39;Very big big line&#39;, text_size=(200, None))</span>
+
+<span class="sd">    .. note::</span>
+
+<span class="sd">        This text_size property is the same as the</span>
+<span class="sd">        :attr:`~kivy.core.text.Label.usersize` property in the</span>
+<span class="sd">        :class:`~kivy.core.text.Label` class. (It is named size= in the</span>
+<span class="sd">        constructor.)</span>
+
+<span class="sd">    :attr:`text_size` is a :class:`~kivy.properties.ListProperty` and</span>
+<span class="sd">    defaults to (None, None), meaning no size restriction by default.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">font_name</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="n">DEFAULT_FONT</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Filename of the font to use. The path can be absolute or relative.</span>
+<span class="sd">    Relative paths are resolved by the :func:`~kivy.resources.resource_find`</span>
+<span class="sd">    function.</span>
+
+<span class="sd">    .. warning::</span>
+
+<span class="sd">        Depending of your text provider, the font file can be ignored. However,</span>
+<span class="sd">        you can mostly use this without problems.</span>
+
+<span class="sd">        If the font used lacks the glyphs for the particular language/symbols</span>
+<span class="sd">        you are using, you will see &#39;[]&#39; blank box characters instead of the</span>
+<span class="sd">        actual glyphs. The solution is to use a font that has the glyphs you</span>
+<span class="sd">        need to display. For example, to display |unicodechar|, use a font such</span>
+<span class="sd">        as freesans.ttf that has the glyph.</span>
+
+<span class="sd">        .. |unicodechar| image:: images/unicode-char.png</span>
+
+<span class="sd">    :attr:`font_name` is a :class:`~kivy.properties.StringProperty` and</span>
+<span class="sd">    defaults to &#39;Roboto&#39;. This value is taken</span>
+<span class="sd">    from :class:`~kivy.config.Config`.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">font_size</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="s1">&#39;15sp&#39;</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Font size of the text, in pixels.</span>
+
+<span class="sd">    :attr:`font_size` is a :class:`~kivy.properties.NumericProperty` and</span>
+<span class="sd">    defaults to 15sp.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">line_height</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Line Height for the text. e.g. line_height = 2 will cause the spacing</span>
+<span class="sd">    between lines to be twice the size.</span>
+
+<span class="sd">    :attr:`line_height` is a :class:`~kivy.properties.NumericProperty` and</span>
+<span class="sd">    defaults to 1.0.</span>
+
+<span class="sd">    .. versionadded:: 1.5.0</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">bold</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Indicates use of the bold version of your font.</span>
+
+<span class="sd">    .. note::</span>
+
+<span class="sd">        Depending of your font, the bold attribute may have no impact on your</span>
+<span class="sd">        text rendering.</span>
+
+<span class="sd">    :attr:`bold` is a :class:`~kivy.properties.BooleanProperty` and defaults to</span>
+<span class="sd">    False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">italic</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Indicates use of the italic version of your font.</span>
+
+<span class="sd">    .. note::</span>
+
+<span class="sd">        Depending of your font, the italic attribute may have no impact on your</span>
+<span class="sd">        text rendering.</span>
+
+<span class="sd">    :attr:`italic` is a :class:`~kivy.properties.BooleanProperty` and defaults</span>
+<span class="sd">    to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">underline</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Adds an underline to the text.</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        This feature requires the SDL2 text provider.</span>
+
+<span class="sd">    .. versionadded:: 1.10.0</span>
+
+<span class="sd">    :attr:`underline` is a :class:`~kivy.properties.BooleanProperty` and</span>
+<span class="sd">    defaults to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">strikethrough</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Adds a strikethrough line to the text.</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        This feature requires the SDL2 text provider.</span>
+
+<span class="sd">    .. versionadded:: 1.10.0</span>
+
+<span class="sd">    :attr:`strikethrough` is a :class:`~kivy.properties.BooleanProperty` and</span>
+<span class="sd">    defaults to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">padding_x</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Horizontal padding of the text inside the widget box.</span>
+
+<span class="sd">    :attr:`padding_x` is a :class:`~kivy.properties.NumericProperty` and</span>
+<span class="sd">    defaults to 0.</span>
+
+<span class="sd">    .. versionchanged:: 1.9.0</span>
+<span class="sd">        `padding_x` has been fixed to work as expected.</span>
+<span class="sd">        In the past, the text was padded by the negative of its values.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">padding_y</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Vertical padding of the text inside the widget box.</span>
+
+<span class="sd">    :attr:`padding_y` is a :class:`~kivy.properties.NumericProperty` and</span>
+<span class="sd">    defaults to 0.</span>
+
+<span class="sd">    .. versionchanged:: 1.9.0</span>
+<span class="sd">        `padding_y` has been fixed to work as expected.</span>
+<span class="sd">        In the past, the text was padded by the negative of its values.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">padding</span> <span class="o">=</span> <span class="n">ReferenceListProperty</span><span class="p">(</span><span class="n">padding_x</span><span class="p">,</span> <span class="n">padding_y</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Padding of the text in the format (padding_x, padding_y)</span>
+
+<span class="sd">    :attr:`padding` is a :class:`~kivy.properties.ReferenceListProperty` of</span>
+<span class="sd">    (:attr:`padding_x`, :attr:`padding_y`) properties.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">halign</span> <span class="o">=</span> <span class="n">OptionProperty</span><span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;justify&#39;</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;Horizontal alignment of the text.</span>
+
+<span class="sd">    :attr:`halign` is an :class:`~kivy.properties.OptionProperty` and</span>
+<span class="sd">    defaults to &#39;left&#39;. Available options are : left, center, right and</span>
+<span class="sd">    justify.</span>
+
+<span class="sd">    .. warning::</span>
+
+<span class="sd">        This doesn&#39;t change the position of the text texture of the Label</span>
+<span class="sd">        (centered), only the position of the text in this texture. You probably</span>
+<span class="sd">        want to bind the size of the Label to the :attr:`texture_size` or set a</span>
+<span class="sd">        :attr:`text_size`.</span>
+
+<span class="sd">    .. versionchanged:: 1.6.0</span>
+<span class="sd">        A new option was added to :attr:`halign`, namely `justify`.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">valign</span> <span class="o">=</span> <span class="n">OptionProperty</span><span class="p">(</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span>
+                            <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="s1">&#39;middle&#39;</span><span class="p">,</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="s1">&#39;top&#39;</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;Vertical alignment of the text.</span>
+
+<span class="sd">    :attr:`valign` is an :class:`~kivy.properties.OptionProperty` and defaults</span>
+<span class="sd">    to &#39;bottom&#39;. Available options are : `&#39;bottom&#39;`,</span>
+<span class="sd">    `&#39;middle&#39;` (or `&#39;center&#39;`) and `&#39;top&#39;`.</span>
+
+<span class="sd">    .. versionchanged:: 1.10.0</span>
+<span class="sd">        The `&#39;center&#39;` option has been added as an alias of `&#39;middle&#39;`.</span>
+
+<span class="sd">    .. warning::</span>
+
+<span class="sd">        This doesn&#39;t change the position of the text texture of the Label</span>
+<span class="sd">        (centered), only the position of the text within this texture. You</span>
+<span class="sd">        probably want to bind the size of the Label to the :attr:`texture_size`</span>
+<span class="sd">        or set a :attr:`text_size` to change this behavior.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">color</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;Text color, in the format (r, g, b, a).</span>
+
+<span class="sd">    :attr:`color` is a :class:`~kivy.properties.ListProperty` and defaults to</span>
+<span class="sd">    [1, 1, 1, 1].</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">outline_width</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">allownone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Width in pixels for the outline around the text. No outline will be</span>
+<span class="sd">    rendered if the value is None.</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        This feature requires the SDL2 text provider.</span>
+
+<span class="sd">    .. versionadded:: 1.10.0</span>
+
+<span class="sd">    :attr:`outline_width` is a :class:`~kivy.properties.NumericProperty` and</span>
+<span class="sd">    defaults to None.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">outline_color</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;The color of the text outline, in the (r, g, b) format.</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        This feature requires the SDL2 text provider.</span>
+
+<span class="sd">    .. versionadded:: 1.10.0</span>
+
+<span class="sd">    :attr:`outline_color` is a :class:`~kivy.properties.ListProperty` and</span>
+<span class="sd">    defaults to [0, 0, 0].</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">disabled_outline_color</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;The color of the text outline when the widget is disabled, in the</span>
+<span class="sd">    (r, g, b) format.</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        This feature requires the SDL2 text provider.</span>
+
+<span class="sd">    .. versionadded:: 1.10.0</span>
+
+<span class="sd">    :attr:`disabled_outline_color` is a :class:`~kivy.properties.ListProperty`</span>
+<span class="sd">    and defaults to [0, 0, 0].</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">texture</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">allownone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Texture object of the text.</span>
+<span class="sd">    The text is rendered automatically when a property changes. The OpenGL</span>
+<span class="sd">    texture created in this operation is stored in this property. You can use</span>
+<span class="sd">    this :attr:`texture` for any graphics elements.</span>
+
+<span class="sd">    Depending on the texture creation, the value will be a</span>
+<span class="sd">    :class:`~kivy.graphics.texture.Texture` or</span>
+<span class="sd">    :class:`~kivy.graphics.texture.TextureRegion` object.</span>
+
+<span class="sd">    .. warning::</span>
+
+<span class="sd">        The :attr:`texture` update is scheduled for the next frame. If you need</span>
+<span class="sd">        the texture immediately after changing a property, you have to call</span>
+<span class="sd">        the :meth:`texture_update` method before accessing :attr:`texture`::</span>
+
+<span class="sd">            l = Label(text=&#39;Hello world&#39;)</span>
+<span class="sd">            # l.texture is good</span>
+<span class="sd">            l.font_size = &#39;50sp&#39;</span>
+<span class="sd">            # l.texture is not updated yet</span>
+<span class="sd">            l.texture_update()</span>
+<span class="sd">            # l.texture is good now.</span>
+
+<span class="sd">    :attr:`texture` is an :class:`~kivy.properties.ObjectProperty` and defaults</span>
+<span class="sd">    to None.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">texture_size</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;Texture size of the text. The size is determined by the font size and</span>
+<span class="sd">    text. If :attr:`text_size` is [None, None], the texture will be the size</span>
+<span class="sd">    required to fit the text, otherwise it&#39;s clipped to fit :attr:`text_size`.</span>
+
+<span class="sd">    When :attr:`text_size` is [None, None], one can bind to texture_size</span>
+<span class="sd">    and rescale it proportionally to fit the size of the label in order to</span>
+<span class="sd">    make the text fit maximally in the label.</span>
+
+<span class="sd">    .. warning::</span>
+
+<span class="sd">        The :attr:`texture_size` is set after the :attr:`texture`</span>
+<span class="sd">        property. If you listen for changes to :attr:`texture`,</span>
+<span class="sd">        :attr:`texture_size` will not be up-to-date in your callback.</span>
+<span class="sd">        Bind to :attr:`texture_size` instead.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">mipmap</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Indicates whether OpenGL mipmapping is applied to the texture or not.</span>
+<span class="sd">    Read :ref:`mipmap` for more information.</span>
+
+<span class="sd">    .. versionadded:: 1.0.7</span>
+
+<span class="sd">    :attr:`mipmap` is a :class:`~kivy.properties.BooleanProperty` and defaults</span>
+<span class="sd">    to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">shorten</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Indicates whether the label should attempt to shorten its textual contents</span>
+<span class="sd">    as much as possible if a :attr:`text_size` is given. Setting this to True</span>
+<span class="sd">    without an appropriately set :attr:`text_size` will lead to unexpected</span>
+<span class="sd">    results.</span>
+
+<span class="sd">    :attr:`shorten_from` and :attr:`split_str` control the direction from</span>
+<span class="sd">    which the :attr:`text` is split, as well as where in the :attr:`text` we</span>
+<span class="sd">    are allowed to split.</span>
+
+<span class="sd">    :attr:`shorten` is a :class:`~kivy.properties.BooleanProperty` and defaults</span>
+<span class="sd">    to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">shorten_from</span> <span class="o">=</span> <span class="n">OptionProperty</span><span class="p">(</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>
+                                                     <span class="s1">&#39;right&#39;</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;The side from which we should shorten the text from, can be left,</span>
+<span class="sd">    right, or center.</span>
+
+<span class="sd">    For example, if left, the ellipsis will appear towards the left side and we</span>
+<span class="sd">    will display as much text starting from the right as possible. Similar to</span>
+<span class="sd">    :attr:`shorten`, this option only applies when :attr:`text_size` [0] is</span>
+<span class="sd">    not None, In this case, the string is shortened to fit within the specified</span>
+<span class="sd">    width.</span>
+
+<span class="sd">    .. versionadded:: 1.9.0</span>
+
+<span class="sd">    :attr:`shorten_from` is a :class:`~kivy.properties.OptionProperty` and</span>
+<span class="sd">    defaults to `center`.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">is_shortened</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;This property indicates if :attr:`text` was rendered with or without</span>
+<span class="sd">    shortening when :attr:`shorten` is True.</span>
+
+<span class="sd">    .. versionadded:: 1.10.0</span>
+
+<span class="sd">    :attr:`is_shortened` is a :class:`~kivy.properties.BooleanProperty` and</span>
+<span class="sd">    defaults to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">split_str</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;The string used to split the :attr:`text` while shortening the string</span>
+<span class="sd">    when :attr:`shorten` is True.</span>
+
+<span class="sd">    For example, if it&#39;s a space, the string will be broken into words and as</span>
+<span class="sd">    many whole words that can fit into a single line will be displayed. If</span>
+<span class="sd">    :attr:`split_str` is the empty string, `&#39;&#39;`, we split on every character</span>
+<span class="sd">    fitting as much text as possible into the line.</span>
+
+<span class="sd">    .. versionadded:: 1.9.0</span>
+
+<span class="sd">    :attr:`split_str` is a :class:`~kivy.properties.StringProperty` and</span>
+<span class="sd">    defaults to `&#39;&#39;` (the empty string).</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">ellipsis_options</span> <span class="o">=</span> <span class="n">DictProperty</span><span class="p">({})</span>
+    <span class="sd">&#39;&#39;&#39;Font options for the ellipsis string(&#39;...&#39;) used to split the text.</span>
+
+<span class="sd">    Accepts a dict as option name with the value. Only applied when</span>
+<span class="sd">    :attr:`markup` is true and text is shortened. All font options which work</span>
+<span class="sd">    for :class:`Label` will work for :attr:`ellipsis_options`. Defaults for</span>
+<span class="sd">    the options not specified are taken from the surronding text.</span>
+
+<span class="sd">    .. code-block:: kv</span>
+
+<span class="sd">        Label:</span>
+<span class="sd">            text: &#39;Some very long line which will be cut&#39;</span>
+<span class="sd">            markup: True</span>
+<span class="sd">            shorten: True</span>
+<span class="sd">            ellipsis_options: {&#39;color&#39;:(1,0.5,0.5,1),&#39;underline&#39;:True}</span>
+
+<span class="sd">    .. versionadded:: 2.0.0</span>
+
+<span class="sd">    :attr:`ellipsis_options` is a :class:`~kivy.properties.DictProperty` and</span>
+<span class="sd">    defaults to `{}` (the empty dict).</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">unicode_errors</span> <span class="o">=</span> <span class="n">OptionProperty</span><span class="p">(</span>
+        <span class="s1">&#39;replace&#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;strict&#39;</span><span class="p">,</span> <span class="s1">&#39;replace&#39;</span><span class="p">,</span> <span class="s1">&#39;ignore&#39;</span><span class="p">))</span>
+    <span class="sd">&#39;&#39;&#39;How to handle unicode decode errors. Can be `&#39;strict&#39;`, `&#39;replace&#39;` or</span>
+<span class="sd">    `&#39;ignore&#39;`.</span>
+
+<span class="sd">    .. versionadded:: 1.9.0</span>
+
+<span class="sd">    :attr:`unicode_errors` is an :class:`~kivy.properties.OptionProperty` and</span>
+<span class="sd">    defaults to `&#39;replace&#39;`.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">markup</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    .. versionadded:: 1.1.0</span>
+
+<span class="sd">    If True, the text will be rendered using the</span>
+<span class="sd">    :class:`~kivy.core.text.markup.MarkupLabel`: you can change the</span>
+<span class="sd">    style of the text using tags. Check the</span>
+<span class="sd">    :doc:`api-kivy.core.text.markup` documentation for more information.</span>
+
+<span class="sd">    :attr:`markup` is a :class:`~kivy.properties.BooleanProperty` and defaults</span>
+<span class="sd">    to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">refs</span> <span class="o">=</span> <span class="n">DictProperty</span><span class="p">({})</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    .. versionadded:: 1.1.0</span>
+
+<span class="sd">    List of ``[ref=xxx]`` markup items in the text with the bounding box of</span>
+<span class="sd">    all the words contained in a ref, available only after rendering.</span>
+
+<span class="sd">    For example, if you wrote::</span>
+
+<span class="sd">        Check out my [ref=hello]link[/ref]</span>
+
+<span class="sd">    The refs will be set with::</span>
+
+<span class="sd">        {&#39;hello&#39;: ((64, 0, 78, 16), )}</span>
+
+<span class="sd">    The references marked &quot;hello&quot; have a bounding box at (x1, y1, x2, y2).</span>
+<span class="sd">    These co-ordinates are relative to the top left corner of the text, with</span>
+<span class="sd">    the y value increasing downwards. You can define multiple refs with the</span>
+<span class="sd">    same name: each occurrence will be added as another (x1, y1, x2, y2) tuple</span>
+<span class="sd">    to this list.</span>
+
+<span class="sd">    The current Label implementation uses these references if they exist in</span>
+<span class="sd">    your markup text, automatically doing the collision with the touch and</span>
+<span class="sd">    dispatching an `on_ref_press` event.</span>
+
+<span class="sd">    You can bind a ref event like this::</span>
+
+<span class="sd">        def print_it(instance, value):</span>
+<span class="sd">            print(&#39;User click on&#39;, value)</span>
+<span class="sd">        widget = Label(text=&#39;Hello [ref=world]World[/ref]&#39;, markup=True)</span>
+<span class="sd">        widget.on_ref_press(print_it)</span>
+
+<span class="sd">    .. note::</span>
+
+<span class="sd">        This works only with markup text. You need :attr:`markup` set to</span>
+<span class="sd">        True.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">anchors</span> <span class="o">=</span> <span class="n">DictProperty</span><span class="p">({})</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    .. versionadded:: 1.1.0</span>
+
+<span class="sd">    Position of all the ``[anchor=xxx]`` markup in the text.</span>
+<span class="sd">    These co-ordinates are relative to the top left corner of the text, with</span>
+<span class="sd">    the y value increasing downwards. Anchors names should be unique and only</span>
+<span class="sd">    the first occurrence of any duplicate anchors will be recorded.</span>
+
+
+<span class="sd">    You can place anchors in your markup text as follows::</span>
+
+<span class="sd">        text = &quot;&quot;&quot;</span>
+<span class="sd">            [anchor=title1][size=24]This is my Big title.[/size]</span>
+<span class="sd">            [anchor=content]Hello world</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+<span class="sd">    Then, all the ``[anchor=]`` references will be removed and you&#39;ll get all</span>
+<span class="sd">    the anchor positions in this property (only after rendering)::</span>
+
+<span class="sd">        &gt;&gt;&gt; widget = Label(text=text, markup=True)</span>
+<span class="sd">        &gt;&gt;&gt; widget.texture_update()</span>
+<span class="sd">        &gt;&gt;&gt; widget.anchors</span>
+<span class="sd">        {&quot;content&quot;: (20, 32), &quot;title1&quot;: (20, 16)}</span>
+
+<span class="sd">    .. note::</span>
+
+<span class="sd">        This works only with markup text. You need :attr:`markup` set to</span>
+<span class="sd">        True.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">max_lines</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Maximum number of lines to use, defaults to 0, which means unlimited.</span>
+<span class="sd">    Please note that :attr:`shorten` take over this property. (with</span>
+<span class="sd">    shorten, the text is always one line.)</span>
+
+<span class="sd">    .. versionadded:: 1.8.0</span>
+
+<span class="sd">    :attr:`max_lines` is a :class:`~kivy.properties.NumericProperty` and</span>
+<span class="sd">    defaults to 0.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">strip</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Whether leading and trailing spaces and newlines should be stripped from</span>
+<span class="sd">    each displayed line. If True, every line will start at the right or left</span>
+<span class="sd">    edge, depending on :attr:`halign`. If :attr:`halign` is `justify` it is</span>
+<span class="sd">    implicitly True.</span>
+
+<span class="sd">    .. versionadded:: 1.9.0</span>
+
+<span class="sd">    :attr:`strip` is a :class:`~kivy.properties.BooleanProperty` and</span>
+<span class="sd">    defaults to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">font_hinting</span> <span class="o">=</span> <span class="n">OptionProperty</span><span class="p">(</span>
+        <span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="s1">&#39;light&#39;</span><span class="p">,</span> <span class="s1">&#39;mono&#39;</span><span class="p">],</span> <span class="n">allownone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;What hinting option to use for font rendering.</span>
+<span class="sd">    Can be one of `&#39;normal&#39;`, `&#39;light&#39;`, `&#39;mono&#39;` or None.</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        This feature requires the SDL2 text provider.</span>
+
+<span class="sd">    .. versionadded:: 1.10.0</span>
+
+<span class="sd">    :attr:`font_hinting` is an :class:`~kivy.properties.OptionProperty` and</span>
+<span class="sd">    defaults to `&#39;normal&#39;`.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">font_kerning</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Whether kerning is enabled for font rendering.</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        This feature requires the SDL2 text provider.</span>
+
+<span class="sd">    .. versionadded:: 1.10.0</span>
+
+<span class="sd">    :attr:`font_kerning` is a :class:`~kivy.properties.BooleanProperty` and</span>
+<span class="sd">    defaults to True.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">font_blended</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Whether blended or solid font rendering should be used.</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">        This feature requires the SDL2 text provider.</span>
+
+<span class="sd">    .. versionadded:: 1.10.0</span>
+
+<span class="sd">    :attr:`font_blended` is a :class:`~kivy.properties.BooleanProperty` and</span>
+<span class="sd">    defaults to True.</span>
+<span class="sd">    &#39;&#39;&#39;</span></div>
+</pre></div>
+
+            <div class="footerlinks">
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 29, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

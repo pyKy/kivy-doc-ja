@@ -1,225 +1,135 @@
-# Makefile for Sphinx documentation
-#
+PYTHON = python
+CHECKSCRIPT = kivy/tools/pep8checker/pep8kivy.py
+KIVY_DIR = kivy/
+NOSETESTS = $(PYTHON) -m nose.core
+KIVY_USE_DEFAULTCONFIG = 1
+HOSTPYTHON = $(KIVYIOSROOT)/tmp/Python-$(PYTHON_VERSION)/hostpython
 
-# You can set these variables from the command line.
-SPHINXOPTS    =
-SPHINXBUILD   = sphinx-build
-PAPER         =
-BUILDDIR      = build
+GIT_COMMAND := $(shell which git)
 
-# Internal variables.
-PAPEROPT_a4     = -D latex_paper_size=a4
-PAPEROPT_letter = -D latex_paper_size=letter
-ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
-# the i18n builder cannot share the environment and doctrees with the others
-I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
+IOSPATH := $(PATH):/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin
 
-.PHONY: help
+BUILD_OPTS       = build_ext --inplace
+BUILD_OPTS_FORCE = $(BUILD_OPTS) -f
+BUILD_OPTS_DEBUG = $(BUILD_OPTS_FORCE) -g
+
+INSTALL_OPTIONS  = install
+INSTALL_ROOT     =
+INSTALL_PREFIX   =
+INSTALL_LAYOUT   =
+
+ifneq ($(INSTALL_ROOT),)
+	INSTALL_OPTIONS += --root=$(INSTALL_ROOT)
+endif
+ifneq ($(INSTALL_PREFIX),)
+	INSTALL_OPTIONS += --prefix=$(INSTALL_PREFIX)
+endif
+ifneq ($(INSTALL_LAYOUT),)
+	INSTALL_OPTIONS += --install-layout=$(INSTALL_LAYOUT)
+endif
+
+
+.PHONY: build force mesabuild pdf style hook test batchtest cover clean distclean theming
+
+build:
+	$(PYTHON) setup.py $(BUILD_OPTS)
+
+force:
+	$(PYTHON) setup.py $(BUILD_OPTS_FORCE)
+
+debug:
+	$(PYTHON) setup.py $(BUILD_OPTS_DEBUG)
+
+mesabuild:
+	env USE_MESAGL=1 $(PYTHON) setup.py $(BUILD_OPTS)
+
+ios:
+	-ln -s $(KIVYIOSROOT)/Python-2.7.1/python
+	-ln -s $(KIVYIOSROOT)/Python-2.7.1/python.exe
+
+	-rm -rdf iosbuild/
+	mkdir iosbuild
+
+	echo "First build ========================================"
+	-PATH="$(IOSPATH)" $(HOSTPYTHON) setup.py build_ext -g
+	echo "cythoning =========================================="
+	find . -name *.pyx -exec cython {} \;
+	echo "Second build ======================================="
+	PATH="$(IOSPATH)" $(HOSTPYTHON) setup.py build_ext -g
+	PATH="$(IOSPATH)" $(HOSTPYTHON) setup.py install -O2 --root iosbuild
+	# Strip away the large stuff
+	find iosbuild/ | grep -E '.*\.(py|pyc|so\.o|so\.a|so\.libs)$$' | xargs rm
+	-rm -rdf "$(BUILDROOT)/python/lib/python2.7/site-packages/kivy"
+	# Copy to python for iOS installation
+	cp -R "iosbuild/usr/local/lib/python2.7/site-packages/kivy" "$(BUILDROOT)/python/lib/python2.7/site-packages"
+
+pdf: build
+	-cd doc && $(MAKE) pdf
+	cd doc && $(MAKE) pdf
+
+html: build
+	cd doc && $(MAKE) html
+
+html-embedded:
+	env USE_EMBEDSIGNATURE=1 $(MAKE) force
+	$(MAKE) -C doc html
+
+style:
+	$(PYTHON) $(CHECKSCRIPT) .
+
+hook:
+	# Install pre-commit git hook to check your changes for styleguide
+	# consistency.
+	cp kivy/tools/pep8checker/pre-commit.githook .git/hooks/pre-commit
+	chmod +x .git/hooks/pre-commit
+
+test:
+	-rm -rf kivy/tests/build
+	$(NOSETESTS) kivy/tests
+
+cover:
+	coverage html --include='$(KIVY_DIR)*' --omit '$(KIVY_DIR)data/*,$(KIVY_DIR)lib/*,$(KIVY_DIR)tools/*,$(KIVY_DIR)tests/*'
+
+install:
+	$(PYTHON) setup.py $(INSTALL_OPTIONS)
+
+clean:
+	$(MAKE) -C doc clean
+	-rm -rf build
+	-rm -rf htmlcov
+	-rm -f .coverage
+	-rm -f .noseids
+	-rm -rf kivy/tests/build
+	-find kivy -iname '*.so' -exec rm {} \;
+	-find kivy -iname '*.pyc' -exec rm {} \;
+	-find kivy -iname '*.pyo' -exec rm {} \;
+	-find . -iname '*.pyx' -exec sh -c 'echo `dirname {}`/`basename {} .pyx`.c' \; | xargs rm
+
+distclean: clean
+ifneq ($(GIT_COMMAND),)
+	@echo "Using GIT at $(GIT_COMMAND) to make a distclean..."
+	-git clean -dxf -e debian
+else
+	@echo "GIT not found to make a distclean..."
+endif
+
+theming:
+	$(PYTHON) -m kivy.atlas kivy/data/images/defaulttheme 512 kivy/tools/theming/defaulttheme/*.png
+
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
-	@echo "  html       to make standalone HTML files"
-	@echo "  dirhtml    to make HTML files named index.html in directories"
-	@echo "  singlehtml to make a single large HTML file"
-	@echo "  pickle     to make pickle files"
-	@echo "  json       to make JSON files"
-	@echo "  htmlhelp   to make HTML files and a HTML help project"
-	@echo "  qthelp     to make HTML files and a qthelp project"
-	@echo "  applehelp  to make an Apple Help Book"
-	@echo "  devhelp    to make HTML files and a Devhelp project"
-	@echo "  epub       to make an epub"
-	@echo "  epub3      to make an epub3"
-	@echo "  latex      to make LaTeX files, you can set PAPER=a4 or PAPER=letter"
-	@echo "  latexpdf   to make LaTeX files and run them through pdflatex"
-	@echo "  latexpdfja to make LaTeX files and run them through platex/dvipdfmx"
-	@echo "  text       to make text files"
-	@echo "  man        to make manual pages"
-	@echo "  texinfo    to make Texinfo files"
-	@echo "  info       to make Texinfo files and run them through makeinfo"
-	@echo "  gettext    to make PO message catalogs"
-	@echo "  changes    to make an overview of all changed/added/deprecated items"
-	@echo "  xml        to make Docutils-native XML files"
-	@echo "  pseudoxml  to make pseudoxml-XML files for display purposes"
-	@echo "  linkcheck  to check all external links for integrity"
-	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
-	@echo "  coverage   to run coverage check of the documentation (if enabled)"
-	@echo "  dummy      to check syntax errors of document sources"
-
-.PHONY: clean
-clean:
-	rm -rf $(BUILDDIR)/*
-
-.PHONY: html
-html:
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
-	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
-
-.PHONY: dirhtml
-dirhtml:
-	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
-	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml."
-
-.PHONY: singlehtml
-singlehtml:
-	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
-	@echo
-	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
-
-.PHONY: pickle
-pickle:
-	$(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS) $(BUILDDIR)/pickle
-	@echo
-	@echo "Build finished; now you can process the pickle files."
-
-.PHONY: json
-json:
-	$(SPHINXBUILD) -b json $(ALLSPHINXOPTS) $(BUILDDIR)/json
-	@echo
-	@echo "Build finished; now you can process the JSON files."
-
-.PHONY: htmlhelp
-htmlhelp:
-	$(SPHINXBUILD) -b htmlhelp $(ALLSPHINXOPTS) $(BUILDDIR)/htmlhelp
-	@echo
-	@echo "Build finished; now you can run HTML Help Workshop with the" \
-	      ".hhp project file in $(BUILDDIR)/htmlhelp."
-
-.PHONY: qthelp
-qthelp:
-	$(SPHINXBUILD) -b qthelp $(ALLSPHINXOPTS) $(BUILDDIR)/qthelp
-	@echo
-	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
-	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/kivy-doc-ja.qhcp"
-	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/kivy-doc-ja.qhc"
-
-.PHONY: applehelp
-applehelp:
-	$(SPHINXBUILD) -b applehelp $(ALLSPHINXOPTS) $(BUILDDIR)/applehelp
-	@echo
-	@echo "Build finished. The help book is in $(BUILDDIR)/applehelp."
-	@echo "N.B. You won't be able to view it unless you put it in" \
-	      "~/Library/Documentation/Help or install it in your application" \
-	      "bundle."
-
-.PHONY: devhelp
-devhelp:
-	$(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(BUILDDIR)/devhelp
-	@echo
-	@echo "Build finished."
-	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/kivy-doc-ja"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/kivy-doc-ja"
-	@echo "# devhelp"
-
-.PHONY: epub
-epub:
-	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
-	@echo
-	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
-
-.PHONY: epub3
-epub3:
-	$(SPHINXBUILD) -b epub3 $(ALLSPHINXOPTS) $(BUILDDIR)/epub3
-	@echo
-	@echo "Build finished. The epub3 file is in $(BUILDDIR)/epub3."
-
-.PHONY: latex
-latex:
-	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
-	@echo
-	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/latex."
-	@echo "Run \`make' in that directory to run these through (pdf)latex" \
-	      "(use \`make latexpdf' here to do that automatically)."
-
-.PHONY: latexpdf
-latexpdf:
-	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
-	@echo "Running LaTeX files through pdflatex..."
-	$(MAKE) -C $(BUILDDIR)/latex all-pdf
-	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
-
-.PHONY: latexpdfja
-latexpdfja:
-	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
-	@echo "Running LaTeX files through platex and dvipdfmx..."
-	$(MAKE) -C $(BUILDDIR)/latex all-pdf-ja
-	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
-
-.PHONY: text
-text:
-	$(SPHINXBUILD) -b text $(ALLSPHINXOPTS) $(BUILDDIR)/text
-	@echo
-	@echo "Build finished. The text files are in $(BUILDDIR)/text."
-
-.PHONY: man
-man:
-	$(SPHINXBUILD) -b man $(ALLSPHINXOPTS) $(BUILDDIR)/man
-	@echo
-	@echo "Build finished. The manual pages are in $(BUILDDIR)/man."
-
-.PHONY: texinfo
-texinfo:
-	$(SPHINXBUILD) -b texinfo $(ALLSPHINXOPTS) $(BUILDDIR)/texinfo
-	@echo
-	@echo "Build finished. The Texinfo files are in $(BUILDDIR)/texinfo."
-	@echo "Run \`make' in that directory to run these through makeinfo" \
-	      "(use \`make info' here to do that automatically)."
-
-.PHONY: info
-info:
-	$(SPHINXBUILD) -b texinfo $(ALLSPHINXOPTS) $(BUILDDIR)/texinfo
-	@echo "Running Texinfo files through makeinfo..."
-	make -C $(BUILDDIR)/texinfo info
-	@echo "makeinfo finished; the Info files are in $(BUILDDIR)/texinfo."
-
-.PHONY: gettext
-gettext:
-	$(SPHINXBUILD) -b gettext $(I18NSPHINXOPTS) $(BUILDDIR)/locale
-	@echo
-	@echo "Build finished. The message catalogs are in $(BUILDDIR)/locale."
-
-.PHONY: changes
-changes:
-	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) $(BUILDDIR)/changes
-	@echo
-	@echo "The overview file is in $(BUILDDIR)/changes."
-
-.PHONY: linkcheck
-linkcheck:
-	$(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck
-	@echo
-	@echo "Link check complete; look for any errors in the above output " \
-	      "or in $(BUILDDIR)/linkcheck/output.txt."
-
-.PHONY: doctest
-doctest:
-	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
-	@echo "Testing of doctests in the sources finished, look at the " \
-	      "results in $(BUILDDIR)/doctest/output.txt."
-
-.PHONY: coverage
-coverage:
-	$(SPHINXBUILD) -b coverage $(ALLSPHINXOPTS) $(BUILDDIR)/coverage
-	@echo "Testing of coverage in the sources finished, look at the " \
-	      "results in $(BUILDDIR)/coverage/python.txt."
-
-.PHONY: xml
-xml:
-	$(SPHINXBUILD) -b xml $(ALLSPHINXOPTS) $(BUILDDIR)/xml
-	@echo
-	@echo "Build finished. The XML files are in $(BUILDDIR)/xml."
-
-.PHONY: pseudoxml
-pseudoxml:
-	$(SPHINXBUILD) -b pseudoxml $(ALLSPHINXOPTS) $(BUILDDIR)/pseudoxml
-	@echo
-	@echo "Build finished. The pseudo-XML files are in $(BUILDDIR)/pseudoxml."
-
-.PHONY: dummy
-dummy:
-	$(SPHINXBUILD) -b dummy $(ALLSPHINXOPTS) $(BUILDDIR)/dummy
-	@echo
-	@echo "Build finished. Dummy builder generates no files."
+	@echo "  build          for a standard build"
+	@echo "  clean          remove generated and compiled files"
+	@echo "  cover          create an html coverage report of unittests"
+	@echo "  debug          for a debug build (with -g)"
+	@echo "  dist-clean     clean then use 'git clean'"
+	@echo "  force          for a forced build (with -f)"
+	@echo "  hook           add Pep-8 checking as a git precommit hook"
+	@echo "  html           to make standalone HTML files"
+	@echo "  install        run a setup.py install"
+	@echo "  mesabuild      for a build with MesaGL"
+	@echo "  style          to check Python code for style issues"
+	@echo "  test           run unittests (nosetests)"
+	@echo "  theming        create a default theme atlas"
+	@echo "  "
+	@echo "You can also 'cd doc && make help' to build more documentation types"

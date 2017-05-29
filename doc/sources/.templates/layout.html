@@ -1,0 +1,248 @@
+{%- block doctype -%}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{%- endblock %}
+{%- set reldelim1 = reldelim1 is not defined and ' &raquo;' or reldelim1 %}
+{%- set reldelim2 = reldelim2 is not defined and ' |' or reldelim2 %}
+{%- set url_root = pathto('', 1) %}
+{%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
+
+{%- macro relbar() %}
+    <div class="related">
+      <ul>
+        <li><a href="//kivy.org">Homepage</a> - </li>
+        <li><a href="{{ pathto(master_doc) }}">Documentation</a></li>
+        {#
+        {%- for parent in parents %}
+          <li><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U") }}{% endif %}>{{ parent.title }}</a>{{ reldelim1 }}</li>
+        {%- endfor %}
+        {%- block relbaritems %} {% endblock %}
+        #}
+      </ul>
+    </div>
+{%- endmacro %}
+
+{%- macro header() %}
+      {%- if not embedded %}{% if not theme_nosidebar|tobool %}
+      <div class="header">
+        <div class="headerwrapper">
+          {%- if pagename != "search" %}
+          <div id="searchbox" style="display: none">
+              <form class="search" action="{{ pathto('search') }}" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="{{ _('Go') }}" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+          {%- endif %}
+        </div>
+      </div>
+      {%- endif %}{% endif %}
+{%- endmacro %}
+
+{%- macro sidebar() %}
+      {%- if not embedded %}{% if not theme_nosidebar|tobool %}
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="{{ pathto('search') }}" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          {%- block sidebartoc %}
+          <!--
+          <h3><a href="{{ pathto(master_doc) }}">{{ title }}</a></h3>
+          {{ toc }}
+          <h3><a href="{{ pathto(master_doc) }}">{{ _('Table Of Contents') }}</a></h3>
+          -->
+          {{ toctree(collapse=False) }}
+          {%- endblock %}
+          {%- block sidebarrel %}
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+              {%- if prev %}
+              <li>Previous: <a href="{{ prev.link|e }}" title="{{ _('previous chapter') }}">{{ prev.title }}</a></li>
+              {%- endif %}
+              {%- if next %}
+              <li>Next: <a href="{{ next.link|e }}" title="{{ _('next chapter') }}">{{ next.title }}</a></li>
+              {%- endif %}
+          </ul>
+          -->
+          {%- endblock %}
+        </div>
+      </div>
+      {%- endif %}{% endif %}
+{%- endmacro %}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    {{ metatags }}
+    {%- if not embedded and docstitle %}
+      {%- set titlesuffix = " &mdash; "|safe + docstitle|e %}
+    {%- else %}
+      {%- set titlesuffix = "" %}
+    {%- endif %}
+    <title>{{ title|striptags }}{{ titlesuffix }}</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
+    {%- if not embedded %}
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '{{ url_root }}',
+        VERSION:     '{{ release|e }}',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '{{ file_suffix }}',
+        HAS_SOURCE:  {{ has_source|lower }}
+      };
+    </script>
+    {%- for scriptfile in script_files %}
+    <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
+    {%- endfor %}
+    <script type="text/javascript" src="{{ pathto('_static/jquery-effects-core-and-slide.js', 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto('_static/jquery.cookie.js', 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto('_static/kivy.js', 1) }}"></script>
+    {%- if use_opensearch %}
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}"
+          href="{{ pathto('_static/opensearch.xml', 1) }}"/>
+    {%- endif %}
+    {%- if favicon %}
+    <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
+    {%- endif %}
+    {%- endif %}
+{%- block linktags %}
+    {%- if hasdoc('about') %}
+    <link rel="author" title="{{ _('About these documents') }}" href="{{ pathto('about') }}" />
+    {%- endif %}
+    {%- if hasdoc('genindex') %}
+    <link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}" />
+    {%- endif %}
+    {%- if hasdoc('search') %}
+    <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" />
+    {%- endif %}
+    {%- if hasdoc('copyright') %}
+    <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}" />
+    {%- endif %}
+    <link rel="top" title="{{ docstitle|e }}" href="{{ pathto('index') }}" />
+    {%- if parents %}
+    <link rel="up" title="{{ parents[-1].title|striptags }}" href="{{ parents[-1].link|e }}" />
+    {%- endif %}
+    {%- if next %}
+    <link rel="next" title="{{ next.title|striptags }}" href="{{ next.link|e }}" />
+    {%- endif %}
+    {%- if prev %}
+    <link rel="prev" title="{{ prev.title|striptags }}" href="{{ prev.link|e }}" />
+    {%- endif %}
+{%- endblock %}
+{%- block extrahead %} {% endblock %}
+  </head>
+  <body>
+{%- block header %}{% endblock %}
+
+{%- block relbar1 %}{% endblock %}
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="{{ pathto('_static/logo-kivy.png', 1) }}" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="{{ pathto('gettingstarted/intro') }}">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="{{ pathto('api-kivy') }}">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+
+{%- block document %}
+<div id="contentall">
+    {%- block sidebar1 %}{{ sidebar() }}{% endblock %}
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+      {%- if not embedded %}{% if not theme_nosidebar|tobool %}
+        <div class="bodywrapper">
+      {%- endif %}{% endif %}
+          <div class="body">
+            <div class="toc"><h2>{{ _('Table Of Contents') }}</h2>{{ toc }}</div>
+            {% block body %} {% endblock %}
+            <div class="footerlinks">
+            {%- if prev or next %}
+            <table>
+                <tr>
+                    <td class="leftlink">
+                  {%- if prev %}
+                  <a href="{{ prev.link|e }}" title="{{ _('previous chapter') }}">&laquo; {{ prev.title }}</a></li>
+                  {%- endif %}
+                  </td>
+                  <td class="rightlink">
+                  {%- if next %}
+                  <a href="{{ next.link|e }}" title="{{ _('next chapter') }}">{{ next.title }} &raquo;</a>
+                  {%- endif %}
+                      </td>
+                  </tr>
+              </table>
+              {%- endif %}
+              </div>
+          </div>
+      {%- if not embedded %}{% if not theme_nosidebar|tobool %}
+        </div>
+      {%- endif %}{% endif %}
+      </div>
+      </div>
+{%- endblock %}
+      <div class="clearer"></div>
+    </div>
+    </div>
+
+{%- block footer %}
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+    {%- if hasdoc('copyright') %}
+      {% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
+    {%- else %}
+      {% trans copyright=copyright|e %}&copy; Copyright {{ copyright }}.{% endtrans %}
+    {%- endif %}
+    {%- if last_updated %}
+      {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
+    {%- endif %}
+    {%- if show_sphinx %}
+      {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
+    {%- endif %}
+</div>
+-->
+{%- endblock %}
+  </body>
+</html>

@@ -1,0 +1,247 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-13 08:22+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: JUN OKAZAKI <okazakijun54392@gmail.com>, 2017\n"
+"Language-Team: Japanese (Japan) (https://www.transifex.com/python_kivy_doc_ja/teams/74810/ja_JP/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja_JP\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../sources/guide/packaging-ios.rst:4
+msgid "Create a package for IOS"
+msgstr "Create a package for IOS(翻訳済み)"
+
+#: ../../sources/guide/packaging-ios.rst:8
+msgid ""
+"Currently, packages for iOS can only be generated with Python 2.7. Python "
+"3.3+ support is on the way."
+msgstr "現在、iOS用のパッケージのみPython 2.7で生成ができます。Pythonの3.3+サポートについては途中です。"
+
+#: ../../sources/guide/packaging-ios.rst:11
+msgid ""
+"The overall process for creating a package for IOS can be explained in 4 "
+"steps:"
+msgstr "IOS用パッケージを作成する全体的なプロセスは、4つのステップで説明します:"
+
+#: ../../sources/guide/packaging-ios.rst:13
+msgid "Compile python + modules for IOS"
+msgstr "IOS用にpython +モジュールをコンパイルします"
+
+#: ../../sources/guide/packaging-ios.rst:14
+msgid "Create an Xcode project and link your source code"
+msgstr "Xcodeのプロジェクトを作成し、ソースコードをリンクします"
+
+#: ../../sources/guide/packaging-ios.rst:15
+#: ../../sources/guide/packaging-ios.rst:97
+msgid "Customize"
+msgstr "Customize(カスタマイズ"
+
+#: ../../sources/guide/packaging-ios.rst:18
+msgid "Prerequisites"
+msgstr "Prerequisites(前提条件)"
+
+#: ../../sources/guide/packaging-ios.rst:20
+msgid ""
+"You need to install some dependencies, like cython, autotools, etc. We "
+"encourage you to use `Homebrew <http://mxcl.github.com/homebrew/>`_ to "
+"install those dependencies::"
+msgstr ""
+"cython、autotoolsのようにいくつかの依存関係をインストールする必要があります。依存関係をインストールするには  `Homebrew "
+"<http://mxcl.github.com/homebrew/>`_ を使用することをお勧めします::\""
+
+#: ../../sources/guide/packaging-ios.rst:29
+msgid ""
+"For more detail, see :ref:`IOS Prerequisites <packaging_ios_prerequisites>`."
+" Just ensure that everything is ok before starting the second step!"
+msgstr ""
+"より詳細については、 :ref:`IOS の詳細<packaging_ios_prerequisites>`を参照してください。 "
+"第二段階を開始する前に、すべてが大丈夫であることを確認してください！"
+
+#: ../../sources/guide/packaging-ios.rst:35
+msgid "Compile the distribution"
+msgstr "Compile the distribution(ディストリビューションをコンパイル)"
+
+#: ../../sources/guide/packaging-ios.rst:37
+msgid "Open a terminal, and type::"
+msgstr "ターミナルを開き入力してください::"
+
+#: ../../sources/guide/packaging-ios.rst:43
+msgid ""
+"Most of the python distribution is packed into `python27.zip`. If you "
+"experience any issues, please refer to our `user group "
+"<https://groups.google.com/forum/#!forum/kivy-users>`_ or the `kivy-ios "
+"project page <https://github.com/kivy/kivy-ios>`_."
+msgstr ""
+"Pythonディストリビューションのほとんどはp`python27.zip`にパックされています。 何か問題が発生した場合は`ユーザーグループ<https://groups.google.com/forum/#!forum/kivy-users>`_\n"
+"または`kivy-IOSプロジェクトページ<https://github.com/kivy/kivy-ios>``_ を参照してください。 。"
+
+#: ../../sources/guide/packaging-ios.rst:51
+msgid "Create an Xcode project"
+msgstr "reate an Xcode project(Xcodeのプロジェクトを作成する)"
+
+#: ../../sources/guide/packaging-ios.rst:53
+msgid ""
+"Before proceeding to the next step, ensure your application entry point is a"
+" file named `main.py`."
+msgstr "次のステップに進む前に、アプリケーションのエントリポイントのファイル名が「main.py」であることを確認してください。"
+
+#: ../../sources/guide/packaging-ios.rst:56
+msgid ""
+"We provide a script that creates an initial Xcode project to start with. In "
+"the command line below, replace `test` with your project name. It must be a "
+"name without any spaces or illegal characters::"
+msgstr ""
+"私たちは、実行するとXcodeプロジェクトを作成するスクリプトを提供しています。以下のコマンドラインでは、プロジェクト名に`test`を置き換えます。これは、任意のスペースや不正な文字を含まない名前にします::"
+
+#: ../../sources/guide/packaging-ios.rst:64
+msgid "You must use a fully qualified path to your application directory."
+msgstr "アプリケーションディレクトリへの絶対パスを使用します。"
+
+#: ../../sources/guide/packaging-ios.rst:66
+msgid ""
+"A directory named `<title>-ios` will be created, with an Xcode project in "
+"it. You can open the Xcode project::"
+msgstr "指定されたディレクトリ<`<title>-ios`の中にXcodeプロジェクトが作成されます。Xcodeのプロジェクトを開きます::"
+
+#: ../../sources/guide/packaging-ios.rst:71
+msgid "Then click on `Play`, and enjoy."
+msgstr "`Play` をクリックして楽しんでください。"
+
+#: ../../sources/guide/packaging-ios.rst:75
+msgid ""
+"Everytime you press `Play`, your application directory will be synced to the"
+" `<title>-ios/YourApp` directory. Don't make changes in the -ios directory "
+"directly."
+msgstr ""
+"`Play`を押すたびに、アプリケーションディレクトリは、`<title>-ios/YourApp`ディレクトリに同期されます。 直接-"
+"iosディレクトリを変更しないでください。"
+
+#: ../../sources/guide/packaging-ios.rst:80
+msgid "Updating an Xcode project"
+msgstr "Updating an Xcode project(Xcodeプロジェクトの更新）"
+
+#: ../../sources/guide/packaging-ios.rst:82
+msgid ""
+"Let's say you want to add numpy to your project but you did not compile it "
+"prior to creating your XCode project. First, ensure it is built::"
+msgstr ""
+"プロジェクトにnumpyを追加したいとしましょう、しかしXcodeプロジェクトを作成する前にそれをコンパイルしませんでした。 "
+"まず構築されていることを確認します::"
+
+#: ../../sources/guide/packaging-ios.rst:87
+msgid "Then, update your Xcode project::"
+msgstr "その後、Xcodeプロジェクトを更新します::"
+
+#: ../../sources/guide/packaging-ios.rst:91
+msgid ""
+"All the libraries / frameworks necessary to run all the compiled recipes "
+"will be added to your Xcode project."
+msgstr "すべてのコンパイル済みのレシピを実行するために必要なすべてのライブラリ/フレームワークはXcodeプロジェクトに追加されます。"
+
+#: ../../sources/guide/packaging-ios.rst:99
+msgid ""
+"There are various ways to customize and configure your app. Please refer to "
+"the `kivy-ios <http://www.github.com/kivy/kivy-ios>`_ documentation for more"
+" information."
+msgstr ""
+"アプリのカスタマイズや設定にはさまざまな方法があります。詳細については `kivy-ios <http://www.github.com/kivy"
+"/kivy-ios>`_  を参照してください。"
+
+#: ../../sources/guide/packaging-ios.rst:106
+msgid "Known issues"
+msgstr "Known issues(既知の問題)"
+
+#: ../../sources/guide/packaging-ios.rst:108
+msgid ""
+"All known issues with packaging for iOS are currently tracked on our `issues"
+" <https://github.com/kivy/kivy-ios/issues>`_  page. If you encounter an "
+"issue specific to packaging for iOS that isn't listed there, please feel "
+"free to file a new issue, and we will get back to you on it."
+msgstr ""
+"iOSのパッケージングに関する既知の問題はすべて、`issues <https://github.com/kivy/kivy-ios/issues>`_"
+"  ページで追跡されてます。掲載されていないiOS用のパッケージ固有の問題が発生した場合は、お気軽に新しいissueを提出してください。"
+
+#: ../../sources/guide/packaging-ios.rst:113
+msgid ""
+"While most are too technical to be written here, one important known issue "
+"is that removing some libraries (e.g. SDL_Mixer for audio) is currently not "
+"possible because the kivy project requires it. We will fix this and others "
+"in future versions."
+msgstr ""
+"ほとんどの場合、ここに書き込むには技術的な面がありますが、重要な問題の1つは、kivyプロジェクトで必要とするライブラリ（SDL_Mixerなど）の削除は現在不可能です。将来のバージョンでこれと他のものを修正します。"
+
+#: ../../sources/guide/packaging-ios.rst:121
+msgid "FAQ"
+msgstr "FAQ(よくある質問)"
+
+#: ../../sources/guide/packaging-ios.rst:124
+msgid "Application quit abnormally!"
+msgstr "アプリケーションが異常終了します！"
+
+#: ../../sources/guide/packaging-ios.rst:126
+msgid ""
+"By default, all the print statements to the console and files are ignored. "
+"If you have an issue when running your application, you can activate the log"
+" by commenting out this line in `main.m`::"
+msgstr ""
+"デフォルトではコンソールやファイルへのすべてのprint文は無視されます。 "
+"アプリケーションの実行時に問題が発生した場合、main.mの以下の行をコメントアウトしてログを有効にできます。"
+
+#: ../../sources/guide/packaging-ios.rst:132
+msgid "Then you should see all the Kivy logging on the Xcode console."
+msgstr "その後、Xcodeのコンソール上にすべてのKivyのログが表示されるはずです。"
+
+#: ../../sources/guide/packaging-ios.rst:135
+msgid "How can Apple accept a python app ?"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:137
+msgid ""
+"We managed to merge the app binary with all the libraries into a single "
+"binary, called libpython. This means all binary modules are loaded "
+"beforehand, so nothing is dynamically loaded."
+msgstr ""
+"libpythonと呼ばれる単一のバイナリにすべてのライブラリとアプリケーションバイナリをマージしました。これはすべてのバイナリモジュールがあらかじめロードされていることを意味するので、動的にはロードされません。"
+
+#: ../../sources/guide/packaging-ios.rst:142
+msgid "Have you already submited a Kivy application to the App store ?"
+msgstr "KivyアプリケーションでApp storeで公開されているアプリはありますか？"
+
+#: ../../sources/guide/packaging-ios.rst:144
+msgid "Yes, check:"
+msgstr "はい、以下をチェックしてみてください："
+
+#: ../../sources/guide/packaging-ios.rst:146
+msgid ""
+"`Defletouch on iTunes "
+"<http://itunes.apple.com/us/app/deflectouch/id505729681>`_,"
+msgstr ""
+"`Defletouch on iTunes "
+"<http://itunes.apple.com/us/app/deflectouch/id505729681>`_,"
+
+#: ../../sources/guide/packaging-ios.rst:147
+msgid ""
+"`ProcessCraft on iTunes "
+"<http://itunes.apple.com/us/app/processcraft/id526377075>`_"
+msgstr ""
+"`ProcessCraft on iTunes "
+"<http://itunes.apple.com/us/app/processcraft/id526377075>`_"
+
+#: ../../sources/guide/packaging-ios.rst:149
+msgid ""
+"For a more complete list, visit the `Kivy wiki "
+"<https://github.com/kivy/kivy/wiki/List-of-Kivy-Projects>`_."
+msgstr ""
+"より詳細なリストについては `Kivy wiki <https://github.com/kivy/kivy/wiki/List-of-Kivy-"
+"Projects>`_  を訪問してください。"

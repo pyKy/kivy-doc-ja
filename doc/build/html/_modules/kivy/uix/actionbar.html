@@ -1,0 +1,1176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>kivy.uix.actionbar &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../_static/kivy.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="../../../index.html" />
+    <link rel="up" title="kivy" href="../../kivy.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../../../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="../../../gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../../../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../../../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../../../index.html">kivy.uix.actionbar</a></h3>
+          
+          <h3><a href="../../../index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2></div>
+            
+  <h1>kivy.uix.actionbar のソースコード</h1><div class="highlight"><pre>
+<span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Action Bar</span>
+<span class="sd">==========</span>
+
+<span class="sd">.. versionadded:: 1.8.0</span>
+
+<span class="sd">.. image:: images/actionbar.png</span>
+<span class="sd">    :align: right</span>
+
+<span class="sd">The ActionBar widget is like Android&#39;s `ActionBar</span>
+<span class="sd">&lt;http://developer.android.com/guide/topics/ui/actionbar.html&gt;`_</span>
+<span class="sd">, where items are stacked horizontally.</span>
+
+<span class="sd">An :class:`ActionBar` contains an :class:`ActionView` with various</span>
+<span class="sd">:class:`ContextualActionViews &lt;kivy.uix.actionbar.ContextualActionView&gt;`.</span>
+<span class="sd">An :class:`ActionView` will contain an :class:`ActionPrevious` having title,</span>
+<span class="sd">app_icon and previous_icon properties. An :class:`ActionView` will contain</span>
+<span class="sd">subclasses of :class:`ActionItems &lt;ActionItem&gt;`. Some predefined ones include</span>
+<span class="sd">an :class:`ActionButton`, an :class:`ActionToggleButton`, an</span>
+<span class="sd">:class:`ActionCheck`, an :class:`ActionSeparator` and an :class:`ActionGroup`.</span>
+
+<span class="sd">An :class:`ActionGroup` is used to display :class:`ActionItems &lt;ActionItem&gt;`</span>
+<span class="sd">in a group. An :class:`ActionView` will always display an :class:`ActionGroup`</span>
+<span class="sd">after other :class:`ActionItems &lt;ActionItem&gt;`.</span>
+<span class="sd">An :class:`ActionView` will contain an :class:`ActionOverflow`.</span>
+<span class="sd">A :class:`ContextualActionView` is a subclass of an :class:`ActionView`.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;ActionBarException&#39;</span><span class="p">,</span> <span class="s1">&#39;ActionItem&#39;</span><span class="p">,</span> <span class="s1">&#39;ActionButton&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;ActionToggleButton&#39;</span><span class="p">,</span> <span class="s1">&#39;ActionCheck&#39;</span><span class="p">,</span> <span class="s1">&#39;ActionSeparator&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;ActionDropDown&#39;</span><span class="p">,</span> <span class="s1">&#39;ActionGroup&#39;</span><span class="p">,</span> <span class="s1">&#39;ActionOverflow&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;ActionView&#39;</span><span class="p">,</span> <span class="s1">&#39;ContextualActionView&#39;</span><span class="p">,</span> <span class="s1">&#39;ActionPrevious&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;ActionBar&#39;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">kivy.uix.boxlayout</span> <span class="k">import</span> <span class="n">BoxLayout</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.dropdown</span> <span class="k">import</span> <span class="n">DropDown</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.widget</span> <span class="k">import</span> <span class="n">Widget</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.button</span> <span class="k">import</span> <span class="n">Button</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.togglebutton</span> <span class="k">import</span> <span class="n">ToggleButton</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.checkbox</span> <span class="k">import</span> <span class="n">CheckBox</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.spinner</span> <span class="k">import</span> <span class="n">Spinner</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.label</span> <span class="k">import</span> <span class="n">Label</span>
+<span class="kn">from</span> <span class="nn">kivy.config</span> <span class="k">import</span> <span class="n">Config</span>
+<span class="kn">from</span> <span class="nn">kivy.properties</span> <span class="k">import</span> <span class="n">ObjectProperty</span><span class="p">,</span> <span class="n">NumericProperty</span><span class="p">,</span> <span class="n">BooleanProperty</span><span class="p">,</span> \
+    <span class="n">StringProperty</span><span class="p">,</span> <span class="n">ListProperty</span><span class="p">,</span> <span class="n">OptionProperty</span><span class="p">,</span> <span class="n">AliasProperty</span>
+<span class="kn">from</span> <span class="nn">kivy.metrics</span> <span class="k">import</span> <span class="n">sp</span>
+<span class="kn">from</span> <span class="nn">kivy.lang</span> <span class="k">import</span> <span class="n">Builder</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">partial</span>
+
+
+<span class="n">window_icon</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">if</span> <span class="n">Config</span><span class="p">:</span>
+    <span class="n">window_icon</span> <span class="o">=</span> <span class="n">Config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;window_icon&#39;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="ActionBarException"><a class="viewcode-back" href="../../../api-kivy.uix.actionbar.html#kivy.uix.actionbar.ActionBarException">[ドキュメント]</a><span class="k">class</span> <span class="nc">ActionBarException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;ActionBarException class</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="ActionItem"><a class="viewcode-back" href="../../../api-kivy.uix.actionbar.html#kivy.uix.actionbar.ActionItem">[ドキュメント]</a><span class="k">class</span> <span class="nc">ActionItem</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;ActionItem class, an abstract class for all ActionBar widgets. To create</span>
+<span class="sd">       a custom widget for an ActionBar, inherit from this</span>
+<span class="sd">       class. See module documentation for more information.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">minimum_width</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="s1">&#39;90sp&#39;</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Minimum Width required by an ActionItem.</span>
+
+<span class="sd">       :attr:`minimum_width` is a :class:`~kivy.properties.NumericProperty` and</span>
+<span class="sd">       defaults to &#39;90sp&#39;.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">get_pack_width</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">minimum_width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+
+    <span class="n">pack_width</span> <span class="o">=</span> <span class="n">AliasProperty</span><span class="p">(</span><span class="n">get_pack_width</span><span class="p">,</span> <span class="n">bind</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;minimum_width&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">))</span>
+    <span class="sd">&#39;&#39;&#39;(read-only) The actual width to use when packing the item. Equal to the</span>
+<span class="sd">       greater of minimum_width and width.</span>
+
+<span class="sd">       :attr:`pack_width` is an :class:`~kivy.properties.AliasProperty`.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">important</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Determines if an ActionItem is important or not.</span>
+
+<span class="sd">       :attr:`important` is a :class:`~kivy.properties.BooleanProperty` and</span>
+<span class="sd">       defaults to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">inside_group</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;(internal) Determines if an ActionItem is displayed inside an</span>
+<span class="sd">       ActionGroup or not.</span>
+
+<span class="sd">       :attr:`inside_group` is a :class:`~kivy.properties.BooleanProperty` and</span>
+<span class="sd">       defaults to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">background_normal</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span>
+        <span class="s1">&#39;atlas://data/images/defaulttheme/action_item&#39;</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Background image of the ActionItem used for the default graphical</span>
+<span class="sd">       representation when the ActionItem is not pressed.</span>
+
+<span class="sd">       :attr:`background_normal` is a :class:`~kivy.properties.StringProperty`</span>
+<span class="sd">       and defaults to &#39;atlas://data/images/defaulttheme/action_item&#39;.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">background_down</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span>
+        <span class="s1">&#39;atlas://data/images/defaulttheme/action_item_down&#39;</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Background image of the ActionItem used for default graphical</span>
+<span class="sd">       representation when an ActionItem is pressed.</span>
+
+<span class="sd">       :attr:`background_down` is a :class:`~kivy.properties.StringProperty`</span>
+<span class="sd">       and defaults to &#39;atlas://data/images/defaulttheme/action_item_down&#39;.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">mipmap</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Defines whether the image/icon dispayed on top of the button uses a</span>
+<span class="sd">       mipmap or not.</span>
+
+<span class="sd">       :attr:`mipmap` is a :class:`~kivy.properties.BooleanProperty` and</span>
+<span class="sd">       defaults to `True`.</span>
+<span class="sd">    &#39;&#39;&#39;</span></div>
+
+
+<div class="viewcode-block" id="ActionButton"><a class="viewcode-back" href="../../../api-kivy.uix.actionbar.html#kivy.uix.actionbar.ActionButton">[ドキュメント]</a><span class="k">class</span> <span class="nc">ActionButton</span><span class="p">(</span><span class="n">Button</span><span class="p">,</span> <span class="n">ActionItem</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;ActionButton class, see module documentation for more information.</span>
+
+<span class="sd">    The text color, width and size_hint_x are set manually via the Kv language</span>
+<span class="sd">    file. It covers a lot of cases: with/without an icon, with/without a group</span>
+<span class="sd">    and takes care of the padding between elements.</span>
+
+<span class="sd">    You don&#39;t have much control over these properties, so if you want to</span>
+<span class="sd">    customize it&#39;s appearance, we suggest you create you own button</span>
+<span class="sd">    representation. You can do this by creating a class that subclasses an</span>
+<span class="sd">    existing widget and an :class:`ActionItem`::</span>
+
+<span class="sd">        class MyOwnActionButton(Button, ActionItem):</span>
+<span class="sd">            pass</span>
+
+<span class="sd">    You can then create your own style using the Kv language.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">icon</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">allownone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Source image to use when the Button is part of the ActionBar. If the</span>
+<span class="sd">    Button is in a group, the text will be preferred.</span>
+<span class="sd">    &#39;&#39;&#39;</span></div>
+
+
+<div class="viewcode-block" id="ActionPrevious"><a class="viewcode-back" href="../../../api-kivy.uix.actionbar.html#kivy.uix.actionbar.ActionPrevious">[ドキュメント]</a><span class="k">class</span> <span class="nc">ActionPrevious</span><span class="p">(</span><span class="n">BoxLayout</span><span class="p">,</span> <span class="n">ActionItem</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;ActionPrevious class, see module documentation for more information.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">with_previous</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Specifies whether clicking on ActionPrevious will load the previous</span>
+<span class="sd">       screen or not. If True, the previous_icon will be shown otherwise it</span>
+<span class="sd">       will not.</span>
+
+<span class="sd">       :attr:`with_previous` is a :class:`~kivy.properties.BooleanProperty` and</span>
+<span class="sd">       defaults to True.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">app_icon</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="n">window_icon</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Application icon for the ActionView.</span>
+
+<span class="sd">       :attr:`app_icon` is a :class:`~kivy.properties.StringProperty`</span>
+<span class="sd">       and defaults to the window icon if set, otherwise</span>
+<span class="sd">       &#39;data/logo/kivy-icon-32.png&#39;.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">app_icon_width</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Width of app_icon image.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">app_icon_height</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Height of app_icon image.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">color</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;Text color, in the format (r, g, b, a)</span>
+
+<span class="sd">       :attr:`color` is a :class:`~kivy.properties.ListProperty` and defaults</span>
+<span class="sd">       to [1, 1, 1, 1].</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">previous_image</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span>
+        <span class="s1">&#39;atlas://data/images/defaulttheme/previous_normal&#39;</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Image for the &#39;previous&#39; ActionButtons default graphical representation.</span>
+
+<span class="sd">       :attr:`previous_image` is a :class:`~kivy.properties.StringProperty` and</span>
+<span class="sd">       defaults to &#39;atlas://data/images/defaulttheme/previous_normal&#39;.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">previous_image_width</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Width of previous_image image.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">previous_image_height</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Height of previous_image image.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">title</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Title for ActionView.</span>
+
+<span class="sd">       :attr:`title` is a :class:`~kivy.properties.StringProperty` and</span>
+<span class="sd">       defaults to &#39;&#39;.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">register_event_type</span><span class="p">(</span><span class="s1">&#39;on_press&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">register_event_type</span><span class="p">(</span><span class="s1">&#39;on_release&#39;</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ActionPrevious</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">app_icon</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">app_icon</span> <span class="o">=</span> <span class="s1">&#39;data/logo/kivy-icon-32.png&#39;</span>
+
+    <span class="k">def</span> <span class="nf">on_press</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">on_release</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="ActionToggleButton"><a class="viewcode-back" href="../../../api-kivy.uix.actionbar.html#kivy.uix.actionbar.ActionToggleButton">[ドキュメント]</a><span class="k">class</span> <span class="nc">ActionToggleButton</span><span class="p">(</span><span class="n">ActionItem</span><span class="p">,</span> <span class="n">ToggleButton</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;ActionToggleButton class, see module documentation for more information.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">icon</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">allownone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Source image to use when the Button is part of the ActionBar. If the</span>
+<span class="sd">    Button is in a group, the text will be preferred.</span>
+<span class="sd">    &#39;&#39;&#39;</span></div>
+
+
+<span class="k">class</span> <span class="nc">ActionLabel</span><span class="p">(</span><span class="n">ActionItem</span><span class="p">,</span> <span class="n">Label</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;ActionLabel class, see module documentation for more information.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">pass</span>
+
+
+<div class="viewcode-block" id="ActionCheck"><a class="viewcode-back" href="../../../api-kivy.uix.actionbar.html#kivy.uix.actionbar.ActionCheck">[ドキュメント]</a><span class="k">class</span> <span class="nc">ActionCheck</span><span class="p">(</span><span class="n">ActionItem</span><span class="p">,</span> <span class="n">CheckBox</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;ActionCheck class, see module documentation for more information.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="ActionSeparator"><a class="viewcode-back" href="../../../api-kivy.uix.actionbar.html#kivy.uix.actionbar.ActionSeparator">[ドキュメント]</a><span class="k">class</span> <span class="nc">ActionSeparator</span><span class="p">(</span><span class="n">ActionItem</span><span class="p">,</span> <span class="n">Widget</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;ActionSeparator class, see module documentation for more information.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">background_image</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span>
+        <span class="s1">&#39;atlas://data/images/defaulttheme/separator&#39;</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Background image for the separators default graphical representation.</span>
+
+<span class="sd">       :attr:`background_image` is a :class:`~kivy.properties.StringProperty`</span>
+<span class="sd">       and defaults to &#39;atlas://data/images/defaulttheme/separator&#39;.</span>
+<span class="sd">    &#39;&#39;&#39;</span></div>
+
+
+<div class="viewcode-block" id="ActionDropDown"><a class="viewcode-back" href="../../../api-kivy.uix.actionbar.html#kivy.uix.actionbar.ActionDropDown">[ドキュメント]</a><span class="k">class</span> <span class="nc">ActionDropDown</span><span class="p">(</span><span class="n">DropDown</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;ActionDropDown class, see module documentation for more information.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">super</span><span class="p">(</span><span class="n">ActionDropDown</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_down</span><span class="p">(</span><span class="n">touch</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">auto_dismiss</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">dismiss</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="ActionGroup"><a class="viewcode-back" href="../../../api-kivy.uix.actionbar.html#kivy.uix.actionbar.ActionGroup">[ドキュメント]</a><span class="k">class</span> <span class="nc">ActionGroup</span><span class="p">(</span><span class="n">ActionItem</span><span class="p">,</span> <span class="n">Spinner</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;ActionGroup class, see module documentation for more information.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">use_separator</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Specifies whether to use a separator after/before this group or not.</span>
+
+<span class="sd">       :attr:`use_separator` is a :class:`~kivy.properties.BooleanProperty` and</span>
+<span class="sd">       defaults to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">separator_image</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span>
+        <span class="s1">&#39;atlas://data/images/defaulttheme/separator&#39;</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Background Image for an ActionSeparator in an ActionView.</span>
+
+<span class="sd">       :attr:`separator_image` is a :class:`~kivy.properties.StringProperty`</span>
+<span class="sd">       and defaults to &#39;atlas://data/images/defaulttheme/separator&#39;.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">separator_width</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Width of the ActionSeparator in an ActionView.</span>
+
+<span class="sd">       :attr:`separator_width` is a :class:`~kivy.properties.NumericProperty`</span>
+<span class="sd">       and defaults to 0.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">mode</span> <span class="o">=</span> <span class="n">OptionProperty</span><span class="p">(</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="s1">&#39;spinner&#39;</span><span class="p">))</span>
+    <span class="sd">&#39;&#39;&#39;Sets the current mode of an ActionGroup. If mode is &#39;normal&#39;, the</span>
+<span class="sd">       ActionGroups children will be displayed normally if there is enough</span>
+<span class="sd">       space, otherwise they will be displayed in a spinner. If mode is</span>
+<span class="sd">       &#39;spinner&#39;, then the children will always be displayed in a spinner.</span>
+
+<span class="sd">       :attr:`mode` is a :class:`~kivy.properties.OptionProperty` and</span>
+<span class="sd">       defaults to &#39;normal&#39;.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">dropdown_width</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;If non zero, provides the width for the associated DropDown. This is</span>
+<span class="sd">    useful when some items in the ActionGroup&#39;s DropDown are wider than usual</span>
+<span class="sd">    and you don&#39;t want to make the ActionGroup widget itself wider.</span>
+
+<span class="sd">    :attr:`dropdown_width` is an :class:`~kivy.properties.NumericProperty`</span>
+<span class="sd">    and defaults to 0.</span>
+
+<span class="sd">    .. versionadded:: 1.10.0</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">list_action_item</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_list_overflow_items</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ActionGroup</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dropdown_cls</span> <span class="o">=</span> <span class="n">ActionDropDown</span>
+
+    <span class="k">def</span> <span class="nf">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">ActionSeparator</span><span class="p">):</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">ActionGroup</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">ActionItem</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">ActionBarException</span><span class="p">(</span><span class="s1">&#39;ActionGroup only accepts ActionItem&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">list_action_item</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">show_group</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clear_widgets</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_overflow_items</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_action_item</span><span class="p">:</span>
+            <span class="n">item</span><span class="o">.</span><span class="n">inside_group</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dropdown</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_build_dropdown</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">largs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dropdown</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dropdown</span><span class="o">.</span><span class="n">unbind</span><span class="p">(</span><span class="n">on_dismiss</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_toggle_dropdown</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dropdown</span><span class="o">.</span><span class="n">dismiss</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dropdown</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dropdown</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dropdown_cls</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dropdown</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_dismiss</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_toggle_dropdown</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_update_dropdown</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">largs</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">_toggle_dropdown</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">largs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_open</span> <span class="o">=</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_open</span>
+        <span class="n">ddn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dropdown</span>
+        <span class="n">ddn</span><span class="o">.</span><span class="n">size_hint_x</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">ddn</span><span class="o">.</span><span class="n">container</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">children</span> <span class="o">=</span> <span class="n">ddn</span><span class="o">.</span><span class="n">container</span><span class="o">.</span><span class="n">children</span>
+
+        <span class="k">if</span> <span class="n">children</span><span class="p">:</span>
+            <span class="n">ddn</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dropdown_width</span> <span class="ow">or</span> <span class="nb">max</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">pack_width</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">children</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ddn</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span>
+
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
+            <span class="n">item</span><span class="o">.</span><span class="n">size_hint_y</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">item</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">sp</span><span class="p">(</span><span class="mi">48</span><span class="p">)])</span>
+
+    <span class="k">def</span> <span class="nf">clear_widgets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dropdown</span><span class="o">.</span><span class="n">clear_widgets</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="ActionOverflow"><a class="viewcode-back" href="../../../api-kivy.uix.actionbar.html#kivy.uix.actionbar.ActionOverflow">[ドキュメント]</a><span class="k">class</span> <span class="nc">ActionOverflow</span><span class="p">(</span><span class="n">ActionGroup</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;ActionOverflow class, see module documentation for more information.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">overflow_image</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span>
+        <span class="s1">&#39;atlas://data/images/defaulttheme/overflow&#39;</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Image to be used as an Overflow Image.</span>
+
+<span class="sd">       :attr:`overflow_image` is an :class:`~kivy.properties.ObjectProperty`</span>
+<span class="sd">       and defaults to &#39;atlas://data/images/defaulttheme/overflow&#39;.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action_item</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">action_item</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">action_item</span><span class="p">,</span> <span class="n">ActionSeparator</span><span class="p">):</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">action_item</span><span class="p">,</span> <span class="n">ActionItem</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">ActionBarException</span><span class="p">(</span><span class="s1">&#39;ActionView only accepts ActionItem&#39;</span>
+                                     <span class="s1">&#39; (got </span><span class="si">{!r}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">action_item</span><span class="p">))</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_list_overflow_items</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_list_overflow_items</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">action_item</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">show_default_items</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+        <span class="c1"># display overflow and it&#39;s items if widget&#39;s directly added to it</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_overflow_items</span> <span class="o">==</span> <span class="p">[]:</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">show_group</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ActionView</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ActionView"><a class="viewcode-back" href="../../../api-kivy.uix.actionbar.html#kivy.uix.actionbar.ActionView">[ドキュメント]</a><span class="k">class</span> <span class="nc">ActionView</span><span class="p">(</span><span class="n">BoxLayout</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;ActionView class, see module documentation for more information.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">action_previous</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Previous button for an ActionView.</span>
+
+<span class="sd">       :attr:`action_previous` is an :class:`~kivy.properties.ObjectProperty`</span>
+<span class="sd">       and defaults to None.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">background_color</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;Background color in the format (r, g, b, a).</span>
+
+<span class="sd">       :attr:`background_color` is a :class:`~kivy.properties.ListProperty` and</span>
+<span class="sd">       defaults to [1, 1, 1, 1].</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">background_image</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span>
+        <span class="s1">&#39;atlas://data/images/defaulttheme/action_view&#39;</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Background image of an ActionViews default graphical representation.</span>
+
+<span class="sd">       :attr:`background_image` is an :class:`~kivy.properties.StringProperty`</span>
+<span class="sd">       and defaults to &#39;atlas://data/images/defaulttheme/action_view&#39;.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">use_separator</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Specify whether to use a separator before every ActionGroup or not.</span>
+
+<span class="sd">       :attr:`use_separator` is a :class:`~kivy.properties.BooleanProperty` and</span>
+<span class="sd">       defaults to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">overflow_group</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Widget to be used for the overflow.</span>
+
+<span class="sd">       :attr:`overflow_group` is an :class:`~kivy.properties.ObjectProperty`</span>
+<span class="sd">       and defaults to an instance of :class:`ActionOverflow`.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_items</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_group</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ActionView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">overflow_group</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">overflow_group</span> <span class="o">=</span> <span class="n">ActionOverflow</span><span class="p">(</span>
+                <span class="n">use_separator</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">use_separator</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_action_previous</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_items</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action_item</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">action_item</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">action_item</span><span class="p">,</span> <span class="n">ActionItem</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">ActionBarException</span><span class="p">(</span><span class="s1">&#39;ActionView only accepts ActionItem&#39;</span>
+                                     <span class="s1">&#39; (got </span><span class="si">{!r}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">action_item</span><span class="p">))</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">action_item</span><span class="p">,</span> <span class="n">ActionOverflow</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">overflow_group</span> <span class="o">=</span> <span class="n">action_item</span>
+            <span class="n">action_item</span><span class="o">.</span><span class="n">use_separator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_separator</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">action_item</span><span class="p">,</span> <span class="n">ActionGroup</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_group</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">action_item</span><span class="p">)</span>
+            <span class="n">action_item</span><span class="o">.</span><span class="n">use_separator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_separator</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">action_item</span><span class="p">,</span> <span class="n">ActionPrevious</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">action_previous</span> <span class="o">=</span> <span class="n">action_item</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">ActionView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">action_item</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_list_action_items</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_items</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">action_item</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_use_separator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_group</span><span class="p">:</span>
+            <span class="n">group</span><span class="o">.</span><span class="n">use_separator</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">overflow_group</span><span class="o">.</span><span class="n">use_separator</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">remove_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ActionView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">remove_widget</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="n">ActionOverflow</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">widget</span><span class="o">.</span><span class="n">list_action_item</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_items</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">widget</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_items</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_items</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_clear_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">lst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_items</span><span class="p">[:]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clear_widgets</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_group</span><span class="p">:</span>
+            <span class="n">group</span><span class="o">.</span><span class="n">clear_widgets</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">overflow_group</span><span class="o">.</span><span class="n">clear_widgets</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">overflow_group</span><span class="o">.</span><span class="n">list_action_item</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_items</span> <span class="o">=</span> <span class="n">lst</span>
+
+    <span class="k">def</span> <span class="nf">_layout_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># all the items can fit to the view, so expand everything</span>
+        <span class="n">super_add</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">ActionView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">add_widget</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_clear_all</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">action_previous</span><span class="o">.</span><span class="n">parent</span><span class="p">:</span>
+            <span class="n">super_add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">action_previous</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_list_action_items</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_items</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+                <span class="n">child</span><span class="o">.</span><span class="n">inside_group</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="n">super_add</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_group</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">group</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;spinner&#39;</span><span class="p">:</span>
+                <span class="n">super_add</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+                <span class="n">group</span><span class="o">.</span><span class="n">show_group</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">group</span><span class="o">.</span><span class="n">list_action_item</span> <span class="o">!=</span> <span class="p">[]:</span>
+                    <span class="n">super_add</span><span class="p">(</span><span class="n">ActionSeparator</span><span class="p">())</span>
+                <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">group</span><span class="o">.</span><span class="n">list_action_item</span><span class="p">:</span>
+                    <span class="n">child</span><span class="o">.</span><span class="n">inside_group</span> <span class="o">=</span> <span class="kc">False</span>
+                    <span class="n">super_add</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">overflow_group</span><span class="o">.</span><span class="n">show_default_items</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_layout_group</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># layout all the items in order to pack them per group</span>
+        <span class="n">super_add</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">ActionView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">add_widget</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="s1">&#39;group&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_clear_all</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">action_previous</span><span class="o">.</span><span class="n">parent</span><span class="p">:</span>
+            <span class="n">super_add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">action_previous</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_list_action_items</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_items</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+                <span class="n">super_add</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+                <span class="n">child</span><span class="o">.</span><span class="n">inside_group</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_group</span><span class="p">:</span>
+            <span class="n">super_add</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+            <span class="n">group</span><span class="o">.</span><span class="n">show_group</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">overflow_group</span><span class="o">.</span><span class="n">show_default_items</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_layout_random</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># layout the items in order to pack all of them grouped, and display</span>
+        <span class="c1"># only the action items having &#39;important&#39;</span>
+        <span class="n">super_add</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">ActionView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">add_widget</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="s1">&#39;random&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_clear_all</span><span class="p">()</span>
+        <span class="n">hidden_items</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">hidden_groups</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">total_width</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">action_previous</span><span class="o">.</span><span class="n">parent</span><span class="p">:</span>
+            <span class="n">super_add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">action_previous</span><span class="p">)</span>
+
+        <span class="n">width</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">overflow_group</span><span class="o">.</span><span class="n">pack_width</span> <span class="o">-</span>
+                 <span class="bp">self</span><span class="o">.</span><span class="n">action_previous</span><span class="o">.</span><span class="n">minimum_width</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_list_action_items</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_items</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+                <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">important</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">pack_width</span> <span class="o">+</span> <span class="n">total_width</span> <span class="o">&lt;</span> <span class="n">width</span><span class="p">:</span>
+                        <span class="n">super_add</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+                        <span class="n">child</span><span class="o">.</span><span class="n">inside_group</span> <span class="o">=</span> <span class="kc">False</span>
+                        <span class="n">total_width</span> <span class="o">+=</span> <span class="n">child</span><span class="o">.</span><span class="n">pack_width</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">hidden_items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">hidden_items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+
+        <span class="c1"># if space is left then display ActionItem inside their</span>
+        <span class="c1"># ActionGroup</span>
+        <span class="k">if</span> <span class="n">total_width</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_group</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">group</span><span class="o">.</span><span class="n">pack_width</span> <span class="o">+</span> <span class="n">total_width</span> <span class="o">+</span>\
+                        <span class="n">group</span><span class="o">.</span><span class="n">separator_width</span> <span class="o">&lt;</span> <span class="n">width</span><span class="p">:</span>
+                    <span class="n">super_add</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+                    <span class="n">group</span><span class="o">.</span><span class="n">show_group</span><span class="p">()</span>
+                    <span class="n">total_width</span> <span class="o">+=</span> <span class="p">(</span><span class="n">group</span><span class="o">.</span><span class="n">pack_width</span> <span class="o">+</span>
+                                    <span class="n">group</span><span class="o">.</span><span class="n">separator_width</span><span class="p">)</span>
+
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">hidden_groups</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+        <span class="n">group_index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="c1"># if space is left then display other ActionItems</span>
+        <span class="k">if</span> <span class="n">total_width</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">hidden_items</span><span class="p">[:]:</span>
+                <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">pack_width</span> <span class="o">+</span> <span class="n">total_width</span> <span class="o">&lt;</span> <span class="n">width</span><span class="p">:</span>
+                    <span class="n">super_add</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">group_index</span><span class="p">)</span>
+                    <span class="n">total_width</span> <span class="o">+=</span> <span class="n">child</span><span class="o">.</span><span class="n">pack_width</span>
+                    <span class="n">child</span><span class="o">.</span><span class="n">inside_group</span> <span class="o">=</span> <span class="kc">False</span>
+                    <span class="n">hidden_items</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+
+        <span class="c1"># for all the remaining ActionItems and ActionItems with in</span>
+        <span class="c1"># ActionGroups, Display them inside overflow_group</span>
+        <span class="n">extend_hidden</span> <span class="o">=</span> <span class="n">hidden_items</span><span class="o">.</span><span class="n">extend</span>
+        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">hidden_groups</span><span class="p">:</span>
+            <span class="n">extend_hidden</span><span class="p">(</span><span class="n">group</span><span class="o">.</span><span class="n">list_action_item</span><span class="p">)</span>
+
+        <span class="n">overflow_group</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">overflow_group</span>
+
+        <span class="k">if</span> <span class="n">hidden_items</span> <span class="o">!=</span> <span class="p">[]:</span>
+            <span class="n">over_add</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">overflow_group</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span>
+                             <span class="n">overflow_group</span><span class="p">)</span><span class="o">.</span><span class="n">add_widget</span>
+            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">hidden_items</span><span class="p">:</span>
+                <span class="n">over_add</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+
+            <span class="n">overflow_group</span><span class="o">.</span><span class="n">show_group</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">overflow_group</span><span class="o">.</span><span class="n">parent</span><span class="p">:</span>
+                <span class="n">super_add</span><span class="p">(</span><span class="n">overflow_group</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_width</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="c1"># determine the layout to use</span>
+
+        <span class="c1"># can we display all of them?</span>
+        <span class="n">total_width</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_items</span><span class="p">:</span>
+            <span class="n">total_width</span> <span class="o">+=</span> <span class="n">child</span><span class="o">.</span><span class="n">pack_width</span>
+        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_group</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">group</span><span class="o">.</span><span class="n">list_action_item</span><span class="p">:</span>
+                <span class="n">total_width</span> <span class="o">+=</span> <span class="n">child</span><span class="o">.</span><span class="n">pack_width</span>
+        <span class="k">if</span> <span class="n">total_width</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">!=</span> <span class="s1">&#39;all&#39;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_layout_all</span><span class="p">()</span>
+            <span class="k">return</span>
+
+        <span class="c1"># can we display them per group?</span>
+        <span class="n">total_width</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_items</span><span class="p">:</span>
+            <span class="n">total_width</span> <span class="o">+=</span> <span class="n">child</span><span class="o">.</span><span class="n">pack_width</span>
+        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_action_group</span><span class="p">:</span>
+            <span class="n">total_width</span> <span class="o">+=</span> <span class="n">group</span><span class="o">.</span><span class="n">pack_width</span>
+        <span class="k">if</span> <span class="n">total_width</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">:</span>
+            <span class="c1"># ok, we can display all the items grouped</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">!=</span> <span class="s1">&#39;group&#39;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_layout_group</span><span class="p">()</span>
+            <span class="k">return</span>
+
+        <span class="c1"># none of the solutions worked, display them in pack mode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_layout_random</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="ContextualActionView"><a class="viewcode-back" href="../../../api-kivy.uix.actionbar.html#kivy.uix.actionbar.ContextualActionView">[ドキュメント]</a><span class="k">class</span> <span class="nc">ContextualActionView</span><span class="p">(</span><span class="n">ActionView</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;ContextualActionView class, see the module documentation</span>
+<span class="sd">       for more information.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="ActionBar"><a class="viewcode-back" href="../../../api-kivy.uix.actionbar.html#kivy.uix.actionbar.ActionBar">[ドキュメント]</a><span class="k">class</span> <span class="nc">ActionBar</span><span class="p">(</span><span class="n">BoxLayout</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;ActionBar, see the module documentation for more information.</span>
+
+<span class="sd">    :Events:</span>
+<span class="sd">        `on_previous`</span>
+<span class="sd">            Fired when action_previous of action_view is pressed.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">action_view</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;action_view of ActionBar.</span>
+
+<span class="sd">       :attr:`action_view` is an :class:`~kivy.properties.ObjectProperty` and</span>
+<span class="sd">       defaults to an instance of ActionView.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">background_color</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;Background color, in the format (r, g, b, a).</span>
+
+<span class="sd">       :attr:`background_color` is a :class:`~kivy.properties.ListProperty` and</span>
+<span class="sd">       defaults to [1, 1, 1, 1].</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">background_image</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span>
+        <span class="s1">&#39;atlas://data/images/defaulttheme/action_bar&#39;</span><span class="p">)</span>
+
+    <span class="sd">&#39;&#39;&#39;Background image of the ActionBars default graphical representation.</span>
+
+<span class="sd">      :attr:`background_image` is an :class:`~kivy.properties.StringProperty`</span>
+<span class="sd">      and defaults to &#39;atlas://data/images/defaulttheme/action_bar&#39;.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">border</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;:attr:`border` to be applied to the :attr:`background_image`.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">__events__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;on_previous&#39;</span><span class="p">,)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ActionBar</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stack_cont_action_view</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_emit_previous</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dispatch</span><span class="p">,</span> <span class="s1">&#39;on_previous&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">ContextualActionView</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_stack_cont_action_view</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">view</span><span class="o">.</span><span class="n">action_previous</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">view</span><span class="o">.</span><span class="n">action_previous</span><span class="o">.</span><span class="n">unbind</span><span class="p">(</span><span class="n">on_release</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_emit_previous</span><span class="p">)</span>
+                <span class="n">view</span><span class="o">.</span><span class="n">action_previous</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_release</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_emit_previous</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">clear_widgets</span><span class="p">()</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">ActionBar</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">ActionView</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">action_view</span> <span class="o">=</span> <span class="n">view</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">ActionBar</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ActionBarException</span><span class="p">(</span>
+                <span class="s1">&#39;ActionBar can only add ContextualActionView or ActionView&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_previous</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pop_contextual_action_view</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_pop_contextual_action_view</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Remove the current ContextualActionView and display either the</span>
+<span class="sd">           previous one or the ActionView.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stack_cont_action_view</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clear_widgets</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stack_cont_action_view</span> <span class="o">==</span> <span class="p">[]:</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">ActionBar</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">action_view</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">ActionBar</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_stack_cont_action_view</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">kivy.base</span> <span class="k">import</span> <span class="n">runTouchApp</span>
+    <span class="kn">from</span> <span class="nn">kivy.uix.floatlayout</span> <span class="k">import</span> <span class="n">FloatLayout</span>
+    <span class="kn">from</span> <span class="nn">kivy.factory</span> <span class="k">import</span> <span class="n">Factory</span>
+
+    <span class="c1"># XXX clean the first registration done from &#39;__main__&#39; here.</span>
+    <span class="c1"># otherwise kivy.uix.actionbar.ActionPrevious != __main__.ActionPrevious</span>
+    <span class="n">Factory</span><span class="o">.</span><span class="n">unregister</span><span class="p">(</span><span class="s1">&#39;ActionPrevious&#39;</span><span class="p">)</span>
+
+    <span class="n">Builder</span><span class="o">.</span><span class="n">load_string</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">&lt;MainWindow&gt;:</span>
+<span class="s1">    ActionBar:</span>
+<span class="s1">        pos_hint: {&#39;top&#39;:1}</span>
+<span class="s1">        ActionView:</span>
+<span class="s1">            use_separator: True</span>
+<span class="s1">            ActionPrevious:</span>
+<span class="s1">                title: &#39;Action Bar&#39;</span>
+<span class="s1">                with_previous: False</span>
+<span class="s1">            ActionOverflow:</span>
+<span class="s1">            ActionButton:</span>
+<span class="s1">                text: &#39;Btn0&#39;</span>
+<span class="s1">                icon: &#39;atlas://data/images/defaulttheme/audio-volume-high&#39;</span>
+<span class="s1">            ActionButton:</span>
+<span class="s1">                text: &#39;Btn1&#39;</span>
+<span class="s1">            ActionButton:</span>
+<span class="s1">                text: &#39;Btn2&#39;</span>
+<span class="s1">            ActionGroup:</span>
+<span class="s1">                text: &#39;Group 2&#39;</span>
+<span class="s1">                ActionButton:</span>
+<span class="s1">                    text: &#39;Btn3&#39;</span>
+<span class="s1">                ActionButton:</span>
+<span class="s1">                    text: &#39;Btn4&#39;</span>
+<span class="s1">            ActionGroup:</span>
+<span class="s1">                dropdown_width: 200</span>
+<span class="s1">                text: &#39;Group1&#39;</span>
+<span class="s1">                ActionButton:</span>
+<span class="s1">                    text: &#39;Btn5&#39;</span>
+<span class="s1">                ActionButton:</span>
+<span class="s1">                    text: &#39;Btn6&#39;</span>
+<span class="s1">                ActionButton:</span>
+<span class="s1">                    text: &#39;Btn7&#39;</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">MainWindow</span><span class="p">(</span><span class="n">FloatLayout</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="n">float_layout</span> <span class="o">=</span> <span class="n">MainWindow</span><span class="p">()</span>
+    <span class="n">runTouchApp</span><span class="p">(</span><span class="n">float_layout</span><span class="p">)</span>
+</pre></div>
+
+            <div class="footerlinks">
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 29, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

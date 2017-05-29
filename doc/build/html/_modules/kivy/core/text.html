@@ -1,0 +1,1194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>kivy.core.text &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../_static/kivy.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="../../../index.html" />
+    <link rel="up" title="kivy" href="../../kivy.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../../../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="../../../gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../../../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../../../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../../../index.html">kivy.core.text</a></h3>
+          
+          <h3><a href="../../../index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2></div>
+            
+  <h1>kivy.core.text のソースコード</h1><div class="highlight"><pre>
+<span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Text</span>
+<span class="sd">====</span>
+
+<span class="sd">An abstraction of text creation. Depending of the selected backend, the</span>
+<span class="sd">accuracy of text rendering may vary.</span>
+
+<span class="sd">.. versionchanged:: 1.5.0</span>
+<span class="sd">    :attr:`LabelBase.line_height` added.</span>
+
+<span class="sd">.. versionchanged:: 1.0.7</span>
+<span class="sd">    The :class:`LabelBase` does not generate any texture if the text has a</span>
+<span class="sd">    width &lt;= 1.</span>
+
+<span class="sd">This is the backend layer for getting text out of different text providers,</span>
+<span class="sd">you should only be using this directly if your needs aren&#39;t fulfilled by the</span>
+<span class="sd">:class:`~kivy.uix.label.Label`.</span>
+
+<span class="sd">Usage example::</span>
+
+<span class="sd">    from kivy.core.text import Label as CoreLabel</span>
+
+<span class="sd">    ...</span>
+<span class="sd">    ...</span>
+<span class="sd">    my_label = CoreLabel()</span>
+<span class="sd">    my_label.text = &#39;hello&#39;</span>
+<span class="sd">    # the label is usually not drawn until needed, so force it to draw.</span>
+<span class="sd">    my_label.refresh()</span>
+<span class="sd">    # Now access the texture of the label and use it wherever and</span>
+<span class="sd">    # however you may please.</span>
+<span class="sd">    hello_texture = my_label.texture</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;LabelBase&#39;</span><span class="p">,</span> <span class="s1">&#39;Label&#39;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">ast</span> <span class="k">import</span> <span class="n">literal_eval</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">partial</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="k">import</span> <span class="n">copy</span>
+<span class="kn">from</span> <span class="nn">kivy</span> <span class="k">import</span> <span class="n">kivy_data_dir</span>
+<span class="kn">from</span> <span class="nn">kivy.config</span> <span class="k">import</span> <span class="n">Config</span>
+<span class="kn">from</span> <span class="nn">kivy.utils</span> <span class="k">import</span> <span class="n">platform</span>
+<span class="kn">from</span> <span class="nn">kivy.graphics.texture</span> <span class="k">import</span> <span class="n">Texture</span>
+<span class="kn">from</span> <span class="nn">kivy.core</span> <span class="k">import</span> <span class="n">core_select_lib</span>
+<span class="kn">from</span> <span class="nn">kivy.core.text.text_layout</span> <span class="k">import</span> <span class="n">layout_text</span><span class="p">,</span> <span class="n">LayoutWord</span>
+<span class="kn">from</span> <span class="nn">kivy.resources</span> <span class="k">import</span> <span class="n">resource_find</span><span class="p">,</span> <span class="n">resource_add_path</span>
+<span class="kn">from</span> <span class="nn">kivy.compat</span> <span class="k">import</span> <span class="n">PY2</span>
+<span class="kn">from</span> <span class="nn">kivy.setupconfig</span> <span class="k">import</span> <span class="n">USE_SDL2</span>
+
+
+<span class="k">if</span> <span class="s1">&#39;KIVY_DOC&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+    <span class="n">_default_font_paths</span> <span class="o">=</span> <span class="n">literal_eval</span><span class="p">(</span><span class="n">Config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;default_font&#39;</span><span class="p">))</span>
+    <span class="n">DEFAULT_FONT</span> <span class="o">=</span> <span class="n">_default_font_paths</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">DEFAULT_FONT</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="n">FONT_REGULAR</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">FONT_ITALIC</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">FONT_BOLD</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">FONT_BOLDITALIC</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">whitespace_pat</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;( +)&#39;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="LabelBase"><a class="viewcode-back" href="../../../api-kivy.core.text.html#kivy.core.text.LabelBase">[ドキュメント]</a><span class="k">class</span> <span class="nc">LabelBase</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Core text label.</span>
+<span class="sd">    This is the abstract class used by different backends to render text.</span>
+
+<span class="sd">    .. warning::</span>
+<span class="sd">        The core text label can&#39;t be changed at runtime. You must recreate one.</span>
+
+<span class="sd">    :Parameters:</span>
+<span class="sd">        `font_size`: int, defaults to 12</span>
+<span class="sd">            Font size of the text</span>
+<span class="sd">        `font_name`: str, defaults to DEFAULT_FONT</span>
+<span class="sd">            Font name of the text</span>
+<span class="sd">        `bold`: bool, defaults to False</span>
+<span class="sd">            Activate &quot;bold&quot; text style</span>
+<span class="sd">        `italic`: bool, defaults to False</span>
+<span class="sd">            Activate &quot;italic&quot; text style</span>
+<span class="sd">        `text_size`: tuple, defaults to (None, None)</span>
+<span class="sd">            Add constraint to render the text (inside a bounding box).</span>
+<span class="sd">            If no size is given, the label size will be set to the text size.</span>
+<span class="sd">        `padding`: float, defaults to None</span>
+<span class="sd">            If it&#39;s a float, it will set padding_x and padding_y</span>
+<span class="sd">        `padding_x`: float, defaults to 0.0</span>
+<span class="sd">            Left/right padding</span>
+<span class="sd">        `padding_y`: float, defaults to 0.0</span>
+<span class="sd">            Top/bottom padding</span>
+<span class="sd">        `halign`: str, defaults to &quot;left&quot;</span>
+<span class="sd">            Horizontal text alignment inside the bounding box</span>
+<span class="sd">        `valign`: str, defaults to &quot;bottom&quot;</span>
+<span class="sd">            Vertical text alignment inside the bounding box</span>
+<span class="sd">        `shorten`: bool, defaults to False</span>
+<span class="sd">            Indicate whether the label should attempt to shorten its textual</span>
+<span class="sd">            contents as much as possible if a `size` is given.</span>
+<span class="sd">            Setting this to True without an appropriately set size will lead to</span>
+<span class="sd">            unexpected results.</span>
+<span class="sd">        `shorten_from`: str, defaults to `center`</span>
+<span class="sd">            The side from which we should shorten the text from, can be left,</span>
+<span class="sd">            right, or center. E.g. if left, the ellipsis will appear towards</span>
+<span class="sd">            the left side and it will display as much text starting from the</span>
+<span class="sd">            right as possible.</span>
+<span class="sd">        `split_str`: string, defaults to `&#39; &#39;` (space)</span>
+<span class="sd">            The string to use to split the words by when shortening. If empty,</span>
+<span class="sd">            we can split after every character filling up the line as much as</span>
+<span class="sd">            possible.</span>
+<span class="sd">        `max_lines`: int, defaults to 0 (unlimited)</span>
+<span class="sd">            If set, this indicate how maximum line are allowed to render the</span>
+<span class="sd">            text. Works only if a limitation on text_size is set.</span>
+<span class="sd">        `mipmap`: bool, defaults to False</span>
+<span class="sd">            Create a mipmap for the texture</span>
+<span class="sd">        `strip`: bool, defaults to False</span>
+<span class="sd">            Whether each row of text has its leading and trailing spaces</span>
+<span class="sd">            stripped. If `halign` is `justify` it is implicitly True.</span>
+<span class="sd">        `strip_reflow`: bool, defaults to True</span>
+<span class="sd">            Whether text that has been reflowed into a second line should</span>
+<span class="sd">            be stripped, even if `strip` is False. This is only in effect when</span>
+<span class="sd">            `size_hint_x` is not None, because otherwise lines are never</span>
+<span class="sd">            split.</span>
+<span class="sd">        `unicode_errors`: str, defaults to `&#39;replace&#39;`</span>
+<span class="sd">            How to handle unicode decode errors. Can be `&#39;strict&#39;`, `&#39;replace&#39;`</span>
+<span class="sd">            or `&#39;ignore&#39;`.</span>
+<span class="sd">        `outline_width`: int, defaults to None</span>
+<span class="sd">            Width in pixels for the outline.</span>
+<span class="sd">        `outline_color`: tuple, defaults to (0, 0, 0)</span>
+<span class="sd">            Color of the outline.</span>
+
+<span class="sd">    .. versionchanged:: 1.10.0</span>
+<span class="sd">        `outline_width` and `outline_color` were added.</span>
+
+<span class="sd">    .. versionchanged:: 1.9.0</span>
+<span class="sd">        `strip`, `strip_reflow`, `shorten_from`, `split_str`, and</span>
+<span class="sd">        `unicode_errors` were added.</span>
+
+<span class="sd">    .. versionchanged:: 1.9.0</span>
+<span class="sd">        `padding_x` and `padding_y` has been fixed to work as expected.</span>
+<span class="sd">        In the past, the text was padded by the negative of their values.</span>
+
+<span class="sd">    .. versionchanged:: 1.8.0</span>
+<span class="sd">        `max_lines` parameters has been added.</span>
+
+<span class="sd">    .. versionchanged:: 1.0.8</span>
+<span class="sd">        `size` have been deprecated and replaced with `text_size`.</span>
+
+<span class="sd">    .. versionchanged:: 1.0.7</span>
+<span class="sd">        The `valign` is now respected. This wasn&#39;t the case previously</span>
+<span class="sd">        so you might have an issue in your application if you have not</span>
+<span class="sd">        considered this.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;options&#39;</span><span class="p">,</span> <span class="s1">&#39;texture&#39;</span><span class="p">,</span> <span class="s1">&#39;_label&#39;</span><span class="p">,</span> <span class="s1">&#39;_text_size&#39;</span><span class="p">)</span>
+
+    <span class="n">_cached_lines</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">_fonts</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="n">_fonts_cache</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="n">_fonts_dirs</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">_font_dirs_files</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">_texture_1px</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">font_name</span><span class="o">=</span><span class="n">DEFAULT_FONT</span><span class="p">,</span> <span class="n">bold</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">italic</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">underline</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">strikethrough</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">halign</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">valign</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">shorten</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">text_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mipmap</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">line_height</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">strip</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">strip_reflow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shorten_from</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">split_str</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span>
+        <span class="n">unicode_errors</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">,</span>
+        <span class="n">font_hinting</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="n">font_kerning</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">font_blended</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">outline_width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">outline_color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+        <span class="c1"># Include system fonts_dir in resource paths.</span>
+        <span class="c1"># This allows us to specify a font from those dirs.</span>
+        <span class="n">LabelBase</span><span class="o">.</span><span class="n">get_system_fonts_dir</span><span class="p">()</span>
+
+        <span class="n">options</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">text</span><span class="p">,</span> <span class="s1">&#39;font_size&#39;</span><span class="p">:</span> <span class="n">font_size</span><span class="p">,</span>
+                   <span class="s1">&#39;font_name&#39;</span><span class="p">:</span> <span class="n">font_name</span><span class="p">,</span> <span class="s1">&#39;bold&#39;</span><span class="p">:</span> <span class="n">bold</span><span class="p">,</span> <span class="s1">&#39;italic&#39;</span><span class="p">:</span> <span class="n">italic</span><span class="p">,</span>
+                   <span class="s1">&#39;underline&#39;</span><span class="p">:</span> <span class="n">underline</span><span class="p">,</span> <span class="s1">&#39;strikethrough&#39;</span><span class="p">:</span> <span class="n">strikethrough</span><span class="p">,</span>
+                   <span class="s1">&#39;halign&#39;</span><span class="p">:</span> <span class="n">halign</span><span class="p">,</span> <span class="s1">&#39;valign&#39;</span><span class="p">:</span> <span class="n">valign</span><span class="p">,</span> <span class="s1">&#39;shorten&#39;</span><span class="p">:</span> <span class="n">shorten</span><span class="p">,</span>
+                   <span class="s1">&#39;mipmap&#39;</span><span class="p">:</span> <span class="n">mipmap</span><span class="p">,</span> <span class="s1">&#39;line_height&#39;</span><span class="p">:</span> <span class="n">line_height</span><span class="p">,</span>
+                   <span class="s1">&#39;strip&#39;</span><span class="p">:</span> <span class="n">strip</span><span class="p">,</span> <span class="s1">&#39;strip_reflow&#39;</span><span class="p">:</span> <span class="n">strip_reflow</span><span class="p">,</span>
+                   <span class="s1">&#39;shorten_from&#39;</span><span class="p">:</span> <span class="n">shorten_from</span><span class="p">,</span> <span class="s1">&#39;split_str&#39;</span><span class="p">:</span> <span class="n">split_str</span><span class="p">,</span>
+                   <span class="s1">&#39;unicode_errors&#39;</span><span class="p">:</span> <span class="n">unicode_errors</span><span class="p">,</span>
+                   <span class="s1">&#39;font_hinting&#39;</span><span class="p">:</span> <span class="n">font_hinting</span><span class="p">,</span>
+                   <span class="s1">&#39;font_kerning&#39;</span><span class="p">:</span> <span class="n">font_kerning</span><span class="p">,</span>
+                   <span class="s1">&#39;font_blended&#39;</span><span class="p">:</span> <span class="n">font_blended</span><span class="p">,</span>
+                   <span class="s1">&#39;outline_width&#39;</span><span class="p">:</span> <span class="n">outline_width</span><span class="p">}</span>
+
+        <span class="n">options</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">color</span> <span class="ow">or</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">options</span><span class="p">[</span><span class="s1">&#39;outline_color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">outline_color</span> <span class="ow">or</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">options</span><span class="p">[</span><span class="s1">&#39;padding&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;padding&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;padding&#39;</span><span class="p">],</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="n">options</span><span class="p">[</span><span class="s1">&#39;padding&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;padding&#39;</span><span class="p">],</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;padding&#39;</span><span class="p">])</span>
+        <span class="n">options</span><span class="p">[</span><span class="s1">&#39;padding_x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;padding_x&#39;</span><span class="p">,</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;padding&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">options</span><span class="p">[</span><span class="s1">&#39;padding_y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;padding_y&#39;</span><span class="p">,</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;padding&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="s1">&#39;size&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">options</span><span class="p">[</span><span class="s1">&#39;text_size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">text_size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">options</span><span class="p">[</span><span class="s1">&#39;text_size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">options</span><span class="p">[</span><span class="s1">&#39;text_size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">text_size</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_text_size</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;text_size&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_text</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_internal_size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>  <span class="c1"># the real computed text size (inclds pad)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cached_lines</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="n">options</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">texture</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_shortened</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">resolve_font_name</span><span class="p">()</span>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="LabelBase.register"><a class="viewcode-back" href="../../../api-kivy.core.text.html#kivy.core.text.LabelBase.register">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">fn_regular</span><span class="p">,</span> <span class="n">fn_italic</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fn_bold</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">fn_bolditalic</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Register an alias for a Font.</span>
+
+<span class="sd">        .. versionadded:: 1.1.0</span>
+
+<span class="sd">        If you&#39;re using a ttf directly, you might not be able to use the</span>
+<span class="sd">        bold/italic properties of</span>
+<span class="sd">        the ttf version. If the font is delivered in multiple files</span>
+<span class="sd">        (one regular, one italic and one bold), then you need to register these</span>
+<span class="sd">        files and use the alias instead.</span>
+
+<span class="sd">        All the fn_regular/fn_italic/fn_bold parameters are resolved with</span>
+<span class="sd">        :func:`kivy.resources.resource_find`. If fn_italic/fn_bold are None,</span>
+<span class="sd">        fn_regular will be used instead.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+
+        <span class="n">fonts</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">font_type</span> <span class="ow">in</span> <span class="n">fn_regular</span><span class="p">,</span> <span class="n">fn_italic</span><span class="p">,</span> <span class="n">fn_bold</span><span class="p">,</span> <span class="n">fn_bolditalic</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">font_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">font</span> <span class="o">=</span> <span class="n">resource_find</span><span class="p">(</span><span class="n">font_type</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">font</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s1">&#39;File </span><span class="si">{0}</span><span class="s1">s not found&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">font_type</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">fonts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">fonts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fonts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># add regular font to list again</span>
+
+        <span class="n">LabelBase</span><span class="o">.</span><span class="n">_fonts</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">fonts</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">resolve_font_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">options</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span>
+        <span class="n">fontname</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;font_name&#39;</span><span class="p">]</span>
+        <span class="n">fonts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fonts</span>
+        <span class="n">fontscache</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fonts_cache</span>
+
+        <span class="c1"># is the font registered?</span>
+        <span class="k">if</span> <span class="n">fontname</span> <span class="ow">in</span> <span class="n">fonts</span><span class="p">:</span>
+            <span class="c1"># return the preferred font for the current bold/italic combination</span>
+            <span class="n">italic</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;italic&#39;</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;bold&#39;</span><span class="p">]:</span>
+                <span class="n">bold</span> <span class="o">=</span> <span class="n">FONT_BOLD</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">bold</span> <span class="o">=</span> <span class="n">FONT_REGULAR</span>
+
+            <span class="n">options</span><span class="p">[</span><span class="s1">&#39;font_name_r&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fonts</span><span class="p">[</span><span class="n">fontname</span><span class="p">][</span><span class="n">italic</span> <span class="o">|</span> <span class="n">bold</span><span class="p">]</span>
+
+        <span class="k">elif</span> <span class="n">fontname</span> <span class="ow">in</span> <span class="n">fontscache</span><span class="p">:</span>
+            <span class="n">options</span><span class="p">[</span><span class="s1">&#39;font_name_r&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fontscache</span><span class="p">[</span><span class="n">fontname</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">resource_find</span><span class="p">(</span><span class="n">fontname</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">filename</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">fontname</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.ttf&#39;</span><span class="p">):</span>
+                <span class="n">fontname</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">.ttf&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fontname</span><span class="p">)</span>
+                <span class="n">filename</span> <span class="o">=</span> <span class="n">resource_find</span><span class="p">(</span><span class="n">fontname</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="c1"># XXX for compatibility, check directly in the data dir</span>
+                <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">kivy_data_dir</span><span class="p">,</span> <span class="n">fontname</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s1">&#39;Label: File </span><span class="si">%r</span><span class="s1"> not found&#39;</span> <span class="o">%</span> <span class="n">fontname</span><span class="p">)</span>
+            <span class="n">fontscache</span><span class="p">[</span><span class="n">fontname</span><span class="p">]</span> <span class="o">=</span> <span class="n">filename</span>
+            <span class="n">options</span><span class="p">[</span><span class="s1">&#39;font_name_r&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">filename</span>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="LabelBase.get_system_fonts_dir"><a class="viewcode-back" href="../../../api-kivy.core.text.html#kivy.core.text.LabelBase.get_system_fonts_dir">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">get_system_fonts_dir</span><span class="p">():</span>
+        <span class="sd">&#39;&#39;&#39;Return the directories used by the system for fonts.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="n">LabelBase</span><span class="o">.</span><span class="n">_fonts_dirs</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">LabelBase</span><span class="o">.</span><span class="n">_fonts_dirs</span>
+
+        <span class="n">fdirs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">platform</span> <span class="o">==</span> <span class="s1">&#39;linux&#39;</span><span class="p">:</span>
+            <span class="n">fdirs</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="s1">&#39;/usr/share/fonts&#39;</span><span class="p">,</span> <span class="s1">&#39;/usr/local/share/fonts&#39;</span><span class="p">,</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~/.fonts&#39;</span><span class="p">),</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~/.local/share/fonts&#39;</span><span class="p">)]</span>
+        <span class="k">elif</span> <span class="n">platform</span> <span class="o">==</span> <span class="s1">&#39;macosx&#39;</span><span class="p">:</span>
+            <span class="n">fdirs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/Library/Fonts&#39;</span><span class="p">,</span> <span class="s1">&#39;/System/Library/Fonts&#39;</span><span class="p">,</span>
+                     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~/Library/Fonts&#39;</span><span class="p">)]</span>
+        <span class="k">elif</span> <span class="n">platform</span> <span class="o">==</span> <span class="s1">&#39;win&#39;</span><span class="p">:</span>
+            <span class="n">fdirs</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;SYSTEMROOT&#39;</span><span class="p">],</span> <span class="s1">&#39;Fonts&#39;</span><span class="p">)]</span>
+        <span class="k">elif</span> <span class="n">platform</span> <span class="o">==</span> <span class="s1">&#39;ios&#39;</span><span class="p">:</span>
+            <span class="n">fdirs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/System/Library/Fonts&#39;</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">platform</span> <span class="o">==</span> <span class="s1">&#39;android&#39;</span><span class="p">:</span>
+            <span class="n">fdirs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/system/fonts&#39;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Unknown platform: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">platform</span><span class="p">))</span>
+
+        <span class="n">fdirs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">kivy_data_dir</span><span class="p">,</span> <span class="s1">&#39;fonts&#39;</span><span class="p">))</span>
+        <span class="c1"># register the font dirs</span>
+        <span class="n">rdirs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">_font_dir_files</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">fdir</span> <span class="ow">in</span> <span class="n">fdirs</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">_dir</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">fdir</span><span class="p">):</span>
+                <span class="n">_font_dir_files</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+                <span class="n">resource_add_path</span><span class="p">(</span><span class="n">_dir</span><span class="p">)</span>
+                <span class="n">rdirs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_dir</span><span class="p">)</span>
+        <span class="n">LabelBase</span><span class="o">.</span><span class="n">_fonts_dirs</span> <span class="o">=</span> <span class="n">rdirs</span>
+        <span class="n">LabelBase</span><span class="o">.</span><span class="n">_font_dirs_files</span> <span class="o">=</span> <span class="n">_font_dir_files</span>
+
+        <span class="k">return</span> <span class="n">rdirs</span></div>
+
+<div class="viewcode-block" id="LabelBase.get_extents"><a class="viewcode-back" href="../../../api-kivy.core.text.html#kivy.core.text.LabelBase.get_extents">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">get_extents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Return a tuple (width, height) indicating the size of the specified</span>
+<span class="sd">        text&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="LabelBase.get_cached_extents"><a class="viewcode-back" href="../../../api-kivy.core.text.html#kivy.core.text.LabelBase.get_cached_extents">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">get_cached_extents</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Returns a cached version of the :meth:`get_extents` function.</span>
+
+<span class="sd">        ::</span>
+
+<span class="sd">            &gt;&gt;&gt; func = self._get_cached_extents()</span>
+<span class="sd">            &gt;&gt;&gt; func</span>
+<span class="sd">            &lt;built-in method size of pygame.font.Font object at 0x01E45650&gt;</span>
+<span class="sd">            &gt;&gt;&gt; func(&#39;a line&#39;)</span>
+<span class="sd">            (36, 18)</span>
+
+<span class="sd">        .. warning::</span>
+
+<span class="sd">            This method returns a size measuring function that is valid</span>
+<span class="sd">            for the font settings used at the time :meth:`get_cached_extents`</span>
+<span class="sd">            was called. Any change in the font settings will render the</span>
+<span class="sd">            returned function incorrect. You should only use this if you know</span>
+<span class="sd">            what you&#39;re doing.</span>
+
+<span class="sd">        .. versionadded:: 1.9.0</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_extents</span></div>
+
+    <span class="k">def</span> <span class="nf">_render_begin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">_render_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">_render_end</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<div class="viewcode-block" id="LabelBase.shorten"><a class="viewcode-back" href="../../../api-kivy.core.text.html#kivy.core.text.LabelBase.shorten">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">shorten</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39; Shortens the text to fit into a single line by the width specified</span>
+<span class="sd">        by :attr:`text_size` [0]. If :attr:`text_size` [0] is None, it returns</span>
+<span class="sd">        text text unchanged.</span>
+
+<span class="sd">        :attr:`split_str` and :attr:`shorten_from` determines how the text is</span>
+<span class="sd">        shortened.</span>
+
+<span class="sd">        :params:</span>
+
+<span class="sd">            `text` str, the text to be shortened.</span>
+<span class="sd">            `margin` int, the amount of space to leave between the margins</span>
+<span class="sd">            and the text. This is in addition to :attr:`padding_x`.</span>
+
+<span class="sd">        :returns:</span>
+<span class="sd">            the text shortened to fit into a single line.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">textwidth</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cached_extents</span><span class="p">()</span>
+        <span class="n">uw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">text_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">uw</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">text</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">text</span>
+
+        <span class="n">opts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span>
+        <span class="n">uw</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">uw</span> <span class="o">-</span> <span class="n">opts</span><span class="p">[</span><span class="s1">&#39;padding_x&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">margin</span><span class="p">))</span>
+        <span class="c1"># if larger, it won&#39;t fit so don&#39;t even try extents</span>
+        <span class="nb">chr</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">),</span> <span class="nb">chr</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">uw</span> <span class="ow">and</span> <span class="n">textwidth</span><span class="p">(</span><span class="n">text</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">uw</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">text</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">opts</span><span class="p">[</span><span class="s1">&#39;split_str&#39;</span><span class="p">]</span>
+        <span class="n">offset</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">else</span> <span class="mi">1</span>
+        <span class="nb">dir</span> <span class="o">=</span> <span class="n">opts</span><span class="p">[</span><span class="s1">&#39;shorten_from&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">elps</span> <span class="o">=</span> <span class="n">textwidth</span><span class="p">(</span><span class="s1">&#39;...&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">elps</span> <span class="o">&gt;</span> <span class="n">uw</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">is_shortened</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">if</span> <span class="n">textwidth</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">uw</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s1">&#39;..&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s1">&#39;.&#39;</span>
+        <span class="n">uw</span> <span class="o">-=</span> <span class="n">elps</span>
+
+        <span class="n">f</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+        <span class="n">f_rev</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">rfind</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+        <span class="c1"># now find the first and last word</span>
+        <span class="n">e1</span><span class="p">,</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">f</span><span class="p">(),</span> <span class="n">f_rev</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="nb">dir</span> <span class="o">!=</span> <span class="s1">&#39;l&#39;</span><span class="p">:</span>  <span class="c1"># center or right</span>
+            <span class="c1"># no split, or the first word doesn&#39;t even fit</span>
+            <span class="k">if</span> <span class="n">e1</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">l1</span> <span class="o">=</span> <span class="n">textwidth</span><span class="p">(</span><span class="n">text</span><span class="p">[:</span><span class="n">e1</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">l2</span> <span class="o">=</span> <span class="n">textwidth</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="n">s2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:])[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">e1</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">l1</span> <span class="o">+</span> <span class="n">l2</span> <span class="o">&gt;</span> <span class="n">uw</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">is_shortened</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+                    <span class="n">opts</span><span class="p">[</span><span class="s1">&#39;split_str&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+                    <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shorten</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">margin</span><span class="p">)</span>
+                    <span class="n">opts</span><span class="p">[</span><span class="s1">&#39;split_str&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span>
+                    <span class="k">return</span> <span class="n">res</span>
+                <span class="c1"># at this point we do char by char so e1 must be zero</span>
+                <span class="k">if</span> <span class="n">l1</span> <span class="o">&lt;=</span> <span class="n">uw</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="nb">chr</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">...&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">[:</span><span class="n">e1</span><span class="p">])</span>
+                <span class="k">return</span> <span class="nb">chr</span><span class="p">(</span><span class="s1">&#39;...&#39;</span><span class="p">)</span>
+
+            <span class="c1"># both word fits, and there&#39;s at least on split_str</span>
+            <span class="k">if</span> <span class="n">s2</span> <span class="o">==</span> <span class="n">e1</span><span class="p">:</span>  <span class="c1"># there&#39;s only on split_str</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">is_shortened</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">return</span> <span class="nb">chr</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">...</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">[:</span><span class="n">e1</span><span class="p">],</span> <span class="n">text</span><span class="p">[</span><span class="n">s2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:])</span>
+
+            <span class="c1"># both the first and last word fits, and they start/end at diff pos</span>
+            <span class="k">if</span> <span class="nb">dir</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+                <span class="n">ee1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">e1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="k">while</span> <span class="n">l2</span> <span class="o">+</span> <span class="n">textwidth</span><span class="p">(</span><span class="n">text</span><span class="p">[:</span><span class="n">ee1</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">uw</span><span class="p">:</span>
+                    <span class="n">e1</span> <span class="o">=</span> <span class="n">ee1</span>
+                    <span class="k">if</span> <span class="n">e1</span> <span class="o">==</span> <span class="n">s2</span><span class="p">:</span>
+                        <span class="k">break</span>
+                    <span class="n">ee1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">e1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">l1</span> <span class="o">&lt;=</span> <span class="n">l2</span><span class="p">:</span>
+                        <span class="n">ee1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">e1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+                        <span class="n">l1</span> <span class="o">=</span> <span class="n">textwidth</span><span class="p">(</span><span class="n">text</span><span class="p">[:</span><span class="n">ee1</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="k">if</span> <span class="n">l2</span> <span class="o">+</span> <span class="n">l1</span> <span class="o">&gt;</span> <span class="n">uw</span><span class="p">:</span>
+                            <span class="k">break</span>
+                        <span class="n">e1</span> <span class="o">=</span> <span class="n">ee1</span>
+                        <span class="k">if</span> <span class="n">e1</span> <span class="o">==</span> <span class="n">s2</span><span class="p">:</span>
+                            <span class="k">break</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">ss2</span> <span class="o">=</span> <span class="n">f_rev</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">s2</span> <span class="o">-</span> <span class="n">offset</span><span class="p">)</span>
+                        <span class="n">l2</span> <span class="o">=</span> <span class="n">textwidth</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="n">ss2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:])[</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="k">if</span> <span class="n">l2</span> <span class="o">+</span> <span class="n">l1</span> <span class="o">&gt;</span> <span class="n">uw</span><span class="p">:</span>
+                            <span class="k">break</span>
+                        <span class="n">s2</span> <span class="o">=</span> <span class="n">ss2</span>
+                        <span class="k">if</span> <span class="n">e1</span> <span class="o">==</span> <span class="n">s2</span><span class="p">:</span>
+                            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># left</span>
+            <span class="c1"># no split, or the last word doesn&#39;t even fit</span>
+            <span class="k">if</span> <span class="n">s2</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">l2</span> <span class="o">=</span> <span class="n">textwidth</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="n">s2</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span><span class="p">):])[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">l1</span> <span class="o">=</span> <span class="n">textwidth</span><span class="p">(</span><span class="n">text</span><span class="p">[:</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">e1</span><span class="p">)])[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="c1"># if split_str</span>
+            <span class="k">if</span> <span class="n">s2</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">l2</span> <span class="o">+</span> <span class="n">l1</span> <span class="o">&gt;</span> <span class="n">uw</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">is_shortened</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+                    <span class="n">opts</span><span class="p">[</span><span class="s1">&#39;split_str&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+                    <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shorten</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">margin</span><span class="p">)</span>
+                    <span class="n">opts</span><span class="p">[</span><span class="s1">&#39;split_str&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span>
+                    <span class="k">return</span> <span class="n">res</span>
+
+                <span class="k">return</span> <span class="nb">chr</span><span class="p">(</span><span class="s1">&#39;...&#39;</span><span class="p">)</span>
+
+            <span class="c1"># both word fits, and there&#39;s at least on split_str</span>
+            <span class="k">if</span> <span class="n">s2</span> <span class="o">==</span> <span class="n">e1</span><span class="p">:</span>  <span class="c1"># there&#39;s only on split_str</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">is_shortened</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">return</span> <span class="nb">chr</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">...</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">[:</span><span class="n">e1</span><span class="p">],</span> <span class="n">text</span><span class="p">[</span><span class="n">s2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:])</span>
+
+            <span class="c1"># both the first and last word fits, and they start/end at diff pos</span>
+            <span class="n">ss2</span> <span class="o">=</span> <span class="n">f_rev</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">s2</span> <span class="o">-</span> <span class="n">offset</span><span class="p">)</span>
+            <span class="k">while</span> <span class="n">l1</span> <span class="o">+</span> <span class="n">textwidth</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="n">ss2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:])[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">uw</span><span class="p">:</span>
+                <span class="n">s2</span> <span class="o">=</span> <span class="n">ss2</span>
+                <span class="k">if</span> <span class="n">s2</span> <span class="o">==</span> <span class="n">e1</span><span class="p">:</span>
+                    <span class="k">break</span>
+                <span class="n">ss2</span> <span class="o">=</span> <span class="n">f_rev</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">s2</span> <span class="o">-</span> <span class="n">offset</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_shortened</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="nb">chr</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">...</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">[:</span><span class="n">e1</span><span class="p">],</span> <span class="n">text</span><span class="p">[</span><span class="n">s2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:])</span></div>
+
+    <span class="k">def</span> <span class="nf">_default_line_options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lines</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">words</span><span class="p">):</span>  <span class="c1"># get opts from first line, first word</span>
+                <span class="k">return</span> <span class="n">line</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">options</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">clear_texture</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_render_begin</span><span class="p">()</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_render_end</span><span class="p">()</span>
+        <span class="k">assert</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">data</span><span class="o">.</span><span class="n">width</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">texture</span><span class="o">.</span><span class="n">blit_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">render_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">render_text</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+        <span class="n">get_extents</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cached_extents</span><span class="p">()</span>
+        <span class="n">uw</span><span class="p">,</span> <span class="n">uh</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;text_size&#39;</span><span class="p">]</span>
+        <span class="n">xpad</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;padding_x&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">uw</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">uww</span> <span class="o">=</span> <span class="n">uw</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">xpad</span>  <span class="c1"># real width of just text</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">sw</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;space_width&#39;</span><span class="p">]</span>
+        <span class="n">halign</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;halign&#39;</span><span class="p">]</span>
+        <span class="n">split</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span>
+
+        <span class="k">for</span> <span class="n">layout_line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>  <span class="c1"># for plain label each line has only one str</span>
+            <span class="n">lw</span><span class="p">,</span> <span class="n">lh</span> <span class="o">=</span> <span class="n">layout_line</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">layout_line</span><span class="o">.</span><span class="n">h</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+            <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">layout_line</span><span class="o">.</span><span class="n">words</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">layout_line</span><span class="o">.</span><span class="n">words</span><span class="p">):</span>
+                <span class="n">last_word</span> <span class="o">=</span> <span class="n">layout_line</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">last_word</span><span class="o">.</span><span class="n">text</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">xpad</span>
+            <span class="k">if</span> <span class="n">halign</span> <span class="o">==</span> <span class="s1">&#39;center&#39;</span><span class="p">:</span>
+                <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">w</span> <span class="o">-</span> <span class="n">lw</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">halign</span> <span class="o">==</span> <span class="s1">&#39;right&#39;</span><span class="p">:</span>
+                <span class="n">x</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">w</span> <span class="o">-</span> <span class="n">lw</span> <span class="o">-</span> <span class="n">xpad</span><span class="p">))</span>
+
+            <span class="c1"># right left justify</span>
+            <span class="c1"># divide left over space between `spaces`</span>
+            <span class="c1"># TODO implement a better method of stretching glyphs?</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">uw</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">halign</span> <span class="o">==</span> <span class="s1">&#39;justify&#39;</span> <span class="ow">and</span> <span class="n">line</span> <span class="ow">and</span> <span class="ow">not</span>
+                    <span class="n">layout_line</span><span class="o">.</span><span class="n">is_last_line</span><span class="p">):</span>
+                <span class="c1"># number spaces needed to fill, and remainder</span>
+                <span class="n">n</span><span class="p">,</span> <span class="n">rem</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">uww</span> <span class="o">-</span> <span class="n">lw</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">sw</span><span class="p">)</span>
+                <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+                <span class="n">words</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="k">if</span> <span class="n">n</span> <span class="ow">or</span> <span class="n">rem</span><span class="p">:</span>
+                    <span class="c1"># there&#39;s no trailing space when justify is selected</span>
+                    <span class="n">words</span> <span class="o">=</span> <span class="n">split</span><span class="p">(</span><span class="n">whitespace_pat</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">words</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">space</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">line</span><span class="p">)(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+                    <span class="c1"># words: every even index is spaces, just add ltr n spaces</span>
+                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+                        <span class="n">idx</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+                        <span class="n">words</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">+</span> <span class="n">space</span>
+                    <span class="k">if</span> <span class="n">rem</span><span class="p">:</span>
+                        <span class="c1"># render the last word at the edge, also add it to line</span>
+                        <span class="n">ext</span> <span class="o">=</span> <span class="n">get_extents</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+                        <span class="n">word</span> <span class="o">=</span> <span class="n">LayoutWord</span><span class="p">(</span><span class="n">last_word</span><span class="o">.</span><span class="n">options</span><span class="p">,</span> <span class="n">ext</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ext</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                          <span class="n">words</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+                        <span class="n">layout_line</span><span class="o">.</span><span class="n">words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+                        <span class="n">last_word</span><span class="o">.</span><span class="n">lw</span> <span class="o">=</span> <span class="n">uww</span> <span class="o">-</span> <span class="n">ext</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># word was stretched</span>
+                        <span class="n">render_text</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span> <span class="o">+</span> <span class="n">last_word</span><span class="o">.</span><span class="n">lw</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+                        <span class="n">last_word</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">line</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">last_word</span><span class="o">.</span><span class="n">lw</span> <span class="o">=</span> <span class="n">uww</span>  <span class="c1"># word was stretched</span>
+                        <span class="n">last_word</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">line</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+                    <span class="n">layout_line</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="n">uww</span>  <span class="c1"># the line occupies full width</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+                <span class="n">layout_line</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+                <span class="n">layout_line</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+                <span class="n">render_text</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+            <span class="n">y</span> <span class="o">+=</span> <span class="n">lh</span>
+        <span class="k">return</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">_render_real</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cached_lines</span>
+        <span class="n">options</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_line_options</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">options</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># there was no text to render</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">clear_texture</span><span class="p">()</span>
+
+        <span class="n">old_opts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span>
+        <span class="n">ih</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># the real size of text, not texture</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+        <span class="n">valign</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;valign&#39;</span><span class="p">]</span>
+
+        <span class="n">y</span> <span class="o">=</span> <span class="n">ypad</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;padding_y&#39;</span><span class="p">]</span>  <span class="c1"># pos in the texture</span>
+        <span class="k">if</span> <span class="n">valign</span> <span class="o">==</span> <span class="s1">&#39;bottom&#39;</span><span class="p">:</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">ih</span> <span class="o">+</span> <span class="n">ypad</span>
+        <span class="k">elif</span> <span class="n">valign</span> <span class="o">==</span> <span class="s1">&#39;middle&#39;</span> <span class="ow">or</span> <span class="n">valign</span> <span class="o">==</span> <span class="s1">&#39;center&#39;</span><span class="p">:</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">ih</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">ypad</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_render_begin</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_lines</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_render_text</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+
+        <span class="c1"># get data from provider</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_render_end</span><span class="p">()</span>
+        <span class="k">assert</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="n">old_opts</span>
+
+        <span class="c1"># If the text is 1px width, usually, the data is black.</span>
+        <span class="c1"># Don&#39;t blit that kind of data, otherwise, you have a little black bar.</span>
+        <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">data</span><span class="o">.</span><span class="n">width</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">texture</span><span class="o">.</span><span class="n">blit_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<div class="viewcode-block" id="LabelBase.render"><a class="viewcode-back" href="../../../api-kivy.core.text.html#kivy.core.text.LabelBase.render">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Return a tuple (width, height) to create the image</span>
+<span class="sd">        with the user constraints. (width, height) includes the padding.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="n">real</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_render_real</span><span class="p">()</span>
+
+        <span class="n">options</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>
+        <span class="n">options</span><span class="p">[</span><span class="s1">&#39;space_width&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_extents</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">options</span><span class="p">[</span><span class="s1">&#39;strip&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">strip</span> <span class="o">=</span> <span class="p">(</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;strip&#39;</span><span class="p">]</span> <span class="ow">or</span>
+                                    <span class="n">options</span><span class="p">[</span><span class="s1">&#39;halign&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;justify&#39;</span><span class="p">)</span>
+        <span class="n">uw</span><span class="p">,</span> <span class="n">uh</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;text_size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_text_size</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span>
+        <span class="k">if</span> <span class="n">strip</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_shortened</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="n">uw</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;shorten&#39;</span><span class="p">]:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shorten</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cached_lines</span> <span class="o">=</span> <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">text</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="n">uh</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="p">(</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;valign&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;middle&#39;</span> <span class="ow">or</span>
+                               <span class="n">options</span><span class="p">[</span><span class="s1">&#39;valign&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;center&#39;</span><span class="p">):</span>
+            <span class="n">center</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># pos of newline</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">middle</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
+                <span class="n">l</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">middle</span><span class="p">),</span> <span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">middle</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">l</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">r</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                    <span class="n">center</span> <span class="o">=</span> <span class="n">l</span> <span class="k">if</span> <span class="n">center</span> <span class="o">-</span> <span class="n">l</span> <span class="o">&lt;=</span> <span class="n">r</span> <span class="o">-</span> <span class="n">center</span> <span class="k">else</span> <span class="n">r</span>
+                <span class="k">elif</span> <span class="n">l</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                    <span class="n">center</span> <span class="o">=</span> <span class="n">l</span>
+                <span class="k">elif</span> <span class="n">r</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                    <span class="n">center</span> <span class="o">=</span> <span class="n">r</span>
+            <span class="c1"># if a newline split text, render from center down and up til uh</span>
+            <span class="k">if</span> <span class="n">center</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="c1"># layout from center down until half uh</span>
+                <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">clipped</span> <span class="o">=</span> <span class="n">layout_text</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="n">center</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:],</span> <span class="n">lines</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">uw</span><span class="p">,</span> <span class="n">uh</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="n">options</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cached_extents</span><span class="p">(),</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+                <span class="c1"># now layout from center upwards until uh is reached</span>
+                <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">clipped</span> <span class="o">=</span> <span class="n">layout_text</span><span class="p">(</span><span class="n">text</span><span class="p">[:</span><span class="n">center</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">lines</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">uw</span><span class="p">,</span> <span class="n">uh</span><span class="p">),</span> <span class="n">options</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cached_extents</span><span class="p">(),</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>  <span class="c1"># if there&#39;s no new line, layout everything</span>
+                <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">clipped</span> <span class="o">=</span> <span class="n">layout_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">uw</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+                <span class="n">options</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cached_extents</span><span class="p">(),</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># top or bottom</span>
+            <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">clipped</span> <span class="o">=</span> <span class="n">layout_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">uw</span><span class="p">,</span> <span class="n">uh</span><span class="p">),</span> <span class="n">options</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">get_cached_extents</span><span class="p">(),</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;valign&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_internal_size</span> <span class="o">=</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span>
+        <span class="k">if</span> <span class="n">uw</span><span class="p">:</span>
+            <span class="n">w</span> <span class="o">=</span> <span class="n">uw</span>
+        <span class="k">if</span> <span class="n">uh</span><span class="p">:</span>
+            <span class="n">h</span> <span class="o">=</span> <span class="n">uh</span>
+        <span class="k">if</span> <span class="n">h</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">w</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">w</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">w</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">h</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_texture_refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_texture_fill</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">texture</span><span class="p">):</span>
+        <span class="c1"># second pass, render for real</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<div class="viewcode-block" id="LabelBase.refresh"><a class="viewcode-back" href="../../../api-kivy.core.text.html#kivy.core.text.LabelBase.refresh">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Force re-rendering of the text</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">resolve_font_name</span><span class="p">()</span>
+
+        <span class="c1"># first pass, calculating width/height</span>
+        <span class="n">sz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_size_texture</span> <span class="o">=</span> <span class="n">sz</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">sz</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sz</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="c1"># if no text are rendered, return nothing.</span>
+        <span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_size</span>
+        <span class="k">if</span> <span class="n">width</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">height</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">texture</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture_1px</span>
+            <span class="k">return</span>
+
+        <span class="c1"># create a delayed texture</span>
+        <span class="n">texture</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture</span>
+        <span class="k">if</span> <span class="n">texture</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> \
+                <span class="n">width</span> <span class="o">!=</span> <span class="n">texture</span><span class="o">.</span><span class="n">width</span> <span class="ow">or</span> \
+                <span class="n">height</span> <span class="o">!=</span> <span class="n">texture</span><span class="o">.</span><span class="n">height</span><span class="p">:</span>
+            <span class="n">texture</span> <span class="o">=</span> <span class="n">Texture</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span>
+                                     <span class="n">mipmap</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;mipmap&#39;</span><span class="p">],</span>
+                                     <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_texture_fill</span><span class="p">)</span>
+            <span class="n">texture</span><span class="o">.</span><span class="n">flip_vertical</span><span class="p">()</span>
+            <span class="n">texture</span><span class="o">.</span><span class="n">add_reload_observer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_texture_refresh</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">texture</span> <span class="o">=</span> <span class="n">texture</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">texture</span><span class="o">.</span><span class="n">ask_update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_texture_fill</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_get_text</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">PY2</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_text</span><span class="p">,</span> <span class="n">unicode</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_text</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_text</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+                <span class="c1"># python 3 support</span>
+                <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_text</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">UnicodeDecodeError</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_text</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_text</span>
+
+    <span class="k">def</span> <span class="nf">_set_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">text</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_text</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_text</span> <span class="o">=</span> <span class="n">text</span>
+
+    <span class="n">text</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">_get_text</span><span class="p">,</span> <span class="n">_set_text</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Get/Set the text&#39;</span><span class="p">)</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">_get_text</span><span class="p">,</span> <span class="n">_set_text</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Get/Set the text&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">texture_1px</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">LabelBase</span><span class="o">.</span><span class="n">_texture_1px</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">tex</span> <span class="o">=</span> <span class="n">Texture</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">colorfmt</span><span class="o">=</span><span class="s1">&#39;rgba&#39;</span><span class="p">)</span>
+            <span class="n">tex</span><span class="o">.</span><span class="n">blit_buffer</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00\x00\x00\x00</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">colorfmt</span><span class="o">=</span><span class="s1">&#39;rgba&#39;</span><span class="p">)</span>
+            <span class="n">LabelBase</span><span class="o">.</span><span class="n">_texture_1px</span> <span class="o">=</span> <span class="n">tex</span>
+        <span class="k">return</span> <span class="n">LabelBase</span><span class="o">.</span><span class="n">_texture_1px</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_size</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">width</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">content_width</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Return the content width; i.e. the width of the text without</span>
+<span class="sd">        any padding.&#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;padding_x&#39;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">content_height</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Return the content height; i.e. the height of the text without</span>
+<span class="sd">        any padding.&#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;padding_y&#39;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">content_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Return the content size (width, height)&#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">content_width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">content_height</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">fontid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Return a unique id for all font parameters&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">(</span>
+            <span class="s1">&#39;font_size&#39;</span><span class="p">,</span> <span class="s1">&#39;font_name_r&#39;</span><span class="p">,</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;italic&#39;</span><span class="p">,</span> <span class="s1">&#39;underline&#39;</span><span class="p">,</span> <span class="s1">&#39;strikethrough&#39;</span><span class="p">)])</span>
+
+    <span class="k">def</span> <span class="nf">_get_text_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_text_size</span>
+
+    <span class="k">def</span> <span class="nf">_set_text_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_text_size</span> <span class="o">=</span> <span class="n">x</span>
+
+    <span class="n">text_size</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">_get_text_size</span><span class="p">,</span> <span class="n">_set_text_size</span><span class="p">,</span>
+                         <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;Get/set the (width, height) of the &#39;</span>
+<span class="s1">                         &#39;contrained rendering box&#39;&#39;&#39;</span><span class="p">)</span>
+
+    <span class="n">usersize</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">_get_text_size</span><span class="p">,</span> <span class="n">_set_text_size</span><span class="p">,</span>
+                        <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;(deprecated) Use text_size instead.&#39;&#39;&#39;</span><span class="p">)</span></div>
+
+
+<span class="c1"># Load the appropriate provider</span>
+<span class="n">label_libs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">if</span> <span class="n">USE_SDL2</span><span class="p">:</span>
+    <span class="n">label_libs</span> <span class="o">+=</span> <span class="p">[(</span><span class="s1">&#39;sdl2&#39;</span><span class="p">,</span> <span class="s1">&#39;text_sdl2&#39;</span><span class="p">,</span> <span class="s1">&#39;LabelSDL2&#39;</span><span class="p">)]</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">label_libs</span> <span class="o">+=</span> <span class="p">[(</span><span class="s1">&#39;pygame&#39;</span><span class="p">,</span> <span class="s1">&#39;text_pygame&#39;</span><span class="p">,</span> <span class="s1">&#39;LabelPygame&#39;</span><span class="p">)]</span>
+<span class="n">label_libs</span> <span class="o">+=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;pil&#39;</span><span class="p">,</span> <span class="s1">&#39;text_pil&#39;</span><span class="p">,</span> <span class="s1">&#39;LabelPIL&#39;</span><span class="p">)]</span>
+<span class="n">Text</span> <span class="o">=</span> <span class="n">Label</span> <span class="o">=</span> <span class="n">core_select_lib</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="n">label_libs</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="s1">&#39;KIVY_DOC&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">Label</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">kivy.logger</span> <span class="k">import</span> <span class="n">Logger</span>
+        <span class="kn">import</span> <span class="nn">sys</span>
+        <span class="n">Logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s1">&#39;App: Unable to get a Text provider, abort.&#39;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># For the first initialization, register the default font</span>
+    <span class="n">Label</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">DEFAULT_FONT</span><span class="p">,</span> <span class="o">*</span><span class="n">_default_font_paths</span><span class="p">)</span>
+</pre></div>
+
+            <div class="footerlinks">
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 29, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

@@ -1,0 +1,620 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-13 08:22+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: JUN OKAZAKI <okazakijun54392@gmail.com>, 2017\n"
+"Language-Team: Japanese (Japan) (https://www.transifex.com/python_kivy_doc_ja/teams/74810/ja_JP/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja_JP\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../sources/guide/widgets.rst:4
+msgid "Widgets"
+msgstr "Widgets(翻訳済み)"
+
+#: ../../sources/guide/widgets.rst:43
+msgid "Introduction to Widget"
+msgstr "Introduction to Widget(Widgetの紹介)"
+
+#: ../../sources/guide/widgets.rst:45
+msgid ""
+"A |Widget| is the base building block of GUI interfaces in Kivy. It provides"
+" a |Canvas| that can be used to draw on screen. It receives events and "
+"reacts to them. For a in-depth explanation about the |Widget| class, look at"
+" the module documentation."
+msgstr ""
+"|Widget|はKivyのGUIインタフェースの基本ビルディング・ブロックです。|Canvas|に提供され、画面の描画使用できます。Widgetはイベントを受信し、反応します。詳細な説明については|Widget|クラス、またはモジュールのドキュメントを見てください。"
+
+#: ../../sources/guide/widgets.rst:51
+msgid "Manipulating the Widget tree"
+msgstr "Manipulating the Widget tree(Widgetツリーの操作)"
+
+#: ../../sources/guide/widgets.rst:53
+msgid ""
+"Widgets in Kivy are organized in trees. Your application has a `root "
+"widget`, which usually has |children| that can have |children| of their own."
+" Children of a widget are represented as the |children| attribute, a Kivy "
+"|ListProperty|."
+msgstr ""
+"KivyのWidgetsはツリー構造をしています。アプリケーションは`root widget`を持っており、`root widget`は独自の "
+"|children| を持ち使用できます。widgerのchildrenは、|children| アトリビュート、Kivy |ListProperty|"
+" で表示されます。"
+
+#: ../../sources/guide/widgets.rst:58
+msgid "The widget tree can be manipulated with the following methods:"
+msgstr "widgetツリーは、以下の方法で操作できます:"
+
+#: ../../sources/guide/widgets.rst:60
+msgid ":meth:`~kivy.uix.widget.Widget.add_widget`: add a widget as a child"
+msgstr ":meth:`~kivy.uix.widget.Widget.remove_widget`: 子のリストからwidgetを削除します"
+
+#: ../../sources/guide/widgets.rst:61
+msgid ""
+":meth:`~kivy.uix.widget.Widget.remove_widget`: remove a widget from the "
+"children list"
+msgstr ":meth:`~kivy.uix.widget.Widget.remove_widget`: 子のリストからwidgetを削除します"
+
+#: ../../sources/guide/widgets.rst:63
+msgid ""
+":meth:`~kivy.uix.widget.Widget.clear_widgets`: remove all children from a "
+"widget"
+msgstr ":meth:`~kivy.uix.widget.Widget.clear_widgets`: widgetからすべての子を削除します"
+
+#: ../../sources/guide/widgets.rst:66
+msgid ""
+"For example, if you want to add a button inside a BoxLayout, you can do::"
+msgstr "例えばBoxLayoutの内側にボタンを追加したい場合は以下のようにします::"
+
+#: ../../sources/guide/widgets.rst:72
+msgid ""
+"The button is added to layout: the button's parent property will be set to "
+"layout; the layout will have the button added to its children list. To "
+"remove the button from the layout::"
+msgstr ""
+"ボタンがレイアウトに追加されます。ボタンの親プロパティはレイアウトに設定されます。レイアウトは、その子のリストに追加したボタンを持ちます。レイアウトからボタンを削除するには："
+
+#: ../../sources/guide/widgets.rst:78
+msgid ""
+"With removal, the button's parent property will be set to None, and the "
+"layout will have button removed from its children list."
+msgstr ""
+"削除すると、ボタンの親プロパティがNoneに設定され、レイアウトは子のリストからボタンを削除します。ウィジェット内のすべての子たちをクリアしたい場合は、clear_widgets()メソッドを使用します。"
+
+#: ../../sources/guide/widgets.rst:81
+msgid ""
+"If you want to clear all the children inside a widget, use "
+":meth:`~kivy.uix.widget.Widget.clear_widgets` method::"
+msgstr ""
+"widgetから子をすべて削除したい場合は、:meth:`~kivy.uix.widget.Widget.clear_widgets` "
+"メソッドを使用します。:"
+
+#: ../../sources/guide/widgets.rst:88
+msgid ""
+"Never manipulate the children list yourself, unless you really know what you"
+" are doing. The widget tree is associated with a graphic tree. For example, "
+"if you add a widget into the children list without adding its canvas to the "
+"graphics tree, the widget will be a child, yes, but nothing will be drawn on"
+" the screen. Moreover, you might have issues on further calls of add_widget,"
+" remove_widget and clear_widgets."
+msgstr ""
+"何をしているのか本当に分かっていない場合は子を決して操作しないでください。widgetツリーは、graphicツリーに関連付けられています。graphicツリーにそのキャンバスを追加せず、子のリストにwidgetを追加した場合、widgetの子になりますが、画面上に描画されません。\n"
+"add_widget、remove_widget、clear_widgetの呼び出しに問題がある可能性があります。"
+
+#: ../../sources/guide/widgets.rst:96
+msgid "Traversing the Tree"
+msgstr "Traversing the Tree(ツリーの横断について)"
+
+#: ../../sources/guide/widgets.rst:98
+msgid ""
+"The Widget class instance's :attr:`~kivy.uix.widget.Widget.children` list "
+"property contains all the children. You can easily traverse the tree by "
+"doing::"
+msgstr ""
+"Widgetクラスのインスタンスの :attr:`~kivy.uix.widget.Widget.children` "
+"リストのプロパティは、すべての子が含まれています。 簡単にツリーを操作できます。"
+
+#: ../../sources/guide/widgets.rst:106
+msgid ""
+"However, this must be used carefully. If you intend to modify the children "
+"list with one of the methods shown in the previous section, you must use a "
+"copy of the list like this::"
+msgstr ""
+"しかしこれは慎重に使用する必要があります。子のリストを変更する場合は前のセクションで示したのいずれかの方法で、リストのコピーを行う必要があります。"
+
+#: ../../sources/guide/widgets.rst:116
+msgid ""
+"Widgets don't influence the size/pos of their children by default. The |pos|"
+" attribute is the absolute position in screen co-ordinates (unless, you use "
+"the |RelativeLayout|. More on that later) and |size|, is an absolute size."
+msgstr ""
+"widgetは、デフォルトでは自分の子のsize/posには影響しません。 |pos| "
+"属性は（クリーン座標での絶対位置である|RelativeLayout| を使用しない限り、 詳細は後述。）及び |size| は絶対的な大きさです。"
+
+#: ../../sources/guide/widgets.rst:121
+msgid "Widgets Z Index"
+msgstr "Widgets Z Index(widgetの Z インデックスについて)"
+
+#: ../../sources/guide/widgets.rst:123
+msgid ""
+"The order of widget drawing is based on the widget's position in the widget "
+"tree. The :attr:`~kivy.uix.widget.Widget.add_widget` method takes an `index`"
+" parameter which can be used to specify it's position in the widget tree::"
+msgstr ""
+"widgetの描画の順序は、widgetツリー内のwidgetの位置に基づいています。:attr:`~kivy.uix.widget.Widget.add_widget`"
+" の方法は、widgetツリー内の位置を指定するために使用できる `index` パラメータを取ります::"
+
+#: ../../sources/guide/widgets.rst:130
+msgid ""
+"The lower indexed widgets will be drawn above those with a higher index. "
+"Keep in mind that the default for `index` is 0, so widgets added later are "
+"drawn on top of the others unless specified otherwise."
+msgstr ""
+"低いインデックス付きのwidgetは、高いインデックスを持つものの上に描画されます。特に断りのない限り、後から追加されたwidgetは他よりも上に描画されるように、"
+" `index` のデフォルトが0であることに注意してください。"
+
+#: ../../sources/guide/widgets.rst:135
+msgid "Organize with Layouts"
+msgstr "Organize with Layouts(レイアウトの編成について)"
+
+#: ../../sources/guide/widgets.rst:137
+msgid ""
+"|Layout| is a special kind of widget that controls the size and position of "
+"its children. There are different kinds of layouts, allowing for different "
+"automatic organization of their children. Layouts use |size_hint| and "
+"|pos_hint| properties to determine the |size| and |pos| of their |children|."
+msgstr ""
+"|Layout| は子のサイズや位置を制御するwidgetの特別な種類です。子たちの自動編成を可能にする異なるレイアウトの種類があります。 レイアウトは"
+" |size_hint| と |pos_hint| 使用し 、自身の |children| の |size| と |pos| プロパティを決定します。"
+
+#: ../../sources/guide/widgets.rst:142
+msgid ""
+"**BoxLayout**: Arranges widgets in an adjacent manner (either vertically or "
+"horizontally) manner, to fill all the space. The size_hint property of "
+"children can be used to change proportions allowed to each child, or set "
+"fixed size for some of them."
+msgstr ""
+"**BoxLayout**：すべてのスペースを埋めるために、widgetを隣接（垂直または水平）するようにして配置する方法です。 "
+"子のsize_hintプロパティは、各子らに許容割合の変更、または一部の固定サイズの設定に使用します。"
+
+#: ../../sources/guide/widgets.rst:164
+msgid ""
+"**GridLayout**: Arranges widgets in a grid. You must specify at least one "
+"dimension of the grid so kivy can compute the size of the elements and how "
+"to arrange them."
+msgstr ""
+"**GridLayout**: "
+"グリッドにウィジェットを配置します。kivyでは、要素のサイズとどのように配置するかを計算できるようにグリッドの寸法を少なくとも1つ指定する必要があります。"
+
+#: ../../sources/guide/widgets.rst:168
+msgid ""
+"**StackLayout**: Arranges widgets adjacent to one another, but with a set "
+"size in one of the dimensions, without trying to make them fit within the "
+"entire space. This is useful to display children of the same predefined "
+"size."
+msgstr ""
+"**StackLayout**: "
+"互いに隣接するwidgetsを配置しますが、いずれかの大きさに設定されたサイズで全体に収まるようにします。これは、同じサイズの子らを表示するのに便利です。"
+
+#: ../../sources/guide/widgets.rst:173
+msgid ""
+"**AnchorLayout**: A simple layout only caring about children positions. It "
+"allows putting the children at a position relative to a border of the "
+"layout. `size_hint` is not honored."
+msgstr ""
+"**AnchorLayout**: "
+"シンプルなレイアウトで子らの位置のみを気にするシンプルなレイアウトです。レイアウトの境界の相対的な位置に子らを配置できます。`size_hint` "
+"は適用されません。"
+
+#: ../../sources/guide/widgets.rst:178
+msgid ""
+"**FloatLayout**: Allows placing children with arbitrary locations and size, "
+"either absolute or relative to the layout size. Default size_hint (1, 1) "
+"will make every child the same size as the whole layout, so you probably "
+"want to change this value if you have more than one child. You can set "
+"size_hint to (None, None) to use absolute size with `size`. This widget "
+"honors `pos_hint` also, which as a dict setting position relative to layout "
+"position."
+msgstr ""
+"**FloatLayout**: 絶対座標またはレイアウトのサイズに対してのいずれかで、任意の位置と大きさで子らを配置できます。 "
+"デフォルトのsize_hintは(1、1）でレイアウト全体でと子らは同じサイズになりますので複数の子がいる場合、この値を変更したいはずです。`size`"
+" "
+"のsize_hintに（None、None）を設定することで絶対的なサイズを使用できます。このwidgetをpos_hintに反映、またはdictとして位置に対しての相対位置を設定します。"
+
+#: ../../sources/guide/widgets.rst:186
+msgid ""
+"**RelativeLayout**: Behaves just like FloatLayout, except children positions"
+" are relative to layout position, not the screen."
+msgstr ""
+"**RelativeLayout**: "
+"FloatLayoutと同様のレイアウトですが，ただ1点，FloatLayoutのようにスクリーンに関する絶対座標ではなく，レイアウトに関する相対座標を用いる点が異なります．"
+
+#: ../../sources/guide/widgets.rst:190
+msgid ""
+"Examine the documentation of the individual layouts for a more in-depth "
+"understanding."
+msgstr "レイアウトのより深い理解のために各ドキュメントを参照します。"
+
+#: ../../sources/guide/widgets.rst:193
+msgid "|size_hint| and |pos_hint|:"
+msgstr "|size_hint| と |pos_hint|"
+
+#: ../../sources/guide/widgets.rst:195
+msgid "|FloatLayout|"
+msgstr "|FloatLayout|"
+
+#: ../../sources/guide/widgets.rst:196
+msgid "|BoxLayout|"
+msgstr "|BoxLayout|"
+
+#: ../../sources/guide/widgets.rst:197
+msgid "|GridLayout|"
+msgstr "|GridLayout|"
+
+#: ../../sources/guide/widgets.rst:198
+msgid "|StackLayout|"
+msgstr "|StackLayout|"
+
+#: ../../sources/guide/widgets.rst:199
+msgid "|RelativeLayout|"
+msgstr "|RelativeLayout|"
+
+#: ../../sources/guide/widgets.rst:200
+msgid "|AnchorLayout|"
+msgstr "|AnchorLayout|"
+
+#: ../../sources/guide/widgets.rst:202
+msgid ""
+"|size_hint| is a |ReferenceListProperty| of |size_hint_x| and |size_hint_y|."
+" It accepts values from `0` to `1` or `None` and defaults to `(1, 1)`. This "
+"signifies that if the widget is in a layout, the layout will allocate it as "
+"much place as possible in both directions (relative to the layouts size)."
+msgstr ""
+"|size_hint| は |ReferenceListProperty| の |size_hint_x| と |size_hint_y| "
+"です。値の範囲は `0` から `1` または `None` で、デフォルトは `(1, 1)` "
+"です。これはwidgetがレイアウト内にある場合にレイアウトは可能な限り多くの場所を（レイアウトのサイズを基準にして）両方向に割り当てることを意味します。"
+
+#: ../../sources/guide/widgets.rst:208
+msgid ""
+"Setting |size_hint| to (0.5, 0.8), for example, will make the widget 50% the"
+" width and 80% the height of available size for the |widget| inside a "
+"|layout|."
+msgstr ""
+"|size_hint| が (0.5, 0.8)に設定されている場合は、|layout| 内部の |widget| "
+"で、利用できるサイズの範囲からwidgetの幅が50%、高さが80%に設定されます。"
+
+#: ../../sources/guide/widgets.rst:211
+msgid "Consider the following example:"
+msgstr "次の例を考えてみます:"
+
+#: ../../sources/guide/widgets.rst:222
+msgid ""
+"Now load kivy catalog by typing the following, but replacing $KIVYDIR with "
+"the directory of your installation (discoverable via "
+":py:mod:`os.path.dirname(kivy.__file__)`)::"
+msgstr ""
+"このように入力してkivyカタログを読み込みますが、$ "
+"KIVYDIRをインストールディレクトリに置き換えてください（:py:mod:`os.path.dirname(kivy.__file__)`で検索可能）::"
+
+#: ../../sources/guide/widgets.rst:229
+msgid ""
+"A new window will appear. Click in the area below the 'Welcome' |Spinner| on"
+" the left and replace the text there with your kv code from above."
+msgstr ""
+"新しいウィンドウが表示されます。左にある「Welcome」|Spinner| の下の領域をクリックし、そこのテキストをあなたのkvコードで置き換えます。"
+
+#: ../../sources/guide/widgets.rst:234
+msgid ""
+"As you can see from the image above, the `Button` takes up 100% of the "
+"layout |size|."
+msgstr "上の画像からわかるように`Button`がレイアウト |size| の100%になります。"
+
+#: ../../sources/guide/widgets.rst:237
+msgid ""
+"Changing the |size_hint_x|/|size_hint_y| to .5 will make the |widget| take "
+"50% of the |layout| |width|/|height|."
+msgstr " |size_hint_x|/|size_hint_y| を0.5に変更すると、ウィジェットはレイアウトの幅/高さの50％を占めます。"
+
+#: ../../sources/guide/widgets.rst:242
+msgid ""
+"You can see here that, although we specify |size_hint_x| and |size_hint_y| "
+"both to be .5, only |size_hint_y| seems to be honored. That is because "
+"|BoxLayout| controls the |size_hint_y| when |orientation| is `vertical` and "
+"|size_hint_x| when |orientation| is 'horizontal'. The controlled dimension's"
+" size is calculated depending upon the total no. of |children| in the "
+"|BoxLayout|. In this example, one child has |size_hint_y| controlled (.5/.5 "
+"= 1). Thus, the widget takes 100% of the parent layout's height."
+msgstr ""
+"|size_hint_x| と|size_hint_y| の両方を「.5」にしたものの |size_hint_y| のみが適用されたように見えます理由は"
+" |orientation| が `vertical` の時、|BoxLayout| がコントロールするのは|size_hint_y| "
+"だからで|orientation| が 'horizontal' の時は |size_hint_x| です。幅と高さのsizeは |BoxLayout|"
+" の |children| の合計に応じて計算されます。この例では子は一人で|size_hint_y| をコントロール(.5/.5 = "
+"1)します。このように、widgetは親のレイアウトの高さの100％を取ります。"
+
+#: ../../sources/guide/widgets.rst:250
+msgid "Let's add another |Button| to the |layout| and see what happens."
+msgstr "他の |layout| の |Button| を選択し何が起きるか見てみましょう。"
+
+#: ../../sources/guide/widgets.rst:254
+msgid ""
+"|BoxLayout| by its very nature divides the available space between its "
+"|children| equally. In our example, the proportion is 50-50, because we have"
+" two |children|. Let's use size_hint on one of the children and see the "
+"results."
+msgstr ""
+"|BoxLayout| はまさにその性質によって、利用可能な空間を |children| で均等に分割します。例では2つの |children| "
+"があるので、割合は50-50になります。子らにsize_hintを「1」を使用して結果を見てみましょう。"
+
+#: ../../sources/guide/widgets.rst:260
+msgid ""
+"If a child specifies |size_hint|, this specifies how much space the |Widget|"
+" will take out of the |size| given to it by the |BoxLayout|. In our example,"
+" the first |Button| specifies .5 for |size_hint_x|. The space for the widget"
+" is calculated like so::"
+msgstr ""
+"子の|size_hint| が指定されている場合は、 |Widget|が|BoxLayout| によって与えられた|size|からスペース "
+"が指定されます。この例では最初の |Button| のために |size_hint_x| "
+"に「0.5」を指定します。widegetのスペースはこのように計算されます。"
+
+#: ../../sources/guide/widgets.rst:270
+msgid ""
+"The rest of the BoxLayout's |width| is divided among the rest of the "
+"|children|. In our example, this means the second |Button| takes up 66.66% "
+"of the |layout| |width|."
+msgstr ""
+"残りの |children| はBoxLayout内で分割されます。例では |Button| は |layout| |width| "
+"で66.66%を占めます。"
+
+#: ../../sources/guide/widgets.rst:274
+msgid "Experiment with |size_hint| to get comfortable with it."
+msgstr "|size_hint| に慣れるための実験です。"
+
+#: ../../sources/guide/widgets.rst:276
+msgid ""
+"If you want to control the absolute |size| of a |Widget|, you can set "
+"|size_hint_x|/|size_hint_y| or both to `None` so that the widget's |width| "
+"and or |height| attributes will be honored."
+msgstr ""
+"|Widget| の 絶対的な|size| を設定するには、|size_hint_x|/|size_hint_y|のどちらかまたは両方に `None` "
+"を指定することでwidgetの |width| また |height| 属性が反映されます。"
+
+#: ../../sources/guide/widgets.rst:280
+msgid ""
+"|pos_hint| is a dict, which defaults to empty. As for |size_hint|, layouts "
+"honor |pos_hint| differently, but generally you can add values to any of the"
+" |pos| attributes (|x|, |y|, |right|, |top|, |center_x|, |center_y|) to have"
+" the |Widget| positioned relative to its |parent|."
+msgstr ""
+"|pos_hint| はデフォルト値は空のdict形式です。 |pos_hint| のレイアウトの反映は  |size_hint| "
+"とは異なりますが、|parent| の |Widget| 位置設定に対して、一般的に  |pos|   属性 (|x|, |y|, |right|,  "
+"|top|, |center_x|, |center_y|)のいずれかに対して値を設定できます。"
+
+#: ../../sources/guide/widgets.rst:285
+msgid ""
+"Let's experiment with the following code in kivycatalog to understand "
+"|pos_hint| visually:"
+msgstr "|pos_hint| を視覚的に理解するためにkivycatalogに次のコードを試してみましょう。"
+
+#: ../../sources/guide/widgets.rst:305
+msgid "This gives us:"
+msgstr "これは以下の効果を与えます。"
+
+#: ../../sources/guide/widgets.rst:309
+msgid ""
+"As with |size_hint|, you should experiment with |pos_hint| to understand the"
+" effect it has on the widget positions."
+msgstr "|size_hint| と同様に  |pos_hint| を試してみて、widgetの位置に与える影響を理解します。"
+
+#: ../../sources/guide/widgets.rst:315
+msgid "Adding a Background to a Layout"
+msgstr "Adding a Background to a Layout(背景のレイアウトを追加する)"
+
+#: ../../sources/guide/widgets.rst:317
+msgid "One of the frequently asked questions about layouts is:::"
+msgstr "レイアウトに関するよくある質問の1つは、以下のとおり::"
+
+#: ../../sources/guide/widgets.rst:321
+msgid ""
+"Layouts by their nature have no visual representation: they have no canvas "
+"instructions by default. However you can add canvas instructions to a layout"
+" instance easily, as with adding a colored background:"
+msgstr ""
+"レイアウトはその性質から視覚的な表現を持っていないです。デフォルトでは何のキャンバス命令を持っていません。 "
+"しかし色付きの背景を追加する場合と同様に簡単にレイアウトのインスタンスにキャンバス命令を追加できます。"
+
+#: ../../sources/guide/widgets.rst:325
+msgid "In Python::"
+msgstr "Pythonの場合:"
+
+#: ../../sources/guide/widgets.rst:334
+msgid ""
+"Unfortunately, this will only draw a rectangle at the layout's initial "
+"position and size. To make sure the rect is drawn inside the layout, when "
+"the layout size/pos changes, we need to listen to any changes and update the"
+" rectangles size and pos. We can do that as follows::"
+msgstr ""
+"残念ながら、これが四角形を描画する際の、初期位置とサイズ唯一のレイアウトです。 "
+"レイアウトのsize/posの変化は、すべての変更に耳を傾け、四角形のsizeとposを更新する必要がある場合、矩形は、レイアウトの内側に描かれていることを確認します。"
+" 次のように行えます::"
+
+#: ../../sources/guide/widgets.rst:351
+msgid "In kv:"
+msgstr "kvの場合:"
+
+#: ../../sources/guide/widgets.rst:364
+msgid ""
+"The kv declaration sets an implicit binding: the last two kv lines ensure "
+"that the |pos| and |size| values of the rectangle will update when the |pos|"
+" of the |FloatLayout| changes."
+msgstr ""
+"kvの宣言は暗黙的に結合を設定します：kvの最後の2行の|pos|と |size|は |FloatLayout|  の |pos| "
+"が変化し、矩形の値が更新された時に確認されます。"
+
+#: ../../sources/guide/widgets.rst:368
+msgid "Now we put the snippets above into the shell of Kivy App."
+msgstr "Kivy Appのシェルにスニペットを配置します。"
+
+#: ../../sources/guide/widgets.rst:370
+msgid "Pure Python way::"
+msgstr "\"Pythonのみでの方法::"
+
+#: ../../sources/guide/widgets.rst:410 ../../sources/guide/widgets.rst:504
+msgid "Using the kv Language::"
+msgstr "kv を使用した場合::"
+
+#: ../../sources/guide/widgets.rst:439 ../../sources/guide/widgets.rst:551
+msgid "Both of the Apps should look something like this:"
+msgstr "Appsの結果は両方とも以下の様になります:"
+
+#: ../../sources/guide/widgets.rst:444
+msgid "Add a color to the background of a **custom layouts rule/class**"
+msgstr "**custom layouts rule/class**の背景に色を追加する"
+
+#: ../../sources/guide/widgets.rst:446
+msgid ""
+"The way we add background to the layout's instance can quickly become "
+"cumbersome if we need to use multiple layouts. To help with this, you can "
+"subclass the Layout and create your own layout that adds a background."
+msgstr ""
+"複数のレイアウトを使用する場合、レイアウトのインスタンスに背景を追加する場合はすぐに面倒になります。\"れを支援するために、レイアウトをサブクラス化し、背景を追加して独自レイアウトを作成できます。"
+
+#: ../../sources/guide/widgets.rst:450
+msgid "Using Python::"
+msgstr "Pythonを使用:"
+
+#: ../../sources/guide/widgets.rst:555
+msgid ""
+"Defining the background in the custom layout class, assures that it will be "
+"used in every instance of CustomLayout."
+msgstr "スタムレイアウトクラスの背景を定義することで、CustomLayoutのすべてのインスタンスでレイアウトが使用されす。"
+
+#: ../../sources/guide/widgets.rst:558
+msgid ""
+"Now, to add an image or color to the background of a built-in Kivy layout, "
+"**globally**, we need to override the kv rule for the layout in question. "
+"Consider GridLayout::"
+msgstr ""
+"内蔵のKivyレイアウトの背景に画像や色を追加するには、 **globally**に "
+"\"問題のレイアウトのKVルールをオーバーライドする必要があります。GridLayoutで考えてみましょう::"
+
+#: ../../sources/guide/widgets.rst:571
+msgid "Then, when we put this snippet into a Kivy app::"
+msgstr "Kivyアプリにスニペットを置くとき::"
+
+#: ../../sources/guide/widgets.rst:621
+msgid "The result should look something like this:"
+msgstr "結果は次のようになります::"
+
+#: ../../sources/guide/widgets.rst:625
+msgid ""
+"As we are overriding the rule of the class GridLayout, any use of this class"
+" in our app will display that image."
+msgstr "GridLayoutクラスでルールをオーバーライドしているようにアプリでクラスの任意の使用は、画像を表示します。"
+
+#: ../../sources/guide/widgets.rst:628
+msgid "How about an **Animated background**?"
+msgstr "**Animated background**はどのように表現するか？"
+
+#: ../../sources/guide/widgets.rst:630
+msgid ""
+"You can set the drawing instructions like Rectangle/BorderImage/Ellipse/... "
+"to use a particular texture::"
+msgstr "特定のテクスチャを使用するためにはRectangle/BorderImage/Ellipse/...のような描画命令を指定します::"
+
+#: ../../sources/guide/widgets.rst:636
+msgid "We use this to display an animated background::"
+msgstr "アニメーションの背景を表示するために以下を使用します::"
+
+#: ../../sources/guide/widgets.rst:698
+msgid "To try to understand what is happening here, start from line 13::"
+msgstr "何が行われている理解するために13行目から見てみます:"
+
+#: ../../sources/guide/widgets.rst:702
+msgid ""
+"This specifies that the `texture` property of `BorderImage` will be updated "
+"whenever the `texture` property of `background_image` updates. We define the"
+" background_image property at line 40::"
+msgstr ""
+"これは `BorderImage` の `texture` プロパティは `background_image` がアップデートのたびに "
+"`texture` プロパティを更新を指定します。 40行目でbackground_imageプロパティを定義します::"
+
+#: ../../sources/guide/widgets.rst:708
+msgid ""
+"This sets up `background_image` as an |ObjectProperty| in which we add an "
+"|Image| widget. An image widget has a `texture` property; where you see "
+"`self.background_image.texture`, this sets a reference, `texture`, to this "
+"property. The |Image| widget supports animation: the texture of the image is"
+" updated whenever the animation changes, and the texture of BorderImage "
+"instruction is updated in the process."
+msgstr ""
+"|Image| widgetを追加した際に |ObjectProperty| "
+"に`background_image`を設定します。画像widgetは`texture` プロパティを有しています。 "
+"`self.background_image.texture` を参照しすることで、、 `texture`を設定するプロパティの参照をします。  "
+"|Image| widget "
+"はアニメーションをサポートしています。アニメーションの変更、およびBorderImage命令の質感がプロセスに更新されるたびに画像のテクスチャが更新されます。"
+
+#: ../../sources/guide/widgets.rst:715
+msgid ""
+"You can also just blit custom data to the texture. For details, look at the "
+"documentation of :class:`~kivy.graphics.texture.Texture`."
+msgstr ""
+"カスタムデータをテクスチャーに作成できます。詳細については :class:`~kivy.graphics.texture.Texture` "
+"のドキュメントを参照してください。"
+
+#: ../../sources/guide/widgets.rst:719
+msgid "Nesting Layouts"
+msgstr "Nesting Layouts(ネスティングレイアウト)"
+
+#: ../../sources/guide/widgets.rst:721
+msgid "Yes! It is quite fun to see how extensible the process can be."
+msgstr "はい！ どの程度拡張可能かを見るプロセスは非常に楽しいです。"
+
+#: ../../sources/guide/widgets.rst:725
+msgid "Size and position metrics"
+msgstr "Size and position metrics(サイズと位置の指標について)"
+
+#: ../../sources/guide/widgets.rst:739
+msgid ""
+"Kivy's default unit for length is the pixel, all sizes and positions are "
+"expressed in it by default. You can express them in other units, which is "
+"useful to achieve better consistency across devices (they get converted to "
+"the size in pixels automatically)."
+msgstr ""
+"Kivyの長さのデフォルトの単位はピクセルで、すべてのサイズと位置はデフォルトではその中で表現されます。デバイス間でより良い一貫性（ピクセル単位でサイズに自動的に変換されます）を達成するために有効である他の単位で表現できます。"
+
+#: ../../sources/guide/widgets.rst:744
+msgid ""
+"Available units are |pt|, |mm|, |cm|, |in|, |dp| and |sp|. You can learn "
+"about their usage in the |metrics| documentation."
+msgstr ""
+"利用可能な単位は、 |pt|, |mm|, |cm|, |in|, |dp| and |sp| です。詳細は |metrics| "
+"ドキュメントを参照してください。"
+
+#: ../../sources/guide/widgets.rst:747
+msgid ""
+"You can also experiment with the |screen| usage to simulate various devices "
+"screens for your application."
+msgstr "アプリケーションのための様々なデバイスの画面をシミュレートするために |screen| 使用して試せます。"
+
+#: ../../sources/guide/widgets.rst:751
+msgid "Screen Separation with Screen Manager"
+msgstr "Screen Separation with Screen Manager(スクリーン・マネージャと画面の分離について)"
+
+#: ../../sources/guide/widgets.rst:753
+msgid ""
+"If your application is composed of various screens, you likely want an easy "
+"way to navigate from one |Screen| to another. Fortunately, there is the "
+"|ScreenManager| class, that allows you to define screens separately, and to "
+"set the |Transitions| from one to another."
+msgstr ""
+"アプリケーションが各種の画面で構成されている場合はおそらく簡単な方法としては |Screen| 別にナビゲートします。幸いなことに "
+"|ScreenManager| クラスは別の画面を定義し、他の画面へは |Transitions| を設定します。"
