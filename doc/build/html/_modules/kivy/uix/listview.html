@@ -1,0 +1,1397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>kivy.uix.listview &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../_static/kivy.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="../../../index.html" />
+    <link rel="up" title="kivy" href="../../kivy.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../../../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="../../../gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../../../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../../../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../../../index.html">kivy.uix.listview</a></h3>
+          
+          <h3><a href="../../../index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2></div>
+            
+  <h1>kivy.uix.listview のソースコード</h1><div class="highlight"><pre>
+<span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">List View</span>
+<span class="sd">===========</span>
+
+<span class="sd">.. versionadded:: 1.5</span>
+
+<span class="sd">.. deprecated:: 1.10.0</span>
+<span class="sd">    ListView has been deprecated, use</span>
+<span class="sd">    :class:`~kivy.uix.recycleview.RecycleView` instead.</span>
+
+<span class="sd">.. warning::</span>
+
+<span class="sd">    This code is still experimental, and its API is subject to change in a</span>
+<span class="sd">    future version.</span>
+
+<span class="sd">The :class:`~kivy.uix.listview.ListView` implements an</span>
+<span class="sd">:class:`~kivy.uix.abstractview.AbstractView` as</span>
+<span class="sd">a vertical, scrollable,pannable list clipped to the scrollview&#39;s bounding box</span>
+<span class="sd">and contains list item view instances.</span>
+
+<span class="sd">The :class:`AbstractView` has one property: :class:`~kivy.adapters.adapter`.</span>
+<span class="sd">The adapter can be one of the following: a</span>
+<span class="sd">:class:`~kivy.adapters.simplelistadapter.SimpleListAdapter`, a</span>
+<span class="sd">:class:`~kivy.adapters.listadapter.ListAdapter` or a</span>
+<span class="sd">:class:`~kivy.adapters.dictadapter.DictAdapter`. The :class:`Adapter` can make</span>
+<span class="sd">use of :mod:`~kivy.adapters.args_converters` to prepare you data for passing</span>
+<span class="sd">into the constructor for each item view instantiation.</span>
+
+<span class="sd">For an overview of how all these components fit together, please see the</span>
+<span class="sd">:mod:`~kivy.adapters` module documentation.</span>
+
+<span class="sd">Introduction</span>
+<span class="sd">------------</span>
+
+<span class="sd">Lists are central parts of many software projects. Kivy&#39;s approach to lists</span>
+<span class="sd">includes providing solutions for simple lists, along with a substantial</span>
+<span class="sd">framework for building lists of moderate to advanced complexity. For a new</span>
+<span class="sd">user, it can be difficult to ramp up from simple to advanced. For</span>
+<span class="sd">this reason, Kivy provides an extensive set of examples (with the Kivy package)</span>
+<span class="sd">that you may wish to run first, to get a taste of the range of functionality</span>
+<span class="sd">offered. You can tell from the names of the examples that they illustrate the</span>
+<span class="sd">&quot;ramping up&quot; from simple to advanced:</span>
+
+
+<span class="sd">    * `kivy/examples/widgets/lists/list_simple.py &lt;https://github.com/\</span>
+<span class="sd">kivy/kivy/tree/master/examples/widgets/lists/list_simple.py&gt;`_</span>
+<span class="sd">    * `kivy/examples/widgets/lists/list_simple_in_kv.py &lt;https://github.com/\</span>
+<span class="sd">kivy/kivy/tree/master/examples/widgets/lists/list_simple_in_kv.py&gt;`_</span>
+<span class="sd">    * `kivy/examples/widgets/lists/list_simple_in_kv_2.py &lt;https://github.com/\</span>
+<span class="sd">kivy/kivy/tree/master/examples/widgets/lists/list_simple_in_kv_2.py&gt;`_</span>
+<span class="sd">    * `kivy/examples/widgets/lists/list_master_detail.py &lt;https://github.com/\</span>
+<span class="sd">kivy/kivy/tree/master/examples/widgets/lists/list_master_detail.py&gt;`_</span>
+<span class="sd">    * `kivy/examples/widgets/lists/list_two_up.py &lt;https://github.com/\</span>
+<span class="sd">kivy/kivy/tree/master/examples/widgets/lists/list_two_up.py&gt;`_</span>
+<span class="sd">    * `kivy/examples/widgets/lists/list_kv.py &lt;https://github.com/\</span>
+<span class="sd">kivy/kivy/tree/master/examples/widgets/lists/list_kv.py&gt;`_</span>
+<span class="sd">    * `kivy/examples/widgets/lists/list_composite.py &lt;https://github.com/\</span>
+<span class="sd">kivy/kivy/tree/master/examples/widgets/lists/list_composite.py&gt;`_</span>
+<span class="sd">    * `kivy/examples/widgets/lists/list_reset_data.py &lt;https://github.com/\</span>
+<span class="sd">kivy/kivy/tree/master/examples/widgets/lists/list_reset_data.py&gt;`_</span>
+<span class="sd">    * `kivy/examples/widgets/lists/list_cascade.py &lt;https://github.com/\</span>
+<span class="sd">kivy/kivy/tree/master/examples/widgets/lists/list_cascade.py&gt;`_</span>
+<span class="sd">    * `kivy/examples/widgets/lists/list_cascade_dict.py &lt;https://github.com/\</span>
+<span class="sd">kivy/kivy/tree/master/examples/widgets/lists/list_cascade_dict.py&gt;`_</span>
+<span class="sd">    * `kivy/examples/widgets/lists/list_cascade_images.py &lt;https://github.com/\</span>
+<span class="sd">kivy/kivy/tree/master/examples/widgets/lists/list_cascade_images.py&gt;`_</span>
+<span class="sd">    * `kivy/examples/widgets/lists/list_ops.py &lt;https://github.com/\</span>
+<span class="sd">kivy/kivy/tree/master/examples/widgets/lists/list_ops.py&gt;`_</span>
+
+<span class="sd">Many of the examples feature selection, some restricting selection to single</span>
+<span class="sd">selection, where only one item at a time can be selected, and others allowing</span>
+<span class="sd">multiple item selection. Many of the examples illustrate how selection in one</span>
+<span class="sd">list can be connected to actions and selections in another view or another</span>
+<span class="sd">list.</span>
+
+<span class="sd">Find your own way of reading the documentation here, examining the source code</span>
+<span class="sd">for the example apps and running the examples. Some may prefer to read the</span>
+<span class="sd">documentation through first, others may want to run the examples and view their</span>
+<span class="sd">code. No matter what you do, going back and forth will likely be needed.</span>
+
+<span class="sd">Basic Example</span>
+<span class="sd">-------------</span>
+
+<span class="sd">In its simplest form, we make a listview with 100 items::</span>
+
+<span class="sd">    from kivy.uix.listview import ListView</span>
+<span class="sd">    from kivy.base import runTouchApp</span>
+
+
+<span class="sd">    class MainView(ListView):</span>
+<span class="sd">        def __init__(self, **kwargs):</span>
+<span class="sd">            super(MainView, self).__init__(</span>
+<span class="sd">                item_strings=[str(index) for index in range(100)])</span>
+
+<span class="sd">    if __name__ == &#39;__main__&#39;:</span>
+<span class="sd">        runTouchApp(MainView())</span>
+
+<span class="sd">Or, we could declare the listview using the kv language::</span>
+
+<span class="sd">    from kivy.uix.boxlayout import BoxLayout</span>
+<span class="sd">    from kivy.lang import Builder</span>
+<span class="sd">    from kivy.base import runTouchApp</span>
+
+<span class="sd">    Builder.load_string(&quot;&quot;&quot;</span>
+<span class="sd">    &lt;MyListView&gt;:</span>
+<span class="sd">        ListView:</span>
+<span class="sd">            item_strings: [str(index) for index in range(100)]</span>
+<span class="sd">    &quot;&quot;&quot;)</span>
+
+
+<span class="sd">    class MyListView(BoxLayout):</span>
+<span class="sd">        pass</span>
+
+<span class="sd">    if __name__ == &#39;__main__&#39;:</span>
+<span class="sd">        runTouchApp(MyListView())</span>
+
+<span class="sd">Using an Adapter</span>
+<span class="sd">-------------------</span>
+
+<span class="sd">Behind the scenes, the basic example above uses the</span>
+<span class="sd">:class:`~kivy.adapters.simplelistadapter.SimpleListAdapter`. When the</span>
+<span class="sd">constructor for the :class:`~kivy.uix.listview.ListView` sees that only a list</span>
+<span class="sd">of</span>
+<span class="sd">strings is provided as an argument (called item_strings), it creates a</span>
+<span class="sd">:class:`~kivy.adapters.simplelistadapter.SimpleListAdapter` using the</span>
+<span class="sd">list of strings.</span>
+
+<span class="sd">&quot;Simple&quot; in :class:`~kivy.adapters.simplelistadapter.SimpleListAdapter` means</span>
+<span class="sd">*without selection support*. It is a scrollable list of items that does not</span>
+<span class="sd">respond to touch events.</span>
+
+<span class="sd">To use a :class:`SimpleListAdapter` explicitly when creating a ListView</span>
+<span class="sd">instance, do::</span>
+
+<span class="sd">    simple_list_adapter = SimpleListAdapter(</span>
+<span class="sd">            data=[&quot;Item #{0}&quot;.format(i) for i in range(100)],</span>
+<span class="sd">            cls=Label)</span>
+
+<span class="sd">    list_view = ListView(adapter=simple_list_adapter)</span>
+
+<span class="sd">The instance of :class:`~kivy.adapters.simplelistadapter.SimpleListAdapter` has</span>
+<span class="sd">a required data argument which contains data items to use for instantiating</span>
+<span class="sd">:class:`~kivy.uix.label.Label` views for the list view (note the cls=Label</span>
+<span class="sd">argument). The data items are strings. Each item string is set by the</span>
+<span class="sd">:class:`~kivy.adapters.simplelistadapter.SimpleListAdapter` as the *text*</span>
+<span class="sd">argument for each Label instantiation.</span>
+
+<span class="sd">You can declare a ListView with an adapter in a kv file with special attention</span>
+<span class="sd">given to the way longer python blocks are indented::</span>
+
+<span class="sd">    from kivy.uix.boxlayout import BoxLayout</span>
+<span class="sd">    from kivy.base import runTouchApp</span>
+<span class="sd">    from kivy.lang import Builder</span>
+
+<span class="sd">    # Note the special nature of indentation in the adapter declaration, where</span>
+<span class="sd">    # the adapter: is on one line, then the value side must be given at one</span>
+<span class="sd">    # level of indentation.</span>
+
+<span class="sd">    Builder.load_string(&quot;&quot;&quot;</span>
+<span class="sd">    #:import label kivy.uix.label</span>
+<span class="sd">    #:import sla kivy.adapters.simplelistadapter</span>
+
+<span class="sd">    &lt;MyListView&gt;:</span>
+<span class="sd">        ListView:</span>
+<span class="sd">            adapter:</span>
+<span class="sd">                sla.SimpleListAdapter(</span>
+<span class="sd">                data=[&quot;Item #{0}&quot;.format(i) for i in range(100)],</span>
+<span class="sd">                cls=label.Label)</span>
+<span class="sd">    &quot;&quot;&quot;)</span>
+
+
+<span class="sd">    class MyListView(BoxLayout):</span>
+<span class="sd">        pass</span>
+
+<span class="sd">    if __name__ == &#39;__main__&#39;:</span>
+<span class="sd">        runTouchApp(MyListView())</span>
+
+<span class="sd">ListAdapter and DictAdapter</span>
+<span class="sd">---------------------------</span>
+
+<span class="sd">For most use cases, your data is more complex than a simple list of strings.</span>
+<span class="sd">Selection functionality is also often needed.</span>
+<span class="sd">The :class:`~kivy.adapters.listadapter.ListAdapter` and</span>
+<span class="sd">:class:`~kivy.adapters.dictadapter.DictAdapter` cover these more elaborate</span>
+<span class="sd">needs.</span>
+
+<span class="sd">The :class:`~kivy.adapters.listadapter.ListAdapter` is the base class for</span>
+<span class="sd">:class:`~kivy.adapters.dictadapter.DictAdapter`, so we can start with it.</span>
+
+<span class="sd">Refer to the :class:`~kivy.adapters.listadapter.ListAdapter` docs for details,</span>
+<span class="sd">but here is a synopsis of its arguments:</span>
+
+<span class="sd">* :attr:`~kivy.adapters.adapter.Adapter.data`:</span>
+<span class="sd">  strings, class instances, dicts, etc. that form the base data</span>
+<span class="sd">  for instantiating views.</span>
+
+<span class="sd">* :attr:`~kivy.adapters.adapter.Adapter.cls`:</span>
+<span class="sd">  a Kivy view that is to be instantiated for each list item. There</span>
+<span class="sd">  are several built-in types available, including ListItemLabel and</span>
+<span class="sd">  ListItemButton, or you can make your own class that mixes in the</span>
+<span class="sd">  required :class:`~kivy.uix.selectableview.SelectableView`.</span>
+
+<span class="sd">* :attr:`~kivy.adapters.adapter.Adapter.template`:</span>
+<span class="sd">  the name of a Kivy language (kv) template that defines the</span>
+<span class="sd">  Kivy view for each list item.</span>
+
+<span class="sd">.. note::</span>
+
+<span class="sd">    Pick only one, cls or template, to provide as an argument.</span>
+
+<span class="sd">* :attr:`~kivy.adapters.args_converters`: a function that takes a data item</span>
+<span class="sd">  object as input and</span>
+<span class="sd">  uses it to build and return an args dict, ready</span>
+<span class="sd">  to be used in a call to instantiate item views using the item view cls</span>
+<span class="sd">  or template. In the case of cls, the args dict becomes a kwargs constructor</span>
+<span class="sd">  argument. For a template, it is treated as a context</span>
+<span class="sd">  (ctx) but is essentially similar in form to the kwargs usage.</span>
+
+<span class="sd">* :attr:`~kivy.adapters.listadapter.ListAdapter.selection_mode`:</span>
+<span class="sd">  a string with the value &#39;single&#39;,</span>
+<span class="sd">  &#39;multiple&#39; or other.</span>
+
+<span class="sd">* :attr:`~kivy.adapters.listadapter.ListAdapter.allow_empty_selection`:</span>
+<span class="sd">  a boolean, which if False (the default), forces</span>
+<span class="sd">  there to always be a selection if there is data</span>
+<span class="sd">  available. If True, selection happens only as a</span>
+<span class="sd">  result of user action.</span>
+
+<span class="sd">In narrative, we can summarize as follows:</span>
+
+<span class="sd">    A listview&#39;s adapter takes data items and uses an args_converter</span>
+<span class="sd">    function to transform them into arguments for creating list item view</span>
+<span class="sd">    instances, using either a cls or a kv template.</span>
+
+<span class="sd">In a graphic, a summary of the relationship between a listview and its</span>
+<span class="sd">components can be summarized as follows:</span>
+
+<span class="sd">.. image:: images/adapters.png</span>
+
+<span class="sd">Please refer to the :mod:`~kivy.adapters` documentation for more details.</span>
+
+<span class="sd">A :class:`~kivy.adapters.dictadapter.DictAdapter` has the same arguments and</span>
+<span class="sd">requirements as a :class:`~kivy.adapters.listadapter.ListAdapter` except for</span>
+<span class="sd">two things:</span>
+
+<span class="sd">1) There is an additional argument, sorted_keys, which must meet the</span>
+<span class="sd">   requirements of normal python dictionary keys.</span>
+
+<span class="sd">2) The data argument is, as you would expect, a dict. Keys in the dict</span>
+<span class="sd">   must include the keys in the sorted_keys argument, but they may form a</span>
+<span class="sd">   superset of the keys in sorted_keys. Values may be strings, class</span>
+<span class="sd">   instances, dicts, etc. (The args_converter uses it accordingly).</span>
+
+<span class="sd">Using an Args Converter</span>
+<span class="sd">-----------------------</span>
+
+<span class="sd">A :class:`~kivy.uix.listview.ListView` allows use of built-in list item views,</span>
+<span class="sd">such as :class:`~kivy.uix.listview.ListItemButton`, your own custom item view</span>
+<span class="sd">class or a custom kv template. Whichever type of list item view is used, an</span>
+<span class="sd">:doc:`args_converter &lt;api-kivy.adapters.args_converters&gt;` function is needed to</span>
+<span class="sd">prepare, per list data item, kwargs for the cls or the ctx for the template.</span>
+
+<span class="sd">.. note::</span>
+
+<span class="sd">    Only the ListItemLabel, ListItemButton or custom classes like them (and</span>
+<span class="sd">    not the simple Label or Button classes) are to be used in the listview</span>
+<span class="sd">    system.</span>
+
+<span class="sd">.. warning::</span>
+
+<span class="sd">    ListItemButton inherits the `background_normal` and `background_down`</span>
+<span class="sd">    properties from the Button widget, so the `selected_color` and</span>
+<span class="sd">    `deselected_color` are not represented faithfully by default.</span>
+
+<span class="sd">Here is an args_converter for use with the built-in</span>
+<span class="sd">:class:`~kivy.uix.listview.ListItemButton` specified as a normal Python</span>
+<span class="sd">function::</span>
+
+<span class="sd">    def args_converter(row_index, an_obj):</span>
+<span class="sd">        return {&#39;text&#39;: an_obj.text,</span>
+<span class="sd">                &#39;size_hint_y&#39;: None,</span>
+<span class="sd">                &#39;height&#39;: 25}</span>
+
+<span class="sd">and as a lambda::</span>
+
+<span class="sd">    args_converter = lambda row_index, an_obj: {&#39;text&#39;: an_obj.text,</span>
+<span class="sd">                                                &#39;size_hint_y&#39;: None,</span>
+<span class="sd">                                                &#39;height&#39;: 25}</span>
+
+<span class="sd">In the args converter example above, the data item is assumed to be an object</span>
+<span class="sd">(class instance), hence the reference an_obj.text.</span>
+
+<span class="sd">Here is an example of an args converter that works with list data items that</span>
+<span class="sd">are dicts::</span>
+
+<span class="sd">    args_converter = lambda row_index, obj: {&#39;text&#39;: obj[&#39;text&#39;],</span>
+<span class="sd">                                             &#39;size_hint_y&#39;: None,</span>
+<span class="sd">                                             &#39;height&#39;: 25}</span>
+
+<span class="sd">So, it is the responsibility of the developer to code the args_converter</span>
+<span class="sd">according to the data at hand. The row_index argument can be useful in some</span>
+<span class="sd">cases, such as when custom labels are needed.</span>
+
+<span class="sd">An Example ListView</span>
+<span class="sd">-------------------</span>
+
+<span class="sd">Now, to some example code::</span>
+
+<span class="sd">    from kivy.adapters.listadapter import ListAdapter</span>
+<span class="sd">    from kivy.uix.listview import ListItemButton, ListView</span>
+
+<span class="sd">    data = [{&#39;text&#39;: str(i), &#39;is_selected&#39;: False} for i in range(100)]</span>
+
+<span class="sd">    args_converter = lambda row_index, rec: {&#39;text&#39;: rec[&#39;text&#39;],</span>
+<span class="sd">                                             &#39;size_hint_y&#39;: None,</span>
+<span class="sd">                                             &#39;height&#39;: 25}</span>
+
+<span class="sd">    list_adapter = ListAdapter(data=data,</span>
+<span class="sd">                               args_converter=args_converter,</span>
+<span class="sd">                               cls=ListItemButton,</span>
+<span class="sd">                               selection_mode=&#39;single&#39;,</span>
+<span class="sd">                               allow_empty_selection=False)</span>
+
+<span class="sd">    list_view = ListView(adapter=list_adapter)</span>
+
+<span class="sd">This listview will show 100 buttons with text of 0 to 100. The args_converter</span>
+<span class="sd">function converts the dict items in the data and instantiates ListItemButton</span>
+<span class="sd">views by passing these converted items into it&#39;s constructor. The</span>
+<span class="sd">listview will only allow single selection and the first item will already be</span>
+<span class="sd">selected as allow_empty_selection is False. For a complete discussion on these</span>
+<span class="sd">arguments, please see the :class:`~kivy.adapters.listadapter.ListAdapter`</span>
+<span class="sd">documentation.</span>
+
+<span class="sd">The :class:`~kivy.uix.listview.ListItemLabel` works in much the same way as the</span>
+<span class="sd">:class:`~kivy.uix.listview.ListItemButton`.</span>
+
+<span class="sd">Using a Custom Item View Class</span>
+<span class="sd">------------------------------</span>
+
+<span class="sd">The data used in an adapter can be any of the normal Python types or custom</span>
+<span class="sd">classes, as shown below. It is up to the programmer to assure that the</span>
+<span class="sd">args_converter performs the appropriate conversions.</span>
+
+<span class="sd">Here we make a simple DataItem class that has the required text and</span>
+<span class="sd">is_selected properties::</span>
+
+<span class="sd">    from kivy.uix.listview import ListItemButton</span>
+<span class="sd">    from kivy.adapters.listadapter import ListAdapter</span>
+
+
+<span class="sd">    class DataItem(object):</span>
+<span class="sd">        def __init__(self, text=&#39;&#39;, is_selected=False):</span>
+<span class="sd">            self.text = text</span>
+<span class="sd">            self.is_selected = is_selected</span>
+
+<span class="sd">    data_items = [DataItem(text=&#39;cat&#39;),</span>
+<span class="sd">                  DataItem(text=&#39;dog&#39;),</span>
+<span class="sd">                  DataItem(text=&#39;frog&#39;)]</span>
+
+<span class="sd">    list_item_args_converter = lambda row_index, obj: {&#39;text&#39;: obj.text,</span>
+<span class="sd">                                                       &#39;size_hint_y&#39;: None,</span>
+<span class="sd">                                                       &#39;height&#39;: 25}</span>
+
+<span class="sd">    list_adapter = ListAdapter(data=data_items,</span>
+<span class="sd">                               args_converter=list_item_args_converter,</span>
+<span class="sd">                               propagate_selection_to_data=True,</span>
+<span class="sd">                               cls=ListItemButton)</span>
+
+<span class="sd">    list_view = ListView(adapter=list_adapter)</span>
+
+<span class="sd">The data is passed to the :class:`~kivy.adapters.listadapter.ListAdapter` along</span>
+<span class="sd">with an args_converter function. The propagation setting means that</span>
+<span class="sd">the is_selected property for each data item will be set and kept in sync with</span>
+<span class="sd">the list item views. This setting should be set to True if you wish to</span>
+<span class="sd">initialize the view with item views already selected.</span>
+
+<span class="sd">You may also use the provided :class:`~kivy.adapters.models.SelectableDataItem`</span>
+<span class="sd">mixin to make a custom class. Instead of the &quot;manually-constructed&quot; DataItem</span>
+<span class="sd">class above, we could do::</span>
+
+<span class="sd">    from kivy.adapters.models import SelectableDataItem</span>
+
+<span class="sd">    class DataItem(SelectableDataItem):</span>
+<span class="sd">        # Add properties here.</span>
+<span class="sd">        pass</span>
+
+<span class="sd">:class:`~kivy.adapters.models.SelectableDataItem` is a simple mixin class that</span>
+<span class="sd">has an is_selected property.</span>
+
+<span class="sd">Using an Item View Template</span>
+<span class="sd">---------------------------</span>
+
+<span class="sd">:class:`~kivy.uix.selectableview.SelectableView` is another simple mixin class</span>
+<span class="sd">that has required properties for a list item: text, and is_selected. To make</span>
+<span class="sd">your own template, mix it in as follows::</span>
+
+<span class="sd">    from kivy.lang import Builder</span>
+
+<span class="sd">    Builder.load_string(&quot;&quot;&quot;</span>
+<span class="sd">    [CustomListItem@SelectableView+BoxLayout]:</span>
+<span class="sd">        size_hint_y: ctx.size_hint_y</span>
+<span class="sd">        height: ctx.height</span>
+<span class="sd">        ListItemButton:</span>
+<span class="sd">            text: ctx.text</span>
+<span class="sd">            is_selected: ctx.is_selected</span>
+<span class="sd">    &quot;&quot;&quot;)</span>
+
+<span class="sd">A class called CustomListItem can then be instantiated for each list item. Note</span>
+<span class="sd">that it subclasses a :class:`~kivy.uix.boxlayout.BoxLayout` and is thus a type</span>
+<span class="sd">of :mod:`~kivy.uix.layout`. It contains a</span>
+<span class="sd">:class:`~kivy.uix.listview.ListItemButton` instance.</span>
+
+<span class="sd">Using the power of the Kivy language (kv), you can easily build composite list</span>
+<span class="sd">items: in addition to ListItemButton, you could have a ListItemLabel or a</span>
+<span class="sd">custom class you have defined and registered via the</span>
+<span class="sd">:class:`~kivy.factory.Factory`.</span>
+
+<span class="sd">An args_converter needs to be constructed that goes along with such a kv</span>
+<span class="sd">template. For example, to use the kv template above::</span>
+
+<span class="sd">    list_item_args_converter = \\</span>
+<span class="sd">            lambda row_index, rec: {&#39;text&#39;: rec[&#39;text&#39;],</span>
+<span class="sd">                                    &#39;is_selected&#39;: rec[&#39;is_selected&#39;],</span>
+<span class="sd">                                    &#39;size_hint_y&#39;: None,</span>
+<span class="sd">                                    &#39;height&#39;: 25}</span>
+<span class="sd">    integers_dict = \\</span>
+<span class="sd">        { str(i): {&#39;text&#39;: str(i), &#39;is_selected&#39;: False} for i in range(100)}</span>
+
+<span class="sd">    dict_adapter = DictAdapter(sorted_keys=[str(i) for i in range(100)],</span>
+<span class="sd">                               data=integers_dict,</span>
+<span class="sd">                               args_converter=list_item_args_converter,</span>
+<span class="sd">                               template=&#39;CustomListItem&#39;)</span>
+
+<span class="sd">    list_view = ListView(adapter=dict_adapter)</span>
+
+<span class="sd">A dict adapter is created with 1..100 integer strings as sorted_keys, and an</span>
+<span class="sd">integers_dict as data. integers_dict has the integer strings as keys and dicts</span>
+<span class="sd">with text and is_selected properties. The CustomListItem defined above in the</span>
+<span class="sd">Builder.load_string() call is set as the kv template for the list item views.</span>
+<span class="sd">The list_item_args_converter lambda function will take each dict in</span>
+<span class="sd">integers_dict and will return an args dict, ready for passing as the context</span>
+<span class="sd">(ctx) for the template.</span>
+
+<span class="sd">Using CompositeListItem</span>
+<span class="sd">-----------------------</span>
+
+<span class="sd">The class :class:`~kivy.uix.listview.CompositeListItem` is another option for</span>
+<span class="sd">building advanced composite list items. The kv language approach has its</span>
+<span class="sd">advantages, but here we build a composite list view using a plain Python::</span>
+
+<span class="sd">    args_converter = lambda row_index, rec: \\</span>
+<span class="sd">        {&#39;text&#39;: rec[&#39;text&#39;],</span>
+<span class="sd">        &#39;size_hint_y&#39;: None,</span>
+<span class="sd">        &#39;height&#39;: 25,</span>
+<span class="sd">        &#39;cls_dicts&#39;: [{&#39;cls&#39;: ListItemButton,</span>
+<span class="sd">                        &#39;kwargs&#39;: {&#39;text&#39;: rec[&#39;text&#39;]}},</span>
+<span class="sd">                    {&#39;cls&#39;: ListItemLabel,</span>
+<span class="sd">                        &#39;kwargs&#39;: {&#39;text&#39;: &quot;Middle-{0}&quot;.format(rec[&#39;text&#39;]),</span>
+<span class="sd">                                &#39;is_representing_cls&#39;: True}},</span>
+<span class="sd">                    {&#39;cls&#39;: ListItemButton,</span>
+<span class="sd">                        &#39;kwargs&#39;: {&#39;text&#39;: rec[&#39;text&#39;]}}]}</span>
+
+<span class="sd">    item_strings = [&quot;{0}&quot;.format(index) for index in range(100)]</span>
+
+<span class="sd">    integers_dict = \\</span>
+<span class="sd">        {str(i): {&#39;text&#39;: str(i), &#39;is_selected&#39;: False} for i in range(100)}</span>
+
+<span class="sd">    dict_adapter = DictAdapter(sorted_keys=item_strings,</span>
+<span class="sd">                               data=integers_dict,</span>
+<span class="sd">                               args_converter=args_converter,</span>
+<span class="sd">                               selection_mode=&#39;single&#39;,</span>
+<span class="sd">                               allow_empty_selection=False,</span>
+<span class="sd">                               cls=CompositeListItem)</span>
+
+<span class="sd">    list_view = ListView(adapter=dict_adapter)</span>
+
+<span class="sd">The args_converter is somewhat complicated, so we should go through the</span>
+<span class="sd">details. Observe in the :class:`~kivy.adapters.dictadapter.DictAdapter`</span>
+<span class="sd">instantiation that :class:`~kivy.uix.listview.CompositeListItem` instance is</span>
+<span class="sd">set as the cls to be instantiated for each list item component. The</span>
+<span class="sd">args_converter will</span>
+<span class="sd">make args dicts for this cls. In the args_converter, the first three items,</span>
+<span class="sd">text, size_hint_y, and height, are arguments for the CompositeListItem itself.</span>
+<span class="sd">After that you see a cls_dicts list that contains argument sets for each of the</span>
+<span class="sd">member widgets for this composite: 2</span>
+<span class="sd">:class:`ListItemButtons &lt;kivy.uix.listview.ListItemButton&gt;` and a</span>
+<span class="sd">:class:`~kivy.uix.listview.ListItemLabel`. This is a similar approach to</span>
+<span class="sd">using a kv template described above.</span>
+
+<span class="sd">For details on how :class:`~kivy.uix.listview.CompositeListItem` works,</span>
+<span class="sd">examine the code, looking for how parsing of the cls_dicts list and kwargs</span>
+<span class="sd">processing is done.</span>
+
+<span class="sd">Uses for Selection</span>
+<span class="sd">------------------</span>
+
+<span class="sd">What can we do with selection? Combining selection with the system of bindings</span>
+<span class="sd">in Kivy, we can build a wide range of user interface designs.</span>
+
+<span class="sd">We could make data items that contain the names of dog breeds, and connect</span>
+<span class="sd">the selection of dog breed to the display of details in another view, which</span>
+<span class="sd">would update automatically on selection. This is done via a binding to the</span>
+<span class="sd">:attr:`~kivy.adapters.listadapter.ListAdapter.on_selection_change` event::</span>
+
+<span class="sd">    list_adapter.bind(on_selection_change=callback_function)</span>
+
+<span class="sd">where callback_function() gets passed the adapter as an argument and does</span>
+<span class="sd">whatever is needed for the update. See the</span>
+<span class="sd">example called list_master_detail.py, and imagine that the list on the left</span>
+<span class="sd">could be a list of dog breeds, and the detail view on the right could show</span>
+<span class="sd">details for a selected dog breed.</span>
+
+<span class="sd">In another example, we could set the selection_mode of a listview to</span>
+<span class="sd">&#39;multiple&#39;, and load it with a list of answers to a multiple-choice question.</span>
+<span class="sd">The question could have several correct answers. A color swatch view could be</span>
+<span class="sd">bound to selection change, as above, so that it turns green as soon as the</span>
+<span class="sd">correct choices are made, unless the number of touches exceeds a limit, then</span>
+<span class="sd">answer session could be terminated. See the examples that feature thumbnail</span>
+<span class="sd">the images to get some ideas, e.g. list_cascade_dict.py.</span>
+
+<span class="sd">In a more involved example, we could chain together three listviews, where</span>
+<span class="sd">selection in the first controls the items shown in the second, and selection in</span>
+<span class="sd">the second controls the items shown in the third. If allow_empty_selection were</span>
+<span class="sd">set to False for these listviews, a dynamic system of selection &quot;cascading&quot;</span>
+<span class="sd">from one list to the next, would result.</span>
+
+<span class="sd">There are so many ways that listviews and Kivy bindings functionality can be</span>
+<span class="sd">used, that we have only scratched the surface here. For on-disk examples, see::</span>
+
+<span class="sd">    kivy/examples/widgets/lists/list_*.py</span>
+
+<span class="sd">Several examples show the &quot;cascading&quot; behavior described above. Others</span>
+<span class="sd">demonstrate the use of kv templates and composite list views.</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;SelectableView&#39;</span><span class="p">,</span> <span class="s1">&#39;ListItemButton&#39;</span><span class="p">,</span> <span class="s1">&#39;ListItemLabel&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;CompositeListItem&#39;</span><span class="p">,</span> <span class="s1">&#39;ListView&#39;</span><span class="p">,</span> <span class="s1">&#39;ListItemReprMixin&#39;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">kivy.event</span> <span class="k">import</span> <span class="n">EventDispatcher</span>
+<span class="kn">from</span> <span class="nn">kivy.clock</span> <span class="k">import</span> <span class="n">Clock</span>
+<span class="kn">from</span> <span class="nn">kivy.compat</span> <span class="k">import</span> <span class="n">PY2</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.widget</span> <span class="k">import</span> <span class="n">Widget</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.button</span> <span class="k">import</span> <span class="n">Button</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.label</span> <span class="k">import</span> <span class="n">Label</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.boxlayout</span> <span class="k">import</span> <span class="n">BoxLayout</span>
+<span class="kn">from</span> <span class="nn">kivy.adapters.simplelistadapter</span> <span class="k">import</span> <span class="n">SimpleListAdapter</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.abstractview</span> <span class="k">import</span> <span class="n">AbstractView</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.selectableview</span> <span class="k">import</span> <span class="n">SelectableView</span>
+<span class="kn">from</span> <span class="nn">kivy.properties</span> <span class="k">import</span> <span class="n">ObjectProperty</span><span class="p">,</span> <span class="n">DictProperty</span><span class="p">,</span> \
+        <span class="n">NumericProperty</span><span class="p">,</span> <span class="n">ListProperty</span><span class="p">,</span> <span class="n">BooleanProperty</span>
+<span class="kn">from</span> <span class="nn">kivy.lang</span> <span class="k">import</span> <span class="n">Builder</span>
+<span class="kn">from</span> <span class="nn">kivy.utils</span> <span class="k">import</span> <span class="n">deprecated</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">ceil</span><span class="p">,</span> <span class="n">floor</span>
+
+
+<div class="viewcode-block" id="ListItemReprMixin"><a class="viewcode-back" href="../../../api-kivy.uix.listview.html#kivy.uix.listview.ListItemReprMixin">[ドキュメント]</a><span class="k">class</span> <span class="nc">ListItemReprMixin</span><span class="p">(</span><span class="n">Label</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    The :class:`~kivy.uix.listview.ListItemReprMixin` provides a</span>
+<span class="sd">    :class:`~kivy.uix.label.Label` with a Python 2/3 compatible string</span>
+<span class="sd">    representation (*__repr__*). It is intended for internal usage.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">PY2</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">unicode</span><span class="p">)</span>\
+                <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span>
+            <span class="k">return</span> <span class="s1">&#39;&lt;</span><span class="si">%s</span><span class="s1"> text=</span><span class="si">%s</span><span class="s1">&gt;&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s1">&#39;&lt;</span><span class="si">%s</span><span class="s1"> text=</span><span class="si">%s</span><span class="s1">&gt;&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ListItemButton"><a class="viewcode-back" href="../../../api-kivy.uix.listview.html#kivy.uix.listview.ListItemButton">[ドキュメント]</a><span class="k">class</span> <span class="nc">ListItemButton</span><span class="p">(</span><span class="n">ListItemReprMixin</span><span class="p">,</span> <span class="n">SelectableView</span><span class="p">,</span> <span class="n">Button</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;:class:`~kivy.uix.listview.ListItemButton` mixes</span>
+<span class="sd">    :class:`~kivy.uix.selectableview.SelectableView` with</span>
+<span class="sd">    :class:`~kivy.uix.button.Button` to produce a button suitable for use in</span>
+<span class="sd">    :class:`~kivy.uix.listview.ListView`.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">selected_color</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    :attr:`selected_color` is a :class:`~kivy.properties.ListProperty` and</span>
+<span class="sd">    defaults to [1., 0., 0., 1].</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">deselected_color</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    :attr:`deselected_color` is a :class:`~kivy.properties.ListProperty` and</span>
+<span class="sd">    defaults to [0., 1., 0., 1].</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ListItemButton</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># Set Button bg color to be deselected_color.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">background_color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">deselected_color</span>
+
+    <span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">background_color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_color</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="n">CompositeListItem</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">select_from_child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">deselect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">background_color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">deselected_color</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="n">CompositeListItem</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">deselect_from_child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">select_from_composite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">background_color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_color</span>
+
+    <span class="k">def</span> <span class="nf">deselect_from_composite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">background_color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">deselected_color</span></div>
+
+
+<span class="c1"># [TODO] Why does this mix in SelectableView -- that makes it work like</span>
+<span class="c1">#        button, which is redundant.</span>
+
+<div class="viewcode-block" id="ListItemLabel"><a class="viewcode-back" href="../../../api-kivy.uix.listview.html#kivy.uix.listview.ListItemLabel">[ドキュメント]</a><span class="k">class</span> <span class="nc">ListItemLabel</span><span class="p">(</span><span class="n">ListItemReprMixin</span><span class="p">,</span> <span class="n">SelectableView</span><span class="p">,</span> <span class="n">Label</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;:class:`~kivy.uix.listview.ListItemLabel` mixes</span>
+<span class="sd">    :class:`~kivy.uix.selectableview.SelectableView` with</span>
+<span class="sd">    :class:`~kivy.uix.label.Label` to produce a label suitable for use in</span>
+<span class="sd">    :class:`~kivy.uix.listview.ListView`.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ListItemLabel</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bold</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="n">CompositeListItem</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">select_from_child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">deselect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bold</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="n">CompositeListItem</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">deselect_from_child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">select_from_composite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bold</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">deselect_from_composite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bold</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="CompositeListItem"><a class="viewcode-back" href="../../../api-kivy.uix.listview.html#kivy.uix.listview.CompositeListItem">[ドキュメント]</a><span class="k">class</span> <span class="nc">CompositeListItem</span><span class="p">(</span><span class="n">SelectableView</span><span class="p">,</span> <span class="n">BoxLayout</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;:class:`~kivy.uix.listview.CompositeListItem` mixes</span>
+<span class="sd">    :class:`~kivy.uix.selectableview.SelectableView` with :class:`BoxLayout`</span>
+<span class="sd">    for a generic container-style list item, to be used in</span>
+<span class="sd">    :class:`~kivy.uix.listview.ListView`.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">background_color</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;ListItem subclasses Button, which has background_color, but</span>
+<span class="sd">    for a composite list item, we must add this property.</span>
+
+<span class="sd">    :attr:`background_color` is a :class:`~kivy.properties.ListProperty` and</span>
+<span class="sd">    defaults to [1, 1, 1, 1].</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">selected_color</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    :attr:`selected_color` is a :class:`~kivy.properties.ListProperty` and</span>
+<span class="sd">    defaults to [1., 0., 0., 1].</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">deselected_color</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([</span><span class="o">.</span><span class="mi">33</span><span class="p">,</span> <span class="o">.</span><span class="mi">33</span><span class="p">,</span> <span class="o">.</span><span class="mi">33</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    :attr:`deselected_color` is a :class:`~kivy.properties.ListProperty` and</span>
+<span class="sd">    defaults to [.33, .33, .33, 1].</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">representing_cls</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Which component view class, if any, should represent for the</span>
+<span class="sd">    composite list item in __repr__()?</span>
+
+<span class="sd">    :attr:`representing_cls` is an :class:`~kivy.properties.ObjectProperty` and</span>
+<span class="sd">    defaults to None.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">cls_dicts</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;cls_dicts&#39;</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">]</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">CompositeListItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># Example data:</span>
+        <span class="c1">#</span>
+        <span class="c1">#    &#39;cls_dicts&#39;: [{&#39;cls&#39;: ListItemButton,</span>
+        <span class="c1">#                   &#39;kwargs&#39;: {&#39;text&#39;: &quot;Left&quot;}},</span>
+        <span class="c1">#                   &#39;cls&#39;: ListItemLabel,</span>
+        <span class="c1">#                   &#39;kwargs&#39;: {&#39;text&#39;: &quot;Middle&quot;,</span>
+        <span class="c1">#                              &#39;is_representing_cls&#39;: True}},</span>
+        <span class="c1">#                   &#39;cls&#39;: ListItemButton,</span>
+        <span class="c1">#                   &#39;kwargs&#39;: {&#39;text&#39;: &quot;Right&quot;}]</span>
+
+        <span class="c1"># There is an index to the data item this composite list item view</span>
+        <span class="c1"># represents. Get it from kwargs and pass it along to children in the</span>
+        <span class="c1"># loop below.</span>
+
+        <span class="k">for</span> <span class="n">cls_dict</span> <span class="ow">in</span> <span class="n">cls_dicts</span><span class="p">:</span>
+            <span class="bp">cls</span> <span class="o">=</span> <span class="n">cls_dict</span><span class="p">[</span><span class="s1">&#39;cls&#39;</span><span class="p">]</span>
+            <span class="n">cls_kwargs</span> <span class="o">=</span> <span class="n">cls_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">cls_kwargs</span><span class="p">:</span>
+                <span class="n">cls_kwargs</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">index</span>
+
+                <span class="k">if</span> <span class="s1">&#39;text&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cls_kwargs</span> <span class="ow">and</span> <span class="n">text</span><span class="p">:</span>
+                    <span class="n">cls_kwargs</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">text</span>
+
+                <span class="k">if</span> <span class="s1">&#39;is_representing_cls&#39;</span> <span class="ow">in</span> <span class="n">cls_kwargs</span><span class="p">:</span>
+                    <span class="k">del</span> <span class="n">cls_kwargs</span><span class="p">[</span><span class="s1">&#39;is_representing_cls&#39;</span><span class="p">]</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">representing_cls</span> <span class="o">=</span> <span class="bp">cls</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="bp">cls</span><span class="p">(</span><span class="o">**</span><span class="n">cls_kwargs</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">cls_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="n">cls_kwargs</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">index</span>
+                <span class="k">if</span> <span class="n">text</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">cls_kwargs</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">text</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="bp">cls</span><span class="p">(</span><span class="o">**</span><span class="n">cls_kwargs</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">background_color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_color</span>
+
+    <span class="k">def</span> <span class="nf">deselect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">background_color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">deselected_color</span>
+
+    <span class="k">def</span> <span class="nf">select_from_child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">child</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">c</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">child</span><span class="p">:</span>
+                <span class="n">c</span><span class="o">.</span><span class="n">select_from_composite</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">deselect_from_child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">child</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">c</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">child</span><span class="p">:</span>
+                <span class="n">c</span><span class="o">.</span><span class="n">deselect_from_composite</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">representing_cls</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;&lt;</span><span class="si">%r</span><span class="s1">&gt;, representing &lt;</span><span class="si">%s</span><span class="s1">&gt;&#39;</span> <span class="o">%</span> <span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">representing_cls</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;&lt;</span><span class="si">%s</span><span class="s1">&gt;&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span></div>
+
+
+<span class="n">Builder</span><span class="o">.</span><span class="n">load_string</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">&lt;ListView&gt;:</span>
+<span class="s1">    container: container</span>
+<span class="s1">    ScrollView:</span>
+<span class="s1">        pos: root.pos</span>
+<span class="s1">        on_scroll_y: root._scroll(args[1])</span>
+<span class="s1">        do_scroll_x: False</span>
+<span class="s1">        GridLayout:</span>
+<span class="s1">            cols: 1</span>
+<span class="s1">            id: container</span>
+<span class="s1">            size_hint_y: None</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="ListView"><a class="viewcode-back" href="../../../api-kivy.uix.listview.html#kivy.uix.listview.ListView">[ドキュメント]</a><span class="k">class</span> <span class="nc">ListView</span><span class="p">(</span><span class="n">AbstractView</span><span class="p">,</span> <span class="n">EventDispatcher</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;:class:`~kivy.uix.listview.ListView` is a primary high-level widget,</span>
+<span class="sd">    handling the common task of presenting items in a scrolling list.</span>
+<span class="sd">    Flexibility is afforded by use of a variety of adapters to interface with</span>
+<span class="sd">    data.</span>
+
+<span class="sd">    The adapter property comes via the mixed in</span>
+<span class="sd">    :class:`~kivy.uix.abstractview.AbstractView` class.</span>
+
+<span class="sd">    :class:`~kivy.uix.listview.ListView` also subclasses</span>
+<span class="sd">    :class:`EventDispatcher` for scrolling. The event *on_scroll_complete* is</span>
+<span class="sd">    used in refreshing the main view.</span>
+
+<span class="sd">    For a simple list of string items, without selection, use</span>
+<span class="sd">    :class:`~kivy.adapters.simplelistadapter.SimpleListAdapter`. For list items</span>
+<span class="sd">    that respond to selection, ranging from simple items to advanced</span>
+<span class="sd">    composites, use :class:`~kivy.adapters.listadapter.ListAdapter`. For an</span>
+<span class="sd">    alternate powerful adapter, use</span>
+<span class="sd">    :class:`~kivy.adapters.dictadapter.DictAdapter`, rounding out the choice</span>
+<span class="sd">    for designing highly interactive lists.</span>
+
+<span class="sd">    :Events:</span>
+<span class="sd">        `on_scroll_complete`: (boolean, )</span>
+<span class="sd">            Fired when scrolling completes.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">divider</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;[TODO] Not used.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">divider_height</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;[TODO] Not used.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">container</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;The container is a :class:`~kivy.uix.gridlayout.GridLayout` widget held</span>
+<span class="sd">    within a :class:`~kivy.uix.scrollview.ScrollView` widget.  (See the</span>
+<span class="sd">    associated kv block in the Builder.load_string() setup). Item view</span>
+<span class="sd">    instances managed and provided by the adapter are added to this container.</span>
+<span class="sd">    The container is cleared with a call to clear_widgets() when the list is</span>
+<span class="sd">    rebuilt by the populate() method. A padding</span>
+<span class="sd">    :class:`~kivy.uix.widget.Widget` instance is also added as needed,</span>
+<span class="sd">    depending on the row height calculations.</span>
+
+<span class="sd">    :attr:`container` is an :class:`~kivy.properties.ObjectProperty` and</span>
+<span class="sd">    defaults to None.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">row_height</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;The row_height property is calculated on the basis of the height of the</span>
+<span class="sd">    container and the count of items.</span>
+
+<span class="sd">    :attr:`row_height` is a :class:`~kivy.properties.NumericProperty` and</span>
+<span class="sd">    defaults to None.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">item_strings</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([])</span>
+    <span class="sd">&#39;&#39;&#39;If item_strings is provided, create an instance of</span>
+<span class="sd">    :class:`~kivy.adapters.simplelistadapter.SimpleListAdapter` with this list</span>
+<span class="sd">    of strings, and use it to manage a no-selection list.</span>
+
+<span class="sd">    :attr:`item_strings` is a :class:`~kivy.properties.ListProperty` and</span>
+<span class="sd">    defaults to [].</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">scrolling</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;If the scroll_to() method is called while scrolling operations are</span>
+<span class="sd">    happening, a call recursion error can occur. scroll_to() checks to see that</span>
+<span class="sd">    scrolling is False before calling populate(). scroll_to() dispatches a</span>
+<span class="sd">    scrolling_complete event, which sets scrolling back to False.</span>
+
+<span class="sd">    :attr:`scrolling` is a :class:`~kivy.properties.BooleanProperty` and</span>
+<span class="sd">    defaults to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">_index</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">_sizes</span> <span class="o">=</span> <span class="n">DictProperty</span><span class="p">({})</span>
+    <span class="n">_count</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">_wstart</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">_wend</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">__events__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;on_scroll_complete&#39;</span><span class="p">,</span> <span class="p">)</span>
+
+    <span class="nd">@deprecated</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># Check for an adapter argument. If it doesn&#39;t exist, we</span>
+        <span class="c1"># check for item_strings in use with SimpleListAdapter</span>
+        <span class="c1"># to make a simple list.</span>
+        <span class="k">if</span> <span class="s1">&#39;adapter&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s1">&#39;item_strings&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+                <span class="c1"># Could be missing, or it could be that the ListView is</span>
+                <span class="c1"># declared in a kv file. If kv is in use, and item_strings is</span>
+                <span class="c1"># declared there, then item_strings will not be set until after</span>
+                <span class="c1"># __init__(). So, the data=[] set will temporarily serve for</span>
+                <span class="c1"># SimpleListAdapter instantiation, with the binding to</span>
+                <span class="c1"># item_strings_changed() handling the eventual set of the</span>
+                <span class="c1"># item_strings property from the application of kv rules.</span>
+                <span class="n">list_adapter</span> <span class="o">=</span> <span class="n">SimpleListAdapter</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[],</span>
+                                                 <span class="bp">cls</span><span class="o">=</span><span class="n">Label</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">list_adapter</span> <span class="o">=</span> <span class="n">SimpleListAdapter</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;item_strings&#39;</span><span class="p">],</span>
+                                                 <span class="bp">cls</span><span class="o">=</span><span class="n">Label</span><span class="p">)</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;adapter&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">list_adapter</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">ListView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="n">populate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_populate</span> <span class="o">=</span> <span class="n">Clock</span><span class="o">.</span><span class="n">create_trigger</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_spopulate</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_reset_populate</span> <span class="o">=</span> \
+            <span class="n">Clock</span><span class="o">.</span><span class="n">create_trigger</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_reset_spopulate</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">fbind</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fbind</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="n">populate</span><span class="p">)</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;pos&#39;</span><span class="p">,</span> <span class="n">populate</span><span class="p">)</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;item_strings&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">item_strings_changed</span><span class="p">)</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;adapter&#39;</span><span class="p">,</span> <span class="n">populate</span><span class="p">)</span>
+
+        <span class="n">bind_adapter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_bind_adapter</span> <span class="o">=</span> <span class="n">Clock</span><span class="o">.</span><span class="n">create_trigger</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">dt</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">adapter</span><span class="o">.</span><span class="n">bind_triggers_to_view</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_reset_populate</span><span class="p">),</span>
+            <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;adapter&#39;</span><span class="p">,</span> <span class="n">bind_adapter</span><span class="p">)</span>
+
+        <span class="c1"># The bindings setup above sets self._trigger_populate() to fire</span>
+        <span class="c1"># when the adapter changes, but we also need this binding for when</span>
+        <span class="c1"># adapter.data and other possible triggers change for view updating.</span>
+        <span class="c1"># We don&#39;t know that these are, so we ask the adapter to set up the</span>
+        <span class="c1"># bindings back to the view updating function here.</span>
+        <span class="n">bind_adapter</span><span class="p">()</span>
+
+    <span class="c1"># Added to set data when item_strings is set in a kv template, but it will</span>
+    <span class="c1"># be good to have also if item_strings is reset generally.</span>
+    <span class="k">def</span> <span class="nf">item_strings_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">adapter</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">item_strings</span>
+
+    <span class="k">def</span> <span class="nf">_scroll</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scroll_y</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_height</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_scroll_y</span> <span class="o">=</span> <span class="n">scroll_y</span>
+        <span class="n">scroll_y</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">scroll_y</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="n">container</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">container</span>
+        <span class="n">mstart</span> <span class="o">=</span> <span class="p">(</span><span class="n">container</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)</span> <span class="o">*</span> <span class="n">scroll_y</span>
+        <span class="n">mend</span> <span class="o">=</span> <span class="n">mstart</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span>
+
+        <span class="c1"># convert distance to index</span>
+        <span class="n">rh</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_height</span>
+        <span class="n">istart</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">mstart</span> <span class="o">/</span> <span class="n">rh</span><span class="p">))</span>
+        <span class="n">iend</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">floor</span><span class="p">(</span><span class="n">mend</span> <span class="o">/</span> <span class="n">rh</span><span class="p">))</span>
+
+        <span class="n">istart</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">istart</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">iend</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">iend</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">istart</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wstart</span><span class="p">:</span>
+            <span class="n">rstart</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">istart</span> <span class="o">-</span> <span class="mi">10</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">populate</span><span class="p">(</span><span class="n">rstart</span><span class="p">,</span> <span class="n">iend</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_wstart</span> <span class="o">=</span> <span class="n">rstart</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_wend</span> <span class="o">=</span> <span class="n">iend</span>
+        <span class="k">elif</span> <span class="n">iend</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wend</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">populate</span><span class="p">(</span><span class="n">istart</span><span class="p">,</span> <span class="n">iend</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_wstart</span> <span class="o">=</span> <span class="n">istart</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_wend</span> <span class="o">=</span> <span class="n">iend</span> <span class="o">+</span> <span class="mi">10</span>
+
+    <span class="k">def</span> <span class="nf">_spopulate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">populate</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_reset_spopulate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_wend</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">populate</span><span class="p">()</span>
+        <span class="c1"># simulate the scroll again, only if we already scrolled before</span>
+        <span class="c1"># the position might not be the same, mostly because we don&#39;t know the</span>
+        <span class="c1"># size of the new item.</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_scroll_y&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_scroll</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_scroll_y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">populate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istart</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">iend</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">container</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">container</span>
+        <span class="n">sizes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sizes</span>
+        <span class="n">rh</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_height</span>
+
+        <span class="c1"># ensure we know what we want to show</span>
+        <span class="k">if</span> <span class="n">istart</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">istart</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wstart</span>
+            <span class="n">iend</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wend</span>
+
+        <span class="c1"># clear the view</span>
+        <span class="n">container</span><span class="o">.</span><span class="n">clear_widgets</span><span class="p">()</span>
+
+        <span class="c1"># guess only ?</span>
+        <span class="k">if</span> <span class="n">iend</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">iend</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+
+            <span class="c1"># fill with a &quot;padding&quot;</span>
+            <span class="n">fh</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">istart</span><span class="p">):</span>
+                <span class="n">fh</span> <span class="o">+=</span> <span class="n">sizes</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sizes</span> <span class="k">else</span> <span class="n">rh</span>
+            <span class="n">container</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">Widget</span><span class="p">(</span><span class="n">size_hint_y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">fh</span><span class="p">))</span>
+
+            <span class="c1"># now fill with real item_view</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">istart</span>
+            <span class="k">while</span> <span class="n">index</span> <span class="o">&lt;=</span> <span class="n">iend</span><span class="p">:</span>
+                <span class="n">item_view</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adapter</span><span class="o">.</span><span class="n">get_view</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+                <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">item_view</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="n">sizes</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">item_view</span><span class="o">.</span><span class="n">height</span>
+                <span class="n">container</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">item_view</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">available_height</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span>
+            <span class="n">real_height</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">while</span> <span class="n">available_height</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">item_view</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adapter</span><span class="o">.</span><span class="n">get_view</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">item_view</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">break</span>
+                <span class="n">sizes</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">item_view</span><span class="o">.</span><span class="n">height</span>
+                <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">container</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">item_view</span><span class="p">)</span>
+                <span class="n">available_height</span> <span class="o">-=</span> <span class="n">item_view</span><span class="o">.</span><span class="n">height</span>
+                <span class="n">real_height</span> <span class="o">+=</span> <span class="n">item_view</span><span class="o">.</span><span class="n">height</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_count</span> <span class="o">=</span> <span class="n">count</span>
+
+            <span class="c1"># extrapolate the full size of the container from the size</span>
+            <span class="c1"># of view instances in the adapter</span>
+            <span class="k">if</span> <span class="n">count</span><span class="p">:</span>
+                <span class="n">container</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> \
+                    <span class="n">real_height</span> <span class="o">/</span> <span class="n">count</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">adapter</span><span class="o">.</span><span class="n">get_count</span><span class="p">()</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_height</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">row_height</span> <span class="o">=</span> <span class="n">real_height</span> <span class="o">/</span> <span class="n">count</span>
+
+    <span class="k">def</span> <span class="nf">scroll_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">scrolling</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">scrolling</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_index</span> <span class="o">=</span> <span class="n">index</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">populate</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="s1">&#39;on_scroll_complete&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_scroll_complete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scrolling</span> <span class="o">=</span> <span class="kc">False</span></div>
+</pre></div>
+
+            <div class="footerlinks">
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 29, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

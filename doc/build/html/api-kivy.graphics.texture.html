@@ -1,0 +1,1005 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>Texture &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="_static/kivy.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="index.html" />
+    <link rel="up" title="Graphics" href="api-kivy.graphics.html" />
+    <link rel="next" title="Transformation" href="api-kivy.graphics.transformation.html" />
+    <link rel="prev" title="Tesselator" href="api-kivy.graphics.tesselator.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="index.html">Texture</a></h3>
+          <ul>
+<li><a class="reference internal" href="#">Texture</a><ul>
+<li><a class="reference internal" href="#blitting-custom-data">Blitting custom data</a></li>
+<li><a class="reference internal" href="#bgr-bgra-support">BGR/BGRA support</a></li>
+<li><a class="reference internal" href="#npot-texture">NPOT texture</a></li>
+<li><a class="reference internal" href="#texture-atlas">Texture atlas</a></li>
+<li><a class="reference internal" href="#mipmapping">Mipmapping</a></li>
+<li><a class="reference internal" href="#reloading-the-texture">Reloading the Texture</a></li>
+</ul>
+</li>
+</ul>
+
+          <h3><a href="index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="api-index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+              <li>Previous: <a href="api-kivy.graphics.tesselator.html" title="previous chapter">Tesselator</a></li>
+              <li>Next: <a href="api-kivy.graphics.transformation.html" title="next chapter">Transformation</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2><ul>
+<li><a class="reference internal" href="#">Texture</a><ul>
+<li><a class="reference internal" href="#blitting-custom-data">Blitting custom data</a></li>
+<li><a class="reference internal" href="#bgr-bgra-support">BGR/BGRA support</a></li>
+<li><a class="reference internal" href="#npot-texture">NPOT texture</a></li>
+<li><a class="reference internal" href="#texture-atlas">Texture atlas</a></li>
+<li><a class="reference internal" href="#mipmapping">Mipmapping</a></li>
+<li><a class="reference internal" href="#reloading-the-texture">Reloading the Texture</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+  <div class="section" id="module-kivy.graphics.texture">
+<span id="texture"></span><h1>Texture<a class="headerlink" href="#module-kivy.graphics.texture" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.6.0 で変更: </span>Added support for paletted texture on OES: &#8216;palette4_rgb8&#8217;,
+&#8216;palette4_rgba8&#8217;, &#8216;palette4_r5_g6_b5&#8217;, &#8216;palette4_rgba4&#8217;, &#8216;palette4_rgb5_a1&#8217;,
+&#8216;palette8_rgb8&#8217;, &#8216;palette8_rgba8&#8217;, &#8216;palette8_r5_g6_b5&#8217;, &#8216;palette8_rgba4&#8217;
+and &#8216;palette8_rgb5_a1&#8217;.</p>
+</div>
+<p><a class="reference internal" href="#kivy.graphics.texture.Texture" title="kivy.graphics.texture.Texture"><code class="xref py py-class docutils literal"><span class="pre">Texture</span></code></a> is a class that handles OpenGL textures. Depending on the
+hardware,
+some OpenGL capabilities might not be available (BGRA support, NPOT support,
+etc.)</p>
+<p>You cannot instantiate this class yourself. You must use the function
+<a class="reference internal" href="#kivy.graphics.texture.Texture.create" title="kivy.graphics.texture.Texture.create"><code class="xref py py-meth docutils literal"><span class="pre">Texture.create()</span></code></a> to create a new texture:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">texture</span> <span class="o">=</span> <span class="n">Texture</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>When you create a texture, you should be aware of the default color
+and buffer format:</p>
+<blockquote>
+<div><ul class="simple">
+<li>the color/pixel format (<a class="reference internal" href="#kivy.graphics.texture.Texture.colorfmt" title="kivy.graphics.texture.Texture.colorfmt"><code class="xref py py-attr docutils literal"><span class="pre">Texture.colorfmt</span></code></a>) that can be one of
+&#8216;rgb&#8217;, &#8216;rgba&#8217;, &#8216;luminance&#8217;, &#8216;luminance_alpha&#8217;, &#8216;bgr&#8217; or &#8216;bgra&#8217;.
+The default value is &#8216;rgb&#8217;</li>
+<li>the buffer format determines how a color component is stored into memory.
+This can be one of &#8216;ubyte&#8217;, &#8216;ushort&#8217;, &#8216;uint&#8217;, &#8216;byte&#8217;, &#8216;short&#8217;, &#8216;int&#8217; or
+&#8216;float&#8217;. The default value and the most commonly used is &#8216;ubyte&#8217;.</li>
+</ul>
+</div></blockquote>
+<p>So, if you want to create an RGBA texture:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">texture</span> <span class="o">=</span> <span class="n">Texture</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">),</span> <span class="n">colorfmt</span><span class="o">=</span><span class="s1">&#39;rgba&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can use your texture in almost all vertex instructions with the
+<code class="xref py py-attr docutils literal"><span class="pre">kivy.graphics.VertexIntruction.texture</span></code> parameter. If you want to use
+your texture in kv lang, you can save it in an
+<a class="reference internal" href="api-kivy.properties.html#kivy.properties.ObjectProperty" title="kivy.properties.ObjectProperty"><code class="xref py py-class docutils literal"><span class="pre">ObjectProperty</span></code></a> inside your widget.</p>
+<div class="section" id="blitting-custom-data">
+<h2>Blitting custom data<a class="headerlink" href="#blitting-custom-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>You can create your own data and blit it to the texture using
+<a class="reference internal" href="#kivy.graphics.texture.Texture.blit_buffer" title="kivy.graphics.texture.Texture.blit_buffer"><code class="xref py py-meth docutils literal"><span class="pre">Texture.blit_buffer()</span></code></a>.</p>
+<p>For example, to blit immutable bytes data:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># create a 64x64 texture, defaults to rgba / ubyte</span>
+<span class="n">texture</span> <span class="o">=</span> <span class="n">Texture</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">))</span>
+
+<span class="c1"># create 64x64 rgb tab, and fill with values from 0 to 255</span>
+<span class="c1"># we&#39;ll have a gradient from black to white</span>
+<span class="n">size</span> <span class="o">=</span> <span class="mi">64</span> <span class="o">*</span> <span class="mi">64</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="n">buf</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">255</span> <span class="o">/</span> <span class="n">size</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">)]</span>
+
+<span class="c1"># then, convert the array to a ubyte string</span>
+<span class="n">buf</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">chr</span><span class="p">,</span> <span class="n">buf</span><span class="p">))</span>
+
+<span class="c1"># then blit the buffer</span>
+<span class="n">texture</span><span class="o">.</span><span class="n">blit_buffer</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">colorfmt</span><span class="o">=</span><span class="s1">&#39;rgb&#39;</span><span class="p">,</span> <span class="n">bufferfmt</span><span class="o">=</span><span class="s1">&#39;ubyte&#39;</span><span class="p">)</span>
+
+<span class="c1"># that&#39;s all ! you can use it in your graphics now :)</span>
+<span class="c1"># if self is a widget, you can do this</span>
+<span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="p">:</span>
+    <span class="n">Rectangle</span><span class="p">(</span><span class="n">texture</span><span class="o">=</span><span class="n">texture</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Since 1.9.0, you can blit data stored in a instance that implements the python
+buffer interface, or a memoryview thereof, such as numpy arrays, python
+<cite>array.array</cite>, a <cite>bytearray</cite>, or a cython array. This is beneficial if you
+expect to blit similar data, with perhaps a few changes in the data.</p>
+<p>When using a bytes representation of the data, for every change you have to
+regenerate the bytes instance, from perhaps a list, which is very inefficient.
+When using a buffer object, you can simply edit parts of the original data.
+Similarly, unless starting with a bytes object, converting to bytes requires a
+full copy, however, when using a buffer instance, no memory is copied, except
+to upload it to the GPU.</p>
+<p>Continuing with the example above:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">array</span> <span class="k">import</span> <span class="n">array</span>
+
+<span class="n">size</span> <span class="o">=</span> <span class="mi">64</span> <span class="o">*</span> <span class="mi">64</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="n">buf</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">255</span> <span class="o">/</span> <span class="n">size</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">)]</span>
+<span class="c1"># initialize the array with the buffer values</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">buf</span><span class="p">)</span>
+<span class="c1"># now blit the array</span>
+<span class="n">texture</span><span class="o">.</span><span class="n">blit_buffer</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">colorfmt</span><span class="o">=</span><span class="s1">&#39;rgb&#39;</span><span class="p">,</span> <span class="n">bufferfmt</span><span class="o">=</span><span class="s1">&#39;ubyte&#39;</span><span class="p">)</span>
+
+<span class="c1"># now change some elements in the original array</span>
+<span class="n">arr</span><span class="p">[</span><span class="mi">24</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="mi">50</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99</span>
+<span class="c1"># blit again the buffer</span>
+<span class="n">texture</span><span class="o">.</span><span class="n">blit_buffer</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">colorfmt</span><span class="o">=</span><span class="s1">&#39;rgb&#39;</span><span class="p">,</span> <span class="n">bufferfmt</span><span class="o">=</span><span class="s1">&#39;ubyte&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bgr-bgra-support">
+<h2>BGR/BGRA support<a class="headerlink" href="#bgr-bgra-support" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The first time you try to create a BGR or BGRA texture, we check whether
+your hardware supports BGR / BGRA textures by checking the extension
+&#8216;GL_EXT_bgra&#8217;.</p>
+<p>If the extension is not found, the conversion to RGB / RGBA will be done in
+software.</p>
+</div>
+<div class="section" id="npot-texture">
+<h2>NPOT texture<a class="headerlink" href="#npot-texture" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.0.7 で変更: </span>If your hardware supports NPOT, no POT is created.</p>
+</div>
+<p>As the OpenGL documentation says, a texture must be power-of-two sized. That
+means
+your width and height can be one of 64, 32, 256... but not 3, 68, 42. NPOT means
+non-power-of-two. OpenGL ES 2 supports NPOT textures natively but with some
+drawbacks. Another type of NPOT texture is called a rectangle texture.
+POT, NPOT and textures all have their own pro/cons.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="17%" />
+<col width="17%" />
+<col width="43%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Features</td>
+<td>POT</td>
+<td>NPOT</td>
+<td>Rectangle</td>
+</tr>
+<tr class="row-even"><td>OpenGL Target</td>
+<td>GL_TEXTURE_2D</td>
+<td>GL_TEXTURE_2D</td>
+<td>GL_TEXTURE_RECTANGLE_(NV|ARB|EXT)</td>
+</tr>
+<tr class="row-odd"><td>Texture coords</td>
+<td>0-1 range</td>
+<td>0-1 range</td>
+<td>width-height range</td>
+</tr>
+<tr class="row-even"><td>Mipmapping</td>
+<td>Supported</td>
+<td>Partially</td>
+<td>No</td>
+</tr>
+<tr class="row-odd"><td>Wrap mode</td>
+<td>Supported</td>
+<td>Supported</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>If you create a NPOT texture, we first check whether your hardware
+supports it by checking the extensions GL_ARB_texture_non_power_of_two or
+OES_texture_npot. If none of these are available, we create the nearest
+POT texture that can contain your NPOT texture. The <a class="reference internal" href="#kivy.graphics.texture.Texture.create" title="kivy.graphics.texture.Texture.create"><code class="xref py py-meth docutils literal"><span class="pre">Texture.create()</span></code></a> will
+return a <a class="reference internal" href="#kivy.graphics.texture.TextureRegion" title="kivy.graphics.texture.TextureRegion"><code class="xref py py-class docutils literal"><span class="pre">TextureRegion</span></code></a> instead.</p>
+</div>
+<div class="section" id="texture-atlas">
+<h2>Texture atlas<a class="headerlink" href="#texture-atlas" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>A texture atlas is a single texture that contains many images.
+If you want to separate the original texture into many single ones, you don&#8217;t
+need to. You can get a region of the original texture. That will return the
+original texture with custom texture coordinates:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># for example, load a 128x128 image that contain 4 64x64 images</span>
+<span class="kn">from</span> <span class="nn">kivy.core.image</span> <span class="k">import</span> <span class="n">Image</span>
+<span class="n">texture</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="s1">&#39;mycombinedimage.png&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">texture</span>
+
+<span class="n">bottomleft</span> <span class="o">=</span> <span class="n">texture</span><span class="o">.</span><span class="n">get_region</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+<span class="n">bottomright</span> <span class="o">=</span> <span class="n">texture</span><span class="o">.</span><span class="n">get_region</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+<span class="n">topleft</span> <span class="o">=</span> <span class="n">texture</span><span class="o">.</span><span class="n">get_region</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+<span class="n">topright</span> <span class="o">=</span> <span class="n">texture</span><span class="o">.</span><span class="n">get_region</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mipmapping">
+<span id="mipmap"></span><h2>Mipmapping<a class="headerlink" href="#mipmapping" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.7 で追加.</span></p>
+</div>
+<p>Mipmapping is an OpenGL technique for enhancing the rendering of large textures
+to small surfaces. Without mipmapping, you might see pixelation when you
+render to small surfaces.
+The idea is to precalculate the subtexture and apply some image filter as a
+linear filter. Then, when you render a small surface, instead of using the
+biggest texture, it will use a lower filtered texture. The result can look
+better this way.</p>
+<p>To make that happen, you need to specify mipmap=True when you create a
+texture. Some widgets already give you the ability to create mipmapped
+textures, such as the <a class="reference internal" href="api-kivy.uix.label.html#kivy.uix.label.Label" title="kivy.uix.label.Label"><code class="xref py py-class docutils literal"><span class="pre">Label</span></code></a> and
+<a class="reference internal" href="api-kivy.uix.image.html#kivy.uix.image.Image" title="kivy.uix.image.Image"><code class="xref py py-class docutils literal"><span class="pre">Image</span></code></a>.</p>
+<p>From the OpenGL Wiki : &#8220;So a 64x16 2D texture can have 5 mip-maps: 32x8, 16x4,
+8x2, 4x1, 2x1, and 1x1&#8221;. Check <a class="reference external" href="http://www.opengl.org/wiki/Texture">http://www.opengl.org/wiki/Texture</a> for more
+information.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">As the table in previous section said, if your texture is NPOT, we
+create the nearest POT texture and generate a mipmap from it. This
+might change in the future.</p>
+</div>
+</div>
+<div class="section" id="reloading-the-texture">
+<h2>Reloading the Texture<a class="headerlink" href="#reloading-the-texture" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.2.0 で追加.</span></p>
+</div>
+<p>If the OpenGL context is lost, the Texture must be reloaded. Textures that have
+a source are automatically reloaded but generated textures must
+be reloaded by the user.</p>
+<p>Use the <a class="reference internal" href="#kivy.graphics.texture.Texture.add_reload_observer" title="kivy.graphics.texture.Texture.add_reload_observer"><code class="xref py py-meth docutils literal"><span class="pre">Texture.add_reload_observer()</span></code></a> to add a reloading function that
+will be automatically called when needed:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="nb">super</span><span class="p">(</span><span class="o">...</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">texture</span> <span class="o">=</span> <span class="n">Texture</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">),</span> <span class="n">colorfmt</span><span class="o">=</span><span class="s1">&#39;RGB&#39;</span><span class="p">,</span>
+        <span class="n">bufferfmt</span><span class="o">=</span><span class="s1">&#39;ubyte&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">texture</span><span class="o">.</span><span class="n">add_reload_observer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">populate_texture</span><span class="p">)</span>
+
+    <span class="c1"># and load the data now.</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">cbuffer</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\x00\xf0\xff</span><span class="s1">&#39;</span> <span class="o">*</span> <span class="mi">512</span> <span class="o">*</span> <span class="mi">512</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">populate_texture</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">texture</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">populate_texture</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">texture</span><span class="p">):</span>
+    <span class="n">texture</span><span class="o">.</span><span class="n">blit_buffer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cbuffer</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This way, you can use the same method for initialization and reloading.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">For all text rendering with our core text renderer, the texture is generated
+but we already bind a method to redo the text rendering and reupload
+the text to the texture. You don&#8217;t have to do anything.</p>
+</div>
+<dl class="class">
+<dt id="kivy.graphics.texture.Texture">
+<em class="property">class </em><code class="descclassname">kivy.graphics.texture.</code><code class="descname">Texture</code><a class="headerlink" href="#kivy.graphics.texture.Texture" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal"><span class="pre">builtins.object</span></code></p>
+<p>Handle an OpenGL texture. This class can be used to create simple
+textures or complex textures based on ImageData.</p>
+<dl class="method">
+<dt id="kivy.graphics.texture.Texture.add_reload_observer">
+<code class="descname">add_reload_observer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.texture.Texture.add_reload_observer" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Add a callback to be called after the whole graphics context has
+been reloaded. This is where you can reupload your custom data into
+the GPU.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.2.0 で追加.</span></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>callback</cite>: func(context) -&gt; return None</dt>
+<dd><p class="first last">The first parameter will be the context itself.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.graphics.texture.Texture.ask_update">
+<code class="descname">ask_update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.texture.Texture.ask_update" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Indicate that the content of the texture should be updated and the
+callback function needs to be called when the texture will be
+used.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.graphics.texture.Texture.bind">
+<code class="descname">bind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.texture.Texture.bind" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Bind the texture to the current opengl state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.graphics.texture.Texture.blit_buffer">
+<code class="descname">blit_buffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.texture.Texture.blit_buffer" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Blit a buffer into the texture.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Unless the canvas will be updated due to other changes,
+<a class="reference internal" href="api-kivy.graphics.instructions.html#kivy.graphics.instructions.Canvas.ask_update" title="kivy.graphics.instructions.Canvas.ask_update"><code class="xref py py-meth docutils literal"><span class="pre">ask_update()</span></code></a> should be
+called in order to update the texture.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>pbuffer</cite>: bytes, or a class that implements the buffer interface (including memoryview).</dt>
+<dd><p class="first last">A buffer containing the image data. It can be either a bytes
+object or a instance of a class that implements the python
+buffer interface, e.g. <cite>array.array</cite>, <cite>bytearray</cite>, numpy arrays
+etc. If it&#8217;s not a bytes object, the underlying buffer must
+be contiguous, have only one dimension and must not be
+readonly, even though the data is not modified, due to a cython
+limitation. See module description for usage details.</p>
+</dd>
+<dt><cite>size</cite>: tuple, defaults to texture size</dt>
+<dd><p class="first last">Size of the image (width, height)</p>
+</dd>
+<dt><cite>colorfmt</cite>: str, defaults to &#8216;rgb&#8217;</dt>
+<dd><p class="first last">Image format, can be one of &#8216;rgb&#8217;, &#8216;rgba&#8217;, &#8216;bgr&#8217;, &#8216;bgra&#8217;,
+&#8216;luminance&#8217; or &#8216;luminance_alpha&#8217;.</p>
+</dd>
+<dt><cite>pos</cite>: tuple, defaults to (0, 0)</dt>
+<dd><p class="first last">Position to blit in the texture.</p>
+</dd>
+<dt><cite>bufferfmt</cite>: str, defaults to &#8216;ubyte&#8217;</dt>
+<dd><p class="first last">Type of the data buffer, can be one of &#8216;ubyte&#8217;, &#8216;ushort&#8217;,
+&#8216;uint&#8217;, &#8216;byte&#8217;, &#8216;short&#8217;, &#8216;int&#8217; or &#8216;float&#8217;.</p>
+</dd>
+<dt><cite>mipmap_level</cite>: int, defaults to 0</dt>
+<dd><p class="first last">Indicate which mipmap level we are going to update.</p>
+</dd>
+<dt><cite>mipmap_generation</cite>: bool, defaults to True</dt>
+<dd><p class="first last">Indicate if we need to regenerate the mipmap from level 0.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.0.7 で変更: </span>added <cite>mipmap_level</cite> and <cite>mipmap_generation</cite></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.9.0 で変更: </span><cite>pbuffer</cite> can now be any class instance that implements the python
+buffer interface and / or memoryviews thereof.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.graphics.texture.Texture.blit_data">
+<code class="descname">blit_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.texture.Texture.blit_data" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Replace a whole texture with image data.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.graphics.texture.Texture.bufferfmt">
+<code class="descname">bufferfmt</code><a class="headerlink" href="#kivy.graphics.texture.Texture.bufferfmt" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return the buffer format used in this texture (readonly).</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.2.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.graphics.texture.Texture.colorfmt">
+<code class="descname">colorfmt</code><a class="headerlink" href="#kivy.graphics.texture.Texture.colorfmt" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return the color format used in this texture (readonly).</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.7 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="kivy.graphics.texture.Texture.create">
+<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.texture.Texture.create" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Create a texture based on size.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>size</cite>: tuple, defaults to (128, 128)</dt>
+<dd><p class="first last">Size of the texture.</p>
+</dd>
+<dt><cite>colorfmt</cite>: str, defaults to &#8216;rgba&#8217;</dt>
+<dd><p class="first last">Color format of the texture. Can be &#8216;rgba&#8217; or &#8216;rgb&#8217;,
+&#8216;luminance&#8217; or &#8216;luminance_alpha&#8217;. On desktop, additional values are
+available: &#8216;red&#8217;, &#8216;rg&#8217;.</p>
+</dd>
+<dt><cite>icolorfmt</cite>: str, defaults to the value of <cite>colorfmt</cite></dt>
+<dd><p class="first last">Internal format storage of the texture. Can be &#8216;rgba&#8217; or &#8216;rgb&#8217;,
+&#8216;luminance&#8217; or &#8216;luminance_alpha&#8217;. On desktop, additional values are
+available: &#8216;r8&#8217;, &#8216;rg8&#8217;, &#8216;rgba8&#8217;.</p>
+</dd>
+<dt><cite>bufferfmt</cite>: str, defaults to &#8216;ubyte&#8217;</dt>
+<dd><p class="first last">Internal buffer format of the texture. Can be &#8216;ubyte&#8217;, &#8216;ushort&#8217;,
+&#8216;uint&#8217;, &#8216;bute&#8217;, &#8216;short&#8217;, &#8216;int&#8217; or &#8216;float&#8217;.</p>
+</dd>
+<dt><cite>mipmap</cite>: bool, defaults to False</dt>
+<dd><p class="first last">If True, it will automatically generate the mipmap texture.</p>
+</dd>
+<dt><cite>callback</cite>: callable(), defaults to False</dt>
+<dd><p class="first last">If a function is provided, it will be called when data is
+needed in the texture.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.7.0 で変更: </span><code class="xref py py-attr docutils literal"><span class="pre">callback</span></code> has been added</p>
+</div>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="kivy.graphics.texture.Texture.create_from_data">
+<em class="property">static </em><code class="descname">create_from_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.texture.Texture.create_from_data" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Create a texture from an ImageData class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.graphics.texture.Texture.flip_horizontal">
+<code class="descname">flip_horizontal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.texture.Texture.flip_horizontal" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Flip tex_coords for horizontal display.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.graphics.texture.Texture.flip_vertical">
+<code class="descname">flip_vertical</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.texture.Texture.flip_vertical" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Flip tex_coords for vertical display.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.graphics.texture.Texture.get_region">
+<code class="descname">get_region</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.texture.Texture.get_region" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return a part of the texture defined by the rectangular arguments
+(x, y, width, height). Returns a <a class="reference internal" href="#kivy.graphics.texture.TextureRegion" title="kivy.graphics.texture.TextureRegion"><code class="xref py py-class docutils literal"><span class="pre">TextureRegion</span></code></a> instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.graphics.texture.Texture.height">
+<code class="descname">height</code><a class="headerlink" href="#kivy.graphics.texture.Texture.height" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return the height of the texture (readonly).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.graphics.texture.Texture.id">
+<code class="descname">id</code><a class="headerlink" href="#kivy.graphics.texture.Texture.id" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return the OpenGL ID of the texture (readonly).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.graphics.texture.Texture.mag_filter">
+<code class="descname">mag_filter</code><a class="headerlink" href="#kivy.graphics.texture.Texture.mag_filter" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Get/set the mag filter texture. Available values:</p>
+<ul class="simple">
+<li>linear</li>
+<li>nearest</li>
+</ul>
+<p>Check the opengl documentation for more information about the behavior
+of these values :
+<a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glTexParameter.xml">http://www.khronos.org/opengles/sdk/docs/man/xhtml/glTexParameter.xml</a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.graphics.texture.Texture.min_filter">
+<code class="descname">min_filter</code><a class="headerlink" href="#kivy.graphics.texture.Texture.min_filter" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Get/set the min filter texture. Available values:</p>
+<ul class="simple">
+<li>linear</li>
+<li>nearest</li>
+<li>linear_mipmap_linear</li>
+<li>linear_mipmap_nearest</li>
+<li>nearest_mipmap_nearest</li>
+<li>nearest_mipmap_linear</li>
+</ul>
+<p>Check the opengl documentation for more information about the behavior
+of these values :
+<a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glTexParameter.xml">http://www.khronos.org/opengles/sdk/docs/man/xhtml/glTexParameter.xml</a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.graphics.texture.Texture.mipmap">
+<code class="descname">mipmap</code><a class="headerlink" href="#kivy.graphics.texture.Texture.mipmap" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return True if the texture has mipmap enabled (readonly).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.graphics.texture.Texture.pixels">
+<code class="descname">pixels</code><a class="headerlink" href="#kivy.graphics.texture.Texture.pixels" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Get the pixels texture, in RGBA format only, unsigned byte. The
+origin of the image is at bottom left.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.7.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.graphics.texture.Texture.remove_reload_observer">
+<code class="descname">remove_reload_observer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.texture.Texture.remove_reload_observer" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Remove a callback from the observer list, previously added by
+<a class="reference internal" href="#kivy.graphics.texture.Texture.add_reload_observer" title="kivy.graphics.texture.Texture.add_reload_observer"><code class="xref py py-meth docutils literal"><span class="pre">add_reload_observer()</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.2.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.graphics.texture.Texture.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.texture.Texture.save" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Save the texture content to a file. Check
+<a class="reference internal" href="api-kivy.core.image.html#kivy.core.image.Image.save" title="kivy.core.image.Image.save"><code class="xref py py-meth docutils literal"><span class="pre">kivy.core.image.Image.save()</span></code></a> for more information.</p>
+<p>The flipped parameter flips the saved image vertically, and
+defaults to True.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.7.0 で追加.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.8.0 で変更: </span>Parameter <cite>flipped</cite> added, defaults to True. All the OpenGL Texture
+are readed from bottom / left, it need to be flipped before saving.
+If you don&#8217;t want to flip the image, set flipped to False.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.graphics.texture.Texture.size">
+<code class="descname">size</code><a class="headerlink" href="#kivy.graphics.texture.Texture.size" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return the (width, height) of the texture (readonly).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.graphics.texture.Texture.target">
+<code class="descname">target</code><a class="headerlink" href="#kivy.graphics.texture.Texture.target" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return the OpenGL target of the texture (readonly).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.graphics.texture.Texture.tex_coords">
+<code class="descname">tex_coords</code><a class="headerlink" href="#kivy.graphics.texture.Texture.tex_coords" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return the list of tex_coords (opengl).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.graphics.texture.Texture.uvpos">
+<code class="descname">uvpos</code><a class="headerlink" href="#kivy.graphics.texture.Texture.uvpos" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Get/set the UV position inside the texture.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.graphics.texture.Texture.uvsize">
+<code class="descname">uvsize</code><a class="headerlink" href="#kivy.graphics.texture.Texture.uvsize" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Get/set the UV size inside the texture.</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">The size can be negative if the texture is flipped.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.graphics.texture.Texture.width">
+<code class="descname">width</code><a class="headerlink" href="#kivy.graphics.texture.Texture.width" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return the width of the texture (readonly).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.graphics.texture.Texture.wrap">
+<code class="descname">wrap</code><a class="headerlink" href="#kivy.graphics.texture.Texture.wrap" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Get/set the wrap texture. Available values:</p>
+<ul class="simple">
+<li>repeat</li>
+<li>mirrored_repeat</li>
+<li>clamp_to_edge</li>
+</ul>
+<p>Check the opengl documentation for more information about the behavior
+of these values :
+<a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glTexParameter.xml">http://www.khronos.org/opengles/sdk/docs/man/xhtml/glTexParameter.xml</a>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="kivy.graphics.texture.TextureRegion">
+<em class="property">class </em><code class="descclassname">kivy.graphics.texture.</code><code class="descname">TextureRegion</code><a class="headerlink" href="#kivy.graphics.texture.TextureRegion" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ベースクラス: <a class="reference internal" href="#kivy.graphics.texture.Texture" title="kivy.graphics.texture.Texture"><code class="xref py py-class docutils literal"><span class="pre">kivy.graphics.texture.Texture</span></code></a></p>
+<p>Handle a region of a Texture class. Useful for non power-of-2
+texture handling.</p>
+</dd></dl>
+
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+
+            <div class="footerlinks">
+            <table>
+                <tr>
+                    <td class="leftlink">
+                  <a href="api-kivy.graphics.tesselator.html" title="previous chapter">&laquo; Tesselator</a></li>
+                  </td>
+                  <td class="rightlink">
+                  <a href="api-kivy.graphics.transformation.html" title="next chapter">Transformation &raquo;</a>
+                      </td>
+                  </tr>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 29, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

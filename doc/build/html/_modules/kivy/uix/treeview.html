@@ -1,0 +1,1049 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>kivy.uix.treeview &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../_static/kivy.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="../../../index.html" />
+    <link rel="up" title="kivy" href="../../kivy.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../../../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="../../../gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../../../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../../../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../../../index.html">kivy.uix.treeview</a></h3>
+          
+          <h3><a href="../../../index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2></div>
+            
+  <h1>kivy.uix.treeview のソースコード</h1><div class="highlight"><pre>
+<span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Tree View</span>
+<span class="sd">=========</span>
+
+<span class="sd">.. image:: images/treeview.png</span>
+<span class="sd">    :align: right</span>
+
+<span class="sd">.. versionadded:: 1.0.4</span>
+
+
+<span class="sd">:class:`TreeView` is a widget used to represent a tree structure. It is</span>
+<span class="sd">currently very basic, supporting a minimal feature set.</span>
+
+<span class="sd">Introduction</span>
+<span class="sd">------------</span>
+
+<span class="sd">A :class:`TreeView` is populated with :class:`TreeViewNode` instances, but you</span>
+<span class="sd">cannot use a :class:`TreeViewNode` directly. You must combine it with another</span>
+<span class="sd">widget, such as :class:`~kivy.uix.label.Label`,</span>
+<span class="sd">:class:`~kivy.uix.button.Button` or even your own widget. The TreeView</span>
+<span class="sd">always creates a default root node, based on :class:`TreeViewLabel`.</span>
+
+<span class="sd">:class:`TreeViewNode` is a class object containing needed properties for</span>
+<span class="sd">serving as a tree node. Extend :class:`TreeViewNode` to create custom node</span>
+<span class="sd">types for use with a :class:`TreeView`.</span>
+
+<span class="sd">For constructing your own subclass, follow the pattern of TreeViewLabel which</span>
+<span class="sd">combines a Label and a TreeViewNode, producing a :class:`TreeViewLabel` for</span>
+<span class="sd">direct use in a TreeView instance.</span>
+
+<span class="sd">To use the TreeViewLabel class, you could create two nodes directly attached</span>
+<span class="sd">to root::</span>
+
+<span class="sd">    tv = TreeView()</span>
+<span class="sd">    tv.add_node(TreeViewLabel(text=&#39;My first item&#39;))</span>
+<span class="sd">    tv.add_node(TreeViewLabel(text=&#39;My second item&#39;))</span>
+
+<span class="sd">Or, create two nodes attached to a first::</span>
+
+<span class="sd">    tv = TreeView()</span>
+<span class="sd">    n1 = tv.add_node(TreeViewLabel(text=&#39;Item 1&#39;))</span>
+<span class="sd">    tv.add_node(TreeViewLabel(text=&#39;SubItem 1&#39;), n1)</span>
+<span class="sd">    tv.add_node(TreeViewLabel(text=&#39;SubItem 2&#39;), n1)</span>
+
+<span class="sd">If you have a large tree structure, perhaps you would need a utility function</span>
+<span class="sd">to populate the tree view::</span>
+
+<span class="sd">    def populate_tree_view(tree_view, parent, node):</span>
+<span class="sd">        if parent is None:</span>
+<span class="sd">            tree_node = tree_view.add_node(TreeViewLabel(text=node[&#39;node_id&#39;],</span>
+<span class="sd">                                                         is_open=True))</span>
+<span class="sd">        else:</span>
+<span class="sd">            tree_node = tree_view.add_node(TreeViewLabel(text=node[&#39;node_id&#39;],</span>
+<span class="sd">                                                         is_open=True), parent)</span>
+
+<span class="sd">        for child_node in node[&#39;children&#39;]:</span>
+<span class="sd">            populate_tree_view(tree_view, tree_node, child_node)</span>
+
+
+<span class="sd">    tree = {&#39;node_id&#39;: &#39;1&#39;,</span>
+<span class="sd">            &#39;children&#39;: [{&#39;node_id&#39;: &#39;1.1&#39;,</span>
+<span class="sd">                          &#39;children&#39;: [{&#39;node_id&#39;: &#39;1.1.1&#39;,</span>
+<span class="sd">                                        &#39;children&#39;: [{&#39;node_id&#39;: &#39;1.1.1.1&#39;,</span>
+<span class="sd">                                                      &#39;children&#39;: []}]},</span>
+<span class="sd">                                       {&#39;node_id&#39;: &#39;1.1.2&#39;,</span>
+<span class="sd">                                        &#39;children&#39;: []},</span>
+<span class="sd">                                       {&#39;node_id&#39;: &#39;1.1.3&#39;,</span>
+<span class="sd">                                        &#39;children&#39;: []}]},</span>
+<span class="sd">                          {&#39;node_id&#39;: &#39;1.2&#39;,</span>
+<span class="sd">                           &#39;children&#39;: []}]}</span>
+
+
+<span class="sd">    class TreeWidget(FloatLayout):</span>
+<span class="sd">        def __init__(self, **kwargs):</span>
+<span class="sd">            super(TreeWidget, self).__init__(**kwargs)</span>
+
+<span class="sd">            tv = TreeView(root_options=dict(text=&#39;Tree One&#39;),</span>
+<span class="sd">                          hide_root=False,</span>
+<span class="sd">                          indent_level=4)</span>
+
+<span class="sd">            populate_tree_view(tv, None, tree)</span>
+
+<span class="sd">            self.add_widget(tv)</span>
+
+<span class="sd">The root widget in the tree view is opened by default and has text set as</span>
+<span class="sd">&#39;Root&#39;. If you want to change that, you can use the</span>
+<span class="sd">:attr:`TreeView.root_options`</span>
+<span class="sd">property. This will pass options to the root widget::</span>
+
+<span class="sd">    tv = TreeView(root_options=dict(text=&#39;My root label&#39;))</span>
+
+
+<span class="sd">Creating Your Own Node Widget</span>
+<span class="sd">-----------------------------</span>
+
+<span class="sd">For a button node type, combine a :class:`~kivy.uix.button.Button` and a</span>
+<span class="sd">:class:`TreeViewNode` as follows::</span>
+
+<span class="sd">    class TreeViewButton(Button, TreeViewNode):</span>
+<span class="sd">        pass</span>
+
+<span class="sd">You must know that, for a given node, only the</span>
+<span class="sd">:attr:`~kivy.uix.widget.Widget.size_hint_x` will be honored. The allocated</span>
+<span class="sd">width for the node will depend of the current width of the TreeView and the</span>
+<span class="sd">level of the node. For example, if a node is at level 4, the width</span>
+<span class="sd">allocated will be:</span>
+
+<span class="sd">    treeview.width - treeview.indent_start - treeview.indent_level * node.level</span>
+
+<span class="sd">You might have some trouble with that. It is the developer&#39;s responsibility to</span>
+<span class="sd">correctly handle adapting the graphical representation nodes, if needed.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">from</span> <span class="nn">kivy.clock</span> <span class="k">import</span> <span class="n">Clock</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.label</span> <span class="k">import</span> <span class="n">Label</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.widget</span> <span class="k">import</span> <span class="n">Widget</span>
+<span class="kn">from</span> <span class="nn">kivy.properties</span> <span class="k">import</span> <span class="n">BooleanProperty</span><span class="p">,</span> <span class="n">ListProperty</span><span class="p">,</span> <span class="n">ObjectProperty</span><span class="p">,</span> \
+    <span class="n">AliasProperty</span><span class="p">,</span> <span class="n">NumericProperty</span><span class="p">,</span> <span class="n">ReferenceListProperty</span>
+
+
+<div class="viewcode-block" id="TreeViewException"><a class="viewcode-back" href="../../../api-kivy.uix.treeview.html#kivy.uix.treeview.TreeViewException">[ドキュメント]</a><span class="k">class</span> <span class="nc">TreeViewException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Exception for errors in the :class:`TreeView`.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="TreeViewNode"><a class="viewcode-back" href="../../../api-kivy.uix.treeview.html#kivy.uix.treeview.TreeViewNode">[ドキュメント]</a><span class="k">class</span> <span class="nc">TreeViewNode</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;TreeViewNode class, used to build a node class for a TreeView object.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span> <span class="ow">is</span> <span class="n">TreeViewNode</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">TreeViewException</span><span class="p">(</span><span class="s1">&#39;You cannot use directly TreeViewNode.&#39;</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">TreeViewNode</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="n">is_leaf</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Boolean to indicate whether this node is a leaf or not. Used to adjust</span>
+<span class="sd">    the graphical representation.</span>
+
+<span class="sd">    :attr:`is_leaf` is a :class:`~kivy.properties.BooleanProperty` and defaults</span>
+<span class="sd">    to True. It is automatically set to False when child is added.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">is_open</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Boolean to indicate whether this node is opened or not, in case there</span>
+<span class="sd">    are child nodes. This is used to adjust the graphical representation.</span>
+
+<span class="sd">    .. warning::</span>
+
+<span class="sd">        This property is automatically set by the :class:`TreeView`. You can</span>
+<span class="sd">        read but not write it.</span>
+
+<span class="sd">    :attr:`is_open` is a :class:`~kivy.properties.BooleanProperty` and defaults</span>
+<span class="sd">    to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">is_loaded</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Boolean to indicate whether this node is already loaded or not. This</span>
+<span class="sd">    property is used only if the :class:`TreeView` uses asynchronous loading.</span>
+
+<span class="sd">    :attr:`is_loaded` is a :class:`~kivy.properties.BooleanProperty` and</span>
+<span class="sd">    defaults to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">is_selected</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Boolean to indicate whether this node is selected or not. This is used</span>
+<span class="sd">    adjust the graphical representation.</span>
+
+<span class="sd">    .. warning::</span>
+
+<span class="sd">        This property is automatically set by the :class:`TreeView`. You can</span>
+<span class="sd">        read but not write it.</span>
+
+<span class="sd">    :attr:`is_selected` is a :class:`~kivy.properties.BooleanProperty` and</span>
+<span class="sd">    defaults to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">no_selection</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Boolean used to indicate whether selection of the node is allowed or</span>
+<span class="sd">     not.</span>
+
+<span class="sd">    :attr:`no_selection` is a :class:`~kivy.properties.BooleanProperty` and</span>
+<span class="sd">    defaults to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">nodes</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([])</span>
+    <span class="sd">&#39;&#39;&#39;List of nodes. The nodes list is different than the children list. A</span>
+<span class="sd">    node in the nodes list represents a node on the tree. An item in the</span>
+<span class="sd">    children list represents the widget associated with the node.</span>
+
+<span class="sd">    .. warning::</span>
+
+<span class="sd">        This property is automatically set by the :class:`TreeView`. You can</span>
+<span class="sd">        read but not write it.</span>
+
+<span class="sd">    :attr:`nodes` is a :class:`~kivy.properties.ListProperty` and defaults to</span>
+<span class="sd">    [].</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">parent_node</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">allownone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Parent node. This attribute is needed because the :attr:`parent` can be</span>
+<span class="sd">    None when the node is not displayed.</span>
+
+<span class="sd">    .. versionadded:: 1.0.7</span>
+
+<span class="sd">    :attr:`parent_node` is an :class:`~kivy.properties.ObjectProperty` and</span>
+<span class="sd">    defaults to None.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">level</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Level of the node.</span>
+
+<span class="sd">    :attr:`level` is a :class:`~kivy.properties.NumericProperty` and defaults</span>
+<span class="sd">    to -1.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">color_selected</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([</span><span class="o">.</span><span class="mi">3</span><span class="p">,</span> <span class="o">.</span><span class="mi">3</span><span class="p">,</span> <span class="o">.</span><span class="mi">3</span><span class="p">,</span> <span class="mf">1.</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;Background color of the node when the node is selected.</span>
+
+<span class="sd">    :attr:`color_selected` is a :class:`~kivy.properties.ListProperty` and</span>
+<span class="sd">    defaults to [.1, .1, .1, 1].</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">odd</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    This property is set by the TreeView widget automatically and is read-only.</span>
+
+<span class="sd">    :attr:`odd` is a :class:`~kivy.properties.BooleanProperty` and defaults to</span>
+<span class="sd">    False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">odd_color</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="o">.</span><span class="mi">0</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;Background color of odd nodes when the node is not selected.</span>
+
+<span class="sd">    :attr:`odd_color` is a :class:`~kivy.properties.ListProperty` and defaults</span>
+<span class="sd">    to [1., 1., 1., 0.].</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">even_color</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;Background color of even nodes when the node is not selected.</span>
+
+<span class="sd">    :attr:`bg_color` is a :class:`~kivy.properties.ListProperty` ans defaults</span>
+<span class="sd">    to [.5, .5, .5, .1].</span>
+<span class="sd">    &#39;&#39;&#39;</span></div>
+
+
+<div class="viewcode-block" id="TreeViewLabel"><a class="viewcode-back" href="../../../api-kivy.uix.treeview.html#kivy.uix.treeview.TreeViewLabel">[ドキュメント]</a><span class="k">class</span> <span class="nc">TreeViewLabel</span><span class="p">(</span><span class="n">Label</span><span class="p">,</span> <span class="n">TreeViewNode</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Combines a :class:`~kivy.uix.label.Label` and a :class:`TreeViewNode` to</span>
+<span class="sd">    create a :class:`TreeViewLabel` that can be used as a text node in the</span>
+<span class="sd">    tree.</span>
+
+<span class="sd">    See module documentation for more information.</span>
+<span class="sd">    &#39;&#39;&#39;</span></div>
+
+
+<div class="viewcode-block" id="TreeView"><a class="viewcode-back" href="../../../api-kivy.uix.treeview.html#kivy.uix.treeview.TreeView">[ドキュメント]</a><span class="k">class</span> <span class="nc">TreeView</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;TreeView class. See module documentation for more information.</span>
+
+<span class="sd">    :Events:</span>
+<span class="sd">        `on_node_expand`: (node, )</span>
+<span class="sd">            Fired when a node is being expanded</span>
+<span class="sd">        `on_node_collapse`: (node, )</span>
+<span class="sd">            Fired when a node is being collapsed</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">__events__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;on_node_expand&#39;</span><span class="p">,</span> <span class="s1">&#39;on_node_collapse&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_layout</span> <span class="o">=</span> <span class="n">Clock</span><span class="o">.</span><span class="n">create_trigger</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_do_layout</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">TreeView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">tvlabel</span> <span class="o">=</span> <span class="n">TreeViewLabel</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Root&#39;</span><span class="p">,</span> <span class="n">is_open</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">root_options</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="n">tvlabel</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">tvlabel</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="n">trigger</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_layout</span>
+        <span class="n">fbind</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fbind</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;pos&#39;</span><span class="p">,</span> <span class="n">trigger</span><span class="p">)</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="n">trigger</span><span class="p">)</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;indent_level&#39;</span><span class="p">,</span> <span class="n">trigger</span><span class="p">)</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;indent_start&#39;</span><span class="p">,</span> <span class="n">trigger</span><span class="p">)</span>
+        <span class="n">trigger</span><span class="p">()</span>
+
+<div class="viewcode-block" id="TreeView.add_node"><a class="viewcode-back" href="../../../api-kivy.uix.treeview.html#kivy.uix.treeview.TreeView.add_node">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">add_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Add a new node to the tree.</span>
+
+<span class="sd">        :Parameters:</span>
+<span class="sd">            `node`: instance of a :class:`TreeViewNode`</span>
+<span class="sd">                Node to add into the tree</span>
+<span class="sd">            `parent`: instance of a :class:`TreeViewNode`, defaults to None</span>
+<span class="sd">                Parent node to attach the new node. If `None`, it is added to</span>
+<span class="sd">                the :attr:`root` node.</span>
+
+<span class="sd">        :returns:</span>
+<span class="sd">            the node `node`.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="c1"># check if the widget is &quot;ok&quot; for a node</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">TreeViewNode</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">TreeViewException</span><span class="p">(</span>
+                <span class="s1">&#39;The node must be a subclass of TreeViewNode&#39;</span><span class="p">)</span>
+        <span class="c1"># create node</span>
+        <span class="k">if</span> <span class="n">parent</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_root</span><span class="p">:</span>
+            <span class="n">parent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_root</span>
+        <span class="k">if</span> <span class="n">parent</span><span class="p">:</span>
+            <span class="n">parent</span><span class="o">.</span><span class="n">is_leaf</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">parent</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">parent_node</span> <span class="o">=</span> <span class="n">parent</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="n">level</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_layout</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_layout</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">node</span></div>
+
+<div class="viewcode-block" id="TreeView.remove_node"><a class="viewcode-back" href="../../../api-kivy.uix.treeview.html#kivy.uix.treeview.TreeView.remove_node">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">remove_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Removes a node from the tree.</span>
+
+<span class="sd">        .. versionadded:: 1.0.7</span>
+
+<span class="sd">        :Parameters:</span>
+<span class="sd">            `node`: instance of a :class:`TreeViewNode`</span>
+<span class="sd">                Node to remove from the tree. If `node` is :attr:`root`, it is</span>
+<span class="sd">                not removed.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="c1"># check if the widget is &quot;ok&quot; for a node</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">TreeViewNode</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">TreeViewException</span><span class="p">(</span>
+                <span class="s1">&#39;The node must be a subclass of TreeViewNode&#39;</span><span class="p">)</span>
+        <span class="n">parent</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">parent_node</span>
+        <span class="k">if</span> <span class="n">parent</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_node</span><span class="p">:</span>
+                <span class="n">node</span><span class="o">.</span><span class="n">is_selected</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_selected_node</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="n">nodes</span>
+            <span class="k">if</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+                <span class="n">nodes</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+            <span class="n">parent</span><span class="o">.</span><span class="n">is_leaf</span> <span class="o">=</span> <span class="ow">not</span> <span class="nb">bool</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">))</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">parent_node</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">funbind</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_layout</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_layout</span><span class="p">()</span></div>
+
+    <span class="k">def</span> <span class="nf">on_node_expand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">on_node_collapse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<div class="viewcode-block" id="TreeView.select_node"><a class="viewcode-back" href="../../../api-kivy.uix.treeview.html#kivy.uix.treeview.TreeView.select_node">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">select_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Select a node in the tree.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">no_selection</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_node</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_selected_node</span><span class="o">.</span><span class="n">is_selected</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">is_selected</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_selected_node</span> <span class="o">=</span> <span class="n">node</span></div>
+
+<div class="viewcode-block" id="TreeView.deselect_node"><a class="viewcode-back" href="../../../api-kivy.uix.treeview.html#kivy.uix.treeview.TreeView.deselect_node">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">deselect_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Deselect any selected node.</span>
+
+<span class="sd">        .. versionadded:: 1.10.0</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_node</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_selected_node</span><span class="o">.</span><span class="n">is_selected</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+<div class="viewcode-block" id="TreeView.toggle_node"><a class="viewcode-back" href="../../../api-kivy.uix.treeview.html#kivy.uix.treeview.TreeView.toggle_node">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">toggle_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Toggle the state of the node (open/collapsed).</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">is_open</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">node</span><span class="o">.</span><span class="n">is_open</span>
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">is_open</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_func</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">node</span><span class="o">.</span><span class="n">is_loaded</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_do_node_load</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="s1">&#39;on_node_expand&#39;</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="s1">&#39;on_node_collapse&#39;</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_layout</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="TreeView.get_node_at_pos"><a class="viewcode-back" href="../../../api-kivy.uix.treeview.html#kivy.uix.treeview.TreeView.get_node_at_pos">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">get_node_at_pos</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Get the node at the position (x, y).</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pos</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">iterate_open_nodes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="ow">and</span> \
+               <span class="n">node</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;=</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="n">node</span><span class="o">.</span><span class="n">top</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">node</span></div>
+
+<div class="viewcode-block" id="TreeView.iterate_open_nodes"><a class="viewcode-back" href="../../../api-kivy.uix.treeview.html#kivy.uix.treeview.TreeView.iterate_open_nodes">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">iterate_open_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Generator to iterate over all the expended nodes starting from</span>
+<span class="sd">        `node` and down. If `node` is `None`, the generator start with</span>
+<span class="sd">        :attr:`root`.</span>
+
+<span class="sd">        To get all the open nodes::</span>
+
+<span class="sd">            treeview = TreeView()</span>
+<span class="sd">            # ... add nodes ...</span>
+<span class="sd">            for node in treeview.iterate_open_nodes():</span>
+<span class="sd">                print(node)</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">node</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hide_root</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">is</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">node</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">node</span><span class="o">.</span><span class="n">is_open</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">iterate_open_nodes</span>
+        <span class="k">for</span> <span class="n">cnode</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">ynode</span> <span class="ow">in</span> <span class="n">f</span><span class="p">(</span><span class="n">cnode</span><span class="p">):</span>
+                <span class="k">yield</span> <span class="n">ynode</span></div>
+
+<div class="viewcode-block" id="TreeView.iterate_all_nodes"><a class="viewcode-back" href="../../../api-kivy.uix.treeview.html#kivy.uix.treeview.TreeView.iterate_all_nodes">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">iterate_all_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Generator to iterate over all nodes from `node` and down whether</span>
+<span class="sd">        expanded or not. If `node` is `None`, the generator start with</span>
+<span class="sd">        :attr:`root`.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">node</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span>
+        <span class="k">yield</span> <span class="n">node</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">iterate_all_nodes</span>
+        <span class="k">for</span> <span class="n">cnode</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">ynode</span> <span class="ow">in</span> <span class="n">f</span><span class="p">(</span><span class="n">cnode</span><span class="p">):</span>
+                <span class="k">yield</span> <span class="n">ynode</span></div>
+
+    <span class="c1">#</span>
+    <span class="c1"># Private</span>
+    <span class="c1">#</span>
+    <span class="k">def</span> <span class="nf">on_load_func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span><span class="p">:</span>
+            <span class="n">Clock</span><span class="o">.</span><span class="n">schedule_once</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_do_initial_load</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_do_initial_load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">largs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_func</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_do_node_load</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_do_node_load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="n">gen</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">node</span><span class="p">:</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">is_loaded</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">gen</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">for</span> <span class="n">cnode</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">cnode</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_root_options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_do_layout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">largs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clear_widgets</span><span class="p">()</span>
+        <span class="c1"># display only the one who are is_open</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_do_open_node</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
+        <span class="c1"># now do layout</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_do_layout_node</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span><span class="p">)</span>
+        <span class="c1"># now iterate for calculating minimum size</span>
+        <span class="n">min_width</span> <span class="o">=</span> <span class="n">min_height</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">count</span><span class="p">,</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iterate_open_nodes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">)):</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">odd</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">count</span> <span class="o">%</span> <span class="mi">2</span> <span class="k">else</span> <span class="kc">True</span>
+            <span class="n">min_width</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">min_width</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">right</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+            <span class="n">min_height</span> <span class="o">+=</span> <span class="n">node</span><span class="o">.</span><span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">minimum_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">min_width</span><span class="p">,</span> <span class="n">min_height</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_do_open_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hide_root</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">is</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">:</span>
+            <span class="n">height</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+            <span class="n">height</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">height</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">node</span><span class="o">.</span><span class="n">is_open</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">height</span>
+        <span class="k">for</span> <span class="n">cnode</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+            <span class="n">height</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_do_open_node</span><span class="p">(</span><span class="n">cnode</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">height</span>
+
+    <span class="k">def</span> <span class="nf">_do_layout_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hide_root</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">is</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">:</span>
+            <span class="n">level</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">indent_start</span> <span class="o">+</span> <span class="n">level</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">indent_level</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">top</span> <span class="o">=</span> <span class="n">y</span>
+            <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">size_hint_x</span><span class="p">:</span>
+                <span class="n">node</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">))</span> \
+                    <span class="o">*</span> <span class="n">node</span><span class="o">.</span><span class="n">size_hint_x</span>
+            <span class="n">y</span> <span class="o">-=</span> <span class="n">node</span><span class="o">.</span><span class="n">height</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">node</span><span class="o">.</span><span class="n">is_open</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">y</span>
+        <span class="k">for</span> <span class="n">cnode</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_do_layout_node</span><span class="p">(</span><span class="n">cnode</span><span class="p">,</span> <span class="n">level</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_node_at_pos</span><span class="p">(</span><span class="n">touch</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">node</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">disabled</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="c1"># toggle node or selection ?</span>
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">indent_start</span> <span class="o">&lt;=</span> <span class="n">touch</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">node</span><span class="o">.</span><span class="n">x</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">toggle_node</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">node</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">touch</span><span class="o">.</span><span class="n">x</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">select_node</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="s1">&#39;on_touch_down&#39;</span><span class="p">,</span> <span class="n">touch</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># Private properties</span>
+    <span class="c1">#</span>
+    <span class="n">_root</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+    <span class="n">_selected_node</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">allownone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># Properties</span>
+    <span class="c1">#</span>
+
+    <span class="n">minimum_width</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Minimum width needed to contain all children.</span>
+
+<span class="sd">    .. versionadded:: 1.0.9</span>
+
+<span class="sd">    :attr:`minimum_width` is a :class:`kivy.properties.NumericProperty` and</span>
+<span class="sd">    defaults to 0.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">minimum_height</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Minimum height needed to contain all children.</span>
+
+<span class="sd">    .. versionadded:: 1.0.9</span>
+
+<span class="sd">    :attr:`minimum_height` is a :class:`kivy.properties.NumericProperty` and</span>
+<span class="sd">    defaults to 0.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">minimum_size</span> <span class="o">=</span> <span class="n">ReferenceListProperty</span><span class="p">(</span><span class="n">minimum_width</span><span class="p">,</span> <span class="n">minimum_height</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Minimum size needed to contain all children.</span>
+
+<span class="sd">    .. versionadded:: 1.0.9</span>
+
+<span class="sd">    :attr:`minimum_size` is a :class:`~kivy.properties.ReferenceListProperty`</span>
+<span class="sd">    of (:attr:`minimum_width`, :attr:`minimum_height`) properties.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">indent_level</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="s1">&#39;16dp&#39;</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Width used for the indentation of each level except the first level.</span>
+
+<span class="sd">    Computation of indent for each level of the tree is::</span>
+
+<span class="sd">        indent = indent_start + level * indent_level</span>
+
+<span class="sd">    :attr:`indent_level` is a :class:`~kivy.properties.NumericProperty` and</span>
+<span class="sd">    defaults to 16.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">indent_start</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="s1">&#39;24dp&#39;</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Indentation width of the level 0 / root node. This is mostly the initial</span>
+<span class="sd">    size to accommodate a tree icon (collapsed / expanded). See</span>
+<span class="sd">    :attr:`indent_level` for more information about the computation of level</span>
+<span class="sd">    indentation.</span>
+
+<span class="sd">    :attr:`indent_start` is a :class:`~kivy.properties.NumericProperty` and</span>
+<span class="sd">    defaults to 24.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">hide_root</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Use this property to show/hide the initial root node. If True, the root</span>
+<span class="sd">    node will be appear as a closed node.</span>
+
+<span class="sd">    :attr:`hide_root` is a :class:`~kivy.properties.BooleanProperty` and</span>
+<span class="sd">    defaults to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">get_selected_node</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_node</span>
+
+    <span class="n">selected_node</span> <span class="o">=</span> <span class="n">AliasProperty</span><span class="p">(</span><span class="n">get_selected_node</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span>
+                                  <span class="n">bind</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;_selected_node&#39;</span><span class="p">,</span> <span class="p">))</span>
+    <span class="sd">&#39;&#39;&#39;Node selected by :meth:`TreeView.select_node` or by touch.</span>
+
+<span class="sd">    :attr:`selected_node` is a :class:`~kivy.properties.AliasProperty` and</span>
+<span class="sd">    defaults to None. It is read-only.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">get_root</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_root</span>
+
+    <span class="n">root</span> <span class="o">=</span> <span class="n">AliasProperty</span><span class="p">(</span><span class="n">get_root</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">bind</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;_root&#39;</span><span class="p">,</span> <span class="p">))</span>
+    <span class="sd">&#39;&#39;&#39;Root node.</span>
+
+<span class="sd">    By default, the root node widget is a :class:`TreeViewLabel` with text</span>
+<span class="sd">    &#39;Root&#39;. If you want to change the default options passed to the widget</span>
+<span class="sd">    creation, use the :attr:`root_options` property::</span>
+
+<span class="sd">        treeview = TreeView(root_options={</span>
+<span class="sd">            &#39;text&#39;: &#39;Root directory&#39;,</span>
+<span class="sd">            &#39;font_size&#39;: 15})</span>
+
+<span class="sd">    :attr:`root_options` will change the properties of the</span>
+<span class="sd">    :class:`TreeViewLabel` instance. However, you cannot change the class used</span>
+<span class="sd">    for root node yet.</span>
+
+<span class="sd">    :attr:`root` is an :class:`~kivy.properties.AliasProperty` and defaults to</span>
+<span class="sd">    None. It is read-only. However, the content of the widget can be changed.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">root_options</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">({})</span>
+    <span class="sd">&#39;&#39;&#39;Default root options to pass for root widget. See :attr:`root` property</span>
+<span class="sd">    for more information about the usage of root_options.</span>
+
+<span class="sd">    :attr:`root_options` is an :class:`~kivy.properties.ObjectProperty` and</span>
+<span class="sd">    defaults to {}.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">load_func</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Callback to use for asynchronous loading. If set, asynchronous loading</span>
+<span class="sd">    will be automatically done. The callback must act as a Python generator</span>
+<span class="sd">    function, using yield to send data back to the treeview.</span>
+
+<span class="sd">    The callback should be in the format::</span>
+
+<span class="sd">        def callback(treeview, node):</span>
+<span class="sd">            for name in (&#39;Item 1&#39;, &#39;Item 2&#39;):</span>
+<span class="sd">                yield TreeViewLabel(text=name)</span>
+
+<span class="sd">    :attr:`load_func` is a :class:`~kivy.properties.ObjectProperty` and</span>
+<span class="sd">    defaults to None.</span>
+<span class="sd">    &#39;&#39;&#39;</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">kivy.app</span> <span class="k">import</span> <span class="n">App</span>
+
+    <span class="k">class</span> <span class="nc">TestApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+
+        <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">tv</span> <span class="o">=</span> <span class="n">TreeView</span><span class="p">(</span><span class="n">hide_root</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">add</span> <span class="o">=</span> <span class="n">tv</span><span class="o">.</span><span class="n">add_node</span>
+            <span class="n">root</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">TreeViewLabel</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Level 1, entry 1&#39;</span><span class="p">,</span> <span class="n">is_open</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+                <span class="n">add</span><span class="p">(</span><span class="n">TreeViewLabel</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Element </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">x</span><span class="p">),</span> <span class="n">root</span><span class="p">)</span>
+            <span class="n">root2</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">TreeViewLabel</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Level 1, entry 2&#39;</span><span class="p">,</span> <span class="n">is_open</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">):</span>
+                <span class="n">add</span><span class="p">(</span><span class="n">TreeViewLabel</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Element </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">x</span><span class="p">),</span> <span class="n">root2</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+                <span class="n">add</span><span class="p">(</span><span class="n">TreeViewLabel</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Element </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">x</span><span class="p">),</span> <span class="n">root</span><span class="p">)</span>
+            <span class="n">root2</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">TreeViewLabel</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Element childs 2&#39;</span><span class="p">,</span> <span class="n">is_open</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+                        <span class="n">root</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">):</span>
+                <span class="n">add</span><span class="p">(</span><span class="n">TreeViewLabel</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Element </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">x</span><span class="p">),</span> <span class="n">root2</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">tv</span>
+    <span class="n">TestApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+
+            <div class="footerlinks">
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 29, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

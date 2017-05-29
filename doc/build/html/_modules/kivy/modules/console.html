@@ -1,0 +1,1456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>kivy.modules.console &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../_static/kivy.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="../../../index.html" />
+    <link rel="up" title="kivy" href="../../kivy.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../../../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="../../../gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../../../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../../../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../../../index.html">kivy.modules.console</a></h3>
+          
+          <h3><a href="../../../index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2></div>
+            
+  <h1>kivy.modules.console のソースコード</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding=utf-8</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Console</span>
+<span class="sd">=======</span>
+
+<span class="sd">.. versionadded:: 1.9.1</span>
+
+<span class="sd">Reboot of the old inspector, designed to be modular and keep concerns</span>
+<span class="sd">separated. It also have a addons architecture that allow you to add a button,</span>
+<span class="sd">panel, or more in the Console itself.</span>
+
+<span class="sd">.. warning::</span>
+
+<span class="sd">    This module works, but might fail in some cases. Please contribute!</span>
+
+<span class="sd">Usage</span>
+<span class="sd">-----</span>
+
+<span class="sd">For normal module usage, please see the :mod:`~kivy.modules` documentation::</span>
+
+<span class="sd">    python main.py -m console</span>
+
+<span class="sd">Mouse navigation</span>
+<span class="sd">----------------</span>
+
+<span class="sd">When &quot;Select&quot; button is activated, you can:</span>
+
+<span class="sd">- tap once on a widget to select it without leaving inspect mode</span>
+<span class="sd">- double tap on a widget to select and leave inspect mode (then you can</span>
+<span class="sd">  manipulate the widget again)</span>
+
+<span class="sd">Keyboard navigation</span>
+<span class="sd">-------------------</span>
+
+<span class="sd">- &quot;Ctrl + e&quot;: toggle console</span>
+<span class="sd">- &quot;Escape&quot;: cancel widget lookup, then hide inspector view</span>
+<span class="sd">- &quot;Top&quot;: select the parent widget</span>
+<span class="sd">- &quot;Down&quot;: select the first children of the current selected widget</span>
+<span class="sd">- &quot;Left&quot;: select the previous following sibling</span>
+<span class="sd">- &quot;Right&quot;: select the next following sibling</span>
+
+<span class="sd">Additional informations</span>
+<span class="sd">------------------------</span>
+
+<span class="sd">Some properties can be edited live. However, due to the delayed usage of</span>
+<span class="sd">some properties, it might crash if you don&#39;t handle all the cases.</span>
+
+<span class="sd">Addons</span>
+<span class="sd">------</span>
+
+<span class="sd">Addons must be added to `Console.addons` before the first Clock tick of the</span>
+<span class="sd">application, or before the create_console is called. You cannot add addons on</span>
+<span class="sd">the fly currently. Addons are quite cheap until the Console is activated. Panel</span>
+<span class="sd">are even cheaper, nothing is done until the user select it.</span>
+
+<span class="sd">By default, we provide multiple addons activated by default:</span>
+
+<span class="sd">- ConsoleAddonFps: display the FPS at the top-right</span>
+<span class="sd">- ConsoleAddonSelect: activate the selection mode</span>
+<span class="sd">- ConsoleAddonBreadcrumb: display the hierarchy of the current widget at the</span>
+<span class="sd">  bottom</span>
+<span class="sd">- ConsoleAddonWidgetTree: panel to display the widget tree of the application</span>
+<span class="sd">- ConsoleAddonWidgetPanel: panel to display the properties of the selected</span>
+<span class="sd">  widget</span>
+
+<span class="sd">If you need to add custom widget in the Console, please use either</span>
+<span class="sd">:class:`ConsoleButton`, :class:`ConsoleToggleButton` or :class:`ConsoleLabel`</span>
+
+<span class="sd">An addon must inherit from the :class:`ConsoleAddon` class.</span>
+
+<span class="sd">For example, here is a simple addon for displaying the FPS at the top/right</span>
+<span class="sd">of the Console::</span>
+
+<span class="sd">    from kivy.modules.console import Console, ConsoleAddon</span>
+
+<span class="sd">    class ConsoleAddonFps(ConsoleAddon):</span>
+<span class="sd">        def init(self):</span>
+<span class="sd">            self.lbl = ConsoleLabel(text=&quot;0 Fps&quot;)</span>
+<span class="sd">            self.console.add_toolbar_widget(self.lbl, right=True)</span>
+
+<span class="sd">        def activate(self):</span>
+<span class="sd">            self.event = Clock.schedule_interval(self.update_fps, 1 / 2.)</span>
+
+<span class="sd">        def deactivated(self):</span>
+<span class="sd">            self.event.cancel()</span>
+
+<span class="sd">        def update_fps(self, *args):</span>
+<span class="sd">            fps = Clock.get_fps()</span>
+<span class="sd">            self.lbl.text = &quot;{} Fps&quot;.format(int(fps))</span>
+
+<span class="sd">    Console.register_addon(ConsoleAddonFps)</span>
+
+
+<span class="sd">You can create addon that adds panels. Panel activation/deactivation are not</span>
+<span class="sd">tied to the addon activation/deactivation, but on some cases, you can use the</span>
+<span class="sd">same callback for deactivating the addon and the panel. Here is a simple About</span>
+<span class="sd">panel addon::</span>
+
+<span class="sd">    from kivy.modules.console import Console, ConsoleAddon, ConsoleLabel</span>
+
+<span class="sd">    class ConsoleAddonAbout(ConsoleAddon):</span>
+<span class="sd">        def init(self):</span>
+<span class="sd">            self.console.add_panel(&quot;About&quot;, self.panel_activate,</span>
+<span class="sd">                                   self.panel_deactivate)</span>
+
+<span class="sd">        def panel_activate(self):</span>
+<span class="sd">            self.console.bind(widget=self.update_content)</span>
+<span class="sd">            self.update_content()</span>
+
+<span class="sd">        def panel_deactivate(self):</span>
+<span class="sd">            self.console.unbind(widget=self.update_content)</span>
+
+<span class="sd">        def deactivate(self):</span>
+<span class="sd">            self.panel_deactivate()</span>
+
+<span class="sd">        def update_content(self, *args):</span>
+<span class="sd">            widget = self.console.widget</span>
+<span class="sd">            if not widget:</span>
+<span class="sd">                return</span>
+<span class="sd">            text = &quot;Selected widget is: {!r}&quot;.format(widget)</span>
+<span class="sd">            lbl = ConsoleLabel(text=text)</span>
+<span class="sd">            self.console.set_content(lbl)</span>
+
+<span class="sd">    Console.register_addon(ConsoleAddonAbout)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="s2">&quot;stop&quot;</span><span class="p">,</span> <span class="s2">&quot;create_console&quot;</span><span class="p">,</span> <span class="s2">&quot;Console&quot;</span><span class="p">,</span> <span class="s2">&quot;ConsoleAddon&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;ConsoleButton&quot;</span><span class="p">,</span> <span class="s2">&quot;ConsoleToggleButton&quot;</span><span class="p">,</span> <span class="s2">&quot;ConsoleLabel&quot;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">kivy</span>
+<span class="n">kivy</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="s1">&#39;1.9.0&#39;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">weakref</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">partial</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">chain</span>
+<span class="kn">from</span> <span class="nn">kivy.logger</span> <span class="k">import</span> <span class="n">Logger</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.widget</span> <span class="k">import</span> <span class="n">Widget</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.button</span> <span class="k">import</span> <span class="n">Button</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.togglebutton</span> <span class="k">import</span> <span class="n">ToggleButton</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.label</span> <span class="k">import</span> <span class="n">Label</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.textinput</span> <span class="k">import</span> <span class="n">TextInput</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.image</span> <span class="k">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.treeview</span> <span class="k">import</span> <span class="n">TreeViewNode</span><span class="p">,</span> <span class="n">TreeView</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.gridlayout</span> <span class="k">import</span> <span class="n">GridLayout</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.relativelayout</span> <span class="k">import</span> <span class="n">RelativeLayout</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.boxlayout</span> <span class="k">import</span> <span class="n">BoxLayout</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.modalview</span> <span class="k">import</span> <span class="n">ModalView</span>
+<span class="kn">from</span> <span class="nn">kivy.graphics</span> <span class="k">import</span> <span class="n">Color</span><span class="p">,</span> <span class="n">Rectangle</span><span class="p">,</span> <span class="n">PushMatrix</span><span class="p">,</span> <span class="n">PopMatrix</span>
+<span class="kn">from</span> <span class="nn">kivy.graphics.context_instructions</span> <span class="k">import</span> <span class="n">Transform</span>
+<span class="kn">from</span> <span class="nn">kivy.graphics.transformation</span> <span class="k">import</span> <span class="n">Matrix</span>
+<span class="kn">from</span> <span class="nn">kivy.properties</span> <span class="k">import</span> <span class="p">(</span><span class="n">ObjectProperty</span><span class="p">,</span> <span class="n">BooleanProperty</span><span class="p">,</span> <span class="n">ListProperty</span><span class="p">,</span>
+                             <span class="n">NumericProperty</span><span class="p">,</span> <span class="n">StringProperty</span><span class="p">,</span> <span class="n">OptionProperty</span><span class="p">,</span>
+                             <span class="n">ReferenceListProperty</span><span class="p">,</span> <span class="n">AliasProperty</span><span class="p">,</span>
+                             <span class="n">VariableListProperty</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">kivy.graphics.texture</span> <span class="k">import</span> <span class="n">Texture</span>
+<span class="kn">from</span> <span class="nn">kivy.clock</span> <span class="k">import</span> <span class="n">Clock</span>
+<span class="kn">from</span> <span class="nn">kivy.lang</span> <span class="k">import</span> <span class="n">Builder</span>
+
+<span class="n">Builder</span><span class="o">.</span><span class="n">load_string</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">&lt;Console&gt;:</span>
+<span class="s2">    size_hint: (1, None) if self.mode == &quot;docked&quot; else (None, None)</span>
+<span class="s2">    height: dp(250)</span>
+
+<span class="s2">    canvas:</span>
+<span class="s2">        Color:</span>
+<span class="s2">            rgb: .185, .18, .18</span>
+<span class="s2">        Rectangle:</span>
+<span class="s2">            size: self.size</span>
+<span class="s2">        Color:</span>
+<span class="s2">            rgb: .3, .3, .3</span>
+<span class="s2">        Rectangle:</span>
+<span class="s2">            pos: 0, self.height - dp(48)</span>
+<span class="s2">            size: self.width, dp(48)</span>
+
+<span class="s2">    GridLayout:</span>
+<span class="s2">        cols: 1</span>
+<span class="s2">        id: layout</span>
+
+<span class="s2">        GridLayout:</span>
+<span class="s2">            id: toolbar</span>
+<span class="s2">            rows: 1</span>
+<span class="s2">            height: &quot;48dp&quot;</span>
+<span class="s2">            size_hint_y: None</span>
+<span class="s2">            padding: &quot;4dp&quot;</span>
+<span class="s2">            spacing: &quot;4dp&quot;</span>
+
+
+<span class="s2">        RelativeLayout:</span>
+<span class="s2">            id: content</span>
+
+
+<span class="s2">&lt;ConsoleAddonSeparator&gt;:</span>
+<span class="s2">    size_hint_x: None</span>
+<span class="s2">    width: &quot;10dp&quot;</span>
+
+<span class="s2">&lt;ConsoleButton,ConsoleToggleButton,ConsoleLabel&gt;:</span>
+<span class="s2">    size_hint_x: None</span>
+<span class="s2">    width: self.texture_size[0] + dp(20)</span>
+
+
+<span class="s2">&lt;ConsoleAddonBreadcrumbView&gt;:</span>
+<span class="s2">    size_hint_y: None</span>
+<span class="s2">    height: &quot;48dp&quot;</span>
+<span class="s2">    canvas:</span>
+<span class="s2">        Color:</span>
+<span class="s2">            rgb: .3, .3, .3</span>
+<span class="s2">        Rectangle:</span>
+<span class="s2">            size: self.size</span>
+<span class="s2">    ScrollView:</span>
+<span class="s2">        id: sv</span>
+<span class="s2">        do_scroll_y: False</span>
+<span class="s2">        GridLayout:</span>
+<span class="s2">            id: stack</span>
+<span class="s2">            rows: 1</span>
+<span class="s2">            size_hint_x: None</span>
+<span class="s2">            width: self.minimum_width</span>
+<span class="s2">            padding: &quot;4dp&quot;</span>
+<span class="s2">            spacing: &quot;4dp&quot;</span>
+
+<span class="s2">&lt;TreeViewProperty&gt;:</span>
+<span class="s2">    height: max(dp(48), max(lkey.texture_size[1], ltext.texture_size[1]))</span>
+<span class="s2">    Label:</span>
+<span class="s2">        id: lkey</span>
+<span class="s2">        text: root.key</span>
+<span class="s2">        text_size: (self.width, None)</span>
+<span class="s2">        width: 150</span>
+<span class="s2">        size_hint_x: None</span>
+<span class="s2">    Label:</span>
+<span class="s2">        id: ltext</span>
+<span class="s2">        text: [repr(getattr(root.widget, root.key, &#39;&#39;)), root.refresh][0]</span><span class="se">\</span>
+<span class="s2">                if root.widget else &#39;&#39;</span>
+<span class="s2">        text_size: (self.width, None)</span>
+
+<span class="s2">&lt;ConsoleAddonWidgetTreeView&gt;:</span>
+<span class="s2">    ScrollView:</span>
+<span class="s2">        scroll_type: [&#39;bars&#39;, &#39;content&#39;]</span>
+<span class="s2">        bar_width: &#39;10dp&#39;</span>
+
+<span class="s2">        ConsoleAddonWidgetTreeImpl:</span>
+<span class="s2">            id: widgettree</span>
+<span class="s2">            hide_root: True</span>
+<span class="s2">            size_hint: None, None</span>
+<span class="s2">            height: self.minimum_height</span>
+<span class="s2">            width: max(self.parent.width, self.minimum_width)</span>
+<span class="s2">            selected_widget: root.widget</span>
+<span class="s2">            on_select_widget: root.console.highlight_widget(args[1])</span>
+
+<span class="s2">&lt;-TreeViewWidget&gt;:</span>
+<span class="s2">    height: self.texture_size[1] + sp(4)</span>
+<span class="s2">    size_hint_x: None</span>
+<span class="s2">    width: self.texture_size[0] + sp(4)</span>
+
+<span class="s2">    canvas.before:</span>
+<span class="s2">        Color:</span>
+<span class="s2">            rgba: self.color_selected if self.is_selected else (0, 0, 0, 0)</span>
+<span class="s2">        Rectangle:</span>
+<span class="s2">            pos: self.pos</span>
+<span class="s2">            size: self.size</span>
+<span class="s2">        Color:</span>
+<span class="s2">            rgba: 1, 1, 1, int(not self.is_leaf)</span>
+<span class="s2">        Rectangle:</span>
+<span class="s2">            source:</span>
+<span class="s2">                (&#39;atlas://data/images/defaulttheme/tree_</span><span class="si">%s</span><span class="s2">&#39; %</span>
+<span class="s2">                (&#39;opened&#39; if self.is_open else &#39;closed&#39;))</span>
+<span class="s2">            size: 16, 16</span>
+<span class="s2">            pos: self.x - 20, self.center_y - 8</span>
+
+<span class="s2">    canvas:</span>
+<span class="s2">        Color:</span>
+<span class="s2">            rgba:</span>
+<span class="s2">                (self.disabled_color if self.disabled else</span>
+<span class="s2">                (self.color if not self.markup else (1, 1, 1, 1)))</span>
+<span class="s2">        Rectangle:</span>
+<span class="s2">            texture: self.texture</span>
+<span class="s2">            size: self.texture_size</span>
+<span class="s2">            pos:</span>
+<span class="s2">                (int(self.center_x - self.texture_size[0] / 2.),</span>
+<span class="s2">                int(self.center_y - self.texture_size[1] / 2.))</span>
+
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ignore_exception</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+    <span class="k">return</span> <span class="n">f2</span>
+
+
+<span class="k">class</span> <span class="nc">TreeViewProperty</span><span class="p">(</span><span class="n">BoxLayout</span><span class="p">,</span> <span class="n">TreeViewNode</span><span class="p">):</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">allownone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">refresh</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">widget_ref</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">allownone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">wr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">widget_ref</span>
+        <span class="k">if</span> <span class="n">wr</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">wr</span> <span class="o">=</span> <span class="n">wr</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">wr</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">widget_ref</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">wr</span>
+
+    <span class="n">widget</span> <span class="o">=</span> <span class="n">AliasProperty</span><span class="p">(</span><span class="n">_get_widget</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">bind</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;widget_ref&#39;</span><span class="p">,</span> <span class="p">))</span>
+
+
+<div class="viewcode-block" id="ConsoleButton"><a class="viewcode-back" href="../../../api-kivy.modules.console.html#kivy.modules.console.ConsoleButton">[ドキュメント]</a><span class="k">class</span> <span class="nc">ConsoleButton</span><span class="p">(</span><span class="n">Button</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Button specialized for the Console&quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="ConsoleToggleButton"><a class="viewcode-back" href="../../../api-kivy.modules.console.html#kivy.modules.console.ConsoleToggleButton">[ドキュメント]</a><span class="k">class</span> <span class="nc">ConsoleToggleButton</span><span class="p">(</span><span class="n">ToggleButton</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;ToggleButton specialized for the Console&quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="ConsoleLabel"><a class="viewcode-back" href="../../../api-kivy.modules.console.html#kivy.modules.console.ConsoleLabel">[ドキュメント]</a><span class="k">class</span> <span class="nc">ConsoleLabel</span><span class="p">(</span><span class="n">Label</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;LabelButton specialized for the Console&quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<span class="k">class</span> <span class="nc">ConsoleAddonSeparator</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<div class="viewcode-block" id="ConsoleAddon"><a class="viewcode-back" href="../../../api-kivy.modules.console.html#kivy.modules.console.ConsoleAddon">[ドキュメント]</a><span class="k">class</span> <span class="nc">ConsoleAddon</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Base class for implementing addons&quot;&quot;&quot;</span>
+
+    <span class="c1">#: Console instance</span>
+    <span class="n">console</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">console</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ConsoleAddon</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span> <span class="o">=</span> <span class="n">console</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<div class="viewcode-block" id="ConsoleAddon.init"><a class="viewcode-back" href="../../../api-kivy.modules.console.html#kivy.modules.console.ConsoleAddon.init">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Method called when the addon is instantiated by the Console</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="ConsoleAddon.activate"><a class="viewcode-back" href="../../../api-kivy.modules.console.html#kivy.modules.console.ConsoleAddon.activate">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">activate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Method called when the addon is activated by the console</span>
+<span class="sd">        (when the console is displayed)&quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="ConsoleAddon.deactivate"><a class="viewcode-back" href="../../../api-kivy.modules.console.html#kivy.modules.console.ConsoleAddon.deactivate">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">deactivate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Method called when the addon is deactivated by the console</span>
+<span class="sd">        (when the console is hidden)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div></div>
+
+
+<span class="k">class</span> <span class="nc">ConsoleAddonMode</span><span class="p">(</span><span class="n">ConsoleAddon</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">btn</span> <span class="o">=</span> <span class="n">ConsoleToggleButton</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="sa">u</span><span class="s2">&quot;Docked&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">add_toolbar_widget</span><span class="p">(</span><span class="n">btn</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">ConsoleAddonSelect</span><span class="p">(</span><span class="n">ConsoleAddon</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">btn</span> <span class="o">=</span> <span class="n">ConsoleToggleButton</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="sa">u</span><span class="s2">&quot;Select&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">btn</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">on_button_state</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">add_toolbar_widget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">btn</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">inspect_enabled</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">on_inspect_enabled</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_inspect_enabled</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">btn</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;down&quot;</span> <span class="k">if</span> <span class="n">value</span> <span class="k">else</span> <span class="s2">&quot;normal&quot;</span>
+
+    <span class="k">def</span> <span class="nf">on_button_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">inspect_enabled</span> <span class="o">=</span> <span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;down&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">ConsoleAddonFps</span><span class="p">(</span><span class="n">ConsoleAddon</span><span class="p">):</span>
+
+    <span class="n">_update_ev</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lbl</span> <span class="o">=</span> <span class="n">ConsoleLabel</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;0 Fps&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">add_toolbar_widget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lbl</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">activate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">ev</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_ev</span>
+        <span class="k">if</span> <span class="n">ev</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_update_ev</span> <span class="o">=</span> <span class="n">Clock</span><span class="o">.</span><span class="n">schedule_interval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">update_fps</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ev</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">deactivated</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_ev</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_update_ev</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">update_fps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="n">fps</span> <span class="o">=</span> <span class="n">Clock</span><span class="o">.</span><span class="n">get_fps</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lbl</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> Fps&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">fps</span><span class="p">))</span>
+
+
+<span class="k">class</span> <span class="nc">ConsoleAddonBreadcrumbView</span><span class="p">(</span><span class="n">RelativeLayout</span><span class="p">):</span>
+    <span class="n">widget</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">allownone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">parents</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">on_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">stack</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">stack</span>
+
+        <span class="c1"># determine if we can just highlight the current one</span>
+        <span class="c1"># or if we need to rebuild the breadcrumb</span>
+        <span class="n">prefs</span> <span class="o">=</span> <span class="p">[</span><span class="n">btn</span><span class="o">.</span><span class="n">widget_ref</span><span class="p">()</span> <span class="k">for</span> <span class="n">btn</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">parents</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">prefs</span><span class="p">:</span>
+            <span class="c1"># ok, so just toggle this one instead.</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">prefs</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">btn</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">parents</span><span class="p">:</span>
+                <span class="n">btn</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;normal&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;down&quot;</span>
+            <span class="k">return</span>
+
+        <span class="c1"># we need to rebuild the breadcrumb.</span>
+        <span class="n">stack</span><span class="o">.</span><span class="n">clear_widgets</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">value</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="n">parents</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">btn</span> <span class="o">=</span> <span class="n">ConsoleButton</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">widget</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+            <span class="n">btn</span><span class="o">.</span><span class="n">widget_ref</span> <span class="o">=</span> <span class="n">weakref</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span>
+            <span class="n">btn</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_release</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">highlight_widget</span><span class="p">)</span>
+            <span class="n">parents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">btn</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">widget</span> <span class="o">==</span> <span class="n">widget</span><span class="o">.</span><span class="n">parent</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">widget</span> <span class="o">=</span> <span class="n">widget</span><span class="o">.</span><span class="n">parent</span>
+        <span class="k">for</span> <span class="n">btn</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">parents</span><span class="p">):</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">btn</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">sv</span><span class="o">.</span><span class="n">scroll_x</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parents</span> <span class="o">=</span> <span class="n">parents</span>
+        <span class="n">btn</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;down&quot;</span>
+
+    <span class="k">def</span> <span class="nf">highlight_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">widget_ref</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">ConsoleAddonBreadcrumb</span><span class="p">(</span><span class="n">ConsoleAddon</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">ConsoleAddonBreadcrumbView</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">console</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">console</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">activate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">update_content</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_content</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">deactivate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">unbind</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">update_content</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">update_content</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">widget</span>
+
+
+<span class="k">class</span> <span class="nc">ConsoleAddonWidgetPanel</span><span class="p">(</span><span class="n">ConsoleAddon</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">add_panel</span><span class="p">(</span><span class="s2">&quot;Properties&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">panel_activate</span><span class="p">,</span>
+                               <span class="bp">self</span><span class="o">.</span><span class="n">deactivate</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">panel_activate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">update_content</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_content</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">deactivate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">unbind</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">update_content</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">update_content</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">widget</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">widget</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="kn">from</span> <span class="nn">kivy.uix.scrollview</span> <span class="k">import</span> <span class="n">ScrollView</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">root</span> <span class="o">=</span> <span class="n">BoxLayout</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sv</span> <span class="o">=</span> <span class="n">sv</span> <span class="o">=</span> <span class="n">ScrollView</span><span class="p">(</span><span class="n">scroll_type</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;bars&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">],</span>
+                                  <span class="n">bar_width</span><span class="o">=</span><span class="s1">&#39;10dp&#39;</span><span class="p">)</span>
+        <span class="n">treeview</span> <span class="o">=</span> <span class="n">TreeView</span><span class="p">(</span><span class="n">hide_root</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">size_hint_y</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+        <span class="n">treeview</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">minimum_height</span><span class="o">=</span><span class="n">treeview</span><span class="o">.</span><span class="n">setter</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">))</span>
+        <span class="n">keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">widget</span><span class="o">.</span><span class="n">properties</span><span class="p">()</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="n">keys</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">wk_widget</span> <span class="o">=</span> <span class="n">weakref</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">TreeViewProperty</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">widget_ref</span><span class="o">=</span><span class="n">wk_widget</span><span class="p">)</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">is_selected</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">show_property</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">widget</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="o">**</span><span class="p">{</span>
+                    <span class="n">key</span><span class="p">:</span> <span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">update_node_content</span><span class="p">,</span> <span class="n">weakref</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span><span class="n">node</span><span class="p">))</span>
+                <span class="p">})</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">pass</span>
+            <span class="n">treeview</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+        <span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">sv</span><span class="p">)</span>
+        <span class="n">sv</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">treeview</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">set_content</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">show_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">index</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
+        <span class="c1"># normal call: (tree node, focus, )</span>
+        <span class="c1"># nested call: (widget, prop value, prop key, index in dict/list)</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="n">console</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">console</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># normal call</span>
+            <span class="n">nested</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">widget</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">widget</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">key</span>
+            <span class="n">prop</span> <span class="o">=</span> <span class="n">widget</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># nested call, we might edit subvalue</span>
+            <span class="n">nested</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">widget</span> <span class="o">=</span> <span class="n">instance</span>
+            <span class="n">prop</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="n">dtype</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">AliasProperty</span><span class="p">)</span> <span class="ow">or</span> <span class="n">nested</span><span class="p">:</span>
+            <span class="c1"># trying to resolve type dynamically</span>
+            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;string&#39;</span>
+            <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+                <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;numeric&#39;</span>
+            <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;list&#39;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">NumericProperty</span><span class="p">)</span> <span class="ow">or</span> <span class="n">dtype</span> <span class="o">==</span> <span class="s1">&#39;numeric&#39;</span><span class="p">:</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="n">TextInput</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">multiline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">content</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">save_property_numeric</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">index</span><span class="p">))</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">StringProperty</span><span class="p">)</span> <span class="ow">or</span> <span class="n">dtype</span> <span class="o">==</span> <span class="s1">&#39;string&#39;</span><span class="p">:</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="n">TextInput</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">value</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">multiline</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">content</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">save_property_text</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">index</span><span class="p">))</span>
+
+        <span class="k">elif</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">ListProperty</span><span class="p">)</span> <span class="ow">or</span>
+              <span class="nb">isinstance</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">ReferenceListProperty</span><span class="p">)</span> <span class="ow">or</span>
+              <span class="nb">isinstance</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">VariableListProperty</span><span class="p">)</span> <span class="ow">or</span> <span class="n">dtype</span> <span class="o">==</span> <span class="s1">&#39;list&#39;</span><span class="p">):</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="n">GridLayout</span><span class="p">(</span><span class="n">cols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size_hint_y</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+            <span class="n">content</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">minimum_height</span><span class="o">=</span><span class="n">content</span><span class="o">.</span><span class="n">setter</span><span class="p">(</span><span class="s1">&#39;height&#39;</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+                <span class="n">button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="nb">repr</span><span class="p">(</span><span class="n">item</span><span class="p">),</span> <span class="n">size_hint_y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">44</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">Widget</span><span class="p">):</span>
+                    <span class="n">button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_release</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span><span class="n">console</span><span class="o">.</span><span class="n">highlight_widget</span><span class="p">,</span>
+                                                   <span class="n">item</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_release</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">show_property</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span>
+                                                   <span class="n">item</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+                <span class="n">content</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">OptionProperty</span><span class="p">):</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="n">GridLayout</span><span class="p">(</span><span class="n">cols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size_hint_y</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+            <span class="n">content</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">minimum_height</span><span class="o">=</span><span class="n">content</span><span class="o">.</span><span class="n">setter</span><span class="p">(</span><span class="s1">&#39;height&#39;</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">option</span> <span class="ow">in</span> <span class="n">prop</span><span class="o">.</span><span class="n">options</span><span class="p">:</span>
+                <span class="n">button</span> <span class="o">=</span> <span class="n">ToggleButton</span><span class="p">(</span>
+                    <span class="n">text</span><span class="o">=</span><span class="n">option</span><span class="p">,</span>
+                    <span class="n">state</span><span class="o">=</span><span class="s1">&#39;down&#39;</span> <span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="n">value</span> <span class="k">else</span> <span class="s1">&#39;normal&#39;</span><span class="p">,</span>
+                    <span class="n">group</span><span class="o">=</span><span class="nb">repr</span><span class="p">(</span><span class="n">content</span><span class="o">.</span><span class="n">uid</span><span class="p">),</span>
+                    <span class="n">size_hint_y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                    <span class="n">height</span><span class="o">=</span><span class="mi">44</span><span class="p">)</span>
+                <span class="n">button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span>
+                    <span class="n">on_press</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">save_property_option</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+                <span class="n">content</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">ObjectProperty</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Widget</span><span class="p">):</span>
+                <span class="n">content</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="nb">repr</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+                <span class="n">content</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span>
+                    <span class="n">on_release</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span><span class="n">console</span><span class="o">.</span><span class="n">highlight_widget</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Texture</span><span class="p">):</span>
+                <span class="n">content</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">texture</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">content</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="nb">repr</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">BooleanProperty</span><span class="p">):</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;down&#39;</span> <span class="k">if</span> <span class="n">value</span> <span class="k">else</span> <span class="s1">&#39;normal&#39;</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="n">ToggleButton</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="n">state</span><span class="p">)</span>
+            <span class="n">content</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_release</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">save_property_boolean</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span>
+                                            <span class="n">key</span><span class="p">,</span> <span class="n">index</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">clear_widgets</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sv</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">content</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+
+    <span class="nd">@ignore_exception</span>
+    <span class="k">def</span> <span class="nf">save_property_numeric</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">getattr</span><span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="n">key</span><span class="p">)[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+
+    <span class="nd">@ignore_exception</span>
+    <span class="k">def</span> <span class="nf">save_property_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">getattr</span><span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="n">key</span><span class="p">)[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">text</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">instance</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+    <span class="nd">@ignore_exception</span>
+    <span class="k">def</span> <span class="nf">save_property_boolean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">&#39;down&#39;</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">getattr</span><span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="n">key</span><span class="p">)[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+    <span class="nd">@ignore_exception</span>
+    <span class="k">def</span> <span class="nf">save_property_option</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">instance</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">TreeViewWidget</span><span class="p">(</span><span class="n">Label</span><span class="p">,</span> <span class="n">TreeViewNode</span><span class="p">):</span>
+    <span class="n">widget</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">ConsoleAddonWidgetTreeImpl</span><span class="p">(</span><span class="n">TreeView</span><span class="p">):</span>
+    <span class="n">selected_widget</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">allownone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">__events__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;on_select_widget&#39;</span><span class="p">,</span> <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ConsoleAddonWidgetTreeImpl</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_scroll</span> <span class="o">=</span> <span class="n">Clock</span><span class="o">.</span><span class="n">create_trigger</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_update_scroll</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">find_node_by_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">iterate_all_nodes</span><span class="p">():</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">node</span><span class="o">.</span><span class="n">parent_node</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">widget</span> <span class="o">==</span> <span class="n">widget</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">node</span>
+            <span class="k">except</span> <span class="ne">ReferenceError</span><span class="p">:</span>
+                <span class="k">pass</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">update_selected_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">widget</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find_node_by_widget</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">node</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">select_node</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+                <span class="k">while</span> <span class="n">node</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">TreeViewWidget</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">node</span><span class="o">.</span><span class="n">is_open</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">toggle_node</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+                    <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">parent_node</span>
+
+    <span class="k">def</span> <span class="nf">on_selected_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inst</span><span class="p">,</span> <span class="n">widget</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">widget</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">update_selected_widget</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">update_scroll</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">select_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">select_widget</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ConsoleAddonWidgetTreeImpl</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">select_node</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">select_widget</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="s2">&quot;on_select_widget&quot;</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="vm">__self__</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ReferenceError</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">on_select_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">_update_scroll</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_node</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">node</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">scroll_to</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">ConsoleAddonWidgetTreeView</span><span class="p">(</span><span class="n">RelativeLayout</span><span class="p">):</span>
+    <span class="n">widget</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">allownone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">_window_node</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_update_widget_tree_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="n">is_open</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">tree</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">widgettree</span>
+        <span class="n">update_nodes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">cnode</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">nodes</span><span class="p">[:]:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">nodes</span><span class="p">[</span><span class="n">cnode</span><span class="o">.</span><span class="n">widget</span><span class="p">]</span> <span class="o">=</span> <span class="n">cnode</span>
+            <span class="k">except</span> <span class="ne">ReferenceError</span><span class="p">:</span>
+                <span class="c1"># widget no longer exists, just remove it</span>
+                <span class="k">pass</span>
+            <span class="n">tree</span><span class="o">.</span><span class="n">remove_node</span><span class="p">(</span><span class="n">cnode</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">widget</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">Console</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+                <span class="n">cnode</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="n">child</span><span class="p">],</span> <span class="n">node</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">cnode</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span>
+                    <span class="n">TreeViewWidget</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">child</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
+                                   <span class="n">widget</span><span class="o">=</span><span class="n">child</span><span class="o">.</span><span class="n">proxy_ref</span><span class="p">,</span>
+                                   <span class="n">is_open</span><span class="o">=</span><span class="n">is_open</span><span class="p">),</span> <span class="n">node</span><span class="p">)</span>
+            <span class="n">update_nodes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">cnode</span><span class="p">,</span> <span class="n">child</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">update_nodes</span>
+
+    <span class="k">def</span> <span class="nf">update_widget_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="n">win</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">win</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_window_node</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_window_node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">widgettree</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span>
+                <span class="n">TreeViewWidget</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Window&quot;</span><span class="p">,</span>
+                               <span class="n">widget</span><span class="o">=</span><span class="n">win</span><span class="p">,</span>
+                               <span class="n">is_open</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+        <span class="n">nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_widget_tree_node</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_window_node</span><span class="p">,</span> <span class="n">win</span><span class="p">,</span>
+                                              <span class="n">is_open</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">while</span> <span class="n">nodes</span><span class="p">:</span>
+            <span class="n">ntmp</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[:]</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">ntmp</span><span class="p">:</span>
+                <span class="n">nodes</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_widget_tree_node</span><span class="p">(</span><span class="o">*</span><span class="n">node</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">widgettree</span><span class="o">.</span><span class="n">update_selected_widget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">ConsoleAddonWidgetTree</span><span class="p">(</span><span class="n">ConsoleAddon</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">add_panel</span><span class="p">(</span><span class="s2">&quot;Tree&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">panel_activate</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">deactivate</span><span class="p">,</span>
+                               <span class="bp">self</span><span class="o">.</span><span class="n">panel_refresh</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">panel_activate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">update_content</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_content</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">deactivate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">console</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">unbind</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">update_content</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">update_content</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">widget</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="n">ConsoleAddonWidgetTreeView</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">console</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">console</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="n">widget</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">update_widget_tree</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">set_content</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">panel_refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">update_widget_tree</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="Console"><a class="viewcode-back" href="../../../api-kivy.modules.console.html#kivy.modules.console.Console">[ドキュメント]</a><span class="k">class</span> <span class="nc">Console</span><span class="p">(</span><span class="n">RelativeLayout</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Console interface</span>
+
+<span class="sd">    This widget is created by create_console(), when the module is loaded.</span>
+<span class="sd">    During that time, you can add addons on the console to extend the</span>
+<span class="sd">    functionalities, or add your own application stats / debugging module.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1">#: Array of addons that will be created at Console creation</span>
+    <span class="n">addons</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># ConsoleAddonMode,</span>
+        <span class="n">ConsoleAddonSelect</span><span class="p">,</span> <span class="n">ConsoleAddonFps</span><span class="p">,</span> <span class="n">ConsoleAddonWidgetPanel</span><span class="p">,</span>
+        <span class="n">ConsoleAddonWidgetTree</span><span class="p">,</span> <span class="n">ConsoleAddonBreadcrumb</span><span class="p">]</span>
+
+    <span class="c1">#: Display mode of the Console, either docked at the bottom, or as a</span>
+    <span class="c1">#: floating window.</span>
+    <span class="n">mode</span> <span class="o">=</span> <span class="n">OptionProperty</span><span class="p">(</span><span class="s2">&quot;docked&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;docked&quot;</span><span class="p">,</span> <span class="s2">&quot;floated&quot;</span><span class="p">])</span>
+
+    <span class="c1">#: Current widget being selected</span>
+    <span class="n">widget</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">allownone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1">#: Indicate if the inspector inspection is enabled. If yes, the next</span>
+    <span class="c1">#: touch down will select a the widget under the touch</span>
+    <span class="n">inspect_enabled</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1">#: True if the Console is activated (showed)</span>
+    <span class="n">activated</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">win</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;win&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Console</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">avoid_bring_to_top</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">before</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">gcolor</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">25</span><span class="p">)</span>
+            <span class="n">PushMatrix</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">gtransform</span> <span class="o">=</span> <span class="n">Transform</span><span class="p">(</span><span class="n">Matrix</span><span class="p">())</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">grect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+            <span class="n">PopMatrix</span><span class="p">()</span>
+        <span class="n">Clock</span><span class="o">.</span><span class="n">schedule_interval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">update_widget_graphics</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># instantiate all addons</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_toolbar</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;left&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;panels&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_addons</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_panel</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">addon</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">addons</span><span class="p">:</span>
+            <span class="n">instance</span> <span class="o">=</span> <span class="n">addon</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_addons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_init_toolbar</span><span class="p">()</span>
+        <span class="c1"># select the first panel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_panel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toolbar</span><span class="p">[</span><span class="s2">&quot;panels&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_panel</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;down&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_panel</span><span class="o">.</span><span class="n">cb_activate</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_init_toolbar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">toolbar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">toolbar</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="s2">&quot;panels&quot;</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;right&quot;</span><span class="p">:</span>
+                <span class="n">toolbar</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">Widget</span><span class="p">())</span>
+            <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toolbar</span><span class="p">[</span><span class="n">key</span><span class="p">]:</span>
+                <span class="n">toolbar</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">el</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="o">!=</span> <span class="s2">&quot;right&quot;</span><span class="p">:</span>
+                <span class="n">toolbar</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">ConsoleAddonSeparator</span><span class="p">())</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">register_addon</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">addon</span><span class="p">):</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">addon</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Console.add_toolbar_widget"><a class="viewcode-back" href="../../../api-kivy.modules.console.html#kivy.modules.console.Console.add_toolbar_widget">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">add_toolbar_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add a widget in the top left toolbar of the Console.</span>
+<span class="sd">        Use `right=True` if you wanna add the widget at the right instead.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;right&quot;</span> <span class="k">if</span> <span class="n">right</span> <span class="k">else</span> <span class="s2">&quot;left&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_toolbar</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Console.remove_toolbar_widget"><a class="viewcode-back" href="../../../api-kivy.modules.console.html#kivy.modules.console.Console.remove_toolbar_widget">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">remove_toolbar_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Remove a widget from the toolbar</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">toolbar</span><span class="o">.</span><span class="n">remove_widget</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Console.add_panel"><a class="viewcode-back" href="../../../api-kivy.modules.console.html#kivy.modules.console.Console.add_panel">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">add_panel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">cb_activate</span><span class="p">,</span> <span class="n">cb_deactivate</span><span class="p">,</span> <span class="n">cb_refresh</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add a new panel in the Console.</span>
+
+<span class="sd">        - `cb_activate` is a callable that will be called when the panel is</span>
+<span class="sd">          activated by the user.</span>
+
+<span class="sd">        - `cb_deactivate` is a callable that will be called when the panel is</span>
+<span class="sd">          deactivated or when the console will hide.</span>
+
+<span class="sd">        - `cb_refresh` is an optional callable that is called if the user</span>
+<span class="sd">          click again on the button for display the panel</span>
+
+<span class="sd">        When activated, it&#39;s up to the panel to display a content in the</span>
+<span class="sd">        Console by using :meth:`set_content`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">btn</span> <span class="o">=</span> <span class="n">ConsoleToggleButton</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">btn</span><span class="o">.</span><span class="n">cb_activate</span> <span class="o">=</span> <span class="n">cb_activate</span>
+        <span class="n">btn</span><span class="o">.</span><span class="n">cb_deactivate</span> <span class="o">=</span> <span class="n">cb_deactivate</span>
+        <span class="n">btn</span><span class="o">.</span><span class="n">cb_refresh</span> <span class="o">=</span> <span class="n">cb_refresh</span>
+        <span class="n">btn</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_press</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_activate_panel</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_toolbar</span><span class="p">[</span><span class="s2">&quot;panels&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">btn</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_activate_panel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_panel</span> <span class="o">!=</span> <span class="n">instance</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_panel</span><span class="o">.</span><span class="n">cb_deactivate</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_panel</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;normal&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">clear_widgets</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_panel</span> <span class="o">=</span> <span class="n">instance</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_panel</span><span class="o">.</span><span class="n">cb_activate</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_panel</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;down&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_panel</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;down&quot;</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_panel</span><span class="o">.</span><span class="n">cb_refresh</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_panel</span><span class="o">.</span><span class="n">cb_refresh</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Console.set_content"><a class="viewcode-back" href="../../../api-kivy.modules.console.html#kivy.modules.console.Console.set_content">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">set_content</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Replace the Console content with a new one.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">clear_widgets</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">content</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Console</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_down</span><span class="p">(</span><span class="n">touch</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">((</span><span class="s1">&#39;button&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">touch</span><span class="o">.</span><span class="n">profile</span> <span class="ow">or</span> <span class="n">touch</span><span class="o">.</span><span class="n">button</span> <span class="o">==</span> <span class="s1">&#39;left&#39;</span><span class="p">)</span> <span class="ow">and</span>
+                <span class="ow">not</span> <span class="n">ret</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">inspect_enabled</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">highlight_at</span><span class="p">(</span><span class="o">*</span><span class="n">touch</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">touch</span><span class="o">.</span><span class="n">is_double_tap</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">inspect_enabled</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">collide_point</span><span class="p">(</span><span class="o">*</span><span class="n">touch</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span>
+
+    <span class="k">def</span> <span class="nf">on_touch_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Console</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_move</span><span class="p">(</span><span class="n">touch</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">ret</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">inspect_enabled</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">highlight_at</span><span class="p">(</span><span class="o">*</span><span class="n">touch</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="n">ret</span>
+
+    <span class="k">def</span> <span class="nf">on_touch_up</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Console</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_up</span><span class="p">(</span><span class="n">touch</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">ret</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">inspect_enabled</span><span class="p">:</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="n">ret</span>
+
+    <span class="k">def</span> <span class="nf">on_window_children</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">win</span><span class="p">,</span> <span class="n">children</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">avoid_bring_to_top</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">avoid_bring_to_top</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">win</span><span class="o">.</span><span class="n">remove_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">win</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">avoid_bring_to_top</span> <span class="o">=</span> <span class="kc">False</span>
+
+<div class="viewcode-block" id="Console.highlight_at"><a class="viewcode-back" href="../../../api-kivy.modules.console.html#kivy.modules.console.Console.highlight_at">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">highlight_at</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Select a widget from a x/y window coordinate.</span>
+<span class="sd">        This is mostly used internally when Select mode is activated</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># reverse the loop - look at children on top first and</span>
+        <span class="c1"># modalviews before others</span>
+        <span class="n">win_children</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">win</span><span class="o">.</span><span class="n">children</span>
+        <span class="n">children</span> <span class="o">=</span> <span class="n">chain</span><span class="p">((</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">win_children</span><span class="p">)</span>
+                          <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">ModalView</span><span class="p">)),</span>
+                         <span class="p">(</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">win_children</span><span class="p">)</span>
+                          <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">ModalView</span><span class="p">)))</span>
+        <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">child</span> <span class="ow">is</span> <span class="bp">self</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">widget</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">widget</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">highlight_widget</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">highlight_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="o">*</span><span class="n">largs</span><span class="p">):</span>
+        <span class="c1"># no widget to highlight, reduce rectangle to 0, 0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="n">widget</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">widget</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">grect</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">update_widget_graphics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">activated</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">widget</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">grect</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grect</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">size</span>
+        <span class="n">matrix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">get_window_matrix</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gtransform</span><span class="o">.</span><span class="n">matrix</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="o">!=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">gtransform</span><span class="o">.</span><span class="n">matrix</span> <span class="o">=</span> <span class="n">matrix</span>
+
+<div class="viewcode-block" id="Console.pick"><a class="viewcode-back" href="../../../api-kivy.modules.console.html#kivy.modules.console.Console.pick">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">pick</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Pick a widget at x/y, given a root `widget`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># try to filter widgets that are not visible (invalid inspect target)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="s1">&#39;visible&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">widget</span><span class="o">.</span><span class="n">visible</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">ret</span>
+        <span class="k">if</span> <span class="n">widget</span><span class="o">.</span><span class="n">collide_point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="n">widget</span>
+            <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">widget</span><span class="o">.</span><span class="n">to_local</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+            <span class="c1"># reverse the loop - look at children on top first</span>
+            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">widget</span><span class="o">.</span><span class="n">children</span><span class="p">):</span>
+                <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span> <span class="ow">or</span> <span class="n">ret</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+    <span class="k">def</span> <span class="nf">on_activated</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">activated</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">activated</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_activate_console</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_deactivate_console</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_activate_console</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">win</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">win</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">addon</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_addons</span><span class="p">:</span>
+            <span class="n">addon</span><span class="o">.</span><span class="n">activate</span><span class="p">()</span>
+        <span class="n">Logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Console: console activated&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_deactivate_console</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">addon</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_addons</span><span class="p">:</span>
+            <span class="n">addon</span><span class="o">.</span><span class="n">deactivate</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grect</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">inspect_enabled</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="c1"># self.win.remove_widget(self)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_window_node</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">Logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Console: console deactivated&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">keyboard_shortcut</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">win</span><span class="p">,</span> <span class="n">scancode</span><span class="p">,</span> <span class="o">*</span><span class="n">largs</span><span class="p">):</span>
+        <span class="n">modifiers</span> <span class="o">=</span> <span class="n">largs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">scancode</span> <span class="o">==</span> <span class="mi">101</span> <span class="ow">and</span> <span class="n">modifiers</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;ctrl&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">activated</span> <span class="o">=</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">activated</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">activated</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">inspect_enabled</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+        <span class="k">elif</span> <span class="n">scancode</span> <span class="o">==</span> <span class="mi">27</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">inspect_enabled</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">inspect_enabled</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="k">return</span> <span class="kc">True</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">activated</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">activated</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="k">return</span> <span class="kc">True</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">activated</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="n">scancode</span> <span class="o">==</span> <span class="mi">273</span><span class="p">:</span>  <span class="c1"># top</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">parent</span>
+
+        <span class="k">elif</span> <span class="n">scancode</span> <span class="o">==</span> <span class="mi">274</span><span class="p">:</span>  <span class="c1"># down</span>
+            <span class="n">filtered_children</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">children</span>
+                                 <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">Console</span><span class="p">)]</span>
+            <span class="k">if</span> <span class="n">filtered_children</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="n">filtered_children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">elif</span> <span class="n">scancode</span> <span class="o">==</span> <span class="mi">276</span><span class="p">:</span>  <span class="c1"># left</span>
+            <span class="n">parent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">parent</span>
+            <span class="n">filtered_children</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">parent</span><span class="o">.</span><span class="n">children</span>
+                                 <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">Console</span><span class="p">)]</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">filtered_children</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="p">)</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="n">filtered_children</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+        <span class="k">elif</span> <span class="n">scancode</span> <span class="o">==</span> <span class="mi">275</span><span class="p">:</span>  <span class="c1"># right</span>
+            <span class="n">parent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">parent</span>
+            <span class="n">filtered_children</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">parent</span><span class="o">.</span><span class="n">children</span>
+                                 <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">Console</span><span class="p">)]</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">filtered_children</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="p">)</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">filtered_children</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="n">filtered_children</span><span class="p">[</span><span class="n">index</span><span class="p">]</span></div>
+
+
+<span class="k">def</span> <span class="nf">create_console</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
+    <span class="n">ctx</span><span class="o">.</span><span class="n">console</span> <span class="o">=</span> <span class="n">Console</span><span class="p">(</span><span class="n">win</span><span class="o">=</span><span class="n">win</span><span class="p">)</span>
+    <span class="n">win</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="n">ctx</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">on_window_children</span><span class="p">,</span>
+             <span class="n">on_keyboard</span><span class="o">=</span><span class="n">ctx</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">keyboard_shortcut</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="start"><a class="viewcode-back" href="../../../api-kivy.modules.console.html#kivy.modules.console.start">[ドキュメント]</a><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Create an Console instance attached to the *ctx* and bound to the</span>
+<span class="sd">    Window&#39;s :meth:`~kivy.core.window.WindowBase.on_keyboard` event for</span>
+<span class="sd">    capturing the keyboard shortcut.</span>
+
+<span class="sd">        :Parameters:</span>
+<span class="sd">            `win`: A :class:`Window &lt;kivy.core.window.WindowBase&gt;`</span>
+<span class="sd">                The application Window to bind to.</span>
+<span class="sd">            `ctx`: A :class:`~kivy.uix.widget.Widget` or subclass</span>
+<span class="sd">                The Widget to be inspected.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">Clock</span><span class="o">.</span><span class="n">schedule_once</span><span class="p">(</span><span class="n">partial</span><span class="p">(</span><span class="n">create_console</span><span class="p">,</span> <span class="n">win</span><span class="p">,</span> <span class="n">ctx</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="stop"><a class="viewcode-back" href="../../../api-kivy.modules.console.html#kivy.modules.console.stop">[ドキュメント]</a><span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Stop and unload any active Inspectors for the given *ctx*.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="s2">&quot;console&quot;</span><span class="p">):</span>
+        <span class="n">win</span><span class="o">.</span><span class="n">unbind</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="n">ctx</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">on_window_children</span><span class="p">,</span>
+                   <span class="n">on_keyboard</span><span class="o">=</span><span class="n">ctx</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">keyboard_shortcut</span><span class="p">)</span>
+        <span class="n">win</span><span class="o">.</span><span class="n">remove_widget</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">console</span><span class="p">)</span>
+        <span class="k">del</span> <span class="n">ctx</span><span class="o">.</span><span class="n">console</span></div>
+</pre></div>
+
+            <div class="footerlinks">
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 29, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

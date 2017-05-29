@@ -1,0 +1,1297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>kivy.lang.builder &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../_static/kivy.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="../../../index.html" />
+    <link rel="up" title="kivy" href="../../kivy.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../../../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="../../../gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../../../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../../../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../../../index.html">kivy.lang.builder</a></h3>
+          
+          <h3><a href="../../../index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2></div>
+            
+  <h1>kivy.lang.builder のソースコード</h1><div class="highlight"><pre>
+<span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Builder</span>
+<span class="sd">======</span>
+
+<span class="sd">Class used for the registering and application of rules for specific widgets.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="kn">import</span> <span class="nn">codecs</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">types</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="k">import</span> <span class="n">environ</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="k">import</span> <span class="n">join</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="k">import</span> <span class="n">copy</span>
+<span class="kn">from</span> <span class="nn">types</span> <span class="k">import</span> <span class="n">CodeType</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">partial</span>
+
+<span class="kn">from</span> <span class="nn">kivy.factory</span> <span class="k">import</span> <span class="n">Factory</span>
+<span class="kn">from</span> <span class="nn">kivy.lang.parser</span> <span class="k">import</span> <span class="n">Parser</span><span class="p">,</span> <span class="n">ParserException</span><span class="p">,</span> <span class="n">_handlers</span><span class="p">,</span> <span class="n">global_idmap</span><span class="p">,</span>\
+    <span class="n">ParserRuleProperty</span>
+<span class="kn">from</span> <span class="nn">kivy.logger</span> <span class="k">import</span> <span class="n">Logger</span>
+<span class="kn">from</span> <span class="nn">kivy.utils</span> <span class="k">import</span> <span class="n">QueryDict</span>
+<span class="kn">from</span> <span class="nn">kivy.cache</span> <span class="k">import</span> <span class="n">Cache</span>
+<span class="kn">from</span> <span class="nn">kivy</span> <span class="k">import</span> <span class="n">kivy_data_dir</span>
+<span class="kn">from</span> <span class="nn">kivy.compat</span> <span class="k">import</span> <span class="n">PY2</span><span class="p">,</span> <span class="n">iteritems</span><span class="p">,</span> <span class="n">iterkeys</span>
+<span class="kn">from</span> <span class="nn">kivy.context</span> <span class="k">import</span> <span class="n">register_context</span>
+<span class="kn">from</span> <span class="nn">kivy.resources</span> <span class="k">import</span> <span class="n">resource_find</span>
+<span class="kn">from</span> <span class="nn">kivy._event</span> <span class="k">import</span> <span class="n">Observable</span><span class="p">,</span> <span class="n">EventDispatcher</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Observable&#39;</span><span class="p">,</span> <span class="s1">&#39;Builder&#39;</span><span class="p">,</span> <span class="s1">&#39;BuilderBase&#39;</span><span class="p">,</span> <span class="s1">&#39;BuilderException&#39;</span><span class="p">)</span>
+
+
+<span class="n">trace</span> <span class="o">=</span> <span class="n">Logger</span><span class="o">.</span><span class="n">trace</span>
+
+<span class="c1"># class types to check with isinstance</span>
+<span class="k">if</span> <span class="n">PY2</span><span class="p">:</span>
+    <span class="n">_cls_type</span> <span class="o">=</span> <span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">ClassType</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">_cls_type</span> <span class="o">=</span> <span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="p">)</span>
+
+<span class="c1"># late import</span>
+<span class="n">Instruction</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># delayed calls are canvas expression triggered during an loop. It is one</span>
+<span class="c1"># directional linked list of args to call call_fn with. Each element is a list</span>
+<span class="c1"># whos last element points to the next list of args to execute when</span>
+<span class="c1"># Builder.sync is called.</span>
+<span class="n">_delayed_start</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<div class="viewcode-block" id="BuilderException"><a class="viewcode-back" href="../../../api-kivy.lang.builder.html#kivy.lang.BuilderException">[ドキュメント]</a><span class="k">class</span> <span class="nc">BuilderException</span><span class="p">(</span><span class="n">ParserException</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Exception raised when the Builder failed to apply a rule on a widget.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">pass</span></div>
+
+
+<span class="k">def</span> <span class="nf">get_proxy</span><span class="p">(</span><span class="n">widget</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">widget</span><span class="o">.</span><span class="n">proxy_ref</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">widget</span>
+
+
+<span class="k">def</span> <span class="nf">custom_callback</span><span class="p">(</span><span class="n">__kvlang__</span><span class="p">,</span> <span class="n">idmap</span><span class="p">,</span> <span class="o">*</span><span class="n">largs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">idmap</span><span class="p">[</span><span class="s1">&#39;args&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">largs</span>
+    <span class="n">exec</span><span class="p">(</span><span class="n">__kvlang__</span><span class="o">.</span><span class="n">co_value</span><span class="p">,</span> <span class="n">idmap</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">call_fn</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="n">element</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">rule</span><span class="p">,</span> <span class="n">idmap</span> <span class="o">=</span> <span class="n">args</span>
+    <span class="k">if</span> <span class="n">__debug__</span><span class="p">:</span>
+        <span class="n">trace</span><span class="p">(</span><span class="s1">&#39;Lang: call_fn </span><span class="si">%s</span><span class="s1">, key=</span><span class="si">%s</span><span class="s1">, value=</span><span class="si">%r</span><span class="s1">, </span><span class="si">%r</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+            <span class="n">element</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
+    <span class="n">rule</span><span class="o">.</span><span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">e_value</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">idmap</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">__debug__</span><span class="p">:</span>
+        <span class="n">trace</span><span class="p">(</span><span class="s1">&#39;Lang: call_fn =&gt; value=</span><span class="si">%r</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">e_value</span><span class="p">,</span> <span class="p">))</span>
+    <span class="nb">setattr</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">e_value</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">delayed_call_fn</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="c1"># it&#39;s already on the list</span>
+    <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="k">global</span> <span class="n">_delayed_start</span>
+    <span class="k">if</span> <span class="n">_delayed_start</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">_delayed_start</span> <span class="o">=</span> <span class="n">args</span>
+        <span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="ne">StopIteration</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">_delayed_start</span>
+        <span class="n">_delayed_start</span> <span class="o">=</span> <span class="n">args</span>
+
+
+<span class="k">def</span> <span class="nf">update_intermediates</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">bound</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Function that is called when an intermediate property is updated</span>
+<span class="sd">    and `rebind` of that property is True. In that case, we unbind</span>
+<span class="sd">    all bound funcs that were bound to attrs of the old value of the</span>
+<span class="sd">    property and rebind to the new value of the property.</span>
+
+<span class="sd">    For example, if the rule is `self.a.b.c.d`, then when b is changed, we</span>
+<span class="sd">    unbind from `b`, `c` and `d`, if they were bound before (they were not</span>
+<span class="sd">    None and `rebind` of the respective properties was True) and we rebind</span>
+<span class="sd">    to the new values of the attrs `b`, `c``, `d` that are not None and</span>
+<span class="sd">    `rebind` is True.</span>
+
+<span class="sd">    :Parameters:</span>
+<span class="sd">        `base`</span>
+<span class="sd">            A (proxied) ref to the base widget, `self` in the example</span>
+<span class="sd">            above.</span>
+<span class="sd">        `keys`</span>
+<span class="sd">            A list of the name off the attrs of `base` being watched. In</span>
+<span class="sd">            the example above it&#39;d be `[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]`.</span>
+<span class="sd">        `bound`</span>
+<span class="sd">            A list 4-tuples, each tuple being (widget, attr, callback, uid)</span>
+<span class="sd">            representing callback functions bound to the attributed `attr`</span>
+<span class="sd">            of `widget`. `uid` is returned by `fbind` when binding.</span>
+<span class="sd">            The callback may be None, in which case the attr</span>
+<span class="sd">            was not bound, but is there to be able to walk the attr tree.</span>
+<span class="sd">            E.g. in the example above, if `b` was not an eventdispatcher,</span>
+<span class="sd">            `(_b_ref_, `c`, None)` would be added to the list so we can get</span>
+<span class="sd">            to `c` and `d`, which may be eventdispatchers and their attrs.</span>
+<span class="sd">        `s`</span>
+<span class="sd">            The index in `keys` of the of the attr that needs to be</span>
+<span class="sd">            updated. That is all the keys from `s` and further will be</span>
+<span class="sd">            rebound, since the `s` key was changed. In bound, the</span>
+<span class="sd">            corresponding index is `s - 1`. If `s` is None, we start from</span>
+<span class="sd">            1 (first attr).</span>
+<span class="sd">        `fn`</span>
+<span class="sd">            The function to be called args, `args` on bound callback.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># first remove all the old bound functions from `s` and down.</span>
+    <span class="k">for</span> <span class="n">f</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">fun</span><span class="p">,</span> <span class="n">uid</span> <span class="ow">in</span> <span class="n">bound</span><span class="p">[</span><span class="n">s</span><span class="p">:]:</span>
+        <span class="k">if</span> <span class="n">fun</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">unbind_uid</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">uid</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ReferenceError</span><span class="p">:</span>
+            <span class="k">pass</span>
+    <span class="k">del</span> <span class="n">bound</span><span class="p">[</span><span class="n">s</span><span class="p">:]</span>
+
+    <span class="c1"># find the first attr from which we need to start rebinding.</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="o">*</span><span class="n">bound</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][:</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">f</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">fn</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">append</span> <span class="o">=</span> <span class="n">bound</span><span class="o">.</span><span class="n">append</span>
+
+    <span class="c1"># bind all attrs, except last to update_intermediates</span>
+    <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">[</span><span class="n">s</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="c1"># if we need to dynamically rebind, bindm otherwise just</span>
+        <span class="c1"># add the attr to the list</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">EventDispatcher</span><span class="p">,</span> <span class="n">Observable</span><span class="p">)):</span>
+            <span class="n">prop</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">prop</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="s1">&#39;rebind&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+                <span class="c1"># fbind should not dispatch, otherwise</span>
+                <span class="c1"># update_intermediates might be called in the middle</span>
+                <span class="c1"># here messing things up</span>
+                <span class="n">uid</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">fbind</span><span class="p">(</span>
+                    <span class="n">val</span><span class="p">,</span> <span class="n">update_intermediates</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">bound</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+                <span class="n">append</span><span class="p">([</span><span class="n">f</span><span class="o">.</span><span class="n">proxy_ref</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">update_intermediates</span><span class="p">,</span> <span class="n">uid</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">append</span><span class="p">([</span><span class="n">f</span><span class="o">.</span><span class="n">proxy_ref</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">append</span><span class="p">([</span><span class="nb">getattr</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s1">&#39;proxy_ref&#39;</span><span class="p">,</span> <span class="n">f</span><span class="p">),</span> <span class="n">val</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">])</span>
+
+        <span class="n">f</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">f</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># for the last attr we bind directly to the setting function,</span>
+    <span class="c1"># because that attr sets the value of the rule.</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">EventDispatcher</span><span class="p">,</span> <span class="n">Observable</span><span class="p">)):</span>
+        <span class="n">uid</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">fbind</span><span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">fn</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">uid</span><span class="p">:</span>
+            <span class="n">append</span><span class="p">([</span><span class="n">f</span><span class="o">.</span><span class="n">proxy_ref</span><span class="p">,</span> <span class="n">keys</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">fn</span><span class="p">,</span> <span class="n">uid</span><span class="p">])</span>
+    <span class="c1"># when we rebind we have to update the</span>
+    <span class="c1"># rule with the most recent value, otherwise, the value might be wrong</span>
+    <span class="c1"># and wouldn&#39;t be updated since we might not have tracked it before.</span>
+    <span class="c1"># This only happens for a callback when rebind was True for the prop.</span>
+    <span class="n">fn</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">create_handler</span><span class="p">(</span><span class="n">iself</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">rule</span><span class="p">,</span> <span class="n">idmap</span><span class="p">,</span> <span class="n">delayed</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">idmap</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">idmap</span><span class="p">)</span>
+    <span class="n">idmap</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">global_idmap</span><span class="p">)</span>
+    <span class="n">idmap</span><span class="p">[</span><span class="s1">&#39;self&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">iself</span><span class="o">.</span><span class="n">proxy_ref</span>
+    <span class="n">bound_list</span> <span class="o">=</span> <span class="n">_handlers</span><span class="p">[</span><span class="n">iself</span><span class="o">.</span><span class="n">uid</span><span class="p">][</span><span class="n">key</span><span class="p">]</span>
+    <span class="n">handler_append</span> <span class="o">=</span> <span class="n">bound_list</span><span class="o">.</span><span class="n">append</span>
+
+    <span class="c1"># we need a hash for when delayed, so we don&#39;t execute duplicate canvas</span>
+    <span class="c1"># callbacks from the same handler during a sync op</span>
+    <span class="k">if</span> <span class="n">delayed</span><span class="p">:</span>
+        <span class="n">fn</span> <span class="o">=</span> <span class="n">delayed_call_fn</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">element</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">rule</span><span class="p">,</span> <span class="n">idmap</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>  <span class="c1"># see _delayed_start</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">fn</span> <span class="o">=</span> <span class="n">call_fn</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">rule</span><span class="p">,</span> <span class="n">idmap</span><span class="p">)</span>
+
+    <span class="c1"># bind every key.value</span>
+    <span class="k">if</span> <span class="n">rule</span><span class="o">.</span><span class="n">watched_keys</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">keys</span> <span class="ow">in</span> <span class="n">rule</span><span class="o">.</span><span class="n">watched_keys</span><span class="p">:</span>
+            <span class="n">base</span> <span class="o">=</span> <span class="n">idmap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">base</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="n">base</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="s1">&#39;proxy_ref&#39;</span><span class="p">,</span> <span class="n">base</span><span class="p">)</span>
+            <span class="n">bound</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">was_bound</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">append</span> <span class="o">=</span> <span class="n">bound</span><span class="o">.</span><span class="n">append</span>
+
+            <span class="c1"># bind all attrs, except last to update_intermediates</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="c1"># if we need to dynamically rebind, bindm otherwise</span>
+                <span class="c1"># just add the attr to the list</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">EventDispatcher</span><span class="p">,</span> <span class="n">Observable</span><span class="p">)):</span>
+                    <span class="n">prop</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">prop</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="s1">&#39;rebind&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+                        <span class="c1"># fbind should not dispatch, otherwise</span>
+                        <span class="c1"># update_intermediates might be called in the middle</span>
+                        <span class="c1"># here messing things up</span>
+                        <span class="n">uid</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">fbind</span><span class="p">(</span>
+                            <span class="n">val</span><span class="p">,</span> <span class="n">update_intermediates</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">bound</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span>
+                            <span class="n">fn</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+                        <span class="n">append</span><span class="p">([</span><span class="n">f</span><span class="o">.</span><span class="n">proxy_ref</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">update_intermediates</span><span class="p">,</span> <span class="n">uid</span><span class="p">])</span>
+                        <span class="n">was_bound</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">append</span><span class="p">([</span><span class="n">f</span><span class="o">.</span><span class="n">proxy_ref</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">])</span>
+                <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">_cls_type</span><span class="p">):</span>
+                    <span class="n">append</span><span class="p">([</span><span class="nb">getattr</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s1">&#39;proxy_ref&#39;</span><span class="p">,</span> <span class="n">f</span><span class="p">),</span> <span class="n">val</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">])</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">append</span><span class="p">([</span><span class="n">f</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">])</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">f</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">break</span>
+                <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="c1"># for the last attr we bind directly to the setting</span>
+            <span class="c1"># function, because that attr sets the value of the rule.</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">EventDispatcher</span><span class="p">,</span> <span class="n">Observable</span><span class="p">)):</span>
+                <span class="n">uid</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">fbind</span><span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">fn</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>  <span class="c1"># f is not None</span>
+                <span class="k">if</span> <span class="n">uid</span><span class="p">:</span>
+                    <span class="n">append</span><span class="p">([</span><span class="n">f</span><span class="o">.</span><span class="n">proxy_ref</span><span class="p">,</span> <span class="n">keys</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">fn</span><span class="p">,</span> <span class="n">uid</span><span class="p">])</span>
+                    <span class="n">was_bound</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">if</span> <span class="n">was_bound</span><span class="p">:</span>
+                <span class="n">handler_append</span><span class="p">(</span><span class="n">bound</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">eval</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">idmap</span><span class="p">),</span> <span class="n">bound_list</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">tb</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="k">raise</span> <span class="n">BuilderException</span><span class="p">(</span><span class="n">rule</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+                               <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">e</span><span class="p">),</span>
+                               <span class="n">cause</span><span class="o">=</span><span class="n">tb</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="BuilderBase"><a class="viewcode-back" href="../../../api-kivy.lang.builder.html#kivy.lang.BuilderBase">[ドキュメント]</a><span class="k">class</span> <span class="nc">BuilderBase</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;The Builder is responsible for creating a :class:`Parser` for parsing a</span>
+<span class="sd">    kv file, merging the results into its internal rules, templates, etc.</span>
+
+<span class="sd">    By default, :class:`Builder` is a global Kivy instance used in widgets</span>
+<span class="sd">    that you can use to load other kv files in addition to the default ones.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">_match_cache</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">_match_name_cache</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">BuilderBase</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">files</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dynamic_classes</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">templates</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rules</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rulectx</span> <span class="o">=</span> <span class="p">{}</span>
+
+<div class="viewcode-block" id="BuilderBase.load_file"><a class="viewcode-back" href="../../../api-kivy.lang.builder.html#kivy.lang.BuilderBase.load_file">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">load_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Insert a file into the language builder and return the root widget</span>
+<span class="sd">        (if defined) of the kv file.</span>
+
+<span class="sd">        :parameters:</span>
+<span class="sd">            `rulesonly`: bool, defaults to False</span>
+<span class="sd">                If True, the Builder will raise an exception if you have a root</span>
+<span class="sd">                widget inside the definition.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">resource_find</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="ow">or</span> <span class="n">filename</span>
+        <span class="k">if</span> <span class="n">__debug__</span><span class="p">:</span>
+            <span class="n">trace</span><span class="p">(</span><span class="s1">&#39;Lang: load file </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">filename</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">fd</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+            <span class="c1"># remove bom ?</span>
+            <span class="k">if</span> <span class="n">PY2</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">startswith</span><span class="p">((</span><span class="n">codecs</span><span class="o">.</span><span class="n">BOM_UTF16_LE</span><span class="p">,</span> <span class="n">codecs</span><span class="o">.</span><span class="n">BOM_UTF16_BE</span><span class="p">)):</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unsupported UTF16 for kv files.&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">startswith</span><span class="p">((</span><span class="n">codecs</span><span class="o">.</span><span class="n">BOM_UTF32_LE</span><span class="p">,</span> <span class="n">codecs</span><span class="o">.</span><span class="n">BOM_UTF32_BE</span><span class="p">)):</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unsupported UTF32 for kv files.&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">codecs</span><span class="o">.</span><span class="n">BOM_UTF8</span><span class="p">):</span>
+                    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">codecs</span><span class="o">.</span><span class="n">BOM_UTF8</span><span class="p">):]</span>
+
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_string</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BuilderBase.unload_file"><a class="viewcode-back" href="../../../api-kivy.lang.builder.html#kivy.lang.BuilderBase.unload_file">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">unload_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Unload all rules associated with a previously imported file.</span>
+
+<span class="sd">        .. versionadded:: 1.0.8</span>
+
+<span class="sd">        .. warning::</span>
+
+<span class="sd">            This will not remove rules or templates already applied/used on</span>
+<span class="sd">            current widgets. It will only effect the next widgets creation or</span>
+<span class="sd">            template invocation.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="c1"># remove rules and templates</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">resource_find</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="ow">or</span> <span class="n">filename</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rules</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rules</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">filename</span> <span class="o">!=</span> <span class="n">filename</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_clear_matchcache</span><span class="p">()</span>
+        <span class="n">templates</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">templates</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="n">filename</span><span class="p">:</span>
+                <span class="n">templates</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">templates</span> <span class="o">=</span> <span class="n">templates</span>
+
+        <span class="k">if</span> <span class="n">filename</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">files</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+        <span class="c1"># unregister all the dynamic classes</span>
+        <span class="n">Factory</span><span class="o">.</span><span class="n">unregister_from_filename</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BuilderBase.load_string"><a class="viewcode-back" href="../../../api-kivy.lang.builder.html#kivy.lang.BuilderBase.load_string">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">load_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Insert a string into the Language Builder and return the root widget</span>
+<span class="sd">        (if defined) of the kv string.</span>
+
+<span class="sd">        :Parameters:</span>
+<span class="sd">            `rulesonly`: bool, defaults to False</span>
+<span class="sd">                If True, the Builder will raise an exception if you have a root</span>
+<span class="sd">                widget inside the definition.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;rulesonly&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_current_filename</span> <span class="o">=</span> <span class="n">fn</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;filename&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="c1"># put a warning if a file is loaded multiple times</span>
+        <span class="k">if</span> <span class="n">fn</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">files</span><span class="p">:</span>
+            <span class="n">Logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s1">&#39;Lang: The file </span><span class="si">{}</span><span class="s1"> is loaded multiples times, &#39;</span>
+                <span class="s1">&#39;you might have unwanted behaviors.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fn</span><span class="p">))</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># parse the string</span>
+            <span class="n">parser</span> <span class="o">=</span> <span class="n">Parser</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="n">string</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">fn</span><span class="p">)</span>
+
+            <span class="c1"># merge rules with our rules</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rules</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">parser</span><span class="o">.</span><span class="n">rules</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_clear_matchcache</span><span class="p">()</span>
+
+            <span class="c1"># add the template found by the parser into ours</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="bp">cls</span><span class="p">,</span> <span class="n">template</span> <span class="ow">in</span> <span class="n">parser</span><span class="o">.</span><span class="n">templates</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">templates</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">template</span><span class="p">,</span> <span class="n">fn</span><span class="p">)</span>
+                <span class="n">Factory</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">name</span><span class="p">,</span>
+                                 <span class="bp">cls</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span>
+                                 <span class="n">is_template</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">warn</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="c1"># register all the dynamic classes</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">baseclasses</span> <span class="ow">in</span> <span class="n">iteritems</span><span class="p">(</span><span class="n">parser</span><span class="o">.</span><span class="n">dynamic_classes</span><span class="p">):</span>
+                <span class="n">Factory</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">baseclasses</span><span class="o">=</span><span class="n">baseclasses</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">fn</span><span class="p">,</span>
+                                 <span class="n">warn</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="c1"># create root object is exist</span>
+            <span class="k">if</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;rulesonly&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">parser</span><span class="o">.</span><span class="n">root</span><span class="p">:</span>
+                <span class="n">filename</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;rulesonly&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;string&gt;&#39;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;The file &lt;</span><span class="si">%s</span><span class="s1">&gt; contain also non-rules &#39;</span>
+                                <span class="s1">&#39;directives&#39;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
+
+            <span class="c1"># save the loaded files only if there is a root without</span>
+            <span class="c1"># template/dynamic classes</span>
+            <span class="k">if</span> <span class="n">fn</span> <span class="ow">and</span> <span class="p">(</span><span class="n">parser</span><span class="o">.</span><span class="n">templates</span> <span class="ow">or</span>
+                       <span class="n">parser</span><span class="o">.</span><span class="n">dynamic_classes</span> <span class="ow">or</span> <span class="n">parser</span><span class="o">.</span><span class="n">rules</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">parser</span><span class="o">.</span><span class="n">root</span><span class="p">:</span>
+                <span class="n">widget</span> <span class="o">=</span> <span class="n">Factory</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">parser</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">name</span><span class="p">)()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_apply_rule</span><span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="n">parser</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="n">parser</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">widget</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_current_filename</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="BuilderBase.template"><a class="viewcode-back" href="../../../api-kivy.lang.builder.html#kivy.lang.BuilderBase.template">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">template</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">ctx</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Create a specialized template using a specific context.</span>
+
+<span class="sd">        .. versionadded:: 1.0.5</span>
+
+<span class="sd">        With templates, you can construct custom widgets from a kv lang</span>
+<span class="sd">        definition by giving them a context. Check :ref:`Template usage</span>
+<span class="sd">        &lt;template_usage&gt;`.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="c1"># Prevent naming clash with whatever the user might be putting into the</span>
+        <span class="c1"># ctx as key.</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">templates</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Unknown &lt;</span><span class="si">%s</span><span class="s1">&gt; template name&#39;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">baseclasses</span><span class="p">,</span> <span class="n">rule</span><span class="p">,</span> <span class="n">fn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">templates</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">|</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">baseclasses</span><span class="p">)</span>
+        <span class="bp">cls</span> <span class="o">=</span> <span class="n">Cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;kv.lang&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">rootwidgets</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">basecls</span> <span class="ow">in</span> <span class="n">baseclasses</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">):</span>
+                <span class="n">rootwidgets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Factory</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">basecls</span><span class="p">))</span>
+            <span class="bp">cls</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">rootwidgets</span><span class="p">),</span> <span class="p">{})</span>
+            <span class="n">Cache</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;kv.lang&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+        <span class="c1"># in previous versions, ``ctx`` is passed as is as ``template_ctx``</span>
+        <span class="c1"># preventing widgets in it from be collected by the GC. This was</span>
+        <span class="c1"># especially relevant to AccordionItem&#39;s title_template.</span>
+        <span class="n">proxy_ctx</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">get_proxy</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">ctx</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_apply_rule</span><span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="n">rule</span><span class="p">,</span> <span class="n">rule</span><span class="p">,</span> <span class="n">template_ctx</span><span class="o">=</span><span class="n">proxy_ctx</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">widget</span></div>
+
+<div class="viewcode-block" id="BuilderBase.apply_rules"><a class="viewcode-back" href="../../../api-kivy.lang.builder.html#kivy.lang.BuilderBase.apply_rules">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">apply_rules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="n">rule_name</span><span class="p">,</span> <span class="n">ignored_consts</span><span class="o">=</span><span class="nb">set</span><span class="p">()):</span>
+        <span class="sd">&#39;&#39;&#39;Search all the rules that match `rule_name` widget</span>
+<span class="sd">        and apply them to `widget`.</span>
+
+<span class="sd">        .. versionadded:: 1.10.0</span>
+
+<span class="sd">        `ignored_consts` is a set or list type whose elements are property</span>
+<span class="sd">        names for which constant KV rules (i.e. those that don&#39;t create</span>
+<span class="sd">        bindings) of that widget will not be applied. This allows e.g. skipping</span>
+<span class="sd">        constant rules that overwrite a value initialized in python.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">rules</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">match_rule_name</span><span class="p">(</span><span class="n">rule_name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">__debug__</span><span class="p">:</span>
+            <span class="n">trace</span><span class="p">(</span><span class="s1">&#39;Lang: Found </span><span class="si">%d</span><span class="s1"> rules for </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rules</span><span class="p">),</span> <span class="n">rule_name</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">rules</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">for</span> <span class="n">rule</span> <span class="ow">in</span> <span class="n">rules</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_apply_rule</span><span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="n">rule</span><span class="p">,</span> <span class="n">rule</span><span class="p">,</span> <span class="n">ignored_consts</span><span class="o">=</span><span class="n">ignored_consts</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BuilderBase.apply"><a class="viewcode-back" href="../../../api-kivy.lang.builder.html#kivy.lang.BuilderBase.apply">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="n">ignored_consts</span><span class="o">=</span><span class="nb">set</span><span class="p">()):</span>
+        <span class="sd">&#39;&#39;&#39;Search all the rules that match the widget and apply them.</span>
+
+<span class="sd">        `ignored_consts` is a set or list type whose elements are property</span>
+<span class="sd">        names for which constant KV rules (i.e. those that don&#39;t create</span>
+<span class="sd">        bindings) of that widget will not be applied. This allows e.g. skipping</span>
+<span class="sd">        constant rules that overwrite a value initialized in python.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">rules</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">__debug__</span><span class="p">:</span>
+            <span class="n">trace</span><span class="p">(</span><span class="s1">&#39;Lang: Found </span><span class="si">%d</span><span class="s1"> rules for </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rules</span><span class="p">),</span> <span class="n">widget</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">rules</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">for</span> <span class="n">rule</span> <span class="ow">in</span> <span class="n">rules</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_apply_rule</span><span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="n">rule</span><span class="p">,</span> <span class="n">rule</span><span class="p">,</span> <span class="n">ignored_consts</span><span class="o">=</span><span class="n">ignored_consts</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_clear_matchcache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">BuilderBase</span><span class="o">.</span><span class="n">_match_cache</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">BuilderBase</span><span class="o">.</span><span class="n">_match_name_cache</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">_apply_rule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="n">rule</span><span class="p">,</span> <span class="n">rootrule</span><span class="p">,</span> <span class="n">template_ctx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                    <span class="n">ignored_consts</span><span class="o">=</span><span class="nb">set</span><span class="p">()):</span>
+        <span class="c1"># widget: the current instantiated widget</span>
+        <span class="c1"># rule: the current rule</span>
+        <span class="c1"># rootrule: the current root rule (for children of a rule)</span>
+
+        <span class="c1"># will collect reference to all the id in children</span>
+        <span class="k">assert</span><span class="p">(</span><span class="n">rule</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rulectx</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rulectx</span><span class="p">[</span><span class="n">rule</span><span class="p">]</span> <span class="o">=</span> <span class="n">rctx</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;ids&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;root&#39;</span><span class="p">:</span> <span class="n">widget</span><span class="o">.</span><span class="n">proxy_ref</span><span class="p">},</span>
+            <span class="s1">&#39;set&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;hdl&#39;</span><span class="p">:</span> <span class="p">[]}</span>
+
+        <span class="c1"># extract the context of the rootrule (not rule!)</span>
+        <span class="k">assert</span><span class="p">(</span><span class="n">rootrule</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rulectx</span><span class="p">)</span>
+        <span class="n">rctx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rulectx</span><span class="p">[</span><span class="n">rootrule</span><span class="p">]</span>
+
+        <span class="c1"># if a template context is passed, put it as &quot;ctx&quot;</span>
+        <span class="k">if</span> <span class="n">template_ctx</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">rctx</span><span class="p">[</span><span class="s1">&#39;ids&#39;</span><span class="p">][</span><span class="s1">&#39;ctx&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">QueryDict</span><span class="p">(</span><span class="n">template_ctx</span><span class="p">)</span>
+
+        <span class="c1"># if we got an id, put it in the root rule for a later global usage</span>
+        <span class="k">if</span> <span class="n">rule</span><span class="o">.</span><span class="n">id</span><span class="p">:</span>
+            <span class="c1"># use only the first word as `id` discard the rest.</span>
+            <span class="n">rule</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">rule</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">rctx</span><span class="p">[</span><span class="s1">&#39;ids&#39;</span><span class="p">][</span><span class="n">rule</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">widget</span><span class="o">.</span><span class="n">proxy_ref</span>
+            <span class="c1"># set id name as a attribute for root widget so one can in python</span>
+            <span class="c1"># code simply access root_widget.id_name</span>
+            <span class="n">_ids</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">rctx</span><span class="p">[</span><span class="s1">&#39;ids&#39;</span><span class="p">])</span>
+            <span class="n">_root</span> <span class="o">=</span> <span class="n">_ids</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)</span>
+            <span class="n">_new_ids</span> <span class="o">=</span> <span class="n">_root</span><span class="o">.</span><span class="n">ids</span>
+            <span class="k">for</span> <span class="n">_key</span> <span class="ow">in</span> <span class="n">iterkeys</span><span class="p">(</span><span class="n">_ids</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">_ids</span><span class="p">[</span><span class="n">_key</span><span class="p">]</span> <span class="o">==</span> <span class="n">_root</span><span class="p">:</span>
+                    <span class="c1"># skip on self</span>
+                    <span class="k">continue</span>
+                <span class="n">_new_ids</span><span class="p">[</span><span class="n">_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">_ids</span><span class="p">[</span><span class="n">_key</span><span class="p">]</span>
+            <span class="n">_root</span><span class="o">.</span><span class="n">ids</span> <span class="o">=</span> <span class="n">_new_ids</span>
+
+        <span class="c1"># first, ensure that the widget have all the properties used in</span>
+        <span class="c1"># the rule if not, they will be created as ObjectProperty.</span>
+        <span class="n">rule</span><span class="o">.</span><span class="n">create_missing</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span>
+
+        <span class="c1"># build the widget canvas</span>
+        <span class="k">if</span> <span class="n">rule</span><span class="o">.</span><span class="n">canvas_before</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">widget</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">before</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_build_canvas</span><span class="p">(</span><span class="n">widget</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">before</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span>
+                                   <span class="n">rule</span><span class="o">.</span><span class="n">canvas_before</span><span class="p">,</span> <span class="n">rootrule</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">rule</span><span class="o">.</span><span class="n">canvas_root</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">widget</span><span class="o">.</span><span class="n">canvas</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_build_canvas</span><span class="p">(</span><span class="n">widget</span><span class="o">.</span><span class="n">canvas</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span>
+                                   <span class="n">rule</span><span class="o">.</span><span class="n">canvas_root</span><span class="p">,</span> <span class="n">rootrule</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">rule</span><span class="o">.</span><span class="n">canvas_after</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">widget</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_build_canvas</span><span class="p">(</span><span class="n">widget</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span>
+                                   <span class="n">rule</span><span class="o">.</span><span class="n">canvas_after</span><span class="p">,</span> <span class="n">rootrule</span><span class="p">)</span>
+
+        <span class="c1"># create children tree</span>
+        <span class="n">Factory_get</span> <span class="o">=</span> <span class="n">Factory</span><span class="o">.</span><span class="n">get</span>
+        <span class="n">Factory_is_template</span> <span class="o">=</span> <span class="n">Factory</span><span class="o">.</span><span class="n">is_template</span>
+        <span class="k">for</span> <span class="n">crule</span> <span class="ow">in</span> <span class="n">rule</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+            <span class="n">cname</span> <span class="o">=</span> <span class="n">crule</span><span class="o">.</span><span class="n">name</span>
+
+            <span class="k">if</span> <span class="n">cname</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;canvas&#39;</span><span class="p">,</span> <span class="s1">&#39;canvas.before&#39;</span><span class="p">,</span> <span class="s1">&#39;canvas.after&#39;</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="n">ParserException</span><span class="p">(</span>
+                    <span class="n">crule</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="n">crule</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+                    <span class="s1">&#39;Canvas instructions added in kv must &#39;</span>
+                    <span class="s1">&#39;be declared before child widgets.&#39;</span><span class="p">)</span>
+
+            <span class="c1"># depending if the child rule is a template or not, we are not</span>
+            <span class="c1"># having the same approach</span>
+            <span class="bp">cls</span> <span class="o">=</span> <span class="n">Factory_get</span><span class="p">(</span><span class="n">cname</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">Factory_is_template</span><span class="p">(</span><span class="n">cname</span><span class="p">):</span>
+                <span class="c1"># we got a template, so extract all the properties and</span>
+                <span class="c1"># handlers, and push them in a &quot;ctx&quot; dictionary.</span>
+                <span class="n">ctx</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="n">idmap</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">global_idmap</span><span class="p">)</span>
+                <span class="n">idmap</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;root&#39;</span><span class="p">:</span> <span class="n">rctx</span><span class="p">[</span><span class="s1">&#39;ids&#39;</span><span class="p">][</span><span class="s1">&#39;root&#39;</span><span class="p">]})</span>
+                <span class="k">if</span> <span class="s1">&#39;ctx&#39;</span> <span class="ow">in</span> <span class="n">rctx</span><span class="p">[</span><span class="s1">&#39;ids&#39;</span><span class="p">]:</span>
+                    <span class="n">idmap</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;ctx&#39;</span><span class="p">:</span> <span class="n">rctx</span><span class="p">[</span><span class="s1">&#39;ids&#39;</span><span class="p">][</span><span class="s1">&#39;ctx&#39;</span><span class="p">]})</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">prule</span> <span class="ow">in</span> <span class="n">crule</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+                        <span class="n">value</span> <span class="o">=</span> <span class="n">prule</span><span class="o">.</span><span class="n">co_value</span>
+                        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">is</span> <span class="n">CodeType</span><span class="p">:</span>
+                            <span class="n">value</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">idmap</span><span class="p">)</span>
+                        <span class="n">ctx</span><span class="p">[</span><span class="n">prule</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+                    <span class="k">for</span> <span class="n">prule</span> <span class="ow">in</span> <span class="n">crule</span><span class="o">.</span><span class="n">handlers</span><span class="p">:</span>
+                        <span class="n">value</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">prule</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">idmap</span><span class="p">)</span>
+                        <span class="n">ctx</span><span class="p">[</span><span class="n">prule</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+                <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                    <span class="n">tb</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">2</span><span class="p">]</span>
+                    <span class="k">raise</span> <span class="n">BuilderException</span><span class="p">(</span>
+                        <span class="n">prule</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="n">prule</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+                        <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">e</span><span class="p">),</span> <span class="n">cause</span><span class="o">=</span><span class="n">tb</span><span class="p">)</span>
+
+                <span class="c1"># create the template with an explicit ctx</span>
+                <span class="n">child</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="o">**</span><span class="n">ctx</span><span class="p">)</span>
+                <span class="n">widget</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+
+                <span class="c1"># reference it on our root rule context</span>
+                <span class="k">if</span> <span class="n">crule</span><span class="o">.</span><span class="n">id</span><span class="p">:</span>
+                    <span class="n">rctx</span><span class="p">[</span><span class="s1">&#39;ids&#39;</span><span class="p">][</span><span class="n">crule</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">child</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># we got a &quot;normal&quot; rule, construct it manually</span>
+                <span class="c1"># we can&#39;t construct it without __no_builder=True, because the</span>
+                <span class="c1"># previous implementation was doing the add_widget() before</span>
+                <span class="c1"># apply(), and so, we could use &quot;self.parent&quot;.</span>
+                <span class="n">child</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">__no_builder</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">widget</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_apply_rule</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">crule</span><span class="p">,</span> <span class="n">rootrule</span><span class="p">)</span>
+
+        <span class="c1"># append the properties and handlers to our final resolution task</span>
+        <span class="k">if</span> <span class="n">rule</span><span class="o">.</span><span class="n">properties</span><span class="p">:</span>
+            <span class="n">rctx</span><span class="p">[</span><span class="s1">&#39;set&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">widget</span><span class="o">.</span><span class="n">proxy_ref</span><span class="p">,</span>
+                                <span class="nb">list</span><span class="p">(</span><span class="n">rule</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">values</span><span class="p">())))</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">crule</span> <span class="ow">in</span> <span class="n">rule</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="c1"># clear previously applied rules if asked</span>
+                <span class="k">if</span> <span class="n">crule</span><span class="o">.</span><span class="n">ignore_prev</span><span class="p">:</span>
+                    <span class="n">Builder</span><span class="o">.</span><span class="n">unbind_property</span><span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">rule</span><span class="o">.</span><span class="n">handlers</span><span class="p">:</span>
+            <span class="n">rctx</span><span class="p">[</span><span class="s1">&#39;hdl&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">widget</span><span class="o">.</span><span class="n">proxy_ref</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">handlers</span><span class="p">))</span>
+
+        <span class="c1"># if we are applying another rule that the root one, then it&#39;s done for</span>
+        <span class="c1"># us!</span>
+        <span class="k">if</span> <span class="n">rootrule</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">rule</span><span class="p">:</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">rulectx</span><span class="p">[</span><span class="n">rule</span><span class="p">]</span>
+            <span class="k">return</span>
+
+        <span class="c1"># normally, we can apply a list of properties with a proper context</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">rule</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">for</span> <span class="n">widget_set</span><span class="p">,</span> <span class="n">rules</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">rctx</span><span class="p">[</span><span class="s1">&#39;set&#39;</span><span class="p">]):</span>
+                <span class="k">for</span> <span class="n">rule</span> <span class="ow">in</span> <span class="n">rules</span><span class="p">:</span>
+                    <span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">ParserRuleProperty</span><span class="p">))</span>
+                    <span class="n">key</span> <span class="o">=</span> <span class="n">rule</span><span class="o">.</span><span class="n">name</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="n">rule</span><span class="o">.</span><span class="n">co_value</span>
+                    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">is</span> <span class="n">CodeType</span><span class="p">:</span>
+                        <span class="n">value</span><span class="p">,</span> <span class="n">bound</span> <span class="o">=</span> <span class="n">create_handler</span><span class="p">(</span>
+                            <span class="n">widget_set</span><span class="p">,</span> <span class="n">widget_set</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">rule</span><span class="p">,</span>
+                            <span class="n">rctx</span><span class="p">[</span><span class="s1">&#39;ids&#39;</span><span class="p">])</span>
+                        <span class="c1"># if there&#39;s a rule</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">widget_set</span> <span class="o">!=</span> <span class="n">widget</span> <span class="ow">or</span> <span class="n">bound</span> <span class="ow">or</span>
+                                <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ignored_consts</span><span class="p">):</span>
+                            <span class="nb">setattr</span><span class="p">(</span><span class="n">widget_set</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">widget_set</span> <span class="o">!=</span> <span class="n">widget</span> <span class="ow">or</span>
+                                <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ignored_consts</span><span class="p">):</span>
+                            <span class="nb">setattr</span><span class="p">(</span><span class="n">widget_set</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">rule</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">tb</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">2</span><span class="p">]</span>
+                <span class="k">raise</span> <span class="n">BuilderException</span><span class="p">(</span><span class="n">rule</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+                                       <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
+                                                       <span class="n">e</span><span class="p">),</span> <span class="n">cause</span><span class="o">=</span><span class="n">tb</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">e</span>
+
+        <span class="c1"># build handlers</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">crule</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">for</span> <span class="n">widget_set</span><span class="p">,</span> <span class="n">rules</span> <span class="ow">in</span> <span class="n">rctx</span><span class="p">[</span><span class="s1">&#39;hdl&#39;</span><span class="p">]:</span>
+                <span class="k">for</span> <span class="n">crule</span> <span class="ow">in</span> <span class="n">rules</span><span class="p">:</span>
+                    <span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">crule</span><span class="p">,</span> <span class="n">ParserRuleProperty</span><span class="p">))</span>
+                    <span class="k">assert</span><span class="p">(</span><span class="n">crule</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;on_&#39;</span><span class="p">))</span>
+                    <span class="n">key</span> <span class="o">=</span> <span class="n">crule</span><span class="o">.</span><span class="n">name</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">widget_set</span><span class="o">.</span><span class="n">is_event_type</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                        <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
+                    <span class="n">idmap</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">global_idmap</span><span class="p">)</span>
+                    <span class="n">idmap</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">rctx</span><span class="p">[</span><span class="s1">&#39;ids&#39;</span><span class="p">])</span>
+                    <span class="n">idmap</span><span class="p">[</span><span class="s1">&#39;self&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">widget_set</span><span class="o">.</span><span class="n">proxy_ref</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">widget_set</span><span class="o">.</span><span class="n">fbind</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">custom_callback</span><span class="p">,</span> <span class="n">crule</span><span class="p">,</span>
+                                            <span class="n">idmap</span><span class="p">):</span>
+                        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+                    <span class="c1"># hack for on_parent</span>
+                    <span class="k">if</span> <span class="n">crule</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;on_parent&#39;</span><span class="p">:</span>
+                        <span class="n">Factory</span><span class="o">.</span><span class="n">Widget</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">widget_set</span><span class="o">.</span><span class="vm">__self__</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">crule</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">tb</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">2</span><span class="p">]</span>
+                <span class="k">raise</span> <span class="n">BuilderException</span><span class="p">(</span>
+                    <span class="n">crule</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="n">crule</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+                    <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">e</span><span class="p">),</span> <span class="n">cause</span><span class="o">=</span><span class="n">tb</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">e</span>
+
+        <span class="c1"># rule finished, forget it</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">rulectx</span><span class="p">[</span><span class="n">rootrule</span><span class="p">]</span>
+
+<div class="viewcode-block" id="BuilderBase.match"><a class="viewcode-back" href="../../../api-kivy.lang.builder.html#kivy.lang.BuilderBase.match">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">match</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Return a list of :class:`ParserRule` objects matching the widget.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">cache</span> <span class="o">=</span> <span class="n">BuilderBase</span><span class="o">.</span><span class="n">_match_cache</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">widget</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">widget</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">widget</span><span class="o">.</span><span class="n">cls</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">cache</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cache</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="n">rules</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">selector</span><span class="p">,</span> <span class="n">rule</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rules</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">selector</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">widget</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">rule</span><span class="o">.</span><span class="n">avoid_previous_rules</span><span class="p">:</span>
+                    <span class="k">del</span> <span class="n">rules</span><span class="p">[:]</span>
+                <span class="n">rules</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rule</span><span class="p">)</span>
+        <span class="n">cache</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">rules</span>
+        <span class="k">return</span> <span class="n">rules</span></div>
+
+<div class="viewcode-block" id="BuilderBase.match_rule_name"><a class="viewcode-back" href="../../../api-kivy.lang.builder.html#kivy.lang.BuilderBase.match_rule_name">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">match_rule_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rule_name</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Return a list of :class:`ParserRule` objects matching the widget.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">cache</span> <span class="o">=</span> <span class="n">BuilderBase</span><span class="o">.</span><span class="n">_match_name_cache</span>
+        <span class="n">rule_name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">rule_name</span><span class="p">)</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">rule_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">cache</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cache</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="n">rules</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">selector</span><span class="p">,</span> <span class="n">rule</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rules</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">selector</span><span class="o">.</span><span class="n">match_rule_name</span><span class="p">(</span><span class="n">rule_name</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">rule</span><span class="o">.</span><span class="n">avoid_previous_rules</span><span class="p">:</span>
+                    <span class="k">del</span> <span class="n">rules</span><span class="p">[:]</span>
+                <span class="n">rules</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rule</span><span class="p">)</span>
+        <span class="n">cache</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">rules</span>
+        <span class="k">return</span> <span class="n">rules</span></div>
+
+<div class="viewcode-block" id="BuilderBase.sync"><a class="viewcode-back" href="../../../api-kivy.lang.builder.html#kivy.lang.BuilderBase.sync">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">sync</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Execute all the waiting operations, such as the execution of all the</span>
+<span class="sd">        expressions related to the canvas.</span>
+
+<span class="sd">        .. versionadded:: 1.7.0</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">global</span> <span class="n">_delayed_start</span>
+        <span class="n">next_args</span> <span class="o">=</span> <span class="n">_delayed_start</span>
+        <span class="k">if</span> <span class="n">next_args</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">while</span> <span class="n">next_args</span> <span class="ow">is</span> <span class="ow">not</span> <span class="ne">StopIteration</span><span class="p">:</span>
+            <span class="c1"># is this try/except still needed? yes, in case widget died in this</span>
+            <span class="c1"># frame after the call was scheduled</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">call_fn</span><span class="p">(</span><span class="n">next_args</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ReferenceError</span><span class="p">:</span>
+                <span class="k">pass</span>
+            <span class="n">args</span> <span class="o">=</span> <span class="n">next_args</span>
+            <span class="n">next_args</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">_delayed_start</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="BuilderBase.unbind_widget"><a class="viewcode-back" href="../../../api-kivy.lang.builder.html#kivy.lang.BuilderBase.unbind_widget">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">unbind_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Unbind all the handlers created by the KV rules of the</span>
+<span class="sd">        widget. The :attr:`kivy.uix.widget.Widget.uid` is passed here</span>
+<span class="sd">        instead of the widget itself, because Builder is using it in the</span>
+<span class="sd">        widget destructor.</span>
+
+<span class="sd">        This effectively clears all the KV rules associated with this widget.</span>
+<span class="sd">        For example:</span>
+
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            &gt;&gt;&gt; w = Builder.load_string(\&#39;&#39;&#39;</span>
+            <span class="o">...</span> <span class="n">Widget</span><span class="p">:</span>
+            <span class="o">...</span>     <span class="n">height</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">/</span> <span class="mf">2.</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">disabled</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span>
+            <span class="o">...</span>     <span class="n">x</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="mi">50</span>
+            <span class="o">...</span> \<span class="s1">&#39;&#39;&#39;)</span>
+<span class="s1">            &gt;&gt;&gt; w.size</span>
+<span class="s1">            [100, 100]</span>
+<span class="s1">            &gt;&gt;&gt; w.pos</span>
+<span class="s1">            [50, 0]</span>
+<span class="s1">            &gt;&gt;&gt; w.width = 500</span>
+<span class="s1">            &gt;&gt;&gt; w.size</span>
+<span class="s1">            [500, 500]</span>
+<span class="s1">            &gt;&gt;&gt; Builder.unbind_widget(w.uid)</span>
+<span class="s1">            &gt;&gt;&gt; w.width = 222</span>
+<span class="s1">            &gt;&gt;&gt; w.y = 500</span>
+<span class="s1">            &gt;&gt;&gt; w.size</span>
+<span class="s1">            [222, 500]</span>
+<span class="s1">            &gt;&gt;&gt; w.pos</span>
+<span class="s1">            [50, 500]</span>
+
+<span class="s1">        .. versionadded:: 1.7.2</span>
+<span class="s1">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="n">uid</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_handlers</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">for</span> <span class="n">prop_callbacks</span> <span class="ow">in</span> <span class="n">_handlers</span><span class="p">[</span><span class="n">uid</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">callbacks</span> <span class="ow">in</span> <span class="n">prop_callbacks</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">f</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="n">bound_uid</span> <span class="ow">in</span> <span class="n">callbacks</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">fn</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># it&#39;s not a kivy prop.</span>
+                        <span class="k">continue</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">f</span><span class="o">.</span><span class="n">unbind_uid</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">bound_uid</span><span class="p">)</span>
+                    <span class="k">except</span> <span class="ne">ReferenceError</span><span class="p">:</span>
+                        <span class="c1"># proxy widget is already gone, that&#39;s cool :)</span>
+                        <span class="k">pass</span>
+        <span class="k">del</span> <span class="n">_handlers</span><span class="p">[</span><span class="n">uid</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="BuilderBase.unbind_property"><a class="viewcode-back" href="../../../api-kivy.lang.builder.html#kivy.lang.BuilderBase.unbind_property">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">unbind_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Unbind the handlers created by all the rules of the widget that set</span>
+<span class="sd">        the name.</span>
+
+<span class="sd">        This effectively clears all the rules of widget that take the form::</span>
+
+<span class="sd">            name: rule</span>
+
+<span class="sd">        For example:</span>
+
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            &gt;&gt;&gt; w = Builder.load_string(\&#39;&#39;&#39;</span>
+            <span class="o">...</span> <span class="n">Widget</span><span class="p">:</span>
+            <span class="o">...</span>     <span class="n">height</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">/</span> <span class="mf">2.</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">disabled</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span>
+            <span class="o">...</span>     <span class="n">x</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="mi">50</span>
+            <span class="o">...</span> \<span class="s1">&#39;&#39;&#39;)</span>
+<span class="s1">            &gt;&gt;&gt; w.size</span>
+<span class="s1">            [100, 100]</span>
+<span class="s1">            &gt;&gt;&gt; w.pos</span>
+<span class="s1">            [50, 0]</span>
+<span class="s1">            &gt;&gt;&gt; w.width = 500</span>
+<span class="s1">            &gt;&gt;&gt; w.size</span>
+<span class="s1">            [500, 500]</span>
+<span class="s1">            &gt;&gt;&gt; Builder.unbind_property(w, &#39;height&#39;)</span>
+<span class="s1">            &gt;&gt;&gt; w.width = 222</span>
+<span class="s1">            &gt;&gt;&gt; w.size</span>
+<span class="s1">            [222, 500]</span>
+<span class="s1">            &gt;&gt;&gt; w.y = 500</span>
+<span class="s1">            &gt;&gt;&gt; w.pos</span>
+<span class="s1">            [550, 500]</span>
+
+<span class="s1">        .. versionadded:: 1.9.1</span>
+<span class="s1">        &#39;&#39;&#39;</span>
+        <span class="n">uid</span> <span class="o">=</span> <span class="n">widget</span><span class="o">.</span><span class="n">uid</span>
+        <span class="k">if</span> <span class="n">uid</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_handlers</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="n">prop_handlers</span> <span class="o">=</span> <span class="n">_handlers</span><span class="p">[</span><span class="n">uid</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">prop_handlers</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">for</span> <span class="n">callbacks</span> <span class="ow">in</span> <span class="n">prop_handlers</span><span class="p">[</span><span class="n">name</span><span class="p">]:</span>
+            <span class="k">for</span> <span class="n">f</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="n">bound_uid</span> <span class="ow">in</span> <span class="n">callbacks</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">fn</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># it&#39;s not a kivy prop.</span>
+                    <span class="k">continue</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">unbind_uid</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">bound_uid</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">ReferenceError</span><span class="p">:</span>
+                    <span class="c1"># proxy widget is already gone, that&#39;s cool :)</span>
+                    <span class="k">pass</span>
+        <span class="k">del</span> <span class="n">prop_handlers</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">prop_handlers</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">_handlers</span><span class="p">[</span><span class="n">uid</span><span class="p">]</span></div>
+
+    <span class="k">def</span> <span class="nf">_build_canvas</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="n">rule</span><span class="p">,</span> <span class="n">rootrule</span><span class="p">):</span>
+        <span class="k">global</span> <span class="n">Instruction</span>
+        <span class="k">if</span> <span class="n">Instruction</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">Instruction</span> <span class="o">=</span> <span class="n">Factory</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Instruction&#39;</span><span class="p">)</span>
+        <span class="n">idmap</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rulectx</span><span class="p">[</span><span class="n">rootrule</span><span class="p">][</span><span class="s1">&#39;ids&#39;</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">crule</span> <span class="ow">in</span> <span class="n">rule</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">crule</span><span class="o">.</span><span class="n">name</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;Clear&#39;</span><span class="p">:</span>
+                <span class="n">canvas</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+                <span class="k">continue</span>
+            <span class="n">instr</span> <span class="o">=</span> <span class="n">Factory</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">instr</span><span class="p">,</span> <span class="n">Instruction</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="n">BuilderException</span><span class="p">(</span>
+                    <span class="n">crule</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="n">crule</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+                    <span class="s1">&#39;You can add only graphics Instruction in canvas.&#39;</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">prule</span> <span class="ow">in</span> <span class="n">crule</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+                    <span class="n">key</span> <span class="o">=</span> <span class="n">prule</span><span class="o">.</span><span class="n">name</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="n">prule</span><span class="o">.</span><span class="n">co_value</span>
+                    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">is</span> <span class="n">CodeType</span><span class="p">:</span>
+                        <span class="n">value</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">create_handler</span><span class="p">(</span>
+                            <span class="n">widget</span><span class="p">,</span> <span class="n">instr</span><span class="o">.</span><span class="n">proxy_ref</span><span class="p">,</span>
+                            <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">prule</span><span class="p">,</span> <span class="n">idmap</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="n">instr</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">tb</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">2</span><span class="p">]</span>
+                <span class="k">raise</span> <span class="n">BuilderException</span><span class="p">(</span>
+                    <span class="n">prule</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="n">prule</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+                    <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">e</span><span class="p">),</span> <span class="n">cause</span><span class="o">=</span><span class="n">tb</span><span class="p">)</span></div>
+
+
+<span class="c1">#: Main instance of a :class:`BuilderBase`.</span>
+<span class="n">Builder</span> <span class="o">=</span> <span class="n">register_context</span><span class="p">(</span><span class="s1">&#39;Builder&#39;</span><span class="p">,</span> <span class="n">BuilderBase</span><span class="p">)</span>
+<span class="n">Builder</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">kivy_data_dir</span><span class="p">,</span> <span class="s1">&#39;style.kv&#39;</span><span class="p">),</span> <span class="n">rulesonly</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="s1">&#39;KIVY_PROFILE_LANG&#39;</span> <span class="ow">in</span> <span class="n">environ</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">atexit</span>
+    <span class="kn">import</span> <span class="nn">cgi</span>
+
+    <span class="k">def</span> <span class="nf">match_rule</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">rule</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">rule</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">filename</span> <span class="o">!=</span> <span class="n">fn</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">for</span> <span class="n">prop</span><span class="p">,</span> <span class="n">prp</span> <span class="ow">in</span> <span class="n">iteritems</span><span class="p">(</span><span class="n">rule</span><span class="o">.</span><span class="n">properties</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">prp</span><span class="o">.</span><span class="n">line</span> <span class="o">!=</span> <span class="n">index</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">yield</span> <span class="n">prp</span>
+        <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">rule</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">match_rule</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">child</span><span class="p">):</span>
+                <span class="k">yield</span> <span class="n">r</span>
+        <span class="k">if</span> <span class="n">rule</span><span class="o">.</span><span class="n">canvas_root</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">match_rule</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">canvas_root</span><span class="p">):</span>
+                <span class="k">yield</span> <span class="n">r</span>
+        <span class="k">if</span> <span class="n">rule</span><span class="o">.</span><span class="n">canvas_before</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">match_rule</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">canvas_before</span><span class="p">):</span>
+                <span class="k">yield</span> <span class="n">r</span>
+        <span class="k">if</span> <span class="n">rule</span><span class="o">.</span><span class="n">canvas_after</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">match_rule</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">canvas_after</span><span class="p">):</span>
+                <span class="k">yield</span> <span class="n">r</span>
+
+    <span class="k">def</span> <span class="nf">dump_builder_stats</span><span class="p">():</span>
+        <span class="n">html</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;&lt;!doctype html&gt;&#39;</span>
+            <span class="s1">&#39;&lt;html&gt;&lt;body&gt;&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;&lt;style type=&quot;text/css&quot;&gt;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;pre { margin: 0; }</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;&lt;/style&gt;&#39;</span><span class="p">]</span>
+        <span class="n">files</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">filename</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">Builder</span><span class="o">.</span><span class="n">rules</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">IOError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">html</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;&lt;h2&gt;&#39;</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="s1">&#39;&lt;/h2&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;table&gt;&#39;</span><span class="p">]</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lines</span><span class="p">):</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">cgi</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+                <span class="n">matched_prp</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">psn</span><span class="p">,</span> <span class="n">rule</span> <span class="ow">in</span> <span class="n">Builder</span><span class="o">.</span><span class="n">rules</span><span class="p">:</span>
+                    <span class="n">matched_prp</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="n">match_rule</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">rule</span><span class="p">))</span>
+
+                <span class="n">count</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">x</span><span class="o">.</span><span class="n">count</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">matched_prp</span><span class="p">]))</span>
+
+                <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">155</span><span class="p">,</span> <span class="mi">155</span><span class="p">)</span> <span class="k">if</span> <span class="n">count</span> <span class="k">else</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+                <span class="n">html</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;&lt;tr style=&quot;background-color: rgb</span><span class="si">{}</span><span class="s1">&quot;&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">color</span><span class="p">),</span>
+                         <span class="s1">&#39;&lt;td&gt;&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="s1">&#39;&lt;/td&gt;&#39;</span><span class="p">,</span>
+                         <span class="s1">&#39;&lt;td&gt;&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">),</span> <span class="s1">&#39;&lt;/td&gt;&#39;</span><span class="p">,</span>
+                         <span class="s1">&#39;&lt;td&gt;&lt;pre&gt;&#39;</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="s1">&#39;&lt;/pre&gt;&lt;/td&gt;&#39;</span><span class="p">,</span>
+                         <span class="s1">&#39;&lt;/tr&gt;&#39;</span><span class="p">]</span>
+            <span class="n">html</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;&lt;/table&gt;&#39;</span><span class="p">]</span>
+        <span class="n">html</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;&lt;/body&gt;&lt;/html&gt;&#39;</span><span class="p">]</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;builder_stats.html&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+            <span class="n">fd</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">html</span><span class="p">))</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Profiling written at builder_stats.html&#39;</span><span class="p">)</span>
+
+    <span class="n">atexit</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">dump_builder_stats</span><span class="p">)</span>
+</pre></div>
+
+            <div class="footerlinks">
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 29, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>
