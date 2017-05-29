@@ -2,7 +2,7 @@
 Kivyドキュメンテーションの日本語訳
 
 # 本リポジトリについて
-本家のリリース（https://github.com/kivy/kivy/releases）の以下のリリータグの物を元に作成しています。
+本家のリリース（https://github.com/kivy/kivy/releases）の以下のリリスータグの物を元に作成しています。
 
 + Kivy 1.10.0(a4116a5)
 
@@ -17,19 +17,20 @@ https://pyky.github.io/kivy-doc-ja/
 
 #翻訳について
 1.10からTransifexで翻訳します。
-※「Getting Started」と「Gallery of Examples 」に関してはTransifex
-に独自タグを使用しているためかimportが上手くいきませんでした。この2つに関しては翻訳済みです。
+※「Getting Started」と「Gallery of Examples 」に関しては
+に独自タグを使用しているためかTransifexでimportが上手くいきませんでした。この2つに関しては翻訳済みです。
 
 Transifexでの翻訳は以下からどなたでも参加可能です。
 https://www.transifex.com/python_kivy_doc_ja/kivy110_Japanese/
 
 2017年5月現在、「User’s Guide」、「Programming Guide」「Tutorials」の1.9.1の時の翻訳をマージ中です。マージ後「API Reference」の翻訳に着手します。
+※5/28 インストールとパッケージ以外は一旦完了しました
 
 Transifexからgithubへの登録は手動での登録になります。
 自動登録の環境は後日登録予定です
 
 ~~翻訳の担当者などのタスクはTrelloにて管理しています。~~  
-~~https://trello.com/b/vUxSE4Ks/kivy~~
+~~https://trello.com/b/vUxSE4Ks/kivy~~ 
 
 ~~以下のリンクから参加することが可能です。~~
  ~~https://trello.com/invite/b/vUxSE4Ks/f7ddc4a749099c6854ba2cfca6b0620a/kivy-~~
