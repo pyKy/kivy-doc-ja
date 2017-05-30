@@ -368,20 +368,23 @@
             
   <div class="section" id="events">
 <h1>Events(翻訳済み)<a class="headerlink" href="#events" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Kivyは <a href="#id1"><span class="problematic" id="id2">`</span></a>イベントベース&lt;<a class="reference external" href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)">https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)</a>&gt;`_で、プログラムの流れを意味するイベントによって決定されます</p>
+<p>Kivyは <a class="reference external" href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)">イベントベース</a> で、プログラムの流れを意味するイベントによって決定されます</p>
 <p><strong>Clock events(クロックイベント)</strong></p>
 <img alt="../_images/gs-events-clock.png" class="gs-eleft" src="../_images/gs-events-clock.png" />
-<p><span class="xref doc">/api-kivy.clock`は、:meth:`~kivy.clock.ClockBase.schedule_once</span> に将来的に一回限りのイベントを:meth:<cite>~kivy.clock.ClockBase.schedule_interval</cite> に繰り返し行うイベントをスケジュールすることができます。</p>
-<p><code class="xref py py-meth docutils literal"><span class="pre">create_trigger()</span></code> を用いてトリガーイベントを作ることができます。トリガーは、同じコールバックトリガーを複数スケジュールした場合でも各フレームごとに一度、コールされるという利点を有しています。</p>
+<p><a class="reference internal" href="../api-kivy.clock.html"><span class="doc">Clock object</span></a> は、<code class="xref py py-meth docutils literal"><span class="pre">schedule_once()</span></code>  に将来的に一回限りのイベントを <code class="xref py py-meth docutils literal"><span class="pre">schedule_interval()</span></code> に繰り返し行うイベントをスケジュールできます。</p>
+<p>You can also create Triggered events with
+<code class="xref py py-meth docutils literal"><span class="pre">create_trigger()</span></code>. Triggers have the advantage of
+being called only once per frame, even if you have scheduled multiple triggers
+for the same callback.</p>
 <p><strong>Input events(入力イベント)</strong></p>
 <img alt="../_images/gs-events-input.png" class="gs-eleft" src="../_images/gs-events-input.png" />
-<p>すべてのマウスクリック、タッチとスクロールは <a class="reference internal" href="../api-kivy.input.motionevent.html#kivy.input.motionevent.MotionEvent" title="kivy.input.motionevent.MotionEvent"><code class="xref py py-class docutils literal"><span class="pre">MotionEvent</span></code></a> の一部で、<span class="xref doc">/api-kivy.input.postproc`によって拡張され、Window クラスの中で:attr:`~kivy.core.window.WindowBase.on_motion`イベントを通じて送られます。これらのイベントは:class:`~kivy.uix.widget.Widget</span> にて:meth:<cite>~kivy.uix.widget.Widget.on_touch_down</cite> 、:meth:<a href="#id1"><span class="problematic" id="id2">`</span></a>~kivy.uix.widget.Widget.on_touch_move`と:meth:<a href="#id3"><span class="problematic" id="id4">`</span></a>~kivy.uix.widget.Widget.on_touch_up`イベントを生み出します。</p>
+<p>すべてのマウスクリック、タッチとスクロールは <a class="reference internal" href="../api-kivy.input.motionevent.html#kivy.input.motionevent.MotionEvent" title="kivy.input.motionevent.MotionEvent"><code class="xref py py-class docutils literal"><span class="pre">MotionEvent</span></code></a> の一部で、<a class="reference internal" href="../api-kivy.input.postproc.html"><span class="doc">Input Postprocessing</span></a> によって拡張され、Window クラスの中で <a class="reference internal" href="../api-kivy.core.window.html#kivy.core.window.WindowBase.on_motion" title="kivy.core.window.WindowBase.on_motion"><code class="xref py py-attr docutils literal"><span class="pre">on_motion</span></code></a> イベントを通じて送られます。これらのイベントは <a class="reference internal" href="../api-kivy.uix.widget.html#kivy.uix.widget.Widget" title="kivy.uix.widget.Widget"><code class="xref py py-class docutils literal"><span class="pre">Widget</span></code></a> にて <a class="reference internal" href="../api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_down" title="kivy.uix.widget.Widget.on_touch_down"><code class="xref py py-meth docutils literal"><span class="pre">on_touch_down()</span></code></a>  、 <a class="reference internal" href="../api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_move" title="kivy.uix.widget.Widget.on_touch_move"><code class="xref py py-meth docutils literal"><span class="pre">on_touch_move()</span></code></a> と <a class="reference internal" href="../api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_up" title="kivy.uix.widget.Widget.on_touch_up"><code class="xref py py-meth docutils literal"><span class="pre">on_touch_up()</span></code></a> イベントを生み出します。</p>
 <p>詳細な説明については、<a class="reference internal" href="../api-kivy.input.html"><span class="doc">Input management</span></a> を見ます。</p>
 <p><strong>Class events(クラスイベント)</strong></p>
 <img alt="../_images/gs-events-class.png" class="gs-eleft" src="../_images/gs-events-class.png" />
-<p><code class="xref py py-class docutils literal"><span class="pre">EventDispatcher</span></code> は変更を送るために、<a class="reference internal" href="../api-kivy.properties.html"><span class="doc">Properties</span></a> を使います。これは、Widgetの位置やサイズを変更したときに、対応するイベントが自動的に発生します。</p>
-<p>加えて、<a class="reference internal" href="../api-kivy.uix.button.html#kivy.uix.button.Button" title="kivy.uix.button.Button"><code class="xref py py-class docutils literal"><span class="pre">Button</span></code></a> widget内の <cite>on_press</cite> と <cite>on_release</cite> のイベントが示すように、:meth:<a href="#id1"><span class="problematic" id="id2">`</span></a>~kivy.event.EventDispatcher.register_event_type`を使用して、独自のイベントを作成する機能を持っています。</p>
-<p>注意すべきもう一つのこととして、イベントを上書きした場合は、ベースクラスで以前処理されたビへイビアを実装しなければなりません。これを行う簡単な方法として`super()`を呼び出すことです:</p>
+<p><a class="reference internal" href="../api-kivy.uix.widget.html#kivy.uix.widget.Widget" title="kivy.uix.widget.Widget"><code class="xref py py-class docutils literal"><span class="pre">Widget</span></code></a> により用いられるベースクラスの  <a class="reference internal" href="../api-kivy.event.html#kivy.event.EventDispatcher" title="kivy.event.EventDispatcher"><code class="xref py py-class docutils literal"><span class="pre">EventDispatcher</span></code></a> は変更を送るために、<a class="reference internal" href="../api-kivy.properties.html"><span class="doc">Properties</span></a> を使います。これは、Widgetの位置やサイズを変更したときに、対応するイベントが自動的に発生します。</p>
+<p>加えて、<a class="reference internal" href="../api-kivy.uix.button.html#kivy.uix.button.Button" title="kivy.uix.button.Button"><code class="xref py py-class docutils literal"><span class="pre">Button</span></code></a> widget内の <cite>on_press</cite> と <cite>on_release</cite> のイベントが示すように、 <a class="reference internal" href="../api-kivy.event.html#kivy.event.EventDispatcher.register_event_type" title="kivy.event.EventDispatcher.register_event_type"><code class="xref py py-meth docutils literal"><span class="pre">register_event_type()</span></code></a> を使用して、独自のイベントを作成する機能を持っています。</p>
+<p>注意すべきもう一つのこととして、イベントを上書きした場合は、ベースクラスで以前処理されたビへイビアを実装しなければなりません。これを行う簡単な方法として <cite>super()</cite> を呼び出すことです:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">super</span><span class="p">(</span><span class="n">OurClassName</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_down</span><span class="p">(</span><span class="n">touch</span><span class="p">):</span>
         <span class="k">return</span> <span class="kc">True</span>
@@ -391,7 +394,7 @@
     <span class="k">return</span> <span class="kc">True</span>
 </pre></div>
 </div>
-<p>Get more familiar with events by reading the <a class="reference internal" href="../guide/events.html"><span class="doc">Events and Properties (翻訳済み)</span></a> documentation.</p>
+<p><a class="reference internal" href="../guide/events.html"><span class="doc">Events and Properties (翻訳済み)</span></a>  のドキュメントを読むことで、イベントに慣れましょう。</p>
 </div>
 
 
@@ -435,7 +438,7 @@
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 5月 29, 2017.
+      Last updated on 5月 30, 2017.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
 </div>
 -->
