@@ -1,0 +1,1383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>Application &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="_static/kivy.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="index.html" />
+    <link rel="up" title="Kivy framework" href="api-kivy.html" />
+    <link rel="next" title="Asynchronous data loader" href="api-kivy.loader.html" />
+    <link rel="prev" title="Animation" href="api-kivy.animation.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="index.html">Application</a></h3>
+          <ul>
+<li><a class="reference internal" href="#">Application</a><ul>
+<li><a class="reference internal" href="#creating-an-application">Creating an Application</a><ul>
+<li><a class="reference internal" href="#method-using-build-override">Method using build() override</a></li>
+<li><a class="reference internal" href="#method-using-kv-file">Method using kv file</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#application-configuration">Application configuration</a><ul>
+<li><a class="reference internal" href="#use-the-configuration-file">Use the configuration file</a></li>
+<li><a class="reference internal" href="#create-a-settings-panel">Create a settings panel</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#profiling-with-on-start-and-on-stop">Profiling with on_start and on_stop</a></li>
+<li><a class="reference internal" href="#customising-layout">Customising layout</a></li>
+<li><a class="reference internal" href="#pause-mode">Pause mode</a></li>
+</ul>
+</li>
+</ul>
+
+          <h3><a href="index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="api-index.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+              <li>Previous: <a href="api-kivy.animation.html" title="previous chapter">Animation</a></li>
+              <li>Next: <a href="api-kivy.loader.html" title="next chapter">Asynchronous data loader</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2><ul>
+<li><a class="reference internal" href="#">Application</a><ul>
+<li><a class="reference internal" href="#creating-an-application">Creating an Application</a><ul>
+<li><a class="reference internal" href="#method-using-build-override">Method using build() override</a></li>
+<li><a class="reference internal" href="#method-using-kv-file">Method using kv file</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#application-configuration">Application configuration</a><ul>
+<li><a class="reference internal" href="#use-the-configuration-file">Use the configuration file</a></li>
+<li><a class="reference internal" href="#create-a-settings-panel">Create a settings panel</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#profiling-with-on-start-and-on-stop">Profiling with on_start and on_stop</a></li>
+<li><a class="reference internal" href="#customising-layout">Customising layout</a></li>
+<li><a class="reference internal" href="#pause-mode">Pause mode</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+  <div class="section" id="module-kivy.app">
+<span id="application"></span><h1>Application<a class="headerlink" href="#module-kivy.app" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>The <a class="reference internal" href="#kivy.app.App" title="kivy.app.App"><code class="xref py py-class docutils literal"><span class="pre">App</span></code></a> class is the base for creating Kivy applications.
+Think of it as your main entry point into the Kivy run loop. In most
+cases, you subclass this class and make your own app. You create an
+instance of your specific app class and then, when you are ready to
+start the application&#8217;s life cycle, you call your instance&#8217;s
+<a class="reference internal" href="#kivy.app.App.run" title="kivy.app.App.run"><code class="xref py py-meth docutils literal"><span class="pre">App.run()</span></code></a> method.</p>
+<div class="section" id="creating-an-application">
+<h2>Creating an Application<a class="headerlink" href="#creating-an-application" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="method-using-build-override">
+<h3>Method using build() override<a class="headerlink" href="#method-using-build-override" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>To initialize your app with a widget tree, override the <a class="reference internal" href="#kivy.app.App.build" title="kivy.app.App.build"><code class="xref py py-meth docutils literal"><span class="pre">build()</span></code></a>
+method in your app class and return the widget tree you constructed.</p>
+<p>Here&#8217;s an example of a very simple application that just shows a button:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Application example using build() + return</span>
+<span class="sd">==========================================</span>
+
+<span class="sd">An application can be built if you return a widget on build(), or if you set</span>
+<span class="sd">self.root.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">import</span> <span class="nn">kivy</span>
+<span class="n">kivy</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="s1">&#39;1.0.7&#39;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">kivy.app</span> <span class="k">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.button</span> <span class="k">import</span> <span class="n">Button</span>
+
+
+<span class="k">class</span> <span class="nc">TestApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># return a Button() as a root widget</span>
+        <span class="k">return</span> <span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">TestApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The file is also available in the examples folder at
+<code class="file docutils literal"><span class="pre">kivy/examples/application/app_with_build.py</span></code>.</p>
+<p>Here, no widget tree was constructed (or if you will, a tree with only
+the root node).</p>
+</div>
+<div class="section" id="method-using-kv-file">
+<h3>Method using kv file<a class="headerlink" href="#method-using-kv-file" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>You can also use the <a class="reference internal" href="api-kivy.lang.html"><span class="doc">Kivy Language</span></a> for creating applications. The
+.kv can contain rules and root widget definitions at the same time. Here
+is the same example as the Button one in a kv file.</p>
+<p>Contents of &#8216;test.kv&#8217;:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#:kivy 1.0</span>
+
+<span class="n">Button</span><span class="p">:</span>
+    <span class="n">text</span><span class="p">:</span> <span class="s1">&#39;Hello from test.kv&#39;</span>
+</pre></div>
+</div>
+<p>Contents of &#8216;main.py&#8217;:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Application built from a  .kv file</span>
+<span class="sd">==================================</span>
+
+<span class="sd">This shows how to implicitly use a .kv file for your application. You</span>
+<span class="sd">should see a full screen button labelled &quot;Hello from test.kv&quot;.</span>
+
+<span class="sd">After Kivy instantiates a subclass of App, it implicitly searches for a .kv</span>
+<span class="sd">file. The file test.kv is selected because the name of the subclass of App is</span>
+<span class="sd">TestApp, which implies that kivy should try to load &quot;test.kv&quot;. That file</span>
+<span class="sd">contains a root Widget.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">import</span> <span class="nn">kivy</span>
+<span class="n">kivy</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="s1">&#39;1.0.7&#39;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">kivy.app</span> <span class="k">import</span> <span class="n">App</span>
+
+
+<span class="k">class</span> <span class="nc">TestApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">TestApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>See <code class="file docutils literal"><span class="pre">kivy/examples/application/app_with_kv.py</span></code>.</p>
+<p>The relationship between main.py and test.kv is explained in
+<a class="reference internal" href="#kivy.app.App.load_kv" title="kivy.app.App.load_kv"><code class="xref py py-meth docutils literal"><span class="pre">App.load_kv()</span></code></a>.</p>
+</div>
+</div>
+<div class="section" id="application-configuration">
+<span id="id1"></span><h2>Application configuration<a class="headerlink" href="#application-configuration" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="use-the-configuration-file">
+<h3>Use the configuration file<a class="headerlink" href="#use-the-configuration-file" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Your application might need its own configuration file. The
+<a class="reference internal" href="#kivy.app.App" title="kivy.app.App"><code class="xref py py-class docutils literal"><span class="pre">App</span></code></a> class handles &#8216;ini&#8217; files automatically if you add
+the section key-value pair to the <a class="reference internal" href="#kivy.app.App.build_config" title="kivy.app.App.build_config"><code class="xref py py-meth docutils literal"><span class="pre">App.build_config()</span></code></a> method using the
+<cite>config</cite> parameter (an instance of <a class="reference internal" href="api-kivy.config.html#kivy.config.ConfigParser" title="kivy.config.ConfigParser"><code class="xref py py-class docutils literal"><span class="pre">ConfigParser</span></code></a>):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">build_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+        <span class="n">config</span><span class="o">.</span><span class="n">setdefaults</span><span class="p">(</span><span class="s1">&#39;section1&#39;</span><span class="p">,</span> <span class="p">{</span>
+            <span class="s1">&#39;key1&#39;</span><span class="p">:</span> <span class="s1">&#39;value1&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;key2&#39;</span><span class="p">:</span> <span class="s1">&#39;42&#39;</span>
+        <span class="p">})</span>
+</pre></div>
+</div>
+<p>As soon as you add one section to the config, a file is created on the
+disk (see <a class="reference internal" href="#kivy.app.App.get_application_config" title="kivy.app.App.get_application_config"><code class="xref py py-attr docutils literal"><span class="pre">get_application_config</span></code></a> for its location) and
+named based your class name. &#8220;TestApp&#8221; will give a config file named
+&#8220;test.ini&#8221; with the content:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">section1</span><span class="p">]</span>
+<span class="n">key1</span> <span class="o">=</span> <span class="n">value1</span>
+<span class="n">key2</span> <span class="o">=</span> <span class="mi">42</span>
+</pre></div>
+</div>
+<p>The &#8220;test.ini&#8221; will be automatically loaded at runtime and you can access the
+configuration in your <a class="reference internal" href="#kivy.app.App.build" title="kivy.app.App.build"><code class="xref py py-meth docutils literal"><span class="pre">App.build()</span></code></a> method:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">build_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+        <span class="n">config</span><span class="o">.</span><span class="n">setdefaults</span><span class="p">(</span><span class="s1">&#39;section1&#39;</span><span class="p">,</span> <span class="p">{</span>
+            <span class="s1">&#39;key1&#39;</span><span class="p">:</span> <span class="s1">&#39;value1&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;key2&#39;</span><span class="p">:</span> <span class="s1">&#39;42&#39;</span>
+        <span class="p">})</span>
+
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span>
+        <span class="k">return</span> <span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;key1 is </span><span class="si">%s</span><span class="s1"> and key2 is </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+            <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;section1&#39;</span><span class="p">,</span> <span class="s1">&#39;key1&#39;</span><span class="p">),</span>
+            <span class="n">config</span><span class="o">.</span><span class="n">getint</span><span class="p">(</span><span class="s1">&#39;section1&#39;</span><span class="p">,</span> <span class="s1">&#39;key2&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-a-settings-panel">
+<h3>Create a settings panel<a class="headerlink" href="#create-a-settings-panel" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Your application can have a settings panel to let your user configure some of
+your config tokens. Here is an example done in the KinectViewer example
+(available in the examples directory):</p>
+<blockquote>
+<div><img alt="_images/app-settings.jpg" class="align-center" src="_images/app-settings.jpg" />
+</div></blockquote>
+<p>You can add your own panels of settings by extending
+the <a class="reference internal" href="#kivy.app.App.build_settings" title="kivy.app.App.build_settings"><code class="xref py py-meth docutils literal"><span class="pre">App.build_settings()</span></code></a> method.
+Check the <a class="reference internal" href="api-kivy.uix.settings.html#kivy.uix.settings.Settings" title="kivy.uix.settings.Settings"><code class="xref py py-class docutils literal"><span class="pre">Settings</span></code></a> about how to create a panel,
+because you need a JSON file / data first.</p>
+<p>Let&#8217;s take as an example the previous snippet of TestApp with custom
+config. We could create a JSON like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;title&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Test application&quot;</span> <span class="p">},</span>
+
+    <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;options&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;My first key&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;desc&quot;</span><span class="p">:</span> <span class="s2">&quot;Description of my first key&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;section&quot;</span><span class="p">:</span> <span class="s2">&quot;section1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;key1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;options&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;value1&quot;</span><span class="p">,</span> <span class="s2">&quot;value2&quot;</span><span class="p">,</span> <span class="s2">&quot;another value&quot;</span><span class="p">]</span> <span class="p">},</span>
+
+    <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;numeric&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;My second key&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;desc&quot;</span><span class="p">:</span> <span class="s2">&quot;Description of my second key&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;section&quot;</span><span class="p">:</span> <span class="s2">&quot;section1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;key2&quot;</span> <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Then, we can create a panel using this JSON to automatically create all the
+options and link them to our <a class="reference internal" href="#kivy.app.App.config" title="kivy.app.App.config"><code class="xref py py-attr docutils literal"><span class="pre">App.config</span></code></a> ConfigParser instance:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="c1"># ...</span>
+    <span class="k">def</span> <span class="nf">build_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">settings</span><span class="p">):</span>
+        <span class="n">jsondata</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;... put the json data here ...&quot;&quot;&quot;</span>
+        <span class="n">settings</span><span class="o">.</span><span class="n">add_json_panel</span><span class="p">(</span><span class="s1">&#39;Test application&#39;</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">jsondata</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>That&#8217;s all! Now you can press F1 (default keystroke) to toggle the
+settings panel or press the &#8220;settings&#8221; key on your android device. You
+can manually call <a class="reference internal" href="#kivy.app.App.open_settings" title="kivy.app.App.open_settings"><code class="xref py py-meth docutils literal"><span class="pre">App.open_settings()</span></code></a> and
+<a class="reference internal" href="#kivy.app.App.close_settings" title="kivy.app.App.close_settings"><code class="xref py py-meth docutils literal"><span class="pre">App.close_settings()</span></code></a> if you want to handle this manually. Every
+change in the panel is automatically saved in the config file.</p>
+<p>You can also use <a class="reference internal" href="#kivy.app.App.build_settings" title="kivy.app.App.build_settings"><code class="xref py py-meth docutils literal"><span class="pre">App.build_settings()</span></code></a> to modify properties of
+the settings panel. For instance, the default panel has a sidebar for
+switching between json panels whose width defaults to 200dp. If you&#8217;d
+prefer this to be narrower, you could add:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">settings</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">menu</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">dp</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>to your <code class="xref py py-meth docutils literal"><span class="pre">build_settings()</span></code> method.</p>
+<p>You might want to know when a config value has been changed by the
+user in order to adapt or reload your UI. You can then overload the
+<code class="xref py py-meth docutils literal"><span class="pre">on_config_change()</span></code> method:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="c1"># ...</span>
+    <span class="k">def</span> <span class="nf">on_config_change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">config</span> <span class="ow">is</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">:</span>
+            <span class="n">token</span> <span class="o">=</span> <span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">token</span> <span class="o">==</span> <span class="p">(</span><span class="s1">&#39;section1&#39;</span><span class="p">,</span> <span class="s1">&#39;key1&#39;</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Our key1 has been changed to&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">token</span> <span class="o">==</span> <span class="p">(</span><span class="s1">&#39;section1&#39;</span><span class="p">,</span> <span class="s1">&#39;key2&#39;</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Our key2 has been changed to&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The Kivy configuration panel is added by default to the settings
+instance. If you don&#8217;t want this panel, you can declare your Application as
+follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="n">use_kivy_settings</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>This only removes the Kivy panel but does not stop the settings instance
+from appearing. If you want to prevent the settings instance from appearing
+altogether, you can do this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">open_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">largs</span><span class="p">):</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.7 で追加.</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="profiling-with-on-start-and-on-stop">
+<h2>Profiling with on_start and on_stop<a class="headerlink" href="#profiling-with-on-start-and-on-stop" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>It is often useful to profile python code in order to discover locations to
+optimise. The standard library profilers
+(<a class="reference external" href="http://docs.python.org/2/library/profile.html">http://docs.python.org/2/library/profile.html</a>) provides multiple options for
+profiling code. For profiling the entire program, the natural
+approaches of using profile as a module or profile&#8217;s run method does not work
+with Kivy. It is however, possible to use <a class="reference internal" href="#kivy.app.App.on_start" title="kivy.app.App.on_start"><code class="xref py py-meth docutils literal"><span class="pre">App.on_start()</span></code></a> and
+<a class="reference internal" href="#kivy.app.App.on_stop" title="kivy.app.App.on_stop"><code class="xref py py-meth docutils literal"><span class="pre">App.on_stop()</span></code></a> methods:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cProfile</span>
+
+<span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">on_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">profile</span> <span class="o">=</span> <span class="n">cProfile</span><span class="o">.</span><span class="n">Profile</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">profile</span><span class="o">.</span><span class="n">enable</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">on_stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">profile</span><span class="o">.</span><span class="n">disable</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">profile</span><span class="o">.</span><span class="n">dump_stats</span><span class="p">(</span><span class="s1">&#39;myapp.profile&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will create a file called <cite>myapp.profile</cite> when you exit your app.</p>
+</div>
+<div class="section" id="customising-layout">
+<h2>Customising layout<a class="headerlink" href="#customising-layout" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>You can choose different settings widget layouts by setting
+<a class="reference internal" href="#kivy.app.App.settings_cls" title="kivy.app.App.settings_cls"><code class="xref py py-attr docutils literal"><span class="pre">App.settings_cls</span></code></a>. By default, this is a
+<a class="reference internal" href="api-kivy.uix.settings.html#kivy.uix.settings.Settings" title="kivy.uix.settings.Settings"><code class="xref py py-class docutils literal"><span class="pre">Settings</span></code></a> class which provides the pictured
+sidebar layout, but you could set it to any of the other layouts
+provided in <a class="reference internal" href="api-kivy.uix.settings.html#module-kivy.uix.settings" title="kivy.uix.settings"><code class="xref py py-mod docutils literal"><span class="pre">kivy.uix.settings</span></code></a> or create your own. See the
+module documentation for <a class="reference internal" href="api-kivy.uix.settings.html#module-kivy.uix.settings" title="kivy.uix.settings"><code class="xref py py-mod docutils literal"><span class="pre">kivy.uix.settings</span></code></a> for more
+information.</p>
+<p>You can customise how the settings panel is displayed by
+overriding <a class="reference internal" href="#kivy.app.App.display_settings" title="kivy.app.App.display_settings"><code class="xref py py-meth docutils literal"><span class="pre">App.display_settings()</span></code></a> which is called before
+displaying the settings panel on the screen. By default, it
+simply draws the panel on top of the window, but you could modify it
+to (for instance) show the settings in a
+<a class="reference internal" href="api-kivy.uix.popup.html#kivy.uix.popup.Popup" title="kivy.uix.popup.Popup"><code class="xref py py-class docutils literal"><span class="pre">Popup</span></code></a> or add it to your app&#8217;s
+<a class="reference internal" href="api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManager" title="kivy.uix.screenmanager.ScreenManager"><code class="xref py py-class docutils literal"><span class="pre">ScreenManager</span></code></a> if you are using
+one. If you do so, you should also modify <a class="reference internal" href="#kivy.app.App.close_settings" title="kivy.app.App.close_settings"><code class="xref py py-meth docutils literal"><span class="pre">App.close_settings()</span></code></a>
+to exit the panel appropriately. For instance, to have the settings
+panel appear in a popup you can do:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">display_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">settings</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings_popup</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">settings_popup</span> <span class="o">=</span> <span class="n">Popup</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="n">settings</span><span class="p">,</span>
+                                    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Settings&#39;</span><span class="p">,</span>
+                                    <span class="n">size_hint</span><span class="o">=</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">))</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings_popup</span>
+    <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">content</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">settings</span><span class="p">:</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="n">settings</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">close_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings_popup</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">dismiss</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="k">pass</span> <span class="c1"># Settings popup doesn&#39;t exist</span>
+</pre></div>
+</div>
+<p>Finally, if you want to replace the current settings panel widget, you
+can remove the internal references to it using
+<a class="reference internal" href="#kivy.app.App.destroy_settings" title="kivy.app.App.destroy_settings"><code class="xref py py-meth docutils literal"><span class="pre">App.destroy_settings()</span></code></a>. If you have modified
+<a class="reference internal" href="#kivy.app.App.display_settings" title="kivy.app.App.display_settings"><code class="xref py py-meth docutils literal"><span class="pre">App.display_settings()</span></code></a>, you should be careful to detect if the
+settings panel has been replaced.</p>
+</div>
+<div class="section" id="pause-mode">
+<h2>Pause mode<a class="headerlink" href="#pause-mode" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.1.0 で追加.</span></p>
+</div>
+<p>On tablets and phones, the user can switch at any moment to another
+application. By default, your application will close and the
+<a class="reference internal" href="#kivy.app.App.on_stop" title="kivy.app.App.on_stop"><code class="xref py py-meth docutils literal"><span class="pre">App.on_stop()</span></code></a> event will be fired.</p>
+<p>If you support Pause mode, when switching to another application, your
+application will wait indefinitely until the user
+switches back to your application. There is an issue with OpenGL on Android
+devices: it is not guaranteed that the OpenGL ES Context will be restored when
+your app resumes. The mechanism for restoring all the OpenGL data is not yet
+implemented in Kivy.</p>
+<p>The currently implemented Pause mechanism is:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Kivy checks every frame if Pause mode is activated by the Operating
+System due to the user switching to another application, a phone
+shutdown or any other reason.</li>
+<li><a class="reference internal" href="#kivy.app.App.on_pause" title="kivy.app.App.on_pause"><code class="xref py py-meth docutils literal"><span class="pre">App.on_pause()</span></code></a> is called:</li>
+<li>If False is returned, then <a class="reference internal" href="#kivy.app.App.on_stop" title="kivy.app.App.on_stop"><code class="xref py py-meth docutils literal"><span class="pre">App.on_stop()</span></code></a> is called.</li>
+<li>If True is returned (default case), the application will sleep until
+the OS resumes our App.</li>
+<li>When the app is resumed, <a class="reference internal" href="#kivy.app.App.on_resume" title="kivy.app.App.on_resume"><code class="xref py py-meth docutils literal"><span class="pre">App.on_resume()</span></code></a> is called.</li>
+<li>If our app memory has been reclaimed by the OS, then nothing will be
+called.</li>
+</ol>
+</div></blockquote>
+<p>Here is a simple example of how on_pause() should be used:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+
+   <span class="k">def</span> <span class="nf">on_pause</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="c1"># Here you can save data if needed</span>
+      <span class="k">return</span> <span class="kc">True</span>
+
+   <span class="k">def</span> <span class="nf">on_resume</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="c1"># Here you can check if any data needs replacing (usually nothing)</span>
+      <span class="k">pass</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Both <cite>on_pause</cite> and <cite>on_stop</cite> must save important data because after
+<cite>on_pause</cite> is called, <cite>on_resume</cite> may not be called at all.</p>
+</div>
+<dl class="class">
+<dt id="kivy.app.App">
+<em class="property">class </em><code class="descclassname">kivy.app.</code><code class="descname">App</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ベースクラス: <a class="reference internal" href="api-kivy.event.html#kivy.event.EventDispatcher" title="kivy.event.EventDispatcher"><code class="xref py py-class docutils literal"><span class="pre">kivy.event.EventDispatcher</span></code></a></p>
+<p>Application class, see module documentation for more information.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Events:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>on_start</cite>:</dt>
+<dd><p class="first last">Fired when the application is being started (before the
+<a class="reference internal" href="api-kivy.base.html#kivy.base.runTouchApp" title="kivy.base.runTouchApp"><code class="xref py py-func docutils literal"><span class="pre">runTouchApp()</span></code></a> call.</p>
+</dd>
+<dt><cite>on_stop</cite>:</dt>
+<dd><p class="first last">Fired when the application stops.</p>
+</dd>
+<dt><cite>on_pause</cite>:</dt>
+<dd><p class="first last">Fired when the application is paused by the OS.</p>
+</dd>
+<dt><cite>on_resume</cite>:</dt>
+<dd><p class="first last">Fired when the application is resumed from pause by the OS. Beware:
+you have no guarantee that this event will be fired after the
+<cite>on_pause</cite> event has been called.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.7.0 で変更: </span>Parameter <cite>kv_file</cite> added.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.8.0 で変更: </span>Parameters <cite>kv_file</cite> and <cite>kv_directory</cite> are now properties of App.</p>
+</div>
+<dl class="method">
+<dt id="kivy.app.App.build">
+<code class="descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.build"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.build" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Initializes the application; it will be called only once.
+If this method returns a widget (tree), it will be used as the root
+widget and added to the window.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">None or a root <a class="reference internal" href="api-kivy.uix.widget.html#kivy.uix.widget.Widget" title="kivy.uix.widget.Widget"><code class="xref py py-class docutils literal"><span class="pre">Widget</span></code></a> instance
+if no self.root exists.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.app.App.build_config">
+<code class="descname">build_config</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.build_config"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.build_config" title="この定義へのパーマリンク">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.7 で追加.</span></p>
+</div>
+<p>This method is called before the application is initialized to
+construct your <a class="reference internal" href="api-kivy.config.html#kivy.config.ConfigParser" title="kivy.config.ConfigParser"><code class="xref py py-class docutils literal"><span class="pre">ConfigParser</span></code></a> object. This
+is where you can put any default section / key / value for your
+config. If anything is set, the configuration will be
+automatically saved in the file returned by
+<a class="reference internal" href="#kivy.app.App.get_application_config" title="kivy.app.App.get_application_config"><code class="xref py py-meth docutils literal"><span class="pre">get_application_config()</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>config</cite>: <a class="reference internal" href="api-kivy.config.html#kivy.config.ConfigParser" title="kivy.config.ConfigParser"><code class="xref py py-class docutils literal"><span class="pre">ConfigParser</span></code></a></dt>
+<dd><p class="first last">Use this to add default section / key / value items</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.app.App.build_settings">
+<code class="descname">build_settings</code><span class="sig-paren">(</span><em>settings</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.build_settings"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.build_settings" title="この定義へのパーマリンク">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.7 で追加.</span></p>
+</div>
+<p>This method is called when the user (or you) want to show the
+application settings. It is called once when the settings panel
+is first opened, after which the panel is cached. It may be
+called again if the cached settings panel is removed by
+<a class="reference internal" href="#kivy.app.App.destroy_settings" title="kivy.app.App.destroy_settings"><code class="xref py py-meth docutils literal"><span class="pre">destroy_settings()</span></code></a>.</p>
+<p>You can use this method to add settings panels and to
+customise the settings widget e.g. by changing the sidebar
+width. See the module documentation for full details.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>settings</cite>: <a class="reference internal" href="api-kivy.uix.settings.html#kivy.uix.settings.Settings" title="kivy.uix.settings.Settings"><code class="xref py py-class docutils literal"><span class="pre">Settings</span></code></a></dt>
+<dd><p class="first last">Settings instance for adding panels</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.app.App.close_settings">
+<code class="descname">close_settings</code><span class="sig-paren">(</span><em>*largs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.close_settings"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.close_settings" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Close the previously opened settings panel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">True if the settings has been closed.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.app.App.config">
+<code class="descname">config</code><em class="property"> = None</em><a class="headerlink" href="#kivy.app.App.config" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns an instance of the <a class="reference internal" href="api-kivy.config.html#kivy.config.ConfigParser" title="kivy.config.ConfigParser"><code class="xref py py-class docutils literal"><span class="pre">ConfigParser</span></code></a> for
+the application configuration. You can use this to query some config
+tokens in the <a class="reference internal" href="#kivy.app.App.build" title="kivy.app.App.build"><code class="xref py py-meth docutils literal"><span class="pre">build()</span></code></a> method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.app.App.create_settings">
+<code class="descname">create_settings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.create_settings"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.create_settings" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Create the settings panel. This method will normally
+be called only one time per
+application life-time and the result is cached internally,
+but it may be called again if the cached panel is removed
+by <a class="reference internal" href="#kivy.app.App.destroy_settings" title="kivy.app.App.destroy_settings"><code class="xref py py-meth docutils literal"><span class="pre">destroy_settings()</span></code></a>.</p>
+<p>By default, it will build a settings panel according to
+<a class="reference internal" href="#kivy.app.App.settings_cls" title="kivy.app.App.settings_cls"><code class="xref py py-attr docutils literal"><span class="pre">settings_cls</span></code></a>, call <a class="reference internal" href="#kivy.app.App.build_settings" title="kivy.app.App.build_settings"><code class="xref py py-meth docutils literal"><span class="pre">build_settings()</span></code></a>, add a Kivy panel if
+<a class="reference internal" href="#kivy.app.App.use_kivy_settings" title="kivy.app.App.use_kivy_settings"><code class="xref py py-attr docutils literal"><span class="pre">use_kivy_settings</span></code></a> is True, and bind to
+on_close/on_config_change.</p>
+<p>If you want to plug your own way of doing settings, without the Kivy
+panel or close/config change events, this is the method you want to
+overload.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.app.App.destroy_settings">
+<code class="descname">destroy_settings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.destroy_settings"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.destroy_settings" title="この定義へのパーマリンク">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+<p>Dereferences the current settings panel if one
+exists. This means that when <a class="reference internal" href="#kivy.app.App.open_settings" title="kivy.app.App.open_settings"><code class="xref py py-meth docutils literal"><span class="pre">App.open_settings()</span></code></a> is next
+run, a new panel will be created and displayed. It doesn&#8217;t
+affect any of the contents of the panel, but lets you (for
+instance) refresh the settings panel layout if you have
+changed the settings widget in response to a screen size
+change.</p>
+<p>If you have modified <a class="reference internal" href="#kivy.app.App.open_settings" title="kivy.app.App.open_settings"><code class="xref py py-meth docutils literal"><span class="pre">open_settings()</span></code></a> or
+<a class="reference internal" href="#kivy.app.App.display_settings" title="kivy.app.App.display_settings"><code class="xref py py-meth docutils literal"><span class="pre">display_settings()</span></code></a>, you should be careful to
+correctly detect if the previous settings widget has been
+destroyed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.app.App.directory">
+<code class="descname">directory</code><a class="headerlink" href="#kivy.app.App.directory" title="この定義へのパーマリンク">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.7 で追加.</span></p>
+</div>
+<p>Return the directory where the application lives.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.app.App.display_settings">
+<code class="descname">display_settings</code><span class="sig-paren">(</span><em>settings</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.display_settings"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.display_settings" title="この定義へのパーマリンク">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+<p>Display the settings panel. By default, the panel is drawn directly
+on top of the window. You can define other behaviour by overriding
+this method, such as adding it to a ScreenManager or Popup.</p>
+<p>You should return True if the display is successful, otherwise False.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>settings</cite>: <a class="reference internal" href="api-kivy.uix.settings.html#kivy.uix.settings.Settings" title="kivy.uix.settings.Settings"><code class="xref py py-class docutils literal"><span class="pre">Settings</span></code></a></dt>
+<dd><p class="first last">You can modify this object in order to modify the settings
+display.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.app.App.get_application_config">
+<code class="descname">get_application_config</code><span class="sig-paren">(</span><em>defaultpath='%(appdir)s/%(appname)s.ini'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.get_application_config"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.get_application_config" title="この定義へのパーマリンク">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.7 で追加.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.4.0 で変更: </span>Customized the default path for iOS and Android platforms. Added a
+defaultpath parameter for desktop OS&#8217;s (not applicable to iOS
+and Android.)</p>
+</div>
+<p>Return the filename of your application configuration. Depending
+on the platform, the application file will be stored in
+different locations:</p>
+<blockquote>
+<div><ul class="simple">
+<li>on iOS: &lt;appdir&gt;/Documents/.&lt;appname&gt;.ini</li>
+<li>on Android: /sdcard/.&lt;appname&gt;.ini</li>
+<li>otherwise: &lt;appdir&gt;/&lt;appname&gt;.ini</li>
+</ul>
+</div></blockquote>
+<p>When you are distributing your application on Desktops, please
+note that if the application is meant to be installed
+system-wide, the user might not have write-access to the
+application directory. If you want to store user settings, you
+should overload this method and change the default behavior to
+save the configuration file in the user directory.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_application_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">TestApp</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_application_config</span><span class="p">(</span>
+            <span class="s1">&#39;~/.</span><span class="si">%(appname)s</span><span class="s1">.ini&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Some notes:</p>
+<ul class="simple">
+<li>The tilda &#8216;~&#8217; will be expanded to the user directory.</li>
+<li>%(appdir)s will be replaced with the application <a class="reference internal" href="#kivy.app.App.directory" title="kivy.app.App.directory"><code class="xref py py-attr docutils literal"><span class="pre">directory</span></code></a></li>
+<li>%(appname)s will be replaced with the application <a class="reference internal" href="#kivy.app.App.name" title="kivy.app.App.name"><code class="xref py py-attr docutils literal"><span class="pre">name</span></code></a></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.app.App.get_application_icon">
+<code class="descname">get_application_icon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.get_application_icon"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.get_application_icon" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return the icon of the application.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.app.App.get_application_name">
+<code class="descname">get_application_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.get_application_name"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.get_application_name" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return the name of the application.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="kivy.app.App.get_running_app">
+<em class="property">static </em><code class="descname">get_running_app</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.get_running_app"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.get_running_app" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return the currently running application instance.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.1.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.app.App.icon">
+<code class="descname">icon</code><a class="headerlink" href="#kivy.app.App.icon" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Icon of your application.
+The icon can be located in the same directory as your main file. You can
+set this as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">icon</span> <span class="o">=</span> <span class="s1">&#39;myicon.png&#39;</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.5 で追加.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.8.0 で変更: </span><cite>icon</cite> is now a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a>. Don&#8217;t set the
+icon in the class as previously stated in the documentation.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>For Kivy prior to 1.8.0, you need to set this as follows:</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span>   class MyApp(App):
+       icon = &#39;customicon.png&#39;
+
+Recommended 256x256 or 1024x1024? for GNU/Linux and Mac OSX
+32x32 for Windows7 or less. &lt;= 256x256 for windows 8
+256x256 does work (on Windows 8 at least), but is scaled
+down and doesn&#39;t look as good as a 32x32 icon.
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.app.App.kv_directory">
+<code class="descname">kv_directory</code><a class="headerlink" href="#kivy.app.App.kv_directory" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Path of the directory where application kv is stored, defaults to None</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+<p>If a kv_directory is set, it will be used to get the initial kv file. By
+default, the file is assumed to be in the same directory as the current App
+definition file.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.app.App.kv_file">
+<code class="descname">kv_file</code><a class="headerlink" href="#kivy.app.App.kv_file" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Filename of the Kv file to load, defaults to None.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+<p>If a kv_file is set, it will be loaded when the application starts. The
+loading of the &#8220;default&#8221; kv file will be prevented.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.app.App.load_config">
+<code class="descname">load_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.load_config"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.load_config" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>(internal) This function is used for returning a ConfigParser with
+the application configuration. It&#8217;s doing 3 things:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Creating an instance of a ConfigParser</li>
+<li>Loading the default configuration by calling
+<a class="reference internal" href="#kivy.app.App.build_config" title="kivy.app.App.build_config"><code class="xref py py-meth docutils literal"><span class="pre">build_config()</span></code></a>, then</li>
+<li>If it exists, it loads the application configuration file,
+otherwise it creates one.</li>
+</ol>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body"><a class="reference internal" href="api-kivy.config.html#kivy.config.ConfigParser" title="kivy.config.ConfigParser"><code class="xref py py-class docutils literal"><span class="pre">ConfigParser</span></code></a> instance</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.app.App.load_kv">
+<code class="descname">load_kv</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.load_kv"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.load_kv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>This method is invoked the first time the app is being run if no
+widget tree has been constructed before for this app.
+This method then looks for a matching kv file in the same directory as
+the file that contains the application class.</p>
+<p>For example, say you have a file named main.py that contains:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ShowcaseApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>This method will search for a file named <cite>showcase.kv</cite> in
+the directory that contains main.py. The name of the kv file has to be
+the lowercase name of the class, without the &#8216;App&#8217; postfix at the end
+if it exists.</p>
+<p>You can define rules and a root widget in your kv file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ClassName</span><span class="o">&gt;</span><span class="p">:</span> <span class="c1"># this is a rule</span>
+    <span class="o">...</span>
+
+<span class="n">ClassName</span><span class="p">:</span> <span class="c1"># this is a root widget</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>There must be only one root widget. See the <a class="reference internal" href="api-kivy.lang.html"><span class="doc">Kivy Language</span></a>
+documentation for more information on how to create kv files. If your
+kv file contains a root widget, it will be used as self.root, the root
+widget for the application.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">This function is called from <a class="reference internal" href="#kivy.app.App.run" title="kivy.app.App.run"><code class="xref py py-meth docutils literal"><span class="pre">run()</span></code></a>, therefore, any widget
+whose styling is defined in this kv file and is created before
+<a class="reference internal" href="#kivy.app.App.run" title="kivy.app.App.run"><code class="xref py py-meth docutils literal"><span class="pre">run()</span></code></a> is called (e.g. in <cite>__init__</cite>), won&#8217;t have its styling
+applied. Note that <a class="reference internal" href="#kivy.app.App.build" title="kivy.app.App.build"><code class="xref py py-meth docutils literal"><span class="pre">build()</span></code></a> is called after <a class="reference internal" href="#kivy.app.App.load_kv" title="kivy.app.App.load_kv"><code class="xref py py-attr docutils literal"><span class="pre">load_kv</span></code></a>
+has been called.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.app.App.name">
+<code class="descname">name</code><a class="headerlink" href="#kivy.app.App.name" title="この定義へのパーマリンク">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.7 で追加.</span></p>
+</div>
+<p>Return the name of the application based on the class name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.app.App.on_config_change">
+<code class="descname">on_config_change</code><span class="sig-paren">(</span><em>config</em>, <em>section</em>, <em>key</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.on_config_change"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.on_config_change" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event handler fired when a configuration token has been changed by
+the settings page.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.app.App.on_pause">
+<code class="descname">on_pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.on_pause"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.on_pause" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event handler called when Pause mode is requested. You should
+return True if your app can go into Pause mode, otherwise
+return False and your application will be stopped.</p>
+<p>You cannot control when the application is going to go into this mode.
+It&#8217;s determined by the Operating System and mostly used for mobile
+devices (android/ios) and for resizing.</p>
+<p>The default return value is True.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.1.0 で追加.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.10.0 で変更: </span>The default return value is now True.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.app.App.on_resume">
+<code class="descname">on_resume</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.on_resume"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.on_resume" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event handler called when your application is resuming from
+the Pause mode.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.1.0 で追加.</span></p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">When resuming, the OpenGL Context might have been damaged / freed.
+This is where you can reconstruct some of your OpenGL state
+e.g. FBO content.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.app.App.on_start">
+<code class="descname">on_start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.on_start"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.on_start" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event handler for the <cite>on_start</cite> event which is fired after
+initialization (after build() has been called) but before the
+application has started running.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.app.App.on_stop">
+<code class="descname">on_stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.on_stop"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.on_stop" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Event handler for the <cite>on_stop</cite> event which is fired when the
+application has finished running (i.e. the window is about to be
+closed).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.app.App.open_settings">
+<code class="descname">open_settings</code><span class="sig-paren">(</span><em>*largs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.open_settings"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.open_settings" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Open the application settings panel. It will be created the very
+first time, or recreated if the previously cached panel has been
+removed by <a class="reference internal" href="#kivy.app.App.destroy_settings" title="kivy.app.App.destroy_settings"><code class="xref py py-meth docutils literal"><span class="pre">destroy_settings()</span></code></a>. The settings panel will be
+displayed with the
+<a class="reference internal" href="#kivy.app.App.display_settings" title="kivy.app.App.display_settings"><code class="xref py py-meth docutils literal"><span class="pre">display_settings()</span></code></a> method, which by default adds the
+settings panel to the Window attached to your application. You
+should override that method if you want to display the
+settings panel differently.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">True if the settings has been opened.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.app.App.options">
+<code class="descname">options</code><em class="property"> = None</em><a class="headerlink" href="#kivy.app.App.options" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Options passed to the __init__ of the App</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.app.App.root">
+<code class="descname">root</code><em class="property"> = None</em><a class="headerlink" href="#kivy.app.App.root" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>The <em>root</em> widget returned by the <a class="reference internal" href="#kivy.app.App.build" title="kivy.app.App.build"><code class="xref py py-meth docutils literal"><span class="pre">build()</span></code></a> method or by the
+<a class="reference internal" href="#kivy.app.App.load_kv" title="kivy.app.App.load_kv"><code class="xref py py-meth docutils literal"><span class="pre">load_kv()</span></code></a> method if the kv file contains a root widget.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.app.App.root_window">
+<code class="descname">root_window</code><a class="headerlink" href="#kivy.app.App.root_window" title="この定義へのパーマリンク">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+<p>Returns the root window instance used by <a class="reference internal" href="#kivy.app.App.run" title="kivy.app.App.run"><code class="xref py py-meth docutils literal"><span class="pre">run()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.app.App.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.run"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.run" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Launches the app in standalone mode.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.app.App.settings_cls">
+<code class="descname">settings_cls</code><a class="headerlink" href="#kivy.app.App.settings_cls" title="この定義へのパーマリンク">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+<p>The class used to construct the settings panel and
+the instance passed to <a class="reference internal" href="#kivy.app.App.build_config" title="kivy.app.App.build_config"><code class="xref py py-meth docutils literal"><span class="pre">build_config()</span></code></a>. You should
+use either <a class="reference internal" href="api-kivy.uix.settings.html#kivy.uix.settings.Settings" title="kivy.uix.settings.Settings"><code class="xref py py-class docutils literal"><span class="pre">Settings</span></code></a> or one of the provided
+subclasses with different layouts
+(<a class="reference internal" href="api-kivy.uix.settings.html#kivy.uix.settings.SettingsWithSidebar" title="kivy.uix.settings.SettingsWithSidebar"><code class="xref py py-class docutils literal"><span class="pre">SettingsWithSidebar</span></code></a>,
+<a class="reference internal" href="api-kivy.uix.settings.html#kivy.uix.settings.SettingsWithSpinner" title="kivy.uix.settings.SettingsWithSpinner"><code class="xref py py-class docutils literal"><span class="pre">SettingsWithSpinner</span></code></a>,
+<a class="reference internal" href="api-kivy.uix.settings.html#kivy.uix.settings.SettingsWithTabbedPanel" title="kivy.uix.settings.SettingsWithTabbedPanel"><code class="xref py py-class docutils literal"><span class="pre">SettingsWithTabbedPanel</span></code></a>,
+<a class="reference internal" href="api-kivy.uix.settings.html#kivy.uix.settings.SettingsWithNoMenu" title="kivy.uix.settings.SettingsWithNoMenu"><code class="xref py py-class docutils literal"><span class="pre">SettingsWithNoMenu</span></code></a>). You can also create your
+own Settings subclass. See the documentation
+of <a class="reference internal" href="api-kivy.uix.settings.html#kivy.uix.settings.Settings" title="kivy.uix.settings.Settings"><code class="xref py py-mod docutils literal"><span class="pre">Settings</span></code></a> for more information.</p>
+<p><a class="reference internal" href="#kivy.app.App.settings_cls" title="kivy.app.App.settings_cls"><code class="xref py py-attr docutils literal"><span class="pre">settings_cls</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ObjectProperty" title="kivy.properties.ObjectProperty"><code class="xref py py-class docutils literal"><span class="pre">ObjectProperty</span></code></a>
+and defaults to <a class="reference internal" href="api-kivy.uix.settings.html#kivy.uix.settings.SettingsWithSpinner" title="kivy.uix.settings.SettingsWithSpinner"><code class="xref py py-class docutils literal"><span class="pre">SettingsWithSpinner</span></code></a> which
+displays settings panels with a spinner to switch between them. If you set
+a string, the <a class="reference internal" href="api-kivy.factory.html#kivy.factory.Factory" title="kivy.factory.Factory"><code class="xref py py-class docutils literal"><span class="pre">Factory</span></code></a> will be used to resolve the
+class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.app.App.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><em>*largs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/app.html#App.stop"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.app.App.stop" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Stop the application.</p>
+<p>If you use this method, the whole application will stop by issuing
+a call to <a class="reference internal" href="api-kivy.base.html#kivy.base.stopTouchApp" title="kivy.base.stopTouchApp"><code class="xref py py-func docutils literal"><span class="pre">stopTouchApp()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.app.App.title">
+<code class="descname">title</code><a class="headerlink" href="#kivy.app.App.title" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Title of your application. You can set this as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Hello world&#39;</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.5 で追加.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.8.0 で変更: </span><cite>title</cite> is now a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a>. Don&#8217;t
+set the title in the class as previously stated in the documentation.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>For Kivy &lt; 1.8.0, you can set this as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Custom title&#39;</span>
+</pre></div>
+</div>
+<p>If you want to dynamically change the title, you can do:</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.base</span> <span class="k">import</span> <span class="n">EventLoop</span>
+<span class="n">EventLoop</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;New title&#39;</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.app.App.use_kivy_settings">
+<code class="descname">use_kivy_settings</code><em class="property"> = True</em><a class="headerlink" href="#kivy.app.App.use_kivy_settings" title="この定義へのパーマリンク">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.7 で追加.</span></p>
+</div>
+<p>If True, the application settings will also include the Kivy settings. If
+you don&#8217;t want the user to change any kivy settings from your settings UI,
+change this to False.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.app.App.user_data_dir">
+<code class="descname">user_data_dir</code><a class="headerlink" href="#kivy.app.App.user_data_dir" title="この定義へのパーマリンク">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified">バージョン 1.7.0 で追加.</span></p>
+</div>
+<p>Returns the path to the directory in the users file system which the
+application can use to store additional data.</p>
+<p>Different platforms have different conventions with regards to where
+the user can store data such as preferences, saved games and settings.
+This function implements these conventions. The &lt;app_name&gt; directory
+is created when the property is called, unless it already exists.</p>
+<p>On iOS, <cite>~/Documents/&lt;app_name&gt;</cite> is returned (which is inside the
+app&#8217;s sandbox).</p>
+<p>On Android, <cite>/sdcard/&lt;app_name&gt;</cite> is returned.</p>
+<p>On Windows, <cite>%APPDATA%/&lt;app_name&gt;</cite> is returned.</p>
+<p>On OS X, <cite>~/Library/Application Support/&lt;app_name&gt;</cite> is returned.</p>
+<p>On Linux, <cite>$XDG_CONFIG_HOME/&lt;app_name&gt;</cite> is returned.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+
+            <div class="footerlinks">
+            <table>
+                <tr>
+                    <td class="leftlink">
+                  <a href="api-kivy.animation.html" title="previous chapter">&laquo; Animation</a></li>
+                  </td>
+                  <td class="rightlink">
+                  <a href="api-kivy.loader.html" title="next chapter">Asynchronous data loader &raquo;</a>
+                      </td>
+                  </tr>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 30, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

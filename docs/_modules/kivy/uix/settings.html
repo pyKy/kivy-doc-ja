@@ -1,0 +1,1657 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>kivy.uix.settings &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../_static/kivy.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="../../../index.html" />
+    <link rel="up" title="kivy" href="../../kivy.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../../../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="../../../gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../../../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../../../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../../../index.html">kivy.uix.settings</a></h3>
+          
+          <h3><a href="../../../index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2></div>
+            
+  <h1>kivy.uix.settings のソースコード</h1><div class="highlight"><pre>
+<span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Settings</span>
+<span class="sd">========</span>
+
+<span class="sd">.. versionadded:: 1.0.7</span>
+
+<span class="sd">This module provides a complete and extensible framework for adding a</span>
+<span class="sd">Settings interface to your application. By default, the interface uses</span>
+<span class="sd">a :class:`SettingsWithSpinner`, which consists of a</span>
+<span class="sd">:class:`~kivy.uix.spinner.Spinner` (top) to switch between individual</span>
+<span class="sd">settings panels (bottom). See :ref:`differentlayouts` for some</span>
+<span class="sd">alternatives.</span>
+
+<span class="sd">.. image:: images/settingswithspinner_kivy.jpg</span>
+<span class="sd">    :align: center</span>
+
+<span class="sd">A :class:`SettingsPanel` represents a group of configurable options. The</span>
+<span class="sd">:attr:`SettingsPanel.title` property is used by :class:`Settings` when a panel</span>
+<span class="sd">is added: it determines the name of the sidebar button. SettingsPanel controls</span>
+<span class="sd">a :class:`~kivy.config.ConfigParser` instance.</span>
+
+<span class="sd">The panel can be automatically constructed from a JSON definition file: you</span>
+<span class="sd">describe the settings you want and corresponding sections/keys in the</span>
+<span class="sd">ConfigParser instance... and you&#39;re done!</span>
+
+<span class="sd">Settings are also integrated into the :class:`~kivy.app.App` class. Use</span>
+<span class="sd">:meth:`Settings.add_kivy_panel` to configure the Kivy core settings in a panel.</span>
+
+
+<span class="sd">.. _settings_json:</span>
+
+<span class="sd">Create a panel from JSON</span>
+<span class="sd">------------------------</span>
+
+<span class="sd">To create a panel from a JSON-file, you need two things:</span>
+
+<span class="sd">    * a :class:`~kivy.config.ConfigParser` instance with default values</span>
+<span class="sd">    * a JSON file</span>
+
+<span class="sd">.. warning::</span>
+
+<span class="sd">    The :class:`kivy.config.ConfigParser` is required. You cannot use the</span>
+<span class="sd">    default ConfigParser from Python libraries.</span>
+
+<span class="sd">You must create and handle the :class:`~kivy.config.ConfigParser`</span>
+<span class="sd">object. SettingsPanel will read the values from the associated</span>
+<span class="sd">ConfigParser instance. Make sure you have set default values (using</span>
+<span class="sd">:attr:`~kivy.config.ConfigParser.setdefaults`) for all the sections/keys</span>
+<span class="sd">in your JSON file!</span>
+
+<span class="sd">The JSON file contains structured information to describe the available</span>
+<span class="sd">settings. Here is an example::</span>
+
+<span class="sd">    [</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;type&quot;: &quot;title&quot;,</span>
+<span class="sd">            &quot;title&quot;: &quot;Windows&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;type&quot;: &quot;bool&quot;,</span>
+<span class="sd">            &quot;title&quot;: &quot;Fullscreen&quot;,</span>
+<span class="sd">            &quot;desc&quot;: &quot;Set the window in windowed or fullscreen&quot;,</span>
+<span class="sd">            &quot;section&quot;: &quot;graphics&quot;,</span>
+<span class="sd">            &quot;key&quot;: &quot;fullscreen&quot;,</span>
+<span class="sd">            &quot;true&quot;: &quot;auto&quot;</span>
+<span class="sd">        }</span>
+<span class="sd">    ]</span>
+
+<span class="sd">Each element in the root list represents a setting that the user can configure.</span>
+<span class="sd">Only the &quot;type&quot; key is mandatory: an instance of the associated class will be</span>
+<span class="sd">created and used for the setting - other keys are assigned to corresponding</span>
+<span class="sd">properties of that class.</span>
+
+<span class="sd">    ============== =================================================</span>
+<span class="sd">    Type           Associated class</span>
+<span class="sd">    -------------- -------------------------------------------------</span>
+<span class="sd">    title          :class:`SettingTitle`</span>
+<span class="sd">    bool           :class:`SettingBoolean`</span>
+<span class="sd">    numeric        :class:`SettingNumeric`</span>
+<span class="sd">    options        :class:`SettingOptions`</span>
+<span class="sd">    string         :class:`SettingString`</span>
+<span class="sd">    path           :class:`SettingPath`</span>
+<span class="sd">    ============== =================================================</span>
+
+<span class="sd">    .. versionadded:: 1.1.0</span>
+<span class="sd">        Added :attr:`SettingPath` type</span>
+
+<span class="sd">In the JSON example above, the first element is of type &quot;title&quot;. It will create</span>
+<span class="sd">a new instance of :class:`SettingTitle` and apply the rest of the key-value</span>
+<span class="sd">pairs to the properties of that class, i.e. &quot;title&quot;: &quot;Windows&quot; sets the</span>
+<span class="sd">:attr:`~SettingsPanel.title` property of the panel to &quot;Windows&quot;.</span>
+
+<span class="sd">To load the JSON example to a :class:`Settings` instance, use the</span>
+<span class="sd">:meth:`Settings.add_json_panel` method. It will automatically instantiate a</span>
+<span class="sd">:class:`SettingsPanel` and add it to :class:`Settings`::</span>
+
+<span class="sd">    from kivy.config import ConfigParser</span>
+
+<span class="sd">    config = ConfigParser()</span>
+<span class="sd">    config.read(&#39;myconfig.ini&#39;)</span>
+
+<span class="sd">    s = Settings()</span>
+<span class="sd">    s.add_json_panel(&#39;My custom panel&#39;, config, &#39;settings_custom.json&#39;)</span>
+<span class="sd">    s.add_json_panel(&#39;Another panel&#39;, config, &#39;settings_test2.json&#39;)</span>
+
+<span class="sd">    # then use the s as a widget...</span>
+
+
+<span class="sd">.. _differentlayouts:</span>
+
+<span class="sd">Different panel layouts</span>
+<span class="sd">-----------------------</span>
+
+<span class="sd">A kivy :class:`~kivy.app.App` can automatically create and display a</span>
+<span class="sd">:class:`Settings` instance. See the :attr:`~kivy.app.App.settings_cls`</span>
+<span class="sd">documentation for details on how to choose which settings class to</span>
+<span class="sd">display.</span>
+
+<span class="sd">Several pre-built settings widgets are available. All except</span>
+<span class="sd">:class:`SettingsWithNoMenu` include close buttons triggering the</span>
+<span class="sd">on_close event.</span>
+
+<span class="sd">- :class:`Settings`: Displays settings with a sidebar at the left to</span>
+<span class="sd">  switch between json panels.</span>
+
+<span class="sd">- :class:`SettingsWithSidebar`: A trivial subclass of</span>
+<span class="sd">  :class:`Settings`.</span>
+
+<span class="sd">- :class:`SettingsWithSpinner`: Displays settings with a spinner at</span>
+<span class="sd">  the top, which can be used to switch between json panels. Uses</span>
+<span class="sd">  :class:`InterfaceWithSpinner` as the</span>
+<span class="sd">  :attr:`~Settings.interface_cls`. This is the default behavior from</span>
+<span class="sd">  Kivy 1.8.0.</span>
+
+<span class="sd">- :class:`SettingsWithTabbedPanel`: Displays json panels as individual</span>
+<span class="sd">  tabs in a :class:`~kivy.uix.tabbedpanel.TabbedPanel`. Uses</span>
+<span class="sd">  :class:`InterfaceWithTabbedPanel` as the :attr:`~Settings.interface_cls`.</span>
+
+<span class="sd">- :class:`SettingsWithNoMenu`: Displays a single json panel, with no</span>
+<span class="sd">  way to switch to other panels and no close button. This makes it</span>
+<span class="sd">  impossible for the user to exit unless</span>
+<span class="sd">  :meth:`~kivy.app.App.close_settings` is overridden with a different</span>
+<span class="sd">  close trigger! Uses :class:`InterfaceWithNoMenu` as the</span>
+<span class="sd">  :attr:`~Settings.interface_cls`.</span>
+
+<span class="sd">You can construct your own settings panels with any layout you choose</span>
+<span class="sd">by setting :attr:`Settings.interface_cls`. This should be a widget</span>
+<span class="sd">that displays a json settings panel with some way to switch between</span>
+<span class="sd">panels. An instance will be automatically created by :class:`Settings`.</span>
+
+<span class="sd">Interface widgets may be anything you like, but *must* have a method</span>
+<span class="sd">add_panel that receives newly created json settings panels for the</span>
+<span class="sd">interface to display. See the documentation for</span>
+<span class="sd">:class:`InterfaceWithSidebar` for more information. They may</span>
+<span class="sd">optionally dispatch an on_close event, for instance if a close button</span>
+<span class="sd">is clicked. This event is used by :class:`Settings` to trigger its own</span>
+<span class="sd">on_close event.</span>
+
+<span class="sd">For a complete, working example, please see</span>
+<span class="sd">:file:`kivy/examples/settings/main.py`.</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Settings&#39;</span><span class="p">,</span> <span class="s1">&#39;SettingsPanel&#39;</span><span class="p">,</span> <span class="s1">&#39;SettingItem&#39;</span><span class="p">,</span> <span class="s1">&#39;SettingString&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;SettingPath&#39;</span><span class="p">,</span> <span class="s1">&#39;SettingBoolean&#39;</span><span class="p">,</span> <span class="s1">&#39;SettingNumeric&#39;</span><span class="p">,</span> <span class="s1">&#39;SettingOptions&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;SettingTitle&#39;</span><span class="p">,</span> <span class="s1">&#39;SettingsWithSidebar&#39;</span><span class="p">,</span> <span class="s1">&#39;SettingsWithSpinner&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;SettingsWithTabbedPanel&#39;</span><span class="p">,</span> <span class="s1">&#39;SettingsWithNoMenu&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;InterfaceWithSidebar&#39;</span><span class="p">,</span> <span class="s1">&#39;ContentPanel&#39;</span><span class="p">,</span> <span class="s1">&#39;MenuSidebar&#39;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">kivy.factory</span> <span class="k">import</span> <span class="n">Factory</span>
+<span class="kn">from</span> <span class="nn">kivy.metrics</span> <span class="k">import</span> <span class="n">dp</span>
+<span class="kn">from</span> <span class="nn">kivy.config</span> <span class="k">import</span> <span class="n">ConfigParser</span>
+<span class="kn">from</span> <span class="nn">kivy.animation</span> <span class="k">import</span> <span class="n">Animation</span>
+<span class="kn">from</span> <span class="nn">kivy.compat</span> <span class="k">import</span> <span class="n">string_types</span><span class="p">,</span> <span class="n">text_type</span>
+<span class="kn">from</span> <span class="nn">kivy.core.window</span> <span class="k">import</span> <span class="n">Window</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.boxlayout</span> <span class="k">import</span> <span class="n">BoxLayout</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.tabbedpanel</span> <span class="k">import</span> <span class="n">TabbedPanelHeader</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.button</span> <span class="k">import</span> <span class="n">Button</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.filechooser</span> <span class="k">import</span> <span class="n">FileChooserListView</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.scrollview</span> <span class="k">import</span> <span class="n">ScrollView</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.floatlayout</span> <span class="k">import</span> <span class="n">FloatLayout</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.gridlayout</span> <span class="k">import</span> <span class="n">GridLayout</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.label</span> <span class="k">import</span> <span class="n">Label</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.popup</span> <span class="k">import</span> <span class="n">Popup</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.textinput</span> <span class="k">import</span> <span class="n">TextInput</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.togglebutton</span> <span class="k">import</span> <span class="n">ToggleButton</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.widget</span> <span class="k">import</span> <span class="n">Widget</span>
+<span class="kn">from</span> <span class="nn">kivy.properties</span> <span class="k">import</span> <span class="n">ObjectProperty</span><span class="p">,</span> <span class="n">StringProperty</span><span class="p">,</span> <span class="n">ListProperty</span><span class="p">,</span> \
+    <span class="n">BooleanProperty</span><span class="p">,</span> <span class="n">NumericProperty</span><span class="p">,</span> <span class="n">DictProperty</span>
+
+
+<span class="k">class</span> <span class="nc">SettingSpacer</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="c1"># Internal class, not documented.</span>
+    <span class="k">pass</span>
+
+
+<div class="viewcode-block" id="SettingItem"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.SettingItem">[ドキュメント]</a><span class="k">class</span> <span class="nc">SettingItem</span><span class="p">(</span><span class="n">FloatLayout</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Base class for individual settings (within a panel). This class cannot</span>
+<span class="sd">    be used directly; it is used for implementing the other setting classes.</span>
+<span class="sd">    It builds a row with a title/description (left) and a setting control</span>
+<span class="sd">    (right).</span>
+
+<span class="sd">    Look at :class:`SettingBoolean`, :class:`SettingNumeric` and</span>
+<span class="sd">    :class:`SettingOptions` for usage examples.</span>
+
+<span class="sd">    :Events:</span>
+<span class="sd">        `on_release`</span>
+<span class="sd">            Fired when the item is touched and then released.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">title</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="s1">&#39;&lt;No title set&gt;&#39;</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Title of the setting, defaults to &#39;&lt;No title set&gt;&#39;.</span>
+
+<span class="sd">    :attr:`title` is a :class:`~kivy.properties.StringProperty` and defaults to</span>
+<span class="sd">    &#39;&lt;No title set&gt;&#39;.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">desc</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">allownone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Description of the setting, rendered on the line below the title.</span>
+
+<span class="sd">    :attr:`desc` is a :class:`~kivy.properties.StringProperty` and defaults to</span>
+<span class="sd">    None.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">disabled</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Indicate if this setting is disabled. If True, all touches on the</span>
+<span class="sd">    setting item will be discarded.</span>
+
+<span class="sd">    :attr:`disabled` is a :class:`~kivy.properties.BooleanProperty` and</span>
+<span class="sd">    defaults to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">section</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Section of the token inside the :class:`~kivy.config.ConfigParser`</span>
+<span class="sd">    instance.</span>
+
+<span class="sd">    :attr:`section` is a :class:`~kivy.properties.StringProperty` and defaults</span>
+<span class="sd">    to None.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">key</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Key of the token inside the :attr:`section` in the</span>
+<span class="sd">    :class:`~kivy.config.ConfigParser` instance.</span>
+
+<span class="sd">    :attr:`key` is a :class:`~kivy.properties.StringProperty` and defaults to</span>
+<span class="sd">    None.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">value</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Value of the token according to the :class:`~kivy.config.ConfigParser`</span>
+<span class="sd">    instance. Any change to this value will trigger a</span>
+<span class="sd">    :meth:`Settings.on_config_change` event.</span>
+
+<span class="sd">    :attr:`value` is an :class:`~kivy.properties.ObjectProperty` and defaults</span>
+<span class="sd">    to None.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">panel</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;(internal) Reference to the SettingsPanel for this setting. You don&#39;t</span>
+<span class="sd">    need to use it.</span>
+
+<span class="sd">    :attr:`panel` is an :class:`~kivy.properties.ObjectProperty` and defaults</span>
+<span class="sd">    to None.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">content</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;(internal) Reference to the widget that contains the real setting.</span>
+<span class="sd">    As soon as the content object is set, any further call to add_widget will</span>
+<span class="sd">    call the content.add_widget. This is automatically set.</span>
+
+<span class="sd">    :attr:`content` is an :class:`~kivy.properties.ObjectProperty` and defaults</span>
+<span class="sd">    to None.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">selected_alpha</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;(internal) Float value from 0 to 1, used to animate the background when</span>
+<span class="sd">    the user touches the item.</span>
+
+<span class="sd">    :attr:`selected_alpha` is a :class:`~kivy.properties.NumericProperty` and</span>
+<span class="sd">    defaults to 0.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">__events__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;on_release&#39;</span><span class="p">,</span> <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">SettingItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">panel</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">section</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">largs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">content</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">SettingItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="o">*</span><span class="n">largs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="o">*</span><span class="n">largs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">collide_point</span><span class="p">(</span><span class="o">*</span><span class="n">touch</span><span class="o">.</span><span class="n">pos</span><span class="p">):</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">disabled</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">touch</span><span class="o">.</span><span class="n">grab</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">selected_alpha</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">SettingItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_down</span><span class="p">(</span><span class="n">touch</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_touch_up</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">touch</span><span class="o">.</span><span class="n">grab_current</span> <span class="ow">is</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="n">touch</span><span class="o">.</span><span class="n">ungrab</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="s1">&#39;on_release&#39;</span><span class="p">)</span>
+            <span class="n">Animation</span><span class="p">(</span><span class="n">selected_alpha</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">d</span><span class="o">=.</span><span class="mi">25</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="s1">&#39;out_quad&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">SettingItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_up</span><span class="p">(</span><span class="n">touch</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_release</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">on_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">section</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="c1"># get current value in config</span>
+        <span class="n">panel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">panel</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">string_types</span><span class="p">):</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="n">panel</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">section</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SettingBoolean"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.SettingBoolean">[ドキュメント]</a><span class="k">class</span> <span class="nc">SettingBoolean</span><span class="p">(</span><span class="n">SettingItem</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Implementation of a boolean setting on top of a :class:`SettingItem`. It</span>
+<span class="sd">    is visualized with a :class:`~kivy.uix.switch.Switch` widget. By default,</span>
+<span class="sd">    0 and 1 are used for values: you can change them by setting :attr:`values`.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">values</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;Values used to represent the state of the setting. If you want to use</span>
+<span class="sd">    &quot;yes&quot; and &quot;no&quot; in your ConfigParser instance::</span>
+
+<span class="sd">        SettingBoolean(..., values=[&#39;no&#39;, &#39;yes&#39;])</span>
+
+<span class="sd">    .. warning::</span>
+
+<span class="sd">        You need a minimum of two values, the index 0 will be used as False,</span>
+<span class="sd">        and index 1 as True</span>
+
+<span class="sd">    :attr:`values` is a :class:`~kivy.properties.ListProperty` and defaults to</span>
+<span class="sd">    [&#39;0&#39;, &#39;1&#39;]</span>
+<span class="sd">    &#39;&#39;&#39;</span></div>
+
+
+<div class="viewcode-block" id="SettingString"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.SettingString">[ドキュメント]</a><span class="k">class</span> <span class="nc">SettingString</span><span class="p">(</span><span class="n">SettingItem</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Implementation of a string setting on top of a :class:`SettingItem`.</span>
+<span class="sd">    It is visualized with a :class:`~kivy.uix.label.Label` widget that, when</span>
+<span class="sd">    clicked, will open a :class:`~kivy.uix.popup.Popup` with a</span>
+<span class="sd">    :class:`~kivy.uix.textinput.Textinput` so the user can enter a custom</span>
+<span class="sd">    value.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">popup</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">allownone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;(internal) Used to store the current popup when it&#39;s shown.</span>
+
+<span class="sd">    :attr:`popup` is an :class:`~kivy.properties.ObjectProperty` and defaults</span>
+<span class="sd">    to None.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">textinput</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;(internal) Used to store the current textinput from the popup and</span>
+<span class="sd">    to listen for changes.</span>
+
+<span class="sd">    :attr:`textinput` is an :class:`~kivy.properties.ObjectProperty` and</span>
+<span class="sd">    defaults to None.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">on_panel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;on_release&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_popup</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_dismiss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">largs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">textinput</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">textinput</span><span class="o">.</span><span class="n">focus</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">popup</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">popup</span><span class="o">.</span><span class="n">dismiss</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">popup</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dismiss</span><span class="p">()</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">textinput</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">_create_popup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+        <span class="c1"># create popup layout</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">BoxLayout</span><span class="p">(</span><span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="s1">&#39;5dp&#39;</span><span class="p">)</span>
+        <span class="n">popup_width</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mf">0.95</span> <span class="o">*</span> <span class="n">Window</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">dp</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">popup</span> <span class="o">=</span> <span class="n">popup</span> <span class="o">=</span> <span class="n">Popup</span><span class="p">(</span>
+            <span class="n">title</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="n">content</span><span class="p">,</span> <span class="n">size_hint</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+            <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">popup_width</span><span class="p">,</span> <span class="s1">&#39;250dp&#39;</span><span class="p">))</span>
+
+        <span class="c1"># create the textinput used for numeric input</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">textinput</span> <span class="o">=</span> <span class="n">textinput</span> <span class="o">=</span> <span class="n">TextInput</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="s1">&#39;24sp&#39;</span><span class="p">,</span> <span class="n">multiline</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">size_hint_y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s1">&#39;42sp&#39;</span><span class="p">)</span>
+        <span class="n">textinput</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_text_validate</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_validate</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">textinput</span> <span class="o">=</span> <span class="n">textinput</span>
+
+        <span class="c1"># construct the content, widget are used as a spacer</span>
+        <span class="n">content</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">Widget</span><span class="p">())</span>
+        <span class="n">content</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">textinput</span><span class="p">)</span>
+        <span class="n">content</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">Widget</span><span class="p">())</span>
+        <span class="n">content</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">SettingSpacer</span><span class="p">())</span>
+
+        <span class="c1"># 2 buttons are created for accept or cancel the current value</span>
+        <span class="n">btnlayout</span> <span class="o">=</span> <span class="n">BoxLayout</span><span class="p">(</span><span class="n">size_hint_y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s1">&#39;50dp&#39;</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="s1">&#39;5dp&#39;</span><span class="p">)</span>
+        <span class="n">btn</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Ok&#39;</span><span class="p">)</span>
+        <span class="n">btn</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_release</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_validate</span><span class="p">)</span>
+        <span class="n">btnlayout</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">btn</span><span class="p">)</span>
+        <span class="n">btn</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Cancel&#39;</span><span class="p">)</span>
+        <span class="n">btn</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_release</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dismiss</span><span class="p">)</span>
+        <span class="n">btnlayout</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">btn</span><span class="p">)</span>
+        <span class="n">content</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">btnlayout</span><span class="p">)</span>
+
+        <span class="c1"># all done, open the popup !</span>
+        <span class="n">popup</span><span class="o">.</span><span class="n">open</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="SettingPath"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.SettingPath">[ドキュメント]</a><span class="k">class</span> <span class="nc">SettingPath</span><span class="p">(</span><span class="n">SettingItem</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Implementation of a Path setting on top of a :class:`SettingItem`.</span>
+<span class="sd">    It is visualized with a :class:`~kivy.uix.label.Label` widget that, when</span>
+<span class="sd">    clicked, will open a :class:`~kivy.uix.popup.Popup` with a</span>
+<span class="sd">    :class:`~kivy.uix.filechooser.FileChooserListView` so the user can enter</span>
+<span class="sd">    a custom value.</span>
+
+<span class="sd">    .. versionadded:: 1.1.0</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">popup</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">allownone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;(internal) Used to store the current popup when it is shown.</span>
+
+<span class="sd">    :attr:`popup` is an :class:`~kivy.properties.ObjectProperty` and defaults</span>
+<span class="sd">    to None.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">textinput</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;(internal) Used to store the current textinput from the popup and</span>
+<span class="sd">    to listen for changes.</span>
+
+<span class="sd">    :attr:`textinput` is an :class:`~kivy.properties.ObjectProperty` and</span>
+<span class="sd">    defaults to None.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">show_hidden</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Whether to show &#39;hidden&#39; filenames. What that means is</span>
+<span class="sd">    operating-system-dependent.</span>
+
+<span class="sd">    :attr:`show_hidden` is an :class:`~kivy.properties.BooleanProperty` and</span>
+<span class="sd">    defaults to False.</span>
+
+<span class="sd">    .. versionadded:: 1.10.0</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">dirselect</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Whether to allow selection of directories.</span>
+
+<span class="sd">    :attr:`dirselect` is a :class:`~kivy.properties.BooleanProperty` and</span>
+<span class="sd">    defaults to True.</span>
+
+<span class="sd">    .. versionadded:: 1.10.0</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">on_panel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;on_release&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_popup</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_dismiss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">largs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">textinput</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">textinput</span><span class="o">.</span><span class="n">focus</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">popup</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">popup</span><span class="o">.</span><span class="n">dismiss</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">popup</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dismiss</span><span class="p">()</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">textinput</span><span class="o">.</span><span class="n">selection</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">value</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">_create_popup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+        <span class="c1"># create popup layout</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">BoxLayout</span><span class="p">(</span><span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">popup_width</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mf">0.95</span> <span class="o">*</span> <span class="n">Window</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">dp</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">popup</span> <span class="o">=</span> <span class="n">popup</span> <span class="o">=</span> <span class="n">Popup</span><span class="p">(</span>
+            <span class="n">title</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="n">content</span><span class="p">,</span> <span class="n">size_hint</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">),</span>
+            <span class="n">width</span><span class="o">=</span><span class="n">popup_width</span><span class="p">)</span>
+
+        <span class="c1"># create the filechooser</span>
+        <span class="n">initial_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">textinput</span> <span class="o">=</span> <span class="n">textinput</span> <span class="o">=</span> <span class="n">FileChooserListView</span><span class="p">(</span>
+            <span class="n">path</span><span class="o">=</span><span class="n">initial_path</span><span class="p">,</span> <span class="n">size_hint</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="n">dirselect</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dirselect</span><span class="p">,</span> <span class="n">show_hidden</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">show_hidden</span><span class="p">)</span>
+        <span class="n">textinput</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_validate</span><span class="p">)</span>
+
+        <span class="c1"># construct the content</span>
+        <span class="n">content</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">textinput</span><span class="p">)</span>
+        <span class="n">content</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">SettingSpacer</span><span class="p">())</span>
+
+        <span class="c1"># 2 buttons are created for accept or cancel the current value</span>
+        <span class="n">btnlayout</span> <span class="o">=</span> <span class="n">BoxLayout</span><span class="p">(</span><span class="n">size_hint_y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s1">&#39;50dp&#39;</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="s1">&#39;5dp&#39;</span><span class="p">)</span>
+        <span class="n">btn</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Ok&#39;</span><span class="p">)</span>
+        <span class="n">btn</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_release</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_validate</span><span class="p">)</span>
+        <span class="n">btnlayout</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">btn</span><span class="p">)</span>
+        <span class="n">btn</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Cancel&#39;</span><span class="p">)</span>
+        <span class="n">btn</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_release</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dismiss</span><span class="p">)</span>
+        <span class="n">btnlayout</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">btn</span><span class="p">)</span>
+        <span class="n">content</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">btnlayout</span><span class="p">)</span>
+
+        <span class="c1"># all done, open the popup !</span>
+        <span class="n">popup</span><span class="o">.</span><span class="n">open</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="SettingNumeric"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.SettingNumeric">[ドキュメント]</a><span class="k">class</span> <span class="nc">SettingNumeric</span><span class="p">(</span><span class="n">SettingString</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Implementation of a numeric setting on top of a :class:`SettingString`.</span>
+<span class="sd">    It is visualized with a :class:`~kivy.uix.label.Label` widget that, when</span>
+<span class="sd">    clicked, will open a :class:`~kivy.uix.popup.Popup` with a</span>
+<span class="sd">    :class:`~kivy.uix.textinput.Textinput` so the user can enter a custom</span>
+<span class="sd">    value.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">_validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+        <span class="c1"># we know the type just by checking if there is a &#39;.&#39; in the original</span>
+        <span class="c1"># value</span>
+        <span class="n">is_float</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dismiss</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">is_float</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">text_type</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">textinput</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">text_type</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">textinput</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">return</span></div>
+
+
+<div class="viewcode-block" id="SettingOptions"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.SettingOptions">[ドキュメント]</a><span class="k">class</span> <span class="nc">SettingOptions</span><span class="p">(</span><span class="n">SettingItem</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Implementation of an option list on top of a :class:`SettingItem`.</span>
+<span class="sd">    It is visualized with a :class:`~kivy.uix.label.Label` widget that, when</span>
+<span class="sd">    clicked, will open a :class:`~kivy.uix.popup.Popup` with a</span>
+<span class="sd">    list of options from which the user can select.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">options</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([])</span>
+    <span class="sd">&#39;&#39;&#39;List of all availables options. This must be a list of &quot;string&quot; items.</span>
+<span class="sd">    Otherwise, it will crash. :)</span>
+
+<span class="sd">    :attr:`options` is a :class:`~kivy.properties.ListProperty` and defaults</span>
+<span class="sd">    to [].</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">popup</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">allownone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;(internal) Used to store the current popup when it is shown.</span>
+
+<span class="sd">    :attr:`popup` is an :class:`~kivy.properties.ObjectProperty` and defaults</span>
+<span class="sd">    to None.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">on_panel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;on_release&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_popup</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_set_option</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">text</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">popup</span><span class="o">.</span><span class="n">dismiss</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_create_popup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+        <span class="c1"># create the popup</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">BoxLayout</span><span class="p">(</span><span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="s1">&#39;5dp&#39;</span><span class="p">)</span>
+        <span class="n">popup_width</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mf">0.95</span> <span class="o">*</span> <span class="n">Window</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">dp</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">popup</span> <span class="o">=</span> <span class="n">popup</span> <span class="o">=</span> <span class="n">Popup</span><span class="p">(</span>
+            <span class="n">content</span><span class="o">=</span><span class="n">content</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="n">size_hint</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+            <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">popup_width</span><span class="p">,</span> <span class="s1">&#39;400dp&#39;</span><span class="p">))</span>
+        <span class="n">popup</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span> <span class="o">*</span> <span class="n">dp</span><span class="p">(</span><span class="mi">55</span><span class="p">)</span> <span class="o">+</span> <span class="n">dp</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
+
+        <span class="c1"># add all the options</span>
+        <span class="n">content</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">Widget</span><span class="p">(</span><span class="n">size_hint_y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">uid</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uid</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">option</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">:</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;down&#39;</span> <span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="k">else</span> <span class="s1">&#39;normal&#39;</span>
+            <span class="n">btn</span> <span class="o">=</span> <span class="n">ToggleButton</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">option</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="n">state</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="n">uid</span><span class="p">)</span>
+            <span class="n">btn</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_release</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_set_option</span><span class="p">)</span>
+            <span class="n">content</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">btn</span><span class="p">)</span>
+
+        <span class="c1"># finally, add a cancel button to return on the previous panel</span>
+        <span class="n">content</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">SettingSpacer</span><span class="p">())</span>
+        <span class="n">btn</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Cancel&#39;</span><span class="p">,</span> <span class="n">size_hint_y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">dp</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span>
+        <span class="n">btn</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_release</span><span class="o">=</span><span class="n">popup</span><span class="o">.</span><span class="n">dismiss</span><span class="p">)</span>
+        <span class="n">content</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">btn</span><span class="p">)</span>
+
+        <span class="c1"># and open the popup !</span>
+        <span class="n">popup</span><span class="o">.</span><span class="n">open</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="SettingTitle"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.SettingTitle">[ドキュメント]</a><span class="k">class</span> <span class="nc">SettingTitle</span><span class="p">(</span><span class="n">Label</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;A simple title label, used to organize the settings in sections.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">title</span> <span class="o">=</span> <span class="n">Label</span><span class="o">.</span><span class="n">text</span>
+
+    <span class="n">panel</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SettingsPanel"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.SettingsPanel">[ドキュメント]</a><span class="k">class</span> <span class="nc">SettingsPanel</span><span class="p">(</span><span class="n">GridLayout</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;This class is used to contruct panel settings, for use with a</span>
+<span class="sd">    :class:`Settings` instance or subclass.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">title</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="s1">&#39;Default title&#39;</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Title of the panel. The title will be reused by the :class:`Settings` in</span>
+<span class="sd">    the sidebar.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">config</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">allownone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;A :class:`kivy.config.ConfigParser` instance. See module documentation</span>
+<span class="sd">    for more information.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">settings</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;A :class:`Settings` instance that will be used to fire the</span>
+<span class="sd">    `on_config_change` event.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s1">&#39;cols&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cols</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">SettingsPanel</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">ConfigParser</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Invalid config object, you must use a&#39;</span>
+                            <span class="s1">&#39;kivy.config.ConfigParser, not another one !&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="SettingsPanel.get_value"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.SettingsPanel.get_value">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">get_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Return the value of the section/key from the :attr:`config`</span>
+<span class="sd">        ConfigParser instance. This function is used by :class:`SettingItem` to</span>
+<span class="sd">        get the value for a given section/key.</span>
+
+<span class="sd">        If you don&#39;t want to use a ConfigParser instance, you might want to</span>
+<span class="sd">        override this function.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">config</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">return</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">set_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">current</span> <span class="o">==</span> <span class="n">value</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span>
+        <span class="k">if</span> <span class="n">config</span><span class="p">:</span>
+            <span class="n">config</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="n">config</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
+        <span class="n">settings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span>
+        <span class="k">if</span> <span class="n">settings</span><span class="p">:</span>
+            <span class="n">settings</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="s1">&#39;on_config_change&#39;</span><span class="p">,</span>
+                              <span class="n">config</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="InterfaceWithSidebar"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.InterfaceWithSidebar">[ドキュメント]</a><span class="k">class</span> <span class="nc">InterfaceWithSidebar</span><span class="p">(</span><span class="n">BoxLayout</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;The default Settings interface class. It displays a sidebar menu</span>
+<span class="sd">    with names of available settings panels, which may be used to switch</span>
+<span class="sd">    which one is currently displayed.</span>
+
+<span class="sd">    See :meth:`~InterfaceWithSidebar.add_panel` for information on the</span>
+<span class="sd">    method you must implement if creating your own interface.</span>
+
+<span class="sd">    This class also dispatches an event &#39;on_close&#39;, which is triggered</span>
+<span class="sd">    when the sidebar menu&#39;s close button is released. If creating your</span>
+<span class="sd">    own interface widget, it should also dispatch such an event which</span>
+<span class="sd">    will automatically be caught by :class:`Settings` and used to</span>
+<span class="sd">    trigger its own &#39;on_close&#39; event.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">menu</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">()</span>
+    <span class="sd">&#39;&#39;&#39;(internal) A reference to the sidebar menu widget.</span>
+
+<span class="sd">    :attr:`menu` is an :class:`~kivy.properties.ObjectProperty` and</span>
+<span class="sd">    defaults to None.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">content</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">()</span>
+    <span class="sd">&#39;&#39;&#39;(internal) A reference to the panel display widget (a</span>
+<span class="sd">    :class:`ContentPanel`).</span>
+
+<span class="sd">    :attr:`content` is an :class:`~kivy.properties.ObjectProperty` and</span>
+<span class="sd">    defaults to None.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">__events__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;on_close&#39;</span><span class="p">,</span> <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">InterfaceWithSidebar</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menu</span><span class="o">.</span><span class="n">close_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span>
+            <span class="n">on_release</span><span class="o">=</span><span class="k">lambda</span> <span class="n">j</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="s1">&#39;on_close&#39;</span><span class="p">))</span>
+
+<div class="viewcode-block" id="InterfaceWithSidebar.add_panel"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.InterfaceWithSidebar.add_panel">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">add_panel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">panel</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">uid</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;This method is used by Settings to add new panels for possible</span>
+<span class="sd">        display. Any replacement for ContentPanel *must* implement</span>
+<span class="sd">        this method.</span>
+
+<span class="sd">        :Parameters:</span>
+<span class="sd">            `panel`: :class:`SettingsPanel`</span>
+<span class="sd">                It should be stored and the interface should provide a way to</span>
+<span class="sd">                switch between panels.</span>
+<span class="sd">            `name`:</span>
+<span class="sd">                The name of the panel as a string. It may be used to represent</span>
+<span class="sd">                the panel but isn&#39;t necessarily unique.</span>
+<span class="sd">            `uid`:</span>
+<span class="sd">                A unique int identifying the panel. It should be used to</span>
+<span class="sd">                identify and switch between panels.</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menu</span><span class="o">.</span><span class="n">add_item</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">uid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">add_panel</span><span class="p">(</span><span class="n">panel</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">uid</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">on_close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+
+<span class="k">class</span> <span class="nc">InterfaceWithSpinner</span><span class="p">(</span><span class="n">BoxLayout</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;A settings interface that displays a spinner at the top for</span>
+<span class="sd">    switching between panels.</span>
+
+<span class="sd">    The workings of this class are considered internal and are not</span>
+<span class="sd">    documented. See :meth:`InterfaceWithSidebar` for</span>
+<span class="sd">    information on implementing your own interface class.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">__events__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;on_close&#39;</span><span class="p">,</span> <span class="p">)</span>
+
+    <span class="n">menu</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">()</span>
+    <span class="sd">&#39;&#39;&#39;(internal) A reference to the sidebar menu widget.</span>
+
+<span class="sd">    :attr:`menu` is an :class:`~kivy.properties.ObjectProperty` and</span>
+<span class="sd">    defaults to None.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">content</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">()</span>
+    <span class="sd">&#39;&#39;&#39;(internal) A reference to the panel display widget (a</span>
+<span class="sd">    :class:`ContentPanel`).</span>
+
+<span class="sd">    :attr:`menu` is an :class:`~kivy.properties.ObjectProperty` and</span>
+<span class="sd">    defaults to None.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">InterfaceWithSpinner</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menu</span><span class="o">.</span><span class="n">close_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span>
+            <span class="n">on_release</span><span class="o">=</span><span class="k">lambda</span> <span class="n">j</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="s1">&#39;on_close&#39;</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">add_panel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">panel</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">uid</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;This method is used by Settings to add new panels for possible</span>
+<span class="sd">        display. Any replacement for ContentPanel *must* implement</span>
+<span class="sd">        this method.</span>
+
+<span class="sd">        :Parameters:</span>
+<span class="sd">            `panel`: :class:`SettingsPanel`</span>
+<span class="sd">                It should be stored and the interface should provide a way to</span>
+<span class="sd">                switch between panels.</span>
+<span class="sd">            `name`:</span>
+<span class="sd">                The name of the panel as a string. It may be used to represent</span>
+<span class="sd">                the panel but may not be unique.</span>
+<span class="sd">            `uid`:</span>
+<span class="sd">                A unique int identifying the panel. It should be used to</span>
+<span class="sd">                identify and switch between panels.</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">add_panel</span><span class="p">(</span><span class="n">panel</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">uid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menu</span><span class="o">.</span><span class="n">add_item</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">uid</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+
+<div class="viewcode-block" id="ContentPanel"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.ContentPanel">[ドキュメント]</a><span class="k">class</span> <span class="nc">ContentPanel</span><span class="p">(</span><span class="n">ScrollView</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;A class for displaying settings panels. It displays a single</span>
+<span class="sd">    settings panel at a time, taking up the full size and shape of the</span>
+<span class="sd">    ContentPanel. It is used by :class:`InterfaceWithSidebar` and</span>
+<span class="sd">    :class:`InterfaceWithSpinner` to display settings.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">panels</span> <span class="o">=</span> <span class="n">DictProperty</span><span class="p">({})</span>
+    <span class="sd">&#39;&#39;&#39;(internal) Stores a dictionary mapping settings panels to their uids.</span>
+
+<span class="sd">    :attr:`panels` is a :class:`~kivy.properties.DictProperty` and</span>
+<span class="sd">    defaults to {}.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">container</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">()</span>
+    <span class="sd">&#39;&#39;&#39;(internal) A reference to the GridLayout that contains the</span>
+<span class="sd">    settings panel.</span>
+
+<span class="sd">    :attr:`container` is an :class:`~kivy.properties.ObjectProperty` and</span>
+<span class="sd">    defaults to None.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">current_panel</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;(internal) A reference to the current settings panel.</span>
+
+<span class="sd">    :attr:`current_panel` is an :class:`~kivy.properties.ObjectProperty` and</span>
+<span class="sd">    defaults to None.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">current_uid</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;(internal) A reference to the uid of the current settings panel.</span>
+
+<span class="sd">    :attr:`current_uid` is a</span>
+<span class="sd">    :class:`~kivy.properties.NumericProperty` and defaults to 0.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+<div class="viewcode-block" id="ContentPanel.add_panel"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.ContentPanel.add_panel">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">add_panel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">panel</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">uid</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;This method is used by Settings to add new panels for possible</span>
+<span class="sd">        display. Any replacement for ContentPanel *must* implement</span>
+<span class="sd">        this method.</span>
+
+<span class="sd">        :Parameters:</span>
+<span class="sd">            `panel`: :class:`SettingsPanel`</span>
+<span class="sd">                It should be stored and displayed when requested.</span>
+<span class="sd">            `name`:</span>
+<span class="sd">                The name of the panel as a string. It may be used to represent</span>
+<span class="sd">                the panel.</span>
+<span class="sd">            `uid`:</span>
+<span class="sd">                A unique int identifying the panel. It should be stored and</span>
+<span class="sd">                used to identify panels when switching.</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">panels</span><span class="p">[</span><span class="n">uid</span><span class="p">]</span> <span class="o">=</span> <span class="n">panel</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_uid</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">current_uid</span> <span class="o">=</span> <span class="n">uid</span></div>
+
+<div class="viewcode-block" id="ContentPanel.on_current_uid"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.ContentPanel.on_current_uid">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">on_current_uid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;The uid of the currently displayed panel. Changing this will</span>
+<span class="sd">        automatically change the displayed panel.</span>
+
+<span class="sd">        :Parameters:</span>
+<span class="sd">            `uid`:</span>
+<span class="sd">                A panel uid. It should be used to retrieve and display</span>
+<span class="sd">                a settings panel that has previously been added with</span>
+<span class="sd">                :meth:`add_panel`.</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">uid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_uid</span>
+        <span class="k">if</span> <span class="n">uid</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">panels</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_panel</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">remove_widget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_panel</span><span class="p">)</span>
+            <span class="n">new_panel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">panels</span><span class="p">[</span><span class="n">uid</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">new_panel</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">current_panel</span> <span class="o">=</span> <span class="n">new_panel</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># New uid doesn&#39;t exist</span></div>
+
+    <span class="k">def</span> <span class="nf">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">container</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">ContentPanel</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">container</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">remove_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">container</span><span class="o">.</span><span class="n">remove_widget</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Settings"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.Settings">[ドキュメント]</a><span class="k">class</span> <span class="nc">Settings</span><span class="p">(</span><span class="n">BoxLayout</span><span class="p">):</span>
+
+    <span class="sd">&#39;&#39;&#39;Settings UI. Check module documentation for more information on how</span>
+<span class="sd">    to use this class.</span>
+
+<span class="sd">    :Events:</span>
+<span class="sd">        `on_config_change`: ConfigParser instance, section, key, value</span>
+<span class="sd">            Fired when the section&#39;s key-value pair of a ConfigParser changes.</span>
+
+<span class="sd">            .. warning:</span>
+
+<span class="sd">                value will be str/unicode type, regardless of the setting</span>
+<span class="sd">                type (numeric, boolean, etc)</span>
+<span class="sd">        `on_close`</span>
+<span class="sd">            Fired by the default panel when the Close button is pressed.</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+
+    <span class="n">interface</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;(internal) Reference to the widget that will contain, organise and</span>
+<span class="sd">    display the panel configuration panel widgets.</span>
+
+<span class="sd">    :attr:`interface` is an :class:`~kivy.properties.ObjectProperty` and</span>
+<span class="sd">    defaults to None.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">interface_cls</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="n">InterfaceWithSidebar</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;The widget class that will be used to display the graphical</span>
+<span class="sd">    interface for the settings panel. By default, it displays one Settings</span>
+<span class="sd">    panel at a time with a sidebar to switch between them.</span>
+
+<span class="sd">    :attr:`interface_cls` is an</span>
+<span class="sd">    :class:`~kivy.properties.ObjectProperty` and defaults to</span>
+<span class="sd">    :class:`InterfaceWithSidebar`.</span>
+
+<span class="sd">    .. versionchanged:: 1.8.0</span>
+<span class="sd">        If you set a string, the :class:`~kivy.factory.Factory` will be used to</span>
+<span class="sd">        resolve the class.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">__events__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;on_close&#39;</span><span class="p">,</span> <span class="s1">&#39;on_config_change&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_types</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Settings</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_interface</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">register_type</span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="n">SettingString</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">register_type</span><span class="p">(</span><span class="s1">&#39;bool&#39;</span><span class="p">,</span> <span class="n">SettingBoolean</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">register_type</span><span class="p">(</span><span class="s1">&#39;numeric&#39;</span><span class="p">,</span> <span class="n">SettingNumeric</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">register_type</span><span class="p">(</span><span class="s1">&#39;options&#39;</span><span class="p">,</span> <span class="n">SettingOptions</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">register_type</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="n">SettingTitle</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">register_type</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">,</span> <span class="n">SettingPath</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">collide_point</span><span class="p">(</span><span class="o">*</span><span class="n">touch</span><span class="o">.</span><span class="n">pos</span><span class="p">):</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">Settings</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_down</span><span class="p">(</span><span class="n">touch</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+<div class="viewcode-block" id="Settings.register_type"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.Settings.register_type">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">register_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tp</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Register a new type that can be used in the JSON definition.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_types</span><span class="p">[</span><span class="n">tp</span><span class="p">]</span> <span class="o">=</span> <span class="bp">cls</span></div>
+
+    <span class="k">def</span> <span class="nf">on_close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<div class="viewcode-block" id="Settings.add_interface"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.Settings.add_interface">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">add_interface</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;(Internal) creates an instance of :attr:`Settings.interface_cls`,</span>
+<span class="sd">        and sets it to :attr:`~Settings.interface`. When json panels are</span>
+<span class="sd">        created, they will be added to this interface which will display them</span>
+<span class="sd">        to the user.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="bp">cls</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interface_cls</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">string_types</span><span class="p">):</span>
+            <span class="bp">cls</span> <span class="o">=</span> <span class="n">Factory</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+        <span class="n">interface</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interface</span> <span class="o">=</span> <span class="n">interface</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">interface</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_close</span><span class="o">=</span><span class="k">lambda</span> <span class="n">j</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="s1">&#39;on_close&#39;</span><span class="p">))</span></div>
+
+    <span class="k">def</span> <span class="nf">on_config_change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<div class="viewcode-block" id="Settings.add_json_panel"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.Settings.add_json_panel">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">add_json_panel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Create and add a new :class:`SettingsPanel` using the configuration</span>
+<span class="sd">        `config` with the JSON definition `filename`.</span>
+
+<span class="sd">        Check the :ref:`settings_json` section in the documentation for more</span>
+<span class="sd">        information about JSON format and the usage of this function.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">panel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_json_panel</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="n">uid</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">uid</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">interface</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">add_panel</span><span class="p">(</span><span class="n">panel</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">uid</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Settings.create_json_panel"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.Settings.create_json_panel">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">create_json_panel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Create new :class:`SettingsPanel`.</span>
+
+<span class="sd">        .. versionadded:: 1.5.0</span>
+
+<span class="sd">        Check the documentation of :meth:`add_json_panel` for more information.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;You must specify either the filename or data&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">fd</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">list</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;The first element must be a list&#39;</span><span class="p">)</span>
+        <span class="n">panel</span> <span class="o">=</span> <span class="n">SettingsPanel</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">settings</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">setting</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="c1"># determine the type and the class to use</span>
+            <span class="k">if</span> <span class="s1">&#39;type&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">setting</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;One setting are missing the &quot;type&quot; element&#39;</span><span class="p">)</span>
+            <span class="n">ttype</span> <span class="o">=</span> <span class="n">setting</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span>
+            <span class="bp">cls</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_types</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ttype</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s1">&#39;No class registered to handle the &lt;</span><span class="si">%s</span><span class="s1">&gt; type&#39;</span> <span class="o">%</span>
+                    <span class="n">setting</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">])</span>
+
+            <span class="c1"># create a instance of the class, without the type attribute</span>
+            <span class="k">del</span> <span class="n">setting</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span>
+            <span class="n">str_settings</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">setting</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">str_settings</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)]</span> <span class="o">=</span> <span class="n">item</span>
+
+            <span class="n">instance</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">panel</span><span class="o">=</span><span class="n">panel</span><span class="p">,</span> <span class="o">**</span><span class="n">str_settings</span><span class="p">)</span>
+
+            <span class="c1"># instance created, add to the panel</span>
+            <span class="n">panel</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">panel</span></div>
+
+<div class="viewcode-block" id="Settings.add_kivy_panel"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.Settings.add_kivy_panel">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">add_kivy_panel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Add a panel for configuring Kivy. This panel acts directly on the</span>
+<span class="sd">        kivy configuration. Feel free to include or exclude it in your</span>
+<span class="sd">        configuration.</span>
+
+<span class="sd">        See :meth:`~kivy.app.App.use_kivy_settings` for information on</span>
+<span class="sd">        enabling/disabling the automatic kivy panel.</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="kn">from</span> <span class="nn">kivy</span> <span class="k">import</span> <span class="n">kivy_data_dir</span>
+        <span class="kn">from</span> <span class="nn">kivy.config</span> <span class="k">import</span> <span class="n">Config</span>
+        <span class="kn">from</span> <span class="nn">os.path</span> <span class="k">import</span> <span class="n">join</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_json_panel</span><span class="p">(</span><span class="s1">&#39;Kivy&#39;</span><span class="p">,</span> <span class="n">Config</span><span class="p">,</span>
+                            <span class="n">join</span><span class="p">(</span><span class="n">kivy_data_dir</span><span class="p">,</span> <span class="s1">&#39;settings_kivy.json&#39;</span><span class="p">))</span></div></div>
+
+
+<div class="viewcode-block" id="SettingsWithSidebar"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.SettingsWithSidebar">[ドキュメント]</a><span class="k">class</span> <span class="nc">SettingsWithSidebar</span><span class="p">(</span><span class="n">Settings</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;A settings widget that displays settings panels with a sidebar to</span>
+<span class="sd">    switch between them. This is the default behaviour of</span>
+<span class="sd">    :class:`Settings`, and this widget is a trivial wrapper subclass.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span></div>
+
+
+<div class="viewcode-block" id="SettingsWithSpinner"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.SettingsWithSpinner">[ドキュメント]</a><span class="k">class</span> <span class="nc">SettingsWithSpinner</span><span class="p">(</span><span class="n">Settings</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;A settings widget that displays one settings panel at a time with a</span>
+<span class="sd">    spinner at the top to switch between them.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interface_cls</span> <span class="o">=</span> <span class="n">InterfaceWithSpinner</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">SettingsWithSpinner</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SettingsWithTabbedPanel"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.SettingsWithTabbedPanel">[ドキュメント]</a><span class="k">class</span> <span class="nc">SettingsWithTabbedPanel</span><span class="p">(</span><span class="n">Settings</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;A settings widget that displays settings panels as pages in a</span>
+<span class="sd">    :class:`~kivy.uix.tabbedpanel.TabbedPanel`.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">__events__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;on_close&#39;</span><span class="p">,</span> <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interface_cls</span> <span class="o">=</span> <span class="n">InterfaceWithTabbedPanel</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">SettingsWithTabbedPanel</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="SettingsWithNoMenu"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.SettingsWithNoMenu">[ドキュメント]</a><span class="k">class</span> <span class="nc">SettingsWithNoMenu</span><span class="p">(</span><span class="n">Settings</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;A settings widget that displays a single settings panel with *no*</span>
+<span class="sd">    Close button. It will not accept more than one Settings panel. It</span>
+<span class="sd">    is intended for use in programs with few enough settings that a</span>
+<span class="sd">    full panel switcher is not useful.</span>
+
+<span class="sd">    .. warning::</span>
+
+<span class="sd">        This Settings panel does *not* provide a Close</span>
+<span class="sd">        button, and so it is impossible to leave the settings screen</span>
+<span class="sd">        unless you also add other behaviour or override</span>
+<span class="sd">        :meth:`~kivy.app.App.display_settings` and</span>
+<span class="sd">        :meth:`~kivy.app.App.close_settings`.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interface_cls</span> <span class="o">=</span> <span class="n">InterfaceWithNoMenu</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">SettingsWithNoMenu</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<span class="k">class</span> <span class="nc">InterfaceWithNoMenu</span><span class="p">(</span><span class="n">ContentPanel</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;The interface widget used by :class:`SettingsWithNoMenu`. It</span>
+<span class="sd">    stores and displays a single settings panel.</span>
+
+<span class="sd">    This widget is considered internal and is not documented. See the</span>
+<span class="sd">    :class:`ContentPanel` for information on defining your own content</span>
+<span class="sd">    widget.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="nf">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">container</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">container</span><span class="o">.</span><span class="n">children</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+                <span class="s1">&#39;ContentNoMenu cannot accept more than one settings panel&#39;</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">InterfaceWithNoMenu</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">InterfaceWithTabbedPanel</span><span class="p">(</span><span class="n">FloatLayout</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;The content widget used by :class:`SettingsWithTabbedPanel`. It</span>
+<span class="sd">    stores and displays Settings panels in tabs of a TabbedPanel.</span>
+
+<span class="sd">    This widget is considered internal and is not documented. See</span>
+<span class="sd">    :class:`InterfaceWithSidebar` for information on defining your own</span>
+<span class="sd">    interface widget.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">tabbedpanel</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">()</span>
+    <span class="n">close_button</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">()</span>
+
+    <span class="n">__events__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;on_close&#39;</span><span class="p">,</span> <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">InterfaceWithTabbedPanel</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close_button</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_release</span><span class="o">=</span><span class="k">lambda</span> <span class="n">j</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="s1">&#39;on_close&#39;</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">add_panel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">panel</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">uid</span><span class="p">):</span>
+        <span class="n">scrollview</span> <span class="o">=</span> <span class="n">ScrollView</span><span class="p">()</span>
+        <span class="n">scrollview</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">tabbedpanel</span><span class="o">.</span><span class="n">default_tab_content</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tabbedpanel</span><span class="o">.</span><span class="n">default_tab_text</span> <span class="o">=</span> <span class="n">name</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tabbedpanel</span><span class="o">.</span><span class="n">default_tab_content</span> <span class="o">=</span> <span class="n">scrollview</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">panelitem</span> <span class="o">=</span> <span class="n">TabbedPanelHeader</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="n">scrollview</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tabbedpanel</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">panelitem</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">MenuSpinner</span><span class="p">(</span><span class="n">BoxLayout</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;The menu class used by :class:`SettingsWithSpinner`. It provides a</span>
+<span class="sd">    sidebar with an entry for each settings panel.</span>
+
+<span class="sd">    This widget is considered internal and is not documented. See</span>
+<span class="sd">    :class:`MenuSidebar` for information on menus and creating your own menu</span>
+<span class="sd">    class.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">selected_uid</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">close_button</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">spinner</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">()</span>
+    <span class="n">panel_names</span> <span class="o">=</span> <span class="n">DictProperty</span><span class="p">({})</span>
+    <span class="n">spinner_text</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">()</span>
+    <span class="n">close_button</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">add_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">uid</span><span class="p">):</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spinner</span><span class="o">.</span><span class="n">values</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+            <span class="k">while</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">&#39; </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">&#39; </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">panel_names</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">uid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spinner</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">spinner</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">spinner</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">on_spinner_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spinner_text</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">selected_uid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">panel_names</span><span class="p">[</span><span class="n">text</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="MenuSidebar"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.MenuSidebar">[ドキュメント]</a><span class="k">class</span> <span class="nc">MenuSidebar</span><span class="p">(</span><span class="n">FloatLayout</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;The menu used by :class:`InterfaceWithSidebar`. It provides a</span>
+<span class="sd">    sidebar with an entry for each settings panel, which the user may</span>
+<span class="sd">    click to select.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">selected_uid</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;The uid of the currently selected panel. This may be used to switch</span>
+<span class="sd">    between displayed panels, e.g. by binding it to the</span>
+<span class="sd">    :attr:`~ContentPanel.current_uid` of a :class:`ContentPanel`.</span>
+
+<span class="sd">    :attr:`selected_uid` is a</span>
+<span class="sd">    :class:`~kivy.properties.NumericProperty` and defaults to 0.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">buttons_layout</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;(internal) Reference to the GridLayout that contains individual</span>
+<span class="sd">    settings panel menu buttons.</span>
+
+<span class="sd">    :attr:`buttons_layout` is an</span>
+<span class="sd">    :class:`~kivy.properties.ObjectProperty` and defaults to None.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">close_button</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;(internal) Reference to the widget&#39;s Close button.</span>
+
+<span class="sd">    :attr:`buttons_layout` is an</span>
+<span class="sd">    :class:`~kivy.properties.ObjectProperty` and defaults to None.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+<div class="viewcode-block" id="MenuSidebar.add_item"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.MenuSidebar.add_item">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">add_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">uid</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;This method is used to add new panels to the menu.</span>
+
+<span class="sd">        :Parameters:</span>
+<span class="sd">            `name`:</span>
+<span class="sd">                The name (a string) of the panel. It should be used</span>
+<span class="sd">                to represent the panel in the menu.</span>
+<span class="sd">            `uid`:</span>
+<span class="sd">                The name (an int) of the panel. It should be used internally</span>
+<span class="sd">                to represent the panel and used to set self.selected_uid when</span>
+<span class="sd">                the panel is changed.</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+
+        <span class="n">label</span> <span class="o">=</span> <span class="n">SettingSidebarLabel</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="n">uid</span><span class="p">,</span> <span class="n">menu</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buttons_layout</span><span class="o">.</span><span class="n">children</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">label</span><span class="o">.</span><span class="n">selected</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">buttons_layout</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">buttons_layout</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">label</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MenuSidebar.on_selected_uid"><a class="viewcode-back" href="../../../api-kivy.uix.settings.html#kivy.uix.settings.MenuSidebar.on_selected_uid">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">on_selected_uid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;(internal) unselects any currently selected menu buttons, unless</span>
+<span class="sd">        they represent the current panel.</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">for</span> <span class="n">button</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">buttons_layout</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">button</span><span class="o">.</span><span class="n">uid</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_uid</span><span class="p">:</span>
+                <span class="n">button</span><span class="o">.</span><span class="n">selected</span> <span class="o">=</span> <span class="kc">False</span></div></div>
+
+
+<span class="k">class</span> <span class="nc">SettingSidebarLabel</span><span class="p">(</span><span class="n">Label</span><span class="p">):</span>
+    <span class="c1"># Internal class, not documented.</span>
+    <span class="n">selected</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">uid</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">menu</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">collide_point</span><span class="p">(</span><span class="o">*</span><span class="n">touch</span><span class="o">.</span><span class="n">pos</span><span class="p">):</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">selected</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">menu</span><span class="o">.</span><span class="n">selected_uid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">uid</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">kivy.app</span> <span class="k">import</span> <span class="n">App</span>
+
+    <span class="k">class</span> <span class="nc">SettingsApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+
+        <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">Settings</span><span class="p">()</span>
+            <span class="n">s</span><span class="o">.</span><span class="n">add_kivy_panel</span><span class="p">()</span>
+            <span class="n">s</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_close</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stop</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">s</span>
+
+    <span class="n">SettingsApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+
+            <div class="footerlinks">
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 30, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

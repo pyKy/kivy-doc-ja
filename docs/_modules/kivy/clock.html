@@ -1,0 +1,1218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>kivy.clock &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../_static/kivy.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="../../index.html" />
+    <link rel="up" title="kivy" href="../kivy.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="../../gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../../index.html">kivy.clock</a></h3>
+          
+          <h3><a href="../../index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api-index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2></div>
+            
+  <h1>kivy.clock のソースコード</h1><div class="highlight"><pre>
+<span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Clock object</span>
+<span class="sd">============</span>
+
+<span class="sd">The :class:`Clock` object allows you to schedule a function call in the</span>
+<span class="sd">future; once or repeatedly at specified intervals. You can get the time</span>
+<span class="sd">elapsed between the scheduling and the calling of the callback via the</span>
+<span class="sd">`dt` argument::</span>
+
+<span class="sd">    # dt means delta-time</span>
+<span class="sd">    def my_callback(dt):</span>
+<span class="sd">        pass</span>
+
+<span class="sd">    # call my_callback every 0.5 seconds</span>
+<span class="sd">    Clock.schedule_interval(my_callback, 0.5)</span>
+
+<span class="sd">    # call my_callback in 5 seconds</span>
+<span class="sd">    Clock.schedule_once(my_callback, 5)</span>
+
+<span class="sd">    # call my_callback as soon as possible (usually next frame.)</span>
+<span class="sd">    Clock.schedule_once(my_callback)</span>
+
+<span class="sd">.. note::</span>
+
+<span class="sd">    If the callback returns False, the schedule will be canceled and won&#39;t</span>
+<span class="sd">    repeat.</span>
+
+<span class="sd">If you want to schedule a function to call with default arguments, you can use</span>
+<span class="sd">the `functools.partial</span>
+<span class="sd">&lt;http://docs.python.org/library/functools.html#functools.partial&gt;`_ python</span>
+<span class="sd">module::</span>
+
+<span class="sd">    from functools import partial</span>
+
+<span class="sd">    def my_callback(value, key, *largs):</span>
+<span class="sd">        pass</span>
+
+<span class="sd">    Clock.schedule_interval(partial(my_callback, &#39;my value&#39;, &#39;my key&#39;), 0.5)</span>
+
+<span class="sd">Conversely, if you want to schedule a function that doesn&#39;t accept the dt</span>
+<span class="sd">argument, you can use a `lambda</span>
+<span class="sd">&lt;http://docs.python.org/2/reference/expressions.html#lambda&gt;`_ expression</span>
+<span class="sd">to write a short function that does accept dt. For Example::</span>
+
+<span class="sd">    def no_args_func():</span>
+<span class="sd">        print(&quot;I accept no arguments, so don&#39;t schedule me in the clock&quot;)</span>
+
+<span class="sd">    Clock.schedule_once(lambda dt: no_args_func(), 0.5)</span>
+
+<span class="sd">.. note::</span>
+
+<span class="sd">    You cannot unschedule an anonymous function unless you keep a</span>
+<span class="sd">    reference to it. It&#39;s better to add \*args to your function</span>
+<span class="sd">    definition so that it can be called with an arbitrary number of</span>
+<span class="sd">    parameters.</span>
+
+<span class="sd">.. important::</span>
+
+<span class="sd">    The callback is weak-referenced: you are responsible for keeping a</span>
+<span class="sd">    reference to your original object/callback. If you don&#39;t keep a</span>
+<span class="sd">    reference, the ClockBase will never execute your callback. For</span>
+<span class="sd">    example::</span>
+
+<span class="sd">        class Foo(object):</span>
+<span class="sd">            def start(self):</span>
+<span class="sd">                Clock.schedule_interval(self.callback, 0.5)</span>
+
+<span class="sd">            def callback(self, dt):</span>
+<span class="sd">                print(&#39;In callback&#39;)</span>
+
+<span class="sd">        # A Foo object is created and the method start is called.</span>
+<span class="sd">        # Because no reference is kept to the instance returned from Foo(),</span>
+<span class="sd">        # the object will be collected by the Python Garbage Collector and</span>
+<span class="sd">        # your callback will be never called.</span>
+<span class="sd">        Foo().start()</span>
+
+<span class="sd">        # So you should do the following and keep a reference to the instance</span>
+<span class="sd">        # of foo until you don&#39;t need it anymore!</span>
+<span class="sd">        foo = Foo()</span>
+<span class="sd">        foo.start()</span>
+
+
+<span class="sd">.. _schedule-before-frame:</span>
+
+<span class="sd">Schedule before frame</span>
+<span class="sd">---------------------</span>
+
+<span class="sd">.. versionadded:: 1.0.5</span>
+
+<span class="sd">Sometimes you need to schedule a callback BEFORE the next frame. Starting</span>
+<span class="sd">from 1.0.5, you can use a timeout of -1::</span>
+
+<span class="sd">    Clock.schedule_once(my_callback, 0) # call after the next frame</span>
+<span class="sd">    Clock.schedule_once(my_callback, -1) # call before the next frame</span>
+
+<span class="sd">The Clock will execute all the callbacks with a timeout of -1 before the</span>
+<span class="sd">next frame even if you add a new callback with -1 from a running</span>
+<span class="sd">callback. However, :class:`Clock` has an iteration limit for these</span>
+<span class="sd">callbacks: it defaults to 10.</span>
+
+<span class="sd">If you schedule a callback that schedules a callback that schedules a ... etc</span>
+<span class="sd">more than 10 times, it will leave the loop and send a warning to the console,</span>
+<span class="sd">then continue after the next frame. This is implemented to prevent bugs from</span>
+<span class="sd">hanging or crashing the application.</span>
+
+<span class="sd">If you need to increase the limit, set the :attr:`max_iteration` property::</span>
+
+<span class="sd">    from kivy.clock import Clock</span>
+<span class="sd">    Clock.max_iteration = 20</span>
+
+<span class="sd">.. _triggered-events:</span>
+
+<span class="sd">Triggered Events</span>
+<span class="sd">----------------</span>
+
+<span class="sd">.. versionadded:: 1.0.5</span>
+
+<span class="sd">A triggered event is a way to defer a callback. It functions exactly like</span>
+<span class="sd">schedule_once() and schedule_interval() except that it doesn&#39;t immediately</span>
+<span class="sd">schedule the callback. Instead, one schedules the callback using the</span>
+<span class="sd">:class:`ClockEvent` returned by it. This ensures that you can call the event</span>
+<span class="sd">multiple times but it won&#39;t be scheduled more than once. This is not the case</span>
+<span class="sd">with :meth:`Clock.schedule_once`::</span>
+
+<span class="sd">    # will run the callback twice before the next frame</span>
+<span class="sd">    Clock.schedule_once(my_callback)</span>
+<span class="sd">    Clock.schedule_once(my_callback)</span>
+
+<span class="sd">    # will run the callback once before the next frame</span>
+<span class="sd">    event = Clock.create_trigger(my_callback)</span>
+<span class="sd">    event()</span>
+<span class="sd">    event()</span>
+
+<span class="sd">    # will also run the callback only once before the next frame</span>
+<span class="sd">    event = Clock.schedule_once(my_callback)  # now it&#39;s already scheduled</span>
+<span class="sd">    event()  # won&#39;t be scheduled again</span>
+<span class="sd">    event()</span>
+
+<span class="sd">In addition, it is more convenient to create and bind to</span>
+<span class="sd">the triggered event than using :meth:`Clock.schedule_once` in a function::</span>
+
+<span class="sd">    from kivy.clock import Clock</span>
+<span class="sd">    from kivy.uix.widget import Widget</span>
+
+<span class="sd">    class Sample(Widget):</span>
+<span class="sd">        def __init__(self, **kwargs):</span>
+<span class="sd">            self._trigger = Clock.create_trigger(self.cb)</span>
+<span class="sd">            super(Sample, self).__init__(**kwargs)</span>
+<span class="sd">            self.bind(x=self._trigger, y=self._trigger)</span>
+
+<span class="sd">        def cb(self, *largs):</span>
+<span class="sd">            pass</span>
+
+<span class="sd">Even if x and y changes within one frame, the callback is only run once.</span>
+
+<span class="sd">:meth:`CyClockBase.create_trigger` has a timeout parameter that</span>
+<span class="sd">behaves exactly like :meth:`CyClockBase.schedule_once`.</span>
+
+<span class="sd">.. versionchanged:: 1.10.0</span>
+
+<span class="sd">    :meth:`CyClockBase.create_trigger` now has a ``interval`` parameter.</span>
+<span class="sd">    If False, the default, it&#39;ll create an event similar to</span>
+<span class="sd">    :meth:`CyClockBase.schedule_once`. Otherwise it&#39;ll create an event</span>
+<span class="sd">    similar to :meth:`CyClockBase.schedule_interval`.</span>
+
+<span class="sd">Unscheduling</span>
+<span class="sd">-------------</span>
+
+<span class="sd">An event scheduled with :meth:`CyClockBase.schedule_once`,</span>
+<span class="sd">:meth:`CyClockBase.schedule_interval`, or with</span>
+<span class="sd">:meth:`CyClockBase.create_trigger` and then triggered can be unscheduled in</span>
+<span class="sd">multiple ways. E.g::</span>
+
+<span class="sd">    def my_callback(dt):</span>
+<span class="sd">        pass</span>
+
+<span class="sd">    # call my_callback every 0.5 seconds</span>
+<span class="sd">    event = Clock.schedule_interval(my_callback, 0.5)</span>
+
+<span class="sd">    # call my_callback in 5 seconds</span>
+<span class="sd">    event2 = Clock.schedule_once(my_callback, 5)</span>
+
+<span class="sd">    event_trig = Clock.create_trigger(my_callback, 5)</span>
+<span class="sd">    event_trig()</span>
+
+<span class="sd">    # unschedule using cancel</span>
+<span class="sd">    event.cancel()</span>
+
+<span class="sd">    # unschedule using Clock.unschedule</span>
+<span class="sd">    Clock.unschedule(event2)</span>
+
+<span class="sd">    # unschedule using Clock.unschedule with the callback</span>
+<span class="sd">    # NOT RECOMMENDED</span>
+<span class="sd">    Clock.unschedule(my_callback)</span>
+
+<span class="sd">The best way to unschedule a callback is with :meth:`ClockEvent.cancel`.</span>
+<span class="sd">:meth:`CyClockBase.unschedule` is mainly an alias for that for that function.</span>
+<span class="sd">However, if the original callback itself is passed to</span>
+<span class="sd">:meth:`CyClockBase.unschedule`, it&#39;ll unschedule all instances of that</span>
+<span class="sd">callback (provided ``all`` is True, the default, other just the first match is</span>
+<span class="sd">removed).</span>
+
+<span class="sd">Calling :meth:`CyClockBase.unschedule` on the original callback is highly</span>
+<span class="sd">discouraged because it&#39;s significantly slower than when using the event.</span>
+
+<span class="sd">Threading and Callback Order</span>
+<span class="sd">-----------------------------</span>
+
+<span class="sd">Beginning with 1.10.0, all the events scheduled for the same frame, e.g.</span>
+<span class="sd">all the events scheduled in the same frame with a ``timeout`` of ``0``,</span>
+<span class="sd">well be executed in the order they were scheduled.</span>
+
+<span class="sd">Also, all the scheduling and canceling methods are fully thread safe and</span>
+<span class="sd">can be safely used from external threads.</span>
+
+<span class="sd">As a a consequence, calling :meth:`CyClockBase.unschedule` with the original</span>
+<span class="sd">callback is now significantly slower and highly discouraged. Instead, the</span>
+<span class="sd">returned events should be used to cancel. As a tradeoff, all the other methods</span>
+<span class="sd">are now significantly faster than before.</span>
+
+<span class="sd">Advanced Clock Details</span>
+<span class="sd">-----------------------</span>
+
+<span class="sd">The following section goes into the internal kivy clock details as well</span>
+<span class="sd">as the various clock options. It is meant only for advanced users.</span>
+
+<span class="sd">Fundamentally, the Kivy clock attempts to execute any scheduled callback</span>
+<span class="sd">rhythmically as determined by the specified fps (frame per second, see</span>
+<span class="sd">``maxfps`` in :mod:`~kivy.config`). That is, ideally, given e.g. a desired fps</span>
+<span class="sd">of 30, the clock will execute the callbacks at intervals of 1 / 30 seconds, or</span>
+<span class="sd">every 33.33 ms. All the callbacks in a frame are given the same timestamp,</span>
+<span class="sd">i.e. the ``dt`` passed to the callback are all the same and it&#39;s the difference</span>
+<span class="sd">in time between the start of this and the previous frame.</span>
+
+<span class="sd">Because of inherent indeterminism, the frames do not actually occur exactly</span>
+<span class="sd">at intervals of the fps and ``dt`` may be under or over the desired fps.</span>
+<span class="sd">Also, once the timeout is &quot;close enough&quot; to the desired timeout, as determined</span>
+<span class="sd">internally, Kivy will execute the callback in the current frame even when the</span>
+<span class="sd">&quot;actual time&quot; has not elapsed the ``timeout`` amount.</span>
+
+<span class="sd">Kivy offers now, since ``1.10.0``, multiple clocks with different behaviors.</span>
+
+<span class="sd">Default Clock</span>
+<span class="sd">^^^^^^^^^^^^^^</span>
+
+<span class="sd">The default clock (``default``) behaves as described above. When a callback</span>
+<span class="sd">with a timeout of zero or non-zero is scheduled, they are executed at the frame</span>
+<span class="sd">that is near the timeout, which is a function of the fps. So a timeout of zero</span>
+<span class="sd">would still result in a delay of one frame or about 1 / fps, typically a bit</span>
+<span class="sd">less but sometimes more depending on the CPU usage of the other events</span>
+<span class="sd">scheduled for that frame.</span>
+
+<span class="sd">In a test using a fps of 30, a callback with a timeout of 0, 0.001, and 0.05,</span>
+<span class="sd">resulted in a mean callback delay of 0.02487, 0.02488, and 0.05011 seconds,</span>
+<span class="sd">respectively. When tested with a fps of 600 the delay for 0.05 was similar,</span>
+<span class="sd">except the standard deviation was reduced resulting in overall better accuracy.</span>
+
+<span class="sd">Interruptible Clock</span>
+<span class="sd">^^^^^^^^^^^^^^^^^^^^</span>
+
+<span class="sd">The default clock suffers from the quantization problem, as frames occur only</span>
+<span class="sd">on intervals and any scheduled timeouts will not be able to occur during an</span>
+<span class="sd">interval. For example, with the timeout of 0.05, while the mean was 0.05011,</span>
+<span class="sd">its values ranged between 0.02548 - 0.07348 and a standard deviation of 0.002.</span>
+<span class="sd">Also, there&#39;s the minimum timeout of about 0.02487.</span>
+
+<span class="sd">The interruptible clock (``interrupt``) will execute timeouts even during a</span>
+<span class="sd">frame. So a timeout of zero will execute as quickly as possible and similarly</span>
+<span class="sd">a non-zero timeout will be executed even during the interval.</span>
+
+<span class="sd">This clock, and all the clocks described after this have an option,</span>
+<span class="sd">:attr:`ClockBaseInterruptBehavior.interupt_next_only`. When True, any of the</span>
+<span class="sd">behavior new behavior will only apply to the callbacks with a timeout of</span>
+<span class="sd">zero. Non-zero timeouts will behave like in the default clock. E.g. for this</span>
+<span class="sd">clock when True, only zero timeouts will execute during the the interval.</span>
+
+<span class="sd">In a test using a fps of 30, a callback with a timeout of 0, 0.001, and 0.05,</span>
+<span class="sd">resulted in a mean callback delay of 0.00013, 0.00013, and 0.04120 seconds,</span>
+<span class="sd">respectively when :attr:`ClockBaseInterruptBehavior.interupt_next_only` was</span>
+<span class="sd">False. Also, compared to the default clock the standard deviation was reduced.</span>
+<span class="sd">When :attr:`ClockBaseInterruptBehavior.interupt_next_only` was True, the values</span>
+<span class="sd">were 0.00010, 0.02414, and 0.05034, respectively.</span>
+
+<span class="sd">Free Clock</span>
+<span class="sd">^^^^^^^^^^^</span>
+
+<span class="sd">The interruptible clock may not be ideal for all cases because all the events</span>
+<span class="sd">are executed during the intervals and events are not executed anymore</span>
+<span class="sd">rhythmically as multiples of the fps. For example, there may not be any benefit</span>
+<span class="sd">for the graphics to update in a sub-interval, so the additional accuracy</span>
+<span class="sd">wastes CPU.</span>
+
+<span class="sd">The Free clock (``free_all``) solves this by having ``Clock.xxx_free`` versions</span>
+<span class="sd">of all the Clock scheduling methods. By free, we mean the event is free from</span>
+<span class="sd">the fps because it&#39;s not fps limited. E.g.</span>
+<span class="sd">:meth:`CyClockBaseFree.create_trigger_free` corresponds to</span>
+<span class="sd">:meth:`CyClockBase.create_trigger`. Only when an event scheduled using the</span>
+<span class="sd">``Clock.xxx_free`` methods is present will the clock interrupt and execute</span>
+<span class="sd">the events during the interval. So, if no ``free`` event is present the clock</span>
+<span class="sd">behaves like the ``default`` clock, otherwise it behaves like the ``interrupt``</span>
+<span class="sd">clock.</span>
+
+<span class="sd">In a test using a fps of 30, a callback with a timeout of 0s, 0.001s, and</span>
+<span class="sd">0.05s, resulted in a mean callback delay of 0.00012s, 0.00017s, and 0.04121s</span>
+<span class="sd">seconds, respectively when it was a free event and 0.02403s, 0.02405s, and</span>
+<span class="sd">0.04829s, respectively when it wasn&#39;t.</span>
+
+<span class="sd">Free Only Clock</span>
+<span class="sd">^^^^^^^^^^^^^^^^^</span>
+
+<span class="sd">The Free clock executes all events when a free event was scheduled. This</span>
+<span class="sd">results in normal events also being execute in the middle of the interval</span>
+<span class="sd">when a free event is scheduled. For example, above, when a free event was</span>
+<span class="sd">absent, a normal event with a 0.001s timeout was delayed for 0.02405s. However,</span>
+<span class="sd">if a free event happened to be also scheduled, the normal event was only</span>
+<span class="sd">delayed 0.00014s, which may be undesirable.</span>
+
+<span class="sd">The Free only clock (``free_only``) solves it by only executing free events</span>
+<span class="sd">during the interval and normal events are always executed like with the</span>
+<span class="sd">default clock. For example, in the presence of a free event, a normal event</span>
+<span class="sd">with a timeout of 0.001s still had a delay of 0.02406. So this clock,</span>
+<span class="sd">treats free and normal events independently, with normal events always being</span>
+<span class="sd">fps limited, but never the free events.</span>
+
+<span class="sd">Summary</span>
+<span class="sd">^^^^^^^^</span>
+
+<span class="sd">The kivy clock type to use can be set with the ``kivy_clock`` option the</span>
+<span class="sd">:mod:`~kivy.config`. If ``KIVY_CLOCK`` is present in the environment it</span>
+<span class="sd">overwrites the config selection. Its possible values are as follows:</span>
+
+<span class="sd">* When ``kivy_clock`` is ``default``, the normal clock, :class:`ClockBase`,</span>
+<span class="sd">  which limits callbacks to the maxfps quantization - is used.</span>
+<span class="sd">* When ``kivy_clock`` is ``interrupt``, a interruptible clock,</span>
+<span class="sd">  :class:`ClockBaseInterrupt`, which doesn&#39;t limit any callbacks to the</span>
+<span class="sd">  maxfps - is used. Callbacks will be executed at any time.</span>
+<span class="sd">* When ``kivy_clock`` is ``free_all``, a interruptible clock,</span>
+<span class="sd">  :class:`ClockBaseFreeInterruptAll`, which doesn&#39;t limit any callbacks to the</span>
+<span class="sd">  maxfps in the presence of free events, but in their absence it limits events</span>
+<span class="sd">  to the fps quantization interval - is used.</span>
+<span class="sd">* When ``kivy_clock`` is ``free_only``, a interruptible clock,</span>
+<span class="sd">  :class:`ClockBaseFreeInterruptAll`, which treats free and normal events</span>
+<span class="sd">  independently; normal events are fps limited while free events are not - is</span>
+<span class="sd">  used.</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s1">&#39;Clock&#39;</span><span class="p">,</span> <span class="s1">&#39;ClockEvent&#39;</span><span class="p">,</span> <span class="s1">&#39;FreeClockEvent&#39;</span><span class="p">,</span> <span class="s1">&#39;CyClockBase&#39;</span><span class="p">,</span> <span class="s1">&#39;CyClockBaseFree&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ClockBaseBehavior&#39;</span><span class="p">,</span> <span class="s1">&#39;ClockBaseInterruptBehavior&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ClockBaseInterruptFreeBehavior&#39;</span><span class="p">,</span> <span class="s1">&#39;ClockBase&#39;</span><span class="p">,</span> <span class="s1">&#39;ClockBaseInterrupt&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ClockBaseFreeInterruptAll&#39;</span><span class="p">,</span> <span class="s1">&#39;ClockBaseFreeInterruptOnly&#39;</span><span class="p">,</span> <span class="s1">&#39;mainthread&#39;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">sys</span> <span class="k">import</span> <span class="n">platform</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="k">import</span> <span class="n">environ</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">wraps</span><span class="p">,</span> <span class="n">partial</span>
+<span class="kn">from</span> <span class="nn">kivy.context</span> <span class="k">import</span> <span class="n">register_context</span>
+<span class="kn">from</span> <span class="nn">kivy.config</span> <span class="k">import</span> <span class="n">Config</span>
+<span class="kn">from</span> <span class="nn">kivy.logger</span> <span class="k">import</span> <span class="n">Logger</span>
+<span class="kn">from</span> <span class="nn">kivy.compat</span> <span class="k">import</span> <span class="n">clock</span> <span class="k">as</span> <span class="n">_default_time</span><span class="p">,</span> <span class="n">PY2</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">kivy._clock</span> <span class="k">import</span> <span class="n">CyClockBase</span><span class="p">,</span> <span class="n">ClockEvent</span><span class="p">,</span> <span class="n">FreeClockEvent</span><span class="p">,</span> \
+    <span class="n">CyClockBaseFree</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="k">import</span> <span class="n">Event</span> <span class="k">as</span> <span class="n">MultiprocessingEvent</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>  <span class="c1"># https://bugs.python.org/issue3770</span>
+    <span class="kn">from</span> <span class="nn">threading</span> <span class="k">import</span> <span class="n">Event</span> <span class="k">as</span> <span class="n">MultiprocessingEvent</span>
+<span class="kn">from</span> <span class="nn">threading</span> <span class="k">import</span> <span class="n">Event</span> <span class="k">as</span> <span class="n">ThreadingEvent</span>
+
+<span class="c1"># some reading: http://gameprogrammingpatterns.com/game-loop.html</span>
+
+
+<span class="k">def</span> <span class="nf">_get_sleep_obj</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">ctypes</span>
+    <span class="k">if</span> <span class="n">platform</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;win32&#39;</span><span class="p">,</span> <span class="s1">&#39;cygwin&#39;</span><span class="p">):</span>
+        <span class="c1"># Win32 Sleep function is only 10-millisecond resolution, so</span>
+        <span class="c1"># instead use a waitable timer object, which has up to</span>
+        <span class="c1"># 100-nanosecond resolution (hardware and implementation</span>
+        <span class="c1"># dependent, of course).</span>
+
+        <span class="n">_kernel32</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">windll</span><span class="o">.</span><span class="n">kernel32</span>
+
+        <span class="k">def</span> <span class="nf">_get_sleep_obj</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">_kernel32</span><span class="o">.</span><span class="n">CreateWaitableTimerA</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">_usleep</span><span class="p">(</span><span class="n">microseconds</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+            <span class="n">delay</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_longlong</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="o">-</span><span class="n">microseconds</span> <span class="o">*</span> <span class="mi">10</span><span class="p">))</span>
+            <span class="n">_kernel32</span><span class="o">.</span><span class="n">SetWaitableTimer</span><span class="p">(</span>
+                <span class="n">obj</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">byref</span><span class="p">(</span><span class="n">delay</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">(),</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">(),</span> <span class="kc">False</span><span class="p">)</span>
+            <span class="n">_kernel32</span><span class="o">.</span><span class="n">WaitForSingleObject</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="mh">0xffffffff</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">platform</span> <span class="o">==</span> <span class="s1">&#39;darwin&#39;</span><span class="p">:</span>
+            <span class="n">_libc</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">CDLL</span><span class="p">(</span><span class="s1">&#39;libc.dylib&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">ctypes.util</span> <span class="k">import</span> <span class="n">find_library</span>
+            <span class="n">_libc</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">CDLL</span><span class="p">(</span><span class="n">find_library</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">),</span> <span class="n">use_errno</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="k">def</span> <span class="nf">_libc_clock_gettime_wrapper</span><span class="p">():</span>
+                <span class="kn">from</span> <span class="nn">os</span> <span class="k">import</span> <span class="n">strerror</span>
+
+                <span class="k">class</span> <span class="nc">struct_tv</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">Structure</span><span class="p">):</span>
+                    <span class="n">_fields_</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;tv_sec&#39;</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_long</span><span class="p">),</span>
+                                <span class="p">(</span><span class="s1">&#39;tv_usec&#39;</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_long</span><span class="p">)]</span>
+
+                <span class="n">_clock_gettime</span> <span class="o">=</span> <span class="n">_libc</span><span class="o">.</span><span class="n">clock_gettime</span>
+                <span class="n">_clock_gettime</span><span class="o">.</span><span class="n">argtypes</span> <span class="o">=</span> <span class="p">[</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_long</span><span class="p">,</span>
+                                           <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">struct_tv</span><span class="p">)]</span>
+
+                <span class="k">if</span> <span class="s1">&#39;linux&#39;</span> <span class="ow">in</span> <span class="n">platform</span><span class="p">:</span>
+                    <span class="n">_clockid</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># CLOCK_MONOTONIC_RAW (Linux specific)</span>
+                <span class="k">elif</span> <span class="s1">&#39;freebsd&#39;</span> <span class="ow">in</span> <span class="n">platform</span><span class="p">:</span>
+                    <span class="c1"># clockid constants from sys/time.h</span>
+                    <span class="c1"># _clockid = 4 # CLOCK_MONOTONIC (FreeBSD specific)</span>
+                    <span class="c1"># 11: CLOCK_MONOTONIC_PRECISE (FreeBSD known OK for 10.2)</span>
+                    <span class="n">_clockid</span> <span class="o">=</span> <span class="mi">11</span>
+                    <span class="c1"># _clockid = 12</span>
+                    <span class="c1"># 12: CLOCK_MONOTONIC_FAST (FreeBSD specific)</span>
+                    <span class="n">Logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;clock.py: {{</span><span class="si">{:s}</span><span class="s1">}} clock ID </span><span class="si">{:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">platform</span><span class="p">,</span> <span class="n">_clockid</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">_clockid</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># CLOCK_MONOTONIC</span>
+
+                <span class="n">tv</span> <span class="o">=</span> <span class="n">struct_tv</span><span class="p">()</span>
+
+                <span class="k">def</span> <span class="nf">_time</span><span class="p">():</span>
+                    <span class="k">if</span> <span class="n">_clock_gettime</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_long</span><span class="p">(</span><span class="n">_clockid</span><span class="p">),</span>
+                                      <span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="n">tv</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="n">_ernno</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">get_errno</span><span class="p">()</span>
+                        <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span><span class="n">_ernno</span><span class="p">,</span> <span class="n">strerror</span><span class="p">(</span><span class="n">_ernno</span><span class="p">))</span>
+                    <span class="k">return</span> <span class="n">tv</span><span class="o">.</span><span class="n">tv_sec</span> <span class="o">+</span> <span class="p">(</span><span class="n">tv</span><span class="o">.</span><span class="n">tv_usec</span> <span class="o">*</span> <span class="mf">0.000000001</span><span class="p">)</span>
+
+                <span class="k">return</span> <span class="n">_time</span>
+
+            <span class="n">_default_time</span> <span class="o">=</span> <span class="n">_libc_clock_gettime_wrapper</span><span class="p">()</span>
+
+        <span class="n">_libc</span><span class="o">.</span><span class="n">usleep</span><span class="o">.</span><span class="n">argtypes</span> <span class="o">=</span> <span class="p">[</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulong</span><span class="p">]</span>
+        <span class="n">_libc_usleep</span> <span class="o">=</span> <span class="n">_libc</span><span class="o">.</span><span class="n">usleep</span>
+
+        <span class="k">def</span> <span class="nf">_usleep</span><span class="p">(</span><span class="n">microseconds</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+            <span class="n">_libc_usleep</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">microseconds</span><span class="p">))</span>
+
+<span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">):</span>
+    <span class="c1"># ImportError: ctypes is not available on python-for-android.</span>
+    <span class="c1"># AttributeError: ctypes is now available on python-for-android, but</span>
+    <span class="c1">#   &quot;undefined symbol: clock_gettime&quot;. CF #3797</span>
+    <span class="c1"># OSError: if the libc cannot be readed (like with buildbot: invalid ELF</span>
+    <span class="c1"># header)</span>
+
+    <span class="k">def</span> <span class="nf">_usleep</span><span class="p">(</span><span class="n">microseconds</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">microseconds</span> <span class="o">/</span> <span class="mf">1000000.</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="ClockBaseBehavior"><a class="viewcode-back" href="../../api-kivy.clock.html#kivy.clock.ClockBaseBehavior">[ドキュメント]</a><span class="k">class</span> <span class="nc">ClockBaseBehavior</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;The base of the kivy clock.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">_dt</span> <span class="o">=</span> <span class="mf">0.0001</span>
+    <span class="n">_last_fps_tick</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_start_tick</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">_fps</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">_rfps</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">_fps_counter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">_rfps_counter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">_frames</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">_frames_displayed</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">_events_duration</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="sd">&#39;&#39;&#39;The measured time that it takes to process all the events etc, excepting</span>
+<span class="sd">    any sleep or waiting time. It is the average and is updated every 5</span>
+<span class="sd">    seconds.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">_duration_count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">_sleep_time</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">_duration_ts0</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">MIN_SLEEP</span> <span class="o">=</span> <span class="mf">0.005</span>
+    <span class="sd">&#39;&#39;&#39;The minimum time to sleep. If the remaining time is less than this,</span>
+<span class="sd">    the event loop will continuo</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">SLEEP_UNDERSHOOT</span> <span class="o">=</span> <span class="n">MIN_SLEEP</span> <span class="o">-</span> <span class="mf">0.001</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ClockBaseBehavior</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_duration_ts0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start_tick</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_tick</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_max_fps</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">Config</span><span class="o">.</span><span class="n">getint</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;maxfps&#39;</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">frametime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Time spent between the last frame and the current frame</span>
+<span class="sd">        (in seconds).</span>
+
+<span class="sd">        .. versionadded:: 1.8.0</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dt</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">frames</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Number of internal frames (not necessarily drawed) from the start of</span>
+<span class="sd">        the clock.</span>
+
+<span class="sd">        .. versionadded:: 1.8.0</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_frames</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">frames_displayed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Number of displayed frames from the start of the clock.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_frames_displayed</span>
+
+<div class="viewcode-block" id="ClockBaseBehavior.usleep"><a class="viewcode-back" href="../../api-kivy.clock.html#kivy.clock.ClockBaseBehavior.usleep">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">usleep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">microseconds</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Sleeps for the number of microseconds.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="ClockBaseBehavior.idle"><a class="viewcode-back" href="../../api-kivy.clock.html#kivy.clock.ClockBaseBehavior.idle">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">idle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;(internal) waits here until the next frame.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">fps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_fps</span>
+        <span class="k">if</span> <span class="n">fps</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">min_sleep</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_resolution</span><span class="p">()</span>
+            <span class="n">undershoot</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">/</span> <span class="mf">5.</span> <span class="o">*</span> <span class="n">min_sleep</span>
+            <span class="n">usleep</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">usleep</span>
+            <span class="n">ready</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_ready</span>
+
+            <span class="n">done</span><span class="p">,</span> <span class="n">sleeptime</span> <span class="o">=</span> <span class="n">ready</span><span class="p">(</span><span class="n">fps</span><span class="p">,</span> <span class="n">min_sleep</span><span class="p">,</span> <span class="n">undershoot</span><span class="p">)</span>
+            <span class="k">while</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
+                <span class="n">usleep</span><span class="p">(</span><span class="mi">1000000</span> <span class="o">*</span> <span class="n">sleeptime</span><span class="p">)</span>
+                <span class="n">done</span><span class="p">,</span> <span class="n">sleeptime</span> <span class="o">=</span> <span class="n">ready</span><span class="p">(</span><span class="n">fps</span><span class="p">,</span> <span class="n">min_sleep</span><span class="p">,</span> <span class="n">undershoot</span><span class="p">)</span>
+
+        <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dt</span> <span class="o">=</span> <span class="n">current</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_tick</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_tick</span> <span class="o">=</span> <span class="n">current</span>
+        <span class="k">return</span> <span class="n">current</span></div>
+
+    <span class="k">def</span> <span class="nf">_check_ready</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fps</span><span class="p">,</span> <span class="n">min_sleep</span><span class="p">,</span> <span class="n">undershoot</span><span class="p">):</span>
+        <span class="n">sleeptime</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">fps</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_tick</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">sleeptime</span> <span class="o">-</span> <span class="n">undershoot</span> <span class="o">&lt;=</span> <span class="n">min_sleep</span><span class="p">,</span> <span class="n">sleeptime</span> <span class="o">-</span> <span class="n">undershoot</span>
+
+<div class="viewcode-block" id="ClockBaseBehavior.tick"><a class="viewcode-back" href="../../api-kivy.clock.html#kivy.clock.ClockBaseBehavior.tick">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">tick</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Advance the clock to the next step. Must be called every frame.</span>
+<span class="sd">        The default clock has a tick() function called by the core Kivy</span>
+<span class="sd">        framework.&#39;&#39;&#39;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_release_references</span><span class="p">()</span>
+
+        <span class="n">ts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">idle</span><span class="p">()</span>
+
+        <span class="c1"># tick the current time</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_frames</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fps_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># compute how long the event processing takes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_duration_count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sleep_time</span> <span class="o">+=</span> <span class="n">current</span> <span class="o">-</span> <span class="n">ts</span>
+        <span class="n">t_tot</span> <span class="o">=</span> <span class="n">current</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_duration_ts0</span>
+        <span class="k">if</span> <span class="n">t_tot</span> <span class="o">&gt;=</span> <span class="mf">1.</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_events_duration</span> <span class="o">=</span> \
+                <span class="p">(</span><span class="n">t_tot</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sleep_time</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_duration_count</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_duration_ts0</span> <span class="o">=</span> <span class="n">current</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_sleep_time</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_duration_count</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># calculate fps things</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_fps_tick</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_last_fps_tick</span> <span class="o">=</span> <span class="n">current</span>
+        <span class="k">elif</span> <span class="n">current</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_fps_tick</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">current</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_fps_tick</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_fps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fps_counter</span> <span class="o">/</span> <span class="n">d</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_rfps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rfps_counter</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_last_fps_tick</span> <span class="o">=</span> <span class="n">current</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_fps_counter</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_rfps_counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># process event</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_process_events</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dt</span></div>
+
+<div class="viewcode-block" id="ClockBaseBehavior.tick_draw"><a class="viewcode-back" href="../../api-kivy.clock.html#kivy.clock.ClockBaseBehavior.tick_draw">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">tick_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Tick the drawing counter.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_process_events_before_frame</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_rfps_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_frames_displayed</span> <span class="o">+=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="ClockBaseBehavior.get_fps"><a class="viewcode-back" href="../../api-kivy.clock.html#kivy.clock.ClockBaseBehavior.get_fps">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">get_fps</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Get the current average FPS calculated by the clock.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fps</span></div>
+
+<div class="viewcode-block" id="ClockBaseBehavior.get_rfps"><a class="viewcode-back" href="../../api-kivy.clock.html#kivy.clock.ClockBaseBehavior.get_rfps">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">get_rfps</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Get the current &quot;real&quot; FPS calculated by the clock.</span>
+<span class="sd">        This counter reflects the real framerate displayed on the screen.</span>
+
+<span class="sd">        In contrast to get_fps(), this function returns a counter of the</span>
+<span class="sd">        number of frames, not the average of frames per second.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rfps</span></div>
+
+<div class="viewcode-block" id="ClockBaseBehavior.get_time"><a class="viewcode-back" href="../../api-kivy.clock.html#kivy.clock.ClockBaseBehavior.get_time">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">get_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Get the last tick made by the clock.&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_tick</span></div>
+
+<div class="viewcode-block" id="ClockBaseBehavior.get_boottime"><a class="viewcode-back" href="../../api-kivy.clock.html#kivy.clock.ClockBaseBehavior.get_boottime">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">get_boottime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Get the time in seconds from the application start.&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_tick</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start_tick</span></div>
+
+    <span class="n">time</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">partial</span><span class="p">(</span><span class="n">_default_time</span><span class="p">))</span></div>
+
+
+<span class="n">ClockBaseBehavior</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> \
+    <span class="sd">&#39;&#39;&#39;Proxy method for :func:`~kivy.compat.clock`. &#39;&#39;&#39;</span>
+
+
+<div class="viewcode-block" id="ClockBaseInterruptBehavior"><a class="viewcode-back" href="../../api-kivy.clock.html#kivy.clock.ClockBaseInterruptBehavior">[ドキュメント]</a><span class="k">class</span> <span class="nc">ClockBaseInterruptBehavior</span><span class="p">(</span><span class="n">ClockBaseBehavior</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;A kivy clock which can be interrupted during a frame to execute events.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">interupt_next_only</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">_event</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_get_min_timeout_func</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interupt_next_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ClockBaseInterruptBehavior</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_event</span> <span class="o">=</span> <span class="n">MultiprocessingEvent</span><span class="p">()</span> <span class="k">if</span> <span class="n">PY2</span> <span class="k">else</span> <span class="n">ThreadingEvent</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interupt_next_only</span> <span class="o">=</span> <span class="n">interupt_next_only</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_get_min_timeout_func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_min_timeout</span>
+
+    <span class="k">def</span> <span class="nf">usleep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">microseconds</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_event</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_event</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">microseconds</span> <span class="o">/</span> <span class="mf">1000000.</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_schedule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="n">fps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_fps</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">fps</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">event</span><span class="o">.</span><span class="n">timeout</span> <span class="ow">or</span> <span class="p">(</span>
+                <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">interupt_next_only</span> <span class="ow">and</span> <span class="n">event</span><span class="o">.</span><span class="n">timeout</span> <span class="o">&lt;=</span>
+                <span class="mi">1</span> <span class="o">/</span> <span class="n">fps</span> <span class="o">-</span>  <span class="c1"># remaining time</span>
+                <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_tick</span><span class="p">)</span> <span class="o">+</span>  <span class="c1"># elapsed time</span>
+                <span class="mi">4</span> <span class="o">/</span> <span class="mf">5.</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_resolution</span><span class="p">()):</span>  <span class="c1"># resolution fudge factor</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_event</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">idle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">fps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_fps</span>
+        <span class="n">event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_event</span>
+        <span class="n">resolution</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_resolution</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">fps</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">done</span><span class="p">,</span> <span class="n">sleeptime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_ready</span><span class="p">(</span>
+                <span class="n">fps</span><span class="p">,</span> <span class="n">resolution</span><span class="p">,</span> <span class="mi">4</span> <span class="o">/</span> <span class="mf">5.</span> <span class="o">*</span> <span class="n">resolution</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
+                <span class="n">event</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">sleeptime</span><span class="p">)</span>
+
+        <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dt</span> <span class="o">=</span> <span class="n">current</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_tick</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_tick</span> <span class="o">=</span> <span class="n">current</span>
+        <span class="n">event</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="c1"># anything scheduled from now on, if scheduled for the upcoming frame</span>
+        <span class="c1"># will cause a timeout of the event on the next idle due to on_schedule</span>
+        <span class="c1"># `self._last_tick = current` must happen before clear, otherwise the</span>
+        <span class="c1"># on_schedule computation is wrong when exec between the clear and</span>
+        <span class="c1"># the `self._last_tick = current` bytecode.</span>
+        <span class="k">return</span> <span class="n">current</span>
+
+    <span class="k">def</span> <span class="nf">_check_ready</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fps</span><span class="p">,</span> <span class="n">min_sleep</span><span class="p">,</span> <span class="n">undershoot</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_event</span><span class="o">.</span><span class="n">is_set</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">0</span>
+
+        <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_min_timeout_func</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">t</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">interupt_next_only</span><span class="p">:</span>
+            <span class="n">curr_t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+            <span class="n">sleeptime</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">fps</span> <span class="o">-</span> <span class="p">(</span><span class="n">curr_t</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_tick</span><span class="p">),</span> <span class="n">t</span> <span class="o">-</span> <span class="n">curr_t</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sleeptime</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">fps</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_tick</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">sleeptime</span> <span class="o">-</span> <span class="n">undershoot</span> <span class="o">&lt;=</span> <span class="n">min_sleep</span><span class="p">,</span> <span class="n">sleeptime</span> <span class="o">-</span> <span class="n">undershoot</span></div>
+
+
+<div class="viewcode-block" id="ClockBaseInterruptFreeBehavior"><a class="viewcode-back" href="../../api-kivy.clock.html#kivy.clock.ClockBaseInterruptFreeBehavior">[ドキュメント]</a><span class="k">class</span> <span class="nc">ClockBaseInterruptFreeBehavior</span><span class="p">(</span><span class="n">ClockBaseInterruptBehavior</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;A base class for the clock that interrupts the sleep interval for</span>
+<span class="sd">    free events.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ClockBaseInterruptFreeBehavior</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_get_min_timeout_func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_min_free_timeout</span>
+
+    <span class="k">def</span> <span class="nf">on_schedule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">event</span><span class="o">.</span><span class="n">free</span><span class="p">:</span>  <span class="c1"># only wake up for free events</span>
+            <span class="k">return</span>
+        <span class="c1"># free events should use real time not frame time</span>
+        <span class="n">event</span><span class="o">.</span><span class="n">_last_dt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ClockBaseInterruptFreeBehavior</span><span class="p">,</span>
+                     <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_schedule</span><span class="p">(</span><span class="n">event</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ClockBase"><a class="viewcode-back" href="../../api-kivy.clock.html#kivy.clock.ClockBase">[ドキュメント]</a><span class="k">class</span> <span class="nc">ClockBase</span><span class="p">(</span><span class="n">ClockBaseBehavior</span><span class="p">,</span> <span class="n">CyClockBase</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;The ``default`` kivy clock. See module for details.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">_sleep_obj</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ClockBase</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sleep_obj</span> <span class="o">=</span> <span class="n">_get_sleep_obj</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">usleep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">microseconds</span><span class="p">):</span>
+        <span class="n">_usleep</span><span class="p">(</span><span class="n">microseconds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sleep_obj</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ClockBaseInterrupt"><a class="viewcode-back" href="../../api-kivy.clock.html#kivy.clock.ClockBaseInterrupt">[ドキュメント]</a><span class="k">class</span> <span class="nc">ClockBaseInterrupt</span><span class="p">(</span><span class="n">ClockBaseInterruptBehavior</span><span class="p">,</span> <span class="n">CyClockBase</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;The ``interrupt`` kivy clock. See module for details.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="ClockBaseFreeInterruptAll"><a class="viewcode-back" href="../../api-kivy.clock.html#kivy.clock.ClockBaseFreeInterruptAll">[ドキュメント]</a><span class="k">class</span> <span class="nc">ClockBaseFreeInterruptAll</span><span class="p">(</span>
+        <span class="n">ClockBaseInterruptFreeBehavior</span><span class="p">,</span> <span class="n">CyClockBaseFree</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;The ``free_all`` kivy clock. See module for details.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="ClockBaseFreeInterruptOnly"><a class="viewcode-back" href="../../api-kivy.clock.html#kivy.clock.ClockBaseFreeInterruptOnly">[ドキュメント]</a><span class="k">class</span> <span class="nc">ClockBaseFreeInterruptOnly</span><span class="p">(</span>
+        <span class="n">ClockBaseInterruptFreeBehavior</span><span class="p">,</span> <span class="n">CyClockBaseFree</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;The ``free_only`` kivy clock. See module for details.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">idle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">fps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_fps</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_event</span>
+        <span class="k">if</span> <span class="n">fps</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">min_sleep</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_resolution</span><span class="p">()</span>
+            <span class="n">usleep</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">usleep</span>
+            <span class="n">undershoot</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">/</span> <span class="mf">5.</span> <span class="o">*</span> <span class="n">min_sleep</span>
+            <span class="n">min_t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_min_free_timeout</span>
+            <span class="n">interupt_next_only</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interupt_next_only</span>
+
+            <span class="n">sleeptime</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">fps</span> <span class="o">-</span> <span class="p">(</span><span class="n">current</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_tick</span><span class="p">)</span>
+            <span class="k">while</span> <span class="n">sleeptime</span> <span class="o">-</span> <span class="n">undershoot</span> <span class="o">&gt;</span> <span class="n">min_sleep</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">is_set</span><span class="p">():</span>
+                    <span class="n">do_free</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">t</span> <span class="o">=</span> <span class="n">min_t</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">t</span><span class="p">:</span>
+                        <span class="n">do_free</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="k">elif</span> <span class="n">interupt_next_only</span><span class="p">:</span>
+                        <span class="n">do_free</span> <span class="o">=</span> <span class="kc">False</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">sleeptime</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">sleeptime</span><span class="p">,</span> <span class="n">t</span> <span class="o">-</span> <span class="n">current</span><span class="p">)</span>
+                        <span class="n">do_free</span> <span class="o">=</span> <span class="n">sleeptime</span> <span class="o">-</span> <span class="n">undershoot</span> <span class="o">&lt;=</span> <span class="n">min_sleep</span>
+
+                <span class="k">if</span> <span class="n">do_free</span><span class="p">:</span>
+                    <span class="n">event</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_process_free_events</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">event</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">sleeptime</span> <span class="o">-</span> <span class="n">undershoot</span><span class="p">)</span>
+                <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+                <span class="n">sleeptime</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">fps</span> <span class="o">-</span> <span class="p">(</span><span class="n">current</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_tick</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dt</span> <span class="o">=</span> <span class="n">current</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_tick</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_tick</span> <span class="o">=</span> <span class="n">current</span>
+        <span class="n">event</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>  <span class="c1"># this needs to stay after _last_tick</span>
+        <span class="k">return</span> <span class="n">current</span></div>
+
+
+<div class="viewcode-block" id="mainthread"><a class="viewcode-back" href="../../api-kivy.clock.html#kivy.clock.mainthread">[ドキュメント]</a><span class="k">def</span> <span class="nf">mainthread</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Decorator that will schedule the call of the function for the next</span>
+<span class="sd">    available frame in the mainthread. It can be useful when you use</span>
+<span class="sd">    :class:`~kivy.network.urlrequest.UrlRequest` or when you do Thread</span>
+<span class="sd">    programming: you cannot do any OpenGL-related work in a thread.</span>
+
+<span class="sd">    Please note that this method will return directly and no result can be</span>
+<span class="sd">    returned::</span>
+
+<span class="sd">        @mainthread</span>
+<span class="sd">        def callback(self, *args):</span>
+<span class="sd">            print(&#39;The request succeeded!&#39;,</span>
+<span class="sd">                  &#39;This callback is called in the main thread.&#39;)</span>
+
+
+<span class="sd">        self.req = UrlRequest(url=&#39;http://...&#39;, on_success=callback)</span>
+
+<span class="sd">    .. versionadded:: 1.8.0</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">delayed_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">callback_func</span><span class="p">(</span><span class="n">dt</span><span class="p">):</span>
+            <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">Clock</span><span class="o">.</span><span class="n">schedule_once</span><span class="p">(</span><span class="n">callback_func</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">delayed_func</span></div>
+
+
+<span class="k">if</span> <span class="s1">&#39;KIVY_DOC_INCLUDE&#39;</span> <span class="ow">in</span> <span class="n">environ</span><span class="p">:</span>
+    <span class="c1">#: Instance of :class:`ClockBaseBehavior`.</span>
+    <span class="n">Clock</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">_classes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="n">ClockBase</span><span class="p">,</span> <span class="s1">&#39;interrupt&#39;</span><span class="p">:</span> <span class="n">ClockBaseInterrupt</span><span class="p">,</span>
+                <span class="s1">&#39;free_all&#39;</span><span class="p">:</span> <span class="n">ClockBaseFreeInterruptAll</span><span class="p">,</span>
+                <span class="s1">&#39;free_only&#39;</span><span class="p">:</span> <span class="n">ClockBaseFreeInterruptOnly</span><span class="p">}</span>
+    <span class="n">_clk</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;KIVY_CLOCK&#39;</span><span class="p">,</span> <span class="n">Config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;kivy_clock&#39;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">_clk</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_classes</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+            <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> is not a valid kivy clock. Valid clocks are </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">_clk</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">_classes</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
+
+    <span class="n">Clock</span> <span class="o">=</span> <span class="n">register_context</span><span class="p">(</span><span class="s1">&#39;Clock&#39;</span><span class="p">,</span> <span class="n">_classes</span><span class="p">[</span><span class="n">_clk</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;The kivy Clock instance. See module documentation for details.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+
+            <div class="footerlinks">
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 30, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

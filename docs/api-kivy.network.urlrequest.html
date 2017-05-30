@@ -1,0 +1,666 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>UrlRequest &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="_static/kivy.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="index.html" />
+    <link rel="up" title="Network support" href="api-kivy.network.html" />
+    <link rel="next" title="Storage" href="api-kivy.storage.html" />
+    <link rel="prev" title="Network support" href="api-kivy.network.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="index.html">UrlRequest</a></h3>
+          <ul>
+<li><a class="reference internal" href="#">UrlRequest</a></li>
+</ul>
+
+          <h3><a href="index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="api-index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+              <li>Previous: <a href="api-kivy.network.html" title="previous chapter">Network support</a></li>
+              <li>Next: <a href="api-kivy.storage.html" title="next chapter">Storage</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2><ul>
+<li><a class="reference internal" href="#">UrlRequest</a></li>
+</ul>
+</div>
+            
+  <div class="section" id="module-kivy.network.urlrequest">
+<span id="urlrequest"></span><h1>UrlRequest<a class="headerlink" href="#module-kivy.network.urlrequest" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.8 で追加.</span></p>
+</div>
+<p>You can use the <a class="reference internal" href="#kivy.network.urlrequest.UrlRequest" title="kivy.network.urlrequest.UrlRequest"><code class="xref py py-class docutils literal"><span class="pre">UrlRequest</span></code></a> to make asynchronous requests on the
+web and get the result when the request is completed. The spirit is the
+same as the XHR object in Javascript.</p>
+<p>The content is also decoded if the Content-Type is
+application/json and the result automatically passed through json.loads.</p>
+<p>The syntax to create a request:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.network.urlrequest</span> <span class="k">import</span> <span class="n">UrlRequest</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">UrlRequest</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">on_success</span><span class="p">,</span> <span class="n">on_redirect</span><span class="p">,</span> <span class="n">on_failure</span><span class="p">,</span> <span class="n">on_error</span><span class="p">,</span>
+                 <span class="n">on_progress</span><span class="p">,</span> <span class="n">req_body</span><span class="p">,</span> <span class="n">req_headers</span><span class="p">,</span> <span class="n">chunk_size</span><span class="p">,</span>
+                 <span class="n">timeout</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">decode</span><span class="p">,</span> <span class="n">debug</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="n">ca_file</span><span class="p">,</span>
+                 <span class="n">verify</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Only the first argument is mandatory: the rest are optional.
+By default, a &#8220;GET&#8221; request will be sent. If the <a class="reference internal" href="#kivy.network.urlrequest.UrlRequest.req_body" title="kivy.network.urlrequest.UrlRequest.req_body"><code class="xref py py-attr docutils literal"><span class="pre">UrlRequest.req_body</span></code></a> is
+not None, a &#8220;POST&#8221; request will be sent. It&#8217;s up to you to adjust
+<a class="reference internal" href="#kivy.network.urlrequest.UrlRequest.req_headers" title="kivy.network.urlrequest.UrlRequest.req_headers"><code class="xref py py-attr docutils literal"><span class="pre">UrlRequest.req_headers</span></code></a> to suit your requirements and the response
+to the request will be accessible as the parameter called &#8220;result&#8221; on
+the callback function of the on_success event.</p>
+<p>Example of fetching JSON:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">got_json</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;headers&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+
+<span class="n">req</span> <span class="o">=</span> <span class="n">UrlRequest</span><span class="p">(</span><span class="s1">&#39;https://httpbin.org/headers&#39;</span><span class="p">,</span> <span class="n">got_json</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Example of Posting data (adapted from httplib example):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">urllib</span>
+
+<span class="k">def</span> <span class="nf">bug_posted</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Our bug is posted!&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="n">params</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlencode</span><span class="p">({</span><span class="s1">&#39;@number&#39;</span><span class="p">:</span> <span class="mi">12524</span><span class="p">,</span> <span class="s1">&#39;@type&#39;</span><span class="p">:</span> <span class="s1">&#39;issue&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;@action&#39;</span><span class="p">:</span> <span class="s1">&#39;show&#39;</span><span class="p">})</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Content-type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/x-www-form-urlencoded&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;text/plain&#39;</span><span class="p">}</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">UrlRequest</span><span class="p">(</span><span class="s1">&#39;bugs.python.org&#39;</span><span class="p">,</span> <span class="n">on_success</span><span class="o">=</span><span class="n">bug_posted</span><span class="p">,</span> <span class="n">req_body</span><span class="o">=</span><span class="n">params</span><span class="p">,</span>
+        <span class="n">req_headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you want a synchronous request, you can call the wait() method.</p>
+<dl class="class">
+<dt id="kivy.network.urlrequest.UrlRequest">
+<em class="property">class </em><code class="descclassname">kivy.network.urlrequest.</code><code class="descname">UrlRequest</code><span class="sig-paren">(</span><em>url</em>, <em>on_success=None</em>, <em>on_redirect=None</em>, <em>on_failure=None</em>, <em>on_error=None</em>, <em>on_progress=None</em>, <em>req_body=None</em>, <em>req_headers=None</em>, <em>chunk_size=8192</em>, <em>timeout=None</em>, <em>method=None</em>, <em>decode=True</em>, <em>debug=False</em>, <em>file_path=None</em>, <em>ca_file=None</em>, <em>verify=True</em>, <em>proxy_host=None</em>, <em>proxy_port=None</em>, <em>proxy_headers=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/network/urlrequest.html#UrlRequest"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.network.urlrequest.UrlRequest" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal"><span class="pre">threading.Thread</span></code></p>
+<p>A UrlRequest. See module documentation for usage.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.5.1 で変更: </span>Add <cite>debug</cite> parameter</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.0.10 で変更: </span>Add <cite>method</cite> parameter</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.8.0 で変更: </span>Parameter <cite>decode</cite> added.
+Parameter <cite>file_path</cite> added.
+Parameter <cite>on_redirect</cite> added.
+Parameter <cite>on_failure</cite> added.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.9.1 で変更: </span>Parameter <cite>ca_file</cite> added.
+Parameter <cite>verify</cite> added.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.10.0 で変更: </span>Parameters <cite>proxy_host</cite>, <cite>proxy_port</cite> and <cite>proxy_headers</cite> added.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>url</cite>: str</dt>
+<dd><p class="first last">Complete url string to call.</p>
+</dd>
+<dt><cite>on_success</cite>: callback(request, result)</dt>
+<dd><p class="first last">Callback function to call when the result has been fetched.</p>
+</dd>
+<dt><cite>on_redirect</cite>: callback(request, result)</dt>
+<dd><p class="first last">Callback function to call if the server returns a Redirect.</p>
+</dd>
+<dt><cite>on_failure</cite>: callback(request, result)</dt>
+<dd><p class="first last">Callback function to call if the server returns a Client or
+Server Error.</p>
+</dd>
+<dt><cite>on_error</cite>: callback(request, error)</dt>
+<dd><p class="first last">Callback function to call if an error occurs.</p>
+</dd>
+<dt><cite>on_progress</cite>: callback(request, current_size, total_size)</dt>
+<dd><p class="first last">Callback function that will be called to report progression of the
+download. <cite>total_size</cite> might be -1 if no Content-Length has been
+reported in the http response.
+This callback will be called after each <cite>chunk_size</cite> is read.</p>
+</dd>
+<dt><cite>req_body</cite>: str, defaults to None</dt>
+<dd><p class="first last">Data to sent in the request. If it&#8217;s not None, a POST will be done
+instead of a GET.</p>
+</dd>
+<dt><cite>req_headers</cite>: dict, defaults to None</dt>
+<dd><p class="first last">Custom headers to add to the request.</p>
+</dd>
+<dt><cite>chunk_size</cite>: int, defaults to 8192</dt>
+<dd><p class="first last">Size of each chunk to read, used only when <cite>on_progress</cite> callback
+has been set. If you decrease it too much, a lot of on_progress
+callbacks will be fired and will slow down your download. If you
+want to have the maximum download speed, increase the chunk_size
+or don&#8217;t use <code class="docutils literal"><span class="pre">on_progress</span></code>.</p>
+</dd>
+<dt><cite>timeout</cite>: int, defaults to None</dt>
+<dd><p class="first last">If set, blocking operations will timeout after this many seconds.</p>
+</dd>
+<dt><cite>method</cite>: str, defaults to &#8216;GET&#8217; (or &#8216;POST&#8217; if <code class="docutils literal"><span class="pre">body</span></code> is specified)</dt>
+<dd><p class="first last">The HTTP method to use.</p>
+</dd>
+<dt><cite>decode</cite>: bool, defaults to True</dt>
+<dd><p class="first last">If False, skip decoding of the response.</p>
+</dd>
+<dt><cite>debug</cite>: bool, defaults to False</dt>
+<dd><p class="first last">If True, it will use the Logger.debug to print information
+about url access/progression/errors.</p>
+</dd>
+<dt><cite>file_path</cite>: str, defaults to None</dt>
+<dd><p class="first last">If set, the result of the UrlRequest will be written to this path
+instead of in memory.</p>
+</dd>
+<dt><cite>ca_file</cite>: str, defaults to None</dt>
+<dd><p class="first last">Indicates a SSL CA certificate file path to validate HTTPS
+certificates against</p>
+</dd>
+<dt><cite>verify</cite>: bool, defaults to True</dt>
+<dd><p class="first last">If False, disables SSL CA certificate verification</p>
+</dd>
+<dt><cite>proxy_host</cite>: str, defaults to None</dt>
+<dd><p class="first last">If set, the proxy host to use for this connection.</p>
+</dd>
+<dt><cite>proxy_port</cite>: int, defaults to None</dt>
+<dd><p class="first last">If set, and <cite>proxy_host</cite> is also set, the port to use for
+connecting to the proxy server.</p>
+</dd>
+<dt><cite>proxy_headers</cite>: dict, defaults to None</dt>
+<dd><p class="first last">If set, and <cite>proxy_host</cite> is also set, the headers to send to the
+proxy server in the <code class="docutils literal"><span class="pre">CONNECT</span></code> request.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="kivy.network.urlrequest.UrlRequest.chunk_size">
+<code class="descname">chunk_size</code><a class="headerlink" href="#kivy.network.urlrequest.UrlRequest.chunk_size" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return the size of a chunk, used only in &#8220;progress&#8221; mode (when
+on_progress callback is set.)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.network.urlrequest.UrlRequest.decode_result">
+<code class="descname">decode_result</code><span class="sig-paren">(</span><em>result</em>, <em>resp</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/network/urlrequest.html#UrlRequest.decode_result"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.network.urlrequest.UrlRequest.decode_result" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Decode the result fetched from url according to his Content-Type.
+Currently supports only application/json.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.network.urlrequest.UrlRequest.error">
+<code class="descname">error</code><a class="headerlink" href="#kivy.network.urlrequest.UrlRequest.error" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return the error of the request.
+This value is not determined until the request is completed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.network.urlrequest.UrlRequest.get_connection_for_scheme">
+<code class="descname">get_connection_for_scheme</code><span class="sig-paren">(</span><em>scheme</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/network/urlrequest.html#UrlRequest.get_connection_for_scheme"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.network.urlrequest.UrlRequest.get_connection_for_scheme" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return the Connection class for a particular scheme.
+This is an internal function that can be expanded to support custom
+schemes.</p>
+<p>Actual supported schemes: http, https.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.network.urlrequest.UrlRequest.is_finished">
+<code class="descname">is_finished</code><a class="headerlink" href="#kivy.network.urlrequest.UrlRequest.is_finished" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return True if the request has finished, whether it&#8217;s a
+success or a failure.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.network.urlrequest.UrlRequest.req_body">
+<code class="descname">req_body</code><em class="property"> = None</em><a class="headerlink" href="#kivy.network.urlrequest.UrlRequest.req_body" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Request body passed in __init__</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.network.urlrequest.UrlRequest.req_headers">
+<code class="descname">req_headers</code><em class="property"> = None</em><a class="headerlink" href="#kivy.network.urlrequest.UrlRequest.req_headers" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Request headers passed in __init__</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.network.urlrequest.UrlRequest.resp_headers">
+<code class="descname">resp_headers</code><a class="headerlink" href="#kivy.network.urlrequest.UrlRequest.resp_headers" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>If the request has been completed, return a dictionary containing
+the headers of the response. Otherwise, it will return None.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.network.urlrequest.UrlRequest.resp_status">
+<code class="descname">resp_status</code><a class="headerlink" href="#kivy.network.urlrequest.UrlRequest.resp_status" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return the status code of the response if the request is complete,
+otherwise return None.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.network.urlrequest.UrlRequest.result">
+<code class="descname">result</code><a class="headerlink" href="#kivy.network.urlrequest.UrlRequest.result" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return the result of the request.
+This value is not determined until the request is finished.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.network.urlrequest.UrlRequest.url">
+<code class="descname">url</code><em class="property"> = None</em><a class="headerlink" href="#kivy.network.urlrequest.UrlRequest.url" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Url of the request</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.network.urlrequest.UrlRequest.wait">
+<code class="descname">wait</code><span class="sig-paren">(</span><em>delay=0.5</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/network/urlrequest.html#UrlRequest.wait"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.network.urlrequest.UrlRequest.wait" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Wait for the request to finish (until <a class="reference internal" href="#kivy.network.urlrequest.UrlRequest.resp_status" title="kivy.network.urlrequest.UrlRequest.resp_status"><code class="xref py py-attr docutils literal"><span class="pre">resp_status</span></code></a> is not
+None)</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">This method is intended to be used in the main thread, and the
+callback will be dispatched from the same thread
+from which you&#8217;re calling.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.1.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+
+            <div class="footerlinks">
+            <table>
+                <tr>
+                    <td class="leftlink">
+                  <a href="api-kivy.network.html" title="previous chapter">&laquo; Network support</a></li>
+                  </td>
+                  <td class="rightlink">
+                  <a href="api-kivy.storage.html" title="next chapter">Storage &raquo;</a>
+                      </td>
+                  </tr>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 30, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

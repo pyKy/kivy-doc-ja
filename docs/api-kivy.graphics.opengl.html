@@ -1,0 +1,1377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>OpenGL &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="_static/kivy.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="index.html" />
+    <link rel="up" title="Graphics" href="api-kivy.graphics.html" />
+    <link rel="next" title="OpenGL utilities" href="api-kivy.graphics.opengl_utils.html" />
+    <link rel="prev" title="Graphics compiler" href="api-kivy.graphics.compiler.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="index.html">OpenGL</a></h3>
+          <ul>
+<li><a class="reference internal" href="#">OpenGL</a></li>
+</ul>
+
+          <h3><a href="index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="api-index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+              <li>Previous: <a href="api-kivy.graphics.compiler.html" title="previous chapter">Graphics compiler</a></li>
+              <li>Next: <a href="api-kivy.graphics.opengl_utils.html" title="next chapter">OpenGL utilities</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2><ul>
+<li><a class="reference internal" href="#">OpenGL</a></li>
+</ul>
+</div>
+            
+  <div class="section" id="module-kivy.graphics.opengl">
+<span id="opengl"></span><h1>OpenGL<a class="headerlink" href="#module-kivy.graphics.opengl" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>This module is a Python wrapper for OpenGL commands.</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not every OpenGL command has been wrapped and because we are using the C
+binding for higher performance, and you should rather stick to the Kivy
+Graphics API. By using OpenGL commands directly, you might change
+the OpenGL context and introduce inconsistency between the Kivy state and
+the OpenGL state.</p>
+</div>
+<dl class="function">
+<dt id="kivy.graphics.opengl.glActiveTexture">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glActiveTexture</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glActiveTexture" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glActiveTexture.xml">glActiveTexture() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glAttachShader">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glAttachShader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glAttachShader" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glAttachShader.xml">glAttachShader() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glBindAttribLocation">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glBindAttribLocation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glBindAttribLocation" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glBindAttribLocation.xml">glBindAttribLocation() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glBindBuffer">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glBindBuffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glBindBuffer" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glBindBuffer.xml">glBindBuffer() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glBindFramebuffer">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glBindFramebuffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glBindFramebuffer" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glBindFramebuffer.xml">glBindFramebuffer() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glBindRenderbuffer">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glBindRenderbuffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glBindRenderbuffer" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glBindRenderbuffer.xml">glBindRenderbuffer() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glBindTexture">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glBindTexture</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glBindTexture" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glBindTexture.xml">glBindTexture() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glBlendColor">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glBlendColor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glBlendColor" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glBlendColor.xml">glBlendColor() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glBlendEquation">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glBlendEquation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glBlendEquation" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glBlendEquation.xml">glBlendEquation() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glBlendEquationSeparate">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glBlendEquationSeparate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glBlendEquationSeparate" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glBlendEquationSeparate.xml">glBlendEquationSeparate() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glBlendFunc">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glBlendFunc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glBlendFunc" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glBlendFunc.xml">glBlendFunc() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glBlendFuncSeparate">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glBlendFuncSeparate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glBlendFuncSeparate" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glBlendFuncSeparate.xml">glBlendFuncSeparate() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glBufferData">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glBufferData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glBufferData" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glBufferData.xml">glBufferData() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glBufferSubData">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glBufferSubData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glBufferSubData" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glBufferSubData.xml">glBufferSubData() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glCheckFramebufferStatus">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glCheckFramebufferStatus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glCheckFramebufferStatus" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glCheckFramebufferStatus.xml">glCheckFramebufferStatus() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glClear">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glClear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glClear" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glClear.xml">glClear() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glClearColor">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glClearColor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glClearColor" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glClearColor.xml">glClearColor() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glClearStencil">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glClearStencil</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glClearStencil" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glClearStencil.xml">glClearStencil() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glColorMask">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glColorMask</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glColorMask" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glColorMask.xml">glColorMask() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glCompileShader">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glCompileShader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glCompileShader" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glCompileShader.xml">glCompileShader() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glCompressedTexImage2D">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glCompressedTexImage2D</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glCompressedTexImage2D" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glCompressedTexImage2D.xml">glCompressedTexImage2D() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glCompressedTexSubImage2D">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glCompressedTexSubImage2D</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glCompressedTexSubImage2D" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glCompressedTexSubImage2D.xml">glCompressedTexSubImage2D() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glCopyTexImage2D">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glCopyTexImage2D</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glCopyTexImage2D" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glCopyTexImage2D.xml">glCopyTexImage2D() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glCopyTexSubImage2D">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glCopyTexSubImage2D</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glCopyTexSubImage2D" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glCopyTexSubImage2D.xml">glCopyTexSubImage2D() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glCreateProgram">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glCreateProgram</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glCreateProgram" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glCreateProgram.xml">glCreateProgram() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glCreateShader">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glCreateShader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glCreateShader" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glCreateShader.xml">glCreateShader() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glCullFace">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glCullFace</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glCullFace" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glCullFace.xml">glCullFace() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glDeleteBuffers">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glDeleteBuffers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glDeleteBuffers" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glDeleteBuffers.xml">glDeleteBuffers() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glDeleteFramebuffers">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glDeleteFramebuffers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glDeleteFramebuffers" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glDeleteFramebuffers.xml">glDeleteFramebuffers() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glDeleteProgram">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glDeleteProgram</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glDeleteProgram" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glDeleteProgram.xml">glDeleteProgram() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glDeleteRenderbuffers">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glDeleteRenderbuffers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glDeleteRenderbuffers" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glDeleteRenderbuffers.xml">glDeleteRenderbuffers() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glDeleteShader">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glDeleteShader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glDeleteShader" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glDeleteShader.xml">glDeleteShader() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glDeleteTextures">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glDeleteTextures</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glDeleteTextures" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glDeleteTextures.xml">glDeleteTextures() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glDepthFunc">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glDepthFunc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glDepthFunc" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glDepthFunc.xml">glDepthFunc() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glDepthMask">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glDepthMask</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glDepthMask" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glDepthMask.xml">glDepthMask() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glDetachShader">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glDetachShader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glDetachShader" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glDetachShader.xml">glDetachShader() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glDisable">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glDisable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glDisable" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glDisable.xml">glDisable() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glDisableVertexAttribArray">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glDisableVertexAttribArray</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glDisableVertexAttribArray" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glDisableVertexAttribArray.xml">glDisableVertexAttribArray() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glDrawArrays">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glDrawArrays</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glDrawArrays" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glDrawArrays.xml">glDrawArrays() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glDrawElements">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glDrawElements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glDrawElements" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glDrawElements.xml">glDrawElements() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glEnable">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glEnable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glEnable" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glEnable.xml">glEnable() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glEnableVertexAttribArray">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glEnableVertexAttribArray</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glEnableVertexAttribArray" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glEnableVertexAttribArray.xml">glEnableVertexAttribArray() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glFinish">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glFinish</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glFinish" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glFinish.xml">glFinish() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glFlush">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glFlush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glFlush" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glFlush.xml">glFlush() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glFramebufferRenderbuffer">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glFramebufferRenderbuffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glFramebufferRenderbuffer" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glFramebufferRenderbuffer.xml">glFramebufferRenderbuffer() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glFramebufferTexture2D">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glFramebufferTexture2D</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glFramebufferTexture2D" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glFramebufferTexture2D.xml">glFramebufferTexture2D() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glFrontFace">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glFrontFace</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glFrontFace" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glFrontFace.xml">glFrontFace() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGenBuffers">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGenBuffers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGenBuffers" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGenBuffers.xml">glGenBuffers() on Kronos website</a></p>
+<p>Unlike the C specification, the value will be the result of call.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGenFramebuffers">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGenFramebuffers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGenFramebuffers" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGenFramebuffers.xml">glGenFramebuffers() on Kronos website</a></p>
+<p>Unlike the C specification, the value will be the result of call.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGenRenderbuffers">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGenRenderbuffers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGenRenderbuffers" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGenRenderbuffers.xml">glGenRenderbuffers() on Kronos website</a></p>
+<p>Unlike the C specification, the value will be the result of call.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGenTextures">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGenTextures</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGenTextures" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGenTextures.xml">glGenTextures() on Kronos website</a></p>
+<p>Unlike the C specification, the value will be the result of call.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGenerateMipmap">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGenerateMipmap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGenerateMipmap" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGenerateMipmap.xml">glGenerateMipmap() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetActiveAttrib">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetActiveAttrib</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetActiveAttrib" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetActiveAttrib.xml">glGetActiveAttrib() on Kronos website</a></p>
+<p>Unlike the C specification, the value will be the result of call.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetActiveUniform">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetActiveUniform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetActiveUniform" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetActiveUniform.xml">glGetActiveUniform() on Kronos website</a></p>
+<p>Unlike the C specification, the value will be the result of call.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetAttachedShaders">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetAttachedShaders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetAttachedShaders" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetAttachedShaders.xml">glGetAttachedShaders() on Kronos website</a></p>
+<p>Unlike the C specification, the value will be the result of call.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetAttribLocation">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetAttribLocation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetAttribLocation" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetAttribLocation.xml">glGetAttribLocation() on Kronos website</a></p>
+<p>Unlike the C specification, the value will be the result of call.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetBooleanv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetBooleanv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetBooleanv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetBooleanv.xml">glGetBooleanv() on Kronos website</a></p>
+<p>Unlike the C specification, the value will be the result of call.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetBufferParameteriv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetBufferParameteriv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetBufferParameteriv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetBufferParameteriv.xml">glGetBufferParameteriv() on Kronos website</a></p>
+<p>Unlike the C specification, the value will be the result of call.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetError">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetError</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetError" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetError.xml">glGetError() on Kronos website</a></p>
+<p>Unlike the C specification, the value will be the result of call.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetFloatv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetFloatv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetFloatv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetFloatv.xml">glGetFloatv() on Kronos website</a></p>
+<p>Unlike the C specification, the value will be the result of call.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetFramebufferAttachmentParameteriv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetFramebufferAttachmentParameteriv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetFramebufferAttachmentParameteriv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetFramebufferAttachmentParameteriv.xml">glGetFramebufferAttachmentParameteriv() on Kronos website</a></p>
+<p>Unlike the C specification, the value will be the result of call.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetIntegerv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetIntegerv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetIntegerv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetIntegerv.xml">glGetIntegerv() on Kronos website</a></p>
+<p>Unlike the C specification, the value(s) will be the result of the call</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetProgramInfoLog">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetProgramInfoLog</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetProgramInfoLog" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetProgramInfoLog.xml">glGetProgramInfoLog() on Kronos website</a></p>
+<p>Unlike the C specification, the source code will be returned as a string.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetProgramiv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetProgramiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetProgramiv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetProgramiv.xml">glGetProgramiv() on Kronos website</a></p>
+<p>Unlike the C specification, the value(s) will be the result of the call</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetRenderbufferParameteriv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetRenderbufferParameteriv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetRenderbufferParameteriv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetRenderbufferParameteriv.xml">glGetRenderbufferParameteriv() on Kronos website</a></p>
+<p>Unlike the C specification, the value will be the result of call.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetShaderInfoLog">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetShaderInfoLog</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetShaderInfoLog" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetShaderInfoLog.xml">glGetShaderInfoLog() on Kronos website</a></p>
+<p>Unlike the C specification, the source code will be returned as a string.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetShaderPrecisionFormat">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetShaderPrecisionFormat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetShaderPrecisionFormat" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetShaderPrecisionFormat.xml">glGetShaderPrecisionFormat() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetShaderSource">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetShaderSource</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetShaderSource" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetShaderSource.xml">glGetShaderSource() on Kronos website</a></p>
+<p>Unlike the C specification, the source code will be returned as a string.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetShaderiv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetShaderiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetShaderiv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetShaderiv.xml">glGetShaderiv() on Kronos website</a></p>
+<p>Unlike the C specification, the value will be the result of call.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetString">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetString" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetString.xml">glGetString() on Kronos website</a></p>
+<p>Unlike the C specification, the value will be returned as a string.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetTexParameterfv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetTexParameterfv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetTexParameterfv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetTexParameterfv.xml">glGetTexParameterfv() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetTexParameteriv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetTexParameteriv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetTexParameteriv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetTexParameteriv.xml">glGetTexParameteriv() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetUniformLocation">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetUniformLocation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetUniformLocation" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetUniformLocation.xml">glGetUniformLocation() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetUniformfv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetUniformfv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetUniformfv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetUniformfv.xml">glGetUniformfv() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetUniformiv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetUniformiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetUniformiv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetUniformiv.xml">glGetUniformiv() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetVertexAttribPointerv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetVertexAttribPointerv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetVertexAttribPointerv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetVertexAttribPointerv.xml">glGetVertexAttribPointerv() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetVertexAttribfv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetVertexAttribfv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetVertexAttribfv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetVertexAttribfv.xml">glGetVertexAttribfv() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glGetVertexAttribiv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glGetVertexAttribiv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glGetVertexAttribiv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetVertexAttribiv.xml">glGetVertexAttribiv() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glHint">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glHint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glHint" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glHint.xml">glHint() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glIsBuffer">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glIsBuffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glIsBuffer" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glIsBuffer.xml">glIsBuffer() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glIsEnabled">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glIsEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glIsEnabled" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glIsEnabled.xml">glIsEnabled() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glIsFramebuffer">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glIsFramebuffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glIsFramebuffer" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glIsFramebuffer.xml">glIsFramebuffer() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glIsProgram">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glIsProgram</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glIsProgram" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glIsProgram.xml">glIsProgram() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glIsRenderbuffer">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glIsRenderbuffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glIsRenderbuffer" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glIsRenderbuffer.xml">glIsRenderbuffer() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glIsShader">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glIsShader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glIsShader" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glIsShader.xml">glIsShader() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glIsTexture">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glIsTexture</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glIsTexture" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glIsTexture.xml">glIsTexture() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glLineWidth">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glLineWidth</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glLineWidth" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glLineWidth.xml">glLineWidth() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glLinkProgram">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glLinkProgram</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glLinkProgram" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glLinkProgram.xml">glLinkProgram() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glPixelStorei">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glPixelStorei</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glPixelStorei" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glPixelStorei.xml">glPixelStorei() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glPolygonOffset">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glPolygonOffset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glPolygonOffset" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glPolygonOffset.xml">glPolygonOffset() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glReadPixels">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glReadPixels</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glReadPixels" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glReadPixels.xml">glReadPixels() on Kronos website</a></p>
+<p>We support only GL_RGB/GL_RGBA as a format and GL_UNSIGNED_BYTE as a
+type.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glReleaseShaderCompiler">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glReleaseShaderCompiler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glReleaseShaderCompiler" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glReleaseShaderCompiler.xml">glReleaseShaderCompiler() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glRenderbufferStorage">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glRenderbufferStorage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glRenderbufferStorage" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glRenderbufferStorage.xml">glRenderbufferStorage() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glSampleCoverage">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glSampleCoverage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glSampleCoverage" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glSampleCoverage.xml">glSampleCoverage() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glScissor">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glScissor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glScissor" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glScissor.xml">glScissor() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glShaderBinary">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glShaderBinary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glShaderBinary" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glShaderBinary.xml">glShaderBinary() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glShaderSource">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glShaderSource</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glShaderSource" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glShaderSource.xml">glShaderSource() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glStencilFunc">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glStencilFunc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glStencilFunc" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glStencilFunc.xml">glStencilFunc() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glStencilFuncSeparate">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glStencilFuncSeparate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glStencilFuncSeparate" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glStencilFuncSeparate.xml">glStencilFuncSeparate() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glStencilMask">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glStencilMask</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glStencilMask" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glStencilMask.xml">glStencilMask() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glStencilMaskSeparate">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glStencilMaskSeparate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glStencilMaskSeparate" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glStencilMaskSeparate.xml">glStencilMaskSeparate() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glStencilOp">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glStencilOp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glStencilOp" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glStencilOp.xml">glStencilOp() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glStencilOpSeparate">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glStencilOpSeparate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glStencilOpSeparate" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glStencilOpSeparate.xml">glStencilOpSeparate() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glTexImage2D">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glTexImage2D</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glTexImage2D" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glTexImage2D.xml">glTexImage2D() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glTexParameterf">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glTexParameterf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glTexParameterf" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glTexParameterf.xml">glTexParameterf() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glTexParameterfv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glTexParameterfv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glTexParameterfv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glTexParameterfv.xml">glTexParameterfv() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glTexParameteri">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glTexParameteri</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glTexParameteri" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glTexParameteri.xml">glTexParameteri() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glTexParameteriv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glTexParameteriv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glTexParameteriv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glTexParameteriv.xml">glTexParameteriv() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glTexSubImage2D">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glTexSubImage2D</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glTexSubImage2D" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glTexSubImage2D.xml">glTexSubImage2D() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glUniform1f">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glUniform1f</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glUniform1f" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glUniform1f.xml">glUniform1f() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glUniform1fv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glUniform1fv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glUniform1fv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glUniform1fv.xml">glUniform1fv() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glUniform1i">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glUniform1i</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glUniform1i" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glUniform1i.xml">glUniform1i() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glUniform1iv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glUniform1iv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glUniform1iv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glUniform1iv.xml">glUniform1iv() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glUniform2f">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glUniform2f</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glUniform2f" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glUniform2f.xml">glUniform2f() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glUniform2fv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glUniform2fv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glUniform2fv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glUniform2fv.xml">glUniform2fv() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glUniform2i">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glUniform2i</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glUniform2i" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glUniform2i.xml">glUniform2i() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glUniform2iv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glUniform2iv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glUniform2iv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glUniform2iv.xml">glUniform2iv() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glUniform3f">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glUniform3f</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glUniform3f" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glUniform3f.xml">glUniform3f() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glUniform3fv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glUniform3fv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glUniform3fv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glUniform3fv.xml">glUniform3fv() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glUniform3i">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glUniform3i</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glUniform3i" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glUniform3i.xml">glUniform3i() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glUniform3iv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glUniform3iv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glUniform3iv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glUniform3iv.xml">glUniform3iv() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glUniform4f">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glUniform4f</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glUniform4f" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glUniform4f.xml">glUniform4f() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glUniform4fv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glUniform4fv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glUniform4fv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glUniform4fv.xml">glUniform4fv() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glUniform4i">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glUniform4i</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glUniform4i" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glUniform4i.xml">glUniform4i() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glUniform4iv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glUniform4iv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glUniform4iv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glUniform4iv.xml">glUniform4iv() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glUniformMatrix2fv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glUniformMatrix2fv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glUniformMatrix2fv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glUniformMatrix2fv.xml">glUniformMatrix2fv() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glUniformMatrix3fv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glUniformMatrix3fv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glUniformMatrix3fv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glUniformMatrix3fv.xml">glUniformMatrix3fv() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glUniformMatrix4fv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glUniformMatrix4fv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glUniformMatrix4fv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glUniformMatrix4fv.xml">glUniformMatrix4fv() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glUseProgram">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glUseProgram</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glUseProgram" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glUseProgram.xml">glUseProgram() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glValidateProgram">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glValidateProgram</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glValidateProgram" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glValidateProgram.xml">glValidateProgram() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glVertexAttrib1f">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glVertexAttrib1f</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glVertexAttrib1f" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glVertexAttrib1f.xml">glVertexAttrib1f() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glVertexAttrib1fv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glVertexAttrib1fv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glVertexAttrib1fv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glVertexAttrib1fv.xml">glVertexAttrib1fv() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glVertexAttrib2f">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glVertexAttrib2f</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glVertexAttrib2f" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glVertexAttrib2f.xml">glVertexAttrib2f() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glVertexAttrib2fv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glVertexAttrib2fv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glVertexAttrib2fv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glVertexAttrib2fv.xml">glVertexAttrib2fv() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glVertexAttrib3f">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glVertexAttrib3f</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glVertexAttrib3f" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glVertexAttrib3f.xml">glVertexAttrib3f() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glVertexAttrib3fv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glVertexAttrib3fv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glVertexAttrib3fv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glVertexAttrib3fv.xml">glVertexAttrib3fv() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glVertexAttrib4f">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glVertexAttrib4f</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glVertexAttrib4f" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glVertexAttrib4f.xml">glVertexAttrib4f() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glVertexAttrib4fv">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glVertexAttrib4fv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glVertexAttrib4fv" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glVertexAttrib4fv.xml">glVertexAttrib4fv() on Kronos website</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Not implemented yet.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glVertexAttribPointer">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glVertexAttribPointer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glVertexAttribPointer" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glVertexAttribPointer.xml">glVertexAttribPointer() on Kronos website</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="kivy.graphics.opengl.glViewport">
+<code class="descclassname">kivy.graphics.opengl.</code><code class="descname">glViewport</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.opengl.glViewport" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See: <a class="reference external" href="http://www.khronos.org/opengles/sdk/docs/man/xhtml/glViewport.xml">glViewport() on Kronos website</a></p>
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+
+            <div class="footerlinks">
+            <table>
+                <tr>
+                    <td class="leftlink">
+                  <a href="api-kivy.graphics.compiler.html" title="previous chapter">&laquo; Graphics compiler</a></li>
+                  </td>
+                  <td class="rightlink">
+                  <a href="api-kivy.graphics.opengl_utils.html" title="next chapter">OpenGL utilities &raquo;</a>
+                      </td>
+                  </tr>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 30, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

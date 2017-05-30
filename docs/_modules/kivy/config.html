@@ -1,0 +1,1265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>kivy.config &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../_static/kivy.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="../../index.html" />
+    <link rel="up" title="kivy" href="../kivy.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="../../gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../../index.html">kivy.config</a></h3>
+          
+          <h3><a href="../../index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api-index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2></div>
+            
+  <h1>kivy.config のソースコード</h1><div class="highlight"><pre>
+<span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Configuration object</span>
+<span class="sd">====================</span>
+
+<span class="sd">The :class:`Config` object is an instance of a modified Python ConfigParser.</span>
+<span class="sd">See the `ConfigParser documentation</span>
+<span class="sd">&lt;http://docs.python.org/library/configparser.html&gt;`_ for more information.</span>
+
+<span class="sd">Kivy has a configuration file which determines the default settings. In</span>
+<span class="sd">order to change these settings, you can alter this file manually or use</span>
+<span class="sd">the Config object. Please see the :ref:`Configure Kivy` section for more</span>
+<span class="sd">information.</span>
+
+<span class="sd">Applying configurations</span>
+<span class="sd">-----------------------</span>
+
+<span class="sd">Configuration options control the initialization of the :class:`~kivy.app.App`.</span>
+<span class="sd">In order to avoid situations where the config settings do not work or are not</span>
+<span class="sd">applied before window creation (like setting an initial window size),</span>
+<span class="sd">:meth:`Config.set &lt;kivy.config.ConfigParser.set&gt;` should be used before</span>
+<span class="sd">importing any other Kivy modules. Ideally, this means setting them right at</span>
+<span class="sd">the start of your main.py script.</span>
+
+<span class="sd">Alternatively, you can save these settings permanently using</span>
+<span class="sd">:meth:`Config.set &lt;ConfigParser.set&gt;` then</span>
+<span class="sd">:meth:`Config.write &lt;ConfigParser.write&gt;`. In this case, you will need to</span>
+<span class="sd">restart the app for the changes to take effect. Note that this approach will</span>
+<span class="sd">effect all Kivy apps system wide.</span>
+
+<span class="sd">Usage of the Config object</span>
+<span class="sd">--------------------------</span>
+
+<span class="sd">To read a configuration token from a particular section::</span>
+
+<span class="sd">    &gt;&gt;&gt; from kivy.config import Config</span>
+<span class="sd">    &gt;&gt;&gt; Config.getint(&#39;kivy&#39;, &#39;show_fps&#39;)</span>
+<span class="sd">    0</span>
+
+<span class="sd">Change the configuration and save it::</span>
+
+<span class="sd">    &gt;&gt;&gt; Config.set(&#39;postproc&#39;, &#39;retain_time&#39;, &#39;50&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; Config.write()</span>
+
+<span class="sd">For information on configuring your :class:`~kivy.app.App`, please see the</span>
+<span class="sd">:ref:`Application configuration` section.</span>
+
+<span class="sd">.. versionchanged:: 1.7.1</span>
+<span class="sd">    The ConfigParser should work correctly with utf-8 now. The values are</span>
+<span class="sd">    converted from ascii to unicode only when needed. The method get() returns</span>
+<span class="sd">    utf-8 strings.</span>
+
+<span class="sd">.. _configuration-tokens:</span>
+
+<span class="sd">Available configuration tokens</span>
+<span class="sd">------------------------------</span>
+
+<span class="sd">.. |log_levels| replace::</span>
+<span class="sd">    &#39;trace&#39;, &#39;debug&#39;, &#39;info&#39;, &#39;warning&#39;, &#39;error&#39; or &#39;critical&#39;</span>
+
+<span class="sd">:kivy:</span>
+
+<span class="sd">    `desktop`: int, 0 or 1</span>
+<span class="sd">        This option controls desktop OS specific features, such as enabling</span>
+<span class="sd">        drag-able scroll-bar in scroll views, disabling of bubbles in</span>
+<span class="sd">        TextInput etc. 0 is disabled, 1 is enabled.</span>
+<span class="sd">    `exit_on_escape`: int, 0 or 1</span>
+<span class="sd">        Enables exiting kivy when escape is pressed.</span>
+<span class="sd">        0 is disabled, 1 is enabled.</span>
+<span class="sd">    `pause_on_minimize`: int, 0 or 1</span>
+<span class="sd">        If set to `1`, the main loop is paused and the `on_pause` event</span>
+<span class="sd">        is dispatched when the window is minimized. This option is intended</span>
+<span class="sd">        for desktop use only. Defaults to `0`.</span>
+<span class="sd">    `keyboard_layout`: string</span>
+<span class="sd">        Identifier of the layout to use.</span>
+<span class="sd">    `keyboard_mode`: string</span>
+<span class="sd">        Specifies the keyboard mode to use. If can be one of the following:</span>
+
+<span class="sd">        * &#39;&#39; - Let Kivy choose the best option for your current platform.</span>
+<span class="sd">        * &#39;system&#39; - real keyboard.</span>
+<span class="sd">        * &#39;dock&#39; - one virtual keyboard docked to a screen side.</span>
+<span class="sd">        * &#39;multi&#39; - one virtual keyboard for every widget request.</span>
+<span class="sd">        * &#39;systemanddock&#39; - virtual docked keyboard plus input from real</span>
+<span class="sd">          keyboard.</span>
+<span class="sd">        * &#39;systemandmulti&#39; - analogous.</span>
+<span class="sd">    `log_dir`: string</span>
+<span class="sd">        Path of log directory.</span>
+<span class="sd">    `log_enable`: int, 0 or 1</span>
+<span class="sd">        Activate file logging. 0 is disabled, 1 is enabled.</span>
+<span class="sd">    `log_level`: string, one of |log_levels|</span>
+<span class="sd">        Set the minimum log level to use.</span>
+<span class="sd">    `log_name`: string</span>
+<span class="sd">        Format string to use for the filename of log file.</span>
+
+<span class="sd">    `log_maxfiles`: int</span>
+<span class="sd">        Keep log_maxfiles recent logfiles while purging the log directory. Set</span>
+<span class="sd">        &#39;log_maxfiles&#39; to -1 to disable logfile purging (eg keep all logfiles).</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            You end up with &#39;log_maxfiles + 1&#39; logfiles because the logger</span>
+<span class="sd">            adds a new one after purging.</span>
+
+<span class="sd">    `window_icon`: string</span>
+<span class="sd">        Path of the window icon. Use this if you want to replace the default</span>
+<span class="sd">        pygame icon.</span>
+
+<span class="sd">:postproc:</span>
+
+<span class="sd">    `double_tap_distance`: float</span>
+<span class="sd">        Maximum distance allowed for a double tap, normalized inside the range</span>
+<span class="sd">        0 - 1000.</span>
+<span class="sd">    `double_tap_time`: int</span>
+<span class="sd">        Time allowed for the detection of double tap, in milliseconds.</span>
+<span class="sd">    `ignore`: list of tuples</span>
+<span class="sd">        List of regions where new touches are ignored.</span>
+<span class="sd">        This configuration token can be used to resolve hotspot problems</span>
+<span class="sd">        with DIY hardware. The format of the list must be::</span>
+
+<span class="sd">            ignore = [(xmin, ymin, xmax, ymax), ...]</span>
+
+<span class="sd">        All the values must be inside the range 0 - 1.</span>
+<span class="sd">    `jitter_distance`: int</span>
+<span class="sd">        Maximum distance for jitter detection, normalized inside the range 0</span>
+<span class="sd">        - 1000.</span>
+<span class="sd">    `jitter_ignore_devices`: string, separated with commas</span>
+<span class="sd">        List of devices to ignore from jitter detection.</span>
+<span class="sd">    `retain_distance`: int</span>
+<span class="sd">        If the touch moves more than is indicated by retain_distance, it will</span>
+<span class="sd">        not be retained. Argument should be an int between 0 and 1000.</span>
+<span class="sd">    `retain_time`: int</span>
+<span class="sd">        Time allowed for a retain touch, in milliseconds.</span>
+<span class="sd">    `triple_tap_distance`: float</span>
+<span class="sd">        Maximum distance allowed for a triple tap, normalized inside the range</span>
+<span class="sd">        0 - 1000.</span>
+<span class="sd">    `triple_tap_time`: int</span>
+<span class="sd">        Time allowed for the detection of triple tap, in milliseconds.</span>
+
+<span class="sd">:graphics:</span>
+<span class="sd">    `borderless`: int , one of 0 or 1</span>
+<span class="sd">        If set to `1`, removes the window border/decoration. Window resizing</span>
+<span class="sd">        must also be disabled to hide the resizing border.</span>
+<span class="sd">    `window_state`: string , one of &#39;visible&#39;, &#39;hidden&#39;, &#39;maximized&#39;</span>
+<span class="sd">                    or &#39;minimized&#39;</span>
+
+<span class="sd">        Sets the window state, defaults to &#39;visible&#39;. This option is available</span>
+<span class="sd">        only for the SDL2 window provider and it should be used on desktop</span>
+<span class="sd">        OSes.</span>
+<span class="sd">    `fbo`: string, one of &#39;hardware&#39;, &#39;software&#39; or &#39;force-hardware&#39;</span>
+<span class="sd">        Selects the FBO backend to use.</span>
+<span class="sd">    `fullscreen`: int or string, one of 0, 1, &#39;fake&#39; or &#39;auto&#39;</span>
+<span class="sd">        Activate fullscreen. If set to `1`, a resolution of `width`</span>
+<span class="sd">        times `height` pixels will be used.</span>
+<span class="sd">        If set to `auto`, your current display&#39;s resolution will be</span>
+<span class="sd">        used instead. This is most likely what you want.</span>
+<span class="sd">        If you want to place the window in another display,</span>
+<span class="sd">        use `fake`, or set the `borderless` option from the graphics section,</span>
+<span class="sd">        then adjust `width`, `height`, `top` and `left`.</span>
+<span class="sd">    `height`: int</span>
+<span class="sd">        Height of the :class:`~kivy.core.window.Window`, not used if</span>
+<span class="sd">        `fullscreen` is set to `auto`.</span>
+<span class="sd">    `left`: int</span>
+<span class="sd">        Left position of the :class:`~kivy.core.window.Window`.</span>
+<span class="sd">    `maxfps`: int, defaults to 60</span>
+<span class="sd">        Maximum FPS allowed.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            Setting maxfps to 0 will lead to max CPU usage.</span>
+
+<span class="sd">    &#39;multisamples&#39;: int, defaults to 2</span>
+<span class="sd">        Sets the `MultiSample Anti-Aliasing (MSAA)</span>
+<span class="sd">        &lt;http://en.wikipedia.org/wiki/Multisample_anti-aliasing&gt;`_ level.</span>
+<span class="sd">        Increasing this value results in smoother graphics but at the cost of</span>
+<span class="sd">        processing time.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">           This feature is limited by device hardware support and will have no</span>
+<span class="sd">           effect on devices which do not support the level of MSAA requested.</span>
+
+<span class="sd">    `position`: string, one of &#39;auto&#39; or &#39;custom&#39;</span>
+<span class="sd">        Position of the window on your display. If `auto` is used, you have no</span>
+<span class="sd">        control of the initial position: `top` and `left` are ignored.</span>
+<span class="sd">    `show_cursor`: int, one of 0 or 1</span>
+<span class="sd">        Set whether or not the cursor is shown on the window.</span>
+<span class="sd">    `top`: int</span>
+<span class="sd">        Top position of the :class:`~kivy.core.window.Window`.</span>
+<span class="sd">    `resizable`: int, one of 0 or 1</span>
+<span class="sd">        If 0, the window will have a fixed size. If 1, the window will be</span>
+<span class="sd">        resizable.</span>
+<span class="sd">    `rotation`: int, one of 0, 90, 180 or 270</span>
+<span class="sd">        Rotation of the :class:`~kivy.core.window.Window`.</span>
+<span class="sd">    `width`: int</span>
+<span class="sd">        Width of the :class:`~kivy.core.window.Window`, not used if</span>
+<span class="sd">        `fullscreen` is set to `auto`.</span>
+<span class="sd">    `minimum_width`: int</span>
+<span class="sd">        Minimum width to restrict the window to. (sdl2 only)</span>
+<span class="sd">    `minimum_height`: int</span>
+<span class="sd">        Minimum height to restrict the window to. (sdl2 only)</span>
+<span class="sd">    `min_state_time`: float, defaults to .035</span>
+<span class="sd">        Minimum time for widgets to display a given visual state.</span>
+<span class="sd">        This attrib is currently used by widgets like</span>
+<span class="sd">        :class:`~kivy.uix.dropdown.DropDown` &amp;</span>
+<span class="sd">        :class:`~kivy.uix.behaviors.buttonbehavior.ButtonBehavior` to</span>
+<span class="sd">        make sure they display their current visual state for the given</span>
+<span class="sd">        time.</span>
+<span class="sd">    `kivy_clock`: one of `default`, `interrupt`, `free_all`, `free_only`</span>
+<span class="sd">        The clock type to use with kivy. See :mod:`kivy.clock`.</span>
+
+<span class="sd">    `default_font`: list, defaults to [&#39;Roboto&#39;,</span>
+<span class="sd">    &#39;data/fonts/Roboto-Regular.ttf&#39;, &#39;data/fonts/Roboto-Italic.ttf&#39;,</span>
+<span class="sd">    &#39;data/fonts/Roboto-Bold.ttf&#39;, &#39;data/fonts/Roboto-BoldItalic.ttf&#39;]</span>
+
+<span class="sd">        Default font used for widgets displaying any text.</span>
+
+<span class="sd">    `allow_screensaver`: int, one of 0 or 1, defaults to 1</span>
+<span class="sd">        Allow the device to show a screen saver, or to go to sleep</span>
+<span class="sd">        on mobile devices. Only works for the sdl2 window provider.</span>
+
+<span class="sd">:input:</span>
+
+<span class="sd">    You can create new input devices using this syntax::</span>
+
+<span class="sd">        # example of input provider instance</span>
+<span class="sd">        yourid = providerid,parameters</span>
+
+<span class="sd">        # example for tuio provider</span>
+<span class="sd">        default = tuio,127.0.0.1:3333</span>
+<span class="sd">        mytable = tuio,192.168.0.1:3334</span>
+
+<span class="sd">    .. seealso::</span>
+
+<span class="sd">        Check the providers in :mod:`kivy.input.providers` for the syntax to</span>
+<span class="sd">        use inside the configuration file.</span>
+
+<span class="sd">:widgets:</span>
+
+<span class="sd">    `scroll_distance`: int</span>
+<span class="sd">        Default value of the</span>
+<span class="sd">        :attr:`~kivy.uix.scrollview.ScrollView.scroll_distance`</span>
+<span class="sd">        property used by the :class:`~kivy.uix.scrollview.ScrollView` widget.</span>
+<span class="sd">        Check the widget documentation for more information.</span>
+
+<span class="sd">    `scroll_friction`: float</span>
+<span class="sd">        Default value of the</span>
+<span class="sd">        :attr:`~kivy.uix.scrollview.ScrollView.scroll_friction`</span>
+<span class="sd">        property used by the :class:`~kivy.uix.scrollview.ScrollView` widget.</span>
+<span class="sd">        Check the widget documentation for more information.</span>
+
+<span class="sd">        .. deprecated:: 1.7.0</span>
+<span class="sd">            Please use</span>
+<span class="sd">            :class:`~kivy.uix.scrollview.ScrollView.effect_cls` instead.</span>
+
+<span class="sd">    `scroll_timeout`: int</span>
+<span class="sd">        Default value of the</span>
+<span class="sd">        :attr:`~kivy.uix.scrollview.ScrollView.scroll_timeout`</span>
+<span class="sd">        property used by the  :class:`~kivy.uix.scrollview.ScrollView` widget.</span>
+<span class="sd">        Check the widget documentation for more information.</span>
+
+<span class="sd">    `scroll_stoptime`: int</span>
+<span class="sd">        Default value of the</span>
+<span class="sd">        :attr:`~kivy.uix.scrollview.ScrollView.scroll_stoptime`</span>
+<span class="sd">        property used by the :class:`~kivy.uix.scrollview.ScrollView` widget.</span>
+<span class="sd">        Check the widget documentation for more information.</span>
+
+<span class="sd">        .. deprecated:: 1.7.0</span>
+<span class="sd">            Please use</span>
+<span class="sd">            :class:`~kivy.uix.scrollview.ScrollView.effect_cls` instead.</span>
+
+<span class="sd">    `scroll_moves`: int</span>
+<span class="sd">        Default value of the</span>
+<span class="sd">        :attr:`~kivy.uix.scrollview.ScrollView.scroll_moves`</span>
+<span class="sd">        property used by the :class:`~kivy.uix.scrollview.ScrollView` widget.</span>
+<span class="sd">        Check the widget documentation for more information.</span>
+
+<span class="sd">        .. deprecated:: 1.7.0</span>
+<span class="sd">            Please use</span>
+<span class="sd">            :class:`~kivy.uix.scrollview.ScrollView.effect_cls` instead.</span>
+
+<span class="sd">:modules:</span>
+
+<span class="sd">    You can activate modules with this syntax::</span>
+
+<span class="sd">        modulename =</span>
+
+<span class="sd">    Anything after the = will be passed to the module as arguments.</span>
+<span class="sd">    Check the specific module&#39;s documentation for a list of accepted</span>
+<span class="sd">    arguments.</span>
+
+<span class="sd">.. versionchanged:: 1.10.0</span>
+<span class="sd">    `min_state_time`  and `allow_screensaver` have been added</span>
+<span class="sd">    to the `graphics` section.</span>
+<span class="sd">    `kivy_clock` has been added to the kivy section.</span>
+<span class="sd">    `default_font` has beed added to the kivy section.</span>
+
+<span class="sd">.. versionchanged:: 1.9.0</span>
+<span class="sd">    `borderless` and `window_state` have been added to the graphics section.</span>
+<span class="sd">    The `fake` setting of the `fullscreen` option has been deprecated,</span>
+<span class="sd">    use the `borderless` option instead.</span>
+<span class="sd">    `pause_on_minimize` has been added to the kivy section.</span>
+
+<span class="sd">.. versionchanged:: 1.8.0</span>
+<span class="sd">    `systemanddock` and `systemandmulti` has been added as possible values for</span>
+<span class="sd">    `keyboard_mode` in the kivy section. `exit_on_escape` has been added</span>
+<span class="sd">    to the kivy section.</span>
+
+<span class="sd">.. versionchanged:: 1.2.0</span>
+<span class="sd">    `resizable` has been added to graphics section.</span>
+
+<span class="sd">.. versionchanged:: 1.1.0</span>
+<span class="sd">    tuio no longer listens by default. Window icons are not copied to</span>
+<span class="sd">    user directory anymore. You can still set a new window icon by using the</span>
+<span class="sd">    ``window_icon`` config setting.</span>
+
+<span class="sd">.. versionchanged:: 1.0.8</span>
+<span class="sd">    `scroll_timeout`, `scroll_distance` and `scroll_friction` have been added.</span>
+<span class="sd">    `list_friction`, `list_trigger_distance` and `list_friction_bound`</span>
+<span class="sd">    have been removed. `keyboard_type` and `keyboard_layout` have been</span>
+<span class="sd">    removed from the widget. `keyboard_mode` and `keyboard_layout` have</span>
+<span class="sd">    been added to the kivy section.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Config&#39;</span><span class="p">,</span> <span class="s1">&#39;ConfigParser&#39;</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">ConfigParser</span> <span class="k">import</span> <span class="n">ConfigParser</span> <span class="k">as</span> <span class="n">PythonConfigParser</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">configparser</span> <span class="k">import</span> <span class="n">RawConfigParser</span> <span class="k">as</span> <span class="n">PythonConfigParser</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="k">import</span> <span class="n">environ</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="k">import</span> <span class="n">exists</span>
+<span class="kn">from</span> <span class="nn">kivy</span> <span class="k">import</span> <span class="n">kivy_config_fn</span>
+<span class="kn">from</span> <span class="nn">kivy.logger</span> <span class="k">import</span> <span class="n">Logger</span><span class="p">,</span> <span class="n">logger_config_update</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">kivy.utils</span> <span class="k">import</span> <span class="n">platform</span>
+<span class="kn">from</span> <span class="nn">kivy.compat</span> <span class="k">import</span> <span class="n">PY2</span><span class="p">,</span> <span class="n">string_types</span>
+<span class="kn">from</span> <span class="nn">weakref</span> <span class="k">import</span> <span class="n">ref</span>
+
+<span class="n">_is_rpi</span> <span class="o">=</span> <span class="n">exists</span><span class="p">(</span><span class="s1">&#39;/opt/vc/include/bcm_host.h&#39;</span><span class="p">)</span>
+
+<span class="c1"># Version number of current configuration format</span>
+<span class="n">KIVY_CONFIG_VERSION</span> <span class="o">=</span> <span class="mi">19</span>
+
+<span class="n">Config</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="sd">&#39;&#39;&#39;The default Kivy configuration object. This is a :class:`ConfigParser`</span>
+<span class="sd">instance with the :attr:`~kivy.config.ConfigParser.name` set to &#39;kivy&#39;.</span>
+
+<span class="sd">.. code-block:: python</span>
+
+<span class="sd">    Config = ConfigParser(name=&#39;kivy&#39;)</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+
+<div class="viewcode-block" id="ConfigParser"><a class="viewcode-back" href="../../api-kivy.config.html#kivy.config.ConfigParser">[ドキュメント]</a><span class="k">class</span> <span class="nc">ConfigParser</span><span class="p">(</span><span class="n">PythonConfigParser</span><span class="p">,</span> <span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Enhanced ConfigParser class that supports the addition of default</span>
+<span class="sd">    sections and default values.</span>
+
+<span class="sd">    By default, the kivy ConfigParser instance, :attr:`~kivy.config.Config`,</span>
+<span class="sd">    is named `&#39;kivy&#39;` and the ConfigParser instance used by the</span>
+<span class="sd">    :meth:`App.build_settings &lt;~kivy.app.App.build_settings&gt;` method is named</span>
+<span class="sd">    `&#39;app&#39;`.</span>
+
+<span class="sd">    :Parameters:</span>
+<span class="sd">        `name`: string</span>
+<span class="sd">            The name of the instance. See :attr:`name`. Defaults to `&#39;&#39;`.</span>
+
+<span class="sd">    .. versionchanged:: 1.9.0</span>
+<span class="sd">        Each ConfigParser can now be :attr:`named &lt;name&gt;`. You can get the</span>
+<span class="sd">        ConfigParser associated with a name using :meth:`get_configparser`.</span>
+<span class="sd">        In addition, you can now control the config values with</span>
+<span class="sd">        :class:`~kivy.properties.ConfigParserProperty`.</span>
+
+<span class="sd">    .. versionadded:: 1.0.7</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+        <span class="n">PythonConfigParser</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sections</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_callbacks</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+<div class="viewcode-block" id="ConfigParser.add_callback"><a class="viewcode-back" href="../../api-kivy.config.html#kivy.config.ConfigParser.add_callback">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">add_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">,</span> <span class="n">section</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Add a callback to be called when a specific section or key has</span>
+<span class="sd">        changed. If you don&#39;t specify a section or key, it will call the</span>
+<span class="sd">        callback for all section/key changes.</span>
+
+<span class="sd">        Callbacks will receive 3 arguments: the section, key and value.</span>
+
+<span class="sd">        .. versionadded:: 1.4.1</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="n">section</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;You cannot specify a key without a section&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_callbacks</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">callback</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="ConfigParser.remove_callback"><a class="viewcode-back" href="../../api-kivy.config.html#kivy.config.ConfigParser.remove_callback">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">remove_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">,</span> <span class="n">section</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Removes a callback added with :meth:`add_callback`.</span>
+<span class="sd">        :meth:`remove_callback` must be called with the same parameters as</span>
+<span class="sd">        :meth:`add_callback`.</span>
+
+<span class="sd">        Raises a `ValueError` if not found.</span>
+
+<span class="sd">        .. versionadded:: 1.9.0</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_callbacks</span><span class="o">.</span><span class="n">remove</span><span class="p">((</span><span class="n">callback</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span></div>
+
+    <span class="k">def</span> <span class="nf">_do_callbacks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">callback</span><span class="p">,</span> <span class="n">csection</span><span class="p">,</span> <span class="n">ckey</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_callbacks</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">csection</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">csection</span> <span class="o">!=</span> <span class="n">section</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">elif</span> <span class="n">ckey</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ckey</span> <span class="o">!=</span> <span class="n">key</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">callback</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ConfigParser.read"><a class="viewcode-back" href="../../api-kivy.config.html#kivy.config.ConfigParser.read">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Read only one filename. In contrast to the original ConfigParser of</span>
+<span class="sd">        Python, this one is able to read only one file at a time. The last</span>
+<span class="sd">        read file will be used for the :meth:`write` method.</span>
+
+<span class="sd">        .. versionchanged:: 1.9.0</span>
+<span class="sd">            :meth:`read` now calls the callbacks if read changed any values.</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">string_types</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Only one filename is accepted (</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">string_types</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
+        <span class="c1"># If we try to open directly the configuration file in utf-8,</span>
+        <span class="c1"># we correctly get the unicode value by default.</span>
+        <span class="c1"># But, when we try to save it again, all the values we didn&#39;t changed</span>
+        <span class="c1"># are still unicode, and then the PythonConfigParser internal do</span>
+        <span class="c1"># a str() conversion -&gt; fail.</span>
+        <span class="c1"># Instead we currently to the conversion to utf-8 when value are</span>
+        <span class="c1"># &quot;get()&quot;, but we internally store them in ascii.</span>
+        <span class="c1"># with codecs.open(filename, &#39;r&#39;, encoding=&#39;utf-8&#39;) as f:</span>
+        <span class="c1">#    self.readfp(f)</span>
+        <span class="n">old_vals</span> <span class="o">=</span> <span class="p">{</span><span class="n">sect</span><span class="p">:</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="n">sect</span><span class="p">)}</span> <span class="k">for</span> <span class="n">sect</span> <span class="ow">in</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="p">()}</span>
+        <span class="n">PythonConfigParser</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+
+        <span class="c1"># when reading new file, sections/keys are only increased, not removed</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_do_callbacks</span>
+        <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">section</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">old_vals</span><span class="p">:</span>  <span class="c1"># new section</span>
+                <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="n">section</span><span class="p">):</span>
+                    <span class="n">f</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+                <span class="k">continue</span>
+
+            <span class="n">old_keys</span> <span class="o">=</span> <span class="n">old_vals</span><span class="p">[</span><span class="n">section</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="n">section</span><span class="p">):</span>  <span class="c1"># just update new/changed keys</span>
+                <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">old_keys</span> <span class="ow">or</span> <span class="n">v</span> <span class="o">!=</span> <span class="n">old_keys</span><span class="p">[</span><span class="n">k</span><span class="p">]:</span>
+                    <span class="n">f</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ConfigParser.set"><a class="viewcode-back" href="../../api-kivy.config.html#kivy.config.ConfigParser.set">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Functions similarly to PythonConfigParser&#39;s set method, except that</span>
+<span class="sd">        the value is implicitly converted to a string.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">e_value</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">string_types</span><span class="p">):</span>
+            <span class="c1"># might be boolean, int, etc.</span>
+            <span class="n">e_value</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">PY2</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">unicode</span><span class="p">):</span>
+                <span class="n">e_value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">PythonConfigParser</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">e_value</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_do_callbacks</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="ConfigParser.setall"><a class="viewcode-back" href="../../api-kivy.config.html#kivy.config.ConfigParser.setall">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">setall</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">keyvalues</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Sets multiple key-value pairs in a section. keyvalues should be a</span>
+<span class="sd">        dictionary containing the key-value pairs to be set.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">keyvalues</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">PythonConfigParser</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">PY2</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">value</span>
+
+<div class="viewcode-block" id="ConfigParser.setdefaults"><a class="viewcode-back" href="../../api-kivy.config.html#kivy.config.ConfigParser.setdefaults">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">setdefaults</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">keyvalues</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Set multiple key-value defaults in a section. keyvalues should be</span>
+<span class="sd">        a dictionary containing the new key-value defaults.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">adddefaultsection</span><span class="p">(</span><span class="n">section</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">keyvalues</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ConfigParser.setdefault"><a class="viewcode-back" href="../../api-kivy.config.html#kivy.config.ConfigParser.setdefault">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">setdefault</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Set the default value for an option in the specified section.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_option</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">):</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ConfigParser.getdefault"><a class="viewcode-back" href="../../api-kivy.config.html#kivy.config.ConfigParser.getdefault">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">getdefault</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">defaultvalue</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Get the value of an option in the specified section. If not found,</span>
+<span class="sd">        it will return the default value.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_section</span><span class="p">(</span><span class="n">section</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">defaultvalue</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_option</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">defaultvalue</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ConfigParser.getdefaultint"><a class="viewcode-back" href="../../api-kivy.config.html#kivy.config.ConfigParser.getdefaultint">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">getdefaultint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">defaultvalue</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Get the value of an option in the specified section. If not found,</span>
+<span class="sd">        it will return the default value. The value will always be</span>
+<span class="sd">        returned as an integer.</span>
+
+<span class="sd">        .. versionadded:: 1.6.0</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getdefault</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">defaultvalue</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="ConfigParser.adddefaultsection"><a class="viewcode-back" href="../../api-kivy.config.html#kivy.config.ConfigParser.adddefaultsection">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">adddefaultsection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Add a section if the section is missing.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_section</span><span class="p">(</span><span class="n">section</span><span class="p">):</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_section</span><span class="p">(</span><span class="n">section</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ConfigParser.write"><a class="viewcode-back" href="../../api-kivy.config.html#kivy.config.ConfigParser.write">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Write the configuration to the last file opened using the</span>
+<span class="sd">        :meth:`read` method.</span>
+
+<span class="sd">        Return True if the write finished successfully, False otherwise.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+                <span class="n">PythonConfigParser</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fd</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+            <span class="n">Logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s1">&#39;Unable to write the config &lt;</span><span class="si">%s</span><span class="s1">&gt;&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="ConfigParser.update_config"><a class="viewcode-back" href="../../api-kivy.config.html#kivy.config.ConfigParser.update_config">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">update_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Upgrade the configuration based on a new default config file.</span>
+<span class="sd">        Overwrite any existing values if overwrite is True.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">pcp</span> <span class="o">=</span> <span class="n">PythonConfigParser</span><span class="p">()</span>
+        <span class="n">pcp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="n">confset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">setall</span> <span class="k">if</span> <span class="n">overwrite</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">setdefaults</span>
+        <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="n">pcp</span><span class="o">.</span><span class="n">sections</span><span class="p">():</span>
+            <span class="n">confset</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">pcp</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="n">section</span><span class="p">)))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">()</span></div>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_register_named_property</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">widget_ref</span><span class="p">,</span> <span class="o">*</span><span class="n">largs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39; Called by the ConfigParserProperty to register a property which</span>
+<span class="sd">        was created with a config name instead of a config object.</span>
+
+<span class="sd">        When a ConfigParser with this name is later created, the properties</span>
+<span class="sd">        are then notified that this parser now exists so they can use it.</span>
+<span class="sd">        If the parser already exists, the property is notified here. See</span>
+<span class="sd">        :meth:`~kivy.properties.ConfigParserProperty.set_config`.</span>
+
+<span class="sd">        :Parameters:</span>
+<span class="sd">            `name`: a non-empty string</span>
+<span class="sd">                The name of the ConfigParser that is associated with the</span>
+<span class="sd">                property. See :attr:`name`.</span>
+<span class="sd">            `widget_ref`: 2-tuple.</span>
+<span class="sd">                The first element is a reference to the widget containing the</span>
+<span class="sd">                property, the second element is the name of the property. E.g.:</span>
+
+<span class="sd">                    class House(Widget):</span>
+<span class="sd">                        address = ConfigParserProperty(&#39;&#39;, &#39;info&#39;, &#39;street&#39;,</span>
+<span class="sd">                            &#39;directory&#39;)</span>
+
+<span class="sd">                Then, the first element is a ref to a House instance, and the</span>
+<span class="sd">                second is `&#39;address&#39;`.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">configs</span> <span class="o">=</span> <span class="n">ConfigParser</span><span class="o">.</span><span class="n">_named_configs</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">config</span><span class="p">,</span> <span class="n">props</span> <span class="o">=</span> <span class="n">configs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">configs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="p">[</span><span class="n">widget_ref</span><span class="p">])</span>
+            <span class="k">return</span>
+
+        <span class="n">props</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">widget_ref</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">config</span><span class="p">:</span>
+            <span class="n">config</span> <span class="o">=</span> <span class="n">config</span><span class="p">()</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">widget_ref</span><span class="p">[</span><span class="mi">0</span><span class="p">]()</span>
+
+        <span class="k">if</span> <span class="n">config</span> <span class="ow">and</span> <span class="n">widget</span><span class="p">:</span>  <span class="c1"># associate this config with property</span>
+            <span class="n">widget</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">widget_ref</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">set_config</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ConfigParser.get_configparser"><a class="viewcode-back" href="../../api-kivy.config.html#kivy.config.ConfigParser.get_configparser">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">get_configparser</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Returns the :class:`ConfigParser` instance whose name is `name`, or</span>
+<span class="sd">        None if not found.</span>
+
+<span class="sd">        :Parameters:</span>
+<span class="sd">            `name`: string</span>
+<span class="sd">                The name of the :class:`ConfigParser` instance to return.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">config</span> <span class="o">=</span> <span class="n">ConfigParser</span><span class="o">.</span><span class="n">_named_configs</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">config</span><span class="p">()</span> <span class="k">if</span> <span class="n">config</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span></div>
+
+    <span class="c1"># keys are configparser names, values are 2-tuple of (ref(configparser),</span>
+    <span class="c1"># widget_ref), where widget_ref is same as in _register_named_property</span>
+    <span class="n">_named_configs</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39; The name associated with this ConfigParser instance, if not `&#39;&#39;`.</span>
+<span class="sd">        Defaults to `&#39;&#39;`. It can be safely changed dynamically or set to `&#39;&#39;`.</span>
+
+<span class="sd">        When a ConfigParser is given a name, that config object can be</span>
+<span class="sd">        retrieved using :meth:`get_configparser`. In addition, that config</span>
+<span class="sd">        instance can also be used with a</span>
+<span class="sd">        :class:`~kivy.properties.ConfigParserProperty` instance that set its</span>
+<span class="sd">        `config` value to this name.</span>
+
+<span class="sd">        Setting more than one ConfigParser with the same name will raise a</span>
+<span class="sd">        `ValueError`.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+
+    <span class="nd">@name</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">old_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">old_name</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="n">configs</span> <span class="o">=</span> <span class="n">ConfigParser</span><span class="o">.</span><span class="n">_named_configs</span>
+
+        <span class="k">if</span> <span class="n">old_name</span><span class="p">:</span>  <span class="c1"># disconnect this parser from previously connected props</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">props</span> <span class="o">=</span> <span class="n">configs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">old_name</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="p">[]))</span>
+            <span class="k">for</span> <span class="n">widget</span><span class="p">,</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">props</span><span class="p">:</span>
+                <span class="n">widget</span> <span class="o">=</span> <span class="n">widget</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">widget</span><span class="p">:</span>
+                    <span class="n">widget</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span><span class="o">.</span><span class="n">set_config</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+            <span class="n">configs</span><span class="p">[</span><span class="n">old_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">props</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">value</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="c1"># if given new name, connect it with property that used this name</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">config</span><span class="p">,</span> <span class="n">props</span> <span class="o">=</span> <span class="n">configs</span><span class="p">[</span><span class="n">value</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">configs</span><span class="p">[</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">ref</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="p">[])</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="n">config</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;A parser named </span><span class="si">{}</span><span class="s1"> already exists&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">widget</span><span class="p">,</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">props</span><span class="p">:</span>
+            <span class="n">widget</span> <span class="o">=</span> <span class="n">widget</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">widget</span><span class="p">:</span>
+                <span class="n">widget</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span><span class="o">.</span><span class="n">set_config</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">configs</span><span class="p">[</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">ref</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="n">props</span><span class="p">)</span></div>
+
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;KIVY_DOC_INCLUDE&#39;</span><span class="p">):</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># Read, analyse configuration file</span>
+    <span class="c1"># Support upgrade of older config file versions</span>
+    <span class="c1">#</span>
+
+    <span class="c1"># Create default configuration</span>
+    <span class="n">Config</span> <span class="o">=</span> <span class="n">ConfigParser</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;kivy&#39;</span><span class="p">)</span>
+    <span class="n">Config</span><span class="o">.</span><span class="n">add_callback</span><span class="p">(</span><span class="n">logger_config_update</span><span class="p">,</span> <span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;log_level&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Read config file if exist</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">exists</span><span class="p">(</span><span class="n">kivy_config_fn</span><span class="p">)</span> <span class="ow">and</span>
+            <span class="s1">&#39;KIVY_USE_DEFAULTCONFIG&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">environ</span> <span class="ow">and</span>
+            <span class="s1">&#39;KIVY_NO_CONFIG&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">environ</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">kivy_config_fn</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">Logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s1">&#39;Core: error while reading local&#39;</span>
+                             <span class="s1">&#39;configuration&#39;</span><span class="p">)</span>
+
+    <span class="n">version</span> <span class="o">=</span> <span class="n">Config</span><span class="o">.</span><span class="n">getdefaultint</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;config_version&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Add defaults section</span>
+    <span class="n">Config</span><span class="o">.</span><span class="n">adddefaultsection</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">)</span>
+    <span class="n">Config</span><span class="o">.</span><span class="n">adddefaultsection</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">)</span>
+    <span class="n">Config</span><span class="o">.</span><span class="n">adddefaultsection</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">)</span>
+    <span class="n">Config</span><span class="o">.</span><span class="n">adddefaultsection</span><span class="p">(</span><span class="s1">&#39;postproc&#39;</span><span class="p">)</span>
+    <span class="n">Config</span><span class="o">.</span><span class="n">adddefaultsection</span><span class="p">(</span><span class="s1">&#39;widgets&#39;</span><span class="p">)</span>
+    <span class="n">Config</span><span class="o">.</span><span class="n">adddefaultsection</span><span class="p">(</span><span class="s1">&#39;modules&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Upgrade default configuration until we have the current version</span>
+    <span class="n">need_save</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">version</span> <span class="o">!=</span> <span class="n">KIVY_CONFIG_VERSION</span> <span class="ow">and</span> <span class="s1">&#39;KIVY_NO_CONFIG&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">environ</span><span class="p">:</span>
+        <span class="n">Logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Config: Older configuration version detected&#39;</span>
+                       <span class="s1">&#39; (</span><span class="si">{0}</span><span class="s1"> instead of </span><span class="si">{1}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                           <span class="n">version</span><span class="p">,</span> <span class="n">KIVY_CONFIG_VERSION</span><span class="p">))</span>
+        <span class="n">Logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Config: Upgrading configuration in progress.&#39;</span><span class="p">)</span>
+        <span class="n">need_save</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">while</span> <span class="n">version</span> <span class="o">&lt;</span> <span class="n">KIVY_CONFIG_VERSION</span><span class="p">:</span>
+        <span class="n">Logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Config: Upgrading from </span><span class="si">%d</span><span class="s1"> to </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span>
+                     <span class="p">(</span><span class="n">version</span><span class="p">,</span> <span class="n">version</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+
+            <span class="c1"># log level</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;keyboard_repeat_delay&#39;</span><span class="p">,</span> <span class="s1">&#39;300&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;keyboard_repeat_rate&#39;</span><span class="p">,</span> <span class="s1">&#39;30&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;log_dir&#39;</span><span class="p">,</span> <span class="s1">&#39;logs&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;log_enable&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;log_level&#39;</span><span class="p">,</span> <span class="s1">&#39;info&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;log_name&#39;</span><span class="p">,</span> <span class="s1">&#39;kivy_%y-%m-</span><span class="si">%d</span><span class="s1">_%_.txt&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;window_icon&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+            <span class="c1"># default graphics parameters</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;display&#39;</span><span class="p">,</span> <span class="s1">&#39;-1&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;fullscreen&#39;</span><span class="p">,</span> <span class="s1">&#39;no&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;600&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;maxfps&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;multisamples&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;position&#39;</span><span class="p">,</span> <span class="s1">&#39;auto&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;rotation&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;show_cursor&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;vsync&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="s1">&#39;800&#39;</span><span class="p">)</span>
+
+            <span class="c1"># input configuration</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;mouse&#39;</span><span class="p">,</span> <span class="s1">&#39;mouse&#39;</span><span class="p">)</span>
+
+            <span class="c1"># activate native input provider in configuration</span>
+            <span class="c1"># from 1.0.9, don&#39;t activate mactouch by default, or app are</span>
+            <span class="c1"># unusable.</span>
+            <span class="k">if</span> <span class="n">platform</span> <span class="o">==</span> <span class="s1">&#39;win&#39;</span><span class="p">:</span>
+                <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;wm_touch&#39;</span><span class="p">,</span> <span class="s1">&#39;wm_touch&#39;</span><span class="p">)</span>
+                <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;wm_pen&#39;</span><span class="p">,</span> <span class="s1">&#39;wm_pen&#39;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">platform</span> <span class="o">==</span> <span class="s1">&#39;linux&#39;</span><span class="p">:</span>
+                <span class="n">probesysfs</span> <span class="o">=</span> <span class="s1">&#39;probesysfs&#39;</span>
+                <span class="k">if</span> <span class="n">_is_rpi</span><span class="p">:</span>
+                    <span class="n">probesysfs</span> <span class="o">+=</span> <span class="s1">&#39;,provider=hidinput&#39;</span>
+                <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">probesysfs</span><span class="p">)</span>
+
+            <span class="c1"># input postprocessing configuration</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;postproc&#39;</span><span class="p">,</span> <span class="s1">&#39;double_tap_distance&#39;</span><span class="p">,</span> <span class="s1">&#39;20&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;postproc&#39;</span><span class="p">,</span> <span class="s1">&#39;double_tap_time&#39;</span><span class="p">,</span> <span class="s1">&#39;250&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;postproc&#39;</span><span class="p">,</span> <span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="s1">&#39;[]&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;postproc&#39;</span><span class="p">,</span> <span class="s1">&#39;jitter_distance&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;postproc&#39;</span><span class="p">,</span> <span class="s1">&#39;jitter_ignore_devices&#39;</span><span class="p">,</span>
+                              <span class="s1">&#39;mouse,mactouch,&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;postproc&#39;</span><span class="p">,</span> <span class="s1">&#39;retain_distance&#39;</span><span class="p">,</span> <span class="s1">&#39;50&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;postproc&#39;</span><span class="p">,</span> <span class="s1">&#39;retain_time&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
+
+            <span class="c1"># default configuration for keyboard repetition</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;widgets&#39;</span><span class="p">,</span> <span class="s1">&#39;keyboard_layout&#39;</span><span class="p">,</span> <span class="s1">&#39;qwerty&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;widgets&#39;</span><span class="p">,</span> <span class="s1">&#39;keyboard_type&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;widgets&#39;</span><span class="p">,</span> <span class="s1">&#39;list_friction&#39;</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;widgets&#39;</span><span class="p">,</span> <span class="s1">&#39;list_friction_bound&#39;</span><span class="p">,</span> <span class="s1">&#39;20&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;widgets&#39;</span><span class="p">,</span> <span class="s1">&#39;list_trigger_distance&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">remove_option</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;vsync&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;maxfps&#39;</span><span class="p">,</span> <span class="s1">&#39;60&#39;</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="c1"># was a version to automatically copy windows icon in the user</span>
+            <span class="c1"># directory, but it&#39;s now not used anymore. User can still change</span>
+            <span class="c1"># the window icon by touching the config.</span>
+            <span class="k">pass</span>
+
+        <span class="k">elif</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="c1"># add token for scrollview</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;widgets&#39;</span><span class="p">,</span> <span class="s1">&#39;scroll_timeout&#39;</span><span class="p">,</span> <span class="s1">&#39;55&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;widgets&#39;</span><span class="p">,</span> <span class="s1">&#39;scroll_distance&#39;</span><span class="p">,</span> <span class="s1">&#39;20&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;widgets&#39;</span><span class="p">,</span> <span class="s1">&#39;scroll_friction&#39;</span><span class="p">,</span> <span class="s1">&#39;1.&#39;</span><span class="p">)</span>
+
+            <span class="c1"># remove old list_* token</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">remove_option</span><span class="p">(</span><span class="s1">&#39;widgets&#39;</span><span class="p">,</span> <span class="s1">&#39;list_friction&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">remove_option</span><span class="p">(</span><span class="s1">&#39;widgets&#39;</span><span class="p">,</span> <span class="s1">&#39;list_friction_bound&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">remove_option</span><span class="p">(</span><span class="s1">&#39;widgets&#39;</span><span class="p">,</span> <span class="s1">&#39;list_trigger_distance&#39;</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">remove_option</span><span class="p">(</span><span class="s1">&#39;widgets&#39;</span><span class="p">,</span> <span class="s1">&#39;keyboard_type&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">remove_option</span><span class="p">(</span><span class="s1">&#39;widgets&#39;</span><span class="p">,</span> <span class="s1">&#39;keyboard_layout&#39;</span><span class="p">)</span>
+
+            <span class="c1"># add keyboard token</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;keyboard_mode&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;keyboard_layout&#39;</span><span class="p">,</span> <span class="s1">&#39;qwerty&#39;</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;resizable&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+            <span class="c1"># if the timeout is still the default value, change it</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;widgets&#39;</span><span class="p">,</span> <span class="s1">&#39;scroll_stoptime&#39;</span><span class="p">,</span> <span class="s1">&#39;300&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;widgets&#39;</span><span class="p">,</span> <span class="s1">&#39;scroll_moves&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+            <span class="c1"># desktop bool indicating whether to use desktop specific features</span>
+            <span class="n">is_desktop</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">platform</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;win&#39;</span><span class="p">,</span> <span class="s1">&#39;macosx&#39;</span><span class="p">,</span> <span class="s1">&#39;linux&#39;</span><span class="p">))</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;desktop&#39;</span><span class="p">,</span> <span class="n">is_desktop</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;postproc&#39;</span><span class="p">,</span> <span class="s1">&#39;triple_tap_distance&#39;</span><span class="p">,</span> <span class="s1">&#39;20&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;postproc&#39;</span><span class="p">,</span> <span class="s1">&#39;triple_tap_time&#39;</span><span class="p">,</span> <span class="s1">&#39;375&#39;</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">Config</span><span class="o">.</span><span class="n">getint</span><span class="p">(</span><span class="s1">&#39;widgets&#39;</span><span class="p">,</span> <span class="s1">&#39;scroll_timeout&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">55</span><span class="p">:</span>
+                <span class="n">Config</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;widgets&#39;</span><span class="p">,</span> <span class="s1">&#39;scroll_timeout&#39;</span><span class="p">,</span> <span class="s1">&#39;250&#39;</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">9</span><span class="p">:</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;exit_on_escape&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;fullscreen&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;borderless&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;pause_on_minimize&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">12</span><span class="p">:</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;window_state&#39;</span><span class="p">,</span> <span class="s1">&#39;visible&#39;</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">13</span><span class="p">:</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;minimum_width&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;minimum_height&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">14</span><span class="p">:</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;min_state_time&#39;</span><span class="p">,</span> <span class="s1">&#39;.035&#39;</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">15</span><span class="p">:</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;kivy_clock&#39;</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">16</span><span class="p">:</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;default_font&#39;</span><span class="p">,</span> <span class="p">[</span>
+                <span class="s1">&#39;Roboto&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;data/fonts/Roboto-Regular.ttf&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;data/fonts/Roboto-Italic.ttf&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;data/fonts/Roboto-Bold.ttf&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;data/fonts/Roboto-BoldItalic.ttf&#39;</span><span class="p">])</span>
+
+        <span class="k">elif</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">17</span><span class="p">:</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;allow_screensaver&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">18</span><span class="p">:</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;log_maxfiles&#39;</span><span class="p">,</span> <span class="s1">&#39;100&#39;</span><span class="p">)</span>
+
+        <span class="c1"># elif version == 1:</span>
+        <span class="c1">#    # add here the command for upgrading from configuration 0 to 1</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># for future.</span>
+            <span class="k">break</span>
+
+        <span class="c1"># Pass to the next version</span>
+        <span class="n">version</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># Indicate to the Config that we&#39;ve upgrade to the latest version.</span>
+    <span class="n">Config</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;config_version&#39;</span><span class="p">,</span> <span class="n">KIVY_CONFIG_VERSION</span><span class="p">)</span>
+
+    <span class="c1"># Now, activate log file</span>
+    <span class="n">Logger</span><span class="o">.</span><span class="n">logfile_activated</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">Config</span><span class="o">.</span><span class="n">getint</span><span class="p">(</span><span class="s1">&#39;kivy&#39;</span><span class="p">,</span> <span class="s1">&#39;log_enable&#39;</span><span class="p">))</span>
+
+    <span class="c1"># If no configuration exist, write the default one.</span>
+    <span class="k">if</span> <span class="p">((</span><span class="ow">not</span> <span class="n">exists</span><span class="p">(</span><span class="n">kivy_config_fn</span><span class="p">)</span> <span class="ow">or</span> <span class="n">need_save</span><span class="p">)</span> <span class="ow">and</span>
+            <span class="s1">&#39;KIVY_NO_CONFIG&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">environ</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">kivy_config_fn</span>
+            <span class="n">Config</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">Logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s1">&#39;Core: Error while saving default config file&#39;</span><span class="p">)</span>
+</pre></div>
+
+            <div class="footerlinks">
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 30, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

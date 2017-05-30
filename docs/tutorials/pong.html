@@ -1,0 +1,1379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>Pong Game Tutorial(翻訳済み) &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/kivy.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="../index.html" />
+    <link rel="up" title="Tutorials(翻訳済み)" href="../tutorials-index.html" />
+    <link rel="next" title="A Simple Paint App(翻訳済み)" href="firstwidget.html" />
+    <link rel="prev" title="Tutorials(翻訳済み)" href="../tutorials-index.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="../gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../index.html">Pong Game Tutorial(翻訳済み)</a></h3>
+          <ul>
+<li><a class="reference internal" href="#">Pong Game Tutorial(翻訳済み)</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction(前書き)</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started(はじめに)</a></li>
+<li><a class="reference internal" href="#add-simple-graphics">Add Simple Graphics(シンプルなグラフィックの追加)</a><ul>
+<li><a class="reference internal" href="#explaining-the-kv-file-syntax">Explaining the Kv File Syntax(Kvファイルの構文の説明)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#add-the-ball">Add the Ball(ボールを追加)</a><ul>
+<li><a class="reference internal" href="#pongball-class">PongBall Class(PongBallクラス)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#adding-ball-animation">Adding Ball Animation（ボールのアニメーションを追加する）</a><ul>
+<li><a class="reference internal" href="#scheduling-functions-on-the-clock">Scheduling Functions on the Clock（Clockのスケジューリング関数）</a></li>
+<li><a class="reference internal" href="#object-properties-references">Object Properties/References（オブジェクトのプロパティとリファレンス（参照）)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#connect-input-events">Connect Input Events(入力イベントの接続)</a></li>
+<li><a class="reference internal" href="#where-to-go-now">Where To Go Now?(どこに行く?)</a></li>
+</ul>
+</li>
+</ul>
+
+          <h3><a href="../index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials-index.html">Tutorials(翻訳済み)</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api-index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+              <li>Previous: <a href="../tutorials-index.html" title="previous chapter">Tutorials(翻訳済み)</a></li>
+              <li>Next: <a href="firstwidget.html" title="next chapter">A Simple Paint App(翻訳済み)</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2><ul>
+<li><a class="reference internal" href="#">Pong Game Tutorial(翻訳済み)</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction(前書き)</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started(はじめに)</a></li>
+<li><a class="reference internal" href="#add-simple-graphics">Add Simple Graphics(シンプルなグラフィックの追加)</a><ul>
+<li><a class="reference internal" href="#explaining-the-kv-file-syntax">Explaining the Kv File Syntax(Kvファイルの構文の説明)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#add-the-ball">Add the Ball(ボールを追加)</a><ul>
+<li><a class="reference internal" href="#pongball-class">PongBall Class(PongBallクラス)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#adding-ball-animation">Adding Ball Animation（ボールのアニメーションを追加する）</a><ul>
+<li><a class="reference internal" href="#scheduling-functions-on-the-clock">Scheduling Functions on the Clock（Clockのスケジューリング関数）</a></li>
+<li><a class="reference internal" href="#object-properties-references">Object Properties/References（オブジェクトのプロパティとリファレンス（参照）)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#connect-input-events">Connect Input Events(入力イベントの接続)</a></li>
+<li><a class="reference internal" href="#where-to-go-now">Where To Go Now?(どこに行く?)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+  <div class="section" id="pong-game-tutorial">
+<h1>Pong Game Tutorial(翻訳済み)<a class="headerlink" href="#pong-game-tutorial" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction(前書き)<a class="headerlink" href="#introduction" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="title docutils container">
+<p>ようこそポンのチュートリアルへ</p>
+</div>
+<p>このチュートリアルでは、Kivyを使ってポンゲームを作成する方法を教えます。私たちは、アプリケーションを作成で説明したようなアプリケーションの基礎(<a class="reference internal" href="../guide/basic.html#quickstart"><span class="std std-ref">Create an application(アプリケーションを作成する)</span></a>)から始めましょう。そして、プレイすることが可能なポンゲームを各工程に沿って説明します。</p>
+<a class="reference internal image-reference" href="../_images/pong.jpg"><img alt="../_images/pong.jpg" class="align-center" src="../_images/pong.jpg" style="height: 392px;" /></a>
+<p>まず、チュートリアルを開始する前に以下をチェックしてください:</p>
+<ul class="simple">
+<li><p class="first">&#8220;Kivyをインストールしていますか？ 詳細な説明は <a class="reference internal" href="../installation/installation.html"><span class="doc">Installation</span></a>  の項を参照してください。</p>
+</li>
+<li><p class="first">基本的なKivyのアプリケーションの実行方法をしていますか？ わからない場合は、<a class="reference internal" href="../guide/basic.html#quickstart"><span class="std std-ref">Create an application(アプリケーションを作成する)</span></a> を参照してください。</p>
+</li>
+</ul>
+<p>プログラミングガイドを読んで、Widgetの基本概念（(<a class="reference internal" href="firstwidget.html"><span class="doc">A Simple Paint App(翻訳済み)</span></a>)とkv Languageの基本概念(<a class="reference internal" href="../guide/lang.html"><span class="doc">Kv language(翻訳済み)</span></a>)の両方を&#8221;理解しているならば、最初の2ステップをスキップして、ステップ3に進んでください。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Kivyのexamplesディレクトリ配下の <cite>tutorials/pong/</cite>  に各ステップのソースコードと全体のソースコードのファイルがあります。</p>
+</div>
+<p>準備はいいですか？ すてき、では始めましょう!</p>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting Started(はじめに)<a class="headerlink" href="#getting-started" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="title docutils container">
+<p>Getting Started(はじめに)</p>
+</div>
+<p>シンプルなKivyアプリを準備して起動しましょう。ゲーム用のディレクトリと、<em>main.py</em> ファイルを作成します。</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.app</span> <span class="kn">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.widget</span> <span class="kn">import</span> <span class="n">Widget</span>
+
+
+<span class="k">class</span> <span class="nc">PongGame</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">PongApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">PongGame</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">PongApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>アプリケーションを実行してください。この時点では黒い画面が表示されます。私たちがやったことは、非常にシンプルなKivyクラスの :class: <cite>~kivy.app.App</cite> を作成することです。これは、<a href="#id1"><span class="problematic" id="id2">``</span></a>PongGame``Widgetクラスを作成しインスタンスを作成します。これをアプリケーションUIのルート要素として返します。また、この時点でウィジェットの階層ツリーとして想像してください。Kivyはこのウィジェットツリーをデフォルトの画面に配置します。次のステップでは、PongGameウィジェットの外観を定義し背景とスコアを描画します。</p>
+</div>
+<div class="section" id="add-simple-graphics">
+<h2>Add Simple Graphics(シンプルなグラフィックの追加)<a class="headerlink" href="#add-simple-graphics" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="title docutils container">
+<p>pong.kvをつくります</p>
+</div>
+<p>.kvファイルを使用して``PongGame``クラスのルック＆フィール（見ため・感じ）を定義します。:class:の`~Kivy.app.App`は`PongApp`という名前なので、同じディレクトリ内に``pong.kv``を作ることで、アプリケーションが実行されるときに自動的に読み込まれます。<em>``pong.kv``</em> という名前のファイルを作成して以下の内容を追加してください。</p>
+<div class="highlight-kv"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#:kivy 1.0.9</span>
+
+<span class="nn">&lt;PongGame&gt;</span><span class="p">:</span>    
+    <span class="nc">canvas</span><span class="p">:</span>
+        <span class="nc">Rectangle</span><span class="p">:</span>
+            <span class="na">pos</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">center_x</span> <span class="o">-</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span>
+            <span class="na">size</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span>
+            
+    <span class="nc">Label</span><span class="p">:</span>
+        <span class="na">font_size</span><span class="p">:</span> <span class="mi">70</span>  
+        <span class="na">center_x</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">width</span> <span class="o">/</span> <span class="mi">4</span>
+        <span class="na">top</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">top</span> <span class="o">-</span> <span class="mi">50</span>
+        <span class="na">text</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span>
+        
+    <span class="nc">Label</span><span class="p">:</span>
+        <span class="na">font_size</span><span class="p">:</span> <span class="mi">70</span>  
+        <span class="na">center_x</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span>
+        <span class="na">top</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">top</span> <span class="o">-</span> <span class="mi">50</span>
+        <span class="na">text</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">よくある間違い：kvファイルの名前はpong.kvのようにアプリの名前と一致する必要があります（例： PongApp（Appの終わりの前の部分）。</p>
+</div>
+<p>アプリを起動すると、真ん中に縦棒が表示されてプレーヤーの得点が2つ表示されます。</p>
+<div class="section" id="explaining-the-kv-file-syntax">
+<h3>Explaining the Kv File Syntax(Kvファイルの構文の説明)<a class="headerlink" href="#explaining-the-kv-file-syntax" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>次のステップに進む前に、作成したkvファイルの内容を詳しく見て、何が起こっているのか理解したいと思っているかもしれません。何が起きているのかを理解しているならば次のステップに進めます。</p>
+<p>最初の行には次のものがあります:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">#:kivy 1.0.9</span>
+</pre></div>
+</div>
+<p>この最初の行はすべてのkvファイルに必要です。「#:kivy」の後ろにスペースとKivyのバージョンがあるはずです。（Kivyで必要なバージョンを確認したり、後で後方互換性を扱えます）。</p>
+<p>その後、すべての「PongGame」インスタンスに適用されるルールの定義を開始します。</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">PongGame</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Pythonと同様に、kvファイルはインデントを使用してネストされたブロックを定義します。 「&lt;」と「&gt;」文字の内部にクラス名で定義されたブロックは、:class:<a href="#id1"><span class="problematic" id="id2">`</span></a>~kivy.uix.widget.Widget`ルールです。指定されたクラスのインスタンスに適用されます。今回の例では「PongGame」を「Widget」に置き換えた場合、すべてのWidgetインスタンスは、これらのルールをすべてのWidgetインスタンスに対して定義するため、中に縦線と2つのLabelウィジェットを持ちます。</p>
+<p>ルールセクションの中でさまざまなブロックを追加して適用されるwidgetのスタイルと内容を定義します。以下が可能です:</p>
+<ul class="simple">
+<li><p class="first">propertyの値をセットします。</p>
+</li>
+<li><p class="first">widgetの子を追加します</p>
+</li>
+<li><p class="first">widgetのレンダリング方法を定義するGraphics命令を追加できる「canvas」セクションを定義します。</p>
+</li>
+</ul>
+<p>「&lt;PongGame&gt;」ルール内の最初のブロックは <cite>canvas</cite> ブロックです：</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;PongGame&gt;</span><span class="p">:</span>
+    <span class="nc">canvas</span><span class="p">:</span>
+        <span class="nc">Rectangle</span><span class="p">:</span>
+            <span class="na">pos</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">center_x</span> <span class="o">-</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span>
+            <span class="na">size</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span>
+</pre></div>
+</div>
+<p>このキャンバスブロックは、「PongGame」widgetがいくつかのgraphicsの初期値を描くべきです。この場合、キャンバスにrectangle(長方形)を追加します。rectangleのpos(位置)は、widgetの横方向の中心から5ピクセル左に設定し、yは0に設定します。長方形のサイズは幅が10ピクセル、widgetの高さはwidget自身の高さに設定されます。このようにgraphicsを定義するのは、式で使用されるwidgetのpropertyが変更されたときにレンダリングされた長方形を自動的に更新するためです。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">アプリケーションウィンドウのサイズを変更して何が起こるかを確認してください。UI全体が自動的にリサイズされます。 Windowの標準的な動作は、「size_hint」propertyに基づいて要素のサイズを変更することです。デフォルトwidgetのsize_hintは（1,1）です。つまりxy方向の両方に100％伸張され、利用可能なスペースを埋めることを意味します。長方形とcenter_xの頂点とサイズとスコアラベルの上部は「PongGame」クラスのコンテキスト内で定義されていたので、対応するwidgetのpropertyが変更されると、これらのpropertyは自動的に更新されます。 Kv languageを使用すると、自動的にpropertyがバインドされます。 :)</p>
+</div>
+<p>最後の2つのセクションはかなり類似してます。それぞれが「PongGame」に子widgetとして「Label widget」を追加します。今のところ、両方のテキストには 「0」が設定されています。ロジックが実装されたら、実際のスコアに設定しますが、font_sizeを大きく設定しているのでLabelはすでに大きく見えていて、root widgetに対して相対的に配置されています。「root」キーワードは、ルールが適用される親/root widget（この場合は「PongGame」）を参照するために子ブロック内で使用できます。</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;PongGame&gt;</span><span class="p">:</span>
+    <span class="c1"># ...</span>
+
+    <span class="nc">Label</span><span class="p">:</span>
+        <span class="na">font_size</span><span class="p">:</span> <span class="mi">70</span>
+        <span class="na">center_x</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">width</span> <span class="o">/</span> <span class="mi">4</span>
+        <span class="na">top</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">top</span> <span class="o">-</span> <span class="mi">50</span>
+        <span class="na">text</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span>
+
+    <span class="nc">Label</span><span class="p">:</span>
+        <span class="na">font_size</span><span class="p">:</span> <span class="mi">70</span>
+        <span class="na">center_x</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span>
+        <span class="na">top</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">top</span> <span class="o">-</span> <span class="mi">50</span>
+        <span class="na">text</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="add-the-ball">
+<h2>Add the Ball(ボールを追加)<a class="headerlink" href="#add-the-ball" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="title docutils container">
+<p>Add the Ball(ボールを追加)</p>
+</div>
+<p>さて、プレーするための基本的なポンアリーナは持っていますが、まだプレイヤーとボールを追加する必要があります。ボールから始めましょう。新たに「PongBall」クラスを追加して、私たちのボールとなるwidgetを作成し、それを跳ね回るようにします。</p>
+<div class="section" id="pongball-class">
+<h3>PongBall Class(PongBallクラス)<a class="headerlink" href="#pongball-class" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>PongBallクラスのPythonコードは以下のとおり:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PongBall</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+
+    <span class="c1"># velocity of the ball on x and y axis</span>
+    <span class="n">velocity_x</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">velocity_y</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># referencelist property so we can use ball.velocity as</span>
+    <span class="c1"># a shorthand, just like e.g. w.pos for w.x and w.y</span>
+    <span class="n">velocity</span> <span class="o">=</span> <span class="n">ReferenceListProperty</span><span class="p">(</span><span class="n">velocity_x</span><span class="p">,</span> <span class="n">velocity_y</span><span class="p">)</span>
+
+    <span class="c1"># ``move`` function will move the ball one step. This</span>
+    <span class="c1">#  will be called in equal intervals to animate the ball</span>
+    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">velocity</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
+</pre></div>
+</td></tr></table></div>
+<p>そして、ここにボールとして白い円を描くkvルールがあります:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;PongBall&gt;</span><span class="p">:</span>
+    <span class="na">size</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span>
+    <span class="nc">canvas</span><span class="p">:</span>
+        <span class="nc">Ellipse</span><span class="p">:</span>
+            <span class="na">pos</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
+            <span class="na">size</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+</pre></div>
+</div>
+<p>すべての機能を有効にするには使用される <a class="reference internal" href="../api-kivy.properties.html"><span class="doc">Properties</span></a> Propertyクラスと:class:<a href="#id1"><span class="problematic" id="id2">`</span></a>~kivy.vector.Vector`のインポートを追加する必要もあります。</p>
+<p>このステップのための更新されたpythonコードとkvファイルが以下にあります:</p>
+<dl class="docutils">
+<dt>main.py:</dt>
+<dd><div class="first last highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.app</span> <span class="kn">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.widget</span> <span class="kn">import</span> <span class="n">Widget</span>
+<span class="kn">from</span> <span class="nn">kivy.properties</span> <span class="kn">import</span> <span class="n">NumericProperty</span><span class="p">,</span> <span class="n">ReferenceListProperty</span>
+<span class="kn">from</span> <span class="nn">kivy.vector</span> <span class="kn">import</span> <span class="n">Vector</span>
+
+
+<span class="k">class</span> <span class="nc">PongBall</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="n">velocity_x</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">velocity_y</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">velocity</span> <span class="o">=</span> <span class="n">ReferenceListProperty</span><span class="p">(</span><span class="n">velocity_x</span><span class="p">,</span> <span class="n">velocity_y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">velocity</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
+
+
+<span class="k">class</span> <span class="nc">PongGame</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">PongApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">PongGame</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">PongApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</dd>
+<dt>pong.kv:</dt>
+<dd><div class="first last highlight-kv"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#:kivy 1.0.9</span>
+
+<span class="nn">&lt;PongBall&gt;</span><span class="p">:</span>
+    <span class="na">size</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span> 
+    <span class="nc">canvas</span><span class="p">:</span>
+        <span class="nc">Ellipse</span><span class="p">:</span>
+            <span class="na">pos</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
+            <span class="na">size</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>          
+
+<span class="nn">&lt;PongGame&gt;</span><span class="p">:</span>
+    <span class="nc">canvas</span><span class="p">:</span>
+        <span class="nc">Rectangle</span><span class="p">:</span>
+            <span class="na">pos</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">center_x</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span>
+            <span class="na">size</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span>
+    
+    <span class="nc">Label</span><span class="p">:</span>
+        <span class="na">font_size</span><span class="p">:</span> <span class="mi">70</span>  
+        <span class="na">center_x</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">width</span> <span class="o">/</span> <span class="mi">4</span>
+        <span class="na">top</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">top</span> <span class="o">-</span> <span class="mi">50</span>
+        <span class="na">text</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span>
+        
+    <span class="nc">Label</span><span class="p">:</span>
+        <span class="na">font_size</span><span class="p">:</span> <span class="mi">70</span>  
+        <span class="na">center_x</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span>
+        <span class="na">top</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">top</span> <span class="o">-</span> <span class="mi">50</span>
+        <span class="na">text</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span>
+    
+    <span class="nc">PongBall</span><span class="p">:</span>
+        <span class="na">center</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">center</span>
+        
+</pre></div>
+</td></tr></table></div>
+</dd>
+</dl>
+<p>「&lt;PongBall&gt;」widgetのルールの追加だけでなく、「&lt;PongGame&gt;」widgetルールの子widgetである「PongBall」も追加されています。</p>
+</div>
+</div>
+<div class="section" id="adding-ball-animation">
+<h2>Adding Ball Animation（ボールのアニメーションを追加する）<a class="headerlink" href="#adding-ball-animation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="title docutils container">
+<p>ボールの動きを作成します</p>
+</div>
+<p>現在はボールがあり「move」関数もありますが、まだ動作してません。それを修正しよう。</p>
+<div class="section" id="scheduling-functions-on-the-clock">
+<h3>Scheduling Functions on the Clock（Clockのスケジューリング関数）<a class="headerlink" href="#scheduling-functions-on-the-clock" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ボールの「移動」方法を定期的にコールする必要があります。幸いなことにKivyでは、<a class="reference internal" href="../api-kivy.clock.html#kivy.clock.Clock" title="kivy.clock.Clock"><code class="xref py py-class docutils literal"><span class="pre">Clock</span></code></a> を使用して必要な機能を間隔を指定してスケジュールすることで簡単に実行できます。</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Clock</span><span class="o">.</span><span class="n">schedule_interval</span><span class="p">(</span><span class="n">game</span><span class="o">.</span><span class="n">update</span><span class="p">,</span> <span class="mf">1.0</span><span class="o">/</span><span class="mf">60.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>例えば、この行は、ゲームオブジェクトの「update」機能が60分の1秒ごとに（毎秒60回）呼び出されることになります。</p>
+</div>
+<div class="section" id="object-properties-references">
+<h3>Object Properties/References（オブジェクトのプロパティとリファレンス（参照）)<a class="headerlink" href="#object-properties-references" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>別の問題があります。 PongBallには定期的に呼び出される「move」関数があることを確認したいが、コードでは「PongGame」クラスのkvルールの中のkvファイルを使ってボールオブジェクトへの参照を追加しているので、ゲームへの唯一の参照は、アプリケーション構築メソッドで返すものです。</p>
+<p>ボールを移動するだけではなく、「PongGame」クラスの「update」メソッドが必要になるでしょう。さらに、ゲームオブジェクトへの参照は既にあるのでアプリケーションの構築時に新しいupdateメソッドを簡単にスケジュールできます。</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PongGame</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+        <span class="c1"># call ball.move and other stuff</span>
+        <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">PongApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">game</span> <span class="o">=</span> <span class="n">PongGame</span><span class="p">()</span>
+        <span class="n">Clock</span><span class="o">.</span><span class="n">schedule_interval</span><span class="p">(</span><span class="n">game</span><span class="o">.</span><span class="n">update</span><span class="p">,</span> <span class="mf">1.0</span><span class="o">/</span><span class="mf">60.0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">game</span>
+</pre></div>
+</td></tr></table></div>
+<p>しかし、それでもkvルールで作成され「PongBall」の子widgetへの参照がないという事実は変わりません。これを修正するために、PongGameクラスに:class:<cite>ObjectProperty&lt;kivy.properties.ObjectProperty&gt;</cite>  を追加し、kvルールで作成されたwidgetに接続できます。それが終わったら、updateメソッド内でballプロパティを簡単に参照できて、エッジからはね返すこともできます：</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PongGame</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="n">ball</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+
+        <span class="c1"># bounce off top and bottom</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">top</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">velocity_y</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="c1"># bounce off left and right</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">right</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">velocity_x</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</td></tr></table></div>
+<p>子のwidgetにidを与え、PongGameの「ball」ObjectPropertyをそのidに設定することによってkvファイルに接続することを忘れないでください：</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;PongGame&gt;</span><span class="p">:</span>
+    <span class="na">ball</span><span class="p">:</span> <span class="n">pong_ball</span>
+
+    <span class="c1"># ... (canvas and Labels)</span>
+
+    <span class="nc">PongBall</span><span class="p">:</span>
+        <span class="na">id</span><span class="p">:</span> <span class="n">pong_ball</span>
+        <span class="na">center</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">center</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">この時点で、ボールが跳ね返るようにすべてが接続されます。ここまでコーディングしているなら、ボールがどこにも動いていないのが不思議に思うかもしれません。ボールの速度は、xyの両方で0に設定されます。以下のコードリストでは、「serve_ball」メソッドが「PongGame」クラスに追加され、アプリケーションの「build」メソッドで呼び出されます。ボールのxとyのランダムな速度を設定し、位置をリセットするので後でボールをリセットしてポイントを獲得することができます。</p>
+</div>
+<p>このステップのコード全体を以下に示します:</p>
+<dl class="docutils">
+<dt>main.py:</dt>
+<dd><div class="first last highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.app</span> <span class="kn">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.widget</span> <span class="kn">import</span> <span class="n">Widget</span>
+<span class="kn">from</span> <span class="nn">kivy.properties</span> <span class="kn">import</span> <span class="n">NumericProperty</span><span class="p">,</span> <span class="n">ReferenceListProperty</span><span class="p">,</span>\
+    <span class="n">ObjectProperty</span>
+<span class="kn">from</span> <span class="nn">kivy.vector</span> <span class="kn">import</span> <span class="n">Vector</span>
+<span class="kn">from</span> <span class="nn">kivy.clock</span> <span class="kn">import</span> <span class="n">Clock</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+
+<span class="k">class</span> <span class="nc">PongBall</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="n">velocity_x</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">velocity_y</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">velocity</span> <span class="o">=</span> <span class="n">ReferenceListProperty</span><span class="p">(</span><span class="n">velocity_x</span><span class="p">,</span> <span class="n">velocity_y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">velocity</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
+
+
+<span class="k">class</span> <span class="nc">PongGame</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="n">ball</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">serve_ball</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">center</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">velocity</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+
+        <span class="c1"># bounce off top and bottom</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">top</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">velocity_y</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="c1"># bounce off left and right</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">right</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">velocity_x</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+
+
+<span class="k">class</span> <span class="nc">PongApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">game</span> <span class="o">=</span> <span class="n">PongGame</span><span class="p">()</span>
+        <span class="n">game</span><span class="o">.</span><span class="n">serve_ball</span><span class="p">()</span>
+        <span class="n">Clock</span><span class="o">.</span><span class="n">schedule_interval</span><span class="p">(</span><span class="n">game</span><span class="o">.</span><span class="n">update</span><span class="p">,</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="mf">60.0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">game</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">PongApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</dd>
+<dt>pong.kv:</dt>
+<dd><div class="first last highlight-kv"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#:kivy 1.0.9</span>
+
+<span class="nn">&lt;PongBall&gt;</span><span class="p">:</span>
+    <span class="na">size</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span> 
+    <span class="nc">canvas</span><span class="p">:</span>
+        <span class="nc">Ellipse</span><span class="p">:</span>
+            <span class="na">pos</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
+            <span class="na">size</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>          
+
+<span class="nn">&lt;PongGame&gt;</span><span class="p">:</span>
+    <span class="na">ball</span><span class="p">:</span> <span class="n">pong_ball</span>
+    
+    <span class="nc">canvas</span><span class="p">:</span>
+        <span class="nc">Rectangle</span><span class="p">:</span>
+            <span class="na">pos</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">center_x</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span>
+            <span class="na">size</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span>
+    
+    <span class="nc">Label</span><span class="p">:</span>
+        <span class="na">font_size</span><span class="p">:</span> <span class="mi">70</span>  
+        <span class="na">center_x</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">width</span> <span class="o">/</span> <span class="mi">4</span>
+        <span class="na">top</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">top</span> <span class="o">-</span> <span class="mi">50</span>
+        <span class="na">text</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span>
+        
+    <span class="nc">Label</span><span class="p">:</span>
+        <span class="na">font_size</span><span class="p">:</span> <span class="mi">70</span>  
+        <span class="na">center_x</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span>
+        <span class="na">top</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">top</span> <span class="o">-</span> <span class="mi">50</span>
+        <span class="na">text</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span>
+    
+    <span class="nc">PongBall</span><span class="p">:</span>
+        <span class="na">id</span><span class="p">:</span> <span class="n">pong_ball</span>
+        <span class="na">center</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">center</span>
+        
+</pre></div>
+</td></tr></table></div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="connect-input-events">
+<h2>Connect Input Events(入力イベントの接続)<a class="headerlink" href="#connect-input-events" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="title docutils container">
+<p>プレイヤーを追加してタッチ入力に反応する</p>
+</div>
+<p>素敵です。ボールはバウンドしています。今足りない機能は可動式のプレーヤーラケットとスコアの記録です。これらの概念はすでに前のステップでカバーされていたので、クラスとkvのルールを作成する詳細の全ては説明しません。代わりに、ユーザの入力に応じてPlayer widgetを移動する方法に焦点を当てましょう。このセクションの最後に、PongPaddleクラスの全コードとkvルールを得ることができます。</p>
+<p>Kivyのwidgetは、<a class="reference internal" href="../api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_down" title="kivy.uix.widget.Widget.on_touch_down"><code class="xref py py-meth docutils literal"><span class="pre">on_touch_down</span></code></a> 、<a class="reference internal" href="../api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_move" title="kivy.uix.widget.Widget.on_touch_move"><code class="xref py py-meth docutils literal"><span class="pre">on_touch_move</span></code></a>  、<a class="reference internal" href="../api-kivy.uix.widget.html#kivy.uix.widget.Widget.on_touch_up" title="kivy.uix.widget.Widget.on_touch_up"><code class="xref py py-meth docutils literal"><span class="pre">on_touch_up</span></code></a> の各メソッドを実装することで入力に反応できます。デフォルトでは、Widgetクラスはいずれかの子が「True」を返すまでイベントを渡すため、すべての子のwidgetで対応するメソッドを呼び出すだけでこれらのメソッドを実装します。</p>
+<p>Pongはかなりシンプルです。ラケットは上下に動かすだけです。実際とてもシンプルなので、プレーヤーwidgetがイベント自体を処理する必要はありません。 PongGameクラスの「on_touch_move」関数を実装して画面の左右にタッチが発生したかどうかから左右のプレーヤーの位置を設定します。</p>
+<p><code class="docutils literal"><span class="pre">on_touch_move</span></code> ハンドラーをチェックします:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_touch_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">touch</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">3</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">player1</span><span class="o">.</span><span class="n">center_y</span> <span class="o">=</span> <span class="n">touch</span><span class="o">.</span><span class="n">y</span>
+    <span class="k">if</span> <span class="n">touch</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="o">/</span><span class="mi">3</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">player2</span><span class="o">.</span><span class="n">center_y</span> <span class="o">=</span> <span class="n">touch</span><span class="o">.</span><span class="n">y</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference internal" href="../api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a> では、各プレイヤーのスコアを保持します。 「PongGame」のスコアラベルはNumericPropertyスコアを変更することで更新され、「PongGame」の子ラベルのtext propertyが更新されます。このバインディングは、Kivyプ <a class="reference internal" href="../api-kivy.properties.html#module-kivy.properties" title="kivy.properties"><code class="xref py py-mod docutils literal"><span class="pre">properties</span></code></a> が対応するkvファイル内の任意の参照に自動的にバインドされるために発生します。ボールが両サイドから飛び出したら「PongGame」クラスの更新メソッドを変更してスコアを更新してボールを再び提供します。また、「PongPaddle」クラスは「bounce_ball」メソッドを実装しているため、ボールがラケットに当たる場所に応じてボールは違う跳ね方をします。 「PongPaddle」クラスのコードは以下のとおりです。</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PongPaddle</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+
+    <span class="n">score</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">bounce_ball</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ball</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">collide_widget</span><span class="p">(</span><span class="n">ball</span><span class="p">):</span>
+            <span class="n">speedup</span>  <span class="o">=</span> <span class="mf">1.1</span>
+            <span class="n">offset</span> <span class="o">=</span> <span class="mf">0.02</span> <span class="o">*</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ball</span><span class="o">.</span><span class="n">center_y</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">center_y</span><span class="p">)</span>
+            <span class="n">ball</span><span class="o">.</span><span class="n">velocity</span> <span class="o">=</span>  <span class="n">speedup</span> <span class="o">*</span> <span class="p">(</span><span class="n">offset</span> <span class="o">-</span> <span class="n">ball</span><span class="o">.</span><span class="n">velocity</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">ボールが跳ねるアルゴリズムは非常に簡単ですが、ボールがサイドまたはボトムからパドルに当たった場合におかしな動作をします...これはあなたが好きなときに自身で修正する余地があります。：</p>
+</div>
+<p>これはコンテキストにあります。大体終わりました：</p>
+<dl class="docutils">
+<dt>main.py:</dt>
+<dd><div class="first last highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.app</span> <span class="kn">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.widget</span> <span class="kn">import</span> <span class="n">Widget</span>
+<span class="kn">from</span> <span class="nn">kivy.properties</span> <span class="kn">import</span> <span class="n">NumericProperty</span><span class="p">,</span> <span class="n">ReferenceListProperty</span><span class="p">,</span>\
+    <span class="n">ObjectProperty</span>
+<span class="kn">from</span> <span class="nn">kivy.vector</span> <span class="kn">import</span> <span class="n">Vector</span>
+<span class="kn">from</span> <span class="nn">kivy.clock</span> <span class="kn">import</span> <span class="n">Clock</span>
+
+
+<span class="k">class</span> <span class="nc">PongPaddle</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">bounce_ball</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ball</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">collide_widget</span><span class="p">(</span><span class="n">ball</span><span class="p">):</span>
+            <span class="n">vx</span><span class="p">,</span> <span class="n">vy</span> <span class="o">=</span> <span class="n">ball</span><span class="o">.</span><span class="n">velocity</span>
+            <span class="n">offset</span> <span class="o">=</span> <span class="p">(</span><span class="n">ball</span><span class="o">.</span><span class="n">center_y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">center_y</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">bounced</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">)</span>
+            <span class="n">vel</span> <span class="o">=</span> <span class="n">bounced</span> <span class="o">*</span> <span class="mf">1.1</span>
+            <span class="n">ball</span><span class="o">.</span><span class="n">velocity</span> <span class="o">=</span> <span class="n">vel</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">vel</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">offset</span>
+
+
+<span class="k">class</span> <span class="nc">PongBall</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="n">velocity_x</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">velocity_y</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">velocity</span> <span class="o">=</span> <span class="n">ReferenceListProperty</span><span class="p">(</span><span class="n">velocity_x</span><span class="p">,</span> <span class="n">velocity_y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">velocity</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
+
+
+<span class="k">class</span> <span class="nc">PongGame</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+    <span class="n">ball</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+    <span class="n">player1</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+    <span class="n">player2</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">serve_ball</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vel</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">center</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">velocity</span> <span class="o">=</span> <span class="n">vel</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+
+        <span class="c1"># bounce of paddles</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">player1</span><span class="o">.</span><span class="n">bounce_ball</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">player2</span><span class="o">.</span><span class="n">bounce_ball</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="p">)</span>
+
+        <span class="c1"># bounce ball off bottom or top</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">top</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">velocity_y</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="c1"># went of to a side to score point?</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">player2</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">serve_ball</span><span class="p">(</span><span class="n">vel</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">player1</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">serve_ball</span><span class="p">(</span><span class="n">vel</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">on_touch_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">touch</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">/</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">player1</span><span class="o">.</span><span class="n">center_y</span> <span class="o">=</span> <span class="n">touch</span><span class="o">.</span><span class="n">y</span>
+        <span class="k">if</span> <span class="n">touch</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">/</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">player2</span><span class="o">.</span><span class="n">center_y</span> <span class="o">=</span> <span class="n">touch</span><span class="o">.</span><span class="n">y</span>
+
+
+<span class="k">class</span> <span class="nc">PongApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">game</span> <span class="o">=</span> <span class="n">PongGame</span><span class="p">()</span>
+        <span class="n">game</span><span class="o">.</span><span class="n">serve_ball</span><span class="p">()</span>
+        <span class="n">Clock</span><span class="o">.</span><span class="n">schedule_interval</span><span class="p">(</span><span class="n">game</span><span class="o">.</span><span class="n">update</span><span class="p">,</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="mf">60.0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">game</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">PongApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</dd>
+</dl>
+<p>pong.kv:</p>
+<blockquote>
+<div><div class="highlight-kv"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#:kivy 1.0.9</span>
+
+<span class="nn">&lt;PongBall&gt;</span><span class="p">:</span>
+    <span class="na">size</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span> 
+    <span class="nc">canvas</span><span class="p">:</span>
+        <span class="nc">Ellipse</span><span class="p">:</span>
+            <span class="na">pos</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
+            <span class="na">size</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>          
+
+<span class="nn">&lt;PongPaddle&gt;</span><span class="p">:</span>
+    <span class="na">size</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">200</span>
+    <span class="nc">canvas</span><span class="p">:</span>
+        <span class="nc">Rectangle</span><span class="p">:</span>
+            <span class="na">pos</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
+            <span class="na">size</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+
+<span class="nn">&lt;PongGame&gt;</span><span class="p">:</span>
+    <span class="na">ball</span><span class="p">:</span> <span class="n">pong_ball</span>
+    <span class="na">player1</span><span class="p">:</span> <span class="n">player_left</span>
+    <span class="na">player2</span><span class="p">:</span> <span class="n">player_right</span>
+    
+    <span class="nc">canvas</span><span class="p">:</span>
+        <span class="nc">Rectangle</span><span class="p">:</span>
+            <span class="na">pos</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">center_x</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span>
+            <span class="na">size</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span>
+    
+    <span class="nc">Label</span><span class="p">:</span>
+        <span class="na">font_size</span><span class="p">:</span> <span class="mi">70</span>  
+        <span class="na">center_x</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">width</span> <span class="o">/</span> <span class="mi">4</span>
+        <span class="na">top</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">top</span> <span class="o">-</span> <span class="mi">50</span>
+        <span class="na">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">player1</span><span class="o">.</span><span class="n">score</span><span class="p">)</span>
+        
+    <span class="nc">Label</span><span class="p">:</span>
+        <span class="na">font_size</span><span class="p">:</span> <span class="mi">70</span>  
+        <span class="na">center_x</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span>
+        <span class="na">top</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">top</span> <span class="o">-</span> <span class="mi">50</span>
+        <span class="na">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">player2</span><span class="o">.</span><span class="n">score</span><span class="p">)</span>
+    
+    <span class="nc">PongBall</span><span class="p">:</span>
+        <span class="na">id</span><span class="p">:</span> <span class="n">pong_ball</span>
+        <span class="na">center</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">center</span>
+        
+    <span class="nc">PongPaddle</span><span class="p">:</span>
+        <span class="na">id</span><span class="p">:</span> <span class="n">player_left</span>
+        <span class="na">x</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">x</span>
+        <span class="na">center_y</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">center_y</span>
+        
+    <span class="nc">PongPaddle</span><span class="p">:</span>
+        <span class="na">id</span><span class="p">:</span> <span class="n">player_right</span>
+        <span class="na">x</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">width</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span>
+        <span class="na">center_y</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">center_y</span>
+        
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</div>
+<div class="section" id="where-to-go-now">
+<h2>Where To Go Now?(どこに行く?)<a class="headerlink" href="#where-to-go-now" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="title docutils container">
+<p>楽しんできてね</p>
+</div>
+<p>さて、ポンゲームは大体完成しました。チュートリアルで取り上げている内容をすべて理解しているならば今度はゲームを改善する方法について考えてみてください。改善するためのいくつかのアイデアがあります:</p>
+<ul class="simple">
+<li><p class="first">よいグラフィックス/画像をいくつか追加します。 （ヒント：画像をテクスチャとして設定するには、 <a class="reference internal" href="../api-kivy.graphics.html#kivy.graphics.Line.circle" title="kivy.graphics.Line.circle"><code class="xref py py-attr docutils literal"><span class="pre">circle</span></code></a> や <a class="reference internal" href="../api-kivy.graphics.html#kivy.graphics.Rectangle" title="kivy.graphics.Rectangle"><code class="xref py py-class docutils literal"><span class="pre">Rectangle</span></code></a> のようなグラフィックス命令の <a class="reference internal" href="../api-kivy.graphics.instructions.html#kivy.graphics.instructions.VertexInstruction.source" title="kivy.graphics.instructions.VertexInstruction.source"><code class="xref py py-attr docutils literal"><span class="pre">source</span></code></a> propertyをチェックしてください。）</p>
+</li>
+<li><p class="first">特定のスコアの後にゲームを終了させます。プレイヤーが10ポイントを獲得したら、「PLAYER 1 WINS」ラベルを大きく表示したり、メインメニューを追加してゲームを開始、一時停止、リセットできるようにします。（ヒント： class:<cite>~kivy.uix.button.Button</cite> クラスと <a class="reference internal" href="../api-kivy.uix.label.html#kivy.uix.label.Label" title="kivy.uix.label.Label"><code class="xref py py-class docutils literal"><span class="pre">Label</span></code></a> クラスをチェックアウトし、「add_widget」と「remove_widget」関数を使ってウィジェットを動的に追加または削除する方法を解説します。</p>
+</li>
+<li><p class="first">4人プレーのPong Gameにしてください。ほとんどのタブレットにはマルチタッチがサポートされているため両面にプレイヤーを置いて4人同時に遊ぶのはクールではないでしょうか？</p>
+</li>
+<li><p class="first">単純な衝突チェックを修正して、パドルの終わりでボールを打つと、より現実的な跳ねる動きが得られます。</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">各ステップのソースコードとファイル全体のソースコードはKivyのexamplesディレクトリのtutorials / pong / にあります。</p>
+</div>
+</div>
+</div>
+
+
+            <div class="footerlinks">
+            <table>
+                <tr>
+                    <td class="leftlink">
+                  <a href="../tutorials-index.html" title="previous chapter">&laquo; Tutorials(翻訳済み)</a></li>
+                  </td>
+                  <td class="rightlink">
+                  <a href="firstwidget.html" title="next chapter">A Simple Paint App(翻訳済み) &raquo;</a>
+                      </td>
+                  </tr>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 30, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

@@ -1,0 +1,939 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>kivy.uix.gridlayout &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../_static/kivy.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="../../../index.html" />
+    <link rel="up" title="kivy" href="../../kivy.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../../../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="../../../gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../../../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../../../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../../../index.html">kivy.uix.gridlayout</a></h3>
+          
+          <h3><a href="../../../index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2></div>
+            
+  <h1>kivy.uix.gridlayout のソースコード</h1><div class="highlight"><pre>
+<span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Grid Layout</span>
+<span class="sd">===========</span>
+
+<span class="sd">.. only:: html</span>
+
+<span class="sd">    .. image:: images/gridlayout.gif</span>
+<span class="sd">        :align: right</span>
+
+<span class="sd">.. only:: latex</span>
+
+<span class="sd">    .. image:: images/gridlayout.png</span>
+<span class="sd">        :align: right</span>
+
+<span class="sd">.. versionadded:: 1.0.4</span>
+
+<span class="sd">The :class:`GridLayout` arranges children in a matrix. It takes the available</span>
+<span class="sd">space and divides it into columns and rows, then adds widgets to the resulting</span>
+<span class="sd">&quot;cells&quot;.</span>
+
+<span class="sd">.. versionchanged:: 1.0.7</span>
+<span class="sd">    The implementation has changed to use the widget size_hint for calculating</span>
+<span class="sd">    column/row sizes. `uniform_width` and `uniform_height` have been removed</span>
+<span class="sd">    and other properties have added to give you more control.</span>
+
+<span class="sd">Background</span>
+<span class="sd">----------</span>
+
+<span class="sd">Unlike many other toolkits, you cannot explicitly place a widget in a specific</span>
+<span class="sd">column/row. Each child is automatically assigned a position determined by the</span>
+<span class="sd">layout configuration and the child&#39;s index in the children list.</span>
+
+<span class="sd">A GridLayout must always have at least one input constraint:</span>
+<span class="sd">:attr:`GridLayout.cols` or :attr:`GridLayout.rows`. If you do not specify cols</span>
+<span class="sd">or rows, the Layout will throw an exception.</span>
+
+<span class="sd">Column Width and Row Height</span>
+<span class="sd">---------------------------</span>
+
+<span class="sd">The column width/row height are determined in 3 steps:</span>
+
+<span class="sd">    - The initial size is given by the :attr:`col_default_width` and</span>
+<span class="sd">      :attr:`row_default_height` properties. To customize the size of a single</span>
+<span class="sd">      column or row, use :attr:`cols_minimum` or :attr:`rows_minimum`.</span>
+<span class="sd">    - The `size_hint_x`/`size_hint_y` of the children are taken into account.</span>
+<span class="sd">      If no widgets have a size hint, the maximum size is used for all</span>
+<span class="sd">      children.</span>
+<span class="sd">    - You can force the default size by setting the :attr:`col_force_default`</span>
+<span class="sd">      or :attr:`row_force_default` property. This will force the layout to</span>
+<span class="sd">      ignore the `width` and `size_hint` properties of children and use the</span>
+<span class="sd">      default size.</span>
+
+<span class="sd">Using a GridLayout</span>
+<span class="sd">------------------</span>
+
+<span class="sd">In the example below, all widgets will have an equal size. By default, the</span>
+<span class="sd">`size_hint` is (1, 1), so a Widget will take the full size of the parent::</span>
+
+<span class="sd">    layout = GridLayout(cols=2)</span>
+<span class="sd">    layout.add_widget(Button(text=&#39;Hello 1&#39;))</span>
+<span class="sd">    layout.add_widget(Button(text=&#39;World 1&#39;))</span>
+<span class="sd">    layout.add_widget(Button(text=&#39;Hello 2&#39;))</span>
+<span class="sd">    layout.add_widget(Button(text=&#39;World 2&#39;))</span>
+
+<span class="sd">.. image:: images/gridlayout_1.jpg</span>
+
+<span class="sd">Now, let&#39;s fix the size of Hello buttons to 100px instead of using</span>
+<span class="sd">size_hint_x=1::</span>
+
+<span class="sd">    layout = GridLayout(cols=2)</span>
+<span class="sd">    layout.add_widget(Button(text=&#39;Hello 1&#39;, size_hint_x=None, width=100))</span>
+<span class="sd">    layout.add_widget(Button(text=&#39;World 1&#39;))</span>
+<span class="sd">    layout.add_widget(Button(text=&#39;Hello 2&#39;, size_hint_x=None, width=100))</span>
+<span class="sd">    layout.add_widget(Button(text=&#39;World 2&#39;))</span>
+
+<span class="sd">.. image:: images/gridlayout_2.jpg</span>
+
+<span class="sd">Next, let&#39;s fix the row height to a specific size::</span>
+
+<span class="sd">    layout = GridLayout(cols=2, row_force_default=True, row_default_height=40)</span>
+<span class="sd">    layout.add_widget(Button(text=&#39;Hello 1&#39;, size_hint_x=None, width=100))</span>
+<span class="sd">    layout.add_widget(Button(text=&#39;World 1&#39;))</span>
+<span class="sd">    layout.add_widget(Button(text=&#39;Hello 2&#39;, size_hint_x=None, width=100))</span>
+<span class="sd">    layout.add_widget(Button(text=&#39;World 2&#39;))</span>
+
+<span class="sd">.. image:: images/gridlayout_3.jpg</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;GridLayout&#39;</span><span class="p">,</span> <span class="s1">&#39;GridLayoutException&#39;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">kivy.logger</span> <span class="k">import</span> <span class="n">Logger</span>
+<span class="kn">from</span> <span class="nn">kivy.uix.layout</span> <span class="k">import</span> <span class="n">Layout</span>
+<span class="kn">from</span> <span class="nn">kivy.properties</span> <span class="k">import</span> <span class="n">NumericProperty</span><span class="p">,</span> <span class="n">BooleanProperty</span><span class="p">,</span> <span class="n">DictProperty</span><span class="p">,</span> \
+    <span class="n">BoundedNumericProperty</span><span class="p">,</span> <span class="n">ReferenceListProperty</span><span class="p">,</span> <span class="n">VariableListProperty</span><span class="p">,</span> \
+    <span class="n">ObjectProperty</span><span class="p">,</span> <span class="n">StringProperty</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">ceil</span>
+
+
+<span class="k">def</span> <span class="nf">nmax</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="c1"># merge into one list</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">args</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">nmin</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="c1"># merge into one list</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">args</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="GridLayoutException"><a class="viewcode-back" href="../../../api-kivy.uix.gridlayout.html#kivy.uix.gridlayout.GridLayoutException">[ドキュメント]</a><span class="k">class</span> <span class="nc">GridLayoutException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Exception for errors if the grid layout manipulation fails.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="GridLayout"><a class="viewcode-back" href="../../../api-kivy.uix.gridlayout.html#kivy.uix.gridlayout.GridLayout">[ドキュメント]</a><span class="k">class</span> <span class="nc">GridLayout</span><span class="p">(</span><span class="n">Layout</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Grid layout class. See module documentation for more information.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">spacing</span> <span class="o">=</span> <span class="n">VariableListProperty</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Spacing between children: [spacing_horizontal, spacing_vertical].</span>
+
+<span class="sd">    spacing also accepts a one argument form [spacing].</span>
+
+<span class="sd">    :attr:`spacing` is a</span>
+<span class="sd">    :class:`~kivy.properties.VariableListProperty` and defaults to [0, 0].</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">padding</span> <span class="o">=</span> <span class="n">VariableListProperty</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="sd">&#39;&#39;&#39;Padding between the layout box and it&#39;s children: [padding_left,</span>
+<span class="sd">    padding_top, padding_right, padding_bottom].</span>
+
+<span class="sd">    padding also accepts a two argument form [padding_horizontal,</span>
+<span class="sd">    padding_vertical] and a one argument form [padding].</span>
+
+<span class="sd">    .. versionchanged:: 1.7.0</span>
+<span class="sd">        Replaced NumericProperty with VariableListProperty.</span>
+
+<span class="sd">    :attr:`padding` is a :class:`~kivy.properties.VariableListProperty` and</span>
+<span class="sd">    defaults to [0, 0, 0, 0].</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">cols</span> <span class="o">=</span> <span class="n">BoundedNumericProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">allownone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Number of columns in the grid.</span>
+
+<span class="sd">    .. versionchanged:: 1.0.8</span>
+<span class="sd">        Changed from a NumericProperty to BoundedNumericProperty. You can no</span>
+<span class="sd">        longer set this to a negative value.</span>
+
+<span class="sd">    :attr:`cols` is a :class:`~kivy.properties.NumericProperty` and defaults to</span>
+<span class="sd">    0.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">BoundedNumericProperty</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">allownone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Number of rows in the grid.</span>
+
+<span class="sd">    .. versionchanged:: 1.0.8</span>
+<span class="sd">        Changed from a NumericProperty to a BoundedNumericProperty. You can no</span>
+<span class="sd">        longer set this to a negative value.</span>
+
+<span class="sd">    :attr:`rows` is a :class:`~kivy.properties.NumericProperty` and defaults to</span>
+<span class="sd">    0.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">col_default_width</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Default minimum size to use for a column.</span>
+
+<span class="sd">    .. versionadded:: 1.0.7</span>
+
+<span class="sd">    :attr:`col_default_width` is a :class:`~kivy.properties.NumericProperty`</span>
+<span class="sd">    and defaults to 0.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">row_default_height</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Default minimum size to use for row.</span>
+
+<span class="sd">    .. versionadded:: 1.0.7</span>
+
+<span class="sd">    :attr:`row_default_height` is a :class:`~kivy.properties.NumericProperty`</span>
+<span class="sd">    and defaults to 0.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">col_force_default</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;If True, ignore the width and size_hint_x of the child and use the</span>
+<span class="sd">    default column width.</span>
+
+<span class="sd">    .. versionadded:: 1.0.7</span>
+
+<span class="sd">    :attr:`col_force_default` is a :class:`~kivy.properties.BooleanProperty`</span>
+<span class="sd">    and defaults to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">row_force_default</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;If True, ignore the height and size_hint_y of the child and use the</span>
+<span class="sd">    default row height.</span>
+
+<span class="sd">    .. versionadded:: 1.0.7</span>
+
+<span class="sd">    :attr:`row_force_default` is a :class:`~kivy.properties.BooleanProperty`</span>
+<span class="sd">    and defaults to False.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">cols_minimum</span> <span class="o">=</span> <span class="n">DictProperty</span><span class="p">({})</span>
+    <span class="sd">&#39;&#39;&#39;Dict of minimum width for each column. The dictionary keys are the</span>
+<span class="sd">    column numbers, e.g. 0, 1, 2...</span>
+
+<span class="sd">    .. versionadded:: 1.0.7</span>
+
+<span class="sd">    :attr:`cols_minimum` is a :class:`~kivy.properties.DictProperty` and</span>
+<span class="sd">    defaults to {}.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">rows_minimum</span> <span class="o">=</span> <span class="n">DictProperty</span><span class="p">({})</span>
+    <span class="sd">&#39;&#39;&#39;Dict of minimum height for each row. The dictionary keys are the</span>
+<span class="sd">    row numbers, e.g. 0, 1, 2...</span>
+
+<span class="sd">    .. versionadded:: 1.0.7</span>
+
+<span class="sd">    :attr:`rows_minimum` is a :class:`~kivy.properties.DictProperty` and</span>
+<span class="sd">    defaults to {}.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">minimum_width</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Automatically computed minimum width needed to contain all children.</span>
+
+<span class="sd">    .. versionadded:: 1.0.8</span>
+
+<span class="sd">    :attr:`minimum_width` is a :class:`~kivy.properties.NumericProperty` and</span>
+<span class="sd">    defaults to 0. It is read only.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">minimum_height</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Automatically computed minimum height needed to contain all children.</span>
+
+<span class="sd">    .. versionadded:: 1.0.8</span>
+
+<span class="sd">    :attr:`minimum_height` is a :class:`~kivy.properties.NumericProperty` and</span>
+<span class="sd">    defaults to 0. It is read only.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">minimum_size</span> <span class="o">=</span> <span class="n">ReferenceListProperty</span><span class="p">(</span><span class="n">minimum_width</span><span class="p">,</span> <span class="n">minimum_height</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Automatically computed minimum size needed to contain all children.</span>
+
+<span class="sd">    .. versionadded:: 1.0.8</span>
+
+<span class="sd">    :attr:`minimum_size` is a</span>
+<span class="sd">    :class:`~kivy.properties.ReferenceListProperty` of</span>
+<span class="sd">    (:attr:`minimum_width`, :attr:`minimum_height`) properties. It is read</span>
+<span class="sd">    only.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GridLayout</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">fbind</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fbind</span>
+        <span class="n">update</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trigger_layout</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;col_default_width&#39;</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;row_default_height&#39;</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;col_force_default&#39;</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;row_force_default&#39;</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;cols&#39;</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;rows&#39;</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;parent&#39;</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;spacing&#39;</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;padding&#39;</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;children&#39;</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>
+        <span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;pos&#39;</span><span class="p">,</span> <span class="n">update</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_max_widgets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cols</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">rows</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rows</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">cols</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">on_children</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="c1"># if that makes impossible to construct things with deffered method,</span>
+        <span class="c1"># migrate this test in do_layout, and/or issue a warning.</span>
+        <span class="n">smax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_max_widgets</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">smax</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">smax</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">GridLayoutException</span><span class="p">(</span>
+                <span class="s1">&#39;Too many children in GridLayout. Increase rows/cols!&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_init_rows_cols_sizes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+        <span class="c1"># the goal here is to calculate the minimum size of every cols/rows</span>
+        <span class="c1"># and determine if they have stretch or not</span>
+        <span class="n">current_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cols</span>
+        <span class="n">current_rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rows</span>
+
+        <span class="c1"># if no cols or rows are set, we can&#39;t calculate minimum size.</span>
+        <span class="c1"># the grid must be contrained at least on one side</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">current_cols</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">current_rows</span><span class="p">:</span>
+            <span class="n">Logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%r</span><span class="s1"> have no cols or rows set, &#39;</span>
+                           <span class="s1">&#39;layout is not triggered.&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="n">current_cols</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">current_cols</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">count</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">current_rows</span><span class="p">)))</span>
+        <span class="k">elif</span> <span class="n">current_rows</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">current_rows</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">count</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">current_cols</span><span class="p">)))</span>
+
+        <span class="n">current_cols</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">current_cols</span><span class="p">)</span>
+        <span class="n">current_rows</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">current_rows</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_has_hint_bound_x</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_has_hint_bound_y</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cols_min_size_none</span> <span class="o">=</span> <span class="mf">0.</span>  <span class="c1"># min size from all the None hint</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_rows_min_size_none</span> <span class="o">=</span> <span class="mf">0.</span>  <span class="c1"># min size from all the None hint</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cols</span> <span class="o">=</span> <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">col_default_width</span><span class="p">]</span> <span class="o">*</span> <span class="n">current_cols</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cols_sh</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">current_cols</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cols_sh_min</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">current_cols</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cols_sh_max</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">current_cols</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_rows</span> <span class="o">=</span> <span class="n">rows</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">row_default_height</span><span class="p">]</span> <span class="o">*</span> <span class="n">current_rows</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_rows_sh</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">current_rows</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_rows_sh_min</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">current_rows</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_rows_sh_max</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">current_rows</span>
+
+        <span class="c1"># update minimum size from the dicts</span>
+        <span class="c1"># FIXME index might be outside the bounds ?</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cols_minimum</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">cols</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cols</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rows_minimum</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">rows</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">rows</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">_fill_rows_cols_sizes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">cols</span><span class="p">,</span> <span class="n">rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cols</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows</span>
+        <span class="n">cols_sh</span><span class="p">,</span> <span class="n">rows_sh</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cols_sh</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows_sh</span>
+        <span class="n">cols_sh_min</span><span class="p">,</span> <span class="n">rows_sh_min</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cols_sh_min</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows_sh_min</span>
+        <span class="n">cols_sh_max</span><span class="p">,</span> <span class="n">rows_sh_max</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cols_sh_max</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows_sh_max</span>
+
+        <span class="c1"># calculate minimum size for each columns and rows</span>
+        <span class="n">n_cols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span>
+        <span class="n">has_bound_y</span> <span class="o">=</span> <span class="n">has_bound_x</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">child</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">)):</span>
+            <span class="p">(</span><span class="n">shw</span><span class="p">,</span> <span class="n">shh</span><span class="p">),</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="n">size_hint</span><span class="p">,</span> <span class="n">child</span><span class="o">.</span><span class="n">size</span>
+            <span class="n">shw_min</span><span class="p">,</span> <span class="n">shh_min</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="n">size_hint_min</span>
+            <span class="n">shw_max</span><span class="p">,</span> <span class="n">shh_max</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="n">size_hint_max</span>
+            <span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">n_cols</span><span class="p">)</span>
+
+            <span class="c1"># compute minimum size / maximum stretch needed</span>
+            <span class="k">if</span> <span class="n">shw</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">cols</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">nmax</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">w</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">cols_sh</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">nmax</span><span class="p">(</span><span class="n">cols_sh</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">shw</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">shw_min</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">has_bound_x</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="n">cols_sh_min</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">nmax</span><span class="p">(</span><span class="n">cols_sh_min</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">shw_min</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">shw_max</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">has_bound_x</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="n">cols_sh_max</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">nmin</span><span class="p">(</span><span class="n">cols_sh_max</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">shw_max</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">shh</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">rows</span><span class="p">[</span><span class="n">row</span><span class="p">]</span> <span class="o">=</span> <span class="n">nmax</span><span class="p">(</span><span class="n">rows</span><span class="p">[</span><span class="n">row</span><span class="p">],</span> <span class="n">h</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">rows_sh</span><span class="p">[</span><span class="n">row</span><span class="p">]</span> <span class="o">=</span> <span class="n">nmax</span><span class="p">(</span><span class="n">rows_sh</span><span class="p">[</span><span class="n">row</span><span class="p">],</span> <span class="n">shh</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">shh_min</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">has_bound_y</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="n">rows_sh_min</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">nmax</span><span class="p">(</span><span class="n">rows_sh_min</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">shh_min</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">shh_max</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">has_bound_y</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="n">rows_sh_max</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">nmin</span><span class="p">(</span><span class="n">rows_sh_max</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">shh_max</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_has_hint_bound_x</span> <span class="o">=</span> <span class="n">has_bound_x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_has_hint_bound_y</span> <span class="o">=</span> <span class="n">has_bound_y</span>
+
+    <span class="k">def</span> <span class="nf">_update_minimum_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># calculate minimum width/height needed, starting from padding +</span>
+        <span class="c1"># spacing</span>
+        <span class="n">l</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">padding</span>
+        <span class="n">spacing_x</span><span class="p">,</span> <span class="n">spacing_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spacing</span>
+        <span class="n">cols</span><span class="p">,</span> <span class="n">rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cols</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows</span>
+
+        <span class="n">width</span> <span class="o">=</span> <span class="n">l</span> <span class="o">+</span> <span class="n">r</span> <span class="o">+</span> <span class="n">spacing_x</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cols_min_size_none</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span> <span class="o">+</span> <span class="n">width</span>
+        <span class="c1"># we need to subtract for the sh_max/min the already guaranteed size</span>
+        <span class="c1"># due to having a None in the col. So sh_min gets smaller by that size</span>
+        <span class="c1"># since it&#39;s already covered. Similarly for sh_max, because if we</span>
+        <span class="c1"># already exceeded the max, the subtracted max will be zero, so</span>
+        <span class="c1"># it won&#39;t get larger</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_hint_bound_x</span><span class="p">:</span>
+            <span class="n">cols_sh_min</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cols_sh_min</span>
+            <span class="n">cols_sh_max</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cols_sh_max</span>
+
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">sh_min</span><span class="p">,</span> <span class="n">sh_max</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
+                    <span class="nb">zip</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">cols_sh_min</span><span class="p">,</span> <span class="n">cols_sh_max</span><span class="p">)):</span>
+                <span class="k">if</span> <span class="n">sh_min</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">width</span> <span class="o">+=</span> <span class="nb">max</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">sh_min</span><span class="p">)</span>
+                    <span class="n">cols_sh_min</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">sh_min</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">width</span> <span class="o">+=</span> <span class="n">c</span>
+
+                <span class="k">if</span> <span class="n">sh_max</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">cols_sh_max</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">sh_max</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cols_min_size_none</span>
+
+        <span class="n">height</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">spacing_y</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_rows_min_size_none</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span> <span class="o">+</span> <span class="n">height</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_hint_bound_y</span><span class="p">:</span>
+            <span class="n">rows_sh_min</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows_sh_min</span>
+            <span class="n">rows_sh_max</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows_sh_max</span>
+
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">sh_min</span><span class="p">,</span> <span class="n">sh_max</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
+                    <span class="nb">zip</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">rows_sh_min</span><span class="p">,</span> <span class="n">rows_sh_max</span><span class="p">)):</span>
+                <span class="k">if</span> <span class="n">sh_min</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">height</span> <span class="o">+=</span> <span class="nb">max</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">sh_min</span><span class="p">)</span>
+                    <span class="n">rows_sh_min</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">sh_min</span> <span class="o">-</span> <span class="n">r</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">height</span> <span class="o">+=</span> <span class="n">r</span>
+
+                <span class="k">if</span> <span class="n">sh_max</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">rows_sh_max</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">sh_max</span> <span class="o">-</span> <span class="n">r</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">height</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows_min_size_none</span>
+
+        <span class="c1"># finally, set the minimum size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">minimum_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_finalize_rows_cols_sizes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">selfw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span>
+        <span class="n">selfh</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span>
+
+        <span class="c1"># resolve size for each column</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">col_force_default</span><span class="p">:</span>
+            <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">col_default_width</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cols</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cols_minimum</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">cols</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_cols</span> <span class="o">=</span> <span class="n">cols</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cols</span>
+            <span class="n">cols_sh</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cols_sh</span>
+            <span class="n">cols_sh_min</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cols_sh_min</span>
+            <span class="n">cols_weight</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">sum</span><span class="p">((</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cols_sh</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)))</span>
+            <span class="n">stretch_w</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">selfw</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cols_min_size_none</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">stretch_w</span> <span class="o">&gt;</span> <span class="mf">1e-9</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_hint_bound_x</span><span class="p">:</span>
+                    <span class="c1"># fix the hints to be within bounds</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">layout_hint_with_bounds</span><span class="p">(</span>
+                        <span class="n">cols_weight</span><span class="p">,</span> <span class="n">stretch_w</span><span class="p">,</span>
+                        <span class="nb">sum</span><span class="p">((</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cols_sh_min</span> <span class="k">if</span> <span class="n">c</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)),</span>
+                        <span class="n">cols_sh_min</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cols_sh_max</span><span class="p">,</span> <span class="n">cols_sh</span><span class="p">)</span>
+
+                <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">col_stretch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cols_sh</span><span class="p">):</span>
+                    <span class="c1"># if the col don&#39;t have stretch information, nothing to do</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">col_stretch</span><span class="p">:</span>
+                        <span class="k">continue</span>
+                    <span class="c1"># add to the min width whatever remains from size_hint</span>
+                    <span class="n">cols</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+=</span> <span class="n">stretch_w</span> <span class="o">*</span> <span class="n">col_stretch</span> <span class="o">/</span> <span class="n">cols_weight</span>
+
+        <span class="c1"># same algo for rows</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_force_default</span><span class="p">:</span>
+            <span class="n">rows</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">row_default_height</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rows_minimum</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">rows</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_rows</span> <span class="o">=</span> <span class="n">rows</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows</span>
+            <span class="n">rows_sh</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows_sh</span>
+            <span class="n">rows_sh_min</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows_sh_min</span>
+            <span class="n">rows_weight</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">sum</span><span class="p">((</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">rows_sh</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)))</span>
+            <span class="n">stretch_h</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">selfh</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows_min_size_none</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">stretch_h</span> <span class="o">&gt;</span> <span class="mf">1e-9</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_hint_bound_y</span><span class="p">:</span>
+                    <span class="c1"># fix the hints to be within bounds</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">layout_hint_with_bounds</span><span class="p">(</span>
+                        <span class="n">rows_weight</span><span class="p">,</span> <span class="n">stretch_h</span><span class="p">,</span>
+                        <span class="nb">sum</span><span class="p">((</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rows_sh_min</span> <span class="k">if</span> <span class="n">r</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)),</span>
+                        <span class="n">rows_sh_min</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows_sh_max</span><span class="p">,</span> <span class="n">rows_sh</span><span class="p">)</span>
+
+                <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row_stretch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">rows_sh</span><span class="p">):</span>
+                    <span class="c1"># if the row don&#39;t have stretch information, nothing to do</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">row_stretch</span><span class="p">:</span>
+                        <span class="k">continue</span>
+                    <span class="c1"># add to the min height whatever remains from size_hint</span>
+                    <span class="n">rows</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+=</span> <span class="n">stretch_h</span> <span class="o">*</span> <span class="n">row_stretch</span> <span class="o">/</span> <span class="n">rows_weight</span>
+
+    <span class="k">def</span> <span class="nf">_iterate_layout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+        <span class="n">selfx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+        <span class="n">padding_left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">padding</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">padding_top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">padding</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">spacing_x</span><span class="p">,</span> <span class="n">spacing_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spacing</span>
+
+        <span class="n">i</span> <span class="o">=</span> <span class="n">count</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">-</span> <span class="n">padding_top</span>
+        <span class="n">cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cols</span>
+        <span class="k">for</span> <span class="n">row_height</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">selfx</span> <span class="o">+</span> <span class="n">padding_left</span>
+            <span class="k">for</span> <span class="n">col_width</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="k">break</span>
+
+                <span class="k">yield</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">row_height</span><span class="p">,</span> <span class="n">col_width</span><span class="p">,</span> <span class="n">row_height</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+                <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">col_width</span> <span class="o">+</span> <span class="n">spacing_x</span>
+            <span class="n">y</span> <span class="o">-=</span> <span class="n">row_height</span> <span class="o">+</span> <span class="n">spacing_y</span>
+
+    <span class="k">def</span> <span class="nf">do_layout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">largs</span><span class="p">):</span>
+        <span class="n">children</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">children</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">children</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_rows_cols_sizes</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">children</span><span class="p">)):</span>
+            <span class="n">l</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">padding</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">minimum_size</span> <span class="o">=</span> <span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span> <span class="o">+</span> <span class="n">b</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fill_rows_cols_sizes</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_minimum_size</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_finalize_rows_cols_sizes</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iterate_layout</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">children</span><span class="p">)):</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">children</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">c</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+            <span class="n">shw</span><span class="p">,</span> <span class="n">shh</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">size_hint</span>
+            <span class="n">shw_min</span><span class="p">,</span> <span class="n">shh_min</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">size_hint_min</span>
+            <span class="n">shw_max</span><span class="p">,</span> <span class="n">shh_max</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">size_hint_max</span>
+
+            <span class="k">if</span> <span class="n">shw_min</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">shw_max</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">w</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">shw_max</span><span class="p">),</span> <span class="n">shw_min</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">w</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">shw_min</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">shw_max</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">w</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">shw_max</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">shh_min</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">shh_max</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">h</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">shh_max</span><span class="p">),</span> <span class="n">shh_min</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">h</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">shh_min</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">shh_max</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">h</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">shh_max</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">shw</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">shh</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">c</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">h</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">shh</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">c</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">w</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">c</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span></div>
+</pre></div>
+
+            <div class="footerlinks">
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 30, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

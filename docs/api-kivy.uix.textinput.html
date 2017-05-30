@@ -1,0 +1,1460 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>Text Input &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="_static/kivy.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="index.html" />
+    <link rel="up" title="Widgets" href="api-kivy.uix.html" />
+    <link rel="next" title="Toggle button" href="api-kivy.uix.togglebutton.html" />
+    <link rel="prev" title="TabbedPanel" href="api-kivy.uix.tabbedpanel.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="index.html">Text Input</a></h3>
+          <ul>
+<li><a class="reference internal" href="#">Text Input</a><ul>
+<li><a class="reference internal" href="#usage-example">Usage example</a></li>
+<li><a class="reference internal" href="#selection">Selection</a></li>
+<li><a class="reference internal" href="#filtering">Filtering</a></li>
+<li><a class="reference internal" href="#default-shortcuts">Default shortcuts</a></li>
+</ul>
+</li>
+</ul>
+
+          <h3><a href="index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="api-index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+              <li>Previous: <a href="api-kivy.uix.tabbedpanel.html" title="previous chapter">TabbedPanel</a></li>
+              <li>Next: <a href="api-kivy.uix.togglebutton.html" title="next chapter">Toggle button</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2><ul>
+<li><a class="reference internal" href="#">Text Input</a><ul>
+<li><a class="reference internal" href="#usage-example">Usage example</a></li>
+<li><a class="reference internal" href="#selection">Selection</a></li>
+<li><a class="reference internal" href="#filtering">Filtering</a></li>
+<li><a class="reference internal" href="#default-shortcuts">Default shortcuts</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+  <div class="section" id="module-kivy.uix.textinput">
+<span id="text-input"></span><h1>Text Input<a class="headerlink" href="#module-kivy.uix.textinput" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.4 で追加.</span></p>
+</div>
+<img alt="_images/textinput-mono.jpg" src="_images/textinput-mono.jpg" />
+<img alt="_images/textinput-multi.jpg" src="_images/textinput-multi.jpg" />
+<p>The <a class="reference internal" href="#kivy.uix.textinput.TextInput" title="kivy.uix.textinput.TextInput"><code class="xref py py-class docutils literal"><span class="pre">TextInput</span></code></a> widget provides a box for editable plain text.</p>
+<p>Unicode, multiline, cursor navigation, selection and clipboard features
+are supported.</p>
+<p>The <a class="reference internal" href="#kivy.uix.textinput.TextInput" title="kivy.uix.textinput.TextInput"><code class="xref py py-class docutils literal"><span class="pre">TextInput</span></code></a> uses two different coordinate systems:</p>
+<ul class="simple">
+<li>(x, y) - coordinates in pixels, mostly used for rendering on screen.</li>
+<li>(row, col) - cursor index in characters / lines, used for selection
+and cursor movement.</li>
+</ul>
+<div class="section" id="usage-example">
+<h2>Usage example<a class="headerlink" href="#usage-example" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>To create a multiline <a class="reference internal" href="#kivy.uix.textinput.TextInput" title="kivy.uix.textinput.TextInput"><code class="xref py py-class docutils literal"><span class="pre">TextInput</span></code></a> (the &#8216;enter&#8217; key adds a new line):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.uix.textinput</span> <span class="k">import</span> <span class="n">TextInput</span>
+<span class="n">textinput</span> <span class="o">=</span> <span class="n">TextInput</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello world&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To create a singleline <a class="reference internal" href="#kivy.uix.textinput.TextInput" title="kivy.uix.textinput.TextInput"><code class="xref py py-class docutils literal"><span class="pre">TextInput</span></code></a>, set the <a class="reference internal" href="#kivy.uix.textinput.TextInput.multiline" title="kivy.uix.textinput.TextInput.multiline"><code class="xref py py-class docutils literal"><span class="pre">TextInput.multiline</span></code></a>
+property to False (the &#8216;enter&#8217; key will defocus the TextInput and emit an
+&#8216;on_text_validate&#8217; event):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_enter</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;User pressed enter in&#39;</span><span class="p">,</span> <span class="n">instance</span><span class="p">)</span>
+
+<span class="n">textinput</span> <span class="o">=</span> <span class="n">TextInput</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello world&#39;</span><span class="p">,</span> <span class="n">multiline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">textinput</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_text_validate</span><span class="o">=</span><span class="n">on_enter</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The textinput&#8217;s text is stored in its <a class="reference internal" href="#kivy.uix.textinput.TextInput.text" title="kivy.uix.textinput.TextInput.text"><code class="xref py py-attr docutils literal"><span class="pre">TextInput.text</span></code></a> property. To run a
+callback when the text changes:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_text</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The widget&#39;</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="s1">&#39;have:&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+<span class="n">textinput</span> <span class="o">=</span> <span class="n">TextInput</span><span class="p">()</span>
+<span class="n">textinput</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">on_text</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can set the <a class="reference internal" href="api-kivy.uix.behaviors.html#kivy.uix.behaviors.FocusBehavior" title="kivy.uix.behaviors.FocusBehavior"><code class="xref py py-class docutils literal"><span class="pre">focus</span></code></a> to a
+Textinput, meaning that the input box will be highlighted and keyboard focus
+will be requested:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">textinput</span> <span class="o">=</span> <span class="n">TextInput</span><span class="p">(</span><span class="n">focus</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The textinput is defocused if the &#8216;escape&#8217; key is pressed, or if another
+widget requests the keyboard. You can bind a callback to the focus property to
+get notified of focus changes:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_focus</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">value</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;User focused&#39;</span><span class="p">,</span> <span class="n">instance</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;User defocused&#39;</span><span class="p">,</span> <span class="n">instance</span><span class="p">)</span>
+
+<span class="n">textinput</span> <span class="o">=</span> <span class="n">TextInput</span><span class="p">()</span>
+<span class="n">textinput</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">focus</span><span class="o">=</span><span class="n">on_focus</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="api-kivy.uix.behaviors.html#kivy.uix.behaviors.FocusBehavior" title="kivy.uix.behaviors.FocusBehavior"><code class="xref py py-class docutils literal"><span class="pre">FocusBehavior</span></code></a>, from which the
+<a class="reference internal" href="#kivy.uix.textinput.TextInput" title="kivy.uix.textinput.TextInput"><code class="xref py py-class docutils literal"><span class="pre">TextInput</span></code></a> inherits, for more details.</p>
+</div>
+<div class="section" id="selection">
+<h2>Selection<a class="headerlink" href="#selection" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The selection is automatically updated when the cursor position changes.
+You can get the currently selected text from the
+<a class="reference internal" href="#kivy.uix.textinput.TextInput.selection_text" title="kivy.uix.textinput.TextInput.selection_text"><code class="xref py py-attr docutils literal"><span class="pre">TextInput.selection_text</span></code></a> property.</p>
+</div>
+<div class="section" id="filtering">
+<h2>Filtering<a class="headerlink" href="#filtering" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>You can control which text can be added to the <a class="reference internal" href="#kivy.uix.textinput.TextInput" title="kivy.uix.textinput.TextInput"><code class="xref py py-class docutils literal"><span class="pre">TextInput</span></code></a> by
+overwriting <a class="reference internal" href="#kivy.uix.textinput.TextInput.insert_text" title="kivy.uix.textinput.TextInput.insert_text"><code class="xref py py-meth docutils literal"><span class="pre">TextInput.insert_text()</span></code></a>. Every string that is typed, pasted
+or inserted by any other means into the <a class="reference internal" href="#kivy.uix.textinput.TextInput" title="kivy.uix.textinput.TextInput"><code class="xref py py-class docutils literal"><span class="pre">TextInput</span></code></a> is passed through
+this function. By overwriting it you can reject or change unwanted characters.</p>
+<p>For example, to write only in capitalized characters:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CapitalInput</span><span class="p">(</span><span class="n">TextInput</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">insert_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">substring</span><span class="p">,</span> <span class="n">from_undo</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">substring</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">CapitalInput</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">insert_text</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">from_undo</span><span class="o">=</span><span class="n">from_undo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Or to only allow floats (0 - 9 and a single period):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FloatInput</span><span class="p">(</span><span class="n">TextInput</span><span class="p">):</span>
+
+    <span class="n">pat</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;[^0-9]&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">insert_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">substring</span><span class="p">,</span> <span class="n">from_undo</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">pat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pat</span>
+        <span class="k">if</span> <span class="s1">&#39;.&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">substring</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">substring</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">FloatInput</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">insert_text</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">from_undo</span><span class="o">=</span><span class="n">from_undo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="default-shortcuts">
+<h2>Default shortcuts<a class="headerlink" href="#default-shortcuts" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Shortcuts</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td>Left</td>
+<td>Move cursor to left</td>
+</tr>
+<tr class="row-odd"><td>Right</td>
+<td>Move cursor to right</td>
+</tr>
+<tr class="row-even"><td>Up</td>
+<td>Move cursor to up</td>
+</tr>
+<tr class="row-odd"><td>Down</td>
+<td>Move cursor to down</td>
+</tr>
+<tr class="row-even"><td>Home</td>
+<td>Move cursor at the beginning of the line</td>
+</tr>
+<tr class="row-odd"><td>End</td>
+<td>Move cursor at the end of the line</td>
+</tr>
+<tr class="row-even"><td>PageUp</td>
+<td>Move cursor to 3 lines before</td>
+</tr>
+<tr class="row-odd"><td>PageDown</td>
+<td>Move cursor to 3 lines after</td>
+</tr>
+<tr class="row-even"><td>Backspace</td>
+<td>Delete the selection or character before the cursor</td>
+</tr>
+<tr class="row-odd"><td>Del</td>
+<td>Delete the selection of character after the cursor</td>
+</tr>
+<tr class="row-even"><td>Shift + &lt;dir&gt;</td>
+<td>Start a text selection. Dir can be Up, Down, Left or
+Right</td>
+</tr>
+<tr class="row-odd"><td>Control + c</td>
+<td>Copy selection</td>
+</tr>
+<tr class="row-even"><td>Control + x</td>
+<td>Cut selection</td>
+</tr>
+<tr class="row-odd"><td>Control + p</td>
+<td>Paste selection</td>
+</tr>
+<tr class="row-even"><td>Control + a</td>
+<td>Select all the content</td>
+</tr>
+<tr class="row-odd"><td>Control + z</td>
+<td>undo</td>
+</tr>
+<tr class="row-even"><td>Control + r</td>
+<td>redo</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">To enable Emacs-style keyboard shortcuts, you can use
+<a class="reference internal" href="api-kivy.uix.behaviors.emacs.html#kivy.uix.behaviors.emacs.EmacsBehavior" title="kivy.uix.behaviors.emacs.EmacsBehavior"><code class="xref py py-class docutils literal"><span class="pre">EmacsBehavior</span></code></a>.</p>
+</div>
+<dl class="class">
+<dt id="kivy.uix.textinput.TextInput">
+<em class="property">class </em><code class="descclassname">kivy.uix.textinput.</code><code class="descname">TextInput</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ベースクラス: <a class="reference internal" href="api-kivy.uix.behaviors.focus.html#kivy.uix.behaviors.focus.FocusBehavior" title="kivy.uix.behaviors.focus.FocusBehavior"><code class="xref py py-class docutils literal"><span class="pre">kivy.uix.behaviors.focus.FocusBehavior</span></code></a>, <a class="reference internal" href="api-kivy.uix.widget.html#kivy.uix.widget.Widget" title="kivy.uix.widget.Widget"><code class="xref py py-class docutils literal"><span class="pre">kivy.uix.widget.Widget</span></code></a></p>
+<p>TextInput class. See module documentation for more information.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Events:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>on_text_validate</cite></dt>
+<dd><p class="first last">Fired only in multiline=False mode when the user hits &#8216;enter&#8217;.
+This will also unfocus the textinput.</p>
+</dd>
+<dt><cite>on_double_tap</cite></dt>
+<dd><p class="first last">Fired when a double tap happens in the text input. The default
+behavior selects the text around the cursor position. More info at
+<a class="reference internal" href="#kivy.uix.textinput.TextInput.on_double_tap" title="kivy.uix.textinput.TextInput.on_double_tap"><code class="xref py py-meth docutils literal"><span class="pre">on_double_tap()</span></code></a>.</p>
+</dd>
+<dt><cite>on_triple_tap</cite></dt>
+<dd><p class="first last">Fired when a triple tap happens in the text input. The default
+behavior selects the line around the cursor position. More info at
+<a class="reference internal" href="#kivy.uix.textinput.TextInput.on_triple_tap" title="kivy.uix.textinput.TextInput.on_triple_tap"><code class="xref py py-meth docutils literal"><span class="pre">on_triple_tap()</span></code></a>.</p>
+</dd>
+<dt><cite>on_quad_touch</cite></dt>
+<dd><p class="first last">Fired when four fingers are touching the text input. The default
+behavior selects the whole text. More info at
+<a class="reference internal" href="#kivy.uix.textinput.TextInput.on_quad_touch" title="kivy.uix.textinput.TextInput.on_quad_touch"><code class="xref py py-meth docutils literal"><span class="pre">on_quad_touch()</span></code></a>.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">When changing a <a class="reference internal" href="#kivy.uix.textinput.TextInput" title="kivy.uix.textinput.TextInput"><code class="xref py py-class docutils literal"><span class="pre">TextInput</span></code></a> property that requires re-drawing,
+e.g. modifying the <a class="reference internal" href="#kivy.uix.textinput.TextInput.text" title="kivy.uix.textinput.TextInput.text"><code class="xref py py-attr docutils literal"><span class="pre">text</span></code></a>, the updates occur on the next
+clock cycle and not instantly. This might cause any changes to the
+<a class="reference internal" href="#kivy.uix.textinput.TextInput" title="kivy.uix.textinput.TextInput"><code class="xref py py-class docutils literal"><span class="pre">TextInput</span></code></a> that occur between the modification and the next
+cycle to be ignored, or to use previous values. For example, after
+a update to the <a class="reference internal" href="#kivy.uix.textinput.TextInput.text" title="kivy.uix.textinput.TextInput.text"><code class="xref py py-attr docutils literal"><span class="pre">text</span></code></a>, changing the cursor in the same clock
+frame will move it using the previous text and will likely end up in an
+incorrect position. The solution is to schedule any updates to occur
+on the next clock cycle using
+<code class="xref py py-meth docutils literal"><span class="pre">schedule_once()</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Selection is cancelled when TextInput is focused. If you need to
+show selection when TextInput is focused, you should delay
+(use Clock.schedule) the call to the functions for selecting
+text (select_all, select_text).</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.10.0 で変更: </span><cite>background_disabled_active</cite> has been removed.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.9.0 で変更: </span><a class="reference internal" href="#kivy.uix.textinput.TextInput" title="kivy.uix.textinput.TextInput"><code class="xref py py-class docutils literal"><span class="pre">TextInput</span></code></a> now inherits from
+<a class="reference internal" href="api-kivy.uix.behaviors.html#kivy.uix.behaviors.FocusBehavior" title="kivy.uix.behaviors.FocusBehavior"><code class="xref py py-class docutils literal"><span class="pre">FocusBehavior</span></code></a>.
+<code class="xref py py-attr docutils literal"><span class="pre">keyboard_mode</span></code>,
+<a class="reference internal" href="api-kivy.uix.behaviors.html#kivy.uix.behaviors.FocusBehavior.show_keyboard" title="kivy.uix.behaviors.FocusBehavior.show_keyboard"><code class="xref py py-meth docutils literal"><span class="pre">show_keyboard()</span></code></a>,
+<a class="reference internal" href="api-kivy.uix.behaviors.html#kivy.uix.behaviors.FocusBehavior.hide_keyboard" title="kivy.uix.behaviors.FocusBehavior.hide_keyboard"><code class="xref py py-meth docutils literal"><span class="pre">hide_keyboard()</span></code></a>,
+<code class="xref py py-meth docutils literal"><span class="pre">focus()</span></code>,
+and <code class="xref py py-attr docutils literal"><span class="pre">input_type</span></code>
+have been removed since they are now inherited
+from <a class="reference internal" href="api-kivy.uix.behaviors.html#kivy.uix.behaviors.FocusBehavior" title="kivy.uix.behaviors.FocusBehavior"><code class="xref py py-class docutils literal"><span class="pre">FocusBehavior</span></code></a>.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.7.0 で変更: </span><cite>on_double_tap</cite>, <cite>on_triple_tap</cite> and <cite>on_quad_touch</cite> events added.</p>
+</div>
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.allow_copy">
+<code class="descname">allow_copy</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.allow_copy" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Decides whether to allow copying the text.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.allow_copy" title="kivy.uix.textinput.TextInput.allow_copy"><code class="xref py py-attr docutils literal"><span class="pre">allow_copy</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> and
+defaults to True.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.auto_indent">
+<code class="descname">auto_indent</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.auto_indent" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Automatically indent multiline text.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.7.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.auto_indent" title="kivy.uix.textinput.TextInput.auto_indent"><code class="xref py py-attr docutils literal"><span class="pre">auto_indent</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> and
+defaults to False.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.background_active">
+<code class="descname">background_active</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.background_active" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Background image of the TextInput when it&#8217;s in focus.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.4.1 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.background_active" title="kivy.uix.textinput.TextInput.background_active"><code class="xref py py-attr docutils literal"><span class="pre">background_active</span></code></a> is a
+<a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a> and
+defaults to &#8216;atlas://data/images/defaulttheme/textinput_active&#8217;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.background_color">
+<code class="descname">background_color</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.background_color" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Current color of the background, in (r, g, b, a) format.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.2.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.background_color" title="kivy.uix.textinput.TextInput.background_color"><code class="xref py py-attr docutils literal"><span class="pre">background_color</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a>
+and defaults to [1, 1, 1, 1] (white).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.background_disabled_normal">
+<code class="descname">background_disabled_normal</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.background_disabled_normal" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Background image of the TextInput when disabled.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.background_disabled_normal" title="kivy.uix.textinput.TextInput.background_disabled_normal"><code class="xref py py-attr docutils literal"><span class="pre">background_disabled_normal</span></code></a> is a
+<a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a> and
+defaults to &#8216;atlas://data/images/defaulttheme/textinput_disabled&#8217;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.background_normal">
+<code class="descname">background_normal</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.background_normal" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Background image of the TextInput when it&#8217;s not in focus.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.4.1 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.background_normal" title="kivy.uix.textinput.TextInput.background_normal"><code class="xref py py-attr docutils literal"><span class="pre">background_normal</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a> and
+defaults to &#8216;atlas://data/images/defaulttheme/textinput&#8217;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.border">
+<code class="descname">border</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.border" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Border used for <a class="reference internal" href="api-kivy.graphics.vertex_instructions.html#kivy.graphics.vertex_instructions.BorderImage" title="kivy.graphics.vertex_instructions.BorderImage"><code class="xref py py-class docutils literal"><span class="pre">BorderImage</span></code></a>
+graphics instruction. Used with <a class="reference internal" href="#kivy.uix.textinput.TextInput.background_normal" title="kivy.uix.textinput.TextInput.background_normal"><code class="xref py py-attr docutils literal"><span class="pre">background_normal</span></code></a> and
+<a class="reference internal" href="#kivy.uix.textinput.TextInput.background_active" title="kivy.uix.textinput.TextInput.background_active"><code class="xref py py-attr docutils literal"><span class="pre">background_active</span></code></a>. Can be used for a custom background.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.4.1 で追加.</span></p>
+</div>
+<p>It must be a list of four values: (bottom, right, top, left). Read the
+BorderImage instruction for more information about how to use it.</p>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.border" title="kivy.uix.textinput.TextInput.border"><code class="xref py py-attr docutils literal"><span class="pre">border</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a> and defaults
+to (4, 4, 4, 4).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.textinput.TextInput.cancel_selection">
+<code class="descname">cancel_selection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput.cancel_selection"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput.cancel_selection" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Cancel current selection (if any).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.textinput.TextInput.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>data=''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput.copy"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput.copy" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Copy the value provided in argument <cite>data</cite> into current clipboard.
+If data is not of type string it will be converted to string.
+If no data is provided then current selection if present is copied.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.cursor">
+<code class="descname">cursor</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.cursor" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Tuple of (row, col) values indicating the current cursor position.
+You can set a new (row, col) if you want to move the cursor. The scrolling
+area will be automatically updated to ensure that the cursor is
+visible inside the viewport.</p>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.cursor" title="kivy.uix.textinput.TextInput.cursor"><code class="xref py py-attr docutils literal"><span class="pre">cursor</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.cursor_blink">
+<code class="descname">cursor_blink</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.cursor_blink" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>This property is used to blink the cursor graphic. The value of
+<a class="reference internal" href="#kivy.uix.textinput.TextInput.cursor_blink" title="kivy.uix.textinput.TextInput.cursor_blink"><code class="xref py py-attr docutils literal"><span class="pre">cursor_blink</span></code></a> is automatically computed. Setting a value on it will
+have no impact.</p>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.cursor_blink" title="kivy.uix.textinput.TextInput.cursor_blink"><code class="xref py py-attr docutils literal"><span class="pre">cursor_blink</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> and
+defaults to False.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.cursor_col">
+<code class="descname">cursor_col</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.cursor_col" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Current column of the cursor.</p>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.cursor_col" title="kivy.uix.textinput.TextInput.cursor_col"><code class="xref py py-attr docutils literal"><span class="pre">cursor_col</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a> to
+cursor[0], read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.cursor_color">
+<code class="descname">cursor_color</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.cursor_color" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Current color of the cursor, in (r, g, b, a) format.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.cursor_color" title="kivy.uix.textinput.TextInput.cursor_color"><code class="xref py py-attr docutils literal"><span class="pre">cursor_color</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a> and
+defaults to [1, 0, 0, 1].</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.textinput.TextInput.cursor_index">
+<code class="descname">cursor_index</code><span class="sig-paren">(</span><em>cursor=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput.cursor_index"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput.cursor_index" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return the cursor index in the text/value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.textinput.TextInput.cursor_offset">
+<code class="descname">cursor_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput.cursor_offset"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput.cursor_offset" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Get the cursor x offset on the current line.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.cursor_pos">
+<code class="descname">cursor_pos</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.cursor_pos" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Current position of the cursor, in (x, y).</p>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.cursor_pos" title="kivy.uix.textinput.TextInput.cursor_pos"><code class="xref py py-attr docutils literal"><span class="pre">cursor_pos</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a>,
+read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.cursor_row">
+<code class="descname">cursor_row</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.cursor_row" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Current row of the cursor.</p>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.cursor_row" title="kivy.uix.textinput.TextInput.cursor_row"><code class="xref py py-attr docutils literal"><span class="pre">cursor_row</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a> to
+cursor[1], read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.cursor_width">
+<code class="descname">cursor_width</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.cursor_width" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Current width of the cursor.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.cursor_width" title="kivy.uix.textinput.TextInput.cursor_width"><code class="xref py py-attr docutils literal"><span class="pre">cursor_width</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a> and
+defaults to &#8216;1sp&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.textinput.TextInput.cut">
+<code class="descname">cut</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput.cut"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput.cut" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Copy current selection to clipboard then delete it from TextInput.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.textinput.TextInput.delete_selection">
+<code class="descname">delete_selection</code><span class="sig-paren">(</span><em>from_undo=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput.delete_selection"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput.delete_selection" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Delete the current text selection (if any).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.disabled_foreground_color">
+<code class="descname">disabled_foreground_color</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.disabled_foreground_color" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Current color of the foreground when disabled, in (r, g, b, a) format.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.disabled_foreground_color" title="kivy.uix.textinput.TextInput.disabled_foreground_color"><code class="xref py py-attr docutils literal"><span class="pre">disabled_foreground_color</span></code></a> is a
+<a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a> and
+defaults to [0, 0, 0, 5] (50% transparent black).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.textinput.TextInput.do_backspace">
+<code class="descname">do_backspace</code><span class="sig-paren">(</span><em>from_undo=False</em>, <em>mode='bkspc'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput.do_backspace"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput.do_backspace" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Do backspace operation from the current cursor position.
+This action might do several things:</p>
+<blockquote>
+<div><ul class="simple">
+<li>removing the current selection if available.</li>
+<li>removing the previous char and move the cursor back.</li>
+<li>do nothing, if we are at the start.</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.textinput.TextInput.do_cursor_movement">
+<code class="descname">do_cursor_movement</code><span class="sig-paren">(</span><em>action</em>, <em>control=False</em>, <em>alt=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput.do_cursor_movement"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput.do_cursor_movement" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Move the cursor relative to it&#8217;s current position.
+Action can be one of :</p>
+<blockquote>
+<div><ul class="simple">
+<li>cursor_left: move the cursor to the left</li>
+<li>cursor_right: move the cursor to the right</li>
+<li>cursor_up: move the cursor on the previous line</li>
+<li>cursor_down: move the cursor on the next line</li>
+<li>cursor_home: move the cursor at the start of the current line</li>
+<li>cursor_end: move the cursor at the end of current line</li>
+<li>cursor_pgup: move one &#8220;page&#8221; before</li>
+<li>cursor_pgdown: move one &#8220;page&#8221; after</li>
+</ul>
+</div></blockquote>
+<p>In addition, the behavior of certain actions can be modified:</p>
+<blockquote>
+<div><ul class="simple">
+<li>control + cursor_left: move the cursor one word to the left</li>
+<li>control + cursor_right: move the cursor one word to the right</li>
+<li>control + cursor_up: scroll up one line</li>
+<li>control + cursor_down: scroll down one line</li>
+<li>control + cursor_home: go to beginning of text</li>
+<li>control + cursor_end: go to end of text</li>
+<li>alt + cursor_up: shift line(s) up</li>
+<li>alt + cursor_down: shift line(s) down</li>
+</ul>
+</div></blockquote>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.9.1 で変更.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.textinput.TextInput.do_redo">
+<code class="descname">do_redo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput.do_redo"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput.do_redo" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Do redo operation.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.3.0 で追加.</span></p>
+</div>
+<p>This action re-does any command that has been un-done by
+do_undo/ctrl+z. This function is automatically called when
+<cite>ctrl+r</cite> keys are pressed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.textinput.TextInput.do_undo">
+<code class="descname">do_undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput.do_undo"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput.do_undo" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Do undo operation.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.3.0 で追加.</span></p>
+</div>
+<p>This action un-does any edits that have been made since the last
+call to reset_undo().
+This function is automatically called when <cite>ctrl+z</cite> keys are pressed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.font_name">
+<code class="descname">font_name</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.font_name" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Filename of the font to use. The path can be absolute or relative.
+Relative paths are resolved by the <a class="reference internal" href="api-kivy.resources.html#kivy.resources.resource_find" title="kivy.resources.resource_find"><code class="xref py py-func docutils literal"><span class="pre">resource_find()</span></code></a>
+function.</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p>Depending on your text provider, the font file may be ignored. However,
+you can mostly use this without problems.</p>
+<p class="last">If the font used lacks the glyphs for the particular language/symbols
+you are using, you will see &#8216;[]&#8217; blank box characters instead of the
+actual glyphs. The solution is to use a font that has the glyphs you
+need to display. For example, to display <img alt="unicodechar" src="_images/unicode-char.png" />, use a font like
+freesans.ttf that has the glyph.</p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.font_name" title="kivy.uix.textinput.TextInput.font_name"><code class="xref py py-attr docutils literal"><span class="pre">font_name</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a> and
+defaults to &#8216;Roboto&#8217;. This value is taken
+from <a class="reference internal" href="api-kivy.config.html#kivy.config.Config" title="kivy.config.Config"><code class="xref py py-class docutils literal"><span class="pre">Config</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.font_size">
+<code class="descname">font_size</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.font_size" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Font size of the text in pixels.</p>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.font_size" title="kivy.uix.textinput.TextInput.font_size"><code class="xref py py-attr docutils literal"><span class="pre">font_size</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a> and
+defaults to 15<a class="reference internal" href="api-kivy.metrics.html#kivy.metrics.sp" title="kivy.metrics.sp"><code class="xref py py-attr docutils literal"><span class="pre">sp</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.foreground_color">
+<code class="descname">foreground_color</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.foreground_color" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Current color of the foreground, in (r, g, b, a) format.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.2.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.foreground_color" title="kivy.uix.textinput.TextInput.foreground_color"><code class="xref py py-attr docutils literal"><span class="pre">foreground_color</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a>
+and defaults to [0, 0, 0, 1] (black).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.textinput.TextInput.get_cursor_from_index">
+<code class="descname">get_cursor_from_index</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput.get_cursor_from_index"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput.get_cursor_from_index" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return the (row, col) of the cursor from text index.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.textinput.TextInput.get_cursor_from_xy">
+<code class="descname">get_cursor_from_xy</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput.get_cursor_from_xy"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput.get_cursor_from_xy" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return the (row, col) of the cursor from an (x, y) position.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.handle_image_left">
+<code class="descname">handle_image_left</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.handle_image_left" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Image used to display the Left handle on the TextInput for selection.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.handle_image_left" title="kivy.uix.textinput.TextInput.handle_image_left"><code class="xref py py-attr docutils literal"><span class="pre">handle_image_left</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a> and
+defaults to &#8216;atlas://data/images/defaulttheme/selector_left&#8217;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.handle_image_middle">
+<code class="descname">handle_image_middle</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.handle_image_middle" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Image used to display the middle handle on the TextInput for cursor
+positioning.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.handle_image_middle" title="kivy.uix.textinput.TextInput.handle_image_middle"><code class="xref py py-attr docutils literal"><span class="pre">handle_image_middle</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a>
+and defaults to &#8216;atlas://data/images/defaulttheme/selector_middle&#8217;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.handle_image_right">
+<code class="descname">handle_image_right</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.handle_image_right" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Image used to display the Right handle on the TextInput for selection.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.handle_image_right" title="kivy.uix.textinput.TextInput.handle_image_right"><code class="xref py py-attr docutils literal"><span class="pre">handle_image_right</span></code></a> is a
+<a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a> and defaults to
+&#8216;atlas://data/images/defaulttheme/selector_right&#8217;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.hint_text">
+<code class="descname">hint_text</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.hint_text" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Hint text of the widget, shown if text is &#8216;&#8217;.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.6.0 で追加.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.10.0 で変更: </span>The property is now an AliasProperty and byte values are decoded to
+strings. The hint text will stay visible when the widget is focused.</p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.hint_text" title="kivy.uix.textinput.TextInput.hint_text"><code class="xref py py-attr docutils literal"><span class="pre">hint_text</span></code></a> a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a> and defaults
+to &#8216;&#8217;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.hint_text_color">
+<code class="descname">hint_text_color</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.hint_text_color" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Current color of the hint_text text, in (r, g, b, a) format.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.6.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.hint_text_color" title="kivy.uix.textinput.TextInput.hint_text_color"><code class="xref py py-attr docutils literal"><span class="pre">hint_text_color</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a> and
+defaults to [0.5, 0.5, 0.5, 1.0] (grey).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.input_filter">
+<code class="descname">input_filter</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.input_filter" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Filters the input according to the specified mode, if not None. If
+None, no filtering is applied.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.input_filter" title="kivy.uix.textinput.TextInput.input_filter"><code class="xref py py-attr docutils literal"><span class="pre">input_filter</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ObjectProperty" title="kivy.properties.ObjectProperty"><code class="xref py py-class docutils literal"><span class="pre">ObjectProperty</span></code></a> and
+defaults to <cite>None</cite>. Can be one of <cite>None</cite>, <cite>&#8216;int&#8217;</cite> (string), or <cite>&#8216;float&#8217;</cite>
+(string), or a callable. If it is <cite>&#8216;int&#8217;</cite>, it will only accept numbers.
+If it is <cite>&#8216;float&#8217;</cite> it will also accept a single period. Finally, if it is
+a callable it will be called with two parameters; the string to be added
+and a bool indicating whether the string is a result of undo (True). The
+callable should return a new substring that will be used instead.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.textinput.TextInput.insert_text">
+<code class="descname">insert_text</code><span class="sig-paren">(</span><em>substring</em>, <em>from_undo=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput.insert_text"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput.insert_text" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Insert new text at the current cursor position. Override this
+function in order to pre-process text for input validation.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.keyboard_suggestions">
+<code class="descname">keyboard_suggestions</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.keyboard_suggestions" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>If True provides auto suggestions on top of keyboard.
+This will only work if <code class="xref py py-attr docutils literal"><span class="pre">input_type</span></code> is set to <cite>text</cite>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.keyboard_suggestions" title="kivy.uix.textinput.TextInput.keyboard_suggestions"><code class="xref py py-attr docutils literal"><span class="pre">keyboard_suggestions</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a>
+and defaults to True.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.line_height">
+<code class="descname">line_height</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.line_height" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Height of a line. This property is automatically computed from the
+<a class="reference internal" href="#kivy.uix.textinput.TextInput.font_name" title="kivy.uix.textinput.TextInput.font_name"><code class="xref py py-attr docutils literal"><span class="pre">font_name</span></code></a>, <a class="reference internal" href="#kivy.uix.textinput.TextInput.font_size" title="kivy.uix.textinput.TextInput.font_size"><code class="xref py py-attr docutils literal"><span class="pre">font_size</span></code></a>. Changing the line_height will have
+no impact.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last"><a class="reference internal" href="#kivy.uix.textinput.TextInput.line_height" title="kivy.uix.textinput.TextInput.line_height"><code class="xref py py-attr docutils literal"><span class="pre">line_height</span></code></a> is the height of a single line of text.
+Use <a class="reference internal" href="#kivy.uix.textinput.TextInput.minimum_height" title="kivy.uix.textinput.TextInput.minimum_height"><code class="xref py py-attr docutils literal"><span class="pre">minimum_height</span></code></a>, which also includes padding, to
+get the height required to display the text properly.</p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.line_height" title="kivy.uix.textinput.TextInput.line_height"><code class="xref py py-attr docutils literal"><span class="pre">line_height</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a>,
+read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.line_spacing">
+<code class="descname">line_spacing</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.line_spacing" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Space taken up between the lines.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.line_spacing" title="kivy.uix.textinput.TextInput.line_spacing"><code class="xref py py-attr docutils literal"><span class="pre">line_spacing</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a> and
+defaults to 0.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.minimum_height">
+<code class="descname">minimum_height</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.minimum_height" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Minimum height of the content inside the TextInput.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.minimum_height" title="kivy.uix.textinput.TextInput.minimum_height"><code class="xref py py-attr docutils literal"><span class="pre">minimum_height</span></code></a> is a readonly
+<a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p><code class="xref py py-attr docutils literal"><span class="pre">minimum_width</span></code> is calculated based on <code class="xref py py-attr docutils literal"><span class="pre">width</span></code> therefore
+code like this will lead to an infinite loop:</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">FancyTextInput</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="n">height</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">minimum_height</span>
+    <span class="n">width</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.multiline">
+<code class="descname">multiline</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.multiline" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>If True, the widget will be able show multiple lines of text. If False,
+the &#8220;enter&#8221; keypress will defocus the textinput instead of adding a new
+line.</p>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.multiline" title="kivy.uix.textinput.TextInput.multiline"><code class="xref py py-attr docutils literal"><span class="pre">multiline</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> and
+defaults to True.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.textinput.TextInput.on_double_tap">
+<code class="descname">on_double_tap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput.on_double_tap"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput.on_double_tap" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>This event is dispatched when a double tap happens
+inside TextInput. The default behavior is to select the
+word around the current cursor position. Override this to provide
+different behavior. Alternatively, you can bind to this
+event to provide additional functionality.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.textinput.TextInput.on_quad_touch">
+<code class="descname">on_quad_touch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput.on_quad_touch"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput.on_quad_touch" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>This event is dispatched when four fingers are touching
+inside TextInput. The default behavior is to select all text.
+Override this to provide different behavior. Alternatively,
+you can bind to this event to provide additional functionality.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.textinput.TextInput.on_triple_tap">
+<code class="descname">on_triple_tap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput.on_triple_tap"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput.on_triple_tap" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>This event is dispatched when a triple tap happens
+inside TextInput. The default behavior is to select the
+line around current cursor position. Override this to provide
+different behavior. Alternatively, you can bind to this
+event to provide additional functionality.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.padding">
+<code class="descname">padding</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.padding" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Padding of the text: [padding_left, padding_top, padding_right,
+padding_bottom].</p>
+<p>padding also accepts a two argument form [padding_horizontal,
+padding_vertical] and a one argument form [padding].</p>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.7.0 で変更: </span>Replaced AliasProperty with VariableListProperty.</p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.padding" title="kivy.uix.textinput.TextInput.padding"><code class="xref py py-attr docutils literal"><span class="pre">padding</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.VariableListProperty" title="kivy.properties.VariableListProperty"><code class="xref py py-class docutils literal"><span class="pre">VariableListProperty</span></code></a> and
+defaults to [6, 6, 6, 6].</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.padding_x">
+<code class="descname">padding_x</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.padding_x" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Horizontal padding of the text: [padding_left, padding_right].</p>
+<p>padding_x also accepts a one argument form [padding_horizontal].</p>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.padding_x" title="kivy.uix.textinput.TextInput.padding_x"><code class="xref py py-attr docutils literal"><span class="pre">padding_x</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.VariableListProperty" title="kivy.properties.VariableListProperty"><code class="xref py py-class docutils literal"><span class="pre">VariableListProperty</span></code></a> and
+defaults to [0, 0]. This might be changed by the current theme.</p>
+<div class="deprecated">
+<p><span class="versionmodified">バージョン 1.7.0 で撤廃: </span>Use <a class="reference internal" href="#kivy.uix.textinput.TextInput.padding" title="kivy.uix.textinput.TextInput.padding"><code class="xref py py-attr docutils literal"><span class="pre">padding</span></code></a> instead.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.padding_y">
+<code class="descname">padding_y</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.padding_y" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Vertical padding of the text: [padding_top, padding_bottom].</p>
+<p>padding_y also accepts a one argument form [padding_vertical].</p>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.padding_y" title="kivy.uix.textinput.TextInput.padding_y"><code class="xref py py-attr docutils literal"><span class="pre">padding_y</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.VariableListProperty" title="kivy.properties.VariableListProperty"><code class="xref py py-class docutils literal"><span class="pre">VariableListProperty</span></code></a> and
+defaults to [0, 0]. This might be changed by the current theme.</p>
+<div class="deprecated">
+<p><span class="versionmodified">バージョン 1.7.0 で撤廃: </span>Use <a class="reference internal" href="#kivy.uix.textinput.TextInput.padding" title="kivy.uix.textinput.TextInput.padding"><code class="xref py py-attr docutils literal"><span class="pre">padding</span></code></a> instead.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.password">
+<code class="descname">password</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.password" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>If True, the widget will display its characters as the character
+set in <a class="reference internal" href="#kivy.uix.textinput.TextInput.password_mask" title="kivy.uix.textinput.TextInput.password_mask"><code class="xref py py-attr docutils literal"><span class="pre">password_mask</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.2.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.password" title="kivy.uix.textinput.TextInput.password"><code class="xref py py-attr docutils literal"><span class="pre">password</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> and
+defaults to False.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.password_mask">
+<code class="descname">password_mask</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.password_mask" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Sets the character used to mask the text when <a class="reference internal" href="#kivy.uix.textinput.TextInput.password" title="kivy.uix.textinput.TextInput.password"><code class="xref py py-attr docutils literal"><span class="pre">password</span></code></a> is True.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.password_mask" title="kivy.uix.textinput.TextInput.password_mask"><code class="xref py py-attr docutils literal"><span class="pre">password_mask</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a> and
+defaults to <cite>&#8216;*&#8217;</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.textinput.TextInput.paste">
+<code class="descname">paste</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput.paste"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput.paste" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Insert text from system <code class="xref py py-class docutils literal"><span class="pre">Clipboard</span></code>
+into the <a class="reference internal" href="#kivy.uix.textinput.TextInput" title="kivy.uix.textinput.TextInput"><code class="xref py py-class docutils literal"><span class="pre">TextInput</span></code></a> at current cursor
+position.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.readonly">
+<code class="descname">readonly</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.readonly" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>If True, the user will not be able to change the content of a textinput.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.3.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.readonly" title="kivy.uix.textinput.TextInput.readonly"><code class="xref py py-attr docutils literal"><span class="pre">readonly</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> and
+defaults to False.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.replace_crlf">
+<code class="descname">replace_crlf</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.replace_crlf" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Automatically replace CRLF with LF.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.1 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.replace_crlf" title="kivy.uix.textinput.TextInput.replace_crlf"><code class="xref py py-attr docutils literal"><span class="pre">replace_crlf</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> and
+defaults to True.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.textinput.TextInput.reset_undo">
+<code class="descname">reset_undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput.reset_undo"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput.reset_undo" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Reset undo and redo lists from memory.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.3.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.scroll_x">
+<code class="descname">scroll_x</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.scroll_x" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>X scrolling value of the viewport. The scrolling is automatically
+updated when the cursor is moved or text changed. If there is no
+user input, the scroll_x and scroll_y properties may be changed.</p>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.scroll_x" title="kivy.uix.textinput.TextInput.scroll_x"><code class="xref py py-attr docutils literal"><span class="pre">scroll_x</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a> and
+defaults to 0.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.scroll_y">
+<code class="descname">scroll_y</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.scroll_y" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Y scrolling value of the viewport. See <a class="reference internal" href="#kivy.uix.textinput.TextInput.scroll_x" title="kivy.uix.textinput.TextInput.scroll_x"><code class="xref py py-attr docutils literal"><span class="pre">scroll_x</span></code></a> for more
+information.</p>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.scroll_y" title="kivy.uix.textinput.TextInput.scroll_y"><code class="xref py py-attr docutils literal"><span class="pre">scroll_y</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a> and
+defaults to 0.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.textinput.TextInput.select_all">
+<code class="descname">select_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput.select_all"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput.select_all" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Select all of the text displayed in this TextInput.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.4.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.textinput.TextInput.select_text">
+<code class="descname">select_text</code><span class="sig-paren">(</span><em>start</em>, <em>end</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/textinput.html#TextInput.select_text"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.textinput.TextInput.select_text" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Select a portion of text displayed in this TextInput.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.4.0 で追加.</span></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>start</cite></dt>
+<dd><p class="first last">Index of textinput.text from where to start selection</p>
+</dd>
+<dt><cite>end</cite></dt>
+<dd><p class="first last">Index of textinput.text till which the selection should be
+displayed</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.selection_color">
+<code class="descname">selection_color</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.selection_color" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Current color of the selection, in (r, g, b, a) format.</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">The color should always have an &#8220;alpha&#8221; component less than 1
+since the selection is drawn after the text.</p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.selection_color" title="kivy.uix.textinput.TextInput.selection_color"><code class="xref py py-attr docutils literal"><span class="pre">selection_color</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a> and
+defaults to [0.1843, 0.6549, 0.8313, .5].</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.selection_from">
+<code class="descname">selection_from</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.selection_from" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>If a selection is in progress or complete, this property will represent
+the cursor index where the selection started.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.4.0 で変更: </span><a class="reference internal" href="#kivy.uix.textinput.TextInput.selection_from" title="kivy.uix.textinput.TextInput.selection_from"><code class="xref py py-attr docutils literal"><span class="pre">selection_from</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a>
+and defaults to None, readonly.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.selection_text">
+<code class="descname">selection_text</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.selection_text" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Current content selection.</p>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.selection_text" title="kivy.uix.textinput.TextInput.selection_text"><code class="xref py py-attr docutils literal"><span class="pre">selection_text</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a>
+and defaults to &#8216;&#8217;, readonly.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.selection_to">
+<code class="descname">selection_to</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.selection_to" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>If a selection is in progress or complete, this property will represent
+the cursor index where the selection started.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.4.0 で変更: </span><a class="reference internal" href="#kivy.uix.textinput.TextInput.selection_to" title="kivy.uix.textinput.TextInput.selection_to"><code class="xref py py-attr docutils literal"><span class="pre">selection_to</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a> and
+defaults to None, readonly.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.suggestion_text">
+<code class="descname">suggestion_text</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.suggestion_text" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Shows a suggestion text at the end of the current line.
+The feature is useful for text autocompletion, and it does not implement
+validation (accepting the suggested text on enter etc.).
+This can also be used by the IME to setup the current word being edited.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.suggestion_text" title="kivy.uix.textinput.TextInput.suggestion_text"><code class="xref py py-attr docutils literal"><span class="pre">suggestion_text</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a> and
+defaults to <cite>&#8216;&#8217;</cite>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.tab_width">
+<code class="descname">tab_width</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.tab_width" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>By default, each tab will be replaced by four spaces on the text
+input widget. You can set a lower or higher value.</p>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.tab_width" title="kivy.uix.textinput.TextInput.tab_width"><code class="xref py py-attr docutils literal"><span class="pre">tab_width</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a> and
+defaults to 4.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.text">
+<code class="descname">text</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.text" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Text of the widget.</p>
+<p>Creation of a simple hello world:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">widget</span> <span class="o">=</span> <span class="n">TextInput</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello world&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you want to create the widget with an unicode string, use:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">widget</span> <span class="o">=</span> <span class="n">TextInput</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;My unicode string&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.text" title="kivy.uix.textinput.TextInput.text"><code class="xref py py-attr docutils literal"><span class="pre">text</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.use_bubble">
+<code class="descname">use_bubble</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.use_bubble" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Indicates whether the cut/copy/paste bubble is used.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.7.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.use_bubble" title="kivy.uix.textinput.TextInput.use_bubble"><code class="xref py py-attr docutils literal"><span class="pre">use_bubble</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a>
+and defaults to True on mobile OS&#8217;s, False on desktop OS&#8217;s.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.use_handles">
+<code class="descname">use_handles</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.use_handles" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Indicates whether the selection handles are displayed.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.use_handles" title="kivy.uix.textinput.TextInput.use_handles"><code class="xref py py-attr docutils literal"><span class="pre">use_handles</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a>
+and defaults to True on mobile OS&#8217;s, False on desktop OS&#8217;s.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.textinput.TextInput.write_tab">
+<code class="descname">write_tab</code><a class="headerlink" href="#kivy.uix.textinput.TextInput.write_tab" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Whether the tab key should move focus to the next widget or if it should
+enter a tab in the <a class="reference internal" href="#kivy.uix.textinput.TextInput" title="kivy.uix.textinput.TextInput"><code class="xref py py-class docutils literal"><span class="pre">TextInput</span></code></a>. If <cite>True</cite> a tab will be written,
+otherwise, focus will move to the next widget.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.textinput.TextInput.write_tab" title="kivy.uix.textinput.TextInput.write_tab"><code class="xref py py-attr docutils literal"><span class="pre">write_tab</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> and
+defaults to <cite>True</cite>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+
+            <div class="footerlinks">
+            <table>
+                <tr>
+                    <td class="leftlink">
+                  <a href="api-kivy.uix.tabbedpanel.html" title="previous chapter">&laquo; TabbedPanel</a></li>
+                  </td>
+                  <td class="rightlink">
+                  <a href="api-kivy.uix.togglebutton.html" title="next chapter">Toggle button &raquo;</a>
+                      </td>
+                  </tr>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 30, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

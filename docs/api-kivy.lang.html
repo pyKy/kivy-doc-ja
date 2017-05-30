@@ -1,0 +1,1527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>Kivy Language &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="_static/kivy.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="index.html" />
+    <link rel="up" title="API Reference" href="api-index.html" />
+    <link rel="next" title="Builder" href="api-kivy.lang.builder.html" />
+    <link rel="prev" title="Motion Event Shape" href="api-kivy.input.shape.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="index.html">Kivy Language</a></h3>
+          <ul>
+<li><a class="reference internal" href="#">Kivy Language</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#syntax-of-a-kv-file">Syntax of a kv File</a></li>
+<li><a class="reference internal" href="#value-expressions-on-property-expressions-ids-and-reserved-keywords">Value Expressions, on_property Expressions, ids and Reserved Keywords</a><ul>
+<li><a class="reference internal" href="#ids">ids</a></li>
+<li><a class="reference internal" href="#valid-expressons">Valid expressons</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#relation-between-values-and-properties">Relation Between Values and Properties</a></li>
+<li><a class="reference internal" href="#graphical-instructions">Graphical Instructions</a></li>
+<li><a class="reference internal" href="#dynamic-classes">Dynamic classes</a></li>
+<li><a class="reference internal" href="#templates">Templates</a><ul>
+<li><a class="reference internal" href="#syntax-of-templates">Syntax of templates</a></li>
+<li><a class="reference internal" href="#template-example">Template example</a></li>
+<li><a class="reference internal" href="#template-limitations">Template limitations</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#redefining-a-widget-s-style">Redefining a widget&#8217;s style</a></li>
+<li><a class="reference internal" href="#redefining-a-widget-s-property-style">Redefining a widget&#8217;s property style</a></li>
+<li><a class="reference internal" href="#order-of-kwargs-and-kv-rule-application">Order of kwargs and KV rule application</a></li>
+<li><a class="reference internal" href="#lang-directives">Lang Directives</a><ul>
+<li><a class="reference internal" href="#import-package">import &lt;package&gt;</a></li>
+<li><a class="reference internal" href="#set-key-expr">set &lt;key&gt; &lt;expr&gt;</a></li>
+<li><a class="reference internal" href="#include-file">include &lt;file&gt;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          <h3><a href="index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="api-index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+              <li>Previous: <a href="api-kivy.input.shape.html" title="previous chapter">Motion Event Shape</a></li>
+              <li>Next: <a href="api-kivy.lang.builder.html" title="next chapter">Builder</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2><ul>
+<li><a class="reference internal" href="#">Kivy Language</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#syntax-of-a-kv-file">Syntax of a kv File</a></li>
+<li><a class="reference internal" href="#value-expressions-on-property-expressions-ids-and-reserved-keywords">Value Expressions, on_property Expressions, ids and Reserved Keywords</a><ul>
+<li><a class="reference internal" href="#ids">ids</a></li>
+<li><a class="reference internal" href="#valid-expressons">Valid expressons</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#relation-between-values-and-properties">Relation Between Values and Properties</a></li>
+<li><a class="reference internal" href="#graphical-instructions">Graphical Instructions</a></li>
+<li><a class="reference internal" href="#dynamic-classes">Dynamic classes</a></li>
+<li><a class="reference internal" href="#templates">Templates</a><ul>
+<li><a class="reference internal" href="#syntax-of-templates">Syntax of templates</a></li>
+<li><a class="reference internal" href="#template-example">Template example</a></li>
+<li><a class="reference internal" href="#template-limitations">Template limitations</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#redefining-a-widget-s-style">Redefining a widget&#8217;s style</a></li>
+<li><a class="reference internal" href="#redefining-a-widget-s-property-style">Redefining a widget&#8217;s property style</a></li>
+<li><a class="reference internal" href="#order-of-kwargs-and-kv-rule-application">Order of kwargs and KV rule application</a></li>
+<li><a class="reference internal" href="#lang-directives">Lang Directives</a><ul>
+<li><a class="reference internal" href="#import-package">import &lt;package&gt;</a></li>
+<li><a class="reference internal" href="#set-key-expr">set &lt;key&gt; &lt;expr&gt;</a></li>
+<li><a class="reference internal" href="#include-file">include &lt;file&gt;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+            
+  <div class="section" id="module-kivy.lang">
+<span id="kivy-language"></span><h1>Kivy Language<a class="headerlink" href="#module-kivy.lang" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>The Kivy language is a language dedicated to describing user interface and
+interactions. You could compare this language to Qt&#8217;s QML
+(<a class="reference external" href="http://qt.nokia.com">http://qt.nokia.com</a>), but we included new concepts such as rule definitions
+(which are somewhat akin to what you may know from CSS), templating and so on.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.7.0 で変更: </span>The Builder doesn&#8217;t execute canvas expressions in realtime anymore. It will
+pack all the expressions that need to be executed first and execute them
+after dispatching input, just before drawing the frame. If you want to
+force the execution of canvas drawing, just call
+<a class="reference internal" href="#kivy.lang.BuilderBase.sync" title="kivy.lang.BuilderBase.sync"><code class="xref py py-meth docutils literal"><span class="pre">Builder.sync</span></code></a>.</p>
+<p>An experimental profiling tool for the kv lang is also included. You can
+activate it by setting the environment variable <cite>KIVY_PROFILE_LANG=1</cite>.
+It will then generate an html file named <cite>builder_stats.html</cite>.</p>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The language consists of several constructs that you can use:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Rules</dt>
+<dd>A rule is similar to a CSS rule. A rule applies to specific widgets (or
+classes thereof) in your widget tree and modifies them in a
+certain way.
+You can use rules to specify interactive behaviour or use them to add
+graphical representations of the widgets they apply to.
+You can target a specific class of widgets (similar to the CSS
+concept of a <em>class</em>) by using the <code class="docutils literal"><span class="pre">cls</span></code> attribute (e.g.
+<code class="docutils literal"><span class="pre">cls=MyTestWidget</span></code>).</dd>
+<dt>A Root Widget</dt>
+<dd>You can use the language to create your entire user interface.
+A kv file must contain only one root widget at most.</dd>
+<dt>Dynamic Classes</dt>
+<dd><em>(introduced in version 1.7.0)</em>
+Dynamic classes let you create new widgets and rules on-the-fly,
+without any Python declaration.</dd>
+<dt>Templates (deprecated)</dt>
+<dd><em>(introduced in version 1.0.5, deprecated from version 1.7.0)</em>
+Templates were used to populate parts of an application, such as
+styling the content of a list (e.g. icon on the left, text on the
+right). They are now deprecated by dynamic classes.</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="syntax-of-a-kv-file">
+<h2>Syntax of a kv File<a class="headerlink" href="#syntax-of-a-kv-file" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>A Kivy language file must have <code class="docutils literal"><span class="pre">.kv</span></code> as filename extension.</p>
+<p>The content of the file should always start with the Kivy header, where
+<cite>version</cite> must be replaced with the Kivy language version you&#8217;re using.
+For now, use 1.0:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="cp">#:kivy `1.0`</span>
+
+<span class="c1"># content here</span>
+</pre></div>
+</div>
+<p>The <cite>content</cite> can contain rule definitions, a root widget, dynamic class
+definitions and templates:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="c1"># Syntax of a rule definition. Note that several Rules can share the same</span>
+<span class="c1"># definition (as in CSS). Note the braces: they are part of the definition.</span>
+<span class="nn">&lt;Rule1,Rule2&gt;</span><span class="p">:</span>
+    <span class="c1"># .. definitions ..</span>
+
+<span class="nn">&lt;Rule3&gt;</span><span class="p">:</span>
+    <span class="c1"># .. definitions ..</span>
+
+<span class="c1"># Syntax for creating a root widget</span>
+<span class="nc">RootClassName</span><span class="p">:</span>
+    <span class="c1"># .. definitions ..</span>
+
+<span class="c1"># Syntax for creating a dynamic class</span>
+<span class="nn">&lt;NewWidget@BaseClass&gt;</span><span class="p">:</span>
+    <span class="c1"># .. definitions ..</span>
+
+<span class="c1"># Syntax for create a template</span>
+<span class="p">[</span><span class="nc">TemplateName</span><span class="o">@</span><span class="nc">BaseClass1</span><span class="p">,</span><span class="nc">BaseClass2</span><span class="p">]:</span>
+    <span class="c1"># .. definitions ..</span>
+</pre></div>
+</div>
+<p>Regardless of whether it&#8217;s a rule, root widget, dynamic class or
+template you&#8217;re defining, the definition should look like this:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="c1"># With the braces it&#39;s a rule. Without them, it&#39;s a root widget.</span>
+<span class="nn">&lt;ClassName&gt;</span><span class="p">:</span>
+    <span class="na">prop1</span><span class="p">:</span> <span class="n">value1</span>
+    <span class="na">prop2</span><span class="p">:</span> <span class="n">value2</span>
+
+    <span class="nc">canvas</span><span class="p">:</span>
+        <span class="nc">CanvasInstruction1</span><span class="p">:</span>
+            <span class="na">canvasprop1</span><span class="p">:</span> <span class="n">value1</span>
+        <span class="nc">CanvasInstruction2</span><span class="p">:</span>
+            <span class="na">canvasprop2</span><span class="p">:</span> <span class="n">value2</span>
+
+    <span class="nc">AnotherClass</span><span class="p">:</span>
+        <span class="na">prop3</span><span class="p">:</span> <span class="n">value1</span>
+</pre></div>
+</div>
+<p>Here <cite>prop1</cite> and <cite>prop2</cite> are the properties of <cite>ClassName</cite> and <cite>prop3</cite> is the
+property of <cite>AnotherClass</cite>. If the widget doesn&#8217;t have a property with
+the given name, an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ObjectProperty" title="kivy.properties.ObjectProperty"><code class="xref py py-class docutils literal"><span class="pre">ObjectProperty</span></code></a> will be
+automatically created and added to the widget.</p>
+<p><cite>AnotherClass</cite> will be created and added as a child of the <cite>ClassName</cite>
+instance.</p>
+<ul class="simple">
+<li>The indentation is important and must be consistent. The spacing must be a
+multiple of the number of spaces used on the first indented line. Spaces
+are encouraged: mixing tabs and spaces is not recommended.</li>
+<li>The value of a property must be given on a single line (for now at least).</li>
+<li>The <cite>canvas</cite> property is special: you can put graphics instructions in it
+to create a graphical representation of the current class.</li>
+</ul>
+<p>Here is a simple example of a kv file that contains a root widget:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="cp">#:kivy 1.0</span>
+
+<span class="nc">Button</span><span class="p">:</span>
+    <span class="na">text</span><span class="p">:</span> <span class="s1">&#39;Hello world&#39;</span>
+</pre></div>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.7.0 で変更: </span>The indentation is not limited to 4 spaces anymore. The spacing must be a
+multiple of the number of spaces used on the first indented line.</p>
+</div>
+<p>Both the <a class="reference internal" href="#kivy.lang.BuilderBase.load_file" title="kivy.lang.BuilderBase.load_file"><code class="xref py py-meth docutils literal"><span class="pre">load_file()</span></code></a> and the
+<a class="reference internal" href="#kivy.lang.BuilderBase.load_string" title="kivy.lang.BuilderBase.load_string"><code class="xref py py-meth docutils literal"><span class="pre">load_string()</span></code></a> methods
+return the root widget defined in your kv file/string. They will also add any
+class and template definitions to the <a class="reference internal" href="api-kivy.factory.html#kivy.factory.Factory" title="kivy.factory.Factory"><code class="xref py py-class docutils literal"><span class="pre">Factory</span></code></a> for later
+usage.</p>
+</div>
+<div class="section" id="value-expressions-on-property-expressions-ids-and-reserved-keywords">
+<h2>Value Expressions, on_property Expressions, ids and Reserved Keywords<a class="headerlink" href="#value-expressions-on-property-expressions-ids-and-reserved-keywords" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>When you specify a property&#8217;s value, the value is evaluated as a Python
+expression. This expression can be static or dynamic, which means that
+the value can use the values of other properties using reserved keywords.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>self</dt>
+<dd><p class="first">The keyword self references the &#8220;current widget instance&#8221;:</p>
+<div class="last highlight-kv"><div class="highlight"><pre><span></span><span class="nc">Button</span><span class="p">:</span>
+    <span class="na">text</span><span class="p">:</span> <span class="s1">&#39;My state is </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span>
+</pre></div>
+</div>
+</dd>
+<dt>root</dt>
+<dd><p class="first">This keyword is available only in rule definitions and represents the
+root widget of the rule (the first instance of the rule):</p>
+<div class="last highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;MyWidget&gt;</span><span class="p">:</span>
+    <span class="na">custom</span><span class="p">:</span> <span class="s1">&#39;Hello world&#39;</span>
+    <span class="nc">Button</span><span class="p">:</span>
+        <span class="na">text</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">custom</span>
+</pre></div>
+</div>
+</dd>
+<dt>app</dt>
+<dd><p class="first">This keyword always refers to your app instance. It&#8217;s equivalent
+to a call to <a class="reference internal" href="api-kivy.app.html#kivy.app.App.get_running_app" title="kivy.app.App.get_running_app"><code class="xref py py-meth docutils literal"><span class="pre">kivy.app.App.get_running_app()</span></code></a> in Python.</p>
+<div class="last highlight-kv"><div class="highlight"><pre><span></span><span class="nc">Label</span><span class="p">:</span>
+    <span class="na">text</span><span class="p">:</span> <span class="n">app</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+</dd>
+<dt>args</dt>
+<dd><p class="first">This keyword is available in on_&lt;action&gt; callbacks. It refers to the
+arguments passed to the callback.</p>
+<div class="last highlight-kv"><div class="highlight"><pre><span></span><span class="nc">TextInput</span><span class="p">:</span>
+    <span class="na">on_focus</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">insert_text</span><span class="p">(</span><span class="s2">&quot;Focus&quot;</span> <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">else</span> <span class="s2">&quot;No focus&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div></blockquote>
+<div class="section" id="ids">
+<h3>ids<a class="headerlink" href="#ids" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Class definitions may contain ids which can be used as a keywords::</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;MyWidget&gt;</span><span class="p">:</span>
+    <span class="nc">Button</span><span class="p">:</span>
+        <span class="na">id</span><span class="p">:</span> <span class="n">btn1</span>
+    <span class="nc">Button</span><span class="p">:</span>
+        <span class="na">text</span><span class="p">:</span> <span class="s1">&#39;The state of the other button is </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">btn1</span><span class="o">.</span><span class="n">state</span>
+</pre></div>
+</div>
+<p>Please note that the <cite>id</cite> will not be available in the widget instance:
+it is used exclusively for external references. <cite>id</cite> is a weakref to the
+widget, and not the widget itself. The widget itself can be accessed
+with <cite>id.__self__</cite> (<cite>btn1.__self__</cite> in this case).</p>
+<p>When the kv file is processed, weakrefs to all the widgets tagged with ids are
+added to the root widgets <cite>ids</cite> dictionary. In other words, following on from
+the example above, the buttons state could also be accessed as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">widget</span> <span class="o">=</span> <span class="n">MyWidget</span><span class="p">()</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">widget</span><span class="o">.</span><span class="n">ids</span><span class="p">[</span><span class="s2">&quot;btn1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">state</span>
+
+<span class="c1"># Or, as an alternative syntax,</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">widget</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">btn1</span><span class="o">.</span><span class="n">state</span>
+</pre></div>
+</div>
+<p>Note that the outermost widget applies the kv rules to all its inner widgets
+before any other rules are applied. This means if an inner widget contains ids,
+these ids may not be available during the inner widget&#8217;s <cite>__init__</cite> function.</p>
+</div>
+<div class="section" id="valid-expressons">
+<h3>Valid expressons<a class="headerlink" href="#valid-expressons" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>There are two places that accept python statements in a kv file:
+after a property, which assigns to the property the result of the expression
+(such as the text of a button as shown above) and after a on_property, which
+executes the statement when the property is updated (such as on_state).</p>
+<p>In the former case, the
+<a class="reference external" href="http://docs.python.org/2/reference/expressions.html">expression</a> can only
+span a single line, cannot be extended to multiple lines using newline
+escaping, and must return a value. An example of a valid expression is
+<code class="docutils literal"><span class="pre">text:</span> <span class="pre">self.state</span> <span class="pre">and</span> <span class="pre">('up'</span> <span class="pre">if</span> <span class="pre">self.state</span> <span class="pre">==</span> <span class="pre">'normal'</span> <span class="pre">else</span> <span class="pre">'down')</span></code>.</p>
+<p>In the latter case, multiple single line statements are valid including
+multi-line statements that escape their newline, as long as they don&#8217;t
+add an indentation level.</p>
+<p>Examples of valid statements are:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">on_press</span><span class="p">:</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">&#39;normal&#39;</span><span class="p">:</span> <span class="k">print</span><span class="p">(</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+<span class="n">on_state</span><span class="p">:</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">&#39;normal&#39;</span><span class="p">:</span> <span class="k">print</span><span class="p">(</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> <span class="k">print</span><span class="p">(</span><span class="s1">&#39;down&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">&#39;normal&#39;</span><span class="p">:</span> \
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;multiline normal&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span> <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span>
+    <span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>An example of a invalid statement:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">on_state</span><span class="p">:</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">&#39;normal&#39;</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="relation-between-values-and-properties">
+<h2>Relation Between Values and Properties<a class="headerlink" href="#relation-between-values-and-properties" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>When you use the Kivy language, you might notice that we do some work
+behind the scenes to automatically make things work properly. You should
+know that <a class="reference internal" href="api-kivy.properties.html"><span class="doc">Properties</span></a> implement the
+<a class="reference external" href="http://en.wikipedia.org/wiki/Observer_pattern">Observer Design Pattern</a>.
+That means that you can bind your own function to be
+called when the value of a property changes (i.e. you passively
+<cite>observe</cite> the property for potential changes).</p>
+<p>The Kivy language detects properties in your <cite>value</cite> expression and will create
+create callbacks to automatically update the property via your expression when
+changes occur.</p>
+<p>Here&#8217;s a simple example that demonstrates this behaviour:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nc">Button</span><span class="p">:</span>
+    <span class="na">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example, the parser detects that <cite>self.state</cite> is a dynamic value (a
+property). The <code class="xref py py-attr docutils literal"><span class="pre">state</span></code> property of the button
+can change at any moment (when the user touches it).
+We now want this button to display its own state as text, even as the state
+changes. To do this, we use the state property of the Button and use it in the
+value expression for the button&#8217;s <cite>text</cite> property, which controls what text is
+displayed on the button (We also convert the state to a string representation).
+Now, whenever the button state changes, the text property will be updated
+automatically.</p>
+<p>Remember: The value is a python expression! That means that you can do
+something more interesting like:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nc">Button</span><span class="p">:</span>
+    <span class="na">text</span><span class="p">:</span> <span class="s1">&#39;Plop world&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">&#39;normal&#39;</span> <span class="k">else</span> <span class="s1">&#39;Release me!&#39;</span>
+</pre></div>
+</div>
+<p>The Button text changes with the state of the button. By default, the button
+text will be &#8216;Plop world&#8217;, but when the button is being pressed, the text will
+change to &#8216;Release me!&#8217;.</p>
+<p>More precisely, the kivy language parser detects all substrings of the form
+<cite>X.a.b</cite> where <cite>X</cite> is <cite>self</cite> or <cite>root</cite> or <cite>app</cite> or a known id, and <cite>a</cite> and <cite>b</cite>
+are properties: it then adds the appropriate dependencies to cause the
+the constraint to be reevaluated whenever something changes. For example,
+this works exactly as expected:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;IndexedExample&gt;</span><span class="p">:</span>
+    <span class="na">beta</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">d</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>However, due to limitations in the parser which hopefully may be lifted in the
+future, the following doesn&#8217;t work:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;BadExample&gt;</span><span class="p">:</span>
+    <span class="na">beta</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">d</span><span class="p">]</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="n">f</span>
+</pre></div>
+</div>
+<p>indeed the <cite>.e.f</cite> part is not recognized because it doesn&#8217;t follow the expected
+pattern, and so, does not result in an appropriate dependency being setup.
+Instead, an intermediate property should be introduced to allow the following
+constraint:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;GoodExample&gt;</span><span class="p">:</span>
+    <span class="na">alpha</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">d</span><span class="p">]</span>
+    <span class="na">beta</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="n">f</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="graphical-instructions">
+<h2>Graphical Instructions<a class="headerlink" href="#graphical-instructions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The graphical instructions are a special part of the Kivy language. They are
+handled by the &#8216;canvas&#8217; property definition:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nc">Widget</span><span class="p">:</span>
+    <span class="nc">canvas</span><span class="p">:</span>
+        <span class="nc">Color</span><span class="p">:</span>
+            <span class="na">rgb</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="nc">Rectangle</span><span class="p">:</span>
+            <span class="na">size</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+            <span class="na">pos</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
+</pre></div>
+</div>
+<p>All the classes added inside the canvas property must be derived from the
+<a class="reference internal" href="api-kivy.graphics.html#kivy.graphics.Instruction" title="kivy.graphics.Instruction"><code class="xref py py-class docutils literal"><span class="pre">Instruction</span></code></a> class. You cannot put any Widget class
+inside the canvas property (as that would not make sense because a
+widget is not a graphics instruction).</p>
+<p>If you want to do theming, you&#8217;ll have the same question as in CSS: which rules
+have been executed first? In our case, the rules are executed
+in processing order (i.e. top-down).</p>
+<p>If you want to change how Buttons are rendered, you can create your own kv file
+and add something like this:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;Button&gt;</span><span class="p">:</span>
+    <span class="nc">canvas</span><span class="p">:</span>
+        <span class="nc">Color</span><span class="p">:</span>
+            <span class="na">rgb</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="nc">Rectangle</span><span class="p">:</span>
+            <span class="na">pos</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
+            <span class="na">size</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+        <span class="nc">Rectangle</span><span class="p">:</span>
+            <span class="na">pos</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
+            <span class="na">size</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture_size</span>
+            <span class="na">texture</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture</span>
+</pre></div>
+</div>
+<p>This will result in buttons having a red background with the label in the
+bottom left, in addition to all the preceding rules.
+You can clear all the previous instructions by using the <cite>Clear</cite> command:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;Button&gt;</span><span class="p">:</span>
+    <span class="nc">canvas</span><span class="p">:</span>
+        <span class="na">Clear</span>
+        <span class="nc">Color</span><span class="p">:</span>
+            <span class="na">rgb</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="nc">Rectangle</span><span class="p">:</span>
+            <span class="na">pos</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
+            <span class="na">size</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+        <span class="nc">Rectangle</span><span class="p">:</span>
+            <span class="na">pos</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
+            <span class="na">size</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture_size</span>
+            <span class="na">texture</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture</span>
+</pre></div>
+</div>
+<p>Then, only your rules that follow the <cite>Clear</cite> command will be taken into
+consideration.</p>
+</div>
+<div class="section" id="dynamic-classes">
+<span id="id1"></span><h2>Dynamic classes<a class="headerlink" href="#dynamic-classes" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Dynamic classes allow you to create new widgets on-the-fly, without any python
+declaration in the first place. The syntax of the dynamic classes is similar to
+the Rules, but you need to specify the base classes you want to
+subclass.</p>
+<p>The syntax looks like:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="c1"># Simple inheritance</span>
+<span class="nn">&lt;NewWidget@Button&gt;</span><span class="p">:</span>
+    <span class="c1"># kv code here ...</span>
+
+<span class="c1"># Multiple inheritance</span>
+<span class="nn">&lt;NewWidget@ButtonBehavior+Label&gt;</span><span class="p">:</span>
+    <span class="c1"># kv code here ...</span>
+</pre></div>
+</div>
+<p>The <cite>&#64;</cite> character is used to separate your class name from the classes you want
+to subclass. The Python equivalent would have been:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Simple inheritance</span>
+<span class="k">class</span> <span class="nc">NewWidget</span><span class="p">(</span><span class="n">Button</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="c1"># Multiple inheritance</span>
+<span class="k">class</span> <span class="nc">NewWidget</span><span class="p">(</span><span class="n">ButtonBehavior</span><span class="p">,</span> <span class="n">Label</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Any new properties, usually added in python code, should be declared
+first. If the property doesn&#8217;t exist in the dynamic class, it will be
+automatically created as an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ObjectProperty" title="kivy.properties.ObjectProperty"><code class="xref py py-class docutils literal"><span class="pre">ObjectProperty</span></code></a>
+(pre 1.8.0) or as an appropriate typed property (from version
+1.8.0).</p>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.8.0 で変更: </span>If the property value is an expression that can be evaluated right away (no
+external binding), then the value will be used as default value of the
+property, and the type of the value will be used for the specialization of
+the Property class. In other terms: if you declare <cite>hello: &#8220;world&#8221;</cite>, a new
+<a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a> will be instantiated, with the
+default value <cite>&#8220;world&#8221;</cite>. Lists, tuples, dictionaries and strings are
+supported.</p>
+</div>
+<p>Let&#8217;s illustrate the usage of these dynamic classes with an
+implementation of a basic Image button. We could derive our classes from
+the Button and just add a property for the image filename:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;ImageButton@Button&gt;</span><span class="p">:</span>
+    <span class="na">source</span><span class="p">:</span> <span class="bp">None</span>
+
+    <span class="nc">Image</span><span class="p">:</span>
+        <span class="na">source</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">source</span>
+        <span class="na">pos</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">pos</span>
+        <span class="na">size</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">size</span>
+
+<span class="c1"># let&#39;s use the new classes in another rule:</span>
+<span class="nn">&lt;MainUI&gt;</span><span class="p">:</span>
+    <span class="nc">BoxLayout</span><span class="p">:</span>
+        <span class="nc">ImageButton</span><span class="p">:</span>
+            <span class="na">source</span><span class="p">:</span> <span class="s1">&#39;hello.png&#39;</span>
+            <span class="na">on_press</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">do_something</span><span class="p">()</span>
+        <span class="nc">ImageButton</span><span class="p">:</span>
+            <span class="na">source</span><span class="p">:</span> <span class="s1">&#39;world.png&#39;</span>
+            <span class="na">on_press</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">do_something_else</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In Python, you can create an instance of the dynamic class as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.factory</span> <span class="kn">import</span> <span class="n">Factory</span>
+<span class="n">button_inst</span> <span class="o">=</span> <span class="n">Factory</span><span class="o">.</span><span class="n">ImageButton</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Using dynamic classes, a child class can be declared before it&#8217;s parent.
+This however, leads to the unintuitive situation where the parent
+properties/methods override those of the child. Be careful if you choose
+to do this.</p>
+</div>
+</div>
+<div class="section" id="templates">
+<span id="template-usage"></span><h2>Templates<a class="headerlink" href="#templates" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.7.0 で変更: </span>Template usage is now deprecated. Please use Dynamic classes instead.</p>
+</div>
+<div class="section" id="syntax-of-templates">
+<h3>Syntax of templates<a class="headerlink" href="#syntax-of-templates" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Using a template in Kivy requires 2 things :</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>a context to pass for the context (will be ctx inside template).</li>
+<li>a kv definition of the template.</li>
+</ol>
+</div></blockquote>
+<p>Syntax of a template:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="c1"># With only one base class</span>
+<span class="p">[</span><span class="nc">ClassName</span><span class="o">@</span><span class="nc">BaseClass</span><span class="p">]:</span>
+    <span class="c1"># .. definitions ..</span>
+
+<span class="c1"># With more than one base class</span>
+<span class="p">[</span><span class="nc">ClassName</span><span class="o">@</span><span class="nc">BaseClass1</span><span class="p">,</span><span class="nc">BaseClass2</span><span class="p">]:</span>
+    <span class="c1"># .. definitions ..</span>
+</pre></div>
+</div>
+<p>For example, for a list, you&#8217;ll need to create a entry with a image on
+the left, and a label on the right. You can create a template for making
+that definition easier to use.
+So, we&#8217;ll create a template that uses 2 entries in the context: an image
+filename and a title:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nc">IconItem</span><span class="o">@</span><span class="nc">BoxLayout</span><span class="p">]:</span>
+    <span class="nc">Image</span><span class="p">:</span>
+        <span class="na">source</span><span class="p">:</span> <span class="n">ctx</span><span class="o">.</span><span class="n">image</span>
+    <span class="nc">Label</span><span class="p">:</span>
+        <span class="na">text</span><span class="p">:</span> <span class="n">ctx</span><span class="o">.</span><span class="n">title</span>
+</pre></div>
+</div>
+<p>Then in Python, you can instantiate the template using:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.lang</span> <span class="kn">import</span> <span class="n">Builder</span>
+
+<span class="c1"># create a template with hello world + an image</span>
+<span class="c1"># the context values should be passed as kwargs to the Builder.template</span>
+<span class="c1"># function</span>
+<span class="n">icon1</span> <span class="o">=</span> <span class="n">Builder</span><span class="o">.</span><span class="n">template</span><span class="p">(</span><span class="s1">&#39;IconItem&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Hello world&#39;</span><span class="p">,</span>
+    <span class="n">image</span><span class="o">=</span><span class="s1">&#39;myimage.png&#39;</span><span class="p">)</span>
+
+<span class="c1"># create a second template with other information</span>
+<span class="n">ctx</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Another hello world&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;image&#39;</span><span class="p">:</span> <span class="s1">&#39;myimage2.png&#39;</span><span class="p">}</span>
+<span class="n">icon2</span> <span class="o">=</span> <span class="n">Builder</span><span class="o">.</span><span class="n">template</span><span class="p">(</span><span class="s1">&#39;IconItem&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">ctx</span><span class="p">)</span>
+<span class="c1"># and use icon1 and icon2 as other widget.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="template-example">
+<h3>Template example<a class="headerlink" href="#template-example" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Most of time, when you are creating a screen in the kv lang, you use a lot of
+redefinitions. In our example, we&#8217;ll create a Toolbar, based on a
+BoxLayout, and put in a few <a class="reference internal" href="api-kivy.uix.image.html#kivy.uix.image.Image" title="kivy.uix.image.Image"><code class="xref py py-class docutils literal"><span class="pre">Image</span></code></a> widgets that
+will react to the <em>on_touch_down</em> event.</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;MyToolbar&gt;</span><span class="p">:</span>
+    <span class="nc">BoxLayout</span><span class="p">:</span>
+        <span class="nc">Image</span><span class="p">:</span>
+            <span class="na">source</span><span class="p">:</span> <span class="s1">&#39;data/text.png&#39;</span>
+            <span class="na">size</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture_size</span>
+            <span class="na">size_hint</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span>
+            <span class="na">on_touch_down</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">collide_point</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span> <span class="ow">and</span> <span class="n">root</span><span class="o">.</span><span class="n">create_text</span><span class="p">()</span>
+
+        <span class="nc">Image</span><span class="p">:</span>
+            <span class="na">source</span><span class="p">:</span> <span class="s1">&#39;data/image.png&#39;</span>
+            <span class="na">size</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture_size</span>
+            <span class="na">size_hint</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span>
+            <span class="na">on_touch_down</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">collide_point</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span> <span class="ow">and</span> <span class="n">root</span><span class="o">.</span><span class="n">create_image</span><span class="p">()</span>
+
+        <span class="nc">Image</span><span class="p">:</span>
+            <span class="na">source</span><span class="p">:</span> <span class="s1">&#39;data/video.png&#39;</span>
+            <span class="na">size</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture_size</span>
+            <span class="na">size_hint</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span>
+            <span class="na">on_touch_down</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">collide_point</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span> <span class="ow">and</span> <span class="n">root</span><span class="o">.</span><span class="n">create_video</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>We can see that the size and size_hint attribute are exactly the same.
+More than that, the callback in on_touch_down and the image are changing.
+These can be the variable part of the template that we can put into a context.
+Let&#8217;s try to create a template for the Image:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nc">ToolbarButton</span><span class="o">@</span><span class="nc">Image</span><span class="p">]:</span>
+
+    <span class="c1"># This is the same as before</span>
+    <span class="na">size</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture_size</span>
+    <span class="na">size_hint</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span>
+
+    <span class="c1"># Now, we are using the ctx for the variable part of the template</span>
+    <span class="na">source</span><span class="p">:</span> <span class="s1">&#39;data/</span><span class="si">%s</span><span class="s1">.png&#39;</span> <span class="o">%</span> <span class="n">ctx</span><span class="o">.</span><span class="n">image</span>
+    <span class="na">on_touch_down</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">collide_point</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span> <span class="ow">and</span> <span class="n">ctx</span><span class="o">.</span><span class="n">callback</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The template can be used directly in the MyToolbar rule:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;MyToolbar&gt;</span><span class="p">:</span>
+    <span class="nc">BoxLayout</span><span class="p">:</span>
+        <span class="nc">ToolbarButton</span><span class="p">:</span>
+            <span class="na">image</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span>
+            <span class="na">callback</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">create_text</span>
+        <span class="nc">ToolbarButton</span><span class="p">:</span>
+            <span class="na">image</span><span class="p">:</span> <span class="s1">&#39;image&#39;</span>
+            <span class="na">callback</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">create_image</span>
+        <span class="nc">ToolbarButton</span><span class="p">:</span>
+            <span class="na">image</span><span class="p">:</span> <span class="s1">&#39;video&#39;</span>
+            <span class="na">callback</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">create_video</span>
+</pre></div>
+</div>
+<p>That&#8217;s all :)</p>
+</div>
+<div class="section" id="template-limitations">
+<h3>Template limitations<a class="headerlink" href="#template-limitations" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>When you are creating a context:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">you cannot use references other than &#8220;root&#8221;:</p>
+<blockquote>
+<div><div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;MyRule&gt;</span><span class="p">:</span>
+    <span class="nc">Widget</span><span class="p">:</span>
+        <span class="na">id</span><span class="p">:</span> <span class="n">mywidget</span>
+        <span class="na">value</span><span class="p">:</span> <span class="s1">&#39;bleh&#39;</span>
+    <span class="nc">Template</span><span class="p">:</span>
+        <span class="na">ctxkey</span><span class="p">:</span> <span class="n">mywidget</span><span class="o">.</span><span class="n">value</span> <span class="c1"># &lt;&lt; fail, this references the id</span>
+        <span class="c1"># mywidget</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">not all of the dynamic parts will be understood:</p>
+<blockquote>
+<div><div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;MyRule&gt;</span><span class="p">:</span>
+    <span class="nc">Template</span><span class="p">:</span>
+        <span class="na">ctxkey</span><span class="p">:</span> <span class="s1">&#39;value 1&#39;</span> <span class="k">if</span> <span class="n">root</span><span class="o">.</span><span class="n">prop1</span> <span class="k">else</span> <span class="s1">&#39;value2&#39;</span> <span class="c1"># &lt;&lt; even if</span>
+        <span class="c1"># root.prop1 is a property, if it changes value, ctxkey</span>
+        <span class="c1"># will not be updated</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+<p>Template definitions also replace any similarly named definitions in their
+entirety and thus do not support inheritance.</p>
+</div>
+</div>
+<div class="section" id="redefining-a-widget-s-style">
+<span id="redefining-style"></span><h2>Redefining a widget&#8217;s style<a class="headerlink" href="#redefining-a-widget-s-style" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Sometimes we would like to inherit from a widget in order to use its Python
+properties without also using its .kv defined style. For example, we would
+like to inherit from a Label, but we would also like to define our own
+canvas instructions instead of automatically using the canvas instructions
+inherited from the Label. We can achieve this by prepending a dash (-) before
+the class name in the .kv style definition.</p>
+<p>In myapp.py:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Label</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>and in my.kv:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;-MyWidget&gt;</span><span class="p">:</span>
+    <span class="nc">canvas</span><span class="p">:</span>
+        <span class="nc">Color</span><span class="p">:</span>
+            <span class="na">rgb</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+        <span class="nc">Rectangle</span><span class="p">:</span>
+            <span class="na">size</span><span class="p">:</span> <span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>MyWidget will now have a Color and Rectangle instruction in its canvas
+without any of the instructions inherited from the Label.</p>
+</div>
+<div class="section" id="redefining-a-widget-s-property-style">
+<h2>Redefining a widget&#8217;s property style<a class="headerlink" href="#redefining-a-widget-s-property-style" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Similar to <a class="reference internal" href="#redefining-style"><span class="std std-ref">redefining style</span></a>, sometimes we
+would like to inherit from a widget, keep all its KV defined styles, except for
+the style applied to a specific property. For example, we would
+like to inherit from a <a class="reference internal" href="api-kivy.uix.button.html#kivy.uix.button.Button" title="kivy.uix.button.Button"><code class="xref py py-class docutils literal"><span class="pre">Button</span></code></a>, but we would also
+like to set our own <cite>state_image</cite>, rather then relying on the
+<cite>background_normal</cite> and <cite>background_down</cite> values. We can achieve this by
+prepending a dash (-) before the <cite>state_image</cite> property name in the .kv style
+definition.</p>
+<p>In myapp.py:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Button</span><span class="p">):</span>
+
+    <span class="n">new_background</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="s1">&#39;my_background.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and in my.kv:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;MyWidget&gt;</span><span class="p">:</span>
+    <span class="na">-state_image</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_background</span>
+</pre></div>
+</div>
+<p>MyWidget will now have a <cite>state_image</cite> background set only by <cite>new_background</cite>,
+and not by any previous styles that may have set <cite>state_image</cite>.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Although the previous rules are cleared, they are still applied during
+widget construction and are only removed when the new rule with the dash
+is reached. This means that initially, previous rules could be used to set
+the property.</p>
+</div>
+</div>
+<div class="section" id="order-of-kwargs-and-kv-rule-application">
+<h2>Order of kwargs and KV rule application<a class="headerlink" href="#order-of-kwargs-and-kv-rule-application" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Properties can be initialized in KV as well as in python. For example, in KV:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;MyRule@Widget&gt;</span><span class="p">:</span>
+    <span class="na">text</span><span class="p">:</span> <span class="s1">&#39;Hello&#39;</span>
+    <span class="na">ramp</span><span class="p">:</span> <span class="mf">45.</span>
+    <span class="na">order</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p>Then <cite>MyRule()</cite> would initialize all three kivy properties to
+the given KV values. Separately in python, if the properties already exist as
+kivy properties one can do for example <cite>MyRule(line=&#8217;Bye&#8217;, side=55)</cite>.</p>
+<p>However, what will be the final values of the properties when
+<cite>MyRule(text=&#8217;Bye&#8217;, order=55)</cite> is executed? The quick rule is that python
+initialization is stronger than KV initialization only for constant rules.</p>
+<p>Specifically, the <cite>kwargs</cite> provided to the python initializer are always
+applied first. So in the above example, <cite>text</cite> is set to
+<cite>&#8216;Bye&#8217;</cite> and <cite>order</cite> is set to <cite>55</cite>. Then, all the KV rules are applied, except
+those constant rules that overwrite a python initializer provided value.</p>
+<p>That is, the KV rules that do not creates bindings such as <cite>text: &#8216;Hello&#8217;</cite>
+and <cite>ramp: 45.</cite>, if a value for that property has been provided in python, then
+that rule will not be applied.</p>
+<p>So in the <cite>MyRule(text=&#8217;Bye&#8217;, order=55)</cite> example, <cite>text</cite> will be <cite>&#8216;Bye&#8217;</cite>,
+<cite>ramp</cite> will be <cite>45.</cite>, and <cite>order</cite>, which creates a binding, will first be set
+to <cite>55</cite>, but then when KV rules are applied will end up being whatever
+<cite>self.x + 10</cite> is.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.9.1 で変更: </span>Before, KV rules always overwrote the python values, now, python values
+are not overwritten by constant rules.</p>
+</div>
+</div>
+<div class="section" id="lang-directives">
+<h2>Lang Directives<a class="headerlink" href="#lang-directives" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>You can use directives to add declarative commands, such as imports or constant
+definitions, to the lang files. Directives are added as comments in the
+following format:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="cp">#:&lt;directivename&gt; &lt;options&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="import-package">
+<h3>import &lt;package&gt;<a class="headerlink" href="#import-package" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.5 で追加.</span></p>
+</div>
+<p>Syntax:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="cp">#:import &lt;alias&gt; &lt;package&gt;</span>
+</pre></div>
+</div>
+<p>You can import a package by writing:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="cp">#:import os os</span>
+
+<span class="nn">&lt;Rule&gt;</span><span class="p">:</span>
+    <span class="nc">Button</span><span class="p">:</span>
+        <span class="na">text</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Or more complex:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="cp">#:import ut kivy.utils</span>
+
+<span class="nn">&lt;Rule&gt;</span><span class="p">:</span>
+    <span class="nc">canvas</span><span class="p">:</span>
+        <span class="nc">Color</span><span class="p">:</span>
+            <span class="na">rgba</span><span class="p">:</span> <span class="n">ut</span><span class="o">.</span><span class="n">get_random_color</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.7 で追加.</span></p>
+</div>
+<p>You can directly import classes from a module:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="cp">#: import Animation kivy.animation.Animation</span>
+<span class="nn">&lt;Rule&gt;</span><span class="p">:</span>
+    <span class="na">on_prop</span><span class="p">:</span> <span class="n">Animation</span><span class="p">(</span><span class="n">x</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-key-expr">
+<h3>set &lt;key&gt; &lt;expr&gt;<a class="headerlink" href="#set-key-expr" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.6 で追加.</span></p>
+</div>
+<p>Syntax:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="cp">#:set &lt;key&gt; &lt;expr&gt;</span>
+</pre></div>
+</div>
+<p>Set a key that will be available anywhere in the kv. For example:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="cp">#:set my_color (.4, .3, .4)</span>
+<span class="cp">#:set my_color_hl (.5, .4, .5)</span>
+
+<span class="nn">&lt;Rule&gt;</span><span class="p">:</span>
+    <span class="na">state</span><span class="p">:</span> <span class="s1">&#39;normal&#39;</span>
+    <span class="nc">canvas</span><span class="p">:</span>
+        <span class="nc">Color</span><span class="p">:</span>
+            <span class="na">rgb</span><span class="p">:</span> <span class="n">my_color</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">&#39;normal&#39;</span> <span class="k">else</span> <span class="n">my_color_hl</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="include-file">
+<h3>include &lt;file&gt;<a class="headerlink" href="#include-file" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+<p>Syntax:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="cp">#:include [force] &lt;file&gt;</span>
+</pre></div>
+</div>
+<p>Includes an external kivy file. This allows you to split complex
+widgets into their own files. If the include is forced, the file
+will first be unloaded and then reloaded again. For example:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="c1"># Test.kv</span>
+<span class="cp">#:include mycomponent.kv</span>
+<span class="cp">#:include force mybutton.kv</span>
+
+<span class="nn">&lt;Rule&gt;</span><span class="p">:</span>
+    <span class="na">state</span><span class="p">:</span> <span class="s1">&#39;normal&#39;</span>
+    <span class="nc">MyButton</span><span class="p">:</span>
+    <span class="nc">MyComponent</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="c1"># mycomponent.kv</span>
+<span class="cp">#:include mybutton.kv</span>
+
+<span class="nn">&lt;MyComponent&gt;</span><span class="p">:</span>
+    <span class="nc">MyButton</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="c1"># mybutton.kv</span>
+
+<span class="nn">&lt;MyButton&gt;</span><span class="p">:</span>
+    <span class="nc">canvas</span><span class="p">:</span>
+        <span class="nc">Color</span><span class="p">:</span>
+            <span class="na">rgb</span><span class="p">:</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="nc">Rectangle</span><span class="p">:</span>
+            <span class="na">pos</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
+            <span class="na">size</span><span class="p">:</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="kivy.lang.Observable">
+<em class="property">class </em><code class="descclassname">kivy.lang.</code><code class="descname">Observable</code><a class="headerlink" href="#kivy.lang.Observable" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ベースクラス: <a class="reference internal" href="api-kivy.event.html#kivy.event.ObjectWithUid" title="kivy.event.ObjectWithUid"><code class="xref py py-class docutils literal"><span class="pre">kivy.event.ObjectWithUid</span></code></a></p>
+<p><a class="reference internal" href="#kivy.lang.Observable" title="kivy.lang.Observable"><code class="xref py py-class docutils literal"><span class="pre">Observable</span></code></a> is a stub class defining the methods required
+for binding. <code class="xref py py-class docutils literal"><span class="pre">EventDispatcher</span></code> is (the) one example of a class that
+implements the binding interface. See <code class="xref py py-class docutils literal"><span class="pre">EventDispatcher</span></code> for details.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
+</div>
+<dl class="method">
+<dt id="kivy.lang.Observable.fbind">
+<code class="descname">fbind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.lang.Observable.fbind" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See <code class="xref py py-meth docutils literal"><span class="pre">EventDispatcher.fbind()</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>To keep backward compatibility with derived classes which may have
+inherited from <a class="reference internal" href="#kivy.lang.Observable" title="kivy.lang.Observable"><code class="xref py py-class docutils literal"><span class="pre">Observable</span></code></a> before, the
+<a class="reference internal" href="#kivy.lang.Observable.fbind" title="kivy.lang.Observable.fbind"><code class="xref py py-meth docutils literal"><span class="pre">fbind()</span></code></a> method was added. The default implementation
+of <a class="reference internal" href="#kivy.lang.Observable.fbind" title="kivy.lang.Observable.fbind"><code class="xref py py-meth docutils literal"><span class="pre">fbind()</span></code></a> is to create a partial
+function that it passes to bind while saving the uid and largs/kwargs.
+However, <a class="reference internal" href="#kivy.lang.Observable.funbind" title="kivy.lang.Observable.funbind"><code class="xref py py-meth docutils literal"><span class="pre">funbind()</span></code></a> (and <a class="reference internal" href="#kivy.lang.Observable.unbind_uid" title="kivy.lang.Observable.unbind_uid"><code class="xref py py-meth docutils literal"><span class="pre">unbind_uid()</span></code></a>) are fairly
+inefficient since we have to first lookup this partial function
+using the largs/kwargs or uid and then call <code class="xref py py-meth docutils literal"><span class="pre">unbind()</span></code> on
+the returned function. It is recommended to overwrite
+these methods in derived classes to bind directly for
+better performance.</p>
+<p class="last">Similarly to <code class="xref py py-meth docutils literal"><span class="pre">EventDispatcher.fbind()</span></code>, this method returns
+0 on failure and a positive unique uid on success. This uid can be
+used with <a class="reference internal" href="#kivy.lang.Observable.unbind_uid" title="kivy.lang.Observable.unbind_uid"><code class="xref py py-meth docutils literal"><span class="pre">unbind_uid()</span></code></a>.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.lang.Observable.funbind">
+<code class="descname">funbind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.lang.Observable.funbind" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See <a class="reference internal" href="#kivy.lang.Observable.fbind" title="kivy.lang.Observable.fbind"><code class="xref py py-meth docutils literal"><span class="pre">fbind()</span></code></a> and <code class="xref py py-meth docutils literal"><span class="pre">EventDispatcher.funbind()</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.lang.Observable.unbind_uid">
+<code class="descname">unbind_uid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.lang.Observable.unbind_uid" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>See <a class="reference internal" href="#kivy.lang.Observable.fbind" title="kivy.lang.Observable.fbind"><code class="xref py py-meth docutils literal"><span class="pre">fbind()</span></code></a> and <code class="xref py py-meth docutils literal"><span class="pre">EventDispatcher.unbind_uid()</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="kivy.lang.BuilderBase">
+<em class="property">class </em><code class="descclassname">kivy.lang.</code><code class="descname">BuilderBase</code><a class="reference internal" href="_modules/kivy/lang/builder.html#BuilderBase"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.lang.BuilderBase" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal"><span class="pre">builtins.object</span></code></p>
+<p>The Builder is responsible for creating a <a class="reference internal" href="#kivy.lang.Parser" title="kivy.lang.Parser"><code class="xref py py-class docutils literal"><span class="pre">Parser</span></code></a> for parsing a
+kv file, merging the results into its internal rules, templates, etc.</p>
+<p>By default, <code class="xref py py-class docutils literal"><span class="pre">Builder</span></code> is a global Kivy instance used in widgets
+that you can use to load other kv files in addition to the default ones.</p>
+<dl class="method">
+<dt id="kivy.lang.BuilderBase.apply">
+<code class="descname">apply</code><span class="sig-paren">(</span><em>widget</em>, <em>ignored_consts=set()</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/lang/builder.html#BuilderBase.apply"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.lang.BuilderBase.apply" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Search all the rules that match the widget and apply them.</p>
+<p><cite>ignored_consts</cite> is a set or list type whose elements are property
+names for which constant KV rules (i.e. those that don&#8217;t create
+bindings) of that widget will not be applied. This allows e.g. skipping
+constant rules that overwrite a value initialized in python.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.lang.BuilderBase.apply_rules">
+<code class="descname">apply_rules</code><span class="sig-paren">(</span><em>widget</em>, <em>rule_name</em>, <em>ignored_consts=set()</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/lang/builder.html#BuilderBase.apply_rules"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.lang.BuilderBase.apply_rules" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Search all the rules that match <cite>rule_name</cite> widget
+and apply them to <cite>widget</cite>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+</div>
+<p><cite>ignored_consts</cite> is a set or list type whose elements are property
+names for which constant KV rules (i.e. those that don&#8217;t create
+bindings) of that widget will not be applied. This allows e.g. skipping
+constant rules that overwrite a value initialized in python.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.lang.BuilderBase.load_file">
+<code class="descname">load_file</code><span class="sig-paren">(</span><em>filename</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/lang/builder.html#BuilderBase.load_file"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.lang.BuilderBase.load_file" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Insert a file into the language builder and return the root widget
+(if defined) of the kv file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>rulesonly</cite>: bool, defaults to False</dt>
+<dd><p class="first last">If True, the Builder will raise an exception if you have a root
+widget inside the definition.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.lang.BuilderBase.load_string">
+<code class="descname">load_string</code><span class="sig-paren">(</span><em>string</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/lang/builder.html#BuilderBase.load_string"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.lang.BuilderBase.load_string" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Insert a string into the Language Builder and return the root widget
+(if defined) of the kv string.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>rulesonly</cite>: bool, defaults to False</dt>
+<dd><p class="first last">If True, the Builder will raise an exception if you have a root
+widget inside the definition.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.lang.BuilderBase.match">
+<code class="descname">match</code><span class="sig-paren">(</span><em>widget</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/lang/builder.html#BuilderBase.match"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.lang.BuilderBase.match" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return a list of <code class="xref py py-class docutils literal"><span class="pre">ParserRule</span></code> objects matching the widget.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.lang.BuilderBase.match_rule_name">
+<code class="descname">match_rule_name</code><span class="sig-paren">(</span><em>rule_name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/lang/builder.html#BuilderBase.match_rule_name"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.lang.BuilderBase.match_rule_name" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return a list of <code class="xref py py-class docutils literal"><span class="pre">ParserRule</span></code> objects matching the widget.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.lang.BuilderBase.sync">
+<code class="descname">sync</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/lang/builder.html#BuilderBase.sync"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.lang.BuilderBase.sync" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Execute all the waiting operations, such as the execution of all the
+expressions related to the canvas.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.7.0 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.lang.BuilderBase.template">
+<code class="descname">template</code><span class="sig-paren">(</span><em>*args</em>, <em>**ctx</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/lang/builder.html#BuilderBase.template"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.lang.BuilderBase.template" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Create a specialized template using a specific context.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.5 で追加.</span></p>
+</div>
+<p>With templates, you can construct custom widgets from a kv lang
+definition by giving them a context. Check <a class="reference internal" href="#template-usage"><span class="std std-ref">Template usage</span></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.lang.BuilderBase.unbind_property">
+<code class="descname">unbind_property</code><span class="sig-paren">(</span><em>widget</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/lang/builder.html#BuilderBase.unbind_property"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.lang.BuilderBase.unbind_property" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Unbind the handlers created by all the rules of the widget that set
+the name.</p>
+<p>This effectively clears all the rules of widget that take the form:</p>
+<div class="highlight-kv"><div class="highlight"><pre><span></span><span class="na">name</span><span class="p">:</span> <span class="n">rule</span>
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">Builder</span><span class="o">.</span><span class="n">load_string</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="gp">... </span><span class="s1">Widget:</span>
+<span class="gp">... </span><span class="s1">    height: self.width / 2. if self.disabled else self.width</span>
+<span class="gp">... </span><span class="s1">    x: self.y + 50</span>
+<span class="gp">... </span><span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span><span class="o">.</span><span class="n">size</span>
+<span class="go">[100, 100]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span><span class="o">.</span><span class="n">pos</span>
+<span class="go">[50, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span><span class="o">.</span><span class="n">size</span>
+<span class="go">[500, 500]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Builder</span><span class="o">.</span><span class="n">unbind_property</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">222</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span><span class="o">.</span><span class="n">size</span>
+<span class="go">[222, 500]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span><span class="o">.</span><span class="n">pos</span>
+<span class="go">[550, 500]</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.9.1 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.lang.BuilderBase.unbind_widget">
+<code class="descname">unbind_widget</code><span class="sig-paren">(</span><em>uid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/lang/builder.html#BuilderBase.unbind_widget"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.lang.BuilderBase.unbind_widget" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Unbind all the handlers created by the KV rules of the
+widget. The <code class="xref py py-attr docutils literal"><span class="pre">kivy.uix.widget.Widget.uid</span></code> is passed here
+instead of the widget itself, because Builder is using it in the
+widget destructor.</p>
+<p>This effectively clears all the KV rules associated with this widget.
+For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">Builder</span><span class="o">.</span><span class="n">load_string</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="gp">... </span><span class="s1">Widget:</span>
+<span class="gp">... </span><span class="s1">    height: self.width / 2. if self.disabled else self.width</span>
+<span class="gp">... </span><span class="s1">    x: self.y + 50</span>
+<span class="gp">... </span><span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span><span class="o">.</span><span class="n">size</span>
+<span class="go">[100, 100]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span><span class="o">.</span><span class="n">pos</span>
+<span class="go">[50, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span><span class="o">.</span><span class="n">size</span>
+<span class="go">[500, 500]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Builder</span><span class="o">.</span><span class="n">unbind_widget</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">uid</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">222</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span><span class="o">.</span><span class="n">size</span>
+<span class="go">[222, 500]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span><span class="o">.</span><span class="n">pos</span>
+<span class="go">[50, 500]</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.7.2 で追加.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.lang.BuilderBase.unload_file">
+<code class="descname">unload_file</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/lang/builder.html#BuilderBase.unload_file"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.lang.BuilderBase.unload_file" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Unload all rules associated with a previously imported file.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.8 で追加.</span></p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">This will not remove rules or templates already applied/used on
+current widgets. It will only effect the next widgets creation or
+template invocation.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="kivy.lang.BuilderException">
+<em class="property">exception </em><code class="descclassname">kivy.lang.</code><code class="descname">BuilderException</code><span class="sig-paren">(</span><em>context</em>, <em>line</em>, <em>message</em>, <em>cause=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/lang/builder.html#BuilderException"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.lang.BuilderException" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ベースクラス: <a class="reference internal" href="api-kivy.lang.parser.html#kivy.lang.parser.ParserException" title="kivy.lang.parser.ParserException"><code class="xref py py-class docutils literal"><span class="pre">kivy.lang.parser.ParserException</span></code></a></p>
+<p>Exception raised when the Builder failed to apply a rule on a widget.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="kivy.lang.Parser">
+<em class="property">class </em><code class="descclassname">kivy.lang.</code><code class="descname">Parser</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/lang/parser.html#Parser"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.lang.Parser" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal"><span class="pre">builtins.object</span></code></p>
+<p>Create a Parser object to parse a Kivy language file or Kivy content.</p>
+<dl class="method">
+<dt id="kivy.lang.Parser.parse">
+<code class="descname">parse</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/lang/parser.html#Parser.parse"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.lang.Parser.parse" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Parse the contents of a Parser file and return a list
+of root objects.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.lang.Parser.parse_level">
+<code class="descname">parse_level</code><span class="sig-paren">(</span><em>level</em>, <em>lines</em>, <em>spaces=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/lang/parser.html#Parser.parse_level"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.lang.Parser.parse_level" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Parse the current level (level * spaces) indentation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.lang.Parser.strip_comments">
+<code class="descname">strip_comments</code><span class="sig-paren">(</span><em>lines</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/lang/parser.html#Parser.strip_comments"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.lang.Parser.strip_comments" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Remove all comments from all lines in-place.
+Comments need to be on a single line and not at the end of a line.
+i.e. a comment line&#8217;s first non-whitespace character must be a #.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="kivy.lang.ParserException">
+<em class="property">exception </em><code class="descclassname">kivy.lang.</code><code class="descname">ParserException</code><span class="sig-paren">(</span><em>context</em>, <em>line</em>, <em>message</em>, <em>cause=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/lang/parser.html#ParserException"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.lang.ParserException" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+<p>Exception raised when something wrong happened in a kv file.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api-kivy.lang.builder.html">Builder</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api-kivy.lang.parser.html">Parser</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+            <div class="footerlinks">
+            <table>
+                <tr>
+                    <td class="leftlink">
+                  <a href="api-kivy.input.shape.html" title="previous chapter">&laquo; Motion Event Shape</a></li>
+                  </td>
+                  <td class="rightlink">
+                  <a href="api-kivy.lang.builder.html" title="next chapter">Builder &raquo;</a>
+                      </td>
+                  </tr>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 30, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

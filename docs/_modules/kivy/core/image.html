@@ -1,0 +1,1342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>kivy.core.image &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../../_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../_static/kivy.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="../../../index.html" />
+    <link rel="up" title="kivy" href="../../kivy.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="../../../_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="../../../gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="../../../api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="../../../search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="../../../index.html">kivy.core.image</a></h3>
+          
+          <h3><a href="../../../index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.vkeyboard.html">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2></div>
+            
+  <h1>kivy.core.image のソースコード</h1><div class="highlight"><pre>
+<span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Image</span>
+<span class="sd">=====</span>
+
+<span class="sd">Core classes for loading images and converting them to a</span>
+<span class="sd">:class:`~kivy.graphics.texture.Texture`. The raw image data can be keep in</span>
+<span class="sd">memory for further access.</span>
+
+<span class="sd">In-memory image loading</span>
+<span class="sd">-----------------------</span>
+
+<span class="sd">.. versionadded:: 1.9.0</span>
+
+<span class="sd">    Official support for in-memory loading. Not all the providers support it,</span>
+<span class="sd">    but currently SDL2, pygame, pil and imageio work.</span>
+
+<span class="sd">To load an image with a filename, you would usually do::</span>
+
+<span class="sd">    from kivy.core.image import Image as CoreImage</span>
+<span class="sd">    im = CoreImage(&quot;image.png&quot;)</span>
+
+<span class="sd">You can also load the image data directly from a memory block. Instead of</span>
+<span class="sd">passing the filename, you&#39;ll need to pass the data as a BytesIO object</span>
+<span class="sd">together with an &quot;ext&quot; parameter. Both are mandatory::</span>
+
+<span class="sd">    import io</span>
+<span class="sd">    from kivy.core.image import Image as CoreImage</span>
+<span class="sd">    data = io.BytesIO(open(&quot;image.png&quot;, &quot;rb&quot;).read())</span>
+<span class="sd">    im = CoreImage(data, ext=&quot;png&quot;)</span>
+
+<span class="sd">By default, the image will not be cached as our internal cache requires a</span>
+<span class="sd">filename. If you want caching, add a filename that represents your file (it</span>
+<span class="sd">will be used only for caching)::</span>
+
+<span class="sd">    import io</span>
+<span class="sd">    from kivy.core.image import Image as CoreImage</span>
+<span class="sd">    data = io.BytesIO(open(&quot;image.png&quot;, &quot;rb&quot;).read())</span>
+<span class="sd">    im = CoreImage(data, ext=&quot;png&quot;, filename=&quot;image.png&quot;)</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">base64</span> <span class="k">import</span> <span class="n">b64decode</span>
+<span class="kn">import</span> <span class="nn">imghdr</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Image&#39;</span><span class="p">,</span> <span class="s1">&#39;ImageLoader&#39;</span><span class="p">,</span> <span class="s1">&#39;ImageData&#39;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">kivy.event</span> <span class="k">import</span> <span class="n">EventDispatcher</span>
+<span class="kn">from</span> <span class="nn">kivy.core</span> <span class="k">import</span> <span class="n">core_register_libs</span>
+<span class="kn">from</span> <span class="nn">kivy.logger</span> <span class="k">import</span> <span class="n">Logger</span>
+<span class="kn">from</span> <span class="nn">kivy.cache</span> <span class="k">import</span> <span class="n">Cache</span>
+<span class="kn">from</span> <span class="nn">kivy.clock</span> <span class="k">import</span> <span class="n">Clock</span>
+<span class="kn">from</span> <span class="nn">kivy.atlas</span> <span class="k">import</span> <span class="n">Atlas</span>
+<span class="kn">from</span> <span class="nn">kivy.resources</span> <span class="k">import</span> <span class="n">resource_find</span>
+<span class="kn">from</span> <span class="nn">kivy.utils</span> <span class="k">import</span> <span class="n">platform</span>
+<span class="kn">from</span> <span class="nn">kivy.compat</span> <span class="k">import</span> <span class="n">string_types</span>
+<span class="kn">from</span> <span class="nn">kivy.setupconfig</span> <span class="k">import</span> <span class="n">USE_SDL2</span>
+<span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="k">import</span> <span class="n">BytesIO</span>
+
+
+<span class="c1"># late binding</span>
+<span class="n">Texture</span> <span class="o">=</span> <span class="n">TextureRegion</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<span class="c1"># register image caching only for keep_data=True</span>
+<span class="n">Cache</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;kv.image&#39;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">Cache</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;kv.atlas&#39;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="ImageData"><a class="viewcode-back" href="../../../api-kivy.core.image.html#kivy.core.image.ImageData">[ドキュメント]</a><span class="k">class</span> <span class="nc">ImageData</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Container for images and mipmap images.</span>
+<span class="sd">    The container will always have at least the mipmap level 0.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;fmt&#39;</span><span class="p">,</span> <span class="s1">&#39;mipmaps&#39;</span><span class="p">,</span> <span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="s1">&#39;flip_vertical&#39;</span><span class="p">,</span> <span class="s1">&#39;source_image&#39;</span><span class="p">)</span>
+    <span class="n">_supported_fmts</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;rgb&#39;</span><span class="p">,</span> <span class="s1">&#39;rgba&#39;</span><span class="p">,</span> <span class="s1">&#39;bgr&#39;</span><span class="p">,</span> <span class="s1">&#39;bgra&#39;</span><span class="p">,</span> <span class="s1">&#39;s3tc_dxt1&#39;</span><span class="p">,</span> <span class="s1">&#39;s3tc_dxt3&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;s3tc_dxt5&#39;</span><span class="p">,</span> <span class="s1">&#39;pvrtc_rgb2&#39;</span><span class="p">,</span> <span class="s1">&#39;pvrtc_rgb4&#39;</span><span class="p">,</span> <span class="s1">&#39;pvrtc_rgba2&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;pvrtc_rgba4&#39;</span><span class="p">,</span> <span class="s1">&#39;etc1_rgb8&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">fmt</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">flip_vertical</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">source_image</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">rowlength</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">fmt</span> <span class="ow">in</span> <span class="n">ImageData</span><span class="o">.</span><span class="n">_supported_fmts</span>
+
+        <span class="c1">#: Decoded image format, one of a available texture format</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fmt</span> <span class="o">=</span> <span class="n">fmt</span>
+
+        <span class="c1">#: Data for each mipmap.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mipmaps</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_mipmap</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">rowlength</span><span class="p">)</span>
+
+        <span class="c1">#: Image source, if available</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">source</span>
+
+        <span class="c1">#: Indicate if the texture will need to be vertically flipped</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flip_vertical</span> <span class="o">=</span> <span class="n">flip_vertical</span>
+
+        <span class="c1"># the original image, which we might need to save if it is a memoryview</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">source_image</span> <span class="o">=</span> <span class="n">source_image</span>
+
+    <span class="k">def</span> <span class="nf">release_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">mm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mipmaps</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">mm</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">item</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">source_image</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">width</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Image width in pixels.</span>
+<span class="sd">        (If the image is mipmapped, it will use the level 0)</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mipmaps</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Image height in pixels.</span>
+<span class="sd">        (If the image is mipmapped, it will use the level 0)</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mipmaps</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Image data.</span>
+<span class="sd">        (If the image is mipmapped, it will use the level 0)</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mipmaps</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">rowlength</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Image rowlength.</span>
+<span class="sd">        (If the image is mipmapped, it will use the level 0)</span>
+
+<span class="sd">        .. versionadded:: 1.9.0</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mipmaps</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Image (width, height) in pixels.</span>
+<span class="sd">        (If the image is mipmapped, it will use the level 0)</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">mm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mipmaps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">mm</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">mm</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">have_mipmap</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mipmaps</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;&lt;ImageData width=</span><span class="si">%d</span><span class="s1"> height=</span><span class="si">%d</span><span class="s1"> fmt=</span><span class="si">%s</span><span class="s1"> &#39;</span>
+                <span class="s1">&#39;source=</span><span class="si">%r</span><span class="s1"> with </span><span class="si">%d</span><span class="s1"> images&gt;&#39;</span> <span class="o">%</span> <span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fmt</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mipmaps</span><span class="p">)))</span>
+
+<div class="viewcode-block" id="ImageData.add_mipmap"><a class="viewcode-back" href="../../../api-kivy.core.image.html#kivy.core.image.ImageData.add_mipmap">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">add_mipmap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">rowlength</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Add a image for a specific mipmap level.</span>
+
+<span class="sd">        .. versionadded:: 1.0.7</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mipmaps</span><span class="p">[</span><span class="n">level</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">width</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">height</span><span class="p">),</span> <span class="n">data</span><span class="p">,</span> <span class="n">rowlength</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="ImageData.get_mipmap"><a class="viewcode-back" href="../../../api-kivy.core.image.html#kivy.core.image.ImageData.get_mipmap">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">get_mipmap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Get the mipmap image at a specific level if it exists</span>
+
+<span class="sd">        .. versionadded:: 1.0.7</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="n">level</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rowlength</span><span class="p">)</span>
+        <span class="k">assert</span><span class="p">(</span><span class="n">level</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mipmaps</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mipmaps</span><span class="p">[</span><span class="n">level</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="ImageData.iterate_mipmaps"><a class="viewcode-back" href="../../../api-kivy.core.image.html#kivy.core.image.ImageData.iterate_mipmaps">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">iterate_mipmaps</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Iterate over all mipmap images available.</span>
+
+<span class="sd">        .. versionadded:: 1.0.7</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">mm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mipmaps</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mm</span><span class="p">)):</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">item</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Invalid mipmap level, found empty one&#39;</span><span class="p">)</span>
+            <span class="k">yield</span> <span class="n">x</span><span class="p">,</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span></div></div>
+
+
+<span class="k">class</span> <span class="nc">ImageLoaderBase</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Base to implement an image loader.&#39;&#39;&#39;</span>
+
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_texture&#39;</span><span class="p">,</span> <span class="s1">&#39;_data&#39;</span><span class="p">,</span> <span class="s1">&#39;filename&#39;</span><span class="p">,</span> <span class="s1">&#39;keep_data&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;_mipmap&#39;</span><span class="p">,</span> <span class="s1">&#39;_nocache&#39;</span><span class="p">,</span> <span class="s1">&#39;_ext&#39;</span><span class="p">,</span> <span class="s1">&#39;_inline&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_mipmap</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;mipmap&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">keep_data</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;keep_data&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_nocache</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;nocache&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ext</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ext&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_inline</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;inline&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inline</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;rawdata&#39;</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_textures</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Load an image&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">can_save</span><span class="p">():</span>
+        <span class="sd">&#39;&#39;&#39;Indicate if the loader can save the Image object</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">can_load_memory</span><span class="p">():</span>
+        <span class="sd">&#39;&#39;&#39;Indicate if the loader can load an image by passing data</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">save</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">populate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_textures</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">fname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filename</span>
+        <span class="k">if</span> <span class="n">__debug__</span><span class="p">:</span>
+            <span class="n">Logger</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="s1">&#39;Image: </span><span class="si">%r</span><span class="s1">, populate to textures (</span><span class="si">%d</span><span class="s1">)&#39;</span> <span class="o">%</span>
+                         <span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)))</span>
+
+        <span class="k">for</span> <span class="n">count</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)):</span>
+
+            <span class="c1"># first, check if a texture with the same name already exist in the</span>
+            <span class="c1"># cache</span>
+            <span class="nb">chr</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+            <span class="n">uid</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">|</span><span class="si">%d</span><span class="s1">|</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mipmap</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+            <span class="n">texture</span> <span class="o">=</span> <span class="n">Cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;kv.texture&#39;</span><span class="p">,</span> <span class="n">uid</span><span class="p">)</span>
+
+            <span class="c1"># if not create it and append to the cache</span>
+            <span class="k">if</span> <span class="n">texture</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">imagedata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">count</span><span class="p">]</span>
+                <span class="n">source</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}{}</span><span class="s1">|&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="s1">&#39;zip|&#39;</span> <span class="k">if</span> <span class="n">fname</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.zip&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_nocache</span><span class="p">)</span>
+                <span class="n">imagedata</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">source</span><span class="p">)</span> <span class="o">+</span> <span class="n">uid</span>
+                <span class="n">texture</span> <span class="o">=</span> <span class="n">Texture</span><span class="o">.</span><span class="n">create_from_data</span><span class="p">(</span>
+                    <span class="n">imagedata</span><span class="p">,</span> <span class="n">mipmap</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_mipmap</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nocache</span><span class="p">:</span>
+                    <span class="n">Cache</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;kv.texture&#39;</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">texture</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">imagedata</span><span class="o">.</span><span class="n">flip_vertical</span><span class="p">:</span>
+                    <span class="n">texture</span><span class="o">.</span><span class="n">flip_vertical</span><span class="p">()</span>
+
+            <span class="c1"># set as our current texture</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_textures</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">texture</span><span class="p">)</span>
+
+            <span class="c1"># release data if ask</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">keep_data</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">count</span><span class="p">]</span><span class="o">.</span><span class="n">release_data</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">width</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Image width</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">width</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Image height</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">height</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Image size (width, height)</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">texture</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Get the image texture (created on the first call)</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_textures</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">populate</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_textures</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_textures</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">textures</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Get the textures list (for mipmapped image or animated image)</span>
+
+<span class="sd">        .. versionadded:: 1.0.8</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_textures</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">populate</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_textures</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">nocache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Indicate if the texture will not be stored in the cache</span>
+
+<span class="sd">        .. versionadded:: 1.6.0</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nocache</span>
+
+
+<span class="k">class</span> <span class="nc">ImageLoader</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="n">loaders</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">zip_loader</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Read images from an zip file.</span>
+
+<span class="sd">        .. versionadded:: 1.0.8</span>
+
+<span class="sd">        Returns an Image with a list of type ImageData stored in Image._data</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="c1"># read zip in memory for faster access</span>
+        <span class="n">_file</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+        <span class="c1"># read all images inside the zip</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">_file</span><span class="p">)</span>
+        <span class="n">image_data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># sort filename list</span>
+        <span class="n">znamelist</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">namelist</span><span class="p">()</span>
+        <span class="n">znamelist</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">zfilename</span> <span class="ow">in</span> <span class="n">znamelist</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1"># read file and store it in mem with fileIO struct around it</span>
+                <span class="n">tmpfile</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">zfilename</span><span class="p">))</span>
+                <span class="n">ext</span> <span class="o">=</span> <span class="n">zfilename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+                <span class="n">im</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="k">for</span> <span class="n">loader</span> <span class="ow">in</span> <span class="n">ImageLoader</span><span class="o">.</span><span class="n">loaders</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">ext</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">loader</span><span class="o">.</span><span class="n">extensions</span><span class="p">()</span> <span class="ow">or</span>
+                            <span class="ow">not</span> <span class="n">loader</span><span class="o">.</span><span class="n">can_load_memory</span><span class="p">()):</span>
+                        <span class="k">continue</span>
+                    <span class="n">Logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Image</span><span class="si">%s</span><span class="s1">: Load &lt;</span><span class="si">%s</span><span class="s1">&gt; from &lt;</span><span class="si">%s</span><span class="s1">&gt;&#39;</span> <span class="o">%</span>
+                                 <span class="p">(</span><span class="n">loader</span><span class="o">.</span><span class="vm">__name__</span><span class="p">[</span><span class="mi">11</span><span class="p">:],</span> <span class="n">zfilename</span><span class="p">,</span> <span class="n">filename</span><span class="p">))</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">im</span> <span class="o">=</span> <span class="n">loader</span><span class="p">(</span><span class="n">zfilename</span><span class="p">,</span> <span class="n">ext</span><span class="o">=</span><span class="n">ext</span><span class="p">,</span> <span class="n">rawdata</span><span class="o">=</span><span class="n">tmpfile</span><span class="p">,</span>
+                                    <span class="n">inline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                    <span class="k">except</span><span class="p">:</span>
+                        <span class="c1"># Loader failed, continue trying.</span>
+                        <span class="k">continue</span>
+                    <span class="k">break</span>
+                <span class="k">if</span> <span class="n">im</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="c1"># append ImageData to local variable before it&#39;s</span>
+                    <span class="c1"># overwritten</span>
+                    <span class="n">image_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                    <span class="n">image</span> <span class="o">=</span> <span class="n">im</span>
+                <span class="c1"># else: if not image file skip to next</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="n">Logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Image: Unable to load image&#39;</span>
+                               <span class="s1">&#39;&lt;</span><span class="si">%s</span><span class="s1">&gt; in zip &lt;</span><span class="si">%s</span><span class="s1">&gt; trying to continue...&#39;</span>
+                               <span class="o">%</span> <span class="p">(</span><span class="n">zfilename</span><span class="p">,</span> <span class="n">filename</span><span class="p">))</span>
+        <span class="n">z</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">image_data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;no images in zip &lt;</span><span class="si">%s</span><span class="s1">&gt;&#39;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
+        <span class="c1"># replace Image.Data with the array of all the images in the zip</span>
+        <span class="n">image</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">image_data</span>
+        <span class="n">image</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
+        <span class="k">return</span> <span class="n">image</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="n">defcls</span><span class="p">):</span>
+        <span class="n">ImageLoader</span><span class="o">.</span><span class="n">loaders</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">defcls</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+        <span class="c1"># atlas ?</span>
+        <span class="k">if</span> <span class="n">filename</span><span class="p">[:</span><span class="mi">8</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;atlas://&#39;</span><span class="p">:</span>
+            <span class="c1"># remove the url</span>
+            <span class="n">rfn</span> <span class="o">=</span> <span class="n">filename</span><span class="p">[</span><span class="mi">8</span><span class="p">:]</span>
+            <span class="c1"># last field is the ID</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">rfn</span><span class="p">,</span> <span class="n">uid</span> <span class="o">=</span> <span class="n">rfn</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s1">&#39;Image: Invalid </span><span class="si">%s</span><span class="s1"> name for atlas&#39;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
+
+            <span class="c1"># search if we already got the atlas loaded</span>
+            <span class="n">atlas</span> <span class="o">=</span> <span class="n">Cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;kv.atlas&#39;</span><span class="p">,</span> <span class="n">rfn</span><span class="p">)</span>
+
+            <span class="c1"># atlas already loaded, so reupload the missing texture in cache,</span>
+            <span class="c1"># because when it&#39;s not in use, the texture can be removed from the</span>
+            <span class="c1"># kv.texture cache.</span>
+            <span class="k">if</span> <span class="n">atlas</span><span class="p">:</span>
+                <span class="n">texture</span> <span class="o">=</span> <span class="n">atlas</span><span class="p">[</span><span class="n">uid</span><span class="p">]</span>
+                <span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;atlas://</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">rfn</span><span class="p">,</span> <span class="n">uid</span><span class="p">)</span>
+                <span class="n">cid</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">|</span><span class="si">{:d}</span><span class="s1">|</span><span class="si">{:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">Cache</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;kv.texture&#39;</span><span class="p">,</span> <span class="n">cid</span><span class="p">,</span> <span class="n">texture</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">Image</span><span class="p">(</span><span class="n">texture</span><span class="p">)</span>
+
+            <span class="c1"># search with resource</span>
+            <span class="n">afn</span> <span class="o">=</span> <span class="n">rfn</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">afn</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.atlas&#39;</span><span class="p">):</span>
+                <span class="n">afn</span> <span class="o">+=</span> <span class="s1">&#39;.atlas&#39;</span>
+            <span class="n">afn</span> <span class="o">=</span> <span class="n">resource_find</span><span class="p">(</span><span class="n">afn</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">afn</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Unable to found </span><span class="si">%r</span><span class="s1"> atlas&#39;</span> <span class="o">%</span> <span class="n">afn</span><span class="p">)</span>
+            <span class="n">atlas</span> <span class="o">=</span> <span class="n">Atlas</span><span class="p">(</span><span class="n">afn</span><span class="p">)</span>
+            <span class="n">Cache</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;kv.atlas&#39;</span><span class="p">,</span> <span class="n">rfn</span><span class="p">,</span> <span class="n">atlas</span><span class="p">)</span>
+            <span class="c1"># first time, fill our texture cache.</span>
+            <span class="k">for</span> <span class="n">nid</span><span class="p">,</span> <span class="n">texture</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">textures</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;atlas://</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">rfn</span><span class="p">,</span> <span class="n">nid</span><span class="p">)</span>
+                <span class="n">cid</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">|</span><span class="si">{:d}</span><span class="s1">|</span><span class="si">{:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">Cache</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;kv.texture&#39;</span><span class="p">,</span> <span class="n">cid</span><span class="p">,</span> <span class="n">texture</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">Image</span><span class="p">(</span><span class="n">atlas</span><span class="p">[</span><span class="n">uid</span><span class="p">])</span>
+
+        <span class="c1"># extract extensions</span>
+        <span class="n">ext</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+        <span class="c1"># prevent url querystrings</span>
+        <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">startswith</span><span class="p">(((</span><span class="s1">&#39;http://&#39;</span><span class="p">,</span> <span class="s1">&#39;https://&#39;</span><span class="p">))):</span>
+            <span class="n">ext</span> <span class="o">=</span> <span class="n">ext</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;?&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">resource_find</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+        <span class="c1"># special case. When we are trying to load a &quot;zip&quot; file with image, we</span>
+        <span class="c1"># will use the special zip_loader in ImageLoader. This might return a</span>
+        <span class="c1"># sequence of images contained in the zip.</span>
+        <span class="k">if</span> <span class="n">ext</span> <span class="o">==</span> <span class="s1">&#39;zip&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">ImageLoader</span><span class="o">.</span><span class="n">zip_loader</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">im</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="c1"># Get actual image format instead of extension if possible</span>
+            <span class="n">ext</span> <span class="o">=</span> <span class="n">imghdr</span><span class="o">.</span><span class="n">what</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="ow">or</span> <span class="n">ext</span>
+            <span class="k">for</span> <span class="n">loader</span> <span class="ow">in</span> <span class="n">ImageLoader</span><span class="o">.</span><span class="n">loaders</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">ext</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">loader</span><span class="o">.</span><span class="n">extensions</span><span class="p">():</span>
+                    <span class="k">continue</span>
+                <span class="n">Logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Image</span><span class="si">%s</span><span class="s1">: Load &lt;</span><span class="si">%s</span><span class="s1">&gt;&#39;</span> <span class="o">%</span>
+                             <span class="p">(</span><span class="n">loader</span><span class="o">.</span><span class="vm">__name__</span><span class="p">[</span><span class="mi">11</span><span class="p">:],</span> <span class="n">filename</span><span class="p">))</span>
+                <span class="n">im</span> <span class="o">=</span> <span class="n">loader</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="k">break</span>
+            <span class="k">if</span> <span class="n">im</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Unknown &lt;</span><span class="si">%s</span><span class="s1">&gt; type, no loader found.&#39;</span> <span class="o">%</span> <span class="n">ext</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">im</span>
+
+
+<div class="viewcode-block" id="Image"><a class="viewcode-back" href="../../../api-kivy.core.image.html#kivy.core.image.Image">[ドキュメント]</a><span class="k">class</span> <span class="nc">Image</span><span class="p">(</span><span class="n">EventDispatcher</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Load an image and store the size and texture.</span>
+
+<span class="sd">    .. versionchanged:: 1.0.7</span>
+
+<span class="sd">        `mipmap` attribute has been added. The `texture_mipmap` and</span>
+<span class="sd">        `texture_rectangle` have been deleted.</span>
+
+<span class="sd">    .. versionchanged:: 1.0.8</span>
+
+<span class="sd">        An Image widget can change its texture. A new event &#39;on_texture&#39; has</span>
+<span class="sd">        been introduced. New methods for handling sequenced animation have been</span>
+<span class="sd">        added.</span>
+
+<span class="sd">    :Parameters:</span>
+<span class="sd">        `arg`: can be a string (str), Texture, BytesIO or Image object</span>
+<span class="sd">            A string path to the image file or data URI to be loaded; or a</span>
+<span class="sd">            Texture object, which will be wrapped in an Image object; or a</span>
+<span class="sd">            BytesIO object containing raw image data; or an already existing</span>
+<span class="sd">            image object, in which case, a real copy of the given image object</span>
+<span class="sd">            will be returned.</span>
+<span class="sd">        `keep_data`: bool, defaults to False</span>
+<span class="sd">            Keep the image data when the texture is created.</span>
+<span class="sd">        `scale`: float, defaults to 1.0</span>
+<span class="sd">            Scale of the image.</span>
+<span class="sd">        `mipmap`: bool, defaults to False</span>
+<span class="sd">            Create mipmap for the texture.</span>
+<span class="sd">        `anim_delay`: float, defaults to .25</span>
+<span class="sd">            Delay in seconds between each animation frame. Lower values means</span>
+<span class="sd">            faster animation.</span>
+<span class="sd">        `ext`: str, only with BytesIO `arg`</span>
+<span class="sd">            File extension to use in determining how to load raw image data.</span>
+<span class="sd">        `filename`: str, only with BytesIO `arg`</span>
+<span class="sd">            Filename to use in the image cache for raw image data.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">copy_attributes</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_size&#39;</span><span class="p">,</span> <span class="s1">&#39;_filename&#39;</span><span class="p">,</span> <span class="s1">&#39;_texture&#39;</span><span class="p">,</span> <span class="s1">&#39;_image&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;_mipmap&#39;</span><span class="p">,</span> <span class="s1">&#39;_nocache&#39;</span><span class="p">)</span>
+
+    <span class="n">data_uri_re</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^data:image/([^;,]*)(;[^,]*)?,(.*)$&#39;</span><span class="p">)</span>
+
+    <span class="n">_anim_ev</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># this event should be fired on animation of sequenced img&#39;s</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">register_event_type</span><span class="p">(</span><span class="s1">&#39;on_texture&#39;</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">Image</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_mipmap</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;mipmap&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_keep_data</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;keep_data&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_nocache</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;nocache&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_image</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_texture</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_anim_available</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_anim_index</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_anim_delay</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">anim_delay</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;anim_delay&#39;</span><span class="p">,</span> <span class="o">.</span><span class="mi">25</span><span class="p">)</span>
+        <span class="c1"># indicator of images having been loded in cache</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_iteration_done</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">Image</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">Image</span><span class="o">.</span><span class="n">copy_attributes</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">arg</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="n">attr</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="n">Texture</span><span class="p">,</span> <span class="n">TextureRegion</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;textures&#39;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">textures</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">textures</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_texture</span> <span class="o">=</span> <span class="n">arg</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">texture</span><span class="o">.</span><span class="n">size</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">ImageLoaderBase</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">arg</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">BytesIO</span><span class="p">):</span>
+            <span class="n">ext</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ext&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">ext</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Inline loading require &quot;ext&quot; parameter&#39;</span><span class="p">)</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;filename&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">filename</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_nocache</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;__inline__&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">load_memory</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">ext</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">string_types</span><span class="p">):</span>
+            <span class="n">groups</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_uri_re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">groups</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_nocache</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="n">imtype</span><span class="p">,</span> <span class="n">optstr</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">groups</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">options</span> <span class="o">=</span> <span class="p">[</span><span class="n">o</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">optstr</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">o</span><span class="p">]</span>
+                <span class="n">ext</span> <span class="o">=</span> <span class="n">imtype</span>
+                <span class="n">isb64</span> <span class="o">=</span> <span class="s1">&#39;base64&#39;</span> <span class="ow">in</span> <span class="n">options</span>
+                <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">isb64</span><span class="p">:</span>
+                        <span class="n">data</span> <span class="o">=</span> <span class="n">b64decode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">load_memory</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">ext</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">arg</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Unable to load image type </span><span class="si">{0!r}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arg</span><span class="p">))</span>
+
+<div class="viewcode-block" id="Image.remove_from_cache"><a class="viewcode-back" href="../../../api-kivy.core.image.html#kivy.core.image.Image.remove_from_cache">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">remove_from_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Remove the Image from cache. This facilitates re-loading of</span>
+<span class="sd">        images from disk in case the image content has changed.</span>
+
+<span class="sd">        .. versionadded:: 1.3.0</span>
+
+<span class="sd">        Usage::</span>
+
+<span class="sd">            im = CoreImage(&#39;1.jpg&#39;)</span>
+<span class="sd">            # -- do something --</span>
+<span class="sd">            im.remove_from_cache()</span>
+<span class="sd">            im = CoreImage(&#39;1.jpg&#39;)</span>
+<span class="sd">            # this time image will be re-loaded from disk</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filename</span>
+        <span class="n">pat</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)(</span><span class="sa">u</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">|</span><span class="si">%d</span><span class="s1">|</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">uid</span> <span class="o">=</span> <span class="n">pat</span> <span class="o">%</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mipmap</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+        <span class="n">Cache</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;kv.image&quot;</span><span class="p">,</span> <span class="n">uid</span><span class="p">)</span>
+        <span class="k">while</span> <span class="n">Cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;kv.texture&quot;</span><span class="p">,</span> <span class="n">uid</span><span class="p">):</span>
+            <span class="n">Cache</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;kv.texture&quot;</span><span class="p">,</span> <span class="n">uid</span><span class="p">)</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">uid</span> <span class="o">=</span> <span class="n">pat</span> <span class="o">%</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mipmap</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_anim</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">largs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_image</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">textures</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">textures</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_anim_index</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">textures</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_anim_index</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_texture</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">textures</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_anim_index</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="s1">&#39;on_texture&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_anim_index</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_anim_index</span> <span class="o">%=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_image</span><span class="o">.</span><span class="n">textures</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Image.anim_reset"><a class="viewcode-back" href="../../../api-kivy.core.image.html#kivy.core.image.Image.anim_reset">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">anim_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">allow_anim</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Reset an animation if available.</span>
+
+<span class="sd">        .. versionadded:: 1.0.8</span>
+
+<span class="sd">        :Parameters:</span>
+<span class="sd">            `allow_anim`: bool</span>
+<span class="sd">                Indicate whether the animation should restart playing or not.</span>
+
+<span class="sd">        Usage::</span>
+
+<span class="sd">            # start/reset animation</span>
+<span class="sd">            image.anim_reset(True)</span>
+
+<span class="sd">            # or stop the animation</span>
+<span class="sd">            image.anim_reset(False)</span>
+
+<span class="sd">        You can change the animation speed whilst it is playing::</span>
+
+<span class="sd">            # Set to 20 FPS</span>
+<span class="sd">            image.anim_delay = 1 / 20.</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="c1"># stop animation</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_anim_ev</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_anim_ev</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_anim_ev</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">allow_anim</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_anim_available</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_anim_delay</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_anim_ev</span> <span class="o">=</span> <span class="n">Clock</span><span class="o">.</span><span class="n">schedule_interval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_anim</span><span class="p">,</span>
+                                                    <span class="bp">self</span><span class="o">.</span><span class="n">anim_delay</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_anim</span><span class="p">()</span></div>
+
+    <span class="k">def</span> <span class="nf">_get_anim_delay</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_anim_delay</span>
+
+    <span class="k">def</span> <span class="nf">_set_anim_delay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_anim_delay</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_anim_delay</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_anim_available</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_anim_ev</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_anim_ev</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_anim_ev</span> <span class="o">=</span> <span class="kc">None</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_anim_delay</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_anim_ev</span> <span class="o">=</span> <span class="n">Clock</span><span class="o">.</span><span class="n">schedule_interval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_anim</span><span class="p">,</span>
+                                                        <span class="bp">self</span><span class="o">.</span><span class="n">_anim_delay</span><span class="p">)</span>
+
+    <span class="n">anim_delay</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">_get_anim_delay</span><span class="p">,</span> <span class="n">_set_anim_delay</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;Delay between each animation frame. A lower value means faster</span>
+<span class="sd">    animation.</span>
+
+<span class="sd">    .. versionadded:: 1.0.8</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">anim_available</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Return True if this Image instance has animation available.</span>
+
+<span class="sd">        .. versionadded:: 1.0.8</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_anim_available</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">anim_index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Return the index number of the image currently in the texture.</span>
+
+<span class="sd">        .. versionadded:: 1.0.8</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_anim_index</span>
+
+    <span class="k">def</span> <span class="nf">_img_iterate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">largs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">image</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iteration_done</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_iteration_done</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">imgcount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">textures</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">imgcount</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_anim_available</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">anim_reset</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_texture</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">textures</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<div class="viewcode-block" id="Image.on_texture"><a class="viewcode-back" href="../../../api-kivy.core.image.html#kivy.core.image.Image.on_texture">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">on_texture</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">largs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;This event is fired when the texture reference or content has</span>
+<span class="sd">           changed. It is normally used for sequenced images.</span>
+
+<span class="sd">        .. versionadded:: 1.0.8</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">pass</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Image.load"><a class="viewcode-back" href="../../../api-kivy.core.image.html#kivy.core.image.Image.load">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Load an image</span>
+
+<span class="sd">        :Parameters:</span>
+<span class="sd">            `filename`: str</span>
+<span class="sd">                Filename of the image.</span>
+<span class="sd">            `keep_data`: bool, defaults to False</span>
+<span class="sd">                Keep the image data when the texture is created.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;keep_data&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_get_image</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_image</span>
+
+    <span class="k">def</span> <span class="nf">_set_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_image</span> <span class="o">=</span> <span class="n">image</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="s1">&#39;filename&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">filename</span>
+        <span class="k">if</span> <span class="n">image</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+
+    <span class="n">image</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">_get_image</span><span class="p">,</span> <span class="n">_set_image</span><span class="p">,</span>
+                     <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Get/set the data image object&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_filename</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span>
+
+    <span class="k">def</span> <span class="nf">_set_filename</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">value</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span> <span class="o">=</span> <span class="n">value</span>
+
+        <span class="c1"># construct uid as a key for Cache</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filename</span>
+        <span class="n">uid</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)(</span><span class="sa">u</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">|</span><span class="si">%d</span><span class="s1">|</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mipmap</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># in case of Image have been asked with keep_data</span>
+        <span class="c1"># check the kv.image cache instead of texture.</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">Cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;kv.image&#39;</span><span class="p">,</span> <span class="n">uid</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">image</span><span class="p">:</span>
+            <span class="c1"># we found an image, yeah ! but reset the texture now.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span>
+            <span class="c1"># if image.__class__ is core image then it&#39;s a texture</span>
+            <span class="c1"># from atlas or other sources and has no data so skip</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="vm">__class__</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span> <span class="ow">and</span>
+                    <span class="ow">not</span> <span class="n">image</span><span class="o">.</span><span class="n">keep_data</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_keep_data</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">remove_from_cache</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_set_filename</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_texture</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_img_iterate</span><span class="p">()</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># if we already got a texture, it will be automatically reloaded.</span>
+            <span class="n">_texture</span> <span class="o">=</span> <span class="n">Cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;kv.texture&#39;</span><span class="p">,</span> <span class="n">uid</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">_texture</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_texture</span> <span class="o">=</span> <span class="n">_texture</span>
+                <span class="k">return</span>
+
+        <span class="c1"># if image not already in cache then load</span>
+        <span class="n">tmpfilename</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">ImageLoader</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span><span class="p">,</span> <span class="n">keep_data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_keep_data</span><span class="p">,</span>
+            <span class="n">mipmap</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_mipmap</span><span class="p">,</span> <span class="n">nocache</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_nocache</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span> <span class="o">=</span> <span class="n">tmpfilename</span>
+        <span class="c1"># put the image into the cache if needed</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">Texture</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_texture</span> <span class="o">=</span> <span class="n">image</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">size</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nocache</span><span class="p">:</span>
+                <span class="n">Cache</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;kv.image&#39;</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">image</span><span class="p">)</span>
+
+    <span class="n">filename</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">_get_filename</span><span class="p">,</span> <span class="n">_set_filename</span><span class="p">,</span>
+                        <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Get/set the filename of image&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Image.load_memory"><a class="viewcode-back" href="../../../api-kivy.core.image.html#kivy.core.image.Image.load_memory">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">load_memory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">ext</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;__inline__&#39;</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;(internal) Method to load an image from raw data.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span> <span class="o">=</span> <span class="n">filename</span>
+
+        <span class="c1"># see if there is a available loader for it</span>
+        <span class="n">loaders</span> <span class="o">=</span> <span class="p">[</span><span class="n">loader</span> <span class="k">for</span> <span class="n">loader</span> <span class="ow">in</span> <span class="n">ImageLoader</span><span class="o">.</span><span class="n">loaders</span> <span class="k">if</span>
+                   <span class="n">loader</span><span class="o">.</span><span class="n">can_load_memory</span><span class="p">()</span> <span class="ow">and</span>
+                   <span class="n">ext</span> <span class="ow">in</span> <span class="n">loader</span><span class="o">.</span><span class="n">extensions</span><span class="p">()]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">loaders</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;No inline loader found to load </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ext</span><span class="p">))</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">loaders</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="n">filename</span><span class="p">,</span> <span class="n">ext</span><span class="o">=</span><span class="n">ext</span><span class="p">,</span> <span class="n">rawdata</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">inline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">nocache</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_nocache</span><span class="p">,</span> <span class="n">mipmap</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_mipmap</span><span class="p">,</span>
+                <span class="n">keep_data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_keep_data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">Texture</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_texture</span> <span class="o">=</span> <span class="n">image</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">size</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Image size (width, height)</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_size</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">width</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Image width</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Image height</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">texture</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Texture of the image&#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">image</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iteration_done</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_img_iterate</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_texture</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">nocache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Indicate whether the texture will not be stored in the cache or not.</span>
+
+<span class="sd">        .. versionadded:: 1.6.0</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nocache</span>
+
+<div class="viewcode-block" id="Image.save"><a class="viewcode-back" href="../../../api-kivy.core.image.html#kivy.core.image.Image.save">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">flipped</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;Save image texture to file.</span>
+
+<span class="sd">        The filename should have the &#39;.png&#39; extension because the texture data</span>
+<span class="sd">        read from the GPU is in the RGBA format. &#39;.jpg&#39; might work but has not</span>
+<span class="sd">        been heavily tested so some providers might break when using it.</span>
+<span class="sd">        Any other extensions are not officially supported.</span>
+
+<span class="sd">        The flipped parameter flips the saved image vertically, and</span>
+<span class="sd">        defaults to False.</span>
+
+<span class="sd">        Example::</span>
+
+<span class="sd">            # Save an core image object</span>
+<span class="sd">            from kivy.core.image import Image</span>
+<span class="sd">            img = Image(&#39;hello.png&#39;)</span>
+<span class="sd">            img.save(&#39;hello2.png&#39;)</span>
+
+<span class="sd">            # Save a texture</span>
+<span class="sd">            texture = Texture.create(...)</span>
+<span class="sd">            img = Image(texture)</span>
+<span class="sd">            img.save(&#39;hello3.png&#39;)</span>
+
+<span class="sd">        .. versionadded:: 1.7.0</span>
+
+<span class="sd">        .. versionchanged:: 1.8.0</span>
+<span class="sd">            Parameter `flipped` added to flip the image before saving, default</span>
+<span class="sd">            to False.</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">pixels</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">loaders</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">ImageLoader</span><span class="o">.</span><span class="n">loaders</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">can_save</span><span class="p">()]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">loaders</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">loader</span> <span class="o">=</span> <span class="n">loaders</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">image</span><span class="p">:</span>
+            <span class="c1"># we might have a ImageData object to use</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">fmt</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;rgba&#39;</span><span class="p">,</span> <span class="s1">&#39;rgb&#39;</span><span class="p">):</span>
+                    <span class="c1"># fast path, use the &quot;raw&quot; data when keep_data is used</span>
+                    <span class="n">size</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">height</span>
+                    <span class="n">pixels</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">data</span>
+
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># the format is not rgba, we need to convert it.</span>
+                    <span class="c1"># use texture for that.</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">populate</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">pixels</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_texture</span><span class="p">:</span>
+            <span class="c1"># use the texture pixels</span>
+            <span class="n">size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_texture</span><span class="o">.</span><span class="n">size</span>
+            <span class="n">pixels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_texture</span><span class="o">.</span><span class="n">pixels</span>
+
+        <span class="k">if</span> <span class="n">pixels</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="n">l_pixels</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">l_pixels</span> <span class="o">==</span> <span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;rgb&#39;</span>
+        <span class="k">elif</span> <span class="n">l_pixels</span> <span class="o">==</span> <span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;rgba&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Unable to determine the format of the pixels&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">loader</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">fmt</span><span class="p">,</span> <span class="n">pixels</span><span class="p">,</span> <span class="n">flipped</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Image.read_pixel"><a class="viewcode-back" href="../../../api-kivy.core.image.html#kivy.core.image.Image.read_pixel">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">read_pixel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;For a given local x/y position, return the pixel color at that</span>
+<span class="sd">        position.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">            This function can only be used with images loaded with the</span>
+<span class="sd">            keep_data=True keyword. For example::</span>
+
+<span class="sd">                m = Image.load(&#39;image.png&#39;, keep_data=True)</span>
+<span class="sd">                color = m.read_pixel(150, 150)</span>
+
+<span class="sd">        :Parameters:</span>
+<span class="sd">            `x`: int</span>
+<span class="sd">                Local x coordinate of the pixel in question.</span>
+<span class="sd">            `y`: int</span>
+<span class="sd">                Local y coordinate of the pixel in question.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c1"># can&#39;t use this function without ImageData</span>
+        <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">EOFError</span><span class="p">(</span><span class="s1">&#39;Image data is missing, make sure that image is&#39;</span>
+                           <span class="s1">&#39;loaded with keep_data=True keyword.&#39;</span><span class="p">)</span>
+
+        <span class="c1"># check bounds</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">data</span><span class="o">.</span><span class="n">width</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">data</span><span class="o">.</span><span class="n">height</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s1">&#39;Position (</span><span class="si">%d</span><span class="s1">, </span><span class="si">%d</span><span class="s1">) is out of range.&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+
+        <span class="k">assert</span> <span class="n">data</span><span class="o">.</span><span class="n">fmt</span> <span class="ow">in</span> <span class="n">ImageData</span><span class="o">.</span><span class="n">_supported_fmts</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="mi">3</span> <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">fmt</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;rgb&#39;</span><span class="p">,</span> <span class="s1">&#39;bgr&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="mi">4</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">data</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="n">size</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="n">size</span>
+        <span class="n">raw</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">index</span><span class="p">:</span><span class="n">index</span> <span class="o">+</span> <span class="n">size</span><span class="p">])</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="o">/</span> <span class="mf">255.0</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">raw</span><span class="p">]</span>
+
+        <span class="c1"># conversion for BGR-&gt;RGB, BGR-&gt;RGBA format</span>
+        <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">fmt</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;bgr&#39;</span><span class="p">,</span> <span class="s1">&#39;bgra&#39;</span><span class="p">):</span>
+            <span class="n">color</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">color</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">color</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">color</span></div></div>
+
+
+<span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Load an image&#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="n">Image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+
+<span class="c1"># load image loaders</span>
+<span class="n">image_libs</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">if</span> <span class="n">platform</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;macosx&#39;</span><span class="p">,</span> <span class="s1">&#39;ios&#39;</span><span class="p">):</span>
+    <span class="n">image_libs</span> <span class="o">+=</span> <span class="p">[(</span><span class="s1">&#39;imageio&#39;</span><span class="p">,</span> <span class="s1">&#39;img_imageio&#39;</span><span class="p">)]</span>
+
+<span class="n">image_libs</span> <span class="o">+=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;tex&#39;</span><span class="p">,</span> <span class="s1">&#39;img_tex&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;dds&#39;</span><span class="p">,</span> <span class="s1">&#39;img_dds&#39;</span><span class="p">)]</span>
+<span class="k">if</span> <span class="n">USE_SDL2</span><span class="p">:</span>
+    <span class="n">image_libs</span> <span class="o">+=</span> <span class="p">[(</span><span class="s1">&#39;sdl2&#39;</span><span class="p">,</span> <span class="s1">&#39;img_sdl2&#39;</span><span class="p">)]</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">image_libs</span> <span class="o">+=</span> <span class="p">[(</span><span class="s1">&#39;pygame&#39;</span><span class="p">,</span> <span class="s1">&#39;img_pygame&#39;</span><span class="p">)]</span>
+<span class="n">image_libs</span> <span class="o">+=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;ffpy&#39;</span><span class="p">,</span> <span class="s1">&#39;img_ffpyplayer&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;pil&#39;</span><span class="p">,</span> <span class="s1">&#39;img_pil&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;gif&#39;</span><span class="p">,</span> <span class="s1">&#39;img_gif&#39;</span><span class="p">)]</span>
+
+<span class="n">libs_loaded</span> <span class="o">=</span> <span class="n">core_register_libs</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">image_libs</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">os</span> <span class="k">import</span> <span class="n">environ</span>
+<span class="k">if</span> <span class="s1">&#39;KIVY_DOC&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">environ</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">libs_loaded</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+
+    <span class="n">Logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s1">&#39;App: Unable to get any Image provider, abort.&#39;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># resolve binding.</span>
+<span class="kn">from</span> <span class="nn">kivy.graphics.texture</span> <span class="k">import</span> <span class="n">Texture</span><span class="p">,</span> <span class="n">TextureRegion</span>
+</pre></div>
+
+            <div class="footerlinks">
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 30, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>

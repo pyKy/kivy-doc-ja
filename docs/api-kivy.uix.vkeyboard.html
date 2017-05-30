@@ -1,0 +1,799 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="twitter:site" content="@kivyframework">
+    
+    <title>VKeyboard &mdash; Kivy 1.10.0 ドキュメント</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="_static/fresh.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.10.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-effects-core-and-slide.js"></script>
+    <script type="text/javascript" src="_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="_static/kivy.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="index.html" />
+    <link rel="up" title="Widgets" href="api-kivy.uix.html" />
+    <link rel="next" title="Widget class" href="api-kivy.uix.widget.html" />
+    <link rel="prev" title="Video player" href="api-kivy.uix.videoplayer.html" /> 
+  </head>
+  <body>
+
+    <div id="topbar">
+        <div id="topwrapper">
+        <div id="toplogo">
+            <a href="http://kivy.org/">
+                <img src="_static/logo-kivy.png" alt="Kivy" height="50"/>
+            </a>
+        </div>
+        <div id="topmenu">
+            <ul class="navigation">
+                <li><a class="nav-guides" href="gettingstarted/intro.html">Guides</a></li>
+                <li><a class="nav-garden" href="http://kivy-garden.github.io/">Garden</a></li>
+                <li><a class="nav-api" href="api-kivy.html">API Reference</a></li>
+                <li><a class="nav-pdf" href="https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf">PDF</a></li>
+                <li><a class="nav-wiki" href="http://wiki.kivy.org">Wiki</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+<div id="contentall">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Quick search</h3>
+            <form class="search" action="search.html" method="get">
+                &nbsp;
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+                <input type="text" class="text" name="q" />
+            </form>
+          <!--
+          <h3><a href="index.html">VKeyboard</a></h3>
+          <ul>
+<li><a class="reference internal" href="#">VKeyboard</a><ul>
+<li><a class="reference internal" href="#modes">Modes</a></li>
+<li><a class="reference internal" href="#layouts">Layouts</a></li>
+<li><a class="reference internal" href="#request-keyboard">Request Keyboard</a></li>
+</ul>
+</li>
+</ul>
+
+          <h3><a href="index.html">Table Of Contents</a></h3>
+          -->
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/properties.html">Properties(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/events.html">Events(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/examples.html">Examples(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User’s Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="philosophy.html">Philosophy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute.html">Contributing(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contact.html">Contact Us(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide-index.html">Programming Guide(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide/basic.html">Kivy Basics(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/environment.html">Controlling the environment(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/config.html">Configure Kivy(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/events.html">Events and Properties (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/widgets.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/graphics.html">Graphics (翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/lang.html">Kv language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/packaging.html">Packaging your application(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/licensing.html">Package licensing (翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials-index.html">Tutorials(翻訳済み)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="api-index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.html">Adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.adapter.html">Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.dictadapter.html">DictAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.listadapter.html">ListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.models.html">SelectableDataItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.app.html">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.atlas.html">Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.base.html">Kivy Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.cache.html">Cache manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.clock.html">Clock object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.config.html">Configuration object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.html">Core Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.audio.html">Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.clipboard.html">Clipboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.gl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.spelling.html">Spelling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.markup.html">Text Markup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.text.text_layout.html">Text layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.deps.html">Kivy module for binary dependencies.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.html">Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.dampedscroll.html">Damped scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.kinetic.html">Kinetic effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.opacityscroll.html">Opacity scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.effects.scroll.html">Scroll effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.event.html">Event dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.factory.html">Factory object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.garden.html">Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.geometry.html">Geometry utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.gesture.html">Gesture recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.compiler.html">Graphics compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context.html">Context management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context_instructions.html">Context instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.fbo.html">Framebuffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.gl_instructions.html">GL instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.instructions.html">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.opengl.html">OpenGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.opengl_utils.html">OpenGL utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.scissor_instructions.html">Scissor Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.shader.html">Shader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.stencil_instructions.html">Stencil instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.tesselator.html">Tesselator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.transformation.html">Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.factory.html">Motion Event Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.motionevent.html">Motion Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.html">Input Postprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.dejitter.html">Dejitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.doubletap.html">Double Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.ignorelist.html">Ignore list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.retaintouch.html">Retain Touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.postproc.tripletap.html">Triple Tap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.provider.html">Motion Event Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.html">Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.androidjoystick.html">Android Joystick Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.hidinput.html">Native support for HID input from the linux kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.leapfinger.html">Leap Motion - finger only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.linuxwacom.html">Native support of Wacom tablet from linuxwacom driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mactouch.html">Native support of MultitouchSupport framework for MacBook (MaxOSX platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mouse.html">Mouse provider implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.mtdev.html">Native support for Multitouch devices on Linux, using libmtdev.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.probesysfs.html">Auto Create Input Provider Config Entry for Available MT Hardware (linux only).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.tuio.html">TUIO Input Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_common.html">Common definitions for a Windows provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_pen.html">Support for WM_PEN messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.providers.wm_touch.html">Support for WM_TOUCH messages (Windows platform)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.recorder.html">Input recorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.input.shape.html">Motion Event Shape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.interactive.html">Interactive launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.html">Kivy Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.parser.html">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.html">External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.ddsfile.html">DDS File library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.gstplayer.html">GstPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.mtdev.html">Python mtdev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.html">OSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.OSC.html">NO DOCUMENTATION (module kivy.uix.recycleview)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.osc.oscAPI.html">simpleOSC 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.loader.html">Asynchronous data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.logger.html">Logger object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.metrics.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.console.html">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.inspector.html">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.joycursor.html">JoyCursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.keybinding.html">Keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.monitor.html">Monitor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.recorder.html">Recorder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.screen.html">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.touchring.html">Touchring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.modules.webdebugger.html">Web Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.multistroke.html">Multistroke gesture recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.network.html">Network support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.network.urlrequest.html">UrlRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.parser.html">Parser utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.resources.html">Resources management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.html">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.dictstore.html">Dictionary store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.jsonstore.html">JSON store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.storage.redisstore.html">Redis Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="api-kivy.uix.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.abstractview.html">Abstract View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.accordion.html">Accordion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.actionbar.html">Action Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.anchorlayout.html">Anchor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.html">Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.button.html">Button Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.codenavigation.html">Code Navigation Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.compoundselection.html">Compound Selection Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.cover.html">Cover Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.drag.html">Drag Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.emacs.html">Emacs Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.focus.html">Focus Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.knspace.html">Kivy Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.behaviors.togglebutton.html">ToggleButton Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.boxlayout.html">Box Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.bubble.html">Bubble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.carousel.html">Carousel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.checkbox.html">CheckBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.codeinput.html">Code Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.colorpicker.html">Color Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.dropdown.html">Drop-Down List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.effectwidget.html">EffectWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.filechooser.html">FileChooser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.floatlayout.html">Float Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gridlayout.html">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.label.html">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.layout.html">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.listview.html">List View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.modalview.html">ModalView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.pagelayout.html">PageLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.popup.html">Popup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.progressbar.html">Progress Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleboxlayout.html">RecycleBoxLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recyclegridlayout.html">RecycleGridLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recyclelayout.html">RecycleLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.html">RecycleView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.datamodel.html">RecycleView Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.layout.html">RecycleView Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.recycleview.views.html">RecycleView Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.relativelayout.html">Relative Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.rst.html">reStructuredText renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.sandbox.html">Sandbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scatter.html">Scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.screenmanager.html">Screen Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scrollview.html">ScrollView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.selectableview.html">SelectableView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.settings.html">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.slider.html">Slider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.splitter.html">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.stacklayout.html">Stack Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.stencilview.html">Stencil View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.switch.html">Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.tabbedpanel.html">TabbedPanel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.textinput.html">Text Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.togglebutton.html">Toggle button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.treeview.html">Tree View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.video.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.videoplayer.html">Video player</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">VKeyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.widget.html">Widget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.weakmethod.html">Weak Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.weakproxy.html">Weak Proxy</a></li>
+</ul>
+</li>
+</ul>
+
+          <!--
+          <h3>Related Topics</h3>
+          <ul>
+              <li>Previous: <a href="api-kivy.uix.videoplayer.html" title="previous chapter">Video player</a></li>
+              <li>Next: <a href="api-kivy.uix.widget.html" title="next chapter">Widget class</a></li>
+          </ul>
+          -->
+        </div>
+      </div>
+    <div id="content">
+    <div class="wrapper">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <div class="toc"><h2>Table Of Contents</h2><ul>
+<li><a class="reference internal" href="#">VKeyboard</a><ul>
+<li><a class="reference internal" href="#modes">Modes</a></li>
+<li><a class="reference internal" href="#layouts">Layouts</a></li>
+<li><a class="reference internal" href="#request-keyboard">Request Keyboard</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+  <div class="section" id="module-kivy.uix.vkeyboard">
+<span id="vkeyboard"></span><h1>VKeyboard<a class="headerlink" href="#module-kivy.uix.vkeyboard" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<img alt="_images/vkeyboard.jpg" class="align-right" src="_images/vkeyboard.jpg" />
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.0.8 で追加.</span></p>
+</div>
+<p>VKeyboard is an onscreen keyboard for Kivy. Its operation is intended to be
+transparent to the user. Using the widget directly is NOT recommended. Read the
+section <a class="reference internal" href="#request-keyboard">Request keyboard</a> first.</p>
+<div class="section" id="modes">
+<h2>Modes<a class="headerlink" href="#modes" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>This virtual keyboard has a docked and free mode:</p>
+<ul class="simple">
+<li>docked mode (<a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.docked" title="kivy.uix.vkeyboard.VKeyboard.docked"><code class="xref py py-attr docutils literal"><span class="pre">VKeyboard.docked</span></code></a> = True)
+Generally used when only one person is using the computer, like a tablet or
+personal computer etc.</li>
+<li>free mode: (<a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.docked" title="kivy.uix.vkeyboard.VKeyboard.docked"><code class="xref py py-attr docutils literal"><span class="pre">VKeyboard.docked</span></code></a> = False)
+Mostly for multitouch surfaces. This mode allows multiple virtual
+keyboards to be used on the screen.</li>
+</ul>
+<p>If the docked mode changes, you need to manually call
+<a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.setup_mode" title="kivy.uix.vkeyboard.VKeyboard.setup_mode"><code class="xref py py-meth docutils literal"><span class="pre">VKeyboard.setup_mode()</span></code></a> otherwise the change will have no impact.
+During that call, the VKeyboard, implemented on top of a
+<a class="reference internal" href="api-kivy.uix.scatter.html#kivy.uix.scatter.Scatter" title="kivy.uix.scatter.Scatter"><code class="xref py py-class docutils literal"><span class="pre">Scatter</span></code></a>, will change the
+behavior of the scatter and position the keyboard near the target (if target
+and docked mode is set).</p>
+</div>
+<div class="section" id="layouts">
+<h2>Layouts<a class="headerlink" href="#layouts" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The virtual keyboard is able to load a custom layout. If you create a new
+layout and put the JSON in <code class="file docutils literal"><span class="pre">&lt;kivy_data_dir&gt;/keyboards/&lt;layoutid&gt;.json</span></code>,
+you can load it by setting <a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.layout" title="kivy.uix.vkeyboard.VKeyboard.layout"><code class="xref py py-attr docutils literal"><span class="pre">VKeyboard.layout</span></code></a> to your layoutid.</p>
+<p>The JSON must be structured like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Title of your layout&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Description of your layout&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cols&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+    <span class="s2">&quot;rows&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Then, you need to describe the keys in each row, for either a &#8220;normal&#8221;,
+&#8220;shift&#8221; or a &#8220;special&#8221; (added in version 1.9.0) mode. Keys for this row
+data must be named <cite>normal_&lt;row&gt;</cite>, <cite>shift_&lt;row&gt;</cite> and <cite>special_&lt;row&gt;</cite>.
+Replace <cite>row</cite> with the row number.
+Inside each row, you will describe the key. A key is a 4 element list in
+the format:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="o">&lt;</span><span class="n">text</span> <span class="n">displayed</span> <span class="n">on</span> <span class="n">the</span> <span class="n">keyboard</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">text</span> <span class="n">to</span> <span class="n">put</span> <span class="n">when</span> <span class="n">the</span> <span class="n">key</span> <span class="ow">is</span> <span class="n">pressed</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="o">&lt;</span><span class="n">text</span> <span class="n">that</span> <span class="n">represents</span> <span class="n">the</span> <span class="n">keycode</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">size</span> <span class="n">of</span> <span class="n">cols</span><span class="o">&gt;</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>Here are example keys:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># f key</span>
+<span class="p">[</span><span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="c1"># capslock</span>
+<span class="p">[</span><span class="s2">&quot;↹&quot;</span><span class="p">,</span> <span class="s2">&quot;     &quot;</span><span class="p">,</span> <span class="s2">&quot;tab&quot;</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Finally, complete the JSON:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="o">...</span>
+    <span class="s2">&quot;normal_1&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">[</span><span class="s2">&quot;`&quot;</span><span class="p">,</span> <span class="s2">&quot;`&quot;</span><span class="p">,</span> <span class="s2">&quot;`&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>    <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>    <span class="p">[</span><span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>    <span class="p">[</span><span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>    <span class="p">[</span><span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;6&quot;</span><span class="p">,</span> <span class="s2">&quot;6&quot;</span><span class="p">,</span> <span class="s2">&quot;6&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>    <span class="p">[</span><span class="s2">&quot;7&quot;</span><span class="p">,</span> <span class="s2">&quot;7&quot;</span><span class="p">,</span> <span class="s2">&quot;7&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>    <span class="p">[</span><span class="s2">&quot;8&quot;</span><span class="p">,</span> <span class="s2">&quot;8&quot;</span><span class="p">,</span> <span class="s2">&quot;8&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;9&quot;</span><span class="p">,</span> <span class="s2">&quot;9&quot;</span><span class="p">,</span> <span class="s2">&quot;9&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>    <span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>    <span class="p">[</span><span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>    <span class="p">[</span><span class="s2">&quot;⌫&quot;</span><span class="p">,</span> <span class="n">null</span><span class="p">,</span> <span class="s2">&quot;backspace&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="p">],</span>
+
+    <span class="s2">&quot;shift_1&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="o">...</span> <span class="p">],</span>
+    <span class="s2">&quot;normal_2&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="o">...</span> <span class="p">],</span>
+    <span class="s2">&quot;special_2&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="o">...</span> <span class="p">],</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="request-keyboard">
+<h2>Request Keyboard<a class="headerlink" href="#request-keyboard" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The instantiation of the virtual keyboard is controlled by the configuration.
+Check <cite>keyboard_mode</cite> and <cite>keyboard_layout</cite> in the <a class="reference internal" href="api-kivy.config.html"><span class="doc">Configuration object</span></a>.</p>
+<p>If you intend to create a widget that requires a keyboard, do not use the
+virtual keyboard directly, but prefer to use the best method available on
+the platform. Check the <a class="reference internal" href="api-kivy.core.window.html#kivy.core.window.WindowBase.request_keyboard" title="kivy.core.window.WindowBase.request_keyboard"><code class="xref py py-meth docutils literal"><span class="pre">request_keyboard()</span></code></a>
+method in the <a class="reference internal" href="api-kivy.core.window.html"><span class="doc">Window</span></a>.</p>
+<p>If you want a specific layout when you request the keyboard, you should write
+something like this (from 1.8.0, numeric.json can be in the same directory as
+your main.py):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">keyboard</span> <span class="o">=</span> <span class="n">Window</span><span class="o">.</span><span class="n">request_keyboard</span><span class="p">(</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_keyboard_close</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">widget</span><span class="p">:</span>
+    <span class="n">vkeyboard</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_keyboard</span><span class="o">.</span><span class="n">widget</span>
+    <span class="n">vkeyboard</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="s1">&#39;numeric.json&#39;</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="kivy.uix.vkeyboard.VKeyboard">
+<em class="property">class </em><code class="descclassname">kivy.uix.vkeyboard.</code><code class="descname">VKeyboard</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/vkeyboard.html#VKeyboard"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ベースクラス: <a class="reference internal" href="api-kivy.uix.scatter.html#kivy.uix.scatter.Scatter" title="kivy.uix.scatter.Scatter"><code class="xref py py-class docutils literal"><span class="pre">kivy.uix.scatter.Scatter</span></code></a></p>
+<p>VKeyboard is an onscreen keyboard with multitouch support.
+Its layout is entirely customizable and you can switch between available
+layouts using a button in the bottom right of the widget.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Events:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>on_key_down</cite>: keycode, internal, modifiers</dt>
+<dd><p class="first last">Fired when the keyboard received a key down event (key press).</p>
+</dd>
+<dt><cite>on_key_up</cite>: keycode, internal, modifiers</dt>
+<dd><p class="first last">Fired when the keyboard received a key up event (key release).</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="kivy.uix.vkeyboard.VKeyboard.available_layouts">
+<code class="descname">available_layouts</code><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.available_layouts" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Dictionary of all available layouts. Keys are the layout ID, and the
+value is the JSON (translated into a Python object).</p>
+<p><a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.available_layouts" title="kivy.uix.vkeyboard.VKeyboard.available_layouts"><code class="xref py py-attr docutils literal"><span class="pre">available_layouts</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.DictProperty" title="kivy.properties.DictProperty"><code class="xref py py-class docutils literal"><span class="pre">DictProperty</span></code></a> and
+defaults to {}.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.vkeyboard.VKeyboard.background">
+<code class="descname">background</code><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.background" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Filename of the background image.</p>
+<p><a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.background" title="kivy.uix.vkeyboard.VKeyboard.background"><code class="xref py py-attr docutils literal"><span class="pre">background</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a> and
+defaults to <code class="file docutils literal"><span class="pre">atlas://data/images/defaulttheme/vkeyboard_background</span></code>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.vkeyboard.VKeyboard.background_border">
+<code class="descname">background_border</code><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.background_border" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Background image border. Used for controlling the
+<a class="reference internal" href="api-kivy.graphics.vertex_instructions.html#kivy.graphics.vertex_instructions.BorderImage.border" title="kivy.graphics.vertex_instructions.BorderImage.border"><code class="xref py py-attr docutils literal"><span class="pre">border</span></code></a> property of
+the background.</p>
+<p><a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.background_border" title="kivy.uix.vkeyboard.VKeyboard.background_border"><code class="xref py py-attr docutils literal"><span class="pre">background_border</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a> and
+defaults to [16, 16, 16, 16]</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.vkeyboard.VKeyboard.background_color">
+<code class="descname">background_color</code><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.background_color" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Background color, in the format (r, g, b, a). If a background is
+set, the color will be combined with the background texture.</p>
+<p><a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.background_color" title="kivy.uix.vkeyboard.VKeyboard.background_color"><code class="xref py py-attr docutils literal"><span class="pre">background_color</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a> and
+defaults to [1, 1, 1, 1].</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.vkeyboard.VKeyboard.background_disabled">
+<code class="descname">background_disabled</code><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.background_disabled" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Filename of the background image when the vkeyboard is disabled.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.background_disabled" title="kivy.uix.vkeyboard.VKeyboard.background_disabled"><code class="xref py py-attr docutils literal"><span class="pre">background_disabled</span></code></a> is a
+<a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a> and defaults to
+<code class="file docutils literal"><span class="pre">atlas://data/images/defaulttheme/vkeyboard__disabled_background</span></code>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.vkeyboard.VKeyboard.callback">
+<code class="descname">callback</code><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.callback" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Callback can be set to a function that will be called if the
+VKeyboard is closed by the user.</p>
+<p><a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.target" title="kivy.uix.vkeyboard.VKeyboard.target"><code class="xref py py-attr docutils literal"><span class="pre">target</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ObjectProperty" title="kivy.properties.ObjectProperty"><code class="xref py py-class docutils literal"><span class="pre">ObjectProperty</span></code></a> instance and
+defaults to None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.vkeyboard.VKeyboard.collide_margin">
+<code class="descname">collide_margin</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/vkeyboard.html#VKeyboard.collide_margin"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.collide_margin" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Do a collision test, and return True if the (x, y) is inside the
+vkeyboard margin.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.vkeyboard.VKeyboard.docked">
+<code class="descname">docked</code><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.docked" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Indicate whether the VKeyboard is docked on the screen or not. If you
+change it, you must manually call <a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.setup_mode" title="kivy.uix.vkeyboard.VKeyboard.setup_mode"><code class="xref py py-meth docutils literal"><span class="pre">setup_mode()</span></code></a> otherwise it will have
+no impact. If the VKeyboard is created by the Window, the docked mode will
+be automatically set by the configuration, using the <cite>keyboard_mode</cite> token
+in <cite>[kivy]</cite> section.</p>
+<p><a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.docked" title="kivy.uix.vkeyboard.VKeyboard.docked"><code class="xref py py-attr docutils literal"><span class="pre">docked</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> and defaults
+to False.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.vkeyboard.VKeyboard.font_size">
+<code class="descname">font_size</code><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.font_size" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>font_size, specifies the size of the text on the virtual keyboard keys.
+It should be kept within limits to ensure the text does not extend beyond
+the bounds of the key or become too small to read.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.font_size" title="kivy.uix.vkeyboard.VKeyboard.font_size"><code class="xref py py-attr docutils literal"><span class="pre">font_size</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a> and
+defaults to 20.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.vkeyboard.VKeyboard.key_background_color">
+<code class="descname">key_background_color</code><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.key_background_color" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Key background color, in the format (r, g, b, a). If a key background is
+set, the color will be combined with the key background texture.</p>
+<p><a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.key_background_color" title="kivy.uix.vkeyboard.VKeyboard.key_background_color"><code class="xref py py-attr docutils literal"><span class="pre">key_background_color</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a>
+and defaults to [1, 1, 1, 1].</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.vkeyboard.VKeyboard.key_background_down">
+<code class="descname">key_background_down</code><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.key_background_down" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Filename of the key background image for use when a touch is active
+on the widget.</p>
+<p><a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.key_background_down" title="kivy.uix.vkeyboard.VKeyboard.key_background_down"><code class="xref py py-attr docutils literal"><span class="pre">key_background_down</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a>
+and defaults to
+<code class="file docutils literal"><span class="pre">atlas://data/images/defaulttheme/vkeyboard_key_down</span></code>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.vkeyboard.VKeyboard.key_background_normal">
+<code class="descname">key_background_normal</code><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.key_background_normal" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Filename of the key background image for use when no touches are active
+on the widget.</p>
+<p><a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.key_background_normal" title="kivy.uix.vkeyboard.VKeyboard.key_background_normal"><code class="xref py py-attr docutils literal"><span class="pre">key_background_normal</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a>
+and defaults to
+<code class="file docutils literal"><span class="pre">atlas://data/images/defaulttheme/vkeyboard_key_normal</span></code>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.vkeyboard.VKeyboard.key_border">
+<code class="descname">key_border</code><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.key_border" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Key image border. Used for controlling the
+<a class="reference internal" href="api-kivy.graphics.vertex_instructions.html#kivy.graphics.vertex_instructions.BorderImage.border" title="kivy.graphics.vertex_instructions.BorderImage.border"><code class="xref py py-attr docutils literal"><span class="pre">border</span></code></a> property of
+the key.</p>
+<p><a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.key_border" title="kivy.uix.vkeyboard.VKeyboard.key_border"><code class="xref py py-attr docutils literal"><span class="pre">key_border</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a> and
+defaults to [16, 16, 16, 16]</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.vkeyboard.VKeyboard.key_disabled_background_normal">
+<code class="descname">key_disabled_background_normal</code><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.key_disabled_background_normal" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Filename of the key background image for use when no touches are active
+on the widget and vkeyboard is disabled.</p>
+<div class="versionadded">
+<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.key_disabled_background_normal" title="kivy.uix.vkeyboard.VKeyboard.key_disabled_background_normal"><code class="xref py py-attr docutils literal"><span class="pre">key_disabled_background_normal</span></code></a> is a
+<a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a> and defaults to
+<code class="file docutils literal"><span class="pre">atlas://data/images/defaulttheme/vkeyboard_disabled_key_normal</span></code>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.vkeyboard.VKeyboard.key_margin">
+<code class="descname">key_margin</code><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.key_margin" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Key margin, used to create space between keys. The margin is composed of
+four values, in pixels:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">key_margin</span> <span class="o">=</span> <span class="p">[</span><span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">left</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.key_margin" title="kivy.uix.vkeyboard.VKeyboard.key_margin"><code class="xref py py-attr docutils literal"><span class="pre">key_margin</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a> and defaults
+to [2, 2, 2, 2]</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.vkeyboard.VKeyboard.layout">
+<code class="descname">layout</code><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.layout" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Layout to use for the VKeyboard. By default, it will be the
+layout set in the configuration, according to the <cite>keyboard_layout</cite>
+in <cite>[kivy]</cite> section.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">バージョン 1.8.0 で変更: </span>If layout is a .json filename, it will loaded and added to the
+available_layouts.</p>
+</div>
+<p><a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.layout" title="kivy.uix.vkeyboard.VKeyboard.layout"><code class="xref py py-attr docutils literal"><span class="pre">layout</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a> and defaults
+to None.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.vkeyboard.VKeyboard.layout_path">
+<code class="descname">layout_path</code><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.layout_path" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Path from which layouts are read.</p>
+<p><a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.layout" title="kivy.uix.vkeyboard.VKeyboard.layout"><code class="xref py py-attr docutils literal"><span class="pre">layout</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a> and
+defaults to <code class="file docutils literal"><span class="pre">&lt;kivy_data_dir&gt;/keyboards/</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.vkeyboard.VKeyboard.margin_hint">
+<code class="descname">margin_hint</code><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.margin_hint" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Margin hint, used as spacing between keyboard background and keys
+content. The margin is composed of four values, between 0 and 1:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">margin_hint</span> <span class="o">=</span> <span class="p">[</span><span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">left</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The margin hints will be multiplied by width and height, according to their
+position.</p>
+<p><a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.margin_hint" title="kivy.uix.vkeyboard.VKeyboard.margin_hint"><code class="xref py py-attr docutils literal"><span class="pre">margin_hint</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a> and
+defaults to [.05, .06, .05, .06]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.vkeyboard.VKeyboard.refresh">
+<code class="descname">refresh</code><span class="sig-paren">(</span><em>force=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/vkeyboard.html#VKeyboard.refresh"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.refresh" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>(internal) Recreate the entire widget and graphics according to the
+selected layout.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.vkeyboard.VKeyboard.setup_mode">
+<code class="descname">setup_mode</code><span class="sig-paren">(</span><em>*largs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/vkeyboard.html#VKeyboard.setup_mode"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.setup_mode" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Call this method when you want to readjust the keyboard according to
+options: <a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.docked" title="kivy.uix.vkeyboard.VKeyboard.docked"><code class="xref py py-attr docutils literal"><span class="pre">docked</span></code></a> or not, with attached <a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.target" title="kivy.uix.vkeyboard.VKeyboard.target"><code class="xref py py-attr docutils literal"><span class="pre">target</span></code></a> or not:</p>
+<ul class="simple">
+<li>If <a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.docked" title="kivy.uix.vkeyboard.VKeyboard.docked"><code class="xref py py-attr docutils literal"><span class="pre">docked</span></code></a> is True, it will call <a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.setup_mode_dock" title="kivy.uix.vkeyboard.VKeyboard.setup_mode_dock"><code class="xref py py-meth docutils literal"><span class="pre">setup_mode_dock()</span></code></a></li>
+<li>If <a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.docked" title="kivy.uix.vkeyboard.VKeyboard.docked"><code class="xref py py-attr docutils literal"><span class="pre">docked</span></code></a> is False, it will call <a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.setup_mode_free" title="kivy.uix.vkeyboard.VKeyboard.setup_mode_free"><code class="xref py py-meth docutils literal"><span class="pre">setup_mode_free()</span></code></a></li>
+</ul>
+<p>Feel free to overload these methods to create new
+positioning behavior.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.vkeyboard.VKeyboard.setup_mode_dock">
+<code class="descname">setup_mode_dock</code><span class="sig-paren">(</span><em>*largs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/vkeyboard.html#VKeyboard.setup_mode_dock"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.setup_mode_dock" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Setup the keyboard in docked mode.</p>
+<p>Dock mode will reset the rotation, disable translation, rotation and
+scale. Scale and position will be automatically adjusted to attach the
+keyboard to the bottom of the screen.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Don&#8217;t call this method directly, use <a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.setup_mode" title="kivy.uix.vkeyboard.VKeyboard.setup_mode"><code class="xref py py-meth docutils literal"><span class="pre">setup_mode()</span></code></a> instead.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.vkeyboard.VKeyboard.setup_mode_free">
+<code class="descname">setup_mode_free</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/vkeyboard.html#VKeyboard.setup_mode_free"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.setup_mode_free" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Setup the keyboard in free mode.</p>
+<p>Free mode is designed to let the user control the position and
+orientation of the keyboard. The only real usage is for a multiuser
+environment, but you might found other ways to use it.
+If a <a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.target" title="kivy.uix.vkeyboard.VKeyboard.target"><code class="xref py py-attr docutils literal"><span class="pre">target</span></code></a> is set, it will place the vkeyboard under the
+target.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Don&#8217;t call this method directly, use <a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.setup_mode" title="kivy.uix.vkeyboard.VKeyboard.setup_mode"><code class="xref py py-meth docutils literal"><span class="pre">setup_mode()</span></code></a> instead.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="kivy.uix.vkeyboard.VKeyboard.target">
+<code class="descname">target</code><a class="headerlink" href="#kivy.uix.vkeyboard.VKeyboard.target" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Target widget associated with the VKeyboard. If set, it will be used to
+send keyboard events. If the VKeyboard mode is &#8220;free&#8221;, it will also be used
+to set the initial position.</p>
+<p><a class="reference internal" href="#kivy.uix.vkeyboard.VKeyboard.target" title="kivy.uix.vkeyboard.VKeyboard.target"><code class="xref py py-attr docutils literal"><span class="pre">target</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ObjectProperty" title="kivy.properties.ObjectProperty"><code class="xref py py-class docutils literal"><span class="pre">ObjectProperty</span></code></a> instance and
+defaults to None.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+
+            <div class="footerlinks">
+            <table>
+                <tr>
+                    <td class="leftlink">
+                  <a href="api-kivy.uix.videoplayer.html" title="previous chapter">&laquo; Video player</a></li>
+                  </td>
+                  <td class="rightlink">
+                  <a href="api-kivy.uix.widget.html" title="next chapter">Widget class &raquo;</a>
+                      </td>
+                  </tr>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    </div>
+<!-- Piwik -->
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setDomains', '*.kivy.org']);
+  _paq.push(['setCookieDomain', '*.kivy.org']);
+  _paq.push(['enableHeartBeatTimer', 60]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//pw.kivy.org/";
+    _paq.push(['setTrackerUrl', u+'pw.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+    <!--
+    <div class="footer">
+      &copy; Copyright 2010, The Kivy Authors.
+      Last updated on 5月 30, 2017.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+</div>
+-->
+  </body>
+</html>
