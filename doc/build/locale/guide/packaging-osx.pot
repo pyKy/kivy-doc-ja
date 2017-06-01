@@ -1,0 +1,326 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-01 21:12+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../sources/guide/packaging-osx.rst:2
+msgid "Creating packages for OS X"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:5
+msgid "Packaging Kivy applications with the following methods must be done inside OS X, 32-bit platforms are no longer supported."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:11
+msgid "Using Buildozer"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:13
+msgid "pip install git+http://github.com/kivy/buildozer cd /to/where/I/Want/to/package buildozer init"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:17
+msgid "Edit the buildozer.spec and add the details for your app. Dependencies can be added to the `requirements=` section."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:20
+msgid "By default the kivy version specified in the requirements is ignored."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:22
+msgid "If you have a Kivy.app at /Applications/Kivy.app then that is used, for packaging. Otherwise the latest build from kivy.org using Kivy master will be downloaded and used."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:26
+msgid "If you want to package for python 3.x.x simply download the package named Kivy3.7z from the download section of kivy.org and extract it to Kivy.app in /Applications, then run::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:32
+msgid "Once the app is packaged, you might want to remove unneeded packages like gstreamer, if you don't need video support. Same logic applies for other things you do not use, just reduce the package to its minimal state that is needed for the app to run."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:37
+msgid "As an example we are including the showcase example packaged using this method for both Python 2 (9.xMB) and 3 (15.xMB), you can find the packages here: https://drive.google.com/drive/folders/0B1WO07-OL50_alFzSXJUajBFdnc ."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:42
+msgid "That's it. Enjoy!"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:44
+msgid "Buildozer right now uses the Kivy SDK to package your app. If you want to control more details about your app than buildozer currently offers then you can use the SDK directly, as detailed in the section below."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:50
+msgid "Using the Kivy SDK"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:52
+msgid "Since version 1.9.0, Kivy is released for the OS X platform in a self-contained, portable distribution."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:55
+msgid "Apps can be packaged and distributed with the Kivy SDK using the method described below, making it easier to include frameworks like SDL2 and GStreamer."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:59
+msgid "Make sure you have the unmodified Kivy SDK (Kivy.app) from the download page."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:61
+msgid "Run the following commands::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:70
+msgid "This step above is important, you have to make sure to preserve the paths and permissions. A command like ``cp -rf`` will copy but make the app unusable and lead to error later on."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:74
+msgid "Now all you need to do is to include your compiled app in the Kivy.app by running the following command::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:79
+msgid "Where <app_folder_name> is the name of your app."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:81
+msgid "This copies Kivy.app to `<app_folder_name>.app` and includes a compiled copy of your app into this package."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:84
+msgid "That's it, your self-contained package is ready to be deployed! You can now further customize your app as described bellow."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:88
+msgid "Installing modules"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:90
+msgid "Kivy package on osx uses its own virtual env that is activated when you run your app using `kivy` command. To install any module you need to install the module like so::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:97
+msgid "Where are the modules/files installed?"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:98
+msgid "Inside the portable venv within the app at::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:102
+msgid "If you install a module that installs a binary for example like kivy-garden That binary will be only available from the venv above, as in after you do::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:107
+msgid "The garden lib will be only available when you activate this env."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:109
+msgid "source /Applications/Kivy.app/Contents/Resources/venv/bin/activate garden install mapview deactivate"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:114
+msgid "To install binary files"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:116
+msgid "Just copy the binary to the Kivy.app/Contents/Resources/venv/bin/ directory."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:119
+msgid "To include other frameworks"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:120
+msgid "Kivy.app comes with SDL2 and Gstreamer frameworks provided. To include frameworks other than the ones provided do the following::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:129
+msgid "Do not forget to replace <Framework_name> with your framework. This tool `osxrelocator` essentially changes the path for the libs in the framework such that they are relative to the executable within the .app, making the Framework portable with the .app."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:136
+msgid "Shrinking the app size"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:137
+msgid "The app has a considerable size right now, however the unneeded parts can be removed from the package."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:140
+msgid "For example if you don't use GStreamer, simply remove it from YourApp.app/Contents/Frameworks. Similarly you can remove the examples folder from /Applications/Kivy.app/Contents/Resources/kivy/examples/ or kivy/tools, kivy/docs etc."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:146
+msgid "This way the package can be made to only include the parts that are needed for your app."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:150
+msgid "Adjust settings"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:151
+msgid "Icons and other settings of your app can be changed by editing YourApp/Contents/info.plist to suit your needs."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:155
+msgid "Create a DMG"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:156
+msgid "To make a DMG of your app use the following command::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:160
+msgid "Note the lack of `/` at the end. This should give you a compressed dmg that will further shrink the size of your distributed app."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:169
+msgid "Using PyInstaller without Homebrew"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:170
+msgid "First install Kivy and its dependencies without using Homebrew as mentioned here http://kivy.org/docs/installation/installation.html#development-version."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:173
+msgid "Once you have kivy and its deps installed, you need to install PyInstaller."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:175
+msgid "Let's assume we use a folder like `testpackaging`::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:180
+msgid "Create a file named touchtracer.spec in this directory and add the following code to it::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:220
+msgid "Change the paths with your relevant paths::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:228
+msgid "Then run the following command::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:232
+msgid "Replace `touchtracer` with your app where appropriate. This will give you a <yourapp>.app in the dist/ folder."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:237
+msgid "Using PyInstaller and Homebrew"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:239
+msgid "Package your app on the oldest OS X version you want to support."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:242
+msgid "Complete guide"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:243
+msgid "Install `Homebrew <http://brew.sh>`_"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:244
+msgid "Install Python::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:249
+msgid "To use Python 3, ``brew install python3`` and replace ``pip`` with ``pip3`` in the guide below."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:252
+msgid "(Re)install your dependencies with ``--build-bottle`` to make sure they can be used on other machines::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:258
+msgid "If your project depends on GStreamer or other additional libraries (re)install them with ``--build-bottle`` as described `below <additional libraries_>`_."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:262
+msgid "Install Cython and Kivy::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:267
+msgid "Install PyInstaller::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:271
+msgid "Package your app using the path to your main.py::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:281
+msgid "This will not yet copy additional image or sound files. You would need to adapt the created ``.spec`` file for that."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:286
+msgid "Editing the spec file"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:287
+msgid "The specs file is named `touchtracer.spec` and is located in the directory where you ran the pyinstaller command."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:290
+msgid "You need to change the `COLLECT()` call to add the data of touchtracer (`touchtracer.kv`, `particle.png`, ...). Change the line to add a Tree() object. This Tree will search and add every file found in the touchtracer directory to your final package. Your COLLECT section should look something like this::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:305
+msgid "This will add the required hooks so that PyInstaller gets the required Kivy files. We are done. Your spec is ready to be executed."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:309
+msgid "Build the spec and create a DMG"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:311
+msgid "Open a console."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:312
+msgid "Go to the PyInstaller directory, and build the spec::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:316
+msgid "Run::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:322
+msgid "You will now have a Touchtracer.dmg available in the `dist` directory."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:326
+msgid "Additional Libraries"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:328
+msgid "GStreamer"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:329
+msgid "If your project depends on GStreamer::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:334
+msgid "If your Project needs Ogg Vorbis support be sure to add the ``--with-libvorbis`` option to the command above."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:337
+msgid "If you are using Python from Homebrew you will also need the following step until `this pull request <https://github.com/Homebrew/homebrew/pull/46097>`_ gets merged::"
+msgstr ""
+

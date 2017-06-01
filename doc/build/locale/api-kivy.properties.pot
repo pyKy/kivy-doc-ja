@@ -1,0 +1,727 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-01 21:12+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../sources/api-kivy.properties.rst:3
+msgid "Properties"
+msgstr ""
+
+#: ../../docstring of kivy.properties:2
+msgid "The *Properties* classes are used when you create an :class:`~kivy.event.EventDispatcher`."
+msgstr ""
+
+#: ../../docstring of kivy.properties:6
+msgid "Kivy's Properties are **not to be confused** with Python's properties (i.e. the ``@property`` decorator and the <property> type)."
+msgstr ""
+
+#: ../../docstring of kivy.properties:9
+msgid "Kivy's property classes support:"
+msgstr ""
+
+#: ../../docstring of kivy.properties:17
+msgid "Value Checking / Validation"
+msgstr ""
+
+#: ../../docstring of kivy.properties:12
+msgid "When you assign a new value to a property, the value is checked against validation constraints. For example, validation for an :class:`OptionProperty` will make sure that the value is in a predefined list of possibilities. Validation for a :class:`NumericProperty` will check that your value is a numeric type. This prevents many errors early on."
+msgstr ""
+
+#: ../../docstring of kivy.properties:25
+msgid "Observer Pattern"
+msgstr ""
+
+#: ../../docstring of kivy.properties:20
+msgid "You can specify what should happen when a property's value changes. You can bind your own function as a callback to changes of a :class:`Property`. If, for example, you want a piece of code to be called when a widget's :class:`~kivy.uix.widget.Widget.pos` property changes, you can :class:`~kivy.event.EventDispatcher.bind` a function to it."
+msgstr ""
+
+#: ../../docstring of kivy.properties:29
+msgid "Better Memory Management"
+msgstr ""
+
+#: ../../docstring of kivy.properties:28
+msgid "The same instance of a property is shared across multiple widget instances."
+msgstr ""
+
+#: ../../docstring of kivy.properties:32
+msgid "Comparison Python vs. Kivy"
+msgstr ""
+
+#: ../../docstring of kivy.properties:35
+msgid "Basic example"
+msgstr ""
+
+#: ../../docstring of kivy.properties:37
+msgid "Let's compare Python and Kivy properties by creating a Python class with 'a' as a float property::"
+msgstr ""
+
+#: ../../docstring of kivy.properties:45
+msgid "With Kivy, you can do::"
+msgstr ""
+
+#: ../../docstring of kivy.properties:52
+msgid "Depth being tracked"
+msgstr ""
+
+#: ../../docstring of kivy.properties:54
+msgid "Only the \"top level\" of a nested object is being tracked. For example::"
+msgstr ""
+
+#: ../../docstring of kivy.properties:62
+msgid "The same holds true for all container-type kivy properties."
+msgstr ""
+
+#: ../../docstring of kivy.properties:65
+msgid "Value checking"
+msgstr ""
+
+#: ../../docstring of kivy.properties:67
+msgid "If you wanted to add a check for a minimum / maximum value allowed for a property, here is a possible implementation in Python::"
+msgstr ""
+
+#: ../../docstring of kivy.properties:85
+msgid "The disadvantage is you have to do that work yourself. And it becomes laborious and complex if you have many properties. With Kivy, you can simplify the process::"
+msgstr ""
+
+#: ../../docstring of kivy.properties:92
+msgid "That's all!"
+msgstr ""
+
+#: ../../docstring of kivy.properties:96
+msgid "Error Handling"
+msgstr ""
+
+#: ../../docstring of kivy.properties:98
+msgid "If setting a value would otherwise raise a ValueError, you have two options to handle the error gracefully within the property. The first option is to use an errorvalue parameter. An errorvalue is a substitute for the invalid value::"
+msgstr ""
+
+#: ../../docstring of kivy.properties:105
+msgid "The second option in to use an errorhandler parameter. An errorhandler is a callable (single argument function or lambda) which can return a valid substitute::"
+msgstr ""
+
+#: ../../docstring of kivy.properties:114
+msgid "Keyword arguments and __init__()"
+msgstr ""
+
+#: ../../docstring of kivy.properties:116
+msgid "When working with inheritance, namely with the `__init__()` of an object that inherits from :class:`~kivy.event.EventDispatcher` e.g. a :class:`~kivy.uix.widget.Widget`, the properties protect you from a Python 3 object error. This error occurs when passing kwargs to the `object` instance through a `super()` call::"
+msgstr ""
+
+#: ../../docstring of kivy.properties:129
+msgid "While this error is silenced in Python 2, it will stop the application in Python 3 with::"
+msgstr ""
+
+#: ../../docstring of kivy.properties:134
+msgid "Logically, to fix that you'd either put `my_string` directly in the `__init__()` definition as a required argument or as an optional keyword argument with a default value i.e.::"
+msgstr ""
+
+#: ../../docstring of kivy.properties:143
+msgid "or::"
+msgstr ""
+
+#: ../../docstring of kivy.properties:150
+msgid "Alternatively, you could pop the key-value pair from the `kwargs` dictionary before calling `super()`::"
+msgstr ""
+
+#: ../../docstring of kivy.properties:158
+msgid "Kivy properties are more flexible and do the required `kwargs.pop()` in the background automatically (within the `super()` call to :class:`~kivy.event.EventDispatcher`) to prevent this distraction::"
+msgstr ""
+
+#: ../../docstring of kivy.properties:170
+msgid "Conclusion"
+msgstr ""
+
+#: ../../docstring of kivy.properties:172
+msgid "Kivy properties are easier to use than the standard ones. See the next chapter for examples of how to use them :)"
+msgstr ""
+
+#: ../../docstring of kivy.properties:177
+msgid "Observe Property changes"
+msgstr ""
+
+#: ../../docstring of kivy.properties:179
+msgid "As we said in the beginning, Kivy's Properties implement the `Observer pattern <http://en.wikipedia.org/wiki/Observer_pattern>`_. That means you can :meth:`~kivy.event.EventDispatcher.bind` to a property and have your own function called when the value changes."
+msgstr ""
+
+#: ../../docstring of kivy.properties:184
+msgid "There are multiple ways to observe the changes."
+msgstr ""
+
+#: ../../docstring of kivy.properties:187
+msgid "Observe using bind()"
+msgstr ""
+
+#: ../../docstring of kivy.properties:189
+msgid "You can observe a property change by using the bind() method outside of the class::"
+msgstr ""
+
+#: ../../docstring of kivy.properties:209
+msgid "Property objects live at the class level and manage the values attached to instances. Re-assigning at class level will remove the Property. For example, continuing with the code above, `MyClass.a = 5` replaces the property object with a simple int."
+msgstr ""
+
+#: ../../docstring of kivy.properties:216
+msgid "Observe using 'on_<propname>'"
+msgstr ""
+
+#: ../../docstring of kivy.properties:218
+msgid "If you defined the class yourself, you can use the 'on_<propname>' callback::"
+msgstr ""
+
+#: ../../docstring of kivy.properties:228
+msgid "Be careful with 'on_<propname>'. If you are creating such a callback on a property you are inheriting, you must not forget to call the superclass function too."
+msgstr ""
+
+#: ../../docstring of kivy.properties:233
+msgid "Binding to properties of properties."
+msgstr ""
+
+#: ../../docstring of kivy.properties:235
+msgid "When binding to a property of a property, for example binding to a numeric property of an object saved in a object property, updating the object property to point to a new object will not re-bind the numeric property to the new object. For example:"
+msgstr ""
+
+#: ../../docstring of kivy.properties:254
+msgid "When clicking on the button, although the label object property has changed to the second widget, the button text will not change because it is bound to the text property of the first label directly."
+msgstr ""
+
+#: ../../docstring of kivy.properties:258
+msgid "In `1.9.0`, the ``rebind`` option has been introduced that will allow the automatic updating of the ``text`` when ``label`` is changed, provided it was enabled. See :class:`ObjectProperty`."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "ベースクラス: :class:`builtins.object`"
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property:1
+msgid "Base class for building more complex properties."
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property:3
+msgid "This class handles all the basic setters and getters, None type handling, the observer list and storage initialisation. This class should not be directly instantiated."
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property:7
+msgid "By default, a :class:`Property` always takes a default value::"
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property:13
+msgid "The default value must be a value that agrees with the Property type. For example, you can't set a list to a :class:`StringProperty` because the StringProperty will check the default value."
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property:17
+msgid "None is a special case: you can set the default value of a Property to None, but you can't set None to a property afterward.  If you really want to do that, you must declare the Property with `allownone=True`::"
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property:31
+msgid "`default`:"
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property:32
+msgid "Specifies the default value for the property."
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property:46
+msgid "`\\*\\*kwargs`:"
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property:34
+msgid "If the parameters include `errorhandler`, this should be a callable which must take a single argument and return a valid substitute value."
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property:38
+msgid "If the parameters include `errorvalue`, this should be an object. If set, it will replace an invalid property value (overrides errorhandler)."
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property:42
+msgid "If the parameters include `force_dispatch`, it should be a boolean. If True, no value comparison will be done, so the property event will be dispatched even if the new value matches the old value (by default identical values are not dispatched to avoid infinite recursion in two-way binds). Be careful, this is for advanced use only."
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property:48
+msgid "Parameters errorhandler and errorvalue added"
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property:51
+msgid "Parameter force_dispatch added"
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property.bind:1
+msgid "Add a new observer to be called only when the value is changed."
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property.dispatch:1
+msgid "Dispatch the value change to all observers."
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property.dispatch:3
+msgid "The method is now accessible from Python."
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property.dispatch:6
+msgid "This can be used to force the dispatch of the property, even if the value didn't change::"
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property.fbind:1
+msgid "Similar to bind, except it doesn't check if the observer already exists. It also expands and forwards largs and kwargs to the callback. funbind or unbind_uid should be called when unbinding. It returns a unique positive uid to be used with unbind_uid."
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property.funbind:1
+msgid "Remove the observer from our widget observer list bound with fbind. It removes the first match it finds, as opposed to unbind which searches for all matches."
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property.get:1
+msgid "Return the value of the property."
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property.link:1
+msgid "Link the instance with its real name."
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property.link:5
+msgid "Internal usage only."
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property.link:7
+msgid "When a widget is defined and uses a :class:`Property` class, the creation of the property object happens, but the instance doesn't know anything about its name in the widget class::"
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property.link:14
+msgid "In this example, the uid will be a NumericProperty() instance, but the property instance doesn't know its name. That's why :meth:`link` is used in `Widget.__new__`. The link function is also used to create the storage space of the property for this specific widget instance."
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property.set:1
+msgid "Set a new value for the property."
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property.unbind:1
+msgid "Remove the observer from our widget observer list."
+msgstr ""
+
+#: ../../docstring of kivy.properties.Property.unbind_uid:1
+msgid "Remove the observer from our widget observer list bound with fbind using the uid."
+msgstr ""
+
+#: ../../<autodoc>:1
+#: ../../<autodoc>:1
+#: ../../<autodoc>:1
+#: ../../<autodoc>:1
+#: ../../<autodoc>:1
+#: ../../<autodoc>:1
+#: ../../<autodoc>:1
+#: ../../<autodoc>:1
+#: ../../<autodoc>:1
+#: ../../<autodoc>:1
+#: ../../<autodoc>:1
+#: ../../<autodoc>:1
+msgid "ベースクラス: :class:`kivy.properties.Property`"
+msgstr ""
+
+#: ../../docstring of kivy.properties.NumericProperty:1
+msgid "Property that represents a numeric value."
+msgstr ""
+
+#: ../../docstring of kivy.properties.NumericProperty:5
+msgid "`defaultvalue`: int or float, defaults to 0"
+msgstr ""
+
+#: ../../docstring of kivy.properties.NumericProperty:5
+#: ../../docstring of kivy.properties.StringProperty:5
+#: ../../docstring of kivy.properties.ListProperty:5
+#: ../../docstring of kivy.properties.ObjectProperty:5
+#: ../../docstring of kivy.properties.BooleanProperty:5
+#: ../../docstring of kivy.properties.BoundedNumericProperty:6
+#: ../../docstring of kivy.properties.OptionProperty:9
+#: ../../docstring of kivy.properties.DictProperty:5
+msgid "Specifies the default value of the property."
+msgstr ""
+
+#: ../../docstring of kivy.properties.NumericProperty:19
+msgid "NumericProperty can now accept custom text and tuple value to indicate a type, like \"in\", \"pt\", \"px\", \"cm\", \"mm\", in the format: '10pt' or (10, 'pt')."
+msgstr ""
+
+#: ../../docstring of kivy.properties.NumericProperty.get_format:1
+msgid "Return the format used for Numeric calculation. Default is px (mean the value have not been changed at all). Otherwise, it can be one of 'in', 'pt', 'cm', 'mm'."
+msgstr ""
+
+#: ../../docstring of kivy.properties.StringProperty:1
+msgid "Property that represents a string value."
+msgstr ""
+
+#: ../../docstring of kivy.properties.StringProperty:4
+msgid "`defaultvalue`: string, defaults to ''"
+msgstr ""
+
+#: ../../docstring of kivy.properties.ListProperty:1
+msgid "Property that represents a list."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ListProperty:5
+msgid "`defaultvalue`: list, defaults to []"
+msgstr ""
+
+#: ../../docstring of kivy.properties.ListProperty:9
+msgid "When assigning a list to a :class:`ListProperty`, the list stored in the property is a shallow copy of the list and not the original list. This can be demonstrated with the following example::"
+msgstr ""
+
+#: ../../docstring of kivy.properties.ListProperty:25
+msgid "However, changes to nested levels will affect the property as well, since the property uses a shallow copy of my_list."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ObjectProperty:1
+msgid "Property that represents a Python object."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ObjectProperty:4
+msgid "`defaultvalue`: object type"
+msgstr ""
+
+#: ../../docstring of kivy.properties.ObjectProperty:26
+#: ../../docstring of kivy.properties.AliasProperty:27
+#: ../../docstring of kivy.properties.DictProperty:7
+msgid "`rebind`: bool, defaults to False"
+msgstr ""
+
+#: ../../docstring of kivy.properties.ObjectProperty:7
+msgid "Whether kv rules using this object as an intermediate attribute in a kv rule, will update the bound property when this object changes."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ObjectProperty:11
+msgid "That is the standard behavior is that if there's a kv rule ``text: self.a.b.c.d``, where ``a``, ``b``, and ``c`` are properties with ``rebind`` ``False`` and ``d`` is a :class:`StringProperty`. Then when the rule is applied, ``text`` becomes bound only to ``d``. If ``a``, ``b``, or ``c`` change, ``text`` still remains bound to ``d``. Furthermore, if any of them were ``None`` when the rule was initially evaluated, e.g. ``b`` was ``None``; then ``text`` is bound to ``b`` and will not become bound to ``d`` even when ``b`` is changed to not be ``None``."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ObjectProperty:21
+msgid "By setting ``rebind`` to ``True``, however, the rule will be re-evaluated and all the properties rebound when that intermediate property changes. E.g. in the example above, whenever ``b`` changes or becomes not ``None`` if it was ``None`` before, ``text`` is evaluated again and becomes rebound to ``d``. The overall result is that ``text`` is now bound to all the properties among ``a``, ``b``, or ``c`` that have ``rebind`` set to ``True``."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ObjectProperty:31
+#: ../../docstring of kivy.properties.BoundedNumericProperty:12
+#: ../../docstring of kivy.properties.OptionProperty:12
+#: ../../docstring of kivy.properties.VariableListProperty:17
+#: ../../docstring of kivy.properties.ConfigParserProperty:116
+msgid "`\\*\\*kwargs`: a list of keyword arguments"
+msgstr ""
+
+#: ../../docstring of kivy.properties.ObjectProperty:31
+msgid "`baseclass`"
+msgstr ""
+
+#: ../../docstring of kivy.properties.ObjectProperty:30
+msgid "If kwargs includes a `baseclass` argument, this value will be used for validation: `isinstance(value, kwargs['baseclass'])`."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ObjectProperty:35
+msgid "To mark the property as changed, you must reassign a new python object."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ObjectProperty:37
+#: ../../docstring of kivy.properties.AliasProperty:29
+#: ../../docstring of kivy.properties.DictProperty:9
+msgid "`rebind` has been introduced."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ObjectProperty:42
+msgid "`baseclass` parameter added."
+msgstr ""
+
+#: ../../docstring of kivy.properties.BooleanProperty:1
+msgid "Property that represents only a boolean value."
+msgstr ""
+
+#: ../../docstring of kivy.properties.BooleanProperty:4
+msgid "`defaultvalue`: boolean"
+msgstr ""
+
+#: ../../docstring of kivy.properties.BoundedNumericProperty:1
+msgid "Property that represents a numeric value within a minimum bound and/or maximum bound -- within a numeric range."
+msgstr ""
+
+#: ../../docstring of kivy.properties.BoundedNumericProperty:5
+msgid "`default`: numeric"
+msgstr ""
+
+#: ../../docstring of kivy.properties.BoundedNumericProperty:8
+msgid "If a `min` parameter is included, this specifies the minimum numeric value that will be accepted. If a `max` parameter is included, this specifies the maximum numeric value that will be accepted."
+msgstr ""
+
+#: ../../docstring of kivy.properties.BoundedNumericProperty.bounds:1
+msgid "Return min/max of the value."
+msgstr ""
+
+#: ../../docstring of kivy.properties.BoundedNumericProperty.get_max:1
+msgid "Return the maximum value acceptable for the BoundedNumericProperty in `obj`. Return None if no maximum value is set. Check :attr:`get_min` for a usage example."
+msgstr ""
+
+#: ../../docstring of kivy.properties.BoundedNumericProperty.get_min:1
+msgid "Return the minimum value acceptable for the BoundedNumericProperty in `obj`. Return None if no minimum value is set::"
+msgstr ""
+
+#: ../../docstring of kivy.properties.BoundedNumericProperty.set_max:1
+msgid "Change the maximum value acceptable for the BoundedNumericProperty, only for the `obj` instance. Set to None if you want to disable it. Check :attr:`set_min` for a usage example."
+msgstr ""
+
+#: ../../docstring of kivy.properties.BoundedNumericProperty.set_max:7
+#: ../../docstring of kivy.properties.BoundedNumericProperty.set_min:15
+msgid "Changing the bounds doesn't revalidate the current value."
+msgstr ""
+
+#: ../../docstring of kivy.properties.BoundedNumericProperty.set_min:1
+msgid "Change the minimum value acceptable for the BoundedNumericProperty, only for the `obj` instance. Set to None if you want to disable it::"
+msgstr ""
+
+#: ../../docstring of kivy.properties.OptionProperty:1
+msgid "Property that represents a string from a predefined list of valid options."
+msgstr ""
+
+#: ../../docstring of kivy.properties.OptionProperty:4
+msgid "If the string set in the property is not in the list of valid options (passed at property creation time), a ValueError exception will be raised."
+msgstr ""
+
+#: ../../docstring of kivy.properties.OptionProperty:8
+msgid "`default`: any valid type in the list of options"
+msgstr ""
+
+#: ../../docstring of kivy.properties.OptionProperty:11
+msgid "Should include an `options` parameter specifying a list (not tuple) of valid options."
+msgstr ""
+
+#: ../../docstring of kivy.properties.OptionProperty:14
+#: ../../docstring of kivy.properties.ReferenceListProperty:9
+msgid "For example::"
+msgstr ""
+
+#: ../../docstring of kivy.properties.OptionProperty.options:1
+msgid "Return the options available."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ReferenceListProperty:1
+msgid "Property that allows the creation of a tuple of other properties."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ReferenceListProperty:3
+msgid "For example, if `x` and `y` are :class:`NumericProperty`\\s, we can create a :class:`ReferenceListProperty` for the `pos`. If you change the value of `pos`, it will automatically change the values of `x` and `y` accordingly. If you read the value of `pos`, it will return a tuple with the values of `x` and `y`."
+msgstr ""
+
+#: ../../docstring of kivy.properties.AliasProperty:1
+msgid "Create a property with a custom getter and setter."
+msgstr ""
+
+#: ../../docstring of kivy.properties.AliasProperty:3
+msgid "If you don't find a Property class that fits to your needs, you can make your own by creating custom Python getter and setter methods."
+msgstr ""
+
+#: ../../docstring of kivy.properties.AliasProperty:6
+msgid "Example from kivy/uix/widget.py::"
+msgstr ""
+
+#: ../../docstring of kivy.properties.AliasProperty:15
+msgid "`getter`: function"
+msgstr ""
+
+#: ../../docstring of kivy.properties.AliasProperty:16
+msgid "Function to use as a property getter"
+msgstr ""
+
+#: ../../docstring of kivy.properties.AliasProperty:19
+msgid "`setter`: function"
+msgstr ""
+
+#: ../../docstring of kivy.properties.AliasProperty:18
+msgid "Function to use as a property setter. Properties listening to the alias property won't be updated when the property is set (e.g. `right = 10`), unless the `setter` returns `True`."
+msgstr ""
+
+#: ../../docstring of kivy.properties.AliasProperty:21
+msgid "`bind`: list/tuple"
+msgstr ""
+
+#: ../../docstring of kivy.properties.AliasProperty:22
+msgid "Properties to observe for changes, as property name strings"
+msgstr ""
+
+#: ../../docstring of kivy.properties.AliasProperty:24
+msgid "`cache`: boolean"
+msgstr ""
+
+#: ../../docstring of kivy.properties.AliasProperty:24
+msgid "If True, the value will be cached, until one of the binded elements will changes"
+msgstr ""
+
+#: ../../docstring of kivy.properties.AliasProperty:27
+#: ../../docstring of kivy.properties.DictProperty:7
+msgid "See :class:`ObjectProperty` for details."
+msgstr ""
+
+#: ../../docstring of kivy.properties.AliasProperty:32
+msgid "Parameter `cache` added."
+msgstr ""
+
+#: ../../docstring of kivy.properties.DictProperty:1
+msgid "Property that represents a dict."
+msgstr ""
+
+#: ../../docstring of kivy.properties.DictProperty:4
+msgid "`defaultvalue`: dict, defaults to None"
+msgstr ""
+
+#: ../../docstring of kivy.properties.DictProperty:14
+msgid "Similar to :class:`ListProperty`, when assigning a dict to a :class:`DictProperty`, the dict stored in the property is a shallow copy of the dict and not the original dict. See :class:`ListProperty` for details."
+msgstr ""
+
+#: ../../docstring of kivy.properties.VariableListProperty:1
+msgid "A ListProperty that allows you to work with a variable amount of list items and to expand them to the desired list size."
+msgstr ""
+
+#: ../../docstring of kivy.properties.VariableListProperty:4
+msgid "For example, GridLayout's padding used to just accept one numeric value which was applied equally to the left, top, right and bottom of the GridLayout. Now padding can be given one, two or four values, which are expanded into a length four list [left, top, right, bottom] and stored in the property."
+msgstr ""
+
+#: ../../docstring of kivy.properties.VariableListProperty:11
+msgid "`default`: a default list of values"
+msgstr ""
+
+#: ../../docstring of kivy.properties.VariableListProperty:12
+msgid "Specifies the default values for the list."
+msgstr ""
+
+#: ../../docstring of kivy.properties.VariableListProperty:14
+msgid "`length`: int, one of 2 or 4."
+msgstr ""
+
+#: ../../docstring of kivy.properties.VariableListProperty:14
+msgid "Specifies the length of the final list. The `default` list will be expanded to match a list of this length."
+msgstr ""
+
+#: ../../docstring of kivy.properties.VariableListProperty:17
+msgid "Not currently used."
+msgstr ""
+
+#: ../../docstring of kivy.properties.VariableListProperty:19
+msgid "Keeping in mind that the `default` list is expanded to a list of length 4, here are some examples of how VariabelListProperty's are handled."
+msgstr ""
+
+#: ../../docstring of kivy.properties.VariableListProperty:22
+msgid "VariableListProperty([1]) represents [1, 1, 1, 1]."
+msgstr ""
+
+#: ../../docstring of kivy.properties.VariableListProperty:23
+msgid "VariableListProperty([1, 2]) represents [1, 2, 1, 2]."
+msgstr ""
+
+#: ../../docstring of kivy.properties.VariableListProperty:24
+msgid "VariableListProperty(['1px', (2, 'px'), 3, 4.0]) represents [1, 2, 3, 4.0]."
+msgstr ""
+
+#: ../../docstring of kivy.properties.VariableListProperty:25
+msgid "VariableListProperty(5) represents [5, 5, 5, 5]."
+msgstr ""
+
+#: ../../docstring of kivy.properties.VariableListProperty:26
+msgid "VariableListProperty(3, length=2) represents [3, 3]."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:1
+msgid "Property that allows one to bind to changes in the configuration values of a :class:`~kivy.config.ConfigParser` as well as to bind the ConfigParser values to other properties."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:5
+msgid "A ConfigParser is composed of sections, where each section has a number of keys and values associated with these keys. ConfigParserProperty lets you automatically listen to and change the values of specified keys based on other kivy properties."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:10
+msgid "For example, say we want to have a TextInput automatically write its value, represented as an int, in the `info` section of a ConfigParser. Also, the textinputs should update its values from the ConfigParser's fields. Finally, their values should be displayed in a label. In py::"
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:24
+msgid "The above code creates a property that is connected to the `number` key in the `info` section of the ConfigParser named `example`. Initially, this ConfigParser doesn't exist. Then, in `__init__`, a ConfigParser is created with name `example`, which is then automatically linked with this property. then in kv:"
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:41
+msgid "You'll notice that we have to do `text: str(info.number)`, this is because the value of this property is always an int, because we specified `int` as the `val_type`. However, we can assign anything to the property, e.g. `number: number.text` which assigns a string, because it is instantly converted with the `val_type` callback."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:49
+msgid "If a file has been opened for this ConfigParser using :meth:`~kivy.config.ConfigParser.read`, then :meth:`~kivy.config.ConfigParser.write` will be called every property change, keeping the file updated."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:56
+msgid "It is recommend that the config parser object be assigned to the property after the kv tree has been constructed (e.g. schedule on next frame from init). This is because the kv tree and its properties, when constructed, are evaluated on its own order, therefore, any initial values in the parser might be overwritten by objects it's bound to. So in the example above, the TextInput might be initially empty, and if `number: number.text` is evaluated before `text: str(info.number)`, the config value will be overwritten with the (empty) text value."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:70
+msgid "`default`: object type"
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:68
+msgid "Specifies the default value for the key. If the parser associated with this property doesn't have this section or key, it'll be created with the current value, which is the default value initially."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:74
+msgid "`section`: string type"
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:73
+msgid "The section in the ConfigParser where the key / value will be written. Must be provided. If the section doesn't exist, it'll be created."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:78
+msgid "`key`: string type"
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:77
+msgid "The key in section `section` where the value will be written to. Must be provided. If the key doesn't exist, it'll be created and the current value written to it, otherwise its value will be used."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:94
+msgid "`config`: string or :class:`~kivy.config.ConfigParser` instance."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:81
+msgid "The ConfigParser instance to associate with this property if not None. If it's a string, the ConfigParser instance whose :attr:`~kivy.config.ConfigParser.name` is the value of `config` will be used. If no such parser exists yet, whenever a ConfigParser with this name is created, it will automatically be linked to this property."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:88
+msgid "Whenever a ConfigParser becomes linked with a property, if the section or key doesn't exist, the current property value will be used to create that key, otherwise, the existing key value will be used for the property value; overwriting its current value. You can change the ConfigParser associated with this property if a string was used here, by changing the :attr:`~kivy.config.ConfigParser.name` of an existing or new ConfigParser instance. Or through :meth:`set_config`."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:108
+msgid "`val_type`: a callable object"
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:98
+msgid "The key values are saved in the ConfigParser as strings. When the ConfigParser value is read internally and assigned to the property or when the user changes the property value directly, if `val_type` is not None, it will be called with the new value as input and it should return the value converted to the proper type accepted ny this property. For example, if the property represent ints, `val_type` can simply be `int`."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:106
+msgid "If the `val_type` callback raises a `ValueError`, `errorvalue` or `errorhandler` will be used if provided. Tip: the `getboolean` function of the ConfigParser might also be useful here to convert to a boolean type."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:116
+msgid "`verify`: a callable object"
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty:111
+msgid "Can be used to restrict the allowable values of the property. For every value assigned to the property, if this is specified, `verify` is called with the new value, and if it returns `True` the value is accepted, otherwise, `errorvalue` or `errorhandler` will be used if provided or a `ValueError` is raised."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty.set_config:1
+msgid "Sets the ConfigParser object to be used by this property. Normally, the ConfigParser is set when initializing the Property using the `config` parameter."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty.set_config:9
+msgid "`config`: A :class:`~kivy.config.ConfigParser` instance."
+msgstr ""
+
+#: ../../docstring of kivy.properties.ConfigParserProperty.set_config:7
+msgid "The instance to use for listening to and saving property value changes. If None, it disconnects the currently used `ConfigParser`."
+msgstr ""
+
