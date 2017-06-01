@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-01 21:12+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../sources/guide/packaging-ios.rst:4
+msgid "Create a package for IOS"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:8
+msgid "Currently, packages for iOS can only be generated with Python 2.7. Python 3.3+ support is on the way."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:11
+msgid "The overall process for creating a package for IOS can be explained in 4 steps:"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:13
+msgid "Compile python + modules for IOS"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:14
+msgid "Create an Xcode project and link your source code"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:15
+#: ../../sources/guide/packaging-ios.rst:97
+msgid "Customize"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:18
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:20
+msgid "You need to install some dependencies, like cython, autotools, etc. We encourage you to use `Homebrew <http://mxcl.github.com/homebrew/>`_ to install those dependencies::"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:29
+msgid "For more detail, see :ref:`IOS Prerequisites <packaging_ios_prerequisites>`. Just ensure that everything is ok before starting the second step!"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:35
+msgid "Compile the distribution"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:37
+msgid "Open a terminal, and type::"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:43
+msgid "Most of the python distribution is packed into `python27.zip`. If you experience any issues, please refer to our `user group <https://groups.google.com/forum/#!forum/kivy-users>`_ or the `kivy-ios project page <https://github.com/kivy/kivy-ios>`_."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:51
+msgid "Create an Xcode project"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:53
+msgid "Before proceeding to the next step, ensure your application entry point is a file named `main.py`."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:56
+msgid "We provide a script that creates an initial Xcode project to start with. In the command line below, replace `test` with your project name. It must be a name without any spaces or illegal characters::"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:64
+msgid "You must use a fully qualified path to your application directory."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:66
+msgid "A directory named `<title>-ios` will be created, with an Xcode project in it. You can open the Xcode project::"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:71
+msgid "Then click on `Play`, and enjoy."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:75
+msgid "Everytime you press `Play`, your application directory will be synced to the `<title>-ios/YourApp` directory. Don't make changes in the -ios directory directly."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:80
+msgid "Updating an Xcode project"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:82
+msgid "Let's say you want to add numpy to your project but you did not compile it prior to creating your XCode project. First, ensure it is built::"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:87
+msgid "Then, update your Xcode project::"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:91
+msgid "All the libraries / frameworks necessary to run all the compiled recipes will be added to your Xcode project."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:99
+msgid "There are various ways to customize and configure your app. Please refer to the `kivy-ios <http://www.github.com/kivy/kivy-ios>`_ documentation for more information."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:106
+msgid "Known issues"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:108
+msgid "All known issues with packaging for iOS are currently tracked on our `issues <https://github.com/kivy/kivy-ios/issues>`_  page. If you encounter an issue specific to packaging for iOS that isn't listed there, please feel free to file a new issue, and we will get back to you on it."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:113
+msgid "While most are too technical to be written here, one important known issue is that removing some libraries (e.g. SDL_Mixer for audio) is currently not possible because the kivy project requires it. We will fix this and others in future versions."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:121
+msgid "FAQ"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:124
+msgid "Application quit abnormally!"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:126
+msgid "By default, all the print statements to the console and files are ignored. If you have an issue when running your application, you can activate the log by commenting out this line in `main.m`::"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:132
+msgid "Then you should see all the Kivy logging on the Xcode console."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:135
+msgid "How can Apple accept a python app ?"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:137
+msgid "We managed to merge the app binary with all the libraries into a single binary, called libpython. This means all binary modules are loaded beforehand, so nothing is dynamically loaded."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:142
+msgid "Have you already submited a Kivy application to the App store ?"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:144
+msgid "Yes, check:"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:146
+msgid "`Defletouch on iTunes <http://itunes.apple.com/us/app/deflectouch/id505729681>`_,"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:147
+msgid "`ProcessCraft on iTunes <http://itunes.apple.com/us/app/processcraft/id526377075>`_"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:149
+msgid "For a more complete list, visit the `Kivy wiki <https://github.com/kivy/kivy/wiki/List-of-Kivy-Projects>`_."
+msgstr ""
+
