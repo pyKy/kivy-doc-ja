@@ -2,7 +2,7 @@
 # Copyright (C) 2010, The Kivy Authors
 # This file is distributed under the same license as the Kivy package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,646 +10,1205 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-13 08:22+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: JUN OKAZAKI <okazakijun54392@gmail.com>, 2017\n"
+"Language-Team: Japanese (Japan) (https://www.transifex.com/python_kivy_doc_ja/teams/74810/ja_JP/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ja_JP\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../../sources/api-kivy.lang.rst:3
 msgid "Kivy Language"
-msgstr ""
+msgstr "Kivy Language(翻訳済み)"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:2
-msgid "The Kivy language is a language dedicated to describing user interface and interactions. You could compare this language to Qt's QML (http://qt.nokia.com), but we included new concepts such as rule definitions (which are somewhat akin to what you may know from CSS), templating and so on."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:2
+msgid ""
+"The Kivy language is a language dedicated to describing user interface and "
+"interactions. You could compare this language to Qt's QML "
+"(http://qt.nokia.com), but we included new concepts such as rule definitions"
+" (which are somewhat akin to what you may know from CSS), templating and so "
+"on."
 msgstr ""
+"Kivy "
+"Languageは、ユーザーインターフェイスとインタラクションを記述するための専用の言語です。この言語をQtのQML（http://qt.nokia.com"
+" ） と比較することもできますが、Rule定義（CSSとよく似ています）、テンプレートなどの新しい概念が含まれています。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:9
-msgid "The Builder doesn't execute canvas expressions in realtime anymore. It will pack all the expressions that need to be executed first and execute them after dispatching input, just before drawing the frame. If you want to force the execution of canvas drawing, just call :meth:`Builder.sync <BuilderBase.sync>`."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:9
+msgid ""
+"The Builder doesn't execute canvas expressions in realtime anymore. It will "
+"pack all the expressions that need to be executed first and execute them "
+"after dispatching input, just before drawing the frame. If you want to force"
+" the execution of canvas drawing, just call :meth:`Builder.sync "
+"<BuilderBase.sync>`."
 msgstr ""
+"ビルダーはリアルタイムでキャンバス表現を実行しません。最初に実行する必要があるすべての式をパックし、入力をディスパッチした後、フレームを描画する直前に実行します。キャンバス描画を強制的に実行したい場合は、"
+"  :meth:`Builder.sync <BuilderBase.sync>` を呼び出します"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:15
-msgid "An experimental profiling tool for the kv lang is also included. You can activate it by setting the environment variable `KIVY_PROFILE_LANG=1`. It will then generate an html file named `builder_stats.html`."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:15
+msgid ""
+"An experimental profiling tool for the kv lang is also included. You can "
+"activate it by setting the environment variable `KIVY_PROFILE_LANG=1`. It "
+"will then generate an html file named `builder_stats.html`."
 msgstr ""
+"kv lang用の実験的プロファイリングツールも含まれています。環境変数「KIVY_PROFILE_LANG = "
+"1」を設定することによって、それをアクティブにすることができます。その後、「builder_stats.html」という名前のhtmlファイルが生成されます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:20
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:20
 msgid "Overview"
-msgstr ""
+msgstr "Overview（概要）"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:22
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:22
 msgid "The language consists of several constructs that you can use:"
-msgstr ""
+msgstr "Kivy Languageは、使用可能ないくつかの構成で構成されています。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:32
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:32
 msgid "Rules"
-msgstr ""
+msgstr "Rules"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:25
-msgid "A rule is similar to a CSS rule. A rule applies to specific widgets (or classes thereof) in your widget tree and modifies them in a certain way. You can use rules to specify interactive behaviour or use them to add graphical representations of the widgets they apply to. You can target a specific class of widgets (similar to the CSS concept of a *class*) by using the ``cls`` attribute (e.g. ``cls=MyTestWidget``)."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:25
+msgid ""
+"A rule is similar to a CSS rule. A rule applies to specific widgets (or "
+"classes thereof) in your widget tree and modifies them in a certain way. You"
+" can use rules to specify interactive behaviour or use them to add graphical"
+" representations of the widgets they apply to. You can target a specific "
+"class of widgets (similar to the CSS concept of a *class*) by using the "
+"``cls`` attribute (e.g. ``cls=MyTestWidget``)."
 msgstr ""
+"RuleはCSSのルールに似ています。Ruleは、widgetツリーの特定のwidget（またはそのクラス）に適用されて特定の方法で変更されます。Ruleを使用して対話的な動作を指定したり、Ruleを使用して、適用するwidgetのグラフィカルな表現を追加できます。"
+" 「cls」属性（例：「cls = "
+"MyTestWidget」）を使用すると、widgetの特定のクラスをターゲティングできます（クラスのCSSコンセプトに似ています）。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:36
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:36
 msgid "A Root Widget"
-msgstr ""
+msgstr "A Root Widget"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:35
-msgid "You can use the language to create your entire user interface. A kv file must contain only one root widget at most."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:35
+msgid ""
+"You can use the language to create your entire user interface. A kv file "
+"must contain only one root widget at most."
 msgstr ""
+"Kivy Languageを使用して、ユーザーインターフェイス全体を作成できます。 kvファイルには、最大で1つのroot "
+"widgetが含まれる必要があります。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:41
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:41
 msgid "Dynamic Classes"
-msgstr ""
+msgstr "Dynamic Classes"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:39
-msgid "*(introduced in version 1.7.0)* Dynamic classes let you create new widgets and rules on-the-fly, without any Python declaration."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:39
+msgid ""
+"*(introduced in version 1.7.0)* Dynamic classes let you create new widgets "
+"and rules on-the-fly, without any Python declaration."
 msgstr ""
+"*（バージョン1.7.0で導入されました）* Dynamic "
+"Classを使用すると、Pythonファイル側で宣言なしで新しいwidgetとRuleをすぐに作成できます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:48
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:48
 msgid "Templates (deprecated)"
-msgstr ""
+msgstr "Templates (deprecated)"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:44
-msgid "*(introduced in version 1.0.5, deprecated from version 1.7.0)* Templates were used to populate parts of an application, such as styling the content of a list (e.g. icon on the left, text on the right). They are now deprecated by dynamic classes."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:44
+msgid ""
+"*(introduced in version 1.0.5, deprecated from version 1.7.0)* Templates "
+"were used to populate parts of an application, such as styling the content "
+"of a list (e.g. icon on the left, text on the right). They are now "
+"deprecated by dynamic classes."
 msgstr ""
+"*（バージョン1.0.5で導入され、バージョン1.7.0で廃止されました）* "
+"Templateは、リストのコンテンツのスタイリング（たとえば、左のアイコン、右のテキスト）など、アプリケーションの一部を埋めるために使用されました。Dynamic"
+" Classによって非推奨になりました。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:51
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:51
 msgid "Syntax of a kv File"
-msgstr ""
+msgstr "Syntax of a kv File(kvファイルの構文)"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:55
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:55
 msgid "A Kivy language file must have ``.kv`` as filename extension."
-msgstr ""
+msgstr "Kivy Languageファイルのファイル拡張子は「.kv」です。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:57
-msgid "The content of the file should always start with the Kivy header, where `version` must be replaced with the Kivy language version you're using. For now, use 1.0::"
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:57
+msgid ""
+"The content of the file should always start with the Kivy header, where "
+"`version` must be replaced with the Kivy language version you're using. For "
+"now, use 1.0::"
 msgstr ""
+"ファイルの内容は常にKivyヘッダーで始める必要があります。「バージョン」は使用しているKivy "
+"Languageのバージョンに置き換える必要があります。1.0の場合： "
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:65
-msgid "The `content` can contain rule definitions, a root widget, dynamic class definitions and templates::"
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:65
+msgid ""
+"The `content` can contain rule definitions, a root widget, dynamic class "
+"definitions and templates::"
+msgstr "「コンテンツ」には、Rule定義、Root Widget、Dynamic Classの定義、およびTemplateを含められます。 "
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:88
+msgid ""
+"Regardless of whether it's a rule, root widget, dynamic class or template "
+"you're defining, the definition should look like this::"
 msgstr ""
+"Rule、Root Widget、Dynamic Class、または定義しているTemplateのどれかにかかわらず、定義は次のようになります。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:88
-msgid "Regardless of whether it's a rule, root widget, dynamic class or template you're defining, the definition should look like this::"
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:105
+msgid ""
+"Here `prop1` and `prop2` are the properties of `ClassName` and `prop3` is "
+"the property of `AnotherClass`. If the widget doesn't have a property with "
+"the given name, an :class:`~kivy.properties.ObjectProperty` will be "
+"automatically created and added to the widget."
 msgstr ""
+"ここで `prop1`  と `prop2` は `ClassName` のプロパティであり、`prop3` は `AnotherClass` "
+"のプロパティです。widgetに指定された名前のプロパティがない場合、 :class:`~kivy.properties.ObjectProperty`"
+"  が自動的に作成されてwidgetに追加されます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:105
-msgid "Here `prop1` and `prop2` are the properties of `ClassName` and `prop3` is the property of `AnotherClass`. If the widget doesn't have a property with the given name, an :class:`~kivy.properties.ObjectProperty` will be automatically created and added to the widget."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:110
+msgid ""
+"`AnotherClass` will be created and added as a child of the `ClassName` "
+"instance."
+msgstr "`AnotherClass` が作成されされ、`ClassName` インスタンスの子として追加されます。"
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:113
+msgid ""
+"The indentation is important and must be consistent. The spacing must be a "
+"multiple of the number of spaces used on the first indented line. Spaces are"
+" encouraged: mixing tabs and spaces is not recommended."
 msgstr ""
+"インデントは重要で、一貫してなければなりません。スペースは、最初にインデントされた行に使用されるスペースの倍数でなければなりません。タブとスペースをミックスすることはお勧めしません。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:110
-msgid "`AnotherClass` will be created and added as a child of the `ClassName` instance."
-msgstr ""
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:116
+msgid ""
+"The value of a property must be given on a single line (for now at least)."
+msgstr "プロパティの値は1行に与えなければなりません（少なくとも今のところ）。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:113
-msgid "The indentation is important and must be consistent. The spacing must be a multiple of the number of spaces used on the first indented line. Spaces are encouraged: mixing tabs and spaces is not recommended."
-msgstr ""
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:117
+msgid ""
+"The `canvas` property is special: you can put graphics instructions in it to"
+" create a graphical representation of the current class."
+msgstr "`canvas`  のプロパティは特別です。グラフィックスの指示を入れて、現在のクラスをグラフィカルに表現できます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:116
-msgid "The value of a property must be given on a single line (for now at least)."
-msgstr ""
-
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:117
-msgid "The `canvas` property is special: you can put graphics instructions in it to create a graphical representation of the current class."
-msgstr ""
-
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:121
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:121
 msgid "Here is a simple example of a kv file that contains a root widget::"
-msgstr ""
+msgstr "以下に、root widgetを含むkvファイルの簡単な例を示します::"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:131
-msgid "The indentation is not limited to 4 spaces anymore. The spacing must be a multiple of the number of spaces used on the first indented line."
-msgstr ""
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:131
+msgid ""
+"The indentation is not limited to 4 spaces anymore. The spacing must be a "
+"multiple of the number of spaces used on the first indented line."
+msgstr "インデントはスペース4つに制限されていません。スペースは、最初にインデントされた行に使用されるスペースの倍数でなければなりません。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:134
-msgid "Both the :meth:`~BuilderBase.load_file` and the :meth:`~BuilderBase.load_string` methods return the root widget defined in your kv file/string. They will also add any class and template definitions to the :class:`~kivy.factory.Factory` for later usage."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:134
+msgid ""
+"Both the :meth:`~BuilderBase.load_file` and the "
+":meth:`~BuilderBase.load_string` methods return the root widget defined in "
+"your kv file/string. They will also add any class and template definitions "
+"to the :class:`~kivy.factory.Factory` for later usage."
 msgstr ""
+":meth:`~BuilderBase.load_file`  メソッドと :meth:`~BuilderBase.load_string`  "
+"メソッドはどちらも、kvファイル/文字列で定義されたルートwidgetを返します。また、後で使用するために、クラスとテンプレート定義を "
+":class:`~kivy.factory.Factory`  に追加します。 "
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:141
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:141
 msgid "Value Expressions, on_property Expressions, ids and Reserved Keywords"
 msgstr ""
+"Value Expressions, on_property Expressions, ids and Reserved "
+"Keywords(式の値、on_property、idsおよび予約済みキーワード)"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:143
-msgid "When you specify a property's value, the value is evaluated as a Python expression. This expression can be static or dynamic, which means that the value can use the values of other properties using reserved keywords."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:143
+msgid ""
+"When you specify a property's value, the value is evaluated as a Python "
+"expression. This expression can be static or dynamic, which means that the "
+"value can use the values of other properties using reserved keywords."
 msgstr ""
+"プロパティの値を指定すると、その値はPythonの式として評価されます。この式は静的でも動的でもかまいません。つまり予約されたキーワードを使用して他のプロパティの値を使用できます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:151
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:151
 msgid "self"
-msgstr ""
+msgstr "self"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:148
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:148
 msgid "The keyword self references the \"current widget instance\"::"
-msgstr ""
+msgstr "キーワードselfは 「現在のwidgetのインスタンス」を参照します："
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:160
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:160
 msgid "root"
-msgstr ""
+msgstr "root"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:154
-msgid "This keyword is available only in rule definitions and represents the root widget of the rule (the first instance of the rule)::"
-msgstr ""
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:154
+msgid ""
+"This keyword is available only in rule definitions and represents the root "
+"widget of the rule (the first instance of the rule)::"
+msgstr "このキーワードは、Rule定義でのみ使用でき、Ruleのroot widget（Ruleの最初のインスタンス）を表します::"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:167
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:167
 msgid "app"
-msgstr ""
+msgstr "app"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:163
-msgid "This keyword always refers to your app instance. It's equivalent to a call to :meth:`kivy.app.App.get_running_app` in Python. ::"
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:163
+msgid ""
+"This keyword always refers to your app instance. It's equivalent to a call "
+"to :meth:`kivy.app.App.get_running_app` in Python. ::"
 msgstr ""
+"このキーワードは、常にあなたのアプリインスタンスを参照します。 Pythonの :meth:`kivy.app.App.get_running_app`"
+" の呼び出しと同じです::"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:174
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:174
 msgid "args"
-msgstr ""
+msgstr "args"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:170
-msgid "This keyword is available in on_<action> callbacks. It refers to the arguments passed to the callback. ::"
-msgstr ""
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:170
+msgid ""
+"This keyword is available in on_<action> callbacks. It refers to the "
+"arguments passed to the callback. ::"
+msgstr "このキーワードはon_<action>コールバックで使用できます。これは、コールバックに渡される引数を参照します::"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:177
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:177
 msgid "ids"
-msgstr ""
+msgstr "ids"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:179
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:179
 msgid "Class definitions may contain ids which can be used as a keywords:::"
-msgstr ""
+msgstr "クラス定義には、キーワードとして使用できるIDを含められます::"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:187
-msgid "Please note that the `id` will not be available in the widget instance: it is used exclusively for external references. `id` is a weakref to the widget, and not the widget itself. The widget itself can be accessed with `id.__self__` (`btn1.__self__` in this case)."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:187
+msgid ""
+"Please note that the `id` will not be available in the widget instance: it "
+"is used exclusively for external references. `id` is a weakref to the "
+"widget, and not the widget itself. The widget itself can be accessed with "
+"`id.__self__` (`btn1.__self__` in this case)."
 msgstr ""
+"この `id` はwidgetのインスタンスでは使用できないことに注意してください。外部参照専用に使用されています。 `id` "
+"はwidget自体のwidgetではなく、widgetの弱い参照です。widget自体は `id.__self__` （この場合は "
+"`btn1.__self__` ）でアクセスできます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:192
-msgid "When the kv file is processed, weakrefs to all the widgets tagged with ids are added to the root widgets `ids` dictionary. In other words, following on from the example above, the buttons state could also be accessed as follows:"
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:192
+msgid ""
+"When the kv file is processed, weakrefs to all the widgets tagged with ids "
+"are added to the root widgets `ids` dictionary. In other words, following on"
+" from the example above, the buttons state could also be accessed as "
+"follows:"
 msgstr ""
+"kvファイルが処理されると、idでタグ付けされたすべてのwidgetへの弱い参照がroot "
+"widgetsのids辞書に追加されます。言い換えれば、上の例に続いて、ボタンのステータスに次のようにアクセスできます： "
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:204
-msgid "Note that the outermost widget applies the kv rules to all its inner widgets before any other rules are applied. This means if an inner widget contains ids, these ids may not be available during the inner widget's `__init__` function."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:204
+msgid ""
+"Note that the outermost widget applies the kv rules to all its inner widgets"
+" before any other rules are applied. This means if an inner widget contains "
+"ids, these ids may not be available during the inner widget's `__init__` "
+"function."
 msgstr ""
+"一番外側のwidgetは、他のRuleが適用される前に、すべての内部widgetにkvRuleを適用することに注意してください。つまり、内部widgetにidsが含まれている場合、これらのidsは内部widgetの"
+"  `__init__`  関数では使用できない可能性があります。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:209
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:209
 msgid "Valid expressons"
-msgstr ""
+msgstr "Valid expressons(有効な表現)"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:211
-msgid "There are two places that accept python statements in a kv file: after a property, which assigns to the property the result of the expression (such as the text of a button as shown above) and after a on_property, which executes the statement when the property is updated (such as on_state)."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:211
+msgid ""
+"There are two places that accept python statements in a kv file: after a "
+"property, which assigns to the property the result of the expression (such "
+"as the text of a button as shown above) and after a on_property, which "
+"executes the statement when the property is updated (such as on_state)."
 msgstr ""
+"kvファイルにはpythonステートメントを受け入れる場所が2つあります。プロパティの後に、式の結果（下記のようなボタンのテキストなど）とon_propertyの後にプロパティが更新されます（on_stateなど）。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:216
-msgid "In the former case, the `expression <http://docs.python.org/2/reference/expressions.html>`_ can only span a single line, cannot be extended to multiple lines using newline escaping, and must return a value. An example of a valid expression is ``text: self.state and ('up' if self.state == 'normal' else 'down')``."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:216
+msgid ""
+"In the former case, the `expression "
+"<http://docs.python.org/2/reference/expressions.html>`_ can only span a "
+"single line, cannot be extended to multiple lines using newline escaping, "
+"and must return a value. An example of a valid expression is ``text: "
+"self.state and ('up' if self.state == 'normal' else 'down')``."
 msgstr ""
+"前者の場合、`式  "
+"<http://docs.python.org/2/reference/expressions.html>`_は1行にしかできず、改行をエスケープして複数行に拡張することはできず、値を返す必要があります。有効な式の例は、`text:"
+" self.state and ('up' if self.state == 'normal' else 'down')`` です。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:222
-msgid "In the latter case, multiple single line statements are valid including multi-line statements that escape their newline, as long as they don't add an indentation level."
-msgstr ""
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:222
+msgid ""
+"In the latter case, multiple single line statements are valid including "
+"multi-line statements that escape their newline, as long as they don't add "
+"an indentation level."
+msgstr "後者の場合、インデントレベルを追加しない限り、改行をエスケープする複数行のステートメントを含む複数の単一行ステートメントが有効です。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:226
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:226
 msgid "Examples of valid statements are:"
-msgstr ""
+msgstr "有効なステートメントの例は次のとおりです:"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:240
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:240
 msgid "An example of a invalid statement:"
-msgstr ""
+msgstr "無効なステートメントの例:"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:249
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:249
 msgid "Relation Between Values and Properties"
-msgstr ""
+msgstr "Relation Between Values and Properties(値とプロパティの関係)"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:251
-msgid "When you use the Kivy language, you might notice that we do some work behind the scenes to automatically make things work properly. You should know that :doc:`api-kivy.properties` implement the `Observer Design Pattern <http://en.wikipedia.org/wiki/Observer_pattern>`_. That means that you can bind your own function to be called when the value of a property changes (i.e. you passively `observe` the property for potential changes)."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:251
+msgid ""
+"When you use the Kivy language, you might notice that we do some work behind"
+" the scenes to automatically make things work properly. You should know that"
+" :doc:`api-kivy.properties` implement the `Observer Design Pattern "
+"<http://en.wikipedia.org/wiki/Observer_pattern>`_. That means that you can "
+"bind your own function to be called when the value of a property changes "
+"(i.e. you passively `observe` the property for potential changes)."
 msgstr ""
+"Kivy Languageを使用すると、裏で自動的に作業が行われることがわかります。  :doc:`api-kivy.properties`  は "
+"`Observer パターン  "
+"<https://ja.wikipedia.org/wiki/Observer_%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3>`_"
+" "
+"を実装していることを知っておくべきです。つまり、プロパティの値が変更されたときに呼び出されるように独自の関数をバインドできます（つまり、潜在的な変更についてプロパティを受動的に観察します）。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:259
-msgid "The Kivy language detects properties in your `value` expression and will create create callbacks to automatically update the property via your expression when changes occur."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:259
+msgid ""
+"The Kivy language detects properties in your `value` expression and will "
+"create create callbacks to automatically update the property via your "
+"expression when changes occur."
 msgstr ""
+"Kivy Languageは、`value`  "
+"式のプロパティを検出し、変更が発生した時に式をかいしてプロパティを自動的に更新するためのコールバックを作成します。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:263
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:263
 msgid "Here's a simple example that demonstrates this behaviour::"
-msgstr ""
+msgstr "この動作を示す簡単な例を次に示します::"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:268
-msgid "In this example, the parser detects that `self.state` is a dynamic value (a property). The :attr:`~kivy.uix.button.Button.state` property of the button can change at any moment (when the user touches it). We now want this button to display its own state as text, even as the state changes. To do this, we use the state property of the Button and use it in the value expression for the button's `text` property, which controls what text is displayed on the button (We also convert the state to a string representation). Now, whenever the button state changes, the text property will be updated automatically."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:268
+msgid ""
+"In this example, the parser detects that `self.state` is a dynamic value (a "
+"property). The :attr:`~kivy.uix.button.Button.state` property of the button "
+"can change at any moment (when the user touches it). We now want this button"
+" to display its own state as text, even as the state changes. To do this, we"
+" use the state property of the Button and use it in the value expression for"
+" the button's `text` property, which controls what text is displayed on the "
+"button (We also convert the state to a string representation). Now, whenever"
+" the button state changes, the text property will be updated automatically."
 msgstr ""
+"この例では、パーサーは  `self.state`  が動的な値（プロパティ）であることを検出します。 "
+":attr:`~kivy.uix.button.Button.state`  のstate "
+"プロパティは、いつでも（ユーザーが触れると）変更できます。このボタンでは、状態が変化しても、テキストとして独自の状態を表示する必要があります。これを行うために、Buttonのstateプロパティを使用してボタンのtextプロパティの値に使用します。これはボタンに表示されるテキストを制御します（状態も文字列表現に変換します）。ボタンの状態が変わるたびに、テキストプロパティが自動的に更新されます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:278
-msgid "Remember: The value is a python expression! That means that you can do something more interesting like::"
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:278
+msgid ""
+"Remember: The value is a python expression! That means that you can do "
+"something more interesting like::"
+msgstr "覚えておいてください。value はPython式です！つまり、次のような面白いことができます::"
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:284
+msgid ""
+"The Button text changes with the state of the button. By default, the button"
+" text will be 'Plop world', but when the button is being pressed, the text "
+"will change to 'Release me!'."
 msgstr ""
+"Buttonのtextは、Buttonの状態とともに変わります。デフォルトでは、Buttonのtextは「Plop "
+"world」になりますが、Buttonを押すと、テキストは「Release me！」に変わります。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:284
-msgid "The Button text changes with the state of the button. By default, the button text will be 'Plop world', but when the button is being pressed, the text will change to 'Release me!'."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:288
+msgid ""
+"More precisely, the kivy language parser detects all substrings of the form "
+"`X.a.b` where `X` is `self` or `root` or `app` or a known id, and `a` and "
+"`b` are properties: it then adds the appropriate dependencies to cause the "
+"the constraint to be reevaluated whenever something changes. For example, "
+"this works exactly as expected::"
 msgstr ""
+"より正確には、Kivy Languageパーサは、 `X`  が `self` または `root` または `app` または既知のidであり、 "
+"`a` および `b` がプロパティである `X.a.b`  "
+"形式のすべての部分文字列を検出します。次に、適切な依存関係を追加して変更します。たとえば、これは期待どおりに動作します::"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:288
-msgid "More precisely, the kivy language parser detects all substrings of the form `X.a.b` where `X` is `self` or `root` or `app` or a known id, and `a` and `b` are properties: it then adds the appropriate dependencies to cause the the constraint to be reevaluated whenever something changes. For example, this works exactly as expected::"
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:297
+msgid ""
+"However, due to limitations in the parser which hopefully may be lifted in "
+"the future, the following doesn't work::"
+msgstr "しかし、今後期待されるパーサの制限により、以下のようなことはできません::"
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:303
+msgid ""
+"indeed the `.e.f` part is not recognized because it doesn't follow the "
+"expected pattern, and so, does not result in an appropriate dependency being"
+" setup. Instead, an intermediate property should be introduced to allow the "
+"following constraint::"
 msgstr ""
+"確かに `.e.f` "
+"部分は期待されたパターンに従わず、適切な依存関係が設定されないため認識されません。代わりに、次の制約を許容するために中間プロパティを導入する必要があります::"
+" "
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:297
-msgid "However, due to limitations in the parser which hopefully may be lifted in the future, the following doesn't work::"
-msgstr ""
-
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:303
-msgid "indeed the `.e.f` part is not recognized because it doesn't follow the expected pattern, and so, does not result in an appropriate dependency being setup. Instead, an intermediate property should be introduced to allow the following constraint::"
-msgstr ""
-
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:314
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:314
 msgid "Graphical Instructions"
-msgstr ""
+msgstr "Graphical Instructions(グラフィカルな指示)"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:316
-msgid "The graphical instructions are a special part of the Kivy language. They are handled by the 'canvas' property definition::"
-msgstr ""
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:316
+msgid ""
+"The graphical instructions are a special part of the Kivy language. They are"
+" handled by the 'canvas' property definition::"
+msgstr "グラフィカルな指示は、Kivy言語の特別な部分です。それらは 'canvas'プロパティ定義によって処理されます::"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:327
-msgid "All the classes added inside the canvas property must be derived from the :class:`~kivy.graphics.Instruction` class. You cannot put any Widget class inside the canvas property (as that would not make sense because a widget is not a graphics instruction)."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:327
+msgid ""
+"All the classes added inside the canvas property must be derived from the "
+":class:`~kivy.graphics.Instruction` class. You cannot put any Widget class "
+"inside the canvas property (as that would not make sense because a widget is"
+" not a graphics instruction)."
 msgstr ""
+"canvasプロパティ内に追加されたすべてのクラスは、 :class:`~kivy.graphics.Instruction` "
+"クラスから派生する必要があります。 "
+"canvasプロパティの中にWidgetクラスを置くことはできません（widgetはグラフィックス関係の命令ではないので意味をなしません）。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:332
-msgid "If you want to do theming, you'll have the same question as in CSS: which rules have been executed first? In our case, the rules are executed in processing order (i.e. top-down)."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:332
+msgid ""
+"If you want to do theming, you'll have the same question as in CSS: which "
+"rules have been executed first? In our case, the rules are executed in "
+"processing order (i.e. top-down)."
 msgstr ""
+"テーマを利用したいのであれば、CSSと同じ質問が出ます：どのRuleが最初に実行されたのですか？この場合、Ruleは処理順（トップダウン）で実行されます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:336
-msgid "If you want to change how Buttons are rendered, you can create your own kv file and add something like this::"
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:336
+msgid ""
+"If you want to change how Buttons are rendered, you can create your own kv "
+"file and add something like this::"
+msgstr "ボタンのレンダリング方法を変更したい場合は、独自のkvファイルを作成し、次のように追加することができます::"
+
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:351
+msgid ""
+"This will result in buttons having a red background with the label in the "
+"bottom left, in addition to all the preceding rules. You can clear all the "
+"previous instructions by using the `Clear` command::"
 msgstr ""
+"これにより、上記のすべてのRuleに加えて、左下にラベルが付いた赤い背景のボタンが表示されます。Clearコマンドを使用すると、前の手順をすべてクリアできます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:351
-msgid "This will result in buttons having a red background with the label in the bottom left, in addition to all the preceding rules. You can clear all the previous instructions by using the `Clear` command::"
-msgstr ""
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:368
+msgid ""
+"Then, only your rules that follow the `Clear` command will be taken into "
+"consideration."
+msgstr "`Clear` コマンドに続くRuleだけが考慮されます"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:368
-msgid "Then, only your rules that follow the `Clear` command will be taken into consideration."
-msgstr ""
-
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:374
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:374
 msgid "Dynamic classes"
-msgstr ""
+msgstr "Dynamic classes"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:376
-msgid "Dynamic classes allow you to create new widgets on-the-fly, without any python declaration in the first place. The syntax of the dynamic classes is similar to the Rules, but you need to specify the base classes you want to subclass."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:376
+msgid ""
+"Dynamic classes allow you to create new widgets on-the-fly, without any "
+"python declaration in the first place. The syntax of the dynamic classes is "
+"similar to the Rules, but you need to specify the base classes you want to "
+"subclass."
 msgstr ""
+"Dynamic classを使用すると、最初にPython宣言を使わずに、新しいwidgetをすぐに作成できます。Dynamic "
+"classの構文は、Ruleと似ていますがサブクラス化する基本クラスを指定する必要があります。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:381
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:381
 msgid "The syntax looks like:"
-msgstr ""
+msgstr "構文は次のようになります。 "
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:393
-msgid "The `@` character is used to separate your class name from the classes you want to subclass. The Python equivalent would have been:"
-msgstr ""
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:393
+msgid ""
+"The `@` character is used to separate your class name from the classes you "
+"want to subclass. The Python equivalent would have been:"
+msgstr "「@」文字は、クラス名をサブクラス化するクラスと区別するために使用されます。 Pythonではいかに相当します。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:406
-msgid "Any new properties, usually added in python code, should be declared first. If the property doesn't exist in the dynamic class, it will be automatically created as an :class:`~kivy.properties.ObjectProperty` (pre 1.8.0) or as an appropriate typed property (from version 1.8.0)."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:406
+msgid ""
+"Any new properties, usually added in python code, should be declared first. "
+"If the property doesn't exist in the dynamic class, it will be automatically"
+" created as an :class:`~kivy.properties.ObjectProperty` (pre 1.8.0) or as an"
+" appropriate typed property (from version 1.8.0)."
 msgstr ""
+"新しいプロパティは通常はPythonコードで追加され、最初に宣言する必要があります。プロパティがDynamic "
+"classに存在しない場合は、ObjectProperty（1.8.0より前）または適切な型付きプロパティ（1.8.0から）として自動的に作成されます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:414
-msgid "If the property value is an expression that can be evaluated right away (no external binding), then the value will be used as default value of the property, and the type of the value will be used for the specialization of the Property class. In other terms: if you declare `hello: \"world\"`, a new :class:`~kivy.properties.StringProperty` will be instantiated, with the default value `\"world\"`. Lists, tuples, dictionaries and strings are supported."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:414
+msgid ""
+"If the property value is an expression that can be evaluated right away (no "
+"external binding), then the value will be used as default value of the "
+"property, and the type of the value will be used for the specialization of "
+"the Property class. In other terms: if you declare `hello: \"world\"`, a new"
+" :class:`~kivy.properties.StringProperty` will be instantiated, with the "
+"default value `\"world\"`. Lists, tuples, dictionaries and strings are "
+"supported."
 msgstr ""
+"プロパティ値がすぐに評価できる式（外部バインディングなし）であれば、その値はプロパティのデフォルト値として使用され、値の型はPropertyクラスの特殊な形になります。言い換えれば、「hello："
+" \"world\"」を宣言すると、新しい :class:`~kivy.properties.StringProperty`  がデフォルト値 "
+"\"world\"でインスタンス化されます。リスト、タプル、辞書、文字列がサポートされています。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:422
-msgid "Let's illustrate the usage of these dynamic classes with an implementation of a basic Image button. We could derive our classes from the Button and just add a property for the image filename:"
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:422
+msgid ""
+"Let's illustrate the usage of these dynamic classes with an implementation "
+"of a basic Image button. We could derive our classes from the Button and "
+"just add a property for the image filename:"
 msgstr ""
+"基本的な画像ボタンを実装して、これらの動的クラスの使い方を説明しましょう。 "
+"Buttonからクラスを派生させ、画像ファイル名のプロパティを追加しているだけです。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:446
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:446
 msgid "In Python, you can create an instance of the dynamic class as follows:"
-msgstr ""
+msgstr "Pythonでは、次のように動的クラスのインスタンスを作成できます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:455
-msgid "Using dynamic classes, a child class can be declared before it's parent. This however, leads to the unintuitive situation where the parent properties/methods override those of the child. Be careful if you choose to do this."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:455
+msgid ""
+"Using dynamic classes, a child class can be declared before it's parent. "
+"This however, leads to the unintuitive situation where the parent "
+"properties/methods override those of the child. Be careful if you choose to "
+"do this."
 msgstr ""
+"Dynamic "
+"classを使用すると、子クラスはその親クラスの前に宣言できます。しかし、これは、親プロパティ/メソッドが子のプロパティ/メソッドをオーバーライドする直感的ではない状況につながります。この動作を選択した場合は注意してください。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:463
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:463
 msgid "Templates"
-msgstr ""
+msgstr "Templates"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:467
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:467
 msgid "Template usage is now deprecated. Please use Dynamic classes instead."
-msgstr ""
+msgstr "テンプレートの使用は推奨されなくなりました。Dynamic classを代わりに使用してください。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:470
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:470
 msgid "Syntax of templates"
-msgstr ""
+msgstr "Syntax of templates(テンプレートの構文)"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:472
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:472
 msgid "Using a template in Kivy requires 2 things :"
-msgstr ""
+msgstr "KivyでTemplateを使用するには、2つのことが必要です:"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:474
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:474
 msgid "a context to pass for the context (will be ctx inside template)."
-msgstr ""
+msgstr "コンテキストのために渡すコンテキスト（Template内のctxになります）。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:475
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:475
 msgid "a kv definition of the template."
-msgstr ""
+msgstr "Templateのkv定義。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:477
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:477
 msgid "Syntax of a template:"
-msgstr ""
+msgstr "Templateの構文は以下の通りです:"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:489
-msgid "For example, for a list, you'll need to create a entry with a image on the left, and a label on the right. You can create a template for making that definition easier to use. So, we'll create a template that uses 2 entries in the context: an image filename and a title:"
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:489
+msgid ""
+"For example, for a list, you'll need to create a entry with a image on the "
+"left, and a label on the right. You can create a template for making that "
+"definition easier to use. So, we'll create a template that uses 2 entries in"
+" the context: an image filename and a title:"
 msgstr ""
+"たとえば、リストの場合は、左にイメージ、右にLabelを持つエントリを作成する必要があります。その定義を使いやすくするためのテンプレートを作成できます。したがって、コンテキスト内の2つのエントリを使用するテンプレートを作成します。画像ファイル名とタイトルの場合は以下の通りです。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:503
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:503
 msgid "Then in Python, you can instantiate the template using:"
-msgstr ""
+msgstr "Pythonでは、次のようにテンプレートをインスタンス化できます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:523
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:523
 msgid "Template example"
-msgstr ""
+msgstr "Template example(Templateの例)"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:525
-msgid "Most of time, when you are creating a screen in the kv lang, you use a lot of redefinitions. In our example, we'll create a Toolbar, based on a BoxLayout, and put in a few :class:`~kivy.uix.image.Image` widgets that will react to the *on_touch_down* event."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:525
+msgid ""
+"Most of time, when you are creating a screen in the kv lang, you use a lot "
+"of redefinitions. In our example, we'll create a Toolbar, based on a "
+"BoxLayout, and put in a few :class:`~kivy.uix.image.Image` widgets that will"
+" react to the *on_touch_down* event."
 msgstr ""
+"ほとんどの場合、kv "
+"langで画面を作成する場合には多くの再定義を使用します。この例では、BoxLayoutに基づいてツールバーを作成し、「on_touch_down」イベントに反応するいくつかの"
+" :class:`~kivy.uix.image.Image` widgetを配置します。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:552
-msgid "We can see that the size and size_hint attribute are exactly the same. More than that, the callback in on_touch_down and the image are changing. These can be the variable part of the template that we can put into a context. Let's try to create a template for the Image:"
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:552
+msgid ""
+"We can see that the size and size_hint attribute are exactly the same. More "
+"than that, the callback in on_touch_down and the image are changing. These "
+"can be the variable part of the template that we can put into a context. "
+"Let's try to create a template for the Image:"
 msgstr ""
+"sizeとsize_hint属性はまったく同じであることがわかります。それ以上にon_touch_downのコールバックと画像が変化しています。これらはTemplateの可変部分で、コンテキストに入れられます。"
+" ImageのTemplateを作成してみましょう:"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:569
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:569
 msgid "The template can be used directly in the MyToolbar rule:"
-msgstr ""
+msgstr "Templateは、MyToolbarRuleで直接使用できます:"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:585
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:585
 msgid "That's all :)"
-msgstr ""
+msgstr "これで全て完了です。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:589
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:589
 msgid "Template limitations"
-msgstr ""
+msgstr "Template limitations(Templateの制限)"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:591
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:591
 msgid "When you are creating a context:"
-msgstr ""
+msgstr "コンテキストを作成するときは、次のようにします。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:593
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:593
 msgid "you cannot use references other than \"root\":"
-msgstr ""
+msgstr "\"root\"\\以外の参照は使用できません。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:605
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:605
 msgid "not all of the dynamic parts will be understood:"
-msgstr ""
+msgstr "動的部分のすべてが理解されるわけではありません"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:615
-msgid "Template definitions also replace any similarly named definitions in their entirety and thus do not support inheritance."
-msgstr ""
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:615
+msgid ""
+"Template definitions also replace any similarly named definitions in their "
+"entirety and thus do not support inheritance."
+msgstr "Templateの定義は、同様に名前が付けられた定義全体を置き換えるため、継承をサポートしません。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:621
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:621
 msgid "Redefining a widget's style"
-msgstr ""
+msgstr "Redefining a widget's style(widgetスタイルの再定義)"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:623
-msgid "Sometimes we would like to inherit from a widget in order to use its Python properties without also using its .kv defined style. For example, we would like to inherit from a Label, but we would also like to define our own canvas instructions instead of automatically using the canvas instructions inherited from the Label. We can achieve this by prepending a dash (-) before the class name in the .kv style definition."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:623
+msgid ""
+"Sometimes we would like to inherit from a widget in order to use its Python "
+"properties without also using its .kv defined style. For example, we would "
+"like to inherit from a Label, but we would also like to define our own "
+"canvas instructions instead of automatically using the canvas instructions "
+"inherited from the Label. We can achieve this by prepending a dash (-) "
+"before the class name in the .kv style definition."
 msgstr ""
+"Pythonのプロパティを.kv定義のスタイルを使わずに使用するために、widgetから継承したいことがあります。たとえば、Labelから継承したいのですが、Labelから継承したキャンバス命令を自動的に使用するのではなく、独自のキャンバス命令を定義することもできます。これは、.kvスタイル定義のクラス名の前にダッシュ（"
+" - ）を付けることで実現できます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:630
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:663
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:630
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:663
 msgid "In myapp.py:"
-msgstr ""
+msgstr "myapp.pyでは:"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:637
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:671
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:637
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:671
 msgid "and in my.kv:"
-msgstr ""
+msgstr "次に、my.kvでは:"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:648
-msgid "MyWidget will now have a Color and Rectangle instruction in its canvas without any of the instructions inherited from the Label."
-msgstr ""
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:648
+msgid ""
+"MyWidget will now have a Color and Rectangle instruction in its canvas "
+"without any of the instructions inherited from the Label."
+msgstr "MyWidgetは、Labelから継承された命令を使用せずにキャンバス内にColorおよびRectangle命令を持つようになりました。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:652
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:652
 msgid "Redefining a widget's property style"
-msgstr ""
+msgstr "Redefining a widget's property style(widgetのプロパティスタイルを再定義する)"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:654
-msgid "Similar to :ref:`redefining style <redefining-style>`, sometimes we would like to inherit from a widget, keep all its KV defined styles, except for the style applied to a specific property. For example, we would like to inherit from a :class:`~kivy.uix.button.Button`, but we would also like to set our own `state_image`, rather then relying on the `background_normal` and `background_down` values. We can achieve this by prepending a dash (-) before the `state_image` property name in the .kv style definition."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:654
+msgid ""
+"Similar to :ref:`redefining style <redefining-style>`, sometimes we would "
+"like to inherit from a widget, keep all its KV defined styles, except for "
+"the style applied to a specific property. For example, we would like to "
+"inherit from a :class:`~kivy.uix.button.Button`, but we would also like to "
+"set our own `state_image`, rather then relying on the `background_normal` "
+"and `background_down` values. We can achieve this by prepending a dash (-) "
+"before the `state_image` property name in the .kv style definition."
 msgstr ""
+":ref:`redefining "
+"のと同様に、特定のプロパティに適用されたスタイルを除いて、KV定義のスタイルをすべて保持したままwidgetから継承したいことがあります。たとえば、  "
+":class:`~kivy.uix.button.Button` "
+"から継承したいのですが、background_normalとbackground_downの値に頼るのではなく、独自の「state_image」を設定できます。これは、.kvスタイル定義の「state_image」プロパティ名の前にダッシュ（"
+" - ）を付けることで実現できます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:678
-msgid "MyWidget will now have a `state_image` background set only by `new_background`, and not by any previous styles that may have set `state_image`."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:678
+msgid ""
+"MyWidget will now have a `state_image` background set only by "
+"`new_background`, and not by any previous styles that may have set "
+"`state_image`."
 msgstr ""
+"MyWidgetは「new_background」だけで設定された「state_image」バックグラウンドを持つようになり、以前のスタイルでは「state_image」が設定されていない可能性があります。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:683
-msgid "Although the previous rules are cleared, they are still applied during widget construction and are only removed when the new rule with the dash is reached. This means that initially, previous rules could be used to set the property."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:683
+msgid ""
+"Although the previous rules are cleared, they are still applied during "
+"widget construction and are only removed when the new rule with the dash is "
+"reached. This means that initially, previous rules could be used to set the "
+"property."
 msgstr ""
+"以前のRuleはクリアされていますが、widgetの作成中に適用され、ダッシュ付きの新しいRuleに達すると削除されます。これは、最初は以前のRuleを使用してプロパティを設定できることを意味します"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:689
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:689
 msgid "Order of kwargs and KV rule application"
-msgstr ""
+msgstr "Order of kwargs and KV rule application(kwargsとKVRuleの適用順序)"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:691
-msgid "Properties can be initialized in KV as well as in python. For example, in KV:"
-msgstr ""
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:691
+msgid ""
+"Properties can be initialized in KV as well as in python. For example, in "
+"KV:"
+msgstr "プロパティは、KVとPythonで初期化できます。例えば、KVでは:"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:700
-msgid "Then `MyRule()` would initialize all three kivy properties to the given KV values. Separately in python, if the properties already exist as kivy properties one can do for example `MyRule(line='Bye', side=55)`."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:700
+msgid ""
+"Then `MyRule()` would initialize all three kivy properties to the given KV "
+"values. Separately in python, if the properties already exist as kivy "
+"properties one can do for example `MyRule(line='Bye', side=55)`."
 msgstr ""
+"「MyRule()」  は3つのkivyプロパティをすべて指定のKV値に初期化します。 "
+"Pythonとは別に、kivyプロパティとしてプロパティが既に存在する場合、 「MyRule(line='Bye', "
+"side=55)」などのプロパティを使用できます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:704
-msgid "However, what will be the final values of the properties when `MyRule(text='Bye', order=55)` is executed? The quick rule is that python initialization is stronger than KV initialization only for constant rules."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:704
+msgid ""
+"However, what will be the final values of the properties when "
+"`MyRule(text='Bye', order=55)` is executed? The quick rule is that python "
+"initialization is stronger than KV initialization only for constant rules."
 msgstr ""
+"しかしながら「MyRule(text='Bye', order=55)」  "
+"が実行されたときのプロパティの最終値はどうなりますか？クイックRuleは、Pythonの初期化はKVの初期化よりも一定の規則に対して強いということです。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:708
-msgid "Specifically, the `kwargs` provided to the python initializer are always applied first. So in the above example, `text` is set to `'Bye'` and `order` is set to `55`. Then, all the KV rules are applied, except those constant rules that overwrite a python initializer provided value."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:708
+msgid ""
+"Specifically, the `kwargs` provided to the python initializer are always "
+"applied first. So in the above example, `text` is set to `'Bye'` and `order`"
+" is set to `55`. Then, all the KV rules are applied, except those constant "
+"rules that overwrite a python initializer provided value."
 msgstr ""
+"具体的には、python初期化子に与えられた「kwargs」が常に最初に適用されます。上の例では、「text」は「Bye」に設定され、「order」は「55」に設定されています。そして、Python初期化子提供値を上書きする定数規則を除いて、すべてのKV規則が適用されます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:713
-msgid "That is, the KV rules that do not creates bindings such as `text: 'Hello'` and `ramp: 45.`, if a value for that property has been provided in python, then that rule will not be applied."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:713
+msgid ""
+"That is, the KV rules that do not creates bindings such as `text: 'Hello'` "
+"and `ramp: 45.`, if a value for that property has been provided in python, "
+"then that rule will not be applied."
 msgstr ""
+"つまり、テキストのようなバインディングを作成しないKVRuleは 「text: 'Hello'」 と「ramp: "
+"45」です。そのプロパティの値がPythonで提供されている場合、そのRuleは適用されません。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:717
-msgid "So in the `MyRule(text='Bye', order=55)` example, `text` will be `'Bye'`, `ramp` will be `45.`, and `order`, which creates a binding, will first be set to `55`, but then when KV rules are applied will end up being whatever `self.x + 10` is."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:717
+msgid ""
+"So in the `MyRule(text='Bye', order=55)` example, `text` will be `'Bye'`, "
+"`ramp` will be `45.`, and `order`, which creates a binding, will first be "
+"set to `55`, but then when KV rules are applied will end up being whatever "
+"`self.x + 10` is."
 msgstr ""
+"したがって、MyRule（text = 'Bye'、order = "
+"55）の例では、「text」は「Bye」、「ramp」は「45」となり、バインディングを作成する「order」は「55」に設定されますが、「self.x"
+" + 10」が何であっても適用されます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:724
-msgid "Before, KV rules always overwrote the python values, now, python values are not overwritten by constant rules."
-msgstr ""
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:724
+msgid ""
+"Before, KV rules always overwrote the python values, now, python values are "
+"not overwritten by constant rules."
+msgstr "以前は、KVRuleは常にPython値を上書きしていましたが、Python値は定数Ruleで上書きされません。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:729
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:729
 msgid "Lang Directives"
-msgstr ""
+msgstr "Lang Directives(言語のディレクティブ)"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:731
-msgid "You can use directives to add declarative commands, such as imports or constant definitions, to the lang files. Directives are added as comments in the following format:"
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:731
+msgid ""
+"You can use directives to add declarative commands, such as imports or "
+"constant definitions, to the lang files. Directives are added as comments in"
+" the following format:"
 msgstr ""
+"ディレクティブを使用すると、インポートや定数定義などの宣言的なコマンドをlangファイルに追加できます。ディレクティブは、次の形式でコメントとして追加されます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:740
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:740
 msgid "import <package>"
-msgstr ""
+msgstr "import "
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:744
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:786
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:810
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:744
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:786
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:810
 msgid "Syntax:"
-msgstr ""
+msgstr "書き方"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:750
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:750
 msgid "You can import a package by writing:"
-msgstr ""
+msgstr "記載することpackageをimportできます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:760
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:760
 msgid "Or more complex:"
-msgstr ""
+msgstr "より複雑な書き方は:"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:773
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:773
 msgid "You can directly import classes from a module:"
-msgstr ""
+msgstr "モジュールから直接クラスをインポートできます:"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:782
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:782
 msgid "set <key> <expr>"
-msgstr ""
+msgstr "set "
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:792
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:792
 msgid "Set a key that will be available anywhere in the kv. For example:"
-msgstr ""
+msgstr "kv内の任意の場所で使用できるキーを設定します。例えば以下の通りです:"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:806
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:806
 msgid "include <file>"
-msgstr ""
+msgstr "include "
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang:816
-msgid "Includes an external kivy file. This allows you to split complex widgets into their own files. If the include is forced, the file will first be unloaded and then reloaded again. For example:"
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang:816
+msgid ""
+"Includes an external kivy file. This allows you to split complex widgets "
+"into their own files. If the include is forced, the file will first be "
+"unloaded and then reloaded again. For example:"
 msgstr ""
+"外部Kivyファイルが含まれます。これにより、複雑なwidgetをそれぞれのファイルに分割できます。インクルードが強制されると、ファイルは最初にアンロードされてから再度ロードされます。例えば以下のようになります:"
 
 #: ../../<autodoc>:1
 msgid "ベースクラス: :class:`kivy.event.ObjectWithUid`"
-msgstr ""
+msgstr "ベースクラス: :class:`kivy.event.ObjectWithUid`"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.Observable:1
-msgid ":class:`Observable` is a stub class defining the methods required for binding. :class:`EventDispatcher` is (the) one example of a class that implements the binding interface. See :class:`EventDispatcher` for details."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.Observable:1
+msgid ""
+":class:`Observable` is a stub class defining the methods required for "
+"binding. :class:`EventDispatcher` is (the) one example of a class that "
+"implements the binding interface. See :class:`EventDispatcher` for details."
 msgstr ""
+":class:`Observable`  は、バインディングに必要なメソッドを定義するスタブクラスです。  "
+":class:`EventDispatcher`  は、バインディングインタフェースを実装するクラスの1例です。詳細については、 "
+":class:`EventDispatcher`  を参照してください。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.Observable.fbind:1
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.Observable.fbind:1
 msgid "See :meth:`EventDispatcher.fbind`."
-msgstr ""
+msgstr " :meth:`EventDispatcher.fbind` を見てください。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.Observable.fbind:5
-msgid "To keep backward compatibility with derived classes which may have inherited from :class:`Observable` before, the :meth:`fbind` method was added. The default implementation of :meth:`fbind` is to create a partial function that it passes to bind while saving the uid and largs/kwargs. However, :meth:`funbind` (and :meth:`unbind_uid`) are fairly inefficient since we have to first lookup this partial function using the largs/kwargs or uid and then call :meth:`unbind` on the returned function. It is recommended to overwrite these methods in derived classes to bind directly for better performance."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.Observable.fbind:5
+msgid ""
+"To keep backward compatibility with derived classes which may have inherited"
+" from :class:`Observable` before, the :meth:`fbind` method was added. The "
+"default implementation of :meth:`fbind` is to create a partial function that"
+" it passes to bind while saving the uid and largs/kwargs. However, "
+":meth:`funbind` (and :meth:`unbind_uid`) are fairly inefficient since we "
+"have to first lookup this partial function using the largs/kwargs or uid and"
+" then call :meth:`unbind` on the returned function. It is recommended to "
+"overwrite these methods in derived classes to bind directly for better "
+"performance."
 msgstr ""
+":class:`Observable`  から継承した可能性のある派生クラスとの下位互換性を維持するために、 :meth:`fbind`  "
+"メソッドが追加されました。 :meth:`fbind`  のデフォルト実装は、uidとlargs / "
+"kwargsを保存しながらバインドするために渡す部分関数を作成することです。しかし、 :meth:`funbind`   （そして "
+":meth:`unbind_uid` ）は、まず、largs / kwargsまたはuidを使ってこの部分関数を検索してから、返された関数に対して  "
+":meth:`unbind_uid` "
+"を呼び出さなければならないので、かなり非効率です。より良いパフォーマンスを得るために直接バインドするには、これらのメソッドを派生クラスで上書きすることをお勧めします。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.Observable.fbind:17
-msgid "Similarly to :meth:`EventDispatcher.fbind`, this method returns 0 on failure and a positive unique uid on success. This uid can be used with :meth:`unbind_uid`."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.Observable.fbind:17
+msgid ""
+"Similarly to :meth:`EventDispatcher.fbind`, this method returns 0 on failure"
+" and a positive unique uid on success. This uid can be used with "
+":meth:`unbind_uid`."
 msgstr ""
+" :meth:`EventDispatcher.fbind` "
+"と同様に、このメソッドは失敗した場合は0を返し、成功した場合は肯定的な一意のuidを返します。このuidは、 :meth:`unbind_uid` "
+"で使用できます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.Observable.funbind:1
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.Observable.funbind:1
 msgid "See :meth:`fbind` and :meth:`EventDispatcher.funbind`."
-msgstr ""
+msgstr ":meth:`fbind`  と  :meth:`EventDispatcher.funbind` を見てください。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.Observable.unbind_uid:1
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.Observable.unbind_uid:1
 msgid "See :meth:`fbind` and :meth:`EventDispatcher.unbind_uid`."
-msgstr ""
+msgstr " :meth:`fbind` と :meth:`EventDispatcher.unbind_uid` を見てください。"
 
-#: ../../<autodoc>:1
-#: ../../<autodoc>:1
+#: ../../<autodoc>:1 ../../<autodoc>:1
 msgid "ベースクラス: :class:`builtins.object`"
-msgstr ""
+msgstr "ベースクラス: :class:`builtins.object`"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase:1
-msgid "The Builder is responsible for creating a :class:`Parser` for parsing a kv file, merging the results into its internal rules, templates, etc."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase:1
+msgid ""
+"The Builder is responsible for creating a :class:`Parser` for parsing a kv "
+"file, merging the results into its internal rules, templates, etc."
 msgstr ""
+"Builder は、kvファイルを解析し、結果を内部ルール、テンプレートなどにマージするための  :class:`Parser`  を作成します。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase:4
-msgid "By default, :class:`Builder` is a global Kivy instance used in widgets that you can use to load other kv files in addition to the default ones."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase:4
+msgid ""
+"By default, :class:`Builder` is a global Kivy instance used in widgets that "
+"you can use to load other kv files in addition to the default ones."
 msgstr ""
+"既定では、 :class:`Builder` "
+"はwidgetで使用されるグローバルなKivyインスタンスで、既定のものに加えて他のkvファイルを読み込めます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.apply:1
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.apply:1
 msgid "Search all the rules that match the widget and apply them."
-msgstr ""
+msgstr "widget と一致するすべてのルールを検索して適用します。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.apply:3
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.apply_rules:6
-msgid "`ignored_consts` is a set or list type whose elements are property names for which constant KV rules (i.e. those that don't create bindings) of that widget will not be applied. This allows e.g. skipping constant rules that overwrite a value initialized in python."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.apply:3
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.apply_rules:6
+msgid ""
+"`ignored_consts` is a set or list type whose elements are property names for"
+" which constant KV rules (i.e. those that don't create bindings) of that "
+"widget will not be applied. This allows e.g. skipping constant rules that "
+"overwrite a value initialized in python."
 msgstr ""
+"`ignored_consts`  "
+"は、そのウィジェットの定数KVルール（つまりバインディングを作成しないルール）が適用されないプロパティ名であるセットまたはリストタイプです。これにより、例えば、"
+" Pythonで初期化された値を上書きする定数ルールをスキップします。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.apply_rules:1
-msgid "Search all the rules that match `rule_name` widget and apply them to `widget`."
-msgstr ""
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.apply_rules:1
+msgid ""
+"Search all the rules that match `rule_name` widget and apply them to "
+"`widget`."
+msgstr " `rule_name`  widget と一致するすべてのルールを検索し、`widget` に適用します。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.load_file:1
-msgid "Insert a file into the language builder and return the root widget (if defined) of the kv file."
-msgstr ""
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.load_file:1
+msgid ""
+"Insert a file into the language builder and return the root widget (if "
+"defined) of the kv file."
+msgstr "言語ビルダーにファイルを挿入し、kvファイルのroot widget（定義されている場合）を返します。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.load_file:6
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.load_string:6
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.load_file:6
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.load_string:6
 msgid "`rulesonly`: bool, defaults to False"
-msgstr ""
+msgstr "`rulesonly` :bool型、デフォルトはFalseです。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.load_file:6
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.load_string:6
-msgid "If True, the Builder will raise an exception if you have a root widget inside the definition."
-msgstr ""
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.load_file:6
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.load_string:6
+msgid ""
+"If True, the Builder will raise an exception if you have a root widget "
+"inside the definition."
+msgstr "Trueの場合、定義内にroot widgetがある場合はBuilderは例外を発生させます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.load_string:1
-msgid "Insert a string into the Language Builder and return the root widget (if defined) of the kv string."
-msgstr ""
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.load_string:1
+msgid ""
+"Insert a string into the Language Builder and return the root widget (if "
+"defined) of the kv string."
+msgstr "Language Builderに文字列を挿入し、kv文字列のroot widget（定義されている場合）を返します。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.match:1
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.match_rule_name:1
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.match:1
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.match_rule_name:1
 msgid "Return a list of :class:`ParserRule` objects matching the widget."
-msgstr ""
+msgstr "widgetに一致する :class:`ParserRule`  オブジェクトのリストを返します。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.sync:1
-msgid "Execute all the waiting operations, such as the execution of all the expressions related to the canvas."
-msgstr ""
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.sync:1
+msgid ""
+"Execute all the waiting operations, such as the execution of all the "
+"expressions related to the canvas."
+msgstr "canvasに関連するすべての式の実行など、すべての待機操作を実行します。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.template:1
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.template:1
 msgid "Create a specialized template using a specific context."
-msgstr ""
+msgstr "特定のコンテキストを使用して特殊なTemplate を作成します"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.template:5
-msgid "With templates, you can construct custom widgets from a kv lang definition by giving them a context. Check :ref:`Template usage <template_usage>`."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.template:5
+msgid ""
+"With templates, you can construct custom widgets from a kv lang definition "
+"by giving them a context. Check :ref:`Template usage <template_usage>`."
 msgstr ""
+"Template を使用すると、kv lang定義からカスタムwidgetを作成することができます。   :ref:`Template "
+"の使用状況を確認してください。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.unbind_property:1
-msgid "Unbind the handlers created by all the rules of the widget that set the name."
-msgstr ""
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.unbind_property:1
+msgid ""
+"Unbind the handlers created by all the rules of the widget that set the "
+"name."
+msgstr "名前を設定するwidgetのすべてのルールによって作成されたハンドラーをアンバインドします。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.unbind_property:4
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.unbind_property:4
 msgid "This effectively clears all the rules of widget that take the form::"
-msgstr ""
+msgstr "これは、フォームを取るwidgetのすべてのルールを効果的にクリアします"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.unbind_property:8
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.unbind_property:8
 msgid "For example:"
-msgstr ""
+msgstr "例:"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.unbind_widget:1
-msgid "Unbind all the handlers created by the KV rules of the widget. The :attr:`kivy.uix.widget.Widget.uid` is passed here instead of the widget itself, because Builder is using it in the widget destructor."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.unbind_widget:1
+msgid ""
+"Unbind all the handlers created by the KV rules of the widget. The "
+":attr:`kivy.uix.widget.Widget.uid` is passed here instead of the widget "
+"itself, because Builder is using it in the widget destructor."
 msgstr ""
+"WidgetのKVルールによって作成されたすべてのハンドラをアンバインドします。 BuilderがWidgetのデストラクタでそれを使用しているので、 "
+":attr:`kivy.uix.widget.Widget.uid`  はWidget自体の代わりにここで渡されます。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.unbind_widget:6
-msgid "This effectively clears all the KV rules associated with this widget. For example:"
-msgstr ""
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.unbind_widget:6
+msgid ""
+"This effectively clears all the KV rules associated with this widget. For "
+"example:"
+msgstr "これにより、このWidgetに関連するすべてのKVルールが効果的に消去されます。例は以下の通りです。:"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.unload_file:1
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.unload_file:1
 msgid "Unload all rules associated with a previously imported file."
-msgstr ""
+msgstr "以前にインポートされたファイルに関連付けられているすべてのruleをアンロードします。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderBase.unload_file:7
-msgid "This will not remove rules or templates already applied/used on current widgets. It will only effect the next widgets creation or template invocation."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderBase.unload_file:7
+msgid ""
+"This will not remove rules or templates already applied/used on current "
+"widgets. It will only effect the next widgets creation or template "
+"invocation."
 msgstr ""
+"これにより、現在のwidgetですでに適用または使用されているruleまたはtemplates "
+"は削除されません。次のウィジェットの作成またはtemplates 呼び出しにのみ影響します。"
 
 #: ../../<autodoc>:1
 msgid "ベースクラス: :class:`kivy.lang.parser.ParserException`"
-msgstr ""
+msgstr "ベースクラス: :class:`kivy.lang.parser.ParserException`"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.BuilderException:1
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.BuilderException:1
 msgid "Exception raised when the Builder failed to apply a rule on a widget."
-msgstr ""
+msgstr "Builderがwidgetにruleを適用できなかったときに発生するエクセプション。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.Parser:1
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.Parser:1
 msgid "Create a Parser object to parse a Kivy language file or Kivy content."
-msgstr ""
+msgstr "Kivy LanguageファイルまたはKivyコンテンツを解析するParserオブジェクトを作成します。 "
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.Parser.parse:1
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.Parser.parse:1
 msgid "Parse the contents of a Parser file and return a list of root objects."
-msgstr ""
+msgstr "Parserファイルの内容を解析し、root objectのリストを返します。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.Parser.parse_level:1
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.Parser.parse_level:1
 msgid "Parse the current level (level * spaces) indentation."
-msgstr ""
+msgstr "現在のレベル（level * spaces）の字下げを解析します。"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.Parser.strip_comments:1
-msgid "Remove all comments from all lines in-place. Comments need to be on a single line and not at the end of a line. i.e. a comment line's first non-whitespace character must be a #."
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.Parser.strip_comments:1
+msgid ""
+"Remove all comments from all lines in-place. Comments need to be on a single"
+" line and not at the end of a line. i.e. a comment line's first non-"
+"whitespace character must be a #."
 msgstr ""
+"すべての行のコメントを一括削除します。コメントは、行の終わりではなく、単一の行に記述する必要があります。コメント行の最初の非空白文字は＃でなければなりません。"
 
 #: ../../<autodoc>:1
 msgid "ベースクラス: :class:`builtins.Exception`"
-msgstr ""
+msgstr "ベースクラス: :class:`builtins.Exception`"
 
-#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.py:docstring of kivy.lang.ParserException:1
+#: ../../../../../../../../../appdata/local/programs/python/python35-32/lib/site-packages/kivy/lang/__init__.pydocstring
+#: of kivy.lang.ParserException:1
 msgid "Exception raised when something wrong happened in a kv file."
-msgstr ""
-
+msgstr "kvファイルで何らかの不具合が発生した場合に発生するエクセプション。"
