@@ -155,7 +155,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="api-index.html">API Reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.html">Kivy framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.html">Kivy framework(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.html">Adapters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.adapter.html">Adapter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
@@ -163,7 +163,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.listadapter.html">ListAdapter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.models.html">SelectableDataItem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.animation.html">Animation(翻訳中)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.animation.html">Animation(翻訳済み)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.app.html">Application （翻訳中）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.atlas.html">Atlas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.base.html">Kivy Base</a></li>
@@ -586,52 +586,38 @@
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.0.4 で追加.</span></p>
 </div>
-<p>A Callback is an instruction that will be called when the drawing
-operation is performed. When adding instructions to a canvas, you can do
-this:</p>
+<p>コールバックは描画操作が実行されるときに呼び出される命令です。 キャンバスに命令を追加するときに実行できます:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="p">:</span>
     <span class="n">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">Rectangle</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
     <span class="n">Callback</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">my_callback</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The definition of the callback must be:</p>
+<p>コールの定義:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instr</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I have been called!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">警告</p>
-<p class="last">Note that if you perform many and/or costly calls to callbacks, you
-might potentially slow down the rendering performance significantly.</p>
+<p class="last">注意としては、多くのコールバックをコールすると、レンダリングパフォーマンスが大幅に低下する可能性があります。</p>
 </div>
-<p>The updating of your canvas does not occur until something new happens.
-From your callback, you can ask for an update:</p>
+<p>キャンバスの更新は何か新しいことが起こるまで行われません。 コールバックから更新を求めることできます：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="p">:</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">cb</span> <span class="o">=</span> <span class="n">Callback</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">my_callback</span><span class="p">)</span>
 <span class="c1"># then later in the code</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">cb</span><span class="o">.</span><span class="n">ask_update</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>If you use the Callback class to call rendering methods of another
-toolkit, you will have issues with the OpenGL context. The OpenGL state may
-have been manipulated by the other toolkit, and as soon as program flow
-returns to Kivy, it will just break. You can have glitches, crashes, black
-holes might occur, etc.
-To avoid that, you can activate the <a class="reference internal" href="#kivy.graphics.Callback.reset_context" title="kivy.graphics.Callback.reset_context"><code class="xref py py-attr docutils literal"><span class="pre">reset_context</span></code></a> option. It will
-reset the OpenGL context state to make Kivy&#8217;s rendering correct after the
-call to your callback.</p>
+<p>Callbackクラスを使用して別のツールキットのレンダリングメソッドを呼び出すと、OpenGLコンテキストに関する問題が発生します。 OpenGLの状態は他のツールキットによって操作されている可能性があります。プログラムの流れがKivyにリターンされるとすぐに破棄されます。 グリッチ、クラッシュ、ブラックホールなどが発生する可能性があります。これを回避するには、 <a class="reference internal" href="#kivy.graphics.Callback.reset_context" title="kivy.graphics.Callback.reset_context"><code class="xref py py-attr docutils literal"><span class="pre">reset_context</span></code></a>  オプションをアクティブにすることができます。 コールバックへの呼び出しの後にKivyのレンダリングが正しくなるよう、OpenGLコンテキストの状態をリセットします。</p>
 <div class="admonition warning">
 <p class="first admonition-title">警告</p>
-<p class="last">The <a class="reference internal" href="#kivy.graphics.Callback.reset_context" title="kivy.graphics.Callback.reset_context"><code class="xref py py-attr docutils literal"><span class="pre">reset_context</span></code></a> is not a full OpenGL reset. If you have issues
-regarding that, please contact us.</p>
+<p class="last"><a class="reference internal" href="#kivy.graphics.Callback.reset_context" title="kivy.graphics.Callback.reset_context"><code class="xref py py-attr docutils literal"><span class="pre">reset_context</span></code></a> は完全なOpenGLリセットではありません。 問題が発生した場合はお問い合わせください。</p>
 </div>
 <dl class="method">
 <dt id="kivy.graphics.Callback.ask_update">
 <code class="descname">ask_update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.Callback.ask_update" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Inform the parent canvas that we&#8217;d like it to update on the next
-frame. This is useful when you need to trigger a redraw due to some
-value having changed for example.</p>
+<dd><p>親キャンバスに次のフレームで更新したいことを通知します。 たとえば値が変更されたために再描画をトリガする必要がある場合などに便利です。</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.0.4 で追加.</span></p>
 </div>
@@ -640,8 +626,7 @@ value having changed for example.</p>
 <dl class="attribute">
 <dt id="kivy.graphics.Callback.reset_context">
 <code class="descname">reset_context</code><a class="headerlink" href="#kivy.graphics.Callback.reset_context" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Set this to True if you want to reset the OpenGL context for Kivy
-after the callback has been called.</p>
+<dd><p>コールバックがコールされた後にKivyのOpenGLコンテキストをリセットする場合はTrueに設定します。</p>
 </dd></dl>
 
 </dd></dl>
@@ -650,19 +635,17 @@ after the callback has been called.</p>
 <dt id="kivy.graphics.Canvas">
 <em class="property">class </em><code class="descclassname">kivy.graphics.</code><code class="descname">Canvas</code><a class="headerlink" href="#kivy.graphics.Canvas" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>ベースクラス: <a class="reference internal" href="api-kivy.graphics.instructions.html#kivy.graphics.instructions.CanvasBase" title="kivy.graphics.instructions.CanvasBase"><code class="xref py py-class docutils literal"><span class="pre">kivy.graphics.instructions.CanvasBase</span></code></a></p>
-<p>The important Canvas class. Use this class to add graphics or context
-instructions that you want to be used for drawing.</p>
+<p>重要なCanvasクラスです。 このクラスを使用して描画に使用するグラフィックスまたはコンテキスト命令を追加します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">The Canvas supports Python&#8217;s <code class="docutils literal"><span class="pre">with</span></code> statement and its enter &amp; exit
-semantics.</p>
+<p class="last">CanvasはPythonの <code class="docutils literal"><span class="pre">with</span></code> 命令と入力と終了のセマンティクスをサポートしています。</p>
 </div>
-<p>Usage of a canvas without the <code class="docutils literal"><span class="pre">with</span></code> statement:</p>
+<p>canvasの``with`` 命令を使用しない使い方:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Color</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">)))</span>
 </pre></div>
 </div>
-<p>Usage of a canvas with Python&#8217;s <code class="docutils literal"><span class="pre">with</span></code> statement:</p>
+<p>canvasのPythonの <code class="docutils literal"><span class="pre">with</span></code> 命令の使い方:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="p">:</span>
     <span class="n">Color</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">Rectangle</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
@@ -671,39 +654,37 @@ semantics.</p>
 <dl class="attribute">
 <dt id="kivy.graphics.Canvas.after">
 <code class="descname">after</code><a class="headerlink" href="#kivy.graphics.Canvas.after" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Property for getting the &#8216;after&#8217; group.</p>
+<dd><p>&#8216;after&#8217;グループを取得するためのプロパティです。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="kivy.graphics.Canvas.ask_update">
 <code class="descname">ask_update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.Canvas.ask_update" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Inform the canvas that we&#8217;d like it to update on the next frame.
-This is useful when you need to trigger a redraw due to some value
-having changed for example.</p>
+<dd><p>Canvas に次のフレームで更新したいことを通知します。 たとえば値が変更されたために再描画をトリガする必要がある場合などに便利です。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.Canvas.before">
 <code class="descname">before</code><a class="headerlink" href="#kivy.graphics.Canvas.before" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Property for getting the &#8216;before&#8217; group.</p>
+<dd><p>&#8216;before&#8217;グループを取得するためのプロパティです。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="kivy.graphics.Canvas.clear">
 <code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.Canvas.clear" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Clears every <a class="reference internal" href="#kivy.graphics.Instruction" title="kivy.graphics.Instruction"><code class="xref py py-class docutils literal"><span class="pre">Instruction</span></code></a> in the canvas, leaving it clean.</p>
+<dd><p>Canvas内の全ての <a class="reference internal" href="#kivy.graphics.Instruction" title="kivy.graphics.Instruction"><code class="xref py py-class docutils literal"><span class="pre">Instruction</span></code></a> をクリアーしてきれいにします。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="kivy.graphics.Canvas.draw">
 <code class="descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.Canvas.draw" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Apply the instruction to our window.</p>
+<dd><p>instructionをウインドウに適用します。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.Canvas.has_after">
 <code class="descname">has_after</code><a class="headerlink" href="#kivy.graphics.Canvas.has_after" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Property to see if the <a class="reference internal" href="#kivy.graphics.Canvas.after" title="kivy.graphics.Canvas.after"><code class="xref py py-attr docutils literal"><span class="pre">after</span></code></a> group has already been created.</p>
+<dd><p><a class="reference internal" href="#kivy.graphics.Canvas.after" title="kivy.graphics.Canvas.after"><code class="xref py py-attr docutils literal"><span class="pre">after</span></code></a>  グループがすでに作成されているかどうかを確認するプロパティ。</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.7.0 で追加.</span></p>
 </div>
@@ -712,7 +693,7 @@ having changed for example.</p>
 <dl class="attribute">
 <dt id="kivy.graphics.Canvas.has_before">
 <code class="descname">has_before</code><a class="headerlink" href="#kivy.graphics.Canvas.has_before" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Property to see if the <a class="reference internal" href="#kivy.graphics.Canvas.before" title="kivy.graphics.Canvas.before"><code class="xref py py-attr docutils literal"><span class="pre">before</span></code></a> group has already been created.</p>
+<dd><p><a class="reference internal" href="#kivy.graphics.Canvas.before" title="kivy.graphics.Canvas.before"><code class="xref py py-attr docutils literal"><span class="pre">before</span></code></a>  グループがすでに作成されているかどうかを確認するプロパティ。</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.7.0 で追加.</span></p>
 </div>
@@ -721,17 +702,13 @@ having changed for example.</p>
 <dl class="attribute">
 <dt id="kivy.graphics.Canvas.opacity">
 <code class="descname">opacity</code><a class="headerlink" href="#kivy.graphics.Canvas.opacity" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Property to get/set the opacity value of the canvas.</p>
+<dd><p>キャンバスの不透明度の値を取得または設定するためのプロパティです。</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.4.1 で追加.</span></p>
 </div>
-<p>The opacity attribute controls the opacity of the canvas and its
-children.  Be careful, it&#8217;s a cumulative attribute: the value is
-multiplied to the current global opacity and the result is applied to
-the current context color.</p>
-<p>For example: if your parent has an opacity of 0.5 and a child has an
-opacity of 0.2, the real opacity of the child will be 0.5 * 0.2 = 0.1.</p>
-<p>Then, the opacity is applied on the shader as:</p>
+<p>不透明度はCanvasとその子の不透明度を制御します。 これは累積的であることに注意してください。値は現在のグローバルな不透明度に乗算されて、結果は現在のコンテキストカラーに適用されます。</p>
+<p>たとえば親の不透明度が0.5で子の不透明度が0.2の場合は子の実際の不透明度は0.5 * 0.2 = 0.1になります。</p>
+<p>次に不透明度がシェーダに次のように適用されます:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">frag_color</span> <span class="o">=</span> <span class="n">color</span> <span class="o">*</span> <span class="n">vec4</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">opacity</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -743,28 +720,17 @@ opacity of 0.2, the real opacity of the child will be 0.5 * 0.2 = 0.1.</p>
 <dt id="kivy.graphics.CanvasBase">
 <em class="property">class </em><code class="descclassname">kivy.graphics.</code><code class="descname">CanvasBase</code><a class="headerlink" href="#kivy.graphics.CanvasBase" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>ベースクラス: <a class="reference internal" href="api-kivy.graphics.instructions.html#kivy.graphics.instructions.InstructionGroup" title="kivy.graphics.instructions.InstructionGroup"><code class="xref py py-class docutils literal"><span class="pre">kivy.graphics.instructions.InstructionGroup</span></code></a></p>
-<p>CanvasBase provides the context manager methods for the
-<a class="reference internal" href="#kivy.graphics.Canvas" title="kivy.graphics.Canvas"><code class="xref py py-class docutils literal"><span class="pre">Canvas</span></code></a>.</p>
+<p>CanvasBaseはCanvasのコンテキストマネージャメソッドを提供します。</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="kivy.graphics.Color">
 <em class="property">class </em><code class="descclassname">kivy.graphics.</code><code class="descname">Color</code><a class="headerlink" href="#kivy.graphics.Color" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>ベースクラス: <a class="reference internal" href="api-kivy.graphics.instructions.html#kivy.graphics.instructions.ContextInstruction" title="kivy.graphics.instructions.ContextInstruction"><code class="xref py py-class docutils literal"><span class="pre">kivy.graphics.instructions.ContextInstruction</span></code></a></p>
-<p>Instruction to set the color state for any vertices being
-drawn after it.</p>
-<p>This represents a color between 0 and 1, but is applied as a
-<em>multiplier</em> to the texture of any vertex instructions following
-it in a canvas. If no texture is set, the vertex instruction
-takes the precise color of the Color instruction.</p>
-<p>For instance, if a Rectangle has a texture with uniform color
-<code class="docutils literal"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5,</span> <span class="pre">1.0)</span></code> and the preceding Color has
-<code class="docutils literal"><span class="pre">rgba=(1,</span> <span class="pre">0.5,</span> <span class="pre">2,</span> <span class="pre">1)</span></code>, the actual visible color will be
-<code class="docutils literal"><span class="pre">(0.5,</span> <span class="pre">0.25,</span> <span class="pre">1.0,</span> <span class="pre">1.0)</span></code> since the Color instruction is applied as
-a multiplier to every rgba component. In this case, a Color
-component outside the 0-1 range gives a visible result as the
-intensity of the blue component is doubled.</p>
-<p>To declare a Color in Python, you can do:</p>
+<p>後に描画される頂点の色の状態を設定する命令。</p>
+<p>これは0と1の間の色を表しますが、続くキャンバス内の任意の頂点命令のテクスチャに <em>乗数</em> として適用されます。 テクスチャが設定されていない場合は頂点命令はColor命令の正確な色を取ります。</p>
+<p>例えば、Rectangleが均一な色``(0.5, 0.5, 0.5, 1.0)`` のテクスチャを持ち、先行Colorがrgba =``rgba=(1, 0.5, 2, 1)``　の場合、実際の表示色は``(0.5, 0.25, 1.0, 1.0)``  です。なぜならColor命令はすべてのrgbaコンポーネントに乗数として適用されるからです。 この場合は0〜1の範囲外の色成分は青色成分が目に2倍の強さになると結果を与えます。</p>
+<p>PythonでColorを宣言するには次のようにします:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.graphics</span> <span class="k">import</span> <span class="n">Color</span>
 
 <span class="c1"># create red v</span>
@@ -780,12 +746,11 @@ intensity of the blue component is doubled.</p>
 <span class="n">c</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;hsv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You can also set color components that are available as properties
-by passing them as keyword arguments:</p>
+<p>キーワード引数として渡すことでプロパティとして利用できるカラーコンポーネントを設定もできます;;</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># sets the blue component only</span>
 </pre></div>
 </div>
-<p>In kv lang you can set the color properties directly:</p>
+<p>kv langでは色のプロパティを直接設定できます:</p>
 <div class="highlight-kv"><div class="highlight"><pre><span></span><span class="nn">&lt;Rule&gt;</span><span class="p">:</span>
     <span class="nc">canvas</span><span class="p">:</span>
         <span class="c1"># red color</span>
@@ -810,61 +775,61 @@ by passing them as keyword arguments:</p>
 <dl class="attribute">
 <dt id="kivy.graphics.Color.a">
 <code class="descname">a</code><a class="headerlink" href="#kivy.graphics.Color.a" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Alpha component, between 0 and 1.</p>
+<dd><p>アルファコンポーネントは0～1です。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.Color.b">
 <code class="descname">b</code><a class="headerlink" href="#kivy.graphics.Color.b" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Blue component, between 0 and 1.</p>
+<dd><p>青コンポーネントは0～1です。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.Color.g">
 <code class="descname">g</code><a class="headerlink" href="#kivy.graphics.Color.g" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Green component, between 0 and 1.</p>
+<dd><p>グリーンコンポーネントは0～1です。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.Color.h">
 <code class="descname">h</code><a class="headerlink" href="#kivy.graphics.Color.h" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Hue component, between 0 and 1.</p>
+<dd><p>色相コンポーネントは0～1です。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.Color.hsv">
 <code class="descname">hsv</code><a class="headerlink" href="#kivy.graphics.Color.hsv" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>HSV color, list of 3 values in 0-1 range, alpha will be 1.</p>
+<dd><p>HSVカラーは範囲が0～1の値が3つのリストと、1つのアルファを持ちます。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.Color.r">
 <code class="descname">r</code><a class="headerlink" href="#kivy.graphics.Color.r" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Red component, between 0 and 1.</p>
+<dd><p>赤コンポーネントは0～1です</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.Color.rgb">
 <code class="descname">rgb</code><a class="headerlink" href="#kivy.graphics.Color.rgb" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>RGB color, list of 3 values in 0-1 range. The alpha will be 1.</p>
+<dd><p>。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.Color.rgba">
 <code class="descname">rgba</code><a class="headerlink" href="#kivy.graphics.Color.rgba" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>RGBA color, list of 4 values in 0-1 range.</p>
+<dd><p>RGAカラーは範囲が0～1の値が4つのリストです。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.Color.s">
 <code class="descname">s</code><a class="headerlink" href="#kivy.graphics.Color.s" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Saturation component, between 0 and 1.</p>
+<dd><p>彩度コンポーネントは0～1です。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.Color.v">
 <code class="descname">v</code><a class="headerlink" href="#kivy.graphics.Color.v" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Value component, between 0 and 1.</p>
+<dd><p>値コンポーネントは0～1です。</p>
 </dd></dl>
 
 </dd></dl>
@@ -873,19 +838,16 @@ by passing them as keyword arguments:</p>
 <dt id="kivy.graphics.ContextInstruction">
 <em class="property">class </em><code class="descclassname">kivy.graphics.</code><code class="descname">ContextInstruction</code><a class="headerlink" href="#kivy.graphics.ContextInstruction" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>ベースクラス: <a class="reference internal" href="api-kivy.graphics.instructions.html#kivy.graphics.instructions.Instruction" title="kivy.graphics.instructions.Instruction"><code class="xref py py-class docutils literal"><span class="pre">kivy.graphics.instructions.Instruction</span></code></a></p>
-<p>The ContextInstruction class is the base for the creation of instructions
-that don&#8217;t have a direct visual representation, but instead modify the
-current Canvas&#8217; state, e.g. texture binding, setting color parameters,
-matrix manipulation and so on.</p>
+<p>ContextInstructionクラスは直接のビジュアル表現を持たない命令の作成の基礎ですが、代わりに現在のCanvasの状態を変更します。 テクスチャの場バインディング、カラーパラメータの設定や行列操作などが含まれます。</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="kivy.graphics.Ellipse">
 <em class="property">class </em><code class="descclassname">kivy.graphics.</code><code class="descname">Ellipse</code><a class="headerlink" href="#kivy.graphics.Ellipse" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>ベースクラス: <a class="reference internal" href="api-kivy.graphics.vertex_instructions.html#kivy.graphics.vertex_instructions.Rectangle" title="kivy.graphics.vertex_instructions.Rectangle"><code class="xref py py-class docutils literal"><span class="pre">kivy.graphics.vertex_instructions.Rectangle</span></code></a></p>
-<p>A 2D ellipse.</p>
+<p>2次元の楕円。</p>
 <div class="versionchanged">
-<p><span class="versionmodified">バージョン 1.0.7 で変更: </span>Added angle_start and angle_end.</p>
+<p><span class="versionmodified">バージョン 1.0.7 で変更: </span>angle_startとangle_endを追加しました。</p>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -893,14 +855,13 @@ matrix manipulation and so on.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><cite>segments</cite>: int, デフォルト値は180</dt>
-<dd><p class="first last">Define how many segments are needed for drawing the ellipse.
-The drawing will be smoother if you have many segments.</p>
+<dd><p class="first last">楕円を描くために必要なセグメントの数を定義します。 多くのセグメントがある場合は図はスムーズになります。</p>
 </dd>
-<dt><cite>angle_start</cite>: int, defaults to 0</dt>
-<dd><p class="first last">Specifies the starting angle, in degrees, of the disk portion.</p>
+<dt><cite>angle_start</cite>: int, デフォルトは 0です</dt>
+<dd><p class="first last">円の部分の開始角度を度で指定します。</p>
 </dd>
-<dt><cite>angle_end</cite>: int, defaults to 360</dt>
-<dd><p class="first last">Specifies the ending angle, in degrees, of the disk portion.</p>
+<dt><cite>angle_end</cite>: int, デフォルトは 360です</dt>
+<dd><p class="first last">円の部分の終了角度を度で指定します。</p>
 </dd>
 </dl>
 </td>
@@ -910,19 +871,19 @@ The drawing will be smoother if you have many segments.</p>
 <dl class="attribute">
 <dt id="kivy.graphics.Ellipse.angle_end">
 <code class="descname">angle_end</code><a class="headerlink" href="#kivy.graphics.Ellipse.angle_end" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>End angle of the ellipse in degrees, defaults to 360.</p>
+<dd><p>楕円の終了角度(単位：度)。デフォルトは360です。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.Ellipse.angle_start">
 <code class="descname">angle_start</code><a class="headerlink" href="#kivy.graphics.Ellipse.angle_start" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Start angle of the ellipse in degrees, defaults to 0.</p>
+<dd><p>楕円の開始角度(単位：度)。デフォルトは0です。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.Ellipse.segments">
 <code class="descname">segments</code><a class="headerlink" href="#kivy.graphics.Ellipse.segments" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Property for getting/setting the number of segments of the ellipse.</p>
+<dd><p>楕円のセグメント(分割)数を設定/取得するためのプロパティです。</p>
 </dd></dl>
 
 </dd></dl>
@@ -931,34 +892,32 @@ The drawing will be smoother if you have many segments.</p>
 <dt id="kivy.graphics.Fbo">
 <em class="property">class </em><code class="descclassname">kivy.graphics.</code><code class="descname">Fbo</code><a class="headerlink" href="#kivy.graphics.Fbo" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>ベースクラス: <a class="reference internal" href="api-kivy.graphics.instructions.html#kivy.graphics.instructions.RenderContext" title="kivy.graphics.instructions.RenderContext"><code class="xref py py-class docutils literal"><span class="pre">kivy.graphics.instructions.RenderContext</span></code></a></p>
-<p>Fbo class for wrapping the OpenGL Framebuffer extension. The Fbo support
-&#8220;with&#8221; statement.</p>
+<p>OpenGL Framebuffer拡張をラッパーするFboクラス。 Fboは &#8220;with&#8221; ステートメントをサポートしています。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>clear_color</cite>: tuple, defaults to (0, 0, 0, 0)</dt>
-<dd><p class="first last">Define the default color for clearing the framebuffer</p>
+<dt><cite>clear_color</cite>:  タプル型、デフォルトは (0, 0, 0, 0)</dt>
+<dd><p class="first last">フレームバッファをクリアするためのデフォルトの色を定義。</p>
 </dd>
-<dt><cite>size</cite>: tuple, defaults to (1024, 1024)</dt>
-<dd><p class="first last">Default size of the framebuffer</p>
+<dt><cite>size</cite>:  タプル型、デフォルトは (1024, 1024)</dt>
+<dd><p class="first last">フレームバッファーのデフォルトサイズ</p>
 </dd>
-<dt><cite>push_viewport</cite>: bool, defaults to True</dt>
-<dd><p class="first last">If True, the OpenGL viewport will be set to the framebuffer size,
-and will be automatically restored when the framebuffer released.</p>
+<dt><cite>push_viewport</cite>: bool型、デフォルトはTrue</dt>
+<dd><p class="first last">undefined</p>
 </dd>
-<dt><cite>with_depthbuffer</cite>: bool, defaults to False</dt>
-<dd><p class="first last">If True, the framebuffer will be allocated with a Z buffer.</p>
+<dt>with_depthbuffer ：bool型、デフォルトはFalseです。</dt>
+<dd><p class="first last">Trueの場合はフレームバッファにはZバッファが割り当てられます。</p>
 </dd>
-<dt><cite>with_stencilbuffer</cite>: bool, defaults to False</dt>
+<dt><cite>with_stencilbuffer</cite>:  bool型、デフォルトはFalseです。</dt>
 <dd><div class="first versionadded">
 <p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
 </div>
-<p class="last">If True, the framebuffer will be allocated with a stencil buffer.</p>
+<p class="last">Trueの場合はframebufferにはステンシルバッファが割り当てられます。</p>
 </dd>
-<dt><cite>texture</cite>: <a class="reference internal" href="api-kivy.graphics.texture.html#kivy.graphics.texture.Texture" title="kivy.graphics.texture.Texture"><code class="xref py py-class docutils literal"><span class="pre">Texture</span></code></a>, defaults to None</dt>
-<dd><p class="first last">If None, a default texture will be created.</p>
+<dt><cite>texture</cite>: <a class="reference internal" href="api-kivy.graphics.texture.html#kivy.graphics.texture.Texture" title="kivy.graphics.texture.Texture"><code class="xref py py-class docutils literal"><span class="pre">Texture</span></code></a> 、デフォルトはNone</dt>
+<dd><p class="first last">Noneの場合はデフォルトのテクスチャが作成されます。</p>
 </dd>
 </dl>
 </td>
@@ -967,14 +926,12 @@ and will be automatically restored when the framebuffer released.</p>
 </table>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Using both of <code class="docutils literal"><span class="pre">with_stencilbuffer</span></code> and <code class="docutils literal"><span class="pre">with_depthbuffer</span></code> is not
-supported in kivy 1.9.0</p>
+<p class="last"><code class="docutils literal"><span class="pre">with_stencilbuffer</span></code> と <code class="docutils literal"><span class="pre">with_depthbuffer</span></code>  の両方の使用はkivy 1.9.0ではサポートされていません</p>
 </div>
 <dl class="method">
 <dt id="kivy.graphics.Fbo.add_reload_observer">
 <code class="descname">add_reload_observer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.Fbo.add_reload_observer" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Add a callback to be called after the whole graphics context has
-been reloaded. This is where you can reupload your custom data in GPU.</p>
+<dd><p>グラフィックスコンテキストがリロードされた後に呼び出されるコールバックを追加します。 カスタムデータをGPUに再アップロードできる場所です。</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.2.0 で追加.</span></p>
 </div>
@@ -984,7 +941,7 @@ been reloaded. This is where you can reupload your custom data in GPU.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><cite>callback</cite>: func(context) -&gt; return None</dt>
-<dd><p class="first last">The first parameter will be the context itself</p>
+<dd><p class="first last">最初のパラメータはコンテキスト自身です</p>
 </dd>
 </dl>
 </td>
@@ -996,13 +953,9 @@ been reloaded. This is where you can reupload your custom data in GPU.</p>
 <dl class="method">
 <dt id="kivy.graphics.Fbo.bind">
 <code class="descname">bind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.Fbo.bind" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Bind the FBO to the current opengl context.
-<cite>Bind</cite> mean that you enable the Framebuffer, and all the drawing
-operations will act inside the Framebuffer, until <a class="reference internal" href="#kivy.graphics.Fbo.release" title="kivy.graphics.Fbo.release"><code class="xref py py-meth docutils literal"><span class="pre">release()</span></code></a> is
-called.</p>
-<p>The bind/release operations are automatically called when you add
-graphics objects into it. If you want to manipulate a Framebuffer
-yourself, you can use it like this:</p>
+<dd><p>FBOを現在のOpenGLコンテキストにバインドします。 バインドとは、Framebufferを有効にて <a class="reference internal" href="#kivy.graphics.Fbo.release" title="kivy.graphics.Fbo.release"><code class="xref py py-meth docutils literal"><span class="pre">release()</span></code></a> が呼び出されるまで、すべての描画操作がFramebuffer内で動作することを意味します。</p>
+<p>バインド/リリース no
+操作は、グラフィックスオブジェクトをグラフィックスオブジェクトに追加すると自動的に呼び出されます。 Framebufferを自分で操作したい場合は、次のように使用できます：</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">fbo</span> <span class="o">=</span> <span class="n">FBO</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">fbo</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
 <span class="c1"># do any drawing command</span>
@@ -1017,9 +970,8 @@ yourself, you can use it like this:</p>
 <dl class="method">
 <dt id="kivy.graphics.Fbo.clear_buffer">
 <code class="descname">clear_buffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.Fbo.clear_buffer" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Clear the framebuffer with the <a class="reference internal" href="#kivy.graphics.Fbo.clear_color" title="kivy.graphics.Fbo.clear_color"><code class="xref py py-attr docutils literal"><span class="pre">clear_color</span></code></a>.</p>
-<p>You need to bind the framebuffer yourself before calling this
-method:</p>
+<dd><p><a class="reference internal" href="#kivy.graphics.Fbo.clear_color" title="kivy.graphics.Fbo.clear_color"><code class="xref py py-attr docutils literal"><span class="pre">clear_color</span></code></a> framebufferをクリアします.</p>
+<p>このメソッドを呼び出す前に、フレームバッファをバインドする必要があります:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">fbo</span><span class="o">.</span><span class="n">bind</span><span class="p">()</span>
 <span class="n">fbo</span><span class="o">.</span><span class="n">clear_buffer</span><span class="p">()</span>
 <span class="n">fbo</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
@@ -1030,14 +982,13 @@ method:</p>
 <dl class="attribute">
 <dt id="kivy.graphics.Fbo.clear_color">
 <code class="descname">clear_color</code><a class="headerlink" href="#kivy.graphics.Fbo.clear_color" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Clear color in (red, green, blue, alpha) format.</p>
+<dd><p>カラーをクリアする、形式は(赤、緑、青、アルファ)。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="kivy.graphics.Fbo.get_pixel_color">
 <code class="descname">get_pixel_color</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.Fbo.get_pixel_color" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Get the color of the pixel with specified window
-coordinates wx, wy. It returns result in RGBA format.</p>
+<dd><p>指定されたウィンドウ座標wx、wyを持つピクセルの色を取得します。 RGBA形式で結果を返します。</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
 </div>
@@ -1046,8 +997,7 @@ coordinates wx, wy. It returns result in RGBA format.</p>
 <dl class="attribute">
 <dt id="kivy.graphics.Fbo.pixels">
 <code class="descname">pixels</code><a class="headerlink" href="#kivy.graphics.Fbo.pixels" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Get the pixels texture, in RGBA format only, unsigned byte. The
-origin of the image is at bottom left.</p>
+<dd><p>ピクセルテクスチャをRGBA形式でのみ取得して符号なしバイトで取得します。 画像の原点は左下です。</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.7.0 で追加.</span></p>
 </div>
@@ -1056,14 +1006,13 @@ origin of the image is at bottom left.</p>
 <dl class="method">
 <dt id="kivy.graphics.Fbo.release">
 <code class="descname">release</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.Fbo.release" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Release the Framebuffer (unbind).</p>
+<dd><p>フレームバッファを解放する(バインドを解除)。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="kivy.graphics.Fbo.remove_reload_observer">
 <code class="descname">remove_reload_observer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.Fbo.remove_reload_observer" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Remove a callback from the observer list, previously added by
-<a class="reference internal" href="#kivy.graphics.Fbo.add_reload_observer" title="kivy.graphics.Fbo.add_reload_observer"><code class="xref py py-meth docutils literal"><span class="pre">add_reload_observer()</span></code></a>.</p>
+<dd><p>以前 <a class="reference internal" href="#kivy.graphics.Fbo.add_reload_observer" title="kivy.graphics.Fbo.add_reload_observer"><code class="xref py py-meth docutils literal"><span class="pre">add_reload_observer()</span></code></a> によって追加されたオブザーバーリストからコールバックを削除します。</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.2.0 で追加.</span></p>
 </div>
@@ -1072,14 +1021,14 @@ origin of the image is at bottom left.</p>
 <dl class="attribute">
 <dt id="kivy.graphics.Fbo.size">
 <code class="descname">size</code><a class="headerlink" href="#kivy.graphics.Fbo.size" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Size of the framebuffer, in (width, height) format.</p>
-<p>If you change the size, the framebuffer content will be lost.</p>
+<dd><p>フレームバッファのサイズ(幅,高さ)形式。</p>
+<p>サイズを変更するとフレームバッファの内容が失われます。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.Fbo.texture">
 <code class="descname">texture</code><a class="headerlink" href="#kivy.graphics.Fbo.texture" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Return the framebuffer texture</p>
+<dd><p>framebufferテクスチャを返します</p>
 </dd></dl>
 
 </dd></dl>
@@ -1088,21 +1037,18 @@ origin of the image is at bottom left.</p>
 <dt id="kivy.graphics.GraphicException">
 <em class="property">class </em><code class="descclassname">kivy.graphics.</code><code class="descname">GraphicException</code><a class="headerlink" href="#kivy.graphics.GraphicException" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>ベースクラス: <code class="xref py py-class docutils literal"><span class="pre">builtins.Exception</span></code></p>
-<p>Exception raised when a graphics error is fired.</p>
+<p>グラフィックスエラーが発生したときに発生する例外。</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="kivy.graphics.Instruction">
 <em class="property">class </em><code class="descclassname">kivy.graphics.</code><code class="descname">Instruction</code><a class="headerlink" href="#kivy.graphics.Instruction" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>ベースクラス: <a class="reference internal" href="api-kivy.event.html#kivy.event.ObjectWithUid" title="kivy.event.ObjectWithUid"><code class="xref py py-class docutils literal"><span class="pre">kivy.event.ObjectWithUid</span></code></a></p>
-<p>Represents the smallest instruction available. This class is for internal
-usage only, don&#8217;t use it directly.</p>
+<p>使用可能な最小の命令を表します。 このクラスは内部使用のみで直接使用しないでください。</p>
 <dl class="attribute">
 <dt id="kivy.graphics.Instruction.proxy_ref">
 <code class="descname">proxy_ref</code><a class="headerlink" href="#kivy.graphics.Instruction.proxy_ref" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Return a proxy reference to the Instruction i.e. without creating a
-reference of the widget. See <a class="reference external" href="http://docs.python.org/2/library/weakref.html?highlight=proxy#weakref.proxy">weakref.proxy</a>
-for more information.</p>
+<dd><p>命令へのプロキシ参照を返します。つまり、ウィジェットの参照を作成しません。 詳細については  <a class="reference external" href="https://docs.python.jp/3/library/weakref.html">weakref.proxy</a> を参照してください。</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.7.2 で追加.</span></p>
 </div>
@@ -1114,8 +1060,7 @@ for more information.</p>
 <dt id="kivy.graphics.InstructionGroup">
 <em class="property">class </em><code class="descclassname">kivy.graphics.</code><code class="descname">InstructionGroup</code><a class="headerlink" href="#kivy.graphics.InstructionGroup" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>ベースクラス: <a class="reference internal" href="api-kivy.graphics.instructions.html#kivy.graphics.instructions.Instruction" title="kivy.graphics.instructions.Instruction"><code class="xref py py-class docutils literal"><span class="pre">kivy.graphics.instructions.Instruction</span></code></a></p>
-<p>Group of <a class="reference internal" href="#kivy.graphics.Instruction" title="kivy.graphics.Instruction"><code class="xref py py-class docutils literal"><span class="pre">Instructions</span></code></a>. Allows for the adding and
-removing of graphics instructions. It can be used directly as follows:</p>
+<p><a class="reference internal" href="#kivy.graphics.Instruction" title="kivy.graphics.Instruction"><code class="xref py py-class docutils literal"><span class="pre">Instruction</span></code></a> グループ。 グラフィックス命令の追加と削除を可能にします。 次のように直接使用します:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">blue</span> <span class="o">=</span> <span class="n">InstructionGroup</span><span class="p">()</span>
 <span class="n">blue</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">))</span>
 <span class="n">blue</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)))</span>
@@ -1131,39 +1076,37 @@ removing of graphics instructions. It can be used directly as follows:</p>
 <dl class="method">
 <dt id="kivy.graphics.InstructionGroup.add">
 <code class="descname">add</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.InstructionGroup.add" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Add a new <a class="reference internal" href="#kivy.graphics.Instruction" title="kivy.graphics.Instruction"><code class="xref py py-class docutils literal"><span class="pre">Instruction</span></code></a> to our list.</p>
+<dd><p>リストに新しい <a class="reference internal" href="#kivy.graphics.Instruction" title="kivy.graphics.Instruction"><code class="xref py py-class docutils literal"><span class="pre">Instruction</span></code></a> を追加してください。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="kivy.graphics.InstructionGroup.clear">
 <code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.InstructionGroup.clear" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Remove all the <a class="reference internal" href="#kivy.graphics.Instruction" title="kivy.graphics.Instruction"><code class="xref py py-class docutils literal"><span class="pre">Instructions</span></code></a>.</p>
+<dd><p>全ての <a class="reference internal" href="#kivy.graphics.Instruction" title="kivy.graphics.Instruction"><code class="xref py py-class docutils literal"><span class="pre">Instruction</span></code></a>&nbsp;を削除します。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="kivy.graphics.InstructionGroup.get_group">
 <code class="descname">get_group</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.InstructionGroup.get_group" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Return an iterable for all the <a class="reference internal" href="#kivy.graphics.Instruction" title="kivy.graphics.Instruction"><code class="xref py py-class docutils literal"><span class="pre">Instructions</span></code></a>
-with a specific group name.</p>
+<dd><p>特定のグループネームをもつすべての  <a class="reference internal" href="#kivy.graphics.Instruction" title="kivy.graphics.Instruction"><code class="xref py py-class docutils literal"><span class="pre">Instruction</span></code></a> を繰り返し可能な値を返します。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="kivy.graphics.InstructionGroup.insert">
 <code class="descname">insert</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.InstructionGroup.insert" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Insert a new <a class="reference internal" href="#kivy.graphics.Instruction" title="kivy.graphics.Instruction"><code class="xref py py-class docutils literal"><span class="pre">Instruction</span></code></a> into our list at index.</p>
+<dd><p>新しい <a class="reference internal" href="#kivy.graphics.Instruction" title="kivy.graphics.Instruction"><code class="xref py py-class docutils literal"><span class="pre">Instruction</span></code></a>&nbsp;をインデックスのリストに挿入します。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="kivy.graphics.InstructionGroup.remove">
 <code class="descname">remove</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.InstructionGroup.remove" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Remove an existing <a class="reference internal" href="#kivy.graphics.Instruction" title="kivy.graphics.Instruction"><code class="xref py py-class docutils literal"><span class="pre">Instruction</span></code></a> from our list.</p>
+<dd><p>リストから既存の <a class="reference internal" href="#kivy.graphics.Instruction" title="kivy.graphics.Instruction"><code class="xref py py-class docutils literal"><span class="pre">Instruction</span></code></a> を削除してください。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="kivy.graphics.InstructionGroup.remove_group">
 <code class="descname">remove_group</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy.graphics.InstructionGroup.remove_group" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Remove all <a class="reference internal" href="#kivy.graphics.Instruction" title="kivy.graphics.Instruction"><code class="xref py py-class docutils literal"><span class="pre">Instructions</span></code></a> with a specific group
-name.</p>
+<dd><p>特定のグループネームをもつ全ての <a class="reference internal" href="#kivy.graphics.Instruction" title="kivy.graphics.Instruction"><code class="xref py py-class docutils literal"><span class="pre">Instruction</span></code></a> を削除します。</p>
 </dd></dl>
 
 </dd></dl>
@@ -1172,23 +1115,18 @@ name.</p>
 <dt id="kivy.graphics.Line">
 <em class="property">class </em><code class="descclassname">kivy.graphics.</code><code class="descname">Line</code><a class="headerlink" href="#kivy.graphics.Line" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>ベースクラス: <a class="reference internal" href="api-kivy.graphics.instructions.html#kivy.graphics.instructions.VertexInstruction" title="kivy.graphics.instructions.VertexInstruction"><code class="xref py py-class docutils literal"><span class="pre">kivy.graphics.instructions.VertexInstruction</span></code></a></p>
-<p>A 2d line.</p>
-<p>Drawing a line can be done easily:</p>
+<p>2Dの線。</p>
+<p>線の描画は簡単にできます:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="p">:</span>
     <span class="n">Line</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The line has 3 internal drawing modes that you should be aware of
-for optimal results:</p>
+<p>ラインには3つの内部描画モードがあり、最適な結果を得るために注意する必要があります:</p>
 <ol class="arabic simple">
-<li>If the <a class="reference internal" href="#kivy.graphics.Line.width" title="kivy.graphics.Line.width"><code class="xref py py-attr docutils literal"><span class="pre">width</span></code></a> is 1.0, then the standard GL_LINE drawing from
-OpenGL will be used. <a class="reference internal" href="#kivy.graphics.Line.dash_length" title="kivy.graphics.Line.dash_length"><code class="xref py py-attr docutils literal"><span class="pre">dash_length</span></code></a> and <a class="reference internal" href="#kivy.graphics.Line.dash_offset" title="kivy.graphics.Line.dash_offset"><code class="xref py py-attr docutils literal"><span class="pre">dash_offset</span></code></a> will
-work, while properties for cap and joint have no meaning here.</li>
-<li>If the <a class="reference internal" href="#kivy.graphics.Line.width" title="kivy.graphics.Line.width"><code class="xref py py-attr docutils literal"><span class="pre">width</span></code></a> is greater than 1.0, then a custom drawing method,
-based on triangulation, will be used. <a class="reference internal" href="#kivy.graphics.Line.dash_length" title="kivy.graphics.Line.dash_length"><code class="xref py py-attr docutils literal"><span class="pre">dash_length</span></code></a> and
-<a class="reference internal" href="#kivy.graphics.Line.dash_offset" title="kivy.graphics.Line.dash_offset"><code class="xref py py-attr docutils literal"><span class="pre">dash_offset</span></code></a> do not work in this mode.
-Additionally, if the current color has an alpha less than 1.0, a
-stencil will be used internally to draw the line.</li>
+<li><p class="first"><a class="reference internal" href="#kivy.graphics.Line.width" title="kivy.graphics.Line.width"><code class="xref py py-attr docutils literal"><span class="pre">width</span></code></a> が1.0の場合、OpenGLからの標準のGL_LINE図面が使用されます。  <a class="reference internal" href="#kivy.graphics.Line.dash_length" title="kivy.graphics.Line.dash_length"><code class="xref py py-attr docutils literal"><span class="pre">dash_length</span></code></a> と <a class="reference internal" href="#kivy.graphics.Line.dash_offset" title="kivy.graphics.Line.dash_offset"><code class="xref py py-attr docutils literal"><span class="pre">dash_offset</span></code></a> は機能しますが、キャップとジョイントのプロパティはここで意味を持ちません。</p>
+</li>
+<li><p class="first">&nbsp;<a class="reference internal" href="#kivy.graphics.Line.width" title="kivy.graphics.Line.width"><code class="xref py py-attr docutils literal"><span class="pre">width</span></code></a> が1.0より大きい場合、三角測量方式に基づいたカスタム描画メソッドが使用されます。  <a class="reference internal" href="#kivy.graphics.Line.dash_length" title="kivy.graphics.Line.dash_length"><code class="xref py py-attr docutils literal"><span class="pre">dash_length</span></code></a> と <a class="reference internal" href="#kivy.graphics.Line.dash_offset" title="kivy.graphics.Line.dash_offset"><code class="xref py py-attr docutils literal"><span class="pre">dash_offset</span></code></a> はこのモードでは機能しません。 それに加えて現在の色のアルファ値が1.0未満の場合は、ステンシルを内部的に使用して線を描画します。</p>
+</li>
 </ol>
 <img alt="_images/line-instruction.png" class="align-center" src="_images/line-instruction.png" />
 <table class="docutils field-list" frame="void" rules="none">
@@ -1203,49 +1141,43 @@ stencil will be used internally to draw the line.</li>
 <dd><p class="first last">セグメントの長さ（破線の場合）は、デフォルト値は1です。</p>
 </dd>
 <dt><cite>dash_offset</cite>: int</dt>
-<dd><p class="first last">Offset between the end of a segment and the beginning of the
-next one, defaults to 0. Changing this makes it dashed.</p>
+<dd><p class="first last">セグメントの終わりから次のセグメントの始まりまでのオフセットは、デフォルトで0になります。これを変更すると破線になります。</p>
 </dd>
 <dt><cite>width</cite>: float</dt>
-<dd><p class="first last">Width of the line, defaults to 1.0.</p>
+<dd><p class="first last">線の幅です。デフォルトは1.0です。</p>
 </dd>
-<dt><cite>cap</cite>: str, defaults to &#8216;round&#8217;</dt>
-<dd><p class="first last">See <a class="reference internal" href="#kivy.graphics.Line.cap" title="kivy.graphics.Line.cap"><code class="xref py py-attr docutils literal"><span class="pre">cap</span></code></a> for more information.</p>
+<dt><cite>cap</cite>: str、デフォルトは &#8216;round&#8217;</dt>
+<dd><p class="first last">より詳しくは  <a class="reference internal" href="#kivy.graphics.Line.cap" title="kivy.graphics.Line.cap"><code class="xref py py-attr docutils literal"><span class="pre">cap</span></code></a>&nbsp; を見てください。</p>
 </dd>
-<dt><cite>joint</cite>: str, defaults to &#8216;round&#8217;</dt>
-<dd><p class="first last">See <a class="reference internal" href="#kivy.graphics.Line.joint" title="kivy.graphics.Line.joint"><code class="xref py py-attr docutils literal"><span class="pre">joint</span></code></a> for more information.</p>
+<dt><cite>joint</cite>: str, デフォルトは &#8216;round&#8217;</dt>
+<dd><p class="first last">より詳しくは  <a class="reference internal" href="#kivy.graphics.Line.joint" title="kivy.graphics.Line.joint"><code class="xref py py-attr docutils literal"><span class="pre">joint</span></code></a>&nbsp; を見てください。</p>
 </dd>
-<dt><cite>cap_precision</cite>: int, defaults to 10</dt>
-<dd><p class="first last">See <a class="reference internal" href="#kivy.graphics.Line.cap_precision" title="kivy.graphics.Line.cap_precision"><code class="xref py py-attr docutils literal"><span class="pre">cap_precision</span></code></a> for more information</p>
+<dt><cite>cap_precision</cite>: int, デフォルトは10です</dt>
+<dd><p class="first last">より詳しくは <a class="reference internal" href="#kivy.graphics.Line.cap_precision" title="kivy.graphics.Line.cap_precision"><code class="xref py py-attr docutils literal"><span class="pre">cap_precision</span></code></a>  を見てください</p>
 </dd>
-<dt><cite>joint_precision</cite>: int, defaults to 10</dt>
-<dd><p class="first last">See <a class="reference internal" href="#kivy.graphics.Line.joint_precision" title="kivy.graphics.Line.joint_precision"><code class="xref py py-attr docutils literal"><span class="pre">joint_precision</span></code></a> for more information
-See <a class="reference internal" href="#kivy.graphics.Line.cap_precision" title="kivy.graphics.Line.cap_precision"><code class="xref py py-attr docutils literal"><span class="pre">cap_precision</span></code></a> for more information.</p>
+<dt><cite>joint_precision</cite>: int, デフォルトは10です</dt>
+<dd><p class="first last">より詳しくは <a class="reference internal" href="#kivy.graphics.Line.joint_precision" title="kivy.graphics.Line.joint_precision"><code class="xref py py-attr docutils literal"><span class="pre">joint_precision</span></code></a>&nbsp;を見てください。より詳しくは <a class="reference internal" href="#kivy.graphics.Line.cap_precision" title="kivy.graphics.Line.cap_precision"><code class="xref py py-attr docutils literal"><span class="pre">cap_precision</span></code></a>&nbsp;を見てください。</p>
 </dd>
-<dt><cite>joint_precision</cite>: int, defaults to 10</dt>
-<dd><p class="first last">See <a class="reference internal" href="#kivy.graphics.Line.joint_precision" title="kivy.graphics.Line.joint_precision"><code class="xref py py-attr docutils literal"><span class="pre">joint_precision</span></code></a> for more information.</p>
+<dt><cite>joint_precision</cite>: int, デフォルトは10です</dt>
+<dd><p class="first last">より詳しくは <a class="reference internal" href="#kivy.graphics.Line.joint_precision" title="kivy.graphics.Line.joint_precision"><code class="xref py py-attr docutils literal"><span class="pre">joint_precision</span></code></a>&nbsp;を見てください。</p>
 </dd>
-<dt><cite>close</cite>: bool, defaults to False</dt>
-<dd><p class="first last">If True, the line will be closed.</p>
+<dt><cite>close</cite>: bool, デフォルトは False</dt>
+<dd><p class="first last">Trueの場合、線は閉じられます。</p>
 </dd>
 <dt><cite>circle</cite>: list</dt>
-<dd><p class="first last">If set, the <a class="reference internal" href="#kivy.graphics.Line.points" title="kivy.graphics.Line.points"><code class="xref py py-attr docutils literal"><span class="pre">points</span></code></a> will be set to build a circle. See
-<a class="reference internal" href="#kivy.graphics.Line.circle" title="kivy.graphics.Line.circle"><code class="xref py py-attr docutils literal"><span class="pre">circle</span></code></a> for more information.</p>
+<dd><p class="first last">設定すると、 <a class="reference internal" href="#kivy.graphics.Line.points" title="kivy.graphics.Line.points"><code class="xref py py-attr docutils literal"><span class="pre">points</span></code></a> は円を作成するように設定されます。 詳細については <a class="reference internal" href="#kivy.graphics.Line.circle" title="kivy.graphics.Line.circle"><code class="xref py py-attr docutils literal"><span class="pre">circle</span></code></a> を参照してください。</p>
 </dd>
 <dt><cite>ellipse</cite>: list</dt>
-<dd><p class="first last">If set, the <a class="reference internal" href="#kivy.graphics.Line.points" title="kivy.graphics.Line.points"><code class="xref py py-attr docutils literal"><span class="pre">points</span></code></a> will be set to build an ellipse. See
-<a class="reference internal" href="#kivy.graphics.Line.ellipse" title="kivy.graphics.Line.ellipse"><code class="xref py py-attr docutils literal"><span class="pre">ellipse</span></code></a> for more information.</p>
+<dd><p class="first last">設定されている場合、 <a class="reference internal" href="#kivy.graphics.Line.points" title="kivy.graphics.Line.points"><code class="xref py py-attr docutils literal"><span class="pre">points</span></code></a> は楕円を構築するように設定されます。 詳細は <a class="reference internal" href="#kivy.graphics.Line.ellipse" title="kivy.graphics.Line.ellipse"><code class="xref py py-attr docutils literal"><span class="pre">ellipse</span></code></a> を参照してください。</p>
 </dd>
 <dt><cite>rectangle</cite>: list</dt>
-<dd><p class="first last">If set, the <a class="reference internal" href="#kivy.graphics.Line.points" title="kivy.graphics.Line.points"><code class="xref py py-attr docutils literal"><span class="pre">points</span></code></a> will be set to build a rectangle. See
-<a class="reference internal" href="#kivy.graphics.Line.rectangle" title="kivy.graphics.Line.rectangle"><code class="xref py py-attr docutils literal"><span class="pre">rectangle</span></code></a> for more information.</p>
+<dd><p class="first last">設定されている場合、 <a class="reference internal" href="#kivy.graphics.Line.points" title="kivy.graphics.Line.points"><code class="xref py py-attr docutils literal"><span class="pre">points</span></code></a> は矩形を構築するように設定されます。 詳細は <a class="reference internal" href="#kivy.graphics.Line.rectangle" title="kivy.graphics.Line.rectangle"><code class="xref py py-attr docutils literal"><span class="pre">rectangle</span></code></a> を参照してください。</p>
 </dd>
 <dt><cite>bezier</cite>: list</dt>
-<dd><p class="first last">If set, the <a class="reference internal" href="#kivy.graphics.Line.points" title="kivy.graphics.Line.points"><code class="xref py py-attr docutils literal"><span class="pre">points</span></code></a> will be set to build a bezier line. See
-<a class="reference internal" href="#kivy.graphics.Line.bezier" title="kivy.graphics.Line.bezier"><code class="xref py py-attr docutils literal"><span class="pre">bezier</span></code></a> for more information.</p>
+<dd><p class="first last">設定されている場合、 <a class="reference internal" href="#kivy.graphics.Line.points" title="kivy.graphics.Line.points"><code class="xref py py-attr docutils literal"><span class="pre">points</span></code></a> はベジェ曲線を構築するように設定されます。 詳細は <a class="reference internal" href="#kivy.graphics.Line.bezier" title="kivy.graphics.Line.bezier"><code class="xref py py-attr docutils literal"><span class="pre">bezier</span></code></a> を参照してください。</p>
 </dd>
-<dt><cite>bezier_precision</cite>: int, defaults to 180</dt>
-<dd><p class="first last">Precision of the Bezier drawing.</p>
+<dt><cite>bezier_precision</cite>: int, デフォルトは180</dt>
+<dd><p class="first last">ベジェ曲線の精度。</p>
 </dd>
 </dl>
 </td>
@@ -1253,22 +1185,20 @@ See <a class="reference internal" href="#kivy.graphics.Line.cap_precision" title
 </tbody>
 </table>
 <div class="versionchanged">
-<p><span class="versionmodified">バージョン 1.0.8 で変更: </span><cite>dash_offset</cite> and <cite>dash_length</cite> have been added.</p>
+<p><span class="versionmodified">バージョン 1.0.8 で変更: </span>dash_offset` と <cite>dash_length</cite> が追加されました。</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">バージョン 1.4.1 で変更: </span><cite>width</cite>, <cite>cap</cite>, <cite>joint</cite>, <cite>cap_precision</cite>, <cite>joint_precision</cite>, <cite>close</cite>,
-<cite>ellipse</cite>, <cite>rectangle</cite> have been added.</p>
+<p><span class="versionmodified">バージョン 1.4.1 で変更: </span><cite>width</cite>, <cite>cap</cite>, <cite>joint</cite>, <cite>cap_precision</cite>, <cite>joint_precision</cite>, <cite>close</cite>, <cite>ellipse</cite>, <cite>rectangle</cite> が追加されました。</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">バージョン 1.4.1 で変更: </span><cite>bezier</cite>, <cite>bezier_precision</cite> have been added.</p>
+<p><span class="versionmodified">バージョン 1.4.1 で変更: </span>bezier`, <cite>bezier_precision</cite> が追加されました。</p>
 </div>
 <dl class="attribute">
 <dt id="kivy.graphics.Line.bezier">
 <code class="descname">bezier</code><a class="headerlink" href="#kivy.graphics.Line.bezier" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Use this property to build a bezier line, without calculating the
-<a class="reference internal" href="#kivy.graphics.Line.points" title="kivy.graphics.Line.points"><code class="xref py py-attr docutils literal"><span class="pre">points</span></code></a>. You can only set this property, not get it.</p>
-<p>The argument must be a tuple of 2n elements, n being the number of points.</p>
-<p>Usage:</p>
+<dd><p>このプロパティを使用して <a class="reference internal" href="#kivy.graphics.Line.points" title="kivy.graphics.Line.points"><code class="xref py py-attr docutils literal"><span class="pre">points</span></code></a> を計算せずにベジェ線を作成します。 このプロパティは設定できません。取得できません。</p>
+<p>undefined</p>
+<p>使用例:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Line</span><span class="p">(</span><span class="n">bezier</span><span class="o">=</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">y3</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1277,17 +1207,14 @@ See <a class="reference internal" href="#kivy.graphics.Line.cap_precision" title
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Bezier lines calculations are inexpensive for a low number of
-points, but complexity is quadratic, so lines with a lot of points
-can be very expensive to build, use with care!</p>
+<p class="last">ベジエ曲線の計算は少ない点では安価ですが、複雑さは2次的なものなので多くの点を持つ線は非常に高価で慎重に使用してくださ！！</p>
 </div>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.Line.bezier_precision">
 <code class="descname">bezier_precision</code><a class="headerlink" href="#kivy.graphics.Line.bezier_precision" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Number of iteration for drawing the bezier between 2 segments,
-defaults to 180. The bezier_precision must be at least 1.</p>
+<dd><p>2つのセグメント間でベジェを描画するためのイテーレーション回数です。デフォルトは180です。bezier_precisionは1以上でなければなりません。</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.4.2 で追加.</span></p>
 </div>
@@ -1296,8 +1223,7 @@ defaults to 180. The bezier_precision must be at least 1.</p>
 <dl class="attribute">
 <dt id="kivy.graphics.Line.cap">
 <code class="descname">cap</code><a class="headerlink" href="#kivy.graphics.Line.cap" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Determine the cap of the line, defaults to &#8216;round&#8217;. Can be one of
-&#8216;none&#8217;, &#8216;square&#8217; or &#8216;round&#8217;</p>
+<dd><p>線の上限を決定します。デフォルトは &#8216;round&#8217; です。 &#8216;none&#8217; , &#8216;square&#8217; または  &#8216;round&#8217; のいずれかになります。</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.4.1 で追加.</span></p>
 </div>
@@ -1306,8 +1232,7 @@ defaults to 180. The bezier_precision must be at least 1.</p>
 <dl class="attribute">
 <dt id="kivy.graphics.Line.cap_precision">
 <code class="descname">cap_precision</code><a class="headerlink" href="#kivy.graphics.Line.cap_precision" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Number of iteration for drawing the &#8220;round&#8221; cap, defaults to 10.
-The cap_precision must be at least 1.</p>
+<dd><p>undefined</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.4.1 で追加.</span></p>
 </div>
@@ -1316,20 +1241,20 @@ The cap_precision must be at least 1.</p>
 <dl class="attribute">
 <dt id="kivy.graphics.Line.circle">
 <code class="descname">circle</code><a class="headerlink" href="#kivy.graphics.Line.circle" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Use this property to build a circle, without calculating the
-<a class="reference internal" href="#kivy.graphics.Line.points" title="kivy.graphics.Line.points"><code class="xref py py-attr docutils literal"><span class="pre">points</span></code></a>. You can only set this property, not get it.</p>
-<p>The argument must be a tuple of (center_x, center_y, radius, angle_start,
-angle_end, segments):</p>
+<dd><p>attr:<cite>points</cite> を計算せずに円を作成するにはこのプロパティを使用します。 このプロパティは設定できません。取得できません。</p>
+<p>引数は(center_x, center_y, radius, angle_start, angle_end, segments)のタプルでなければならないです:</p>
 <ul class="simple">
-<li>center_x and center_y represent the center of the circle</li>
-<li>radius represent the radius of the circle</li>
-<li>(optional) angle_start and angle_end are in degree. The default
-value is 0 and 360.</li>
-<li>(optional) segments is the precision of the ellipse. The default
-value is calculated from the range between angle.</li>
+<li><p class="first">center_x と center_y は円の中心を表します</p>
+</li>
+<li><p class="first">radiusは円の半径を表します</p>
+</li>
+<li><p class="first">(オプション)angle_startとangle_endは角度です。 デフォルト値は0と360です。</p>
+</li>
+<li><p class="first">(オプション)segmentsは楕円の精度です。 デフォルト値は角度の範囲から計算されます。</p>
+</li>
 </ul>
-<p>Note that it&#8217;s up to you to <a class="reference internal" href="#kivy.graphics.Line.close" title="kivy.graphics.Line.close"><code class="xref py py-attr docutils literal"><span class="pre">close</span></code></a> the circle or not.</p>
-<p>For example, for building a simple ellipse, in python:</p>
+<p>注意点は円を <a class="reference internal" href="#kivy.graphics.Line.close" title="kivy.graphics.Line.close"><code class="xref py py-attr docutils literal"><span class="pre">close</span></code></a>  するかどうかはあなた次第です。</p>
+<p>例えばシンプルな楕円を作成する場合、Pythonでは:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># simple circle</span>
 <span class="n">Line</span><span class="p">(</span><span class="n">circle</span><span class="o">=</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
 
@@ -1348,7 +1273,7 @@ value is calculated from the range between angle.</li>
 <dl class="attribute">
 <dt id="kivy.graphics.Line.close">
 <code class="descname">close</code><a class="headerlink" href="#kivy.graphics.Line.close" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>If True, the line will be closed.</p>
+<dd><p>Trueの場合、線は閉じられます。</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.4.1 で追加.</span></p>
 </div>
@@ -1357,7 +1282,7 @@ value is calculated from the range between angle.</li>
 <dl class="attribute">
 <dt id="kivy.graphics.Line.dash_length">
 <code class="descname">dash_length</code><a class="headerlink" href="#kivy.graphics.Line.dash_length" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Property for getting/setting the length of the dashes in the curve</p>
+<dd><p>カーブ内の破線の長さを取得/設定するためのプロパティ</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.0.8 で追加.</span></p>
 </div>
@@ -1366,7 +1291,7 @@ value is calculated from the range between angle.</li>
 <dl class="attribute">
 <dt id="kivy.graphics.Line.dash_offset">
 <code class="descname">dash_offset</code><a class="headerlink" href="#kivy.graphics.Line.dash_offset" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Property for getting/setting the offset between the dashes in the curve</p>
+<dd><p>カーブ内の破線の間のオフセットを取得/設定するためのプロパティ</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.0.8 で追加.</span></p>
 </div>
@@ -1375,20 +1300,20 @@ value is calculated from the range between angle.</li>
 <dl class="attribute">
 <dt id="kivy.graphics.Line.ellipse">
 <code class="descname">ellipse</code><a class="headerlink" href="#kivy.graphics.Line.ellipse" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Use this property to build an ellipse, without calculating the
-<a class="reference internal" href="#kivy.graphics.Line.points" title="kivy.graphics.Line.points"><code class="xref py py-attr docutils literal"><span class="pre">points</span></code></a>. You can only set this property, not get it.</p>
-<p>The argument must be a tuple of (x, y, width, height, angle_start,
-angle_end, segments):</p>
+<dd><p><a class="reference internal" href="#kivy.graphics.Line.points" title="kivy.graphics.Line.points"><code class="xref py py-attr docutils literal"><span class="pre">points</span></code></a> を計算せずに楕円を作成するのにこのプロパティを使用します。 このプロパティは設定できません。取得できません。</p>
+<p>引数は (x, y, width, height, angle_start, angle_end, segments)のタプルでなければなりません。</p>
 <ul class="simple">
-<li>x and y represent the bottom left of the ellipse</li>
-<li>width and height represent the size of the ellipse</li>
-<li>(optional) angle_start and angle_end are in degree. The default
-value is 0 and 360.</li>
-<li>(optional) segments is the precision of the ellipse. The default
-value is calculated from the range between angle.</li>
+<li><p class="first">xとｙ楕円の左下を表します</p>
+</li>
+<li><p class="first">widthとheightは楕円のサイズを表します</p>
+</li>
+<li><p class="first">(オプション)angle_startとangle_endは角度です。 デフォルト値は0と360です。</p>
+</li>
+<li><p class="first">(オプション)segmentsは楕円の精度です。 デフォルト値は角度の範囲から計算されます。</p>
+</li>
 </ul>
-<p>Note that it&#8217;s up to you to <a class="reference internal" href="#kivy.graphics.Line.close" title="kivy.graphics.Line.close"><code class="xref py py-attr docutils literal"><span class="pre">close</span></code></a> the ellipse or not.</p>
-<p>For example, for building a simple ellipse, in python:</p>
+<p>注意点としては楕円を <a class="reference internal" href="#kivy.graphics.Line.close" title="kivy.graphics.Line.close"><code class="xref py py-attr docutils literal"><span class="pre">close</span></code></a> するかどうかはあなた次第です。</p>
+<p>例えばシンプルな楕円を作成する場合、Pythonでは:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># simple ellipse</span>
 <span class="n">Line</span><span class="p">(</span><span class="n">ellipse</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">))</span>
 
@@ -1407,8 +1332,7 @@ value is calculated from the range between angle.</li>
 <dl class="attribute">
 <dt id="kivy.graphics.Line.joint">
 <code class="descname">joint</code><a class="headerlink" href="#kivy.graphics.Line.joint" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Determine the join of the line, defaults to &#8216;round&#8217;. Can be one of
-&#8216;none&#8217;, &#8216;round&#8217;, &#8216;bevel&#8217;, &#8216;miter&#8217;.</p>
+<dd><p>行の結合を決定します。デフォルトは &#8216;round&#8217; です。 &#8216;none&#8217;, &#8216;round&#8217;, &#8216;bevel&#8217;, &#8216;miter&#8217;のいずれかになります</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.4.1 で追加.</span></p>
 </div>
@@ -1417,8 +1341,7 @@ value is calculated from the range between angle.</li>
 <dl class="attribute">
 <dt id="kivy.graphics.Line.joint_precision">
 <code class="descname">joint_precision</code><a class="headerlink" href="#kivy.graphics.Line.joint_precision" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Number of iteration for drawing the &#8220;round&#8221; joint, defaults to 10.
-The joint_precision must be at least 1.</p>
+<dd><p>&#8220;round&#8221;ジョイントを描画するためのイテレーションの数は、デフォルトでは10です。joint_precisionは少なくとも1でなければなりません</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.4.1 で追加.</span></p>
 </div>
@@ -1427,26 +1350,26 @@ The joint_precision must be at least 1.</p>
 <dl class="attribute">
 <dt id="kivy.graphics.Line.points">
 <code class="descname">points</code><a class="headerlink" href="#kivy.graphics.Line.points" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Property for getting/settings points of the line</p>
+<dd><p>線のポイントを取得/設定するためのプロパティ</p>
 <div class="admonition warning">
 <p class="first admonition-title">警告</p>
-<p class="last">This will always reconstruct the whole graphics from the new points
-list. It can be very CPU expensive.</p>
+<p class="last">これにより常に新しいポイントリストからグラフィックス全体が再構成されます。 非常にCPUの計算が高くなる可能性があります。</p>
 </div>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.Line.rectangle">
 <code class="descname">rectangle</code><a class="headerlink" href="#kivy.graphics.Line.rectangle" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Use this property to build a rectangle, without calculating the
-<a class="reference internal" href="#kivy.graphics.Line.points" title="kivy.graphics.Line.points"><code class="xref py py-attr docutils literal"><span class="pre">points</span></code></a>. You can only set this property, not get it.</p>
-<p>The argument must be a tuple of (x, y, width, height):</p>
+<dd><p><a class="reference internal" href="#kivy.graphics.Line.points" title="kivy.graphics.Line.points"><code class="xref py py-attr docutils literal"><span class="pre">points</span></code></a> を計算せずに矩形を構築するには、このプロパティを使用します。 このプロパティは設定できません。取得できません。</p>
+<p>引数は(x, y, width, height)のタプルでなければなりません：</p>
 <ul class="simple">
-<li>x and y represent the bottom-left position of the rectangle</li>
-<li>width and height represent the size</li>
+<li><p class="first">xとyは矩形の左下の座標を表す</p>
+</li>
+<li><p class="first">width と height はサイズを表します</p>
+</li>
 </ul>
-<p>The line is automatically closed.</p>
-<p>Usage:</p>
+<p>線は自動的に閉じられます。</p>
+<p>使用例:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Line</span><span class="p">(</span><span class="n">rectangle</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -1458,21 +1381,24 @@ list. It can be very CPU expensive.</p>
 <dl class="attribute">
 <dt id="kivy.graphics.Line.rounded_rectangle">
 <code class="descname">rounded_rectangle</code><a class="headerlink" href="#kivy.graphics.Line.rounded_rectangle" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Use this property to build a rectangle, without calculating the
-<a class="reference internal" href="#kivy.graphics.Line.points" title="kivy.graphics.Line.points"><code class="xref py py-attr docutils literal"><span class="pre">points</span></code></a>. You can only set this property, not get it.</p>
-<p>The argument must be a tuple of one of the following forms:</p>
+<dd><p><a class="reference internal" href="#kivy.graphics.Line.points" title="kivy.graphics.Line.points"><code class="xref py py-attr docutils literal"><span class="pre">points</span></code></a> を計算せずに矩形を構築するには、このプロパティを使用します。 このプロパティは設定できません。取得できません。</p>
+<p>引数は次のいずれかのタプルの形式が必要です:</p>
 <ul class="simple">
 <li>(x, y, width, height, corner_radius)</li>
 <li>(x, y, width, height, corner_radius, resolution)</li>
 <li>(x, y, width, height, corner_radius1, corner_radius2, corner_radius3, corner_radius4)</li>
 <li>(x, y, width, height, corner_radius1, corner_radius2, corner_radius3, corner_radius4, resolution)</li>
-<li>x and y represent the bottom-left position of the rectangle</li>
-<li>width and height represent the size</li>
-<li>corner_radius is the number of pixels between two borders and the center of the circle arc joining them</li>
-<li>resolution is the number of line segment that will be used to draw the circle arc at each corner (defaults to 30)</li>
+<li><p class="first">xとyは矩形の左下の座標を表す</p>
+</li>
+<li><p class="first">width と height はサイズを表します</p>
+</li>
+<li><p class="first">corner_radiusは、2つの境界線の間のピクセル数で、結合する円弧の中心です</p>
+</li>
+<li><p class="first">resolutionは、各コーナーで円弧を描画するために使用される線分の数です(デフォルトは30）</p>
+</li>
 </ul>
-<p>The line is automatically closed.</p>
-<p>Usage:</p>
+<p>線は自動的に閉じられます。</p>
+<p>使用例:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Line</span><span class="p">(</span><span class="n">rounded_rectangle</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -1484,7 +1410,7 @@ list. It can be very CPU expensive.</p>
 <dl class="attribute">
 <dt id="kivy.graphics.Line.width">
 <code class="descname">width</code><a class="headerlink" href="#kivy.graphics.Line.width" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Determine the width of the line, defaults to 1.0.</p>
+<dd><p>線の幅を設定、1デフォルト値は1.0。</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.4.1 で追加.</span></p>
 </div>
@@ -1496,19 +1422,20 @@ list. It can be very CPU expensive.</p>
 <dt id="kivy.graphics.SmoothLine">
 <em class="property">class </em><code class="descclassname">kivy.graphics.</code><code class="descname">SmoothLine</code><a class="headerlink" href="#kivy.graphics.SmoothLine" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>ベースクラス: <a class="reference internal" href="api-kivy.graphics.vertex_instructions.html#kivy.graphics.vertex_instructions.Line" title="kivy.graphics.vertex_instructions.Line"><code class="xref py py-class docutils literal"><span class="pre">kivy.graphics.vertex_instructions.Line</span></code></a></p>
-<p>Experimental line using over-draw methods to get better anti-aliasing
-results. It has few drawbacks:</p>
+<p>over-draw法を使用した実験的な線はよりよいアンチエイリアシングの結果を取得します。それはいくつかの欠点があります:</p>
 <ul class="simple">
-<li>drawing a line with alpha will probably not have the intended result if
-the line crosses itself.</li>
-<li><a class="reference internal" href="#kivy.graphics.Line.cap" title="kivy.graphics.Line.cap"><code class="xref py py-attr docutils literal"><span class="pre">cap</span></code></a>, <a class="reference internal" href="#kivy.graphics.Line.joint" title="kivy.graphics.Line.joint"><code class="xref py py-attr docutils literal"><span class="pre">joint</span></code></a> and <code class="xref py py-attr docutils literal"><span class="pre">dash</span></code> properties
-are not supported.</li>
-<li>it uses a custom texture with a premultiplied alpha.</li>
-<li>lines under 1px in width are not supported: they will look the same.</li>
+<li><p class="first">線自体を横切る場合、アルファで線を引くことはおそらく意図した結果になりません。</p>
+</li>
+<li><p class="first"><a class="reference internal" href="#kivy.graphics.Line.cap" title="kivy.graphics.Line.cap"><code class="xref py py-attr docutils literal"><span class="pre">cap</span></code></a>, <a class="reference internal" href="#kivy.graphics.Line.joint" title="kivy.graphics.Line.joint"><code class="xref py py-attr docutils literal"><span class="pre">joint</span></code></a> および <code class="xref py py-attr docutils literal"><span class="pre">dash</span></code> プロパティがサポートされていません。</p>
+</li>
+<li><p class="first">それはあらかじめpremultiplied alpha(乗算ずみアルファ)を持つカスタムテクスチャを使用しています。</p>
+</li>
+<li><p class="first">幅1ピクセルの下の行がサポートされていません:同じように見えます。</p>
+</li>
 </ul>
 <div class="admonition warning">
 <p class="first admonition-title">警告</p>
-<p class="last">This is an unfinished work, experimental, and subject to crashes.</p>
+<p class="last">これは未完の作業、実験的、そしてクラッシュの対象になります。</p>
 </div>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.9.0 で追加.</span></p>
@@ -1516,7 +1443,7 @@ are not supported.</li>
 <dl class="attribute">
 <dt id="kivy.graphics.SmoothLine.overdraw_width">
 <code class="descname">overdraw_width</code><a class="headerlink" href="#kivy.graphics.SmoothLine.overdraw_width" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Determine the overdraw width of the line, defaults to 1.2.</p>
+<dd><p>線のオーバードローの幅の設定、デフォルトは1.2。</p>
 </dd></dl>
 
 </dd></dl>
@@ -1525,20 +1452,17 @@ are not supported.</li>
 <dt id="kivy.graphics.MatrixInstruction">
 <em class="property">class </em><code class="descclassname">kivy.graphics.</code><code class="descname">MatrixInstruction</code><a class="headerlink" href="#kivy.graphics.MatrixInstruction" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>ベースクラス: <a class="reference internal" href="api-kivy.graphics.instructions.html#kivy.graphics.instructions.ContextInstruction" title="kivy.graphics.instructions.ContextInstruction"><code class="xref py py-class docutils literal"><span class="pre">kivy.graphics.instructions.ContextInstruction</span></code></a></p>
-<p>Base class for Matrix Instruction on the canvas.</p>
+<p>キャンバス上のMatrix 処理命令のベースクラスです。</p>
 <dl class="attribute">
 <dt id="kivy.graphics.MatrixInstruction.matrix">
 <code class="descname">matrix</code><a class="headerlink" href="#kivy.graphics.MatrixInstruction.matrix" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Matrix property. Matrix from the transformation module.
-Setting the matrix using this property when a change is made
-is important because it will notify the context about the update.</p>
+<dd><p>Matrixプロパティ。変換モジュールからの行列です。更新についてコンテキストを通知して変更が行われた際にこのプロパティを使用して行列を設定することが重要です。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.MatrixInstruction.stack">
 <code class="descname">stack</code><a class="headerlink" href="#kivy.graphics.MatrixInstruction.stack" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Name of the matrix stack to use. Can be &#8216;modelview_mat&#8217; or
-&#8216;projection_mat&#8217;.</p>
+<dd><p>行列スタックの名前を使用します。 &#8216;modelview_mat&#8217; または &#8216;projection_mat&#8217; にできます。</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.6.0 で追加.</span></p>
 </div>
@@ -1550,17 +1474,15 @@ is important because it will notify the context about the update.</p>
 <dt id="kivy.graphics.Mesh">
 <em class="property">class </em><code class="descclassname">kivy.graphics.</code><code class="descname">Mesh</code><a class="headerlink" href="#kivy.graphics.Mesh" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>ベースクラス: <a class="reference internal" href="api-kivy.graphics.instructions.html#kivy.graphics.instructions.VertexInstruction" title="kivy.graphics.instructions.VertexInstruction"><code class="xref py py-class docutils literal"><span class="pre">kivy.graphics.instructions.VertexInstruction</span></code></a></p>
-<p>A 2d mesh.</p>
-<p>In OpenGL ES 2.0 and in our graphics implementation, you cannot have more
-than 65535 indices.</p>
-<p>A list of vertices is described as:</p>
+<p>2Dメッシュ。</p>
+<p>OpenGL ES2.0で私たちのグラフィックスの実装では、65535以上のインデックスを持てません。</p>
+<p>verticesのリストは以下のように記述されています:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">u1</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">u2</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
             <span class="o">|</span>            <span class="o">|</span>  <span class="o">|</span>            <span class="o">|</span>
             <span class="o">+----</span> <span class="n">i1</span> <span class="o">----+</span>  <span class="o">+----</span> <span class="n">i2</span> <span class="o">----+</span>
 </pre></div>
 </div>
-<p>If you want to draw a triangle, add 3 vertices. You can then make an
-indices list as follows:</p>
+<p>三角形を描きたい場合は3つの頂点を追加します。次のようにしてインデックスリストを作成できます。</p>
 <blockquote>
 <div>indices = [0, 1, 2]</div></blockquote>
 <div class="versionadded">
@@ -1571,33 +1493,30 @@ indices list as follows:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>vertices</cite>: iterable</dt>
-<dd><p class="first last">List of vertices in the format (x1, y1, u1, v1, x2, y2, u2, v2...).</p>
+<dt><cite>vertices</cite>:</dt>
+<dd><p class="first last">vetricesのリストのフォーマット(x1, y1, u1, v1, x2, y2, u2, v2...)。</p>
 </dd>
 <dt><cite>indices</cite>: iterable</dt>
-<dd><p class="first last">List of indices in the format (i1, i2, i3...).</p>
+<dd><p class="first last">インデックスのリストのフォーマット (i1, i2, i3...)。</p>
 </dd>
 <dt><cite>mode</cite>: str</dt>
-<dd><p class="first last">Mode of the vbo. Check <a class="reference internal" href="#kivy.graphics.Mesh.mode" title="kivy.graphics.Mesh.mode"><code class="xref py py-attr docutils literal"><span class="pre">mode</span></code></a> for more information. Defaults to
-&#8216;points&#8217;.</p>
+<dd><p class="first last">vboのモード。より詳しくは <a class="reference internal" href="#kivy.graphics.Mesh.mode" title="kivy.graphics.Mesh.mode"><code class="xref py py-attr docutils literal"><span class="pre">mode</span></code></a>&nbsp;をチェックしてください。デフォルトは &#8216;points&#8217; です。</p>
 </dd>
 <dt><cite>fmt</cite>: list</dt>
-<dd><p class="first">The format for vertices, by default, each vertex is described by 2D
-coordinates (x, y) and 2D texture coordinate (u, v).
-Each element of the list should be a tuple or list, of the form</p>
+<dd><p class="first">verticeの形式は、デフォルトでは各頂点は2D座標(x,y)と2Dテクスチャ座標(U,V)によって記述されています。リストの各要素はtupleまたはリストの形式であるべきです。</p>
 <blockquote>
-<div><p>(variable_name, size, type)</p>
+<div><p>(変数名, サイズ, タイプ)</p>
 </div></blockquote>
-<p>which will allow mapping vertex data to the glsl instructions.</p>
+<p>glsl命令にvertexデータをマッピングできます。</p>
 <blockquote>
 <div><p>[(b&#8217;v_pos&#8217;, 2, b&#8217;float&#8217;), (b&#8217;v_tc&#8217;, 2, b&#8217;float&#8217;),]</p>
 </div></blockquote>
-<p>will allow using</p>
+<p>使用できるようになります</p>
 <blockquote>
 <div><p>attribute vec2 v_pos;
 attribute vec2 v_tc;</p>
 </div></blockquote>
-<p class="last">in glsl&#8217;s vertex shader.</p>
+<p class="last">glslのvertexシェーダー。</p>
 </dd>
 </dl>
 </td>
@@ -1605,42 +1524,28 @@ attribute vec2 v_tc;</p>
 </tbody>
 </table>
 <div class="versionchanged">
-<p><span class="versionmodified">バージョン 1.8.1 で変更: </span>Before, <cite>vertices</cite> and <cite>indices</cite> would always be converted to a list,
-now, they are only converted to a list if they do not implement the
-buffer interface. So e.g. numpy arrays, python arrays etc. are used
-in place, without creating any additional copies. However, the
-buffers cannot be readonly (even though they are not changed, due to
-a cython limitation) and must be contiguous in memory.</p>
+<p><span class="versionmodified">バージョン 1.8.1 で変更: </span>以前は、 <cite>vertices</cite> と ` インデックス` は常にリストに変換されていましたが今はバッファインタフェースを実装していない場合にのみリストに変換されます。 なので例えば、 数の多い配列、Python配列などは、追加のコピーを作成することなくその場で使用されます。 しかしバッファは読み込み専用ではありません（cythonの制限のために変更されていなくても）、メモリ内で連続していなければなりません。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">When passing a memoryview or a instance that implements the buffer
-interface, <cite>vertices</cite> should be a buffer of floats (<cite>&#8216;f&#8217;</cite> code in
-python array) and <cite>indices</cite> should be a buffer of unsigned short (<cite>&#8216;H&#8217;</cite>
-code in python array). Arrays in other formats will still have to be
-converted internally, negating any potential gain.</p>
+<p class="last">メモリ・ビューやバッファ・インタフェースを実装するインスタンスを渡すとき、 <cite>vertices`は浮動小数点のバッファ(Python配列の</cite>&#8216;f&#8217;<cite>コード)でなければならず、 `インデックス`はunsigned short(Python配列の</cite> <cite>&#8216;H&#8217;</cite> コード）。 他の形式の配列は内部的に変換されなければならず潜在的なポテンシャルは無効になります。</p>
 </div>
 <dl class="attribute">
 <dt id="kivy.graphics.Mesh.indices">
 <code class="descname">indices</code><a class="headerlink" href="#kivy.graphics.Mesh.indices" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Vertex indices used to specify the order when drawing the
-mesh.</p>
+<dd><p>vertexインデックスはメッシュを描画する際の順序を指定するために使用されます。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.Mesh.mode">
 <code class="descname">mode</code><a class="headerlink" href="#kivy.graphics.Mesh.mode" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>VBO Mode used for drawing vertices/indices. Can be one of &#8216;points&#8217;,
-&#8216;line_strip&#8217;, &#8216;line_loop&#8217;, &#8216;lines&#8217;, &#8216;triangles&#8217;, &#8216;triangle_strip&#8217; or
-&#8216;triangle_fan&#8217;.</p>
+<dd><p>vertices/インデックスの描画に使用されるVBOモード。  &#8216;points&#8217;, &#8216;line_strip&#8217;, &#8216;line_loop&#8217;, &#8216;lines&#8217;, &#8216;triangles&#8217;, &#8216;triangle_strip&#8217;、&#8217;triangle_fan&#8217; のいずれかになります。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.Mesh.vertices">
 <code class="descname">vertices</code><a class="headerlink" href="#kivy.graphics.Mesh.vertices" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>List of x, y, u, v coordinates used to construct the Mesh. Right now,
-the Mesh instruction doesn&#8217;t allow you to change the format of the
-vertices, which means it&#8217;s only x, y + one texture coordinate.</p>
+<dd><p>メッシュの構築に使用されたx, y, u, v 座標のリスト。メッシュ命令では頂点のフォーマットを今すぐ変更できません。つまり、x、y + 1つのテクスチャ座標だけです。</p>
 </dd></dl>
 
 </dd></dl>
@@ -1711,8 +1616,7 @@ means the real size will be 2.0 x 2.0.</p>
 <dl class="attribute">
 <dt id="kivy.graphics.PopMatrix.stack">
 <code class="descname">stack</code><a class="headerlink" href="#kivy.graphics.PopMatrix.stack" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Name of the matrix stack to use. Can be &#8216;modelview_mat&#8217; or
-&#8216;projection_mat&#8217;.</p>
+<dd><p>行列スタックの名前を使用します。 &#8216;modelview_mat&#8217; または &#8216;projection_mat&#8217; にできます。</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.6.0 で追加.</span></p>
 </div>
@@ -1728,8 +1632,7 @@ means the real size will be 2.0 x 2.0.</p>
 <dl class="attribute">
 <dt id="kivy.graphics.PushMatrix.stack">
 <code class="descname">stack</code><a class="headerlink" href="#kivy.graphics.PushMatrix.stack" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Name of the matrix stack to use. Can be &#8216;modelview_mat&#8217; or
-&#8216;projection_mat&#8217;.</p>
+<dd><p>行列スタックの名前を使用します。 &#8216;modelview_mat&#8217; または &#8216;projection_mat&#8217; にできます。</p>
 <div class="versionadded">
 <p><span class="versionmodified">バージョン 1.6.0 で追加.</span></p>
 </div>
@@ -2166,25 +2069,25 @@ texture.</p>
 <dl class="attribute">
 <dt id="kivy.graphics.ClearColor.a">
 <code class="descname">a</code><a class="headerlink" href="#kivy.graphics.ClearColor.a" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Alpha component, between 0 and 1.</p>
+<dd><p>アルファコンポーネントは0～1です。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.ClearColor.b">
 <code class="descname">b</code><a class="headerlink" href="#kivy.graphics.ClearColor.b" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Blue component, between 0 and 1.</p>
+<dd><p>青コンポーネントは0～1です。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.ClearColor.g">
 <code class="descname">g</code><a class="headerlink" href="#kivy.graphics.ClearColor.g" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Green component, between 0 and 1.</p>
+<dd><p>グリーンコンポーネントは0～1です。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.graphics.ClearColor.r">
 <code class="descname">r</code><a class="headerlink" href="#kivy.graphics.ClearColor.r" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Red component, between 0 and 1.</p>
+<dd><p>赤コンポーネントは0～1です</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -2320,8 +2223,7 @@ the instructions stack property (default=&#8217;modelview_mat&#8217;)</p>
 <dl class="attribute">
 <dt id="kivy.graphics.LoadIdentity.stack">
 <code class="descname">stack</code><a class="headerlink" href="#kivy.graphics.LoadIdentity.stack" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Name of the matrix stack to use. Can be &#8216;modelview_mat&#8217; or
-&#8216;projection_mat&#8217;.</p>
+<dd><p>行列スタックの名前を使用します。 &#8216;modelview_mat&#8217; または &#8216;projection_mat&#8217; にできます。</p>
 </dd></dl>
 
 </dd></dl>
@@ -2440,7 +2342,7 @@ the instructions stack property (default=&#8217;modelview_mat&#8217;)</p>
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 6月 21, 2017.
+      Last updated on 7月 01, 2017.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
 </div>
 -->

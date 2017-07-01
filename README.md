@@ -23,9 +23,6 @@ https://pyky.github.io/kivy-doc-ja/
 Transifexでの翻訳は以下からどなたでも参加可能です。
 https://www.transifex.com/python_kivy_doc_ja/kivy110_Japanese/
 
-2017年5月現在、「User’s Guide」、「Programming Guide」「Tutorials」の1.9.1の時の翻訳をマージ中です。マージ後「API Reference」の翻訳に着手します。
-※5/28 インストールとパッケージ以外は一旦完了しました
-
 Transifexからgithubへの登録は手動での登録になります。
 自動登録の環境は後日登録予定です
 
