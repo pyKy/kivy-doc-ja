@@ -204,11 +204,11 @@ Available configuration tokens
     `kivy_clock`: one of `default`, `interrupt`, `free_all`, `free_only`
         The clock type to use with kivy. See :mod:`kivy.clock`.
 
-    `default_font`: list, defaults to ['Roboto',
-    'data/fonts/Roboto-Regular.ttf', 'data/fonts/Roboto-Italic.ttf',
-    'data/fonts/Roboto-Bold.ttf', 'data/fonts/Roboto-BoldItalic.ttf']
-
-        Default font used for widgets displaying any text.
+    `default_font`: list
+        Default fonts used for widgets displaying any text. It defaults to
+        ['Roboto', 'data/fonts/Roboto-Regular.ttf',
+        'data/fonts/Roboto-Italic.ttf', 'data/fonts/Roboto-Bold.ttf',
+        'data/fonts/Roboto-BoldItalic.ttf'].
 
     `allow_screensaver`: int, one of 0 or 1, defaults to 1
         Allow the device to show a screen saver, or to go to sleep
@@ -335,7 +335,7 @@ from weakref import ref
 _is_rpi = exists('/opt/vc/include/bcm_host.h')
 
 # Version number of current configuration format
-KIVY_CONFIG_VERSION = 19
+KIVY_CONFIG_VERSION = 21
 
 Config = None
 '''The default Kivy configuration object. This is a :class:`ConfigParser`
@@ -370,8 +370,8 @@ class ConfigParser(PythonConfigParser, object):
     .. versionadded:: 1.0.7
     '''
 
-    def __init__(self, name=''):
-        PythonConfigParser.__init__(self)
+    def __init__(self, name='', **kwargs):
+        PythonConfigParser.__init__(self, **kwargs)
         self._sections = OrderedDict()
         self.filename = None
         self._callbacks = []
@@ -686,6 +686,7 @@ if not environ.get('KIVY_DOC_INCLUDE'):
     Config.adddefaultsection('postproc')
     Config.adddefaultsection('widgets')
     Config.adddefaultsection('modules')
+    Config.adddefaultsection('network')
 
     # Upgrade default configuration until we have the current version
     need_save = False
@@ -842,8 +843,15 @@ if not environ.get('KIVY_DOC_INCLUDE'):
         elif version == 18:
             Config.setdefault('kivy', 'log_maxfiles', '100')
 
-        # elif version == 1:
-        #    # add here the command for upgrading from configuration 0 to 1
+        elif version == 19:
+            Config.setdefault('graphics', 'shaped', '0')
+            Config.setdefault(
+                'kivy', 'window_shape',
+                'data/images/defaultshape.png'
+            )
+
+        elif version == 20:
+            Config.setdefault('network', 'useragent', 'curl')
 
         else:
             # for future.

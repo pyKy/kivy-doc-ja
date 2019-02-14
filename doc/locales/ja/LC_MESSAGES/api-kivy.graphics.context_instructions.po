@@ -1,0 +1,289 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-15 00:59+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../sources/api-kivy.graphics.context_instructions.rst:3
+msgid "Context instructions"
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions:2 of
+msgid "The context instructions represent non graphics elements such as:"
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions:4 of
+msgid ""
+"Matrix manipulations (PushMatrix, PopMatrix, Rotate, Translate, Scale, "
+"MatrixInstruction)"
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions:6 of
+msgid "Color manipulations (Color)"
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions:7 of
+msgid "Texture bindings (BindTexture)"
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions:9 of
+msgid ""
+"The LineWidth instruction has been removed. It wasn't working before and "
+"we actually have no working implementation. We need to do more "
+"experimentation to get it right. Check the bug `#207 "
+"<https://github.com/kivy/kivy/issues/207>`_ for more information."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.graphics.instructions.ContextInstruction`"
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Color:1 of
+msgid "Instruction to set the color state for any vertices being drawn after it."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Color:4 of
+msgid ""
+"This represents a color between 0 and 1, but is applied as a *multiplier*"
+" to the texture of any vertex instructions following it in a canvas. If "
+"no texture is set, the vertex instruction takes the precise color of the "
+"Color instruction."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Color:9 of
+msgid ""
+"For instance, if a Rectangle has a texture with uniform color ``(0.5, "
+"0.5, 0.5, 1.0)`` and the preceding Color has ``rgba=(1, 0.5, 2, 1)``, the"
+" actual visible color will be ``(0.5, 0.25, 1.0, 1.0)`` since the Color "
+"instruction is applied as a multiplier to every rgba component. In this "
+"case, a Color component outside the 0-1 range gives a visible result as "
+"the intensity of the blue component is doubled."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Color:17 of
+msgid "To declare a Color in Python, you can do::"
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Color:33 of
+msgid ""
+"You can also set color components that are available as properties by "
+"passing them as keyword arguments::"
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Color:38 of
+msgid "In kv lang you can set the color properties directly:"
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Color.a:1 of
+msgid "Alpha component, between 0 and 1."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Color.b:1 of
+msgid "Blue component, between 0 and 1."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Color.g:1 of
+msgid "Green component, between 0 and 1."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Color.h:1 of
+msgid "Hue component, between 0 and 1."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Color.hsv:1 of
+msgid "HSV color, list of 3 values in 0-1 range, alpha will be 1."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Color.r:1 of
+msgid "Red component, between 0 and 1."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Color.rgb:1 of
+msgid "RGB color, list of 3 values in 0-1 range. The alpha will be 1."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Color.rgba:1 of
+msgid "RGBA color, list of 4 values in 0-1 range."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Color.s:1 of
+msgid "Saturation component, between 0 and 1."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Color.v:1 of
+msgid "Value component, between 0 and 1."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.BindTexture:1 of
+msgid ""
+"BindTexture Graphic instruction. The BindTexture Instruction will bind a "
+"texture and enable GL_TEXTURE_2D for subsequent drawing."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.BindTexture of
+msgid "Parameters"
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.BindTexture:8 of
+msgid "`texture`: Texture"
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.BindTexture:7 of
+msgid "Specifies the texture to bind to the given index."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.BindTexture.source:1 of
+msgid "Set/get the source (filename) to load for the texture."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.PushMatrix:1 of
+msgid "Push the matrix onto the context's matrix stack."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.MatrixInstruction.stack:1
+#: kivy.graphics.context_instructions.PopMatrix.stack:1
+#: kivy.graphics.context_instructions.PushMatrix.stack:1 of
+msgid ""
+"Name of the matrix stack to use. Can be 'modelview_mat', 'projection_mat'"
+" or 'frag_modelview_mat'."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.PopMatrix:1 of
+msgid "Pop the matrix from the context's matrix stack onto the model view."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.graphics.context_instructions.Transform`"
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Rotate:1 of
+msgid ""
+"Rotate the coordinate space by applying a rotation transformation on the "
+"modelview matrix. You can set the properties of the instructions "
+"afterwards with e.g. ::"
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Rotate.angle:1 of
+msgid "Property for getting/setting the angle of the rotation."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Rotate.axis:1 of
+msgid "Property for getting/setting the axis of the rotation."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Rotate.axis:3 of
+msgid "The format of the axis is (x, y, z)."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Rotate.origin:1 of
+msgid "Origin of the rotation."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Rotate.origin:5
+#: kivy.graphics.context_instructions.Scale.origin:5 of
+msgid "The format of the origin can be either (x, y) or (x, y, z)."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Rotate.set:1 of
+msgid "Set the angle and axis of rotation."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Rotate.set:7 of
+msgid "The set() method doesn't use the new :attr:`origin` property."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Scale:1 of
+msgid "Instruction to create a non uniform scale transformation."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Scale:3 of
+msgid "Create using one or three arguments::"
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Scale:8 of
+msgid ""
+"Deprecated single scale property in favor of x, y, z, xyz axis "
+"independent scaled factors."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Scale.origin:1 of
+msgid "Origin of the scale."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Scale.scale:1 of
+msgid "Property for getting/setting the scale."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Scale.scale:3 of
+msgid "Deprecated in favor of per axis scale properties x,y,z, xyz, etc."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Scale.x:1 of
+msgid "Property for getting/setting the scale on the X axis."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Scale.xyz:1 of
+msgid "3 tuple scale vector in 3D in x, y, and z axis."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Scale.y:1 of
+msgid "Property for getting/setting the scale on the Y axis."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Scale.z:1 of
+msgid "Property for getting/setting the scale on Z axis."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Translate:1 of
+msgid "Instruction to create a translation of the model view coordinate space."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Translate:3 of
+msgid "Construct by either::"
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Translate.x:1 of
+msgid "Property for getting/setting the translation on the X axis."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Translate.xy:1 of
+msgid "2 tuple with translation vector in 2D for x and y axis."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Translate.xyz:1 of
+msgid "3 tuple translation vector in 3D in x, y, and z axis."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Translate.y:1 of
+msgid "Property for getting/setting the translation on the Y axis."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.Translate.z:1 of
+msgid "Property for getting/setting the translation on the Z axis."
+msgstr ""
+
+#: ../../docstring kivy.graphics.context_instructions.MatrixInstruction:1 of
+msgid "Base class for Matrix Instruction on the canvas."
+msgstr ""
+
+#: ../../docstring
+#: kivy.graphics.context_instructions.MatrixInstruction.matrix:1 of
+msgid ""
+"Matrix property. Matrix from the transformation module. Setting the "
+"matrix using this property when a change is made is important because it "
+"will notify the context about the update."
+msgstr ""
+

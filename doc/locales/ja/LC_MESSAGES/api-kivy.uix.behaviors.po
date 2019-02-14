@@ -1,0 +1,1276 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-15 00:59+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../sources/api-kivy.uix.behaviors.rst:3
+msgid "Behaviors"
+msgstr ""
+
+#: kivy.uix.behaviors:5 of
+msgid "Behavior mixin classes"
+msgstr ""
+
+#: kivy.uix.behaviors:7 of
+msgid ""
+"This module implements behaviors that can be `mixed in "
+"<https://en.wikipedia.org/wiki/Mixin>`_ with existing base widgets. The "
+"idea behind these classes is to encapsulate properties and events "
+"associated with certain types of widgets."
+msgstr ""
+
+#: kivy.uix.behaviors:12 of
+msgid ""
+"Isolating these properties and events in a mixin class allows you to "
+"define your own implementation for standard kivy widgets that can act as "
+"drop-in replacements. This means you can re-style and re-define widgets "
+"as desired without breaking compatibility: as long as they implement the "
+"behaviors correctly, they can simply replace the standard widgets."
+msgstr ""
+
+#: kivy.uix.behaviors:19 of
+msgid "Adding behaviors"
+msgstr ""
+
+#: kivy.uix.behaviors:21 of
+msgid ""
+"Say you want to add :class:`~kivy.uix.button.Button` capabilities to an "
+":class:`~kivy.uix.image.Image`, you could do::"
+msgstr ""
+
+#: kivy.uix.behaviors:27 of
+msgid ""
+"This would give you an :class:`~kivy.uix.image.Image` with the events and"
+" properties inherited from :class:`ButtonBehavior`. For example, the "
+"*on_press* and *on_release* events would be fired when appropriate::"
+msgstr ""
+
+#: kivy.uix.behaviors:35 of
+msgid "Or in kv:"
+msgstr ""
+
+#: kivy.uix.behaviors:42 of
+msgid ""
+"Naturally, you could also bind to any property changes the behavior class"
+" offers:"
+msgstr ""
+
+#: kivy.uix.behaviors:56 of
+msgid ""
+"The behavior class must always be _before_ the widget class. If you don't"
+" specify the inheritance in this order, the behavior will not work "
+"because the behavior methods are overwritten by the class method listed "
+"first."
+msgstr ""
+
+#: kivy.uix.behaviors:60 of
+msgid ""
+"Similarly, if you combine a behavior class with a class which requires "
+"the use of the methods also defined by the behavior class, the resulting "
+"class may not function properly. For example, when combining the "
+":class:`ButtonBehavior` with a :class:`~kivy.uix.slider.Slider`, both of "
+"which use the :meth:`~kivy.uix.widget.Widget.on_touch_up` method, the "
+"resulting class may not work properly."
+msgstr ""
+
+#: kivy.uix.behaviors:69 of
+msgid ""
+"The individual behavior classes, previously in one big `behaviors.py` "
+"file, has been split into a single file for each class under the "
+":mod:`~kivy.uix.behaviors` module. All the behaviors are still imported "
+"in the :mod:`~kivy.uix.behaviors` module so they are accessible as before"
+" (e.g. both `from kivy.uix.behaviors import ButtonBehavior` and `from "
+"kivy.uix.behaviors.button import ButtonBehavior` work)."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`builtins.object`"
+msgstr ""
+
+#: kivy.uix.behaviors.ButtonBehavior:1 of
+msgid ""
+"This `mixin <https://en.wikipedia.org/wiki/Mixin>`_ class provides "
+":class:`~kivy.uix.button.Button` behavior. Please see the :mod:`button "
+"behaviors module <kivy.uix.behaviors.button>` documentation for more "
+"information."
+msgstr ""
+
+#: kivy.uix.behaviors.ButtonBehavior
+#: kivy.uix.behaviors.TouchRippleButtonBehavior of
+msgid "Events"
+msgstr ""
+
+#: kivy.uix.behaviors.ButtonBehavior:7
+#: kivy.uix.behaviors.TouchRippleButtonBehavior:7 of
+msgid "`on_press`"
+msgstr ""
+
+#: kivy.uix.behaviors.ButtonBehavior:8
+#: kivy.uix.behaviors.TouchRippleButtonBehavior:8 of
+msgid "Fired when the button is pressed."
+msgstr ""
+
+#: kivy.uix.behaviors.ButtonBehavior:13
+#: kivy.uix.behaviors.TouchRippleButtonBehavior:12 of
+msgid "`on_release`"
+msgstr ""
+
+#: kivy.uix.behaviors.ButtonBehavior:10
+#: kivy.uix.behaviors.TouchRippleButtonBehavior:10 of
+msgid ""
+"Fired when the button is released (i.e. the touch/click that pressed the "
+"button goes away)."
+msgstr ""
+
+#: kivy.uix.behaviors.ButtonBehavior.always_release:1
+#: kivy.uix.behaviors.TouchRippleButtonBehavior.always_release:1 of
+msgid ""
+"This determines whether or not the widget fires an `on_release` event if "
+"the touch_up is outside the widget."
+msgstr ""
+
+#: kivy.uix.behaviors.ButtonBehavior.always_release:6 of
+msgid "The default value is now False."
+msgstr ""
+
+#: kivy.uix.behaviors.ButtonBehavior.always_release:9
+#: kivy.uix.behaviors.TouchRippleButtonBehavior.always_release:4 of
+msgid ""
+":attr:`always_release` is a :class:`~kivy.properties.BooleanProperty` and"
+" defaults to `False`."
+msgstr ""
+
+#: kivy.uix.behaviors.ButtonBehavior.last_touch:1
+#: kivy.uix.behaviors.TouchRippleButtonBehavior.last_touch:1 of
+msgid ""
+"Contains the last relevant touch received by the Button. This can be used"
+" in `on_press` or `on_release` in order to know which touch dispatched "
+"the event."
+msgstr ""
+
+#: kivy.uix.behaviors.ButtonBehavior.last_touch:7
+#: kivy.uix.behaviors.TouchRippleButtonBehavior.last_touch:5 of
+msgid ""
+":attr:`last_touch` is a :class:`~kivy.properties.ObjectProperty` and "
+"defaults to `None`."
+msgstr ""
+
+#: kivy.uix.behaviors.ButtonBehavior.min_state_time:1 of
+msgid ""
+"The minimum period of time which the widget must remain in the `'down'` "
+"state."
+msgstr ""
+
+#: kivy.uix.behaviors.ButtonBehavior.min_state_time:6 of
+msgid ""
+":attr:`min_state_time` is a float and defaults to 0.035. This value is "
+"taken from :class:`~kivy.config.Config`."
+msgstr ""
+
+#: kivy.uix.behaviors.ButtonBehavior.state:1 of
+msgid ""
+"The state of the button, must be one of 'normal' or 'down'. The state is "
+"'down' only when the button is currently touched/clicked, otherwise its "
+"'normal'."
+msgstr ""
+
+#: kivy.uix.behaviors.ButtonBehavior.state:5 of
+msgid ""
+":attr:`state` is an :class:`~kivy.properties.OptionProperty` and defaults"
+" to 'normal'."
+msgstr ""
+
+#: kivy.uix.behaviors.ButtonBehavior.trigger_action:1 of
+msgid ""
+"Trigger whatever action(s) have been bound to the button by calling both "
+"the on_press and on_release callbacks."
+msgstr ""
+
+#: kivy.uix.behaviors.ButtonBehavior.trigger_action:4 of
+msgid "This simulates a quick button press without using any touch events."
+msgstr ""
+
+#: kivy.uix.behaviors.ButtonBehavior.trigger_action:6 of
+msgid ""
+"Duration is the length of the press in seconds. Pass 0 if you want the "
+"action to happen instantly."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.uix.behaviors.button.ButtonBehavior`"
+msgstr ""
+
+#: kivy.uix.behaviors.ToggleButtonBehavior:1 of
+msgid ""
+"This `mixin <https://en.wikipedia.org/wiki/Mixin>`_ class provides "
+":mod:`~kivy.uix.togglebutton` behavior. Please see the :mod:`togglebutton"
+" behaviors module <kivy.uix.behaviors.togglebutton>` documentation for "
+"more information."
+msgstr ""
+
+#: kivy.uix.behaviors.ToggleButtonBehavior.allow_no_selection:1 of
+msgid ""
+"This specifies whether the widgets in a group allow no selection i.e. "
+"everything to be deselected."
+msgstr ""
+
+#: kivy.uix.behaviors.ToggleButtonBehavior.allow_no_selection:6 of
+msgid ""
+":attr:`allow_no_selection` is a :class:`BooleanProperty` and defaults to "
+"`True`"
+msgstr ""
+
+#: kivy.uix.behaviors.ToggleButtonBehavior.get_widgets:1 of
+msgid ""
+"Return a list of the widgets contained in a specific group. If the group "
+"doesn't exist, an empty list will be returned."
+msgstr ""
+
+#: kivy.uix.behaviors.ToggleButtonBehavior.get_widgets:6 of
+msgid ""
+"Always release the result of this method! Holding a reference to any of "
+"these widgets can prevent them from being garbage collected. If in doubt,"
+" do::"
+msgstr ""
+
+#: kivy.uix.behaviors.ToggleButtonBehavior.get_widgets:16 of
+msgid ""
+"It's possible that some widgets that you have previously deleted are "
+"still in the list. The garbage collector might need to release other "
+"objects before flushing them."
+msgstr ""
+
+#: kivy.uix.behaviors.ToggleButtonBehavior.group:1 of
+msgid ""
+"Group of the button. If `None`, no group will be used (the button will be"
+" independent). If specified, :attr:`group` must be a hashable object, "
+"like a string. Only one button in a group can be in a 'down' state."
+msgstr ""
+
+#: kivy.uix.behaviors.ToggleButtonBehavior.group:5 of
+msgid ""
+":attr:`group` is a :class:`~kivy.properties.ObjectProperty` and defaults "
+"to `None`."
+msgstr ""
+
+#: kivy.uix.behaviors.DragBehavior:1 of
+msgid ""
+"The DragBehavior `mixin <https://en.wikipedia.org/wiki/Mixin>`_ provides "
+"Drag behavior. When combined with a widget, dragging in the rectangle "
+"defined by :attr:`drag_rectangle` will drag the widget. Please see the "
+":mod:`drag behaviors module <kivy.uix.behaviors.drag>` documentation for "
+"more information."
+msgstr ""
+
+#: kivy.uix.behaviors.DragBehavior.drag_distance:1 of
+msgid ""
+"Distance to move before dragging the :class:`DragBehavior`, in pixels. As"
+" soon as the distance has been traveled, the :class:`DragBehavior` will "
+"start to drag, and no touch event will be dispatched to the children. It "
+"is advisable that you base this value on the dpi of your target device's "
+"screen."
+msgstr ""
+
+#: kivy.uix.behaviors.DragBehavior.drag_distance:7 of
+msgid ""
+":attr:`drag_distance` is a :class:`~kivy.properties.NumericProperty` and "
+"defaults to the `scroll_distance` as defined in the user "
+":class:`~kivy.config.Config` (20 pixels by default)."
+msgstr ""
+
+#: kivy.uix.behaviors.DragBehavior.drag_rect_height:1 of
+msgid "Height of the axis aligned bounding rectangle where dragging is allowed."
+msgstr ""
+
+#: kivy.uix.behaviors.DragBehavior.drag_rect_height:3 of
+msgid ""
+":attr:`drag_rect_height` is a :class:`~kivy.properties.NumericProperty` "
+"and defaults to 100."
+msgstr ""
+
+#: kivy.uix.behaviors.DragBehavior.drag_rect_width:1 of
+msgid "Width of the axis aligned bounding rectangle where dragging is allowed."
+msgstr ""
+
+#: kivy.uix.behaviors.DragBehavior.drag_rect_width:3 of
+msgid ""
+":attr:`drag_rect_width` is a :class:`~kivy.properties.NumericProperty` "
+"and defaults to 100."
+msgstr ""
+
+#: kivy.uix.behaviors.DragBehavior.drag_rect_x:1 of
+msgid ""
+"X position of the axis aligned bounding rectangle where dragging is "
+"allowed (in window coordinates)."
+msgstr ""
+
+#: kivy.uix.behaviors.DragBehavior.drag_rect_x:4 of
+msgid ""
+":attr:`drag_rect_x` is a :class:`~kivy.properties.NumericProperty` and "
+"defaults to 0."
+msgstr ""
+
+#: kivy.uix.behaviors.DragBehavior.drag_rect_y:1 of
+msgid ""
+"Y position of the axis aligned bounding rectangle where dragging is "
+"allowed (in window coordinates)."
+msgstr ""
+
+#: kivy.uix.behaviors.DragBehavior.drag_rect_y:4 of
+msgid ""
+":attr:`drag_rect_Y` is a :class:`~kivy.properties.NumericProperty` and "
+"defaults to 0."
+msgstr ""
+
+#: kivy.uix.behaviors.DragBehavior.drag_rectangle:1 of
+msgid ""
+"Position and size of the axis aligned bounding rectangle where dragging "
+"is allowed."
+msgstr ""
+
+#: kivy.uix.behaviors.DragBehavior.drag_rectangle:4 of
+msgid ""
+":attr:`drag_rectangle` is a "
+":class:`~kivy.properties.ReferenceListProperty` of (:attr:`drag_rect_x`, "
+":attr:`drag_rect_y`, :attr:`drag_rect_width`, :attr:`drag_rect_height`) "
+"properties."
+msgstr ""
+
+#: kivy.uix.behaviors.DragBehavior.drag_timeout:1 of
+msgid ""
+"Timeout allowed to trigger the :attr:`drag_distance`, in milliseconds. If"
+" the user has not moved :attr:`drag_distance` within the timeout, "
+"dragging will be disabled, and the touch event will be dispatched to the "
+"children."
+msgstr ""
+
+#: kivy.uix.behaviors.DragBehavior.drag_timeout:6 of
+msgid ""
+":attr:`drag_timeout` is a :class:`~kivy.properties.NumericProperty` and "
+"defaults to the `scroll_timeout` as defined in the user "
+":class:`~kivy.config.Config` (55 milliseconds by default)."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior:1 of
+msgid ""
+"Provides keyboard focus behavior. When combined with other FocusBehavior "
+"widgets it allows one to cycle focus among them by pressing tab. Please "
+"see the :mod:`focus behavior module documentation "
+"<kivy.uix.behaviors.focus>` for more information."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.focus:1 of
+msgid "Whether the instance currently has focus."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.focus:3 of
+msgid ""
+"Setting it to True will bind to and/or request the keyboard, and input "
+"will be forwarded to the instance. Setting it to False will unbind and/or"
+" release the keyboard. For a given keyboard, only one widget can have its"
+" focus, so focusing one will automatically unfocus the other instance "
+"holding its focus."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.focus:9 of
+msgid ""
+"When using a software keyboard, please refer to the "
+":attr:`~kivy.core.window.WindowBase.softinput_mode` property to determine"
+" how the keyboard display is handled."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.focus:13 of
+msgid ""
+":attr:`focus` is a :class:`~kivy.properties.BooleanProperty` and defaults"
+" to False."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.focus_next:1 of
+msgid ""
+"The :class:`FocusBehavior` instance to acquire focus when tab is pressed "
+"and this instance has focus, if not `None` or `StopIteration`."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.focus_next:5 of
+msgid ""
+"When tab is pressed, focus cycles through all the :class:`FocusBehavior` "
+"widgets that are linked through :attr:`focus_next` and are focusable. If "
+":attr:`focus_next` is `None`, it instead walks the children lists to find"
+" the next focusable widget. Finally, if :attr:`focus_next` is the "
+"`StopIteration` class, focus won't move forward, but end here."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.focus_next:22 of
+msgid ""
+":attr:`focus_next` is an :class:`~kivy.properties.ObjectProperty` and "
+"defaults to `None`."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.focus_previous:1 of
+msgid ""
+"The :class:`FocusBehavior` instance to acquire focus when shift+tab is "
+"pressed on this instance, if not None or `StopIteration`."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.focus_previous:4 of
+msgid ""
+"When shift+tab is pressed, focus cycles through all the "
+":class:`FocusBehavior` widgets that are linked through "
+":attr:`focus_previous` and are focusable. If :attr:`focus_previous` is "
+"`None`, it instead walks the children tree to find the previous focusable"
+" widget. Finally, if :attr:`focus_previous` is the `StopIteration` class,"
+" focus won't move backward, but end here."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.focus_previous:21 of
+msgid ""
+":attr:`focus_previous` is an :class:`~kivy.properties.ObjectProperty` and"
+" defaults to `None`."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.focused:1 of
+msgid "An alias of :attr:`focus`."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.focused:3 of
+msgid ""
+":attr:`focused` is a :class:`~kivy.properties.BooleanProperty` and "
+"defaults to False."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.focused:7 of
+msgid ":attr:`focused` is an alias of :attr:`focus` and will be removed in 2.0.0."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.get_focus_next:1 of
+msgid ""
+"Returns the next focusable widget using either :attr:`focus_next` or the "
+":attr:`children` similar to the order when tabbing forwards with the "
+"``tab`` key."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.get_focus_previous:1 of
+msgid ""
+"Returns the previous focusable widget using either :attr:`focus_previous`"
+" or the :attr:`children` similar to the order when ``tab`` + ``shift`` "
+"key are triggered together."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.hide_keyboard:1 of
+msgid "Convenience function to hide the keyboard in managed mode."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.ignored_touch:1 of
+msgid ""
+"A list of touches that should not be used to defocus. After on_touch_up, "
+"every touch that is not in :attr:`ignored_touch` will defocus all the "
+"focused widgets if the config keyboard mode is not multi. Touches on "
+"focusable widgets that were used to focus are automatically added here."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.ignored_touch:6 of
+msgid "Example usage::"
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.ignored_touch:14 of
+msgid "Notice that you need to access this as a class, not an instance variable."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.input_type:1 of
+msgid "The kind of input keyboard to request."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.input_type:5 of
+msgid ""
+":attr:`input_type` is an :class:`~kivy.properties.OptionsProperty` and "
+"defaults to 'text'. Can be one of 'text', 'number', 'url', 'mail', "
+"'datetime', 'tel' or 'address'."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.is_focusable:1 of
+msgid ""
+"Whether the instance can become focused. If focused, it'll lose focus "
+"when set to False."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.is_focusable:4 of
+msgid ""
+":attr:`is_focusable` is a :class:`~kivy.properties.BooleanProperty` and "
+"defaults to True on a desktop (i.e. `desktop` is True in "
+":mod:`~kivy.config`), False otherwise."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.keyboard:1 of
+msgid "The keyboard to bind to (or bound to the widget) when focused."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.keyboard:3 of
+msgid ""
+"When None, a keyboard is requested and released whenever the widget comes"
+" into and out of focus. If not None, it must be a keyboard, which gets "
+"bound and unbound from the widget whenever it's in or out of focus. It is"
+" useful only when more than one keyboard is available, so it is "
+"recommended to be set to None when only one keyboard is available."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.keyboard:9 of
+msgid ""
+"If more than one keyboard is available, whenever an instance gets focused"
+" a new keyboard will be requested if None. Unless the other instances "
+"lose focus (e.g. if tab was used), a new keyboard will appear. When this "
+"is undesired, the keyboard property can be used. For example, if there "
+"are two users with two keyboards, then each keyboard can be assigned to "
+"different groups of instances of FocusBehavior, ensuring that within each"
+" group, only one FocusBehavior will have focus, and will receive input "
+"from the correct keyboard. See `keyboard_mode` in :mod:`~kivy.config` for"
+" more information on the keyboard modes."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.keyboard:19 of
+msgid "**Keyboard and focus behavior**"
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.keyboard:21 of
+msgid ""
+"When using the keyboard, there are some important default behaviors you "
+"should keep in mind."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.keyboard:24 of
+msgid ""
+"When Config's `keyboard_mode` is multi, each new touch is considered a "
+"touch by a different user and will set the focus (if clicked on a "
+"focusable) with a new keyboard. Already focused elements will not lose "
+"their focus (even if an unfocusable widget is touched)."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.keyboard:29 of
+msgid ""
+"If the keyboard property is set, that keyboard will be used when the "
+"instance gets focused. If widgets with different keyboards are linked "
+"through :attr:`focus_next` and :attr:`focus_previous`, then as they are "
+"tabbed through, different keyboards will become active. Therefore, "
+"typically it's undesirable to link instances which are assigned different"
+" keyboards."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.keyboard:36 of
+msgid ""
+"When a widget has focus, setting its keyboard to None will remove its "
+"keyboard, but the widget will then immediately try to get another "
+"keyboard. In order to remove its keyboard, rather set its :attr:`focus` "
+"to False."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.keyboard:41 of
+msgid ""
+"When using a software keyboard, typical on mobile and touch devices, the "
+"keyboard display behavior is determined by the "
+":attr:`~kivy.core.window.WindowBase.softinput_mode` property. You can use"
+" this property to ensure the focused widget is not covered or obscured."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.keyboard:46 of
+msgid ""
+":attr:`keyboard` is an :class:`~kivy.properties.AliasProperty` and "
+"defaults to None."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.keyboard_mode:1 of
+msgid ""
+"Determines how the keyboard visibility should be managed. 'auto' will "
+"result in the standard behaviour of showing/hiding on focus. 'managed' "
+"requires setting the keyboard visibility manually, or calling the helper "
+"functions :meth:`show_keyboard` and :meth:`hide_keyboard`."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.keyboard_mode:6 of
+msgid ""
+":attr:`keyboard_mode` is an :class:`~kivy.properties.OptionsProperty` and"
+" defaults to 'auto'. Can be one of 'auto' or 'managed'."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.keyboard_on_key_down:1
+#: kivy.uix.behaviors.FocusBehavior.keyboard_on_key_up:1 of
+msgid "The method bound to the keyboard when the instance has focus."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.keyboard_on_key_down:3 of
+msgid ""
+"When the instance becomes focused, this method is bound to the keyboard "
+"and will be called for every input press. The parameters are the same as "
+":meth:`kivy.core.window.WindowBase.on_key_down`."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.keyboard_on_key_down:7 of
+msgid ""
+"When overwriting the method in the derived widget, super should be called"
+" to enable tab cycling. If the derived widget wishes to use tab for its "
+"own purposes, it can call super after it has processed the character (if "
+"it does not wish to consume the tab)."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.keyboard_on_key_down:12 of
+msgid ""
+"Similar to other keyboard functions, it should return True if the key was"
+" consumed."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.keyboard_on_key_up:3 of
+msgid ""
+"When the instance becomes focused, this method is bound to the keyboard "
+"and will be called for every input release. The parameters are the same "
+"as :meth:`kivy.core.window.WindowBase.on_key_up`."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.keyboard_on_key_up:7 of
+msgid ""
+"When overwriting the method in the derived widget, super should be called"
+" to enable de-focusing on escape. If the derived widget wishes to use "
+"escape for its own purposes, it can call super after it has processed the"
+" character (if it does not wish to consume the escape)."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.keyboard_on_key_up:12 of
+msgid "See :meth:`keyboard_on_key_down`"
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.show_keyboard:1 of
+msgid "Convenience function to show the keyboard in managed mode."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.unfocus_on_touch:1 of
+msgid "Whether a instance should lose focus when clicked outside the instance."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.unfocus_on_touch:3 of
+msgid ""
+"When a user clicks on a widget that is focus aware and shares the same "
+"keyboard as this widget (which in the case of only one keyboard, are all "
+"focus aware widgets), then as the other widgets gains focus, this widget "
+"loses focus. In addition to that, if this property is `True`, clicking on"
+" any widget other than this widget, will remove focus form this widget."
+msgstr ""
+
+#: kivy.uix.behaviors.FocusBehavior.unfocus_on_touch:10 of
+msgid ""
+":attr:`unfocus_on_touch` is a :class:`~kivy.properties.BooleanProperty` "
+"and defaults to `False` if the `keyboard_mode` in "
+":attr:`~kivy.config.Config` is `'multi'` or `'systemandmulti'`, otherwise"
+" it defaults to `True`."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior:1 of
+msgid ""
+"The Selection behavior `mixin <https://en.wikipedia.org/wiki/Mixin>`_ "
+"implements the logic behind keyboard and touch selection of selectable "
+"widgets managed by the derived widget. Please see the :mod:`compound "
+"selection behaviors module <kivy.uix.behaviors.compoundselection>` "
+"documentation for more information."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.clear_selection:1 of
+msgid "Deselects all the currently selected nodes."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.deselect_node:1 of
+msgid "Deselects a possibly selected node."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.deselect_node:3 of
+msgid ""
+"It is called by the controller when it deselects a node and can also be "
+"called from the outside to deselect a node directly. The derived widget "
+"should overwrite this method and change the node to its unselected state "
+"when this is called"
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.deselect_node
+#: kivy.uix.behaviors.CompoundSelectionBehavior.goto_node
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_node
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_with_touch of
+msgid "Parameters"
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.deselect_node:10
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_node:10
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_with_touch:9 of
+msgid "`node`"
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.deselect_node:10 of
+msgid "The node to be deselected."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.deselect_node:14
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_node:17 of
+msgid ""
+"This method must be called by the derived widget using super if it is "
+"overwritten."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.get_index_of_node:1 of
+msgid ""
+"(internal) Returns the index of the `node` within the `selectable_nodes` "
+"returned by :meth:`get_selectable_nodes`."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.get_selectable_nodes:1 of
+msgid ""
+"(internal) Returns a list of the nodes that can be selected. It can be "
+"overwritten by the derived widget to return the correct list."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.get_selectable_nodes:4 of
+msgid ""
+"This list is used to determine which nodes to select with group "
+"selection. E.g. the last element in the list will be selected when home "
+"is pressed, pagedown will move (or add to, if shift is held) the "
+"selection from the current position by negative :attr:`page_count` nodes "
+"starting from the position of the currently selected node in this list "
+"and so on. Still, nodes can be selected even if they are not in this "
+"list."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.get_selectable_nodes:14 of
+msgid ""
+"It is safe to dynamically change this list including removing, adding, or"
+" re-arranging its elements. Nodes can be selected even if they are not on"
+" this list. And selected nodes removed from the list will remain selected"
+" until :meth:`deselect_node` is called."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.get_selectable_nodes:21 of
+msgid ""
+"Layouts display their children in the reverse order. That is, the "
+"contents of :attr:`~kivy.uix.widget.Widget.children` is displayed form "
+"right to left, bottom to top. Therefore, internally, the indices of the "
+"elements returned by this function are reversed to make it work by "
+"default for most layouts so that the final result is consistent e.g. "
+"home, although it will select the last element in this list visually, "
+"will select the first element when counting from top to bottom and left "
+"to right. If this behavior is not desired, a reversed list should be "
+"returned instead."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.get_selectable_nodes:31 of
+msgid "Defaults to returning :attr:`~kivy.uix.widget.Widget.children`."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.goto_node:1 of
+msgid ""
+"(internal) Used by the controller to get the node at the position "
+"indicated by key. The key can be keyboard inputs, e.g. pageup, or scroll "
+"inputs from the mouse scroll wheel, e.g. scrollup. 'last_node' is the "
+"last node selected and is used to find the resulting node. For example, "
+"if the key is up, the returned node is one node up from the last node."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.goto_node:8 of
+msgid "It can be overwritten by the derived widget."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.goto_node:16 of
+msgid "`key`"
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.goto_node:12 of
+msgid ""
+"str, the string used to find the desired node. It can be any of the "
+"keyboard keys, as well as the mouse scrollup, scrolldown, scrollright, "
+"and scrollleft strings. If letters are typed in quick succession, the "
+"letters will be combined before it's passed in as key and can be used to "
+"find nodes that have an associated string that starts with those letters."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.goto_node:18 of
+msgid "`last_node`"
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.goto_node:19 of
+msgid "The last node that was selected."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.goto_node:24 of
+msgid "`last_node_idx`"
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.goto_node:21 of
+msgid ""
+"The cached index of the last node selected in the "
+":meth:`get_selectable_nodes` list. If the list hasn't changed it saves "
+"having to look up the index of `last_node` in that list."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.goto_node
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_node
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_with_key_down
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_with_key_up
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_with_touch of
+msgid "Returns"
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.goto_node:27 of
+msgid ""
+"tuple, the node targeted by key and its index in the "
+":meth:`get_selectable_nodes` list. Returning `(last_node, last_node_idx)`"
+" indicates a node wasn't found."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.keyboard_select:1 of
+msgid ""
+"Determines whether the keyboard can be used for selection. If False, "
+"keyboard inputs will be ignored."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.keyboard_select:4 of
+msgid ""
+":attr:`keyboard_select` is a :class:`~kivy.properties.BooleanProperty` "
+"and defaults to True."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.multiselect:1 of
+msgid ""
+"Determines whether multiple nodes can be selected. If enabled, keyboard "
+"shift and ctrl selection, optionally combined with touch, for example, "
+"will be able to select multiple widgets in the normally expected manner. "
+"This dominates :attr:`touch_multiselect` when False."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.multiselect:6 of
+msgid ""
+":attr:`multiselect` is a :class:`~kivy.properties.BooleanProperty` and "
+"defaults to False."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.nodes_order_reversed:1 of
+msgid ""
+"(Internal) Indicates whether the order of the nodes as displayed top- "
+"down is reversed compared to their order in :meth:`get_selectable_nodes` "
+"(e.g. how the children property is reversed compared to how it's "
+"displayed)."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.page_count:1 of
+msgid ""
+"Determines by how much the selected node is moved up or down, relative to"
+" the position of the last selected node, when pageup (or pagedown) is "
+"pressed."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.page_count:5 of
+msgid ""
+":attr:`page_count` is a :class:`~kivy.properties.NumericProperty` and "
+"defaults to 10."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.right_count:1 of
+msgid ""
+"Determines by how much the selected node is moved up or down, relative to"
+" the position of the last selected node, when the right (or left) arrow "
+"on the keyboard is pressed."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.right_count:5 of
+msgid ""
+":attr:`right_count` is a :class:`~kivy.properties.NumericProperty` and "
+"defaults to 1."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.scroll_count:1 of
+msgid ""
+"Determines by how much the selected node is moved up or down, relative to"
+" the position of the last selected node, when the mouse scroll wheel is "
+"scrolled."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.scroll_count:5 of
+msgid ""
+":attr:`right_count` is a :class:`~kivy.properties.NumericProperty` and "
+"defaults to 0."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_node:1 of
+msgid "Selects a node."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_node:3 of
+msgid ""
+"It is called by the controller when it selects a node and can be called "
+"from the outside to select a node directly. The derived widget should "
+"overwrite this method and change the node state to selected when called."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_node:10 of
+msgid "The node to be selected."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_node:13 of
+msgid "bool, True if the node was selected, False otherwise."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_with_key_down:1 of
+msgid ""
+"Processes a key press. This is called when a key press is to be used for "
+"selection. Depending on the keyboard keys pressed and the configuration, "
+"it could select or deselect nodes or node ranges from the selectable "
+"nodes list, :meth:`get_selectable_nodes`."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_with_key_down:6 of
+msgid ""
+"The parameters are such that it could be bound directly to the "
+"on_key_down event of a keyboard. Therefore, it is safe to be called "
+"repeatedly when the key is held down as is done by the keyboard."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_with_key_down:11 of
+msgid "bool, True if the keypress was used, False otherwise."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_with_key_up:1 of
+msgid ""
+"(internal) Processes a key release. This must be called by the derived "
+"widget when a key that :meth:`select_with_key_down` returned True is "
+"released."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_with_key_up:5 of
+msgid ""
+"The parameters are such that it could be bound directly to the on_key_up "
+"event of a keyboard."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_with_key_up:9 of
+msgid "bool, True if the key release was used, False otherwise."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_with_touch:1 of
+msgid ""
+"(internal) Processes a touch on the node. This should be called by the "
+"derived widget when a node is touched and is to be used for selection. "
+"Depending on the keyboard keys pressed and the configuration, it could "
+"select or deslect this and other nodes in the selectable nodes list, "
+":meth:`get_selectable_nodes`."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_with_touch:9 of
+msgid "The node that received the touch. Can be None for a scroll type touch."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_with_touch:12 of
+msgid "`touch`"
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_with_touch:12 of
+msgid "Optionally, the touch. Defaults to None."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.select_with_touch:15 of
+msgid "bool, True if the touch was used, False otherwise."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.selected_nodes:1 of
+msgid "The list of selected nodes."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.selected_nodes:5 of
+msgid ""
+"Multiple nodes can be selected right after one another e.g. using the "
+"keyboard. When listening to :attr:`selected_nodes`, one should be aware "
+"of this."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.selected_nodes:9 of
+msgid ""
+":attr:`selected_nodes` is a :class:`~kivy.properties.ListProperty` and "
+"defaults to the empty list, []. It is read-only and should not be "
+"modified."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.text_entry_timeout:1 of
+msgid ""
+"When typing characters in rapid sucession (i.e. the time difference since"
+" the last character is less than :attr:`text_entry_timeout`), the keys "
+"get concatenated and the combined text is passed as the key argument of "
+":meth:`goto_node`."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.touch_deselect_last:1 of
+msgid ""
+"Determines whether the last selected node can be deselected when "
+":attr:`multiselect` or :attr:`touch_multiselect` is False."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.touch_deselect_last:6 of
+msgid ""
+":attr:`touch_deselect_last` is a "
+":class:`~kivy.properties.BooleanProperty` and defaults to True on mobile,"
+" False on desktop platforms."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.touch_multiselect:1 of
+msgid ""
+"A special touch mode which determines whether touch events, as processed "
+"by :meth:`select_with_touch`, will add the currently touched node to the "
+"selection, or if it will clear the selection before adding the node. This"
+" allows the selection of multiple nodes by simply touching them."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.touch_multiselect:6 of
+msgid ""
+"This is different from :attr:`multiselect` because when it is True, "
+"simply touching an unselected node will select it, even if ctrl is not "
+"pressed. If it is False, however, ctrl must be pressed in order to add to"
+" the selection when :attr:`multiselect` is True."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.touch_multiselect:13 of
+msgid ":attr:`multiselect`, when False, will disable :attr:`touch_multiselect`."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.touch_multiselect:16 of
+msgid ""
+":attr:`touch_multiselect` is a :class:`~kivy.properties.BooleanProperty` "
+"and defaults to False."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.up_count:1 of
+msgid ""
+"Determines by how much the selected node is moved up or down, relative to"
+" the position of the last selected node, when the up (or down) arrow on "
+"the keyboard is pressed."
+msgstr ""
+
+#: kivy.uix.behaviors.CompoundSelectionBehavior.up_count:5 of
+msgid ""
+":attr:`up_count` is a :class:`~kivy.properties.NumericProperty` and "
+"defaults to 1."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.event.EventDispatcher`"
+msgstr ""
+
+#: kivy.uix.behaviors.CodeNavigationBehavior:1 of
+msgid ""
+"Code navigation behavior. Modifies the navigation behavior in TextInput "
+"to work like an IDE instead of a word processor. Please see the "
+":mod:`code navigation behaviors module "
+"<kivy.uix.behaviors.codenavigation>` documentation for more information."
+msgstr ""
+
+#: kivy.uix.behaviors.EmacsBehavior:1 of
+msgid ""
+"A `mixin <https://en.wikipedia.org/wiki/Mixin>`_ that enables Emacs-style"
+" keyboard shortcuts for the :class:`~kivy.uix.textinput.TextInput` "
+"widget. Please see the :mod:`Emacs behaviors module "
+"<kivy.uix.behaviors.emacs>` documentation for more information."
+msgstr ""
+
+#: kivy.uix.behaviors.EmacsBehavior.delete_word_left:1 of
+msgid "Delete text left of the cursor to the beginning of word"
+msgstr ""
+
+#: kivy.uix.behaviors.EmacsBehavior.delete_word_right:1 of
+msgid "Delete text right of the cursor to the end of the word"
+msgstr ""
+
+#: kivy.uix.behaviors.EmacsBehavior.key_bindings:1 of
+msgid ""
+"String name which determines the type of key bindings to use with the "
+":class:`~kivy.uix.textinput.TextInput`. This allows Emacs key bindings to"
+" be enabled/disabled programmatically for widgets that inherit from "
+":class:`EmacsBehavior`. If the value is not ``'emacs'``, Emacs bindings "
+"will be disabled. Use ``'default'`` for switching to the default key "
+"bindings of TextInput."
+msgstr ""
+
+#: kivy.uix.behaviors.EmacsBehavior.key_bindings:8 of
+msgid ""
+":attr:`key_bindings` is a :class:`~kivy.properties.StringProperty` and "
+"defaults to ``'emacs'``."
+msgstr ""
+
+#: kivy.uix.behaviors.CoverBehavior:1 of
+msgid ""
+"The CoverBehavior `mixin <https://en.wikipedia.org/wiki/Mixin>`_ provides"
+" rendering a texture covering full widget size keeping aspect ratio of "
+"the original texture."
+msgstr ""
+
+#: kivy.uix.behaviors.CoverBehavior.cover_pos:1 of
+msgid ""
+"Position of the aspect ratio aware texture. Gets calculated in "
+"``CoverBehavior.calculate_cover``."
+msgstr ""
+
+#: kivy.uix.behaviors.CoverBehavior.cover_pos:4 of
+msgid ""
+":attr:`cover_pos` is a :class:`~kivy.properties.ListProperty` and "
+"defaults to `[0, 0]`."
+msgstr ""
+
+#: kivy.uix.behaviors.CoverBehavior.cover_size:1 of
+msgid ""
+"Size of the aspect ratio aware texture. Gets calculated in "
+"``CoverBehavior.calculate_cover``."
+msgstr ""
+
+#: kivy.uix.behaviors.CoverBehavior.cover_size:4 of
+msgid ""
+":attr:`cover_size` is a :class:`~kivy.properties.ListProperty` and "
+"defaults to `[0, 0]`."
+msgstr ""
+
+#: kivy.uix.behaviors.CoverBehavior.reference_size:1 of
+msgid "Reference size used for aspect ratio approximation calculation."
+msgstr ""
+
+#: kivy.uix.behaviors.CoverBehavior.reference_size:3 of
+msgid ""
+":attr:`reference_size` is a :class:`~kivy.properties.ListProperty` and "
+"defaults to `[]`."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior:1 of
+msgid "Touch ripple behavior."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior:3 of
+msgid "Supposed to be used as mixin on widget classes."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior:5 of
+msgid ""
+"Ripple behavior does not trigger automatically, concrete implementation "
+"needs to call :func:`ripple_show` respective :func:`ripple_fade` "
+"manually."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior:11 of
+msgid ""
+"Here we create a Label which renders the touch ripple animation on "
+"interaction::"
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior.ripple_duration_in:1 of
+msgid "Animation duration taken to show the overlay."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior.ripple_duration_in:3 of
+msgid ""
+":attr:`ripple_duration_in` is a :class:`~kivy.properties.NumericProperty`"
+" and defaults to `0.5`."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior.ripple_duration_out:1 of
+msgid "Animation duration taken to fade the overlay."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior.ripple_duration_out:3 of
+msgid ""
+":attr:`ripple_duration_out` is a "
+":class:`~kivy.properties.NumericProperty` and defaults to `0.2`."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior.ripple_fade:1 of
+msgid "Finish ripple animation on current widget."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior.ripple_fade_from_alpha:1 of
+msgid "Alpha channel for ripple color the animation starts with."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior.ripple_fade_from_alpha:3 of
+msgid ""
+":attr:`ripple_fade_from_alpha` is a "
+":class:`~kivy.properties.NumericProperty` and defaults to `0.5`."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior.ripple_fade_to_alpha:1 of
+msgid "Alpha channel for ripple color the animation targets to."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior.ripple_fade_to_alpha:3 of
+msgid ""
+":attr:`ripple_fade_to_alpha` is a "
+":class:`~kivy.properties.NumericProperty` and defaults to `0.8`."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior.ripple_func_in:1 of
+msgid "Animation callback for showing the overlay."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior.ripple_func_in:3 of
+msgid ""
+":attr:`ripple_func_in` is a :class:`~kivy.properties.StringProperty` and "
+"defaults to `in_cubic`."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior.ripple_func_out:1 of
+msgid "Animation callback for hiding the overlay."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior.ripple_func_out:3 of
+msgid ""
+":attr:`ripple_func_out` is a :class:`~kivy.properties.StringProperty` and"
+" defaults to `out_quad`."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior.ripple_rad_default:1 of
+msgid "Default radius the animation starts from."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior.ripple_rad_default:3 of
+msgid ""
+":attr:`ripple_rad_default` is a :class:`~kivy.properties.NumericProperty`"
+" and defaults to `10`."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior.ripple_scale:1 of
+msgid ""
+"Max scale of the animation overlay calculated from max(width/height) of "
+"the decorated widget."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior.ripple_scale:4 of
+msgid ""
+":attr:`ripple_scale` is a :class:`~kivy.properties.NumericProperty` and "
+"defaults to `2.0`."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior.ripple_show:1 of
+msgid "Begin ripple animation on current widget."
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleBehavior.ripple_show:3 of
+msgid "Expects touch event as argument."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.uix.behaviors.touchripple.TouchRippleBehavior`"
+msgstr ""
+
+#: kivy.uix.behaviors.TouchRippleButtonBehavior:1 of
+msgid ""
+"This `mixin <https://en.wikipedia.org/wiki/Mixin>`_ class provides a "
+"similar behavior to :class:`~kivy.uix.behaviors.button.ButtonBehavior` "
+"but provides touch ripple animation instead of button pressed/released as"
+" visual effect."
+msgstr ""
+

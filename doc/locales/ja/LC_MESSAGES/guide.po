@@ -1,0 +1,5270 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-15 00:59+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../sources/guide/android.rst:5
+msgid "Kivy on Android"
+msgstr ""
+
+#: ../../sources/guide/android.rst:7
+#, python-format
+msgid ""
+"You can run Kivy applications on Android, on (more or less) any device "
+"with OpenGL ES 2.0 (Android 2.2 minimum). This is standard on modern "
+"devices; Google reports the requirement is met by `99.9% of devices "
+"<https://developer.android.com/about/dashboards/index.html>`_."
+msgstr ""
+
+#: ../../sources/guide/android.rst:12
+msgid ""
+"Kivy APKs are normal Android apps that you can distribute like any other,"
+" including on stores like the Play store. They behave properly when "
+"paused or restarted, may utilise Android services and have access to most"
+" of the normal java API as described below."
+msgstr ""
+
+#: ../../sources/guide/android.rst:17
+msgid ""
+"Follow the instructions below to learn how to :ref:`package your app for "
+"Android <package_for_android>`, :ref:`debug your code on the device "
+"<debug_android>`, and :ref:`use Android APIs <using_android_apis>` such "
+"as for vibration and reading sensors."
+msgstr ""
+
+#: ../../sources/guide/android.rst:25
+msgid "Package for Android"
+msgstr ""
+
+#: ../../sources/guide/android.rst:27
+msgid ""
+"The Kivy project provides all the necessary tools to package your app on "
+"Android, including building your own standalone APK that may be "
+"distributed on a market like the Play store. This is covered fully in the"
+" :ref:`packaging_android` documentation."
+msgstr ""
+
+#: ../../sources/guide/android.rst:36
+msgid "Debugging your application on the Android platform"
+msgstr ""
+
+#: ../../sources/guide/android.rst:38
+msgid ""
+"You can view the normal output of your code (stdout, stderr), as well as "
+"the normal Kivy logs, through the Android logcat stream. This is accessed"
+" through adb, provided by the `Android SDK "
+"<http://developer.android.com/sdk/index.html>`_. You may need to enable "
+"adb in your device's developer options, then connect your device to your "
+"computer and run::"
+msgstr ""
+
+#: ../../sources/guide/android.rst:47
+msgid "You'll see all the logs including your stdout/stderr and Kivy logger."
+msgstr ""
+
+#: ../../sources/guide/android.rst:50
+msgid ""
+"If you packaged your app with Buildozer, the `adb` tool may not be in "
+"your :code:`$PATH` and the above command may not work. You can instead "
+"run::"
+msgstr ""
+
+#: ../../sources/guide/android.rst:55
+msgid ""
+"to run the version installed by Buildozer, or find the SDK tools at "
+":code:`$HOME/.buildozer/android/platform`."
+msgstr ""
+
+#: ../../sources/guide/android.rst:59
+msgid ""
+"You can also run and debug your application using the `Kivy Launcher`_. "
+"If you run your application this way, you will find log files inside the "
+"\"/.kivy/logs\" sub-folder within your application folder."
+msgstr ""
+
+#: ../../sources/guide/android.rst:67
+msgid "Using Android APIs"
+msgstr ""
+
+#: ../../sources/guide/android.rst:69
+msgid ""
+"Although Kivy is a Python framework, the Kivy project maintains tools to "
+"easily use the normal java APIs, for everything from vibration to sensors"
+" to sending messages through SMS or email."
+msgstr ""
+
+#: ../../sources/guide/android.rst:73
+msgid ""
+"For new users, we recommend using :ref:`Plyer`. For more advanced access "
+"or for APIs not currently wrapped, you can use :ref:`Pyjnius` directly. "
+"Kivy also supplies an :ref:`android module <android_module>` for basic "
+"Android functionality."
+msgstr ""
+
+#: ../../sources/guide/android.rst:78
+msgid ""
+"User contributed Android code and examples are available on the `Kivy "
+"wiki <https://github.com/kivy/kivy/wiki#mobiles>`_."
+msgstr ""
+
+#: ../../sources/guide/android.rst:84
+msgid "Plyer"
+msgstr ""
+
+#: ../../sources/guide/android.rst:86
+msgid ""
+"`Plyer <https://github.com/kivy/plyer>`__ is a pythonic, platform-"
+"independent API to use features commonly found on various platforms, "
+"particularly mobile ones. The idea is that your app can call simply call "
+"a Plyer function, such as to present a notification to the user, and "
+"Plyer will take care of doing so in the right way regardless of the "
+"platform or operating system. Internally, Plyer uses Pyjnius (on "
+"Android), Pyobjus (on iOS) and some platform specific APIs on desktop "
+"platforms."
+msgstr ""
+
+#: ../../sources/guide/android.rst:95
+msgid ""
+"For instance, the following code would make your Android device vibrate, "
+"or raise a NotImplementedError that you can handle appropriately on other"
+" platforms such as desktops that don't have appropriate hardware:::"
+msgstr ""
+
+#: ../../sources/guide/android.rst:103
+msgid ""
+"Plyer's list of supported APIs is growing quite quickly, you can see the "
+"full list in the Plyer `README <https://github.com/kivy/plyer>`_."
+msgstr ""
+
+#: ../../sources/guide/android.rst:110
+msgid "Pyjnius"
+msgstr ""
+
+#: ../../sources/guide/android.rst:112
+msgid ""
+"Pyjnius is a Python module that lets you access java classes directly "
+"from Python, automatically converting arguments to the right type, and "
+"letting you easily convert the java results to Python."
+msgstr ""
+
+#: ../../sources/guide/android.rst:116
+msgid ""
+"Pyjnius can be obtained from `github <https://github.com/kivy/pyjnius>`_,"
+" and has its `own documentation "
+"<http://pyjnius.readthedocs.org/en/latest/>`__."
+msgstr ""
+
+#: ../../sources/guide/android.rst:120
+msgid ""
+"Here is a simple example showing Pyjnius' ability to access the normal "
+"Android vibration API, the same result of the plyer code above::"
+msgstr ""
+
+#: ../../sources/guide/android.rst:142
+msgid ""
+"This code directly follows the java API functions to call the vibrator, "
+"with Pyjnius automatically translating the api to Python code and our "
+"calls back to the equivalent java. It is much more verbose and java-like "
+"than Plyer's version, for no benefit in this case, though Plyer does not "
+"wrap every API available to Pyjnius."
+msgstr ""
+
+#: ../../sources/guide/android.rst:148
+msgid ""
+"Pyjnius also has powerful abilities to implement java interfaces, which "
+"is important for wrapping some APIs, but these are not documented here - "
+"you can see Pyjnius' `own documentation "
+"<http://pyjnius.readthedocs.org/en/latest/>`__."
+msgstr ""
+
+#: ../../sources/guide/android.rst:156
+msgid "Android module"
+msgstr ""
+
+#: ../../sources/guide/android.rst:158
+msgid ""
+"Python-for-android includes a python module (actually cython wrapping "
+"java) to access a limited set of Android APIs. This has been largely "
+"superseded by the more flexible Pyjnius and Plyer as above, but may still"
+" occasionally be useful. The available functions are given in the "
+"`python-for-android documentation <http://python-for-"
+"android.readthedocs.org/en/latest/>`_."
+msgstr ""
+
+#: ../../sources/guide/android.rst:165
+msgid ""
+"This includes code for billing/IAP and creating/accessing Android "
+"services, which is not yet available in the other tools above."
+msgstr ""
+
+#: ../../sources/guide/android.rst:169
+msgid "Status of the Project and Tested Devices"
+msgstr ""
+
+#: ../../sources/guide/android.rst:171
+msgid ""
+"These sections previously described the existence of Kivy's Android build"
+" tools, with their limitations and some devices that were known to work."
+msgstr ""
+
+#: ../../sources/guide/android.rst:175
+msgid ""
+"The Android tools are now quite stable, and should work with practically "
+"any device; our minimum requirements are OpenGL ES 2.0 and Android 2.2. "
+"These are very common now - Kivy has even been run on an Android "
+"smartwatch!"
+msgstr ""
+
+#: ../../sources/guide/android.rst:180
+msgid ""
+"A current technical limitation is that the Android build tools compile "
+"only ARM APKs, which will not run on Android devices with x86 processors "
+"(these are currently rare). This should be added soon."
+msgstr ""
+
+#: ../../sources/guide/android.rst:184
+msgid ""
+"As Kivy works fine on most devices, the list of supported phones/tablets "
+"has been retired - all Android devices are likely to work if they meet "
+"the conditions above."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:4
+msgid "Architectural Overview"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:6
+msgid ""
+"We would like to take a moment to explain how we designed Kivy from a "
+"software engineering point of view. This is key to understanding how "
+"everything works together. If you just look at the code, chances are you "
+"will get a rough idea already, but since this approach certainly is "
+"daunting for most users, this section explains the basic ideas of the "
+"implementation in more detail. You can skip this section and refer to it "
+"later, but we suggest at least skimming it for a rough overview."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:15
+msgid ""
+"Kivy consists of several building blocks that we will explain shortly. "
+"Here is a graphical summary of the architecture:"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:24
+msgid "Core Providers and Input Providers"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:26
+msgid ""
+"One idea that is key to understanding Kivy's internals is that of "
+"modularity and abstraction. We try to abstract basic tasks such as "
+"opening a window, displaying images and text, playing audio, getting "
+"images from a camera, spelling correction and so on. We call these *core*"
+" tasks. This makes the API both easy to use and easy to extend. Most "
+"importantly, it allows us to use -- what we call -- specific providers "
+"for the respective scenarios in which your app is being run. For example,"
+" on OSX, Linux and Windows, there are different native APIs for the "
+"different core tasks. A piece of code that uses one of these specific "
+"APIs to talk to the operating system on one side and to Kivy on the other"
+" (acting as an intermediate communication layer) is what we call a *core "
+"provider*. The advantage of using specialized core providers for each "
+"platform is that we can fully leverage the functionality exposed by the "
+"operating system and act as efficiently as possible. It also gives users "
+"a choice. Furthermore, by using libraries that are shipped with any one "
+"platform, we effectively reduce the size of the Kivy distribution and "
+"make packaging easier. This also makes it easier to port Kivy to other "
+"platforms. The Android port benefited greatly from this."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:44
+msgid ""
+"We follow the same concept with input handling. *An input provider* is a "
+"piece of code that adds support for a specific input device, such as "
+"Apple's trackpads, TUIO or a mouse emulator. If you need to add support "
+"for a new input device, you can simply provide a new class that reads "
+"your input data from your device and transforms them into Kivy basic "
+"events."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:53
+#: ../../sources/guide/environment.rst:152 ../../sources/guide/graphics.rst:4
+msgid "Graphics"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:55
+msgid ""
+"Kivy's graphics API is our abstraction of OpenGL. On the lowest level, "
+"Kivy issues hardware-accelerated drawing commands using OpenGL. Writing "
+"OpenGL code however can be a bit confusing, especially to newcomers. "
+"That's why we provide the graphics API that lets you draw things using "
+"simple metaphors that do not exist as such in OpenGL (e.g. Canvas, "
+"Rectangle, etc.)."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:62
+msgid ""
+"All of our widgets themselves use this graphics API, which is implemented"
+" on the C level for performance reasons."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:65
+msgid ""
+"Another advantage of the graphics API is its ability to automatically "
+"optimize the drawing commands that your code issues. This is especially "
+"helpful if you're not an expert at tuning OpenGL. This makes your drawing"
+" code more efficient in many cases."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:70
+msgid ""
+"You can, of course, still use raw OpenGL commands if you prefer. The "
+"version we target is OpenGL 2.0 ES (GLES2) on all devices, so if you want"
+" to stay cross-platform compatible, we advise you to only use the GLES2 "
+"functions."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:76
+msgid "Core"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:78
+msgid "The code in the core package provides commonly used features, such as:"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:82
+msgid "Clock"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:81
+msgid ""
+"You can use the clock to schedule timer events. Both one-shot timers and "
+"periodic timers are supported."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:86
+msgid "Cache"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:85
+msgid ""
+"If you need to cache something that you use often, you can use our class "
+"for that instead of writing your own."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:91
+msgid "Gesture Detection"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:89
+msgid ""
+"We ship a simple gesture recognizer that you can use to detect various "
+"kinds of strokes, such as circles or rectangles. You can train it to "
+"detect your own strokes."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:95
+msgid "Kivy Language"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:94
+msgid ""
+"The kivy language is used to easily and efficiently describe user "
+"interfaces."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:101
+msgid "Properties"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:98
+msgid ""
+"These are not the normal properties that you may know from python. They "
+"are our own property classes that link your widget code with the user "
+"interface description."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:104
+msgid "UIX (Widgets & Layouts)"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:106
+msgid ""
+"The UIX module contains commonly used widgets and layouts that you can "
+"reuse to quickly create a user interface."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:113 ../../sources/guide/widgets.rst:4
+msgid "Widgets"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:110
+msgid ""
+"Widgets are user interface elements that you add to your program to "
+"provide some kind of functionality. They may or may not be visible. "
+"Examples would be a file browser, buttons, sliders, lists and so on. "
+"Widgets receive MotionEvents."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:121
+msgid "Layouts"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:116
+msgid ""
+"You use layouts to arrange widgets. It is of course possible to calculate"
+" your widgets' positions yourself, but often it is more convenient to use"
+" one of our ready made layouts. Examples would be Grid Layouts or Box "
+"Layouts. You can also nest layouts."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:124
+msgid "Modules"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:126
+msgid ""
+"If you've ever used a modern web browser and customized it with some add-"
+"ons then you already know the basic idea behind our module classes. "
+"Modules can be used to inject functionality into Kivy programs, even if "
+"the original author did not include it."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:131
+msgid ""
+"An example would be a module that always shows the FPS of the current "
+"application and some graph depicting the FPS over time."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:134
+msgid "You can also write your own modules."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:138
+msgid "Input Events (Touches)"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:140
+msgid ""
+"Kivy abstracts different input types and sources such as touches, mice, "
+"TUIO or similar. What all of these input types have in common is that you"
+" can associate a 2D onscreen-position with any individual input event. "
+"(There are other input devices such as accelerometers where you cannot "
+"easily find a 2D position for e.g. a tilt of your device. This kind of "
+"input is handled separately. In the following we describe the former "
+"types.)"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:147
+msgid ""
+"All of these input types are represented by instances of the Touch() "
+"class. (Note that this does not only refer to finger touches, but all the"
+" other input types as well. We just called it *Touch* for the sake of "
+"simplicity. Think of it of something that *touches* the user interface or"
+" your screen.) A touch instance, or object, can be in one of three "
+"states. When a touch enters one of these states, your program is informed"
+" that the event occurred. The three states a touch can be in are:"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:157
+msgid "Down"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:157
+msgid "A touch is down only once, at the very moment where it first appears."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:161
+msgid "Move"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:160
+msgid ""
+"A touch can be in this state for a potentially unlimited time. A touch "
+"does not have to be in this state during its lifetime. A 'Move' happens "
+"whenever the 2D position of a touch changes."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:170
+msgid "Up"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:164
+msgid ""
+"A touch goes up at most once, or never. In practice you will almost "
+"always receive an up event because nobody is going to hold a finger on "
+"the screen for all eternity, but it is not guaranteed. If you know the "
+"input sources your users will be using, you will know whether or not you "
+"can rely on this state being entered."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:173
+msgid "Widgets and Event Dispatching"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:175
+msgid ""
+"The term *widget* is often used in GUI programming contexts to describe "
+"some part of the program that the user interacts with. In Kivy, a widget "
+"is an object that receives input events. It does not necessarily have to "
+"have a visible representation on the screen. All widgets are arranged in "
+"a *widget tree* (which is a tree data structure as known from computer "
+"science classes): One widget can have any number of child widgets or "
+"none. There is exactly one *root widget* at the top of the tree that has "
+"no parent widget, and all other widgets are directly or indirectly "
+"children of this widget (which is why it's called the root)."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:185
+msgid ""
+"When new input data is available, Kivy sends out one event per touch. The"
+" root widget of the widget tree first receives the event. Depending on "
+"the state of the touch, the on_touch_down, on_touch_move or on_touch_up "
+"event is dispatched (with the touch as the argument) to the root widget, "
+"which results in the root widget's corresponding on_touch_down, "
+"on_touch_move or on_touch_up event handler being called."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:193
+msgid ""
+"Each widget (this includes the root widget) in the tree can choose to "
+"either digest or pass the event on. If an event handler returns True, it "
+"means that the event has been digested and handled properly. No further "
+"processing will happen with that event. Otherwise, the event handler "
+"passes the widget on to its own children by calling its superclass's "
+"implementation of the respective event handler. This goes all the way up "
+"to the base Widget class, which -- in its touch event handlers -- does "
+"nothing but pass the touches to its children::"
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:208
+msgid ""
+"This really is much easier than it first seems. An example of how this "
+"can be used to create nice applications quickly will be given in the "
+"following section."
+msgstr ""
+
+#: ../../sources/guide/architecture.rst:212
+msgid ""
+"Often times you will want to restrict the *area* on the screen that a "
+"widget watches for touches. You can use a widget's collide_point() method"
+" to achieve this. You simply pass it the touch's position and it returns "
+"True if the touch is within the 'watched area' or False otherwise. By "
+"default, this checks the rectangular region on the screen that's "
+"described by the widget's pos (for position; x & y) and size (width & "
+"height), but you can override this behaviour in your own class."
+msgstr ""
+
+#: ../../sources/guide/basic.rst:4
+msgid "Kivy Basics"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:7
+msgid "Installation of the Kivy environment"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:9
+msgid ""
+"Kivy depends on many Python libraries, such as pygame, gstreamer, PIL, "
+"Cairo, and more. They are not all required, but depending on the platform"
+" you're working on, they can be a pain to install. For Windows and MacOS "
+"X, we provide a portable package that you can just unzip and use."
+msgstr ""
+
+#: ../../sources/guide/basic.rst:15
+msgid "Have a look at one of these pages for detailed installation instructions:"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:17
+msgid ":ref:`installation_windows`"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:18
+msgid ":ref:`installation_osx`"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:19
+msgid ":ref:`installation_linux`"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:20
+msgid ":ref:`installation_rpi`"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:22
+msgid "Alternatively, instructions for the development version can be found here:"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:24
+msgid ":ref:`installation`"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:29
+msgid "Create an application"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:31
+msgid "Creating a kivy application is as simple as:"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:33
+msgid "sub-classing the :class:`~kivy.app.App` class"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:34
+msgid ""
+"implementing its :meth:`~kivy.app.App.build` method so it returns a "
+":class:`~kivy.uix.Widget` instance (the root of your widget tree)"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:36
+msgid ""
+"instantiating this class, and calling its :meth:`~kivy.app.App.run` "
+"method."
+msgstr ""
+
+#: ../../sources/guide/basic.rst:39
+msgid "Here is an example of a minimal application::"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:57
+msgid "You can save this to a text file, `main.py` for example, and run it."
+msgstr ""
+
+#: ../../sources/guide/basic.rst:60
+msgid "Kivy App Life Cycle"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:62
+msgid "First off, let's get familiar with the Kivy app life cycle."
+msgstr ""
+
+#: ../../sources/guide/basic.rst:66
+msgid ""
+"As you can see above, for all intents and purposes, our entry point into "
+"our App is the run() method, and in our case that is \"MyApp().run()\". "
+"We will get back to this, but let's start from the third line::"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:72
+msgid ""
+"It's required that the base Class of your App inherits from the `App` "
+"class. It's present in the kivy_installation_dir/kivy/app.py."
+msgstr ""
+
+#: ../../sources/guide/basic.rst:76
+msgid ""
+"Go ahead and open up that file if you want to delve deeper into what the "
+"Kivy App class does. We encourage you to open the code and read through "
+"it. Kivy is based on Python and uses Sphinx for documentation, so the "
+"documentation for each class is in the actual file."
+msgstr ""
+
+#: ../../sources/guide/basic.rst:81
+msgid "Similarly on line 2::"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:85
+msgid ""
+"One important thing to note here is the way packages/classes are laid "
+"out. The :class:`~kivy.uix` module is the section that holds the user "
+"interface elements like layouts and widgets."
+msgstr ""
+
+#: ../../sources/guide/basic.rst:89
+msgid "Moving on to line 5::"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:93
+msgid ""
+"This is where we are `defining` the Base Class of our Kivy App. You "
+"should only ever need to change the name of your app `MyApp` in this "
+"line."
+msgstr ""
+
+#: ../../sources/guide/basic.rst:96
+msgid "Further on to line 7::"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:100
+msgid ""
+"As highlighted by the image above, show casing the `Kivy App Life Cycle`,"
+" this is the function where you should initialize and return your `Root "
+"Widget`. This is what we do on line 8::"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:106
+msgid ""
+"Here we initialize a Label with text 'Hello World' and return its "
+"instance. This Label will be the Root Widget of this App."
+msgstr ""
+
+#: ../../sources/guide/basic.rst:110
+msgid ""
+"Python uses indentation to denote code blocks, therefore take note that "
+"in the code provided above, at line 9 the class and function definition "
+"ends."
+msgstr ""
+
+#: ../../sources/guide/basic.rst:113
+msgid "Now on to the portion that will make our app run at line 11 and 12::"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:118
+msgid ""
+"Here the class `MyApp` is initialized and its run() method called. This "
+"initializes and starts our Kivy application."
+msgstr ""
+
+#: ../../sources/guide/basic.rst:123
+msgid "Running the application"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:124
+msgid "To run the application, follow the instructions for your operating system:"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:130 ../../sources/guide/licensing.rst:86
+msgid "Linux"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:127
+msgid ""
+"Follow the instructions for :ref:`running a Kivy application on Linux "
+"<linux-run-app>`::"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:138
+msgid "Windows"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:133
+msgid ""
+"Follow the instructions for :ref:`running a Kivy application on Windows "
+"<windows-run-app>`::"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:144
+msgid "Mac OS X"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:141
+msgid ""
+"Follow the instructions for :ref:`running a Kivy application on OS X "
+"<osx-run-app>`::"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:148 ../../sources/guide/licensing.rst:107
+msgid "Android"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:147
+msgid ""
+"Your application needs some complementary files to be able to run on "
+"Android.  See :doc:`/guide/packaging-android` for further reference."
+msgstr ""
+
+#: ../../sources/guide/basic.rst:150
+msgid ""
+"A window should open, showing a single Label (with the Text 'Hello "
+"World') that covers the entire window's area. That's all there is to it."
+msgstr ""
+
+#: ../../sources/guide/basic.rst:158
+msgid "Customize the application"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:160
+msgid "Lets extend this application a bit, say a simple UserName/Password page."
+msgstr ""
+
+#: ../../sources/guide/basic.rst:192
+msgid "At line 2 we import a :class:`~kivy.uix.gridlayout.Gridlayout`::"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:196
+msgid ""
+"This class is used as a Base for our Root Widget (LoginScreen) defined at"
+" line 9::"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:201
+msgid ""
+"At line 12 in the class LoginScreen, we override the method "
+":meth:`~kivy.widget.Widget.__init__` so as to add widgets and to define "
+"their behavior::"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:208
+msgid ""
+"One should not forget to call super in order to implement the "
+"functionality of the original class being overloaded. Also note that it "
+"is good practice not to omit the `**kwargs` while calling super, as they "
+"are sometimes used internally."
+msgstr ""
+
+#: ../../sources/guide/basic.rst:212
+msgid "Moving on to Line 15 and beyond::"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:222
+msgid ""
+"We ask the GridLayout to manage its children in two columns and add a "
+":class:`~kivy.uix.label.Label` and a "
+":class:`~kivy.uix.textinput.TextInput` for the username and password."
+msgstr ""
+
+#: ../../sources/guide/basic.rst:226
+msgid "Running the above code will give you a window that should look like this:"
+msgstr ""
+
+#: ../../sources/guide/basic.rst:231
+msgid ""
+"Try re-sizing the window and you will see that the widgets on screen "
+"adjust themselves according to the size of the window without you having "
+"to do anything. This is because widgets use size hinting by default."
+msgstr ""
+
+#: ../../sources/guide/basic.rst:235
+msgid ""
+"The code above doesn't handle the input from the user, does no validation"
+" or anything else. We will delve deeper into this and "
+":class:`~kivy.widget.Widget` size and positioning in the coming sections."
+msgstr ""
+
+#: ../../sources/guide/config.rst:4
+msgid "Configure Kivy"
+msgstr ""
+
+#: ../../sources/guide/config.rst:6
+msgid ""
+"The configuration file for kivy is named `config.ini`, and adheres to the"
+" `standard INI <http://en.wikipedia.org/wiki/INI_file>`_ format."
+msgstr ""
+
+#: ../../sources/guide/config.rst:10
+msgid "Locating the configuration file"
+msgstr ""
+
+#: ../../sources/guide/config.rst:12
+msgid ""
+"The location of the configuration file is controlled by the environment "
+"variable `KIVY_HOME`::"
+msgstr ""
+
+#: ../../sources/guide/config.rst:17
+msgid "On desktop, this defaults to::"
+msgstr ""
+
+#: ../../sources/guide/config.rst:21
+msgid "Therefore, if your user is named \"tito\", the file will be here:"
+msgstr ""
+
+#: ../../sources/guide/config.rst:23
+msgid "Windows: ``C:\\Users\\tito\\.kivy\\config.ini``"
+msgstr ""
+
+#: ../../sources/guide/config.rst:24
+msgid "OS X: ``/Users/tito/.kivy/config.ini``"
+msgstr ""
+
+#: ../../sources/guide/config.rst:25
+msgid "Linux: ``/home/tito/.kivy/config.ini``"
+msgstr ""
+
+#: ../../sources/guide/config.rst:27
+msgid "On Android, this defaults to::"
+msgstr ""
+
+#: ../../sources/guide/config.rst:31
+msgid "If your app is named \"org.kivy.launcher\", the file will be here::"
+msgstr ""
+
+#: ../../sources/guide/config.rst:35
+msgid "On iOS, this defaults to::"
+msgstr ""
+
+#: ../../sources/guide/config.rst:41
+msgid "Local configuration"
+msgstr ""
+
+#: ../../sources/guide/config.rst:43
+msgid ""
+"Sometimes it's desired to change configuration only for certain "
+"applications or during testing of a separate part of Kivy for example "
+"input providers. To create a separate configuration file you can simply "
+"use these commands::"
+msgstr ""
+
+#: ../../sources/guide/config.rst:53
+msgid ""
+"When a local configuration of single ``.ini`` file isn't enough, e.g. "
+"when you want to have separate environment for `garden`, kivy logs and "
+"other things, you'll need to change the the ``KIVY_HOME`` environment "
+"variable in your application to get desired result::"
+msgstr ""
+
+#: ../../sources/guide/config.rst:61
+msgid "or before each run of the application change it manually in the console:"
+msgstr ""
+
+#: ../../sources/guide/config.rst:63
+msgid "Windows::"
+msgstr ""
+
+#: ../../sources/guide/config.rst:67
+msgid "Linux & OSX::"
+msgstr ""
+
+#: ../../sources/guide/config.rst:71
+msgid ""
+"After the change of ``KIVY_HOME``, the folder will behave exactly the "
+"same as the default ``.kivy/`` folder mentioned above."
+msgstr ""
+
+#: ../../sources/guide/config.rst:75
+msgid "Understanding config tokens"
+msgstr ""
+
+#: ../../sources/guide/config.rst:77
+msgid ""
+"All the configuration tokens are explained in the :mod:`kivy.config` "
+"module."
+msgstr ""
+
+#: ../../sources/guide/environment.rst:4
+msgid "Controlling the environment"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:6
+msgid ""
+"Many environment variables are available to control the initialization "
+"and behavior of Kivy."
+msgstr ""
+
+#: ../../sources/guide/environment.rst:9
+msgid ""
+"For example, in order to restrict text rendering to the PIL "
+"implementation::"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:13
+msgid "Environment variables should be set before importing kivy::"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:20
+msgid "Path control"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:24
+msgid ""
+"You can control the default directories where config files, modules and "
+"kivy data are located."
+msgstr ""
+
+#: ../../sources/guide/environment.rst:28
+msgid "KIVY_DATA_DIR"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:28
+msgid "Location of the Kivy data, defaults to `<kivy path>/data`"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:31
+msgid "KIVY_MODULES_DIR"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:31
+msgid "Location of the Kivy modules, defaults to `<kivy path>/modules`"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:42
+msgid "KIVY_HOME"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:34
+msgid ""
+"Location of the Kivy home. This directory is used for local "
+"configuration, and must be in a writable location."
+msgstr ""
+
+#: ../../sources/guide/environment.rst:40
+msgid "Defaults to:"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:38
+msgid "Desktop: `<user home>/.kivy`"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:39
+msgid "Android: `<android app path>/.kivy`"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:40
+msgid "iOS: `<user home>/Documents/.kivy`"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:56
+msgid "KIVY_SDL2_PATH"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:45
+msgid ""
+"If set, the SDL2 libraries and headers from this path are used when "
+"compiling kivy instead of the ones installed system-wide. To use the same"
+" libraries while running a kivy app, this path must be added at the start"
+" of the PATH environment variable."
+msgstr ""
+
+#: ../../sources/guide/environment.rst:54
+msgid ""
+"This path is required for the compilation of Kivy. It is not required for"
+" program execution."
+msgstr ""
+
+#: ../../sources/guide/environment.rst:59
+msgid "Configuration"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:62
+msgid "KIVY_USE_DEFAULTCONFIG"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:62
+msgid "If this name is found in environ, Kivy will not read the user config file."
+msgstr ""
+
+#: ../../sources/guide/environment.rst:66
+msgid "KIVY_NO_CONFIG"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:65
+msgid ""
+"If set, no configuration file will be read or written to. This also "
+"applies to the user configuration directory."
+msgstr ""
+
+#: ../../sources/guide/environment.rst:69
+msgid "KIVY_NO_FILELOG"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:69
+msgid "If set, logs will be not print to a file"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:72
+msgid "KIVY_NO_CONSOLELOG"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:72
+msgid "If set, logs will be not print to the console"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:83
+msgid "KIVY_NO_ARGS"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:75
+msgid ""
+"If set, the argument passed in command line will not be parsed and used "
+"by Kivy. Ie, you can safely make a script or an app with your own "
+"arguments without requiring the `--` delimiter::"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:86
+msgid "Restrict core to specific implementation"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:88
+msgid ""
+":mod:`kivy.core` try to select the best implementation available for your"
+" platform. For testing or custom installation, you might want to restrict"
+" the selector to a specific implementation."
+msgstr ""
+
+#: ../../sources/guide/environment.rst:95
+msgid "KIVY_WINDOW"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:93
+msgid "Implementation to use for creating the Window"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:95
+msgid "Values: sdl2, pygame, x11, egl_rpi"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:100
+msgid "KIVY_TEXT"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:98
+msgid "Implementation to use for rendering text"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:100
+msgid "Values: sdl2, pil, pygame, sdlttf"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:105
+msgid "KIVY_VIDEO"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:103
+msgid "Implementation to use for rendering video"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:105
+msgid "Values: gstplayer, ffpyplayer, ffmpeg, null"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:110
+msgid "KIVY_AUDIO"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:108
+msgid "Implementation to use for playing audio"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:110
+msgid "Values: sdl2, gstplayer, ffpyplayer, pygame, avplayer"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:115
+msgid "KIVY_IMAGE"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:113
+msgid "Implementation to use for reading image"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:115
+msgid "Values: sdl2, pil, pygame, imageio, tex, dds, gif"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:120
+msgid "KIVY_CAMERA"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:118
+msgid "Implementation to use for reading camera"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:120
+msgid "Values: avfoundation, android, opencv"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:125
+msgid "KIVY_SPELLING"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:123
+msgid "Implementation to use for spelling"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:125
+msgid "Values: enchant, osxappkit"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:130
+msgid "KIVY_CLIPBOARD"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:128
+msgid "Implementation to use for clipboard management"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:130
+msgid "Values: sdl2, pygame, dummy, android"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:133
+msgid "Metrics"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:138
+msgid "KIVY_DPI"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:136
+msgid "If set, the value will be used for :attr:`Metrics.dpi`."
+msgstr ""
+
+#: ../../sources/guide/environment.rst:143
+msgid "KIVY_METRICS_DENSITY"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:141
+msgid "If set, the value will be used for :attr:`Metrics.density`."
+msgstr ""
+
+#: ../../sources/guide/environment.rst:145
+msgid "KIVY_METRICS_FONTSCALE"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:147
+msgid "If set, the value will be used for :attr:`Metrics.fontscale`."
+msgstr ""
+
+#: ../../sources/guide/environment.rst:155
+msgid "KIVY_GL_BACKEND"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:155
+msgid "The OpenGL backend to use. See :mod:`~kivy.graphics.cgl`."
+msgstr ""
+
+#: ../../sources/guide/environment.rst:158
+msgid "KIVY_GL_DEBUG"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:158
+msgid "Whether to log OpenGL calls. See :mod:`~kivy.graphics.cgl`."
+msgstr ""
+
+#: ../../sources/guide/environment.rst:161
+msgid "KIVY_GRAPHICS"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:161
+msgid "Whether to use OpenGL ES2. See :mod:`~kivy.graphics.cgl`."
+msgstr ""
+
+#: ../../sources/guide/environment.rst:168
+msgid "KIVY_GLES_LIMITS"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:164
+msgid ""
+"Whether the GLES2 restrictions are enforced (the default, or if set to "
+"1). If set to false, Kivy will not be truly GLES2 compatible."
+msgstr ""
+
+#: ../../sources/guide/environment.rst:167
+msgid ""
+"Following is a list of the potential incompatibilities that result when "
+"set to true."
+msgstr ""
+
+#: ../../sources/guide/environment.rst:171
+msgid "Mesh indices"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:171
+msgid "If true, the number of indices in a mesh is limited to 65535"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:173
+msgid "Texture blit"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:173
+msgid ""
+"When blitting to a texture, the data (color and buffer) format must be "
+"the same format as the one used at the texture creation. On desktop, the "
+"conversion of different color is correctly handled by the driver, while "
+"on Android, most of devices fail to do it. Ref: "
+"https://github.com/kivy/kivy/issues/1600"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:194
+msgid "KIVY_BCM_DISPMANX_ID"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:185
+msgid ""
+"Change the default Raspberry Pi display to use. The list of available "
+"value is accessible in `vc_dispmanx_types.h`. Default value is 0:"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:188
+msgid "0: DISPMANX_ID_MAIN_LCD"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:189
+msgid "1: DISPMANX_ID_AUX_LCD"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:190
+msgid "2: DISPMANX_ID_HDMI"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:191
+msgid "3: DISPMANX_ID_SDTV"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:192
+msgid "4: DISPMANX_ID_FORCE_LCD"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:193
+msgid "5: DISPMANX_ID_FORCE_TV"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:194
+msgid "6: DISPMANX_ID_FORCE_OTHER"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:199
+msgid "KIVY_BCM_DISPMANX_LAYER"
+msgstr ""
+
+#: ../../sources/guide/environment.rst:197
+msgid "Change the default Raspberry Pi dispmanx layer. Default value is 0."
+msgstr ""
+
+#: ../../sources/guide/events.rst:5
+msgid "Events and Properties"
+msgstr ""
+
+#: ../../sources/guide/events.rst:7
+msgid ""
+"Events are an important part of Kivy programming. That may not be "
+"surprising to those with GUI development experience, but it's an "
+"important concept for newcomers. Once you understand how events work and "
+"how to bind to them, you will see them everywhere in Kivy. They make it "
+"easy to build whatever behavior you want into Kivy."
+msgstr ""
+
+#: ../../sources/guide/events.rst:13
+msgid ""
+"The following illustration shows how events are handled in the Kivy "
+"framework."
+msgstr ""
+
+#: ../../sources/guide/events.rst:19
+msgid "Introduction to the Event Dispatcher"
+msgstr ""
+
+#: ../../sources/guide/events.rst:21
+msgid ""
+"One of the most important base classes of the framework is the "
+":class:`~kivy.event.EventDispatcher` class. This class allows you to "
+"register event types, and to dispatch them to interested parties (usually"
+" other event dispatchers). The :class:`~kivy.uix.widget.Widget`, "
+":class:`~kivy.animation.Animation` and :obj:`~kivy.clock.Clock` classes "
+"are examples of event dispatchers."
+msgstr ""
+
+#: ../../sources/guide/events.rst:28
+msgid ""
+"EventDispatcher objects depend on the main loop to generate and handle "
+"events."
+msgstr ""
+
+#: ../../sources/guide/events.rst:32
+msgid "Main loop"
+msgstr ""
+
+#: ../../sources/guide/events.rst:34
+msgid ""
+"As outlined in the illustration above, Kivy has a `main loop`. This loop "
+"is running during all of the application's lifetime and only quits when "
+"exiting the application."
+msgstr ""
+
+#: ../../sources/guide/events.rst:38
+msgid ""
+"Inside the loop, at every iteration, events are generated from user "
+"input, hardware sensors or a couple of other sources, and frames are "
+"rendered to the display."
+msgstr ""
+
+#: ../../sources/guide/events.rst:42
+msgid ""
+"Your application will specify callbacks (more on this later), which are "
+"called by the main loop. If a callback takes too long or doesn't quit at "
+"all, the main loop is broken and your app doesn't work properly anymore."
+msgstr ""
+
+#: ../../sources/guide/events.rst:46
+msgid ""
+"In Kivy applications, you have to avoid long/infinite loops or sleeping. "
+"For example the following code does both::"
+msgstr ""
+
+#: ../../sources/guide/events.rst:53
+msgid ""
+"When you run this, the program will never exit your loop, preventing Kivy"
+" from doing all of the other things that need doing. As a result, all "
+"you'll see is a black window which you won't be able to interact with. "
+"Instead, you need to \"schedule\" your ``animate_something()`` function "
+"to be called repeatedly."
+msgstr ""
+
+#: ../../sources/guide/events.rst:60
+msgid "Scheduling a repetitive event"
+msgstr ""
+
+#: ../../sources/guide/events.rst:62
+msgid ""
+"You can call a function or a method every X times per second using "
+":meth:`~kivy.clock.Clock.schedule_interval`. Here is an example of "
+"calling a function named my_callback 30 times per second::"
+msgstr ""
+
+#: ../../sources/guide/events.rst:70
+msgid ""
+"You have multiple ways of unscheduling a previously scheduled event. One,"
+" is to use :meth:`~kivy.clock.ClockEvent.cancel` or "
+":meth:`~kivy.clock.Clock.unschedule`::"
+msgstr ""
+
+#: ../../sources/guide/events.rst:75 ../../sources/guide/lang.rst:40
+msgid "or::"
+msgstr ""
+
+#: ../../sources/guide/events.rst:79
+msgid ""
+"Alternatively, you can return False in your callback, and your event will"
+" be automatically unscheduled::"
+msgstr ""
+
+#: ../../sources/guide/events.rst:94
+msgid "Scheduling a one-time event"
+msgstr ""
+
+#: ../../sources/guide/events.rst:96
+msgid ""
+"Using :meth:`~kivy.clock.Clock.schedule_once`, you can call a function "
+"\"later\", like in the next frame, or in X seconds::"
+msgstr ""
+
+#: ../../sources/guide/events.rst:103
+msgid ""
+"This will call ``my_callback`` in one second. The second argument is the "
+"amount of time to wait before calling the function, in seconds. However, "
+"you can achieve some other results with special values for the second "
+"argument:"
+msgstr ""
+
+#: ../../sources/guide/events.rst:107
+msgid "If X is greater than 0, the callback will be called in X seconds"
+msgstr ""
+
+#: ../../sources/guide/events.rst:108
+msgid "If X is 0, the callback will be called after the next frame"
+msgstr ""
+
+#: ../../sources/guide/events.rst:109
+msgid "If X is -1, the callback will be called before the next frame"
+msgstr ""
+
+#: ../../sources/guide/events.rst:111
+msgid ""
+"The -1 is mostly used when you are already in a scheduled event, and if "
+"you want to schedule a call BEFORE the next frame is happening."
+msgstr ""
+
+#: ../../sources/guide/events.rst:114
+msgid ""
+"A second method for repeating a function call is to first schedule a "
+"callback once with :meth:`~kivy.clock.Clock.schedule_once`, and a second "
+"call to this function inside the callback itself::"
+msgstr ""
+
+#: ../../sources/guide/events.rst:124
+msgid ""
+"While the main loop will try to keep to the schedule as requested, there "
+"is some uncertainty as to when exactly a scheduled callback will be "
+"called. Sometimes another callback or some other task in the application "
+"will take longer than anticipated and thus the timing can be a little "
+"off."
+msgstr ""
+
+#: ../../sources/guide/events.rst:129
+msgid ""
+"In the latter solution to the repetitive callback problem, the next "
+"iteration will be called at least one second after the last iteration "
+"ends. With :meth:`~kivy.clock.Clock.schedule_interval` however, the "
+"callback is called every second."
+msgstr ""
+
+#: ../../sources/guide/events.rst:135
+msgid "Trigger events"
+msgstr ""
+
+#: ../../sources/guide/events.rst:137
+msgid ""
+"Sometimes you may want to schedule a function to be called only once for "
+"the next frame, preventing duplicate calls. You might be tempted to "
+"achieve that like so::"
+msgstr ""
+
+#: ../../sources/guide/events.rst:148
+msgid ""
+"This way of programming a trigger is expensive, since you'll always call "
+"unschedule, even if the event has already completed. In addition, a new "
+"event is created every time. Use a trigger instead::"
+msgstr ""
+
+#: ../../sources/guide/events.rst:156
+msgid ""
+"Each time you call trigger(), it will schedule a single call of your "
+"callback. If it was already scheduled, it will not be rescheduled."
+msgstr ""
+
+#: ../../sources/guide/events.rst:161
+msgid "Widget events"
+msgstr ""
+
+#: ../../sources/guide/events.rst:163
+msgid "A widget has 2 default types of events:"
+msgstr ""
+
+#: ../../sources/guide/events.rst:165
+msgid ""
+"Property event: if your widget changes its position or size, an event is "
+"fired."
+msgstr ""
+
+#: ../../sources/guide/events.rst:166
+msgid ""
+"Widget-defined event: e.g. an event will be fired for a Button when it's "
+"pressed or released."
+msgstr ""
+
+#: ../../sources/guide/events.rst:169
+msgid ""
+"For a discussion on how widget touch events managed and propagated, "
+"please refer to the :ref:`Widget touch event bubbling <widget-event-"
+"bubbling>` section."
+msgstr ""
+
+#: ../../sources/guide/events.rst:173
+msgid "Creating custom events"
+msgstr ""
+
+#: ../../sources/guide/events.rst:175
+msgid ""
+"To create an event dispatcher with custom events, you need to register "
+"the name of the event in the class and then create a method of the same "
+"name."
+msgstr ""
+
+#: ../../sources/guide/events.rst:178
+msgid "See the following example::"
+msgstr ""
+
+#: ../../sources/guide/events.rst:195
+msgid "Attaching callbacks"
+msgstr ""
+
+#: ../../sources/guide/events.rst:197
+msgid ""
+"To use events, you have to bind callbacks to them. When the event is "
+"dispatched, your callbacks will be called with the parameters relevant to"
+" that specific event."
+msgstr ""
+
+#: ../../sources/guide/events.rst:201
+msgid ""
+"A callback can be any python callable, but you need to ensure it accepts "
+"the arguments that the event emits. For this, it's usually safest to "
+"accept the `*args` argument, which will catch all arguments in the `args`"
+" list."
+msgstr ""
+
+#: ../../sources/guide/events.rst:205
+msgid "Example::"
+msgstr ""
+
+#: ../../sources/guide/events.rst:215
+msgid ""
+"Pleases refer to the :meth:`kivy.event.EventDispatcher.bind` method "
+"documentation for more examples on how to attach callbacks."
+msgstr ""
+
+#: ../../sources/guide/events.rst:219
+msgid "Introduction to Properties"
+msgstr ""
+
+#: ../../sources/guide/events.rst:221
+msgid ""
+"Properties are an awesome way to define events and bind to them. "
+"Essentially, they produce events such that when an attribute of your "
+"object changes, all properties that reference that attribute are "
+"automatically updated."
+msgstr ""
+
+#: ../../sources/guide/events.rst:225
+msgid ""
+"There are different kinds of properties to describe the type of data you "
+"want to handle."
+msgstr ""
+
+#: ../../sources/guide/events.rst:228
+msgid ":class:`~kivy.properties.StringProperty`"
+msgstr ""
+
+#: ../../sources/guide/events.rst:229
+msgid ":class:`~kivy.properties.NumericProperty`"
+msgstr ""
+
+#: ../../sources/guide/events.rst:230
+msgid ":class:`~kivy.properties.BoundedNumericProperty`"
+msgstr ""
+
+#: ../../sources/guide/events.rst:231
+msgid ":class:`~kivy.properties.ObjectProperty`"
+msgstr ""
+
+#: ../../sources/guide/events.rst:232
+msgid ":class:`~kivy.properties.DictProperty`"
+msgstr ""
+
+#: ../../sources/guide/events.rst:233
+msgid ":class:`~kivy.properties.ListProperty`"
+msgstr ""
+
+#: ../../sources/guide/events.rst:234
+msgid ":class:`~kivy.properties.OptionProperty`"
+msgstr ""
+
+#: ../../sources/guide/events.rst:235
+msgid ":class:`~kivy.properties.AliasProperty`"
+msgstr ""
+
+#: ../../sources/guide/events.rst:236
+msgid ":class:`~kivy.properties.BooleanProperty`"
+msgstr ""
+
+#: ../../sources/guide/events.rst:237
+msgid ":class:`~kivy.properties.ReferenceListProperty`"
+msgstr ""
+
+#: ../../sources/guide/events.rst:241
+msgid "Declaration of a Property"
+msgstr ""
+
+#: ../../sources/guide/events.rst:243
+msgid ""
+"To declare properties, you must declare them at the class level. The "
+"class will then do the work to instantiate the real attributes when your "
+"object is created. These properties are not attributes: they are "
+"mechanisms for creating events based on your attributes::"
+msgstr ""
+
+#: ../../sources/guide/events.rst:253
+msgid ""
+"When overriding `__init__`, *always* accept `**kwargs` and use `super()` "
+"to call the parent's `__init__` method, passing in your class instance::"
+msgstr ""
+
+#: ../../sources/guide/events.rst:261
+msgid "Dispatching a Property event"
+msgstr ""
+
+#: ../../sources/guide/events.rst:263
+msgid ""
+"Kivy properties, by default, provide an `on_<property_name>` event. This "
+"event is called when the value of the property is changed."
+msgstr ""
+
+#: ../../sources/guide/events.rst:267
+msgid ""
+"If the new value for the property is equal to the current value, then the"
+" `on_<property_name>` event will not be called."
+msgstr ""
+
+#: ../../sources/guide/events.rst:270 ../../sources/guide/events.rst:336
+msgid "For example, consider the following code:"
+msgstr ""
+
+#: ../../sources/guide/events.rst:288
+msgid "In the code above at line 3::"
+msgstr ""
+
+#: ../../sources/guide/events.rst:292
+msgid ""
+"We define the `pressed` Property of type "
+":class:`~kivy.properties.ListProperty`, giving it a default value of `[0,"
+" 0]`. From this point forward, the `on_pressed` event will be called "
+"whenever the value of this property is changed."
+msgstr ""
+
+#: ../../sources/guide/events.rst:296
+msgid "At Line 5::"
+msgstr ""
+
+#: ../../sources/guide/events.rst:304
+msgid ""
+"We override the :meth:`on_touch_down` method of the Widget class. Here, "
+"we check for collision of the `touch` with our widget."
+msgstr ""
+
+#: ../../sources/guide/events.rst:307
+msgid ""
+"If the touch falls inside of our widget, we change the value of `pressed`"
+" to touch.pos and return True, indicating that we have consumed the touch"
+" and don't want it to propagate any further."
+msgstr ""
+
+#: ../../sources/guide/events.rst:311
+msgid ""
+"Finally, if the touch falls outside our widget, we call the original "
+"event using `super(...)` and return the result. This allows the touch "
+"event propagation to continue as it would normally have occurred."
+msgstr ""
+
+#: ../../sources/guide/events.rst:315
+msgid "Finally on line 11::"
+msgstr ""
+
+#: ../../sources/guide/events.rst:320
+msgid ""
+"We define an `on_pressed` function that will be called by the property "
+"whenever the property value is changed."
+msgstr ""
+
+#: ../../sources/guide/events.rst:324
+msgid ""
+"This `on_<prop_name>` event is called within the class where the property"
+" is defined. To monitor/observe any change to a property outside of the "
+"class where it's defined, you should bind to the property as shown below."
+msgstr ""
+
+#: ../../sources/guide/events.rst:329
+msgid "**Binding to the property**"
+msgstr ""
+
+#: ../../sources/guide/events.rst:331
+msgid ""
+"How to monitor changes to a property when all you have access to is a "
+"widget instance? You *bind* to the property::"
+msgstr ""
+
+#: ../../sources/guide/events.rst:354
+msgid ""
+"If you run the code as is, you will notice two print statements in the "
+"console. One from the `on_pressed` event that is called inside the "
+"`CustomBtn` class and another from the `btn_pressed` function that we "
+"bind to the property change."
+msgstr ""
+
+#: ../../sources/guide/events.rst:358
+msgid ""
+"The reason that both functions are called is simple. Binding doesn't mean"
+" overriding. Having both of these functions is redundant and you should "
+"generally only use one of the methods of listening/reacting to property "
+"changes."
+msgstr ""
+
+#: ../../sources/guide/events.rst:362
+msgid ""
+"You should also take note of the parameters that are passed to the "
+"`on_<property_name>` event or the function bound to the property."
+msgstr ""
+
+#: ../../sources/guide/events.rst:369
+msgid ""
+"The first parameter is `self`, which is the instance of the class where "
+"this function is defined. You can use an in-line function as follows:"
+msgstr ""
+
+#: ../../sources/guide/events.rst:383
+msgid ""
+"The first parameter would be the `instance` of the class the property is "
+"defined."
+msgstr ""
+
+#: ../../sources/guide/events.rst:386
+msgid ""
+"The second parameter would be the `value`, which is the new value of the "
+"property."
+msgstr ""
+
+#: ../../sources/guide/events.rst:388
+msgid ""
+"Here is the complete example, derived from the snippets above, that you "
+"can use to copy and paste into an editor to experiment."
+msgstr ""
+
+#: ../../sources/guide/events.rst:438
+msgid "Running the code above will give you the following output:"
+msgstr ""
+
+#: ../../sources/guide/events.rst:442
+msgid ""
+"Our CustomBtn has no visual representation and thus appears black. You "
+"can touch/click on the black area to see the output on your console."
+msgstr ""
+
+#: ../../sources/guide/events.rst:446
+msgid "Compound Properties"
+msgstr ""
+
+#: ../../sources/guide/events.rst:448
+msgid ""
+"When defining an :class:`~kivy.properties.AliasProperty`, you normally "
+"define a getter and a setter function yourself. Here, it falls on to you "
+"to define when the getter and the setter functions are called using the "
+"`bind` argument."
+msgstr ""
+
+#: ../../sources/guide/events.rst:452
+msgid "Consider the following code."
+msgstr ""
+
+#: ../../sources/guide/events.rst:465
+msgid ""
+"Here `cursor_pos` is a :class:`~kivy.properties.AliasProperty` which uses"
+" the `getter` `_get_cursor_pos` with the `setter` part set to None, "
+"implying this is a read only Property."
+msgstr ""
+
+#: ../../sources/guide/events.rst:469
+msgid ""
+"The bind argument at the end defines that `on_cursor_pos` event is "
+"dispatched when any of the properties used in the `bind=` argument "
+"change."
+msgstr ""
+
+#: ../../sources/guide/graphics.rst:7
+msgid "Introduction to Canvas"
+msgstr ""
+
+#: ../../sources/guide/graphics.rst:9
+msgid ""
+"A Widgets graphical representation is rendered using a canvas, which you "
+"can see as both an unlimited drawing board or as a set of drawing "
+"instructions. There are numerous instructions you can apply (add) to your"
+" canvas, but there are two main variations:"
+msgstr ""
+
+#: ../../sources/guide/graphics.rst:14
+msgid ":mod:`context instructions <kivy.graphics.context_instructions>`"
+msgstr ""
+
+#: ../../sources/guide/graphics.rst:15
+msgid ":mod:`vertex instructions <kivy.graphics.vertex_instructions>`"
+msgstr ""
+
+#: ../../sources/guide/graphics.rst:17
+msgid ""
+"Context instructions don't draw anything, but they change the results of "
+"the vertex instructions."
+msgstr ""
+
+#: ../../sources/guide/graphics.rst:20
+msgid ""
+"Canvasses can contain two subsets of instructions. They are the "
+":mod:`canvas.before <kivy.graphics.Canvas.before>` and the "
+":mod:`canvas.after <kivy.graphics.Canvas.after>` instruction groups.  The"
+" instructions in these groups will be executed before and after the "
+":mod:`~kivy.graphics.canvas` group respectively. This means that they "
+"will appear under (be executed before) and above (be executed after) "
+"them. Those groups are not created until the user accesses them."
+msgstr ""
+
+#: ../../sources/guide/graphics.rst:28
+msgid "To add a canvas instruction to a widget, you use the canvas context:"
+msgstr ""
+
+#: ../../sources/guide/graphics.rst:45
+msgid "Context instructions"
+msgstr ""
+
+#: ../../sources/guide/graphics.rst:47
+msgid ""
+"Context instructions manipulate the opengl context. You can rotate, "
+"translate, and scale your canvas. You can also attach a texture or change"
+" the drawing color. This one is the most commonly used, but others are "
+"really useful too::"
+msgstr ""
+
+#: ../../sources/guide/graphics.rst:55
+msgid "Drawing instructions"
+msgstr ""
+
+#: ../../sources/guide/graphics.rst:57
+msgid ""
+"Drawing instructions range from very simple ones, like drawing a line or "
+"a polygon, to more complex ones, like meshes or bezier curves::"
+msgstr ""
+
+#: ../../sources/guide/graphics.rst:69
+msgid "Manipulating instructions"
+msgstr ""
+
+#: ../../sources/guide/graphics.rst:71
+msgid ""
+"Sometimes you want to update or remove the instructions you have added to"
+" a canvas. This can be done in various ways depending on your needs:"
+msgstr ""
+
+#: ../../sources/guide/graphics.rst:74
+msgid "You can keep a reference to your instructions and update them::"
+msgstr ""
+
+#: ../../sources/guide/graphics.rst:90
+msgid "Or you can clean your canvas and start fresh::"
+msgstr ""
+
+#: ../../sources/guide/graphics.rst:106
+msgid ""
+"Note that updating the instructions is considered the best practice as it"
+" involves less overhead and avoids creating new instructions."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:2
+msgid "Input management"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:5
+msgid "Input architecture"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:7
+msgid ""
+"Kivy is able to handle most types of input: mouse, touchscreen, "
+"accelerometer, gyroscope, etc. It handles the native multitouch protocols"
+" on the following platforms: Tuio, WM_Touch, MacMultitouchSupport, MT "
+"Protocol A/B and Android."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:11
+msgid "The global architecture can be viewed as::"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:15
+msgid ""
+"The class of all input events is the "
+":class:`~kivy.input.motionevent.MotionEvent`. It generates 2 kinds of "
+"events:"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:19
+msgid ""
+"Touch events: a motion event that contains at least an X and Y position. "
+"All the touch events are dispatched across the Widget tree."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:21
+msgid ""
+"No-touch events: all the rest. For example, the accelerometer is a "
+"continuous event, without position. It never starts or stops. These "
+"events are not dispatched across the Widget tree."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:26
+msgid ""
+"A Motion event is generated by an :mod:`Input Provider "
+"<kivy.input.providers>`. An Input Provider is responsible for reading the"
+" input event from the operating system, the network or even from another "
+"application. Several input providers exist, such as:"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:31
+msgid ""
+":class:`~kivy.input.providers.tuio.TuioMotionEventProvider`: create a UDP"
+" server and listen for TUIO/OSC messages."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:33
+msgid ""
+":class:`~kivy.input.providers.wm_touch.WM_MotionEventProvider`: use the "
+"windows API for reading multitouch information and sending it to Kivy."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:35
+msgid ""
+":class:`~kivy.input.providers.probesysfs.ProbeSysfsHardwareProbe`: In "
+"Linux, iterate over all the hardware connected to the computer, and "
+"attaches a multitouch input provider for each multitouch device found."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:38
+msgid "and much more!"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:40
+msgid ""
+"When you write an application, you don't need to create an input "
+"provider. Kivy tries to automatically detect available hardware. However,"
+" if you want to support custom hardware, you will need to configure kivy "
+"to make it work."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:44
+msgid ""
+"Before the newly-created Motion Event is passed to the user, Kivy applies"
+" post-processing to the input. Every motion event is analyzed to detect "
+"and correct faulty input, as well as make meaningful interpretations "
+"like:"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:48
+msgid "Double/triple-tap detection, according to a distance and time threshold"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:49
+msgid "Making events more accurate when the hardware is not accurate"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:50
+msgid ""
+"Reducing the amount of generated events if the native touch hardware is "
+"sending events with nearly the same position"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:53
+msgid ""
+"After processing, the motion event is dispatched to the Window. As "
+"explained previously, not all events are dispatched to the whole widget "
+"tree: the window filters them. For a given event:"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:57
+msgid ""
+"if it's only a motion event, it will be dispatched to "
+":meth:`~kivy.core.window.WindowBase.on_motion`"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:59
+msgid ""
+"if it's a touch event, the (x,y) position of the touch (0-1 range) will "
+"be scaled to the Window size (width/height), and dispatched to:"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:62
+msgid ":meth:`~kivy.uix.widget.Widget.on_touch_down`"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:63
+msgid ":meth:`~kivy.uix.widget.Widget.on_touch_move`"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:64
+msgid ":meth:`~kivy.uix.widget.Widget.on_touch_up`"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:68
+msgid "Motion event profiles"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:70
+msgid ""
+"Depending on your hardware and the input providers used, more information"
+" may be made available to you. For example, a touch input has an (x,y) "
+"position, but might also have pressure information, blob size, an "
+"acceleration vector, etc."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:74
+msgid ""
+"A profile is a string that indicates what features are available inside "
+"the motion event. Let's imagine that you are in an ``on_touch_move`` "
+"method::"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:81
+msgid "The print could output::"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:87
+msgid ""
+"Many people mix up the profile's name and the name of the corresponding "
+"property. Just because ``'angle'`` is in the available profile doesn't "
+"mean that the touch event object will have an ``angle`` property."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:91
+msgid ""
+"For the ``'pos'`` profile, the properties ``pos``, ``x``, and ``y`` will "
+"be available. With the ``'angle'`` profile, the property ``a`` will be "
+"available. As we said, for touch events ``'pos'`` is a mandatory profile,"
+" but not ``'angle'``. You can extend your interaction by checking if the "
+"``'angle'`` profile exists::"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:102
+msgid ""
+"You can find a list of available profiles in the "
+":mod:`~kivy.input.motionevent` documentation."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:106
+msgid "Touch events"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:108
+msgid ""
+"A touch event is a specialized "
+":class:`~kivy.input.motionevent.MotionEvent` where the property "
+":attr:`~kivy.input.motionevent.MotionEvent.is_touch` evaluates to True. "
+"For all touch events, you automatically have the X and Y positions "
+"available, scaled to the Window width and height. In other words, all "
+"touch events have the ``'pos'`` profile."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:115
+msgid "Touch event basics"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:117
+msgid ""
+"By default, touch events are dispatched to all currently displayed "
+"widgets. This means widgets receive the touch event whether it occurs "
+"within their physical area or not."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:121
+msgid ""
+"This can be counter intuitive if you have experience with other GUI "
+"toolkits. These typically divide the screen into geometric areas and only"
+" dispatch touch or mouse events to the widget if the coordinate lies "
+"within the widgets area."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:126
+msgid ""
+"This requirement becomes very restrictive when working with touch input. "
+"Swipes, pinches and long presses may well originate from outside of the "
+"widget that wants to know about them and react to them."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:130
+msgid ""
+"In order to provide the maximum flexibility, Kivy dispatches the events "
+"to all the widgets and lets them decide how to react to them. If you only"
+" want to respond to touch events inside the widget, you simply check::"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:141
+msgid "Coordinates"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:143
+msgid ""
+"You must take care of matrix transformation in your touch as soon as you "
+"use a widget with matrix transformation. Some widgets such as "
+":class:`~kivy.uix.scatter.Scatter` have their own matrix transformation, "
+"meaning the touch must be multiplied by the scatter matrix to be able to "
+"correctly dispatch touch positions to the Scatter's children."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:150
+msgid ""
+"Get coordinate from parent space to local space: "
+":meth:`~kivy.uix.widget.Widget.to_local`"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:152
+msgid ""
+"Get coordinate from local space to parent space: "
+":meth:`~kivy.uix.widget.Widget.to_parent`"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:154
+msgid ""
+"Get coordinate from local space to window space: "
+":meth:`~kivy.uix.widget.Widget.to_window`"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:156
+msgid ""
+"Get coordinate from window space to local space: "
+":meth:`~kivy.uix.widget.Widget.to_widget`"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:159
+msgid ""
+"You must use one of them to scale coordinates correctly to the context. "
+"Let's look the scatter implementation::"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:182
+msgid "Touch shapes"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:184
+msgid ""
+"If the touch has a shape, it will be reflected in the 'shape' property. "
+"Right now, only a :class:`~kivy.input.shape.ShapeRect` can be exposed::"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:196
+msgid "Double tap"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:198
+msgid ""
+"A double tap is the action of tapping twice within a time and a distance."
+" It's calculated by the doubletap post-processing module. You can test if"
+" the current touch is one of a double tap or not::"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:210
+msgid "Triple tap"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:212
+msgid ""
+"A triple tap is the action of tapping thrice within a time and a "
+"distance. It's calculated by the tripletap post-processing module. You "
+"can test if the current touch is one of a triple tap or not::"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:224
+msgid "Grabbing touch events"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:226
+msgid ""
+"It's possible for the parent widget to dispatch a touch event to a child "
+"widget from within ``on_touch_down``, but not from ``on_touch_move`` or "
+"``on_touch_up``. This can happen in certain scenarios, like when a touch "
+"movement is outside the bounding box of the parent, so the parent decides"
+" not to notify its children of the movement."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:232
+msgid ""
+"But you might want to do something in ``on_touch_up``. Say you started "
+"something in the ``on_touch_down`` event, like playing a sound, and you'd"
+" like to finish things on the ``on_touch_up`` event. Grabbing is what you"
+" need."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:236
+msgid ""
+"When you grab a touch, you will always receive the move and up event. But"
+" there are some limitations to grabbing:"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:239
+msgid ""
+"You will receive the event at least twice: one time from your parent (the"
+" normal event), and one time from the window (grab)."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:241
+msgid ""
+"You might receive an event with a grabbed touch, but not from you: it can"
+" be because the parent has sent the touch to its children while it was in"
+" the grabbed state."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:245
+msgid "Here is an example of how to use grabbing::"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:272
+msgid "Touch Event Management"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:274
+msgid ""
+"In order to see how touch events are controlled and propagated between "
+"widgets, please refer to the :ref:`Widget touch event bubbling <widget-"
+"event-bubbling>` section."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:279
+msgid "Joystick events"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:281
+msgid ""
+"A joystick input represents raw values received directly from physical or"
+" virtual controllers through the SDL2 provider via these events:"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:284
+msgid "SDL_JOYAXISMOTION"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:285
+msgid "SDL_JOYHATMOTION"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:286
+msgid "SDL_JOYBALLMOTION"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:287
+msgid "SDL_JOYBUTTONDOWN"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:288
+msgid "SDL_JOYBUTTONUP"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:290
+msgid ""
+"Every motion event has a minimum, maximum and default value which can "
+"reach:"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:294
+msgid "Event"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:294
+msgid "Minimum"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:294
+msgid "Maximum"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:294
+msgid "Default"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:296
+msgid "on_joy_axis"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:296
+msgid "-32767"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:296
+msgid "32767"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:296
+msgid "0"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:298
+msgid "on_joy_hat"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:298
+msgid "(-1, -1)"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:298
+msgid "(1, 1)"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:298
+msgid "(0, 0)"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:300
+msgid "on_joy_ball"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:300
+msgid "Unknown"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:303
+msgid ""
+"Button events, on the other hand represent basically only a state of each"
+" button i.e. `up` and `down`, therefore no such values are present."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:306
+msgid "on_joy_button_up"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:307
+msgid "on_joy_button_down"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:310
+msgid "Joystick event basics"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:316
+msgid ""
+"Unlike touch events, joystick events are dispatched directly to the "
+"Window, which means there's only a single value passed for e.g. a "
+"specified axis, not multiple ones. This makes things harder if you want "
+"to separate input to different widgets, yet not impossible. You can use "
+"|dropexpl|_ as an inspiration."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:322
+msgid ""
+"To get a joystick event, you first need to bind some function to the "
+"Window joystick event like this::"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:327
+msgid ""
+"Then you need to fetch the parameters specified in "
+":class:`~kivy.core.window.Window` for each event you use, for example::"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:333
+msgid ""
+"A variable `stickid` is an id of a controller that sent the value, "
+"`axisid` is an id of an axis to which the value belongs."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:337
+msgid "Joystick input"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:339
+msgid ""
+"Kivy should be able to fetch input from any device specified as "
+"`gamepad`, `joystick` or basically any other type of game controller "
+"recognized by the SDL2 provider. To make things easier, here are layouts "
+"of some common controllers together with ids for each part."
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:345
+msgid "Xbox 360"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:360
+msgid "|xbox_ctr|"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:351
+msgid "#"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:351
+msgid "ID"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:353
+msgid "1"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:353
+msgid "axis 1"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:353
+msgid "2"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:353
+msgid "axis 0"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:355
+msgid "3"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:355
+msgid "hat Y"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:355
+msgid "4"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:355
+msgid "hat X"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:357
+msgid "5"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:357
+msgid "axis 4"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:357
+msgid "6"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:357
+msgid "axis 3"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:359
+msgid "7"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:359
+msgid "axis 2"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:359
+msgid "8"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:359
+msgid "axis 5"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:361
+msgid "9"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:361
+msgid "button 4"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:361
+msgid "10"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:361
+msgid "button 5"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:363
+msgid "X"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:363
+msgid "button 2"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:363
+msgid "Y"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:363
+msgid "button 3"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:365
+msgid "A"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:365
+msgid "button 0"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:365
+msgid "B"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:365
+msgid "button 1"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:367
+msgid "back"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:367
+msgid "button 6"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:367
+msgid "start"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:367
+msgid "button 7"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:369
+msgid "center"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:369
+msgid "button 10"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:373
+msgid "Joystick debugging"
+msgstr ""
+
+#: ../../sources/guide/inputs.rst:378
+msgid ""
+"Mostly you'd want to debug your application with multiple controllers, or"
+" test it against _other_ types of controllers (e.g. different brands). As"
+" an alternative you might want to use some of the available controller "
+"emulators, such as |vjoy|_."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:4
+msgid "Kv language"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:7
+msgid "Concept behind the language"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:9
+msgid ""
+"As your application grow more complex, it's common that the construction "
+"of widget trees and explicit declaration of bindings, becomes verbose and"
+" hard to maintain. The `KV` Language is a attempt to overcome these "
+"short-comings."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:13
+msgid ""
+"The `KV` language (sometimes called kvlang, or kivy language), allows you"
+" to create your widget tree in a declarative way and to bind widget "
+"properties to each other or to callbacks in a natural manner. It allows "
+"for very fast prototyping and agile changes to your UI. It also "
+"facilitates a good separation between the logic of your application and "
+"its User Interface."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:20
+msgid "How to load KV"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:22
+msgid "There are two ways to load Kv code into your application:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:24
+msgid "By name convention:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:26
+msgid ""
+"Kivy looks for a Kv file with the same name as your App class in "
+"lowercase,  minus \"App\" if it ends with 'App' e.g::"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:31
+msgid ""
+"If this file defines a `Root Widget` it will be attached to the App's "
+"`root` attribute and used as the base of the application widget tree."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:34
+msgid ""
+":obj:`~kivy.lang.Builder`: You can tell Kivy to directly load a string or"
+" a file. If this string or file defines a root widget, it will be "
+"returned by the method::"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:45
+msgid "Rule context"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:47
+msgid ""
+"A Kv source constitutes of `rules`, which are used to describe the "
+"content of a Widget, you can have one `root` rule, and any number of "
+"`class` or `template` rules."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:51
+msgid ""
+"The `root` rule is declared by declaring the class of your root widget, "
+"without any indentation, followed by `:` and will be set as the `root` "
+"attribute of the App instance::"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:57
+msgid ""
+"A `class` rule, declared by the name of a widget class between `< >` and "
+"followed by `:`, defines how any instance of that class will be "
+"graphically represented::"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:63
+msgid ""
+"Rules use indentation for delimitation, as python, indentation should be "
+"of four spaces per level, like the python good practice recommendations."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:66
+msgid "There are three keywords specific to Kv language:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:68
+msgid "`app`: always refers to the instance of your application."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:69
+msgid "`root`: refers to the base widget/template in the current rule"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:70
+msgid "`self`: always refer to the current widget"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:73
+msgid "Special syntaxes"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:75
+msgid "There are two special syntaxes to define values for the whole Kv context:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:77
+msgid "To access python modules and classes from kv, ::"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:83 ../../sources/guide/lang.rst:95
+msgid "is equivalent to::"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:89 ../../sources/guide/lang.rst:99
+msgid "in python."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:91
+msgid "To set a global value, ::"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:102
+msgid "Instantiate children"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:104
+msgid ""
+"To declare the widget has a child widget, instance of some class, just "
+"declare this child inside the rule:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:114
+msgid ""
+"The example above defines that our root widget, an instance of "
+"`MyRootWidget`, which has a child that is an instance of the "
+":class:`~kivy.uix.boxlayout.BoxLayout`.  That BoxLayout further has two "
+"children, instances of the :class:`~kivy.uix.button.Button` class."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:119
+msgid "A python equivalent of this code could be:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:129
+msgid "Which you may find less nice, both to read and to write."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:131
+msgid ""
+"Of course, in python, you can pass keyword arguments to your widgets at "
+"creation to specify their behaviour.  For example, to set the number of "
+"columns of a :mod:`~kivy.uix.gridlayout`, we would do::"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:137
+msgid ""
+"To do the same thing in kv, you can set properties of the child widget "
+"directly in the rule:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:145
+msgid ""
+"The value is evaluated as a python expression, and all the properties "
+"used in the expression will be observed, that means that if you had "
+"something like this in python (this assume `self` is a widget with a "
+"`data` :class:`~kivy.property.ListProperty`)::"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:153
+msgid "To have your display updated when your data change, you can now have just:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:161
+msgid ""
+"Widget names should start with upper case letters while property names "
+"should start with lower case ones. Following the `PEP8 Naming Conventions"
+" <https://www.python.org/dev/peps/pep-0008/#naming-conventions>`_ is "
+"encouraged."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:167
+msgid "Event Bindings"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:169
+msgid ""
+"You can bind to events in Kv using the \":\" syntax, that is, associating"
+" a callback to an event:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:177
+msgid "You can pass the values dispatched by the signal using the `args` keyword:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:184
+msgid "More complex expressions can be used, like:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:190
+msgid ""
+"This expression listens for a change in ``center_x``, ``center_y``, and "
+"``texture_size``. If one of them changes, the expression will be re-"
+"evaluated to update the ``pos`` field."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:194
+msgid ""
+"You can also handle ``on_`` events inside your kv language. For example "
+"the TextInput class has a ``focus`` property whose auto-generated "
+"``on_focus`` event can be accessed inside the kv language like so:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:205
+msgid "Extend canvas"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:207
+msgid ""
+"Kv lang can be used to define the canvas instructions of your widget like"
+" this:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:218
+msgid "And they get updated when properties values change."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:220
+msgid "Of course you can use `canvas.before` and `canvas.after`."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:223
+msgid "Referencing Widgets"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:225
+msgid ""
+"In a widget tree there is often a need to access/reference other widgets."
+" The Kv Language provides a way to do this using id's. Think of them as "
+"class level variables that can only be used in the Kv language. Consider "
+"the following:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:244
+msgid ""
+"An ``id`` is limited in scope to the rule it is declared in, so in the "
+"code above ``s_but`` can not be accessed outside the ``<MySecondWidget>``"
+" rule."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:248
+msgid ""
+"When assigning a value to ``id``, remember that the value isn't a string."
+" There are no quotes: good -> ``id: value``, bad -> ``id: 'value'``"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:251
+msgid ""
+"An ``id`` is a ``weakref`` to the widget and not the widget itself. As a "
+"consequence, storing the ``id`` is not sufficient to keep the widget from"
+" being garbage collected. To demonstrate:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:269
+msgid ""
+"Although a reference to ``label_widget`` is stored in ``MyWidget``, it is"
+" not sufficient to keep the object alive once other references have been "
+"removed because it's only a weakref. Therefore, after the remove button "
+"is clicked (which removes any direct reference to the widget) and the "
+"window is resized (which calls the garbage collector resulting in the "
+"deletion of ``label_widget``), when the add button is clicked to add the "
+"widget back, a ``ReferenceError: weakly-referenced object no longer "
+"exists`` will be thrown."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:278
+msgid ""
+"To keep the widget alive, a direct reference to the ``label_widget`` "
+"widget must be kept. This is achieved using ``id.__self__`` or "
+"``label_widget.__self__`` in this case. The correct way to do this would "
+"be:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:288
+msgid "Accessing Widgets defined inside Kv lang in your python code"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:290 ../../sources/guide/lang.rst:424
+msgid "Consider the code below in my.kv:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:306 ../../sources/guide/lang.rst:440
+msgid "In myapp.py:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:320
+msgid ""
+"`txt_inpt` is defined as a :class:`~kivy.properties.ObjectProperty` "
+"initialized to `None` inside the Class. ::"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:325
+msgid ""
+"At this point self.txt_inpt is `None`. In Kv lang this property is "
+"updated to hold the instance of the :class:`~kivy.uix.TextInput` "
+"referenced by the id `txt_inpt`.::"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:331
+msgid ""
+"From this point onwards, `self.txt_inpt` holds a reference to the widget "
+"identified by the id `txt_input` and can be used anywhere in the class, "
+"as in the function `check_status`. In contrast to this method you could "
+"also just pass the `id` to the function that needs to use it, like in "
+"case of `f_but` in the code above."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:337
+msgid ""
+"There is a simpler way to access objects with `id` tags in Kv using the "
+"`ids` lookup object. You can do this as follows:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:351
+msgid "In your python code:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:361
+msgid ""
+"When your kv file is parsed, kivy collects all the widgets tagged with "
+"id's and places them in this `self.ids` dictionary type property. That "
+"means you can also iterate over these widgets and access them dictionary "
+"style::"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:370
+msgid ""
+"Although the `self.ids` method is very concise, it is generally regarded "
+"as 'best practice' to use the ObjectProperty. This creates a direct "
+"reference, provides faster access and is more explicit."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:375
+msgid "Dynamic Classes"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:376
+msgid "Consider the code below:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:398
+msgid ""
+"Instead of having to repeat the same values for every button, we can just"
+" use a template instead, like so:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:417
+msgid ""
+"This class, created just by the declaration of this rule, inherits from "
+"the Button class and allows us to change default values and create "
+"bindings for all its instances without adding any new code on the Python "
+"side."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:422
+msgid "Re-using styles in multiple widgets"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:456
+msgid ""
+"Because both classes share the same .kv style, this design can be "
+"simplified if we reuse the style for both widgets. You can do this in .kv"
+" as follows. In my.kv:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:468
+msgid ""
+"By separating the class names with a comma, all the classes listed in the"
+" declaration will have the same kv properties."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:472
+msgid "Designing with the Kivy Language"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:474
+msgid ""
+"One of aims of the Kivy language is to `Separate the concerns "
+"<https://en.wikipedia.org/wiki/Separation_of_concerns>`_ of presentation "
+"and logic. The presentation (layout) side is addressed by your kv file "
+"and the logic by your py file."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:480
+msgid "The code goes in py files"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:482
+msgid "Let's start with a little example. First, the Python file named `main.py`:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:487
+msgid "In this example, we are creating a Controller class with 2 properties:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:489
+msgid "``info`` for receving some text"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:490
+msgid "``label_wid`` for receving the label widget"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:492
+msgid ""
+"In addition, we are creating a ``do_action()`` method that will use both "
+"of these properties. It will change the ``info`` text and change text in "
+"the ``label_wid`` widget."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:497
+msgid "The layout goes in controller.kv"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:499
+msgid ""
+"Executing this application without a corresponding `.kv` file will work, "
+"but nothing will be shown on the screen. This is expected, because the "
+"``Controller`` class has no widgets in it, it's just a ``FloatLayout``. "
+"We can create the UI around the ``Controller`` class in a file named "
+"`controller.kv`, which will be loaded when we run the ``ControllerApp``. "
+"How this is done and what files are loaded is described in the "
+":meth:`kivy.app.App.load_kv` method."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:510
+msgid ""
+"One label and one button in a vertical ``BoxLayout``. Seems very simple. "
+"There are 3 things going on here:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:513
+msgid ""
+"Using data from the ``Controller``. As soon as the ``info`` property is "
+"changed in the controller, the expression ``text: 'My controller info is:"
+" ' + root.info`` will automatically be re-evaluated, changing the text in"
+" the ``Button``."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:518
+msgid ""
+"Giving data to the ``Controller``. The expression ``id: my_custom_label``"
+" is assigning the created ``Label`` the id of ``my_custom_label``. Then, "
+"using ``my_custom_label`` in the expression ``label_wid: "
+"my_custom_label`` gives the instance of that ``Label`` widget to your "
+"``Controller``."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:524
+msgid ""
+"Creating a custom callback in the ``Button`` using the ``Controller``'s "
+"``on_press`` method."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:527
+msgid ""
+"``root`` and ``self`` are reserved keywords, useable anywhere. ``root`` "
+"represents the top widget in the rule and ``self`` represents the current"
+" widget."
+msgstr ""
+
+#: ../../sources/guide/lang.rst:531
+msgid ""
+"You can use any id declared in the rule the same as ``root`` and "
+"``self``. For example, you could do this in the ``on_press()``:"
+msgstr ""
+
+#: ../../sources/guide/lang.rst:539
+msgid ""
+"And that's that. Now when we run `main.py`, `controller.kv` will be "
+"loaded so that the ``Button`` and ``Label`` will show up and respond to "
+"our touch events."
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:2
+msgid "Package licensing"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:4
+msgid ""
+"This is not a legally authoratative guide! The Kivy organisation, authors"
+" and contributors take no responsibility for any lack of knowledge, "
+"information or advice presented here. The guide is merely informative and"
+" is meant to protect inexperienced users."
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:9
+msgid ""
+"Your code alone may not require including licensing information or "
+"copyright notices of other included software, but binaries are something "
+"else. When a binary (.exe, .app, .apk, ...) is created, it includes Kivy,"
+" its dependencies and other packages that your application uses."
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:14
+msgid ""
+"Some of them are licensed in a way that requires including a copyright "
+"notice somewhere in your app (or more). Before distributing any of the "
+"binaries, please **check all the created files** that don't belong to "
+"your source (.dll, .pyd, .so, ...) and include the appropriate copyright "
+"notices if required by the license the files belong to. This way you may "
+"satisfy licensing requirements of the Kivy deps."
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:22
+msgid "Dependencies"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:24
+msgid ""
+"All of the dependencies will be used at least partially on each platform "
+"Kivy supports. You therefore need to comply to their licenses, which "
+"mostly requires only pasting a copyright notice in your app and not "
+"pretending you wrote the code."
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:34
+msgid "|dcutil|_"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:35
+msgid ""
+"`pygments <https://bitbucket.org/birkenfeld/pygments-"
+"main/src/tip/LICENSE>`_"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:36
+msgid "`sdl2 <https://www.libsdl.org/license.php>`_"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:37
+msgid "`glew <http://glew.sourceforge.net/glew.txt>`_"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:38
+msgid ""
+"`gstreamer <https://github.com/GStreamer/gstreamer/blob/master/COPYING>`_"
+" (if used)"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:40
+msgid "image & audio libraries(e.g. |mixer|_)"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:42
+msgid ""
+"You'll probably need to check image and audio libraries manually (most "
+"begin with ``lib``). The ``LICENSE*`` files that belong to them should be"
+" included by PyInstaller, but are not included by python-for-android and "
+"you need to find them."
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:48
+msgid "Windows (PyInstaller)"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:53
+msgid ""
+"To access some Windows API features, Kivy uses the |win32|_ package. This"
+" package is released under the `PSF license "
+"<https://opensource.org/licenses/Python-2.0>`_."
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:58
+msgid "Visual Studio Redistributables"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:67
+msgid ""
+"Python compiled with Visual Studio (official) includes files from "
+"Microsoft and you are only allowed to redistribute them under specific "
+"conditions listed in the CRTlicense. You need to include the names of the"
+" files and a reworded version of |py2crt|_ or |py3crt|_ (depending which "
+"interpreter you use) and present these to the end-user of your "
+"application in order to satisfy their requirements."
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:74
+msgid "|redist|_"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:77
+msgid "Other libraries"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:79
+msgid "`zlib <https://github.com/madler/zlib/blob/master/README>`_"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:81
+msgid ""
+"Please add the attributions for other libraries that you *don't use "
+"directly* but are present after packaging with e.g. PyInstaller on "
+"Windows."
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:91
+msgid ""
+"Linux has many distributions which means there's no correct guide for all"
+" of the distributions. This applies to the RPi too. However, it can be "
+"simplified in two ways depending on how you create a package (also with "
+"PyInstaller): with or without including binaries."
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:96
+msgid ""
+"If the binaries are included, you should check every file (e.g. `.so`) "
+"that's not your source and find the license it belongs to. According to "
+"that license, you'll probably need to put an attribution into your "
+"application or possibly more, depending on the requirements of that "
+"license."
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:101
+msgid ""
+"If the binaries are not included (which allows packaging your app as e.g."
+" a `.deb` package), there's a |badsit|_. It's up to you to decide whether"
+" you satisfy the conditions of other licenses and, for example, include "
+"copyright attributions into your app or not."
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:109
+msgid ""
+"As APK is just an archive of files: you can extract files from it and (as"
+" in Windows redistributables) check all the files."
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:112
+msgid ""
+"``APK/assets/private.mp3/private.mp3/`` contains all the included files. "
+"Most of them are related to Kivy, Python or your source, but those that "
+"aren't need checking."
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:116
+msgid "Known packages:"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:118
+msgid ""
+"`pygame <https://bitbucket.org/pygame/pygame/src/tip/LGPL>`_ (if "
+"old_toolchain is used)"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:120
+msgid "`sqlite3 <https://github.com/ghaering/pysqlite/blob/master/LICENSE>`_"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:121
+msgid "`six <https://bitbucket.org/gutworth/six/src/tip/LICENSE>`_"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:123
+msgid ""
+"There are other included libraries, included either by Kivy directly or "
+"through Pygame/SDL2, that are located in ``APK/lib/armeabi/``. Most of "
+"them are related to dependencies or are produced by python-for-android "
+"and are part of its source (and licensing)."
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:128
+msgid "libapplication.so"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:131
+msgid "Mac"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:133 ../../sources/guide/licensing.rst:138
+msgid "Missing."
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:136
+msgid "iOS"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:143
+msgid "Avoiding binaries"
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:148
+msgid ""
+"There might be a way how to avoid this licensing process by avoiding "
+"creating a distribution with third-party stuff completely. With Python "
+"you can create a module, which is only your code with ``__main__.py`` + "
+"``setup.py`` that only lists required depencies."
+msgstr ""
+
+#: ../../sources/guide/licensing.rst:153
+msgid ""
+"This way, you can still distribute your app - your *code* - and you might"
+" not need to care about other licenses. The combination of your code and "
+"the dependencies could be specified as a \"usage\" rather than a "
+"\"distribution\". The responsibility of satisfying licenses, however, "
+"most likely transfers to your user, who needs to assemble the environment"
+" to even run the module. If you care about your users, you might want to "
+"slow down a little and read more about the |cons|_."
+msgstr ""
+
+#: ../../sources/guide/other-frameworks.rst:4
+msgid "Integrating with other Frameworks"
+msgstr ""
+
+#: ../../sources/guide/other-frameworks.rst:9
+msgid "Using Twisted inside Kivy"
+msgstr ""
+
+#: ../../sources/guide/other-frameworks.rst:12
+msgid ""
+"You can use the `kivy.support.install_twisted_reactor` function to "
+"install a twisted reactor that will run inside the kivy event loop."
+msgstr ""
+
+#: ../../sources/guide/other-frameworks.rst:15
+msgid ""
+"Any arguments or keyword arguments passed to this function will be passed"
+" on the threadedselect reactors interleave function. These are the "
+"arguments one would usually pass to twisted's reactor.startRunning"
+msgstr ""
+
+#: ../../sources/guide/other-frameworks.rst:20
+msgid ""
+"Unlike the default twisted reactor, the installed reactor will not handle"
+" any signals unless you set the 'installSignalHandlers' keyword argument "
+"to 1 explicitly.  This is done to allow kivy to handle the signals as "
+"usual, unless you specifically want the twisted reactor to handle the "
+"signals (e.g. SIGINT)."
+msgstr ""
+
+#: ../../sources/guide/other-frameworks.rst:28
+msgid ""
+"The kivy examples include a small example of a twisted server and client."
+" The server app has a simple twisted server running and logs any "
+"messages. The client app can send messages to the server and will print "
+"its message and the response it got. The examples are based mostly on the"
+" simple Echo example from the twisted docs, which you can find here:"
+msgstr ""
+
+#: ../../sources/guide/other-frameworks.rst:34
+msgid "http://twistedmatrix.com/documents/current/_downloads/simpleserv.py"
+msgstr ""
+
+#: ../../sources/guide/other-frameworks.rst:35
+msgid "http://twistedmatrix.com/documents/current/_downloads/simpleclient.py"
+msgstr ""
+
+#: ../../sources/guide/other-frameworks.rst:37
+msgid ""
+"To try the example, run echo_server_app.py first, and then launch "
+"echo_client_app.py.  The server will reply with simple echo messages to "
+"anything the client app sends when you hit enter after typing something "
+"in the textbox."
+msgstr ""
+
+#: ../../sources/guide/other-frameworks.rst:43
+msgid "Server App"
+msgstr ""
+
+#: ../../sources/guide/other-frameworks.rst:49
+msgid "Client App"
+msgstr ""
+
+#: ../../sources/guide/packaging.rst:4
+msgid "Packaging your application"
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:4
+msgid "Create a package for Android"
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:7
+msgid ""
+"You can create a package for android using the `python-for-android "
+"<https://github.com/kivy/python-for-android>`_ project. This page "
+"explains how to download and use it directly on your own machine (see "
+":ref:`Packaging your application into APK`) or use the :ref:`buildozer` "
+"tool to automate the entire process. You can also see :ref:`Packaging "
+"your application for Kivy Launcher` to run kivy programs without "
+"compiling them."
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:15
+msgid ""
+"For new users, we recommend using :ref:`Buildozer` as the easiest way to "
+"make a full APK. You can also run your Kivy app without a compilation "
+"step with the :ref:`Kivy Launcher <Packaging your application for Kivy "
+"launcher>` app."
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:20
+msgid ""
+"Kivy applications can be :ref:`released on an Android market "
+"<release_on_the_market>` such as the Play store, with a few extra steps "
+"to create a fully signed APK."
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:24
+msgid ""
+"The Kivy project includes tools for accessing Android APIs to accomplish "
+"vibration, sensor access, texting etc. These, along with information on "
+"debugging on the device, are documented at the :doc:`main Android page "
+"</guide/android>`."
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:32
+msgid "Buildozer"
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:34
+msgid ""
+"Buildozer is a tool that automates the entire build process. It downloads"
+" and sets up all the prequisites for python-for-android, including the "
+"android SDK and NDK, then builds an apk that can be automatically pushed "
+"to the device."
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:39
+msgid ""
+"Buildozer currently works only in Linux, and is an alpha release, but it "
+"already works well and can significantly simplify the apk build."
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:43
+msgid "You can get buildozer at `<https://github.com/kivy/buildozer>`_::"
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:49
+msgid ""
+"This will install buildozer in your system. Afterwards, navigate to your "
+"project directory and run::"
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:54
+msgid ""
+"This creates a `buildozer.spec` file controlling your build "
+"configuration. You should edit it appropriately with your app name etc. "
+"You can set variables to control most or all of the parameters passed to "
+"python-for-android."
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:59
+msgid ""
+"Install buildozer's `dependencies "
+"<https://buildozer.readthedocs.io/en/latest/installation.html#targeting-"
+"android>`_."
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:62
+msgid "Finally, plug in your android device and run::"
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:66
+msgid "to build, push and automatically run the apk on your device."
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:68
+msgid ""
+"Buildozer has many available options and tools to help you, the steps "
+"above are just the simplest way to build and run your APK. The full "
+"documentation is available `here "
+"<http://buildozer.readthedocs.org/en/latest/>`_. You can also check the "
+"Buildozer README at `<https://github.com/kivy/buildozer>`_."
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:77
+msgid "Packaging with python-for-android"
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:79
+msgid ""
+"You can also package directly with python-for-android, which can give you"
+" more control but requires you to manually download parts of the Android "
+"toolchain."
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:83
+msgid ""
+"See the `python-for-android documentation <https://python-for-"
+"android.readthedocs.io/en/latest/quickstart/>`__ for full details."
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:91
+msgid "Packaging your application for the Kivy Launcher"
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:93
+msgid ""
+"The `Kivy launcher "
+"<https://play.google.com/store/apps/details?id=org.kivy.pygame&hl=en>`_ "
+"is an Android application that runs any Kivy examples stored on your SD "
+"Card. To install the Kivy launcher, you must:"
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:98
+msgid ""
+"Go to the `Kivy Launcher page "
+"<https://market.android.com/details?id=org.kivy.pygame>`_ on the Google "
+"Play Store"
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:100
+msgid "Click on Install"
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:101
+msgid "Select your phone... And you're done!"
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:103
+msgid ""
+"If you don't have access to the Google Play Store on your phone/tablet, "
+"you can download and install the APK manually from  "
+"http://kivy.org/#download."
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:106
+msgid ""
+"Once the Kivy launcher is installed, you can put your Kivy applications "
+"in the Kivy directory in your external storage directory (often available"
+" at :code:`/sdcard` even in devices where this memory is internal), e.g. "
+"::"
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:113
+msgid ":code:`<yourapplication>` should be a directory containing::"
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:120
+msgid "The file `android.txt` must contain::"
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:126
+msgid ""
+"These options are just a very basic configuration. If you create your own"
+" APK using the tools above, you can choose many other settings."
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:130
+msgid "Installation of Examples"
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:132
+msgid ""
+"Kivy comes with many examples, and these can be a great place to start "
+"trying the Kivy launcher. You can run them as below::"
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:139
+msgid "/sdcard/kivy"
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:141
+msgid ""
+"Run the launcher and select one of the Pictures, Showcase, Touchtracer, "
+"Cymunk or other demos..."
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:147
+msgid "Release on the market"
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:149
+msgid ""
+"If you have built your own APK with Buildozer or with python-for-android,"
+" you can create a release version that may be released on the Play store "
+"or other Android markets."
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:153
+msgid ""
+"To do this, you must run Buildozer with the :code:`release` parameter "
+"(e.g. :code:`buildozer android release`), or if using python-for-android "
+"use the :code:`--release` option to build.py. This creates a release APK "
+"in the :code:`bin` directory, which you must properly sign and zipalign. "
+"The procedure for doing this is described in the Android documentation at"
+" https://developer.android.com/studio/publish/app-signing.html#signing-"
+"manually - all the necessary tools come with the Android SDK."
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:166
+msgid "Targeting Android"
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:168
+msgid ""
+"Kivy is designed to operate identically across platforms and as a result,"
+" makes some clear design decisions. It includes its own set of widgets "
+"and by default, builds an APK with all the required core dependencies and"
+" libraries."
+msgstr ""
+
+#: ../../sources/guide/packaging-android.rst:172
+msgid ""
+"It is possible to target specific Android features, both directly and in "
+"a (somewhat) cross-platform way. See the `Using Android APIs` section of "
+"the :doc:`Kivy on Android documentation </guide/android>` for more "
+"details."
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:4
+msgid "The Kivy Android Virtual Machine"
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:8
+msgid ""
+"The VM is now updated. Please check the `Kivy website "
+"<http://kivy.org/#download>`_ for the latest version."
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:12
+msgid "Introduction"
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:14
+msgid ""
+"Currently, Kivy Android applications can only be built in a Linux "
+"environment configured with python-for-android, the Android SDK and the "
+"Android NDK. As this environment in not only tricky to setup but also "
+"impossible on Windows or OS X operating systems, we provide a fully "
+"configured `VirtualBox <http://www.virtualbox.org>`_ disk image to ease "
+"your building woes."
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:21
+msgid ""
+"If you are not familiar with virtualization, we encourage you to read the"
+" `Wikipedia Virtualization page. "
+"<http://en.wikipedia.org/wiki/Virtualization>`_"
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:25
+#: ../../sources/guide/packaging-ios-prerequisites.rst:14
+msgid "Getting started"
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:27
+msgid ""
+"Download the `Kivy / Buildozer VM <http://kivy.org/#download>`_, in the "
+"*Virtual Machine* section. The download is 1.2GB. Extract the file and "
+"remember the location of the extracted directory."
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:31
+msgid ""
+"Download the version of VirtualBox for your machine from the `VirtualBox "
+"download area <https://www.virtualbox.org/wiki/Downloads>`_ and install "
+"it."
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:35
+msgid "Start VirtualBox, click on \"File\", \"Import Appliance\"."
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:37
+msgid "Select the extracted directory, file should be named \"Buildozer VM.ovf\""
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:39
+msgid "Start the Virtual machine and click on the \"Buildozer\" icon."
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:42
+msgid "Building the APK"
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:44
+msgid ""
+"Once the VM is loaded, you can follow the instructions from "
+":ref:`Packaging your application into APK`. You don't need to download "
+"with `git clone` though, as python-for-android is already installed and "
+"set up in the virtual machine home directory."
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:50
+msgid "Hints and tips"
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:52
+msgid "Shared folders"
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:54
+msgid ""
+"Generally, your development environment and toolset are set up on your "
+"host machine but the APK is build in your guest. VirtualBox has a feature"
+" called 'Shared folders' which allows your guest direct access to a "
+"folder on your host."
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:59
+msgid ""
+"If it often convenient to use this feature (usually with 'Permanent' and "
+"'Auto-mount' options) to copy the built APK to the host machine so it can"
+" form part of your normal dev environment. A simple script can easily "
+"automate the build and copy/move process."
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:64
+msgid ""
+"Currently, VirtualBox doesn't allow symlink anymore in a shared folder. "
+"Adjust your buildozer.spec to build outside the shared folder. Also, "
+"ensure the `kivy` user is in the `vboxsf` group."
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:68
+msgid "Copy and paste"
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:70
+msgid ""
+"By default, you will not be able to share clipboard items between the "
+"host and the guest machine. You can achieve this by enabling the \"bi-"
+"directional\" shared clipboard option under \"Settings -> General -> "
+"Advanced\"."
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:75
+msgid "Snapshots"
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:77
+msgid ""
+"If you are working on the Kivy development branch, pulling the latest "
+"version can sometimes break things (as much as we try not to). You can "
+"guard against this by taking a snapshot before pulling. This allows you "
+"to easily restore your machine to its previous state should you have the "
+"need."
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:83
+msgid "Insufficient memory"
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:85
+msgid ""
+"Assigning the Virtual Machine insufficient memory may result in the "
+"compile failing with cryptic errors, such as:"
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:88
+msgid "arm-linux-androideabi-gcc: Internal error: Killed (program cc1)"
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:90
+msgid ""
+"If this occurs, please check the amount of free memory in the Kivy VM and"
+" increase the amount of RAM allocated to it if required."
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:93
+msgid "No space left"
+msgstr ""
+
+#: ../../sources/guide/packaging-android-vm.rst:95
+msgid ""
+"Read the section about resizing the VM at "
+"https://github.com/kivy/buildozer#buildozer-virtual-machine"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:4
+msgid "Create a package for IOS"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:8
+msgid ""
+"Currently, packages for iOS can only be generated with Python 2.7. Python"
+" 3.4+ support is on the way."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:11
+msgid ""
+"The overall process for creating a package for IOS can be explained in 4 "
+"steps:"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:13
+msgid ":ref:`Compile the distribution` (python + modules for IOS)"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:14
+msgid ":ref:`Create an Xcode project` (and link your source code)"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:15
+msgid ":ref:`Update the Xcode project`"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:16
+msgid ":ref:`Customize`"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:19
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:21
+msgid ""
+"You need to install some dependencies, like Cython, autotools, etc. We "
+"encourage you to use `Homebrew <http://mxcl.github.com/homebrew/>`_ to "
+"install those dependencies:"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:32
+msgid ""
+"For more detail, see :ref:`IOS Prerequisites "
+"<packaging_ios_prerequisites>`. Just ensure that everything is ok before "
+"starting the second step!"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:38
+msgid "Compile the distribution"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:40
+msgid "Open a terminal, and type::"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:46
+msgid ""
+"Most of the python distribution is packed into `python27.zip`. If you "
+"experience any issues, please refer to our `user group "
+"<https://groups.google.com/forum/#!forum/kivy-users>`_ or the `kivy-ios "
+"project page <https://github.com/kivy/kivy-ios>`_."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:54
+msgid "Create an Xcode project"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:56
+msgid ""
+"Before proceeding to the next step, ensure your application entry point "
+"is a file named `main.py`."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:59
+msgid ""
+"We provide a script that creates an initial Xcode project to start with. "
+"In the command line below, replace `test` with your project name. It must"
+" be a name without any spaces or illegal characters::"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:67
+msgid "You must use a fully qualified path to your application directory."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:69
+msgid ""
+"A directory named `<title>-ios` will be created, with an Xcode project in"
+" it. You can open the Xcode project::"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:74
+msgid "Then click on `Play`, and enjoy."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:78
+msgid ""
+"Everytime you press `Play`, your application directory will be synced to "
+"the `<title>-ios/YourApp` directory. Don't make changes in the -ios "
+"directory directly."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:85
+msgid "Update the Xcode project"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:87
+msgid ""
+"Let's say you want to add numpy to your project but you did not compile "
+"it prior to creating your XCode project. First, ensure it is built::"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:92
+msgid "Then, update your Xcode project::"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:96
+msgid ""
+"All the libraries / frameworks necessary to run all the compiled recipes "
+"will be added to your Xcode project."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:102
+msgid "Customize the Xcode project"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:104
+msgid ""
+"There are various ways to customize and configure your app. Please refer "
+"to the `kivy-ios <http://www.github.com/kivy/kivy-ios>`_ documentation "
+"for more information."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:111
+msgid "Known issues"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:113
+msgid ""
+"All known issues with packaging for iOS are currently tracked on our "
+"`issues <https://github.com/kivy/kivy-ios/issues>`_  page. If you "
+"encounter an issue specific to packaging for iOS that isn't listed there,"
+" please feel free to file a new issue, and we will get back to you on it."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:118
+msgid ""
+"While most are too technical to be written here, one important known "
+"issue is that removing some libraries (e.g. SDL_Mixer for audio) is "
+"currently not possible because the kivy project requires it. We will fix "
+"this and others in future versions."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:126
+msgid "FAQ"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:129
+msgid "Application quit abnormally!"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:131
+msgid ""
+"By default, all the print statements to the console and files are "
+"ignored. If you have an issue when running your application, you can "
+"activate the log by commenting out this line in `main.m`::"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:137
+msgid "Then you should see all the Kivy logging on the Xcode console."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:140
+msgid "How can Apple accept a python app ?"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:142
+msgid ""
+"We managed to merge the app binary with all the libraries into a single "
+"binary, called libpython. This means all binary modules are loaded "
+"beforehand, so nothing is dynamically loaded."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:147
+msgid "Have you already submited a Kivy application to the App store ?"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:149
+msgid "Yes, check:"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:151
+msgid ""
+"`Defletouch on iTunes "
+"<http://itunes.apple.com/us/app/deflectouch/id505729681>`_,"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:152
+msgid ""
+"`ProcessCraft on iTunes "
+"<http://itunes.apple.com/us/app/processcraft/id526377075>`_"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios.rst:154
+msgid ""
+"For a more complete list, visit the `Kivy wiki "
+"<https://github.com/kivy/kivy/wiki/List-of-Kivy-Projects>`_."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios-prerequisites.rst:4
+msgid "IOS Prerequisites"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios-prerequisites.rst:6
+msgid "The following guide assumes:"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios-prerequisites.rst:8
+msgid "XCode 5.1 or above"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios-prerequisites.rst:9
+msgid "OS X 10.9 or above"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios-prerequisites.rst:11
+msgid "Your experience may vary with different versions."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios-prerequisites.rst:16
+msgid ""
+"In order to submit any application to the iTunes store, you will need an "
+"`iOS Developer License <https://developer.apple.com/programs/ios/>`_. For"
+" testing, you can use a physical device or the XCode iOS emulator."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios-prerequisites.rst:20
+msgid ""
+"Please note that in order to test on the device, you need to register "
+"these devices and install your \"provisioning profile\" on them. Please "
+"refer to the Apple's `Getting started "
+"<https://developer.apple.com/programs/ios/gettingstarted/>`_ guide for "
+"more information."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios-prerequisites.rst:27
+msgid "Homebrew"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios-prerequisites.rst:29
+msgid ""
+"We use the `Homebrew <http://brew.sh/>`_ package manager for OSX to "
+"install some of the dependencies and tools used by Kivy. It's a really "
+"helpful tool and is an Open Source project hosted on `Github "
+"<https://github.com/Homebrew/homebrew>`_."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios-prerequisites.rst:34
+msgid ""
+"Due to the nature of package management (complications with versions and "
+"Operating Systems), this process can be error prone and cause failures in"
+" the build process. The **Missing requirement: <pkg> is not installed!** "
+"message is typically such an error."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios-prerequisites.rst:39
+msgid "The first thing is to ensure you have run the following commands:"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios-prerequisites.rst:49
+msgid ""
+"If you still receive build errors, check your Homebrew is in a healthy "
+"state::"
+msgstr ""
+
+#: ../../sources/guide/packaging-ios-prerequisites.rst:53
+msgid ""
+"For further help, please refer to the `Homebrew wiki "
+"<https://github.com/Homebrew/homebrew/wiki>`_."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios-prerequisites.rst:56
+msgid ""
+"The last, final and desperate step to get things working might be to "
+"remove Homebrew altogether, get the latest version, install that and then"
+" re-install the dependencies."
+msgstr ""
+
+#: ../../sources/guide/packaging-ios-prerequisites.rst:60
+msgid ""
+"`How to Uninstall and Remove Homebrew for Mac OSX "
+"<http://www.curvve.com/blog/guides/2013/uninstall-homebrew-mac-osx/>`_"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:2
+msgid "Creating packages for OS X"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:6
+msgid ""
+"This guide describes multiple ways for packaging Kivy applications. "
+"Packaging with PyInstaller is recommended for general use."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:12
+msgid "Using PyInstaller and Homebrew"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:14
+msgid "Package your app on the oldest OS X version you want to support."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:17
+msgid "Complete guide"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:18
+msgid "Install `Homebrew <http://brew.sh>`_"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:19
+msgid "Install Python::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:24
+msgid ""
+"To use Python 3, ``brew install python3`` and replace ``pip`` with "
+"``pip3`` in the guide below."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:27
+msgid ""
+"(Re)install your dependencies with ``--build-bottle`` to make sure they "
+"can be used on other machines::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:33
+msgid ""
+"If your project depends on GStreamer or other additional libraries "
+"(re)install them with ``--build-bottle`` as described `below <additional "
+"libraries_>`_."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:37
+msgid "Install Cython and Kivy:"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:44
+msgid "Install PyInstaller::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:48
+msgid "Package your app using the path to your main.py::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:58
+msgid ""
+"This will not yet copy additional image or sound files. You would need to"
+" adapt the created ``.spec`` file for that."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:63
+msgid "Editing the spec file"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:64
+msgid ""
+"The specs file is named `touchtracer.spec` and is located in the "
+"directory where you ran the pyinstaller command."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:67
+msgid ""
+"You need to change the `COLLECT()` call to add the data of touchtracer "
+"(`touchtracer.kv`, `particle.png`, ...). Change the line to add a Tree() "
+"object. This Tree will search and add every file found in the touchtracer"
+" directory to your final package. Your COLLECT section should look "
+"something like this::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:82
+msgid ""
+"This will add the required hooks so that PyInstaller gets the required "
+"Kivy files. We are done. Your spec is ready to be executed."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:86
+msgid "Build the spec and create a DMG"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:88
+msgid "Open a console."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:89
+msgid "Go to the PyInstaller directory, and build the spec::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:93
+msgid "Run::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:99
+msgid "You will now have a Touchtracer.dmg available in the `dist` directory."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:103
+msgid "Additional Libraries"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:105
+msgid "GStreamer"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:106
+msgid "If your project depends on GStreamer::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:111
+msgid ""
+"If your Project needs Ogg Vorbis support be sure to add the ``--with-"
+"libvorbis`` option to the command above."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:114
+msgid ""
+"If you are using Python from Homebrew you will also need the following "
+"step until `this pull request "
+"<https://github.com/Homebrew/homebrew/pull/46097>`_ gets merged::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:122
+msgid "Using PyInstaller without Homebrew"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:123
+msgid ""
+"First install Kivy and its dependencies without using Homebrew as "
+"mentioned here http://kivy.org/docs/installation/installation.html"
+"#development-version."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:126
+msgid ""
+"Once you have kivy and its deps installed, you need to install "
+"PyInstaller."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:128
+msgid "Let's assume we use a folder like `testpackaging`::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:133
+msgid ""
+"Create a file named touchtracer.spec in this directory and add the "
+"following code to it::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:173
+msgid "Change the paths with your relevant paths::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:181
+msgid "Then run the following command::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:185
+msgid ""
+"Replace `touchtracer` with your app where appropriate. This will give you"
+" a <yourapp>.app in the dist/ folder."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:192
+msgid "Using Buildozer"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:194
+msgid ""
+"pip install git+http://github.com/kivy/buildozer cd "
+"/to/where/I/Want/to/package buildozer init"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:199
+#: ../../sources/guide/packaging-osx.rst:242
+msgid ""
+"Packaging Kivy applications with the following method must be done inside"
+" OS X, 32-bit platforms are no longer supported."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:202
+msgid ""
+"Edit the buildozer.spec and add the details for your app. Dependencies "
+"can be added to the `requirements=` section."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:205
+msgid "By default the kivy version specified in the requirements is ignored."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:207
+msgid ""
+"If you have a Kivy.app at /Applications/Kivy.app then that is used, for "
+"packaging. Otherwise the latest build from kivy.org using Kivy master "
+"will be downloaded and used."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:211
+msgid ""
+"If you want to package for python 3.x.x simply download the package named"
+" Kivy3.7z from the download section of kivy.org and extract it to "
+"Kivy.app in /Applications, then run::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:217
+msgid ""
+"Once the app is packaged, you might want to remove unneeded packages like"
+" gstreamer, if you don't need video support. Same logic applies for other"
+" things you do not use, just reduce the package to its minimal state that"
+" is needed for the app to run."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:222
+msgid ""
+"As an example we are including the showcase example packaged using this "
+"method for both Python 2 (9.xMB) and 3 (15.xMB), you can find the "
+"packages here: "
+"https://drive.google.com/drive/folders/0B1WO07-OL50_alFzSXJUajBFdnc ."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:227
+msgid "That's it. Enjoy!"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:229
+msgid ""
+"Buildozer right now uses the Kivy SDK to package your app. If you want to"
+" control more details about your app than buildozer currently offers then"
+" you can use the SDK directly, as detailed in the section below."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:235
+msgid "Using the Kivy SDK"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:238
+msgid ""
+"Kivy.app is not available for download at the moment. For details, see "
+"`this <https://github.com/kivy/kivy/issues/5211>`_ issue."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:245
+msgid ""
+"Since version 1.9.0, Kivy is released for the OS X platform in a self-"
+"contained, portable distribution."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:248
+msgid ""
+"Apps can be packaged and distributed with the Kivy SDK using the method "
+"described below, making it easier to include frameworks like SDL2 and "
+"GStreamer."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:252
+msgid ""
+"Make sure you have the unmodified Kivy SDK (Kivy.app) from the download "
+"page."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:254
+msgid "Run the following commands::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:263
+msgid ""
+"This step above is important, you have to make sure to preserve the paths"
+" and permissions. A command like ``cp -rf`` will copy but make the app "
+"unusable and lead to error later on."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:267
+msgid ""
+"Now all you need to do is to include your compiled app in the Kivy.app by"
+" running the following command::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:272
+msgid "Where <app_folder_name> is the name of your app."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:274
+msgid ""
+"This copies Kivy.app to `<app_folder_name>.app` and includes a compiled "
+"copy of your app into this package."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:277
+msgid ""
+"That's it, your self-contained package is ready to be deployed! You can "
+"now further customize your app as described bellow."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:281
+msgid "Installing modules"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:283
+msgid ""
+"Kivy package on osx uses its own virtual env that is activated when you "
+"run your app using `kivy` command. To install any module you need to "
+"install the module like so::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:290
+msgid "Where are the modules/files installed?"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:291
+msgid "Inside the portable venv within the app at::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:295
+msgid ""
+"If you install a module that installs a binary for example like kivy-"
+"garden That binary will be only available from the venv above, as in "
+"after you do::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:300
+msgid "The garden lib will be only available when you activate this env."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:302
+msgid ""
+"source /Applications/Kivy.app/Contents/Resources/venv/bin/activate garden"
+" install mapview deactivate"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:307
+msgid "To install binary files"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:309
+msgid ""
+"Just copy the binary to the Kivy.app/Contents/Resources/venv/bin/ "
+"directory."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:312
+msgid "To include other frameworks"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:313
+msgid ""
+"Kivy.app comes with SDL2 and Gstreamer frameworks provided. To include "
+"frameworks other than the ones provided do the following::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:322
+msgid ""
+"Do not forget to replace <Framework_name> with your framework. This tool "
+"`osxrelocator` essentially changes the path for the libs in the framework"
+" such that they are relative to the executable within the .app, making "
+"the Framework portable with the .app."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:329
+msgid "Shrinking the app size"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:330
+msgid ""
+"The app has a considerable size right now, however the unneeded parts can"
+" be removed from the package."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:333
+msgid ""
+"For example if you don't use GStreamer, simply remove it from "
+"YourApp.app/Contents/Frameworks. Similarly you can remove the examples "
+"folder from /Applications/Kivy.app/Contents/Resources/kivy/examples/ or "
+"kivy/tools, kivy/docs etc."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:339
+msgid ""
+"This way the package can be made to only include the parts that are "
+"needed for your app."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:343
+msgid "Adjust settings"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:344
+msgid ""
+"Icons and other settings of your app can be changed by editing "
+"YourApp/Contents/info.plist to suit your needs."
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:348
+msgid "Create a DMG"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:349
+msgid "To make a DMG of your app use the following command::"
+msgstr ""
+
+#: ../../sources/guide/packaging-osx.rst:353
+msgid ""
+"Note the lack of `/` at the end. This should give you a compressed dmg "
+"that will further shrink the size of your distributed app."
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:2
+msgid "Create a package for Windows"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:6
+msgid "This document only applies for kivy ``1.9.1`` and greater."
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:8
+msgid ""
+"Packaging your application for the Windows platform can only be done "
+"inside the Windows OS. The following process has been tested on Windows "
+"with the Kivy **wheels** installation, see at the end for alternate "
+"installations."
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:12
+msgid ""
+"The package will be either 32 or 64 bits depending on which version of "
+"Python you ran it with."
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:18
+msgid "Requirements"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:20
+msgid "Latest Kivy (installed as described in :ref:`installation_windows`)."
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:21
+msgid "PyInstaller 3.1+ (``pip install --upgrade pyinstaller``)."
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:26
+msgid "PyInstaller default hook"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:28
+msgid ""
+"This section applies to PyInstaller (>= 3.1) that includes the kivy "
+"hooks. To overwrite the default hook the following examples need to be "
+"slightly modified. See :ref:`overwrite-win-hook`."
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:33
+msgid "Packaging a simple app"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:35
+msgid ""
+"For this example, we'll package the **touchtracer** example project and "
+"embed a custom icon. The location of the kivy examples is, when using the"
+" wheels, installed to ``python\\\\share\\\\kivy-examples`` and when using"
+" the github source code installed as ``kivy\\\\examples``. We'll just "
+"refer to the full path leading to the examples as ``examples-path``. The "
+"touchtracer example is in ``examples-path\\\\demo\\\\touchtracer`` and "
+"the main file is named ``main.py``."
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:42
+msgid ""
+"Open your command line shell and ensure that python is on the path (i.e. "
+"``python`` works)."
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:44
+msgid ""
+"Create a folder into which the packaged app will be created. For example "
+"create a ``TouchApp`` folder and `change to that directory "
+"<http://www.computerhope.com/cdhlp.htm>`_ with e.g. ``cd TouchApp``. Then"
+" type::"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:51
+msgid ""
+"You can also add an `icon.ico` file to the application folder in order to"
+" create an icon for the executable. If you don't have a .ico file "
+"available, you can convert your `icon.png` file to ico using the web app "
+"`ConvertICO <http://www.convertico.com>`_. Save the `icon.ico` in the "
+"touchtracer directory and type::"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:59
+msgid ""
+"For more options, please consult the `PyInstaller Manual "
+"<http://pythonhosted.org/PyInstaller/>`_."
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:62
+msgid ""
+"The spec file will be ``touchtracer.spec`` located in ``TouchApp``. Now "
+"we need to edit the spec file to add the dependencies hooks to correctly "
+"build the exe. Open the spec file with your favorite editor and add these"
+" lines at the beginning of the spec (assuming sdl2 is used, the default "
+"now)::"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:69
+msgid ""
+"Then, find ``COLLECT()`` and add the data for touchtracer "
+"(`touchtracer.kv`, `particle.png`, ...): Change the line to add a "
+"``Tree()`` object, e.g. ``Tree('examples-"
+"path\\\\demo\\\\touchtracer\\\\')``. This Tree will search and add every "
+"file found in the touchtracer directory to your final package."
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:75
+msgid ""
+"To add the dependencies, before the first keyword argument in COLLECT add"
+" a Tree object for every path of the dependencies. E.g. ``*[Tree(p) for p"
+" in (sdl2.dep_bins + glew.dep_bins)]`` so it'll look something like::"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:89
+msgid "Now we build the spec file in ``TouchApp`` with::"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:93
+msgid ""
+"The compiled package will be in the `TouchApp\\\\dist\\\\touchtracer` "
+"directory."
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:96
+msgid "Packaging a video app with gstreamer"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:98
+msgid ""
+"Following we'll slightly modify the example above to package a app that "
+"uses gstreamer for video. We'll use the ``videoplayer`` example found at "
+"``examples-path\\widgets\\videoplayer.py``. Create a folder somewhere "
+"called ``VideoPlayer`` and on the command line change your current "
+"directory to that folder and do::"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:106
+msgid ""
+"to create the ``gstvideo.spec`` file. Edit as above and this time include"
+" the gstreamer dependency as well::"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:111
+msgid ""
+"and add the ``Tree()`` to include the video files, e.g. ``Tree('examples-"
+"path\\\\widgets')`` as well as the gstreamer dependencies so it should "
+"look something like::"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:124
+msgid "Then build the spec file in ``VideoPlayer`` with::"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:128
+msgid ""
+"and you should find gstvideo.exe in ``VideoPlayer\\dist\\gstvideo``, "
+"which when run will play a video."
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:133
+msgid ""
+"If you're using Pygame and need PyGame in your packaging app, you'll have"
+" to add the following code to your spec file due to kivy issue #1638. "
+"After the imports add the following::"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:149
+msgid "Overwriting the default hook"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:152
+msgid "Including/excluding video and audio and reducing app size"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:154
+msgid ""
+"PyInstaller includes a hook for kivy that by default adds **all** the "
+"core modules used by kivy, e.g. audio, video, spelling etc (you still "
+"need to package the gstreamer dlls manually with ``Tree()`` - see the "
+"example above) and their dependencies. If the hook is not installed or to"
+" reduce app size some of these modules may be excluded, e.g. if no "
+"audio/video is used, with an alternative hook."
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:161
+msgid ""
+"Kivy provides the alternate hook at "
+":func:`~kivy.tools.packaging.pyinstaller_hooks.hookspath`. In addition, "
+"if and only if PyInstaller doesn't have the default hooks "
+":func:`~kivy.tools.packaging.pyinstaller_hooks.runtime_hooks` must also "
+"be provided. When overwriting the hook, the latter one typically is not "
+"required to be overwritten."
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:168
+msgid ""
+"The alternate :func:`~kivy.tools.packaging.pyinstaller_hooks.hookspath` "
+"hook does not include any of the kivy providers. To add them, they have "
+"to be added with "
+":func:`~kivy.tools.packaging.pyinstaller_hooks.get_deps_minimal` or "
+":func:`~kivy.tools.packaging.pyinstaller_hooks.get_deps_all`. See their "
+"documentation and :mod:`~kivy.tools.packaging.pyinstaller_hooks` for more"
+" details. But essentially, "
+":func:`~kivy.tools.packaging.pyinstaller_hooks.get_deps_all` add all the "
+"providers like in the default hook while "
+":func:`~kivy.tools.packaging.pyinstaller_hooks.get_deps_minimal` only "
+"adds those that are loaded when the app is run. Each method provides a "
+"list of hidden kivy imports and excluded imports that can be passed on to"
+" ``Analysis``."
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:181
+msgid ""
+"One can also generate a alternate hook which literally lists every kivy "
+"provider module and those not required can be commented out. See "
+":mod:`~kivy.tools.packaging.pyinstaller_hooks`."
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:185
+msgid ""
+"To use the the alternate hooks with the examples above modify as "
+"following to add the hooks with ``hookspath()`` and ``runtime_hooks`` (if"
+" required) and ``**get_deps_minimal()`` or ``**get_deps_all()`` to "
+"specify the providers."
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:189
+msgid "For example, add the import statement::"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:193
+msgid "and then modify ``Analysis`` as follows::"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:202
+msgid "to include everything like the default hook. Or::"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:211
+msgid ""
+"e.g. to exclude the audio and video providers and for the other core "
+"modules only use those loaded."
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:214
+msgid ""
+"The key points is to provide the alternate "
+":func:`~kivy.tools.packaging.pyinstaller_hooks.hookspath` which does not "
+"list by default all the kivy providers and instead manually to "
+"hiddenimports add the required providers while removing the undesired "
+"ones (audio and video in this example) with "
+":func:`~kivy.tools.packaging.pyinstaller_hooks.get_deps_minimal`."
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:222
+msgid "Alternate installations"
+msgstr ""
+
+#: ../../sources/guide/packaging-windows.rst:224
+msgid ""
+"The previous examples used e.g. ``*[Tree(p) for p in (sdl2.dep_bins + "
+"glew.dep_bins + gstreamer.dep_bins)],`` to make PyInstaller add all the "
+"dlls used by these dependencies. If kivy was not installed using the "
+"wheels method these commands will not work and e.g. ``kivy.deps.sdl2`` "
+"will fail to import. Instead, one must find the location of these dlls "
+"and manually pass them to the ``Tree`` class in a similar fashion as the "
+"example."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:43
+msgid "Introduction to Widget"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:45
+msgid ""
+"A |Widget| is the base building block of GUI interfaces in Kivy. It "
+"provides a |Canvas| that can be used to draw on screen. It receives "
+"events and reacts to them. For a in-depth explanation about the |Widget| "
+"class, look at the module documentation."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:51
+msgid "Manipulating the Widget tree"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:53
+msgid ""
+"Widgets in Kivy are organized in trees. Your application has a `root "
+"widget`, which usually has |children| that can have |children| of their "
+"own. Children of a widget are represented as the |children| attribute, a "
+"Kivy |ListProperty|."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:58
+msgid "The widget tree can be manipulated with the following methods:"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:60
+msgid ":meth:`~kivy.uix.widget.Widget.add_widget`: add a widget as a child"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:61
+msgid ""
+":meth:`~kivy.uix.widget.Widget.remove_widget`: remove a widget from the "
+"children list"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:63
+msgid ""
+":meth:`~kivy.uix.widget.Widget.clear_widgets`: remove all children from a"
+" widget"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:66
+msgid "For example, if you want to add a button inside a BoxLayout, you can do::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:72
+msgid ""
+"The button is added to layout: the button's parent property will be set "
+"to layout; the layout will have the button added to its children list. To"
+" remove the button from the layout::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:78
+msgid ""
+"With removal, the button's parent property will be set to None, and the "
+"layout will have button removed from its children list."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:81
+msgid ""
+"If you want to clear all the children inside a widget, use "
+":meth:`~kivy.uix.widget.Widget.clear_widgets` method::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:88
+msgid ""
+"Never manipulate the children list yourself, unless you really know what "
+"you are doing. The widget tree is associated with a graphic tree. For "
+"example, if you add a widget into the children list without adding its "
+"canvas to the graphics tree, the widget will be a child, yes, but nothing"
+" will be drawn on the screen. Moreover, you might have issues on further "
+"calls of add_widget, remove_widget and clear_widgets."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:96
+msgid "Traversing the Tree"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:98
+msgid ""
+"The Widget class instance's :attr:`~kivy.uix.widget.Widget.children` list"
+" property contains all the children. You can easily traverse the tree by "
+"doing::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:106
+msgid ""
+"However, this must be used carefully. If you intend to modify the "
+"children list with one of the methods shown in the previous section, you "
+"must use a copy of the list like this::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:116
+msgid ""
+"Widgets don't influence the size/pos of their children by default. The "
+"|pos| attribute is the absolute position in screen co-ordinates (unless, "
+"you use the |RelativeLayout|. More on that later) and |size|, is an "
+"absolute size."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:121
+msgid "Widgets Z Index"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:123
+msgid ""
+"The order of widget drawing is based on the widget's position in the "
+"widget tree. The :attr:`~kivy.uix.widget.Widget.add_widget` method takes "
+"an `index` parameter which can be used to specify it's position in the "
+"widget tree::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:130
+msgid ""
+"The lower indexed widgets will be drawn above those with a higher index. "
+"Keep in mind that the default for `index` is 0, so widgets added later "
+"are drawn on top of the others unless specified otherwise."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:135
+msgid "Organize with Layouts"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:137
+msgid ""
+"|Layout| is a special kind of widget that controls the size and position "
+"of its children. There are different kinds of layouts, allowing for "
+"different automatic organization of their children. Layouts use "
+"|size_hint| and |pos_hint| properties to determine the |size| and |pos| "
+"of their |children|."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:142
+msgid ""
+"**BoxLayout**: Arranges widgets in an adjacent manner (either vertically "
+"or horizontally) manner, to fill all the space. The size_hint property of"
+" children can be used to change proportions allowed to each child, or set"
+" fixed size for some of them."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:164
+msgid ""
+"**GridLayout**: Arranges widgets in a grid. You must specify at least one"
+" dimension of the grid so kivy can compute the size of the elements and "
+"how to arrange them."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:168
+msgid ""
+"**StackLayout**: Arranges widgets adjacent to one another, but with a set"
+" size in one of the dimensions, without trying to make them fit within "
+"the entire space. This is useful to display children of the same "
+"predefined size."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:173
+msgid ""
+"**AnchorLayout**: A simple layout only caring about children positions. "
+"It allows putting the children at a position relative to a border of the "
+"layout. `size_hint` is not honored."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:178
+msgid ""
+"**FloatLayout**: Allows placing children with arbitrary locations and "
+"size, either absolute or relative to the layout size. Default size_hint "
+"(1, 1) will make every child the same size as the whole layout, so you "
+"probably want to change this value if you have more than one child. You "
+"can set size_hint to (None, None) to use absolute size with `size`. This "
+"widget honors `pos_hint` also, which as a dict setting position relative "
+"to layout position."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:186
+msgid ""
+"**RelativeLayout**: Behaves just like FloatLayout, except children "
+"positions are relative to layout position, not the screen."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:190
+msgid ""
+"Examine the documentation of the individual layouts for a more in-depth "
+"understanding."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:193
+msgid "|size_hint| and |pos_hint|:"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:195
+msgid "|FloatLayout|"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:196
+msgid "|BoxLayout|"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:197
+msgid "|GridLayout|"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:198
+msgid "|StackLayout|"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:199
+msgid "|RelativeLayout|"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:200
+msgid "|AnchorLayout|"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:202
+msgid ""
+"|size_hint| is a |ReferenceListProperty| of |size_hint_x| and "
+"|size_hint_y|. It accepts values from `0` to `1` or `None` and defaults "
+"to `(1, 1)`. This signifies that if the widget is in a layout, the layout"
+" will allocate it as much place as possible in both directions (relative "
+"to the layouts size)."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:208
+msgid ""
+"Setting |size_hint| to (0.5, 0.8), for example, will make the widget 50% "
+"the width and 80% the height of available size for the |widget| inside a "
+"|layout|."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:211
+msgid "Consider the following example:"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:222
+msgid ""
+"Now load kivy catalog by typing the following, but replacing $KIVYDIR "
+"with the directory of your installation (discoverable via "
+":py:mod:`os.path.dirname(kivy.__file__)`)::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:229
+msgid ""
+"A new window will appear. Click in the area below the 'Welcome' |Spinner|"
+" on the left and replace the text there with your kv code from above."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:234
+#, python-format
+msgid ""
+"As you can see from the image above, the `Button` takes up 100% of the "
+"layout |size|."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:237
+#, python-format
+msgid ""
+"Changing the |size_hint_x|/|size_hint_y| to .5 will make the |widget| "
+"take 50% of the |layout| |width|/|height|."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:242
+#, python-format
+msgid ""
+"You can see here that, although we specify |size_hint_x| and "
+"|size_hint_y| both to be .5, only |size_hint_y| seems to be honored. That"
+" is because |BoxLayout| controls the |size_hint_y| when |orientation| is "
+"`vertical` and |size_hint_x| when |orientation| is 'horizontal'. The "
+"controlled dimension's size is calculated depending upon the total no. of"
+" |children| in the |BoxLayout|. In this example, one child has "
+"|size_hint_y| controlled (.5/.5 = 1). Thus, the widget takes 100% of the "
+"parent layout's height."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:250
+msgid "Let's add another |Button| to the |layout| and see what happens."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:254
+msgid ""
+"|BoxLayout| by its very nature divides the available space between its "
+"|children| equally. In our example, the proportion is 50-50, because we "
+"have two |children|. Let's use size_hint on one of the children and see "
+"the results."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:260
+msgid ""
+"If a child specifies |size_hint|, this specifies how much space the "
+"|Widget| will take out of the |size| given to it by the |BoxLayout|. In "
+"our example, the first |Button| specifies .5 for |size_hint_x|. The space"
+" for the widget is calculated like so::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:270
+#, python-format
+msgid ""
+"The rest of the BoxLayout's |width| is divided among the rest of the "
+"|children|. In our example, this means the second |Button| takes up "
+"66.66% of the |layout| |width|."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:274
+msgid "Experiment with |size_hint| to get comfortable with it."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:276
+msgid ""
+"If you want to control the absolute |size| of a |Widget|, you can set "
+"|size_hint_x|/|size_hint_y| or both to `None` so that the widget's "
+"|width| and or |height| attributes will be honored."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:280
+msgid ""
+"|pos_hint| is a dict, which defaults to empty. As for |size_hint|, "
+"layouts honor |pos_hint| differently, but generally you can add values to"
+" any of the |pos| attributes (|x|, |y|, |right|, |top|, |center_x|, "
+"|center_y|) to have the |Widget| positioned relative to its |parent|."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:285
+msgid ""
+"Let's experiment with the following code in kivycatalog to understand "
+"|pos_hint| visually:"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:305
+msgid "This gives us:"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:309
+msgid ""
+"As with |size_hint|, you should experiment with |pos_hint| to understand "
+"the effect it has on the widget positions."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:315
+msgid "Adding a Background to a Layout"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:317
+msgid "One of the frequently asked questions about layouts is:::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:321
+msgid ""
+"Layouts by their nature have no visual representation: they have no "
+"canvas instructions by default. However you can add canvas instructions "
+"to a layout instance easily, as with adding a colored background:"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:325
+msgid "In Python::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:334
+msgid ""
+"Unfortunately, this will only draw a rectangle at the layout's initial "
+"position and size. To make sure the rect is drawn inside the layout, when"
+" the layout size/pos changes, we need to listen to any changes and update"
+" the rectangles size and pos. We can do that as follows::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:351
+msgid "In kv:"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:364
+msgid ""
+"The kv declaration sets an implicit binding: the last two kv lines ensure"
+" that the |pos| and |size| values of the rectangle will update when the "
+"|pos| of the |FloatLayout| changes."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:368
+msgid "Now we put the snippets above into the shell of Kivy App."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:370
+msgid "Pure Python way::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:410 ../../sources/guide/widgets.rst:504
+msgid "Using the kv Language::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:439 ../../sources/guide/widgets.rst:551
+msgid "Both of the Apps should look something like this:"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:444
+msgid "Add a color to the background of a **custom layouts rule/class**"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:446
+msgid ""
+"The way we add background to the layout's instance can quickly become "
+"cumbersome if we need to use multiple layouts. To help with this, you can"
+" subclass the Layout and create your own layout that adds a background."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:450
+msgid "Using Python::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:555
+msgid ""
+"Defining the background in the custom layout class, assures that it will "
+"be used in every instance of CustomLayout."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:558
+msgid ""
+"Now, to add an image or color to the background of a built-in Kivy "
+"layout, **globally**, we need to override the kv rule for the layout in "
+"question. Consider GridLayout::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:571
+msgid "Then, when we put this snippet into a Kivy app::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:621
+msgid "The result should look something like this:"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:625
+msgid ""
+"As we are overriding the rule of the class GridLayout, any use of this "
+"class in our app will display that image."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:628
+msgid "How about an **Animated background**?"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:630
+msgid ""
+"You can set the drawing instructions like "
+"Rectangle/BorderImage/Ellipse/... to use a particular texture::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:636
+msgid "We use this to display an animated background::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:698
+msgid "To try to understand what is happening here, start from line 13::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:702
+msgid ""
+"This specifies that the `texture` property of `BorderImage` will be "
+"updated whenever the `texture` property of `background_image` updates. We"
+" define the background_image property at line 40::"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:708
+msgid ""
+"This sets up `background_image` as an |ObjectProperty| in which we add an"
+" |Image| widget. An image widget has a `texture` property; where you see "
+"`self.background_image.texture`, this sets a reference, `texture`, to "
+"this property. The |Image| widget supports animation: the texture of the "
+"image is updated whenever the animation changes, and the texture of "
+"BorderImage instruction is updated in the process."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:715
+msgid ""
+"You can also just blit custom data to the texture. For details, look at "
+"the documentation of :class:`~kivy.graphics.texture.Texture`."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:719
+msgid "Nesting Layouts"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:721
+msgid "Yes! It is quite fun to see how extensible the process can be."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:725
+msgid "Size and position metrics"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:739
+msgid ""
+"Kivy's default unit for length is the pixel, all sizes and positions are "
+"expressed in it by default. You can express them in other units, which is"
+" useful to achieve better consistency across devices (they get converted "
+"to the size in pixels automatically)."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:744
+msgid ""
+"Available units are |pt|, |mm|, |cm|, |in|, |dp| and |sp|. You can learn "
+"about their usage in the |metrics| documentation."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:747
+msgid ""
+"You can also experiment with the |screen| usage to simulate various "
+"devices screens for your application."
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:751
+msgid "Screen Separation with Screen Manager"
+msgstr ""
+
+#: ../../sources/guide/widgets.rst:753
+msgid ""
+"If your application is composed of various screens, you likely want an "
+"easy way to navigate from one |Screen| to another. Fortunately, there is "
+"the |ScreenManager| class, that allows you to define screens separately, "
+"and to set the |Transitions| from one to another."
+msgstr ""
+

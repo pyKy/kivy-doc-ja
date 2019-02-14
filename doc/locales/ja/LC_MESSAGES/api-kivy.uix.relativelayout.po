@@ -1,0 +1,324 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-15 00:59+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../sources/api-kivy.uix.relativelayout.rst:3
+msgid "Relative Layout"
+msgstr ""
+
+#: kivy.uix.relativelayout:5 of
+msgid ""
+"This layout allows you to set relative coordinates for children. If you "
+"want absolute positioning, use the "
+":class:`~kivy.uix.floatlayout.FloatLayout`."
+msgstr ""
+
+#: kivy.uix.relativelayout:8 of
+msgid ""
+"The :class:`RelativeLayout` class behaves just like the regular "
+":class:`FloatLayout` except that its child widgets are positioned "
+"relative to the layout."
+msgstr ""
+
+#: kivy.uix.relativelayout:12 of
+msgid ""
+"When a widget with position = (0,0) is added to a RelativeLayout, the "
+"child widget will also move when the position of the RelativeLayout is "
+"changed. The child widgets coordinates remain (0,0) as they are always "
+"relative to the parent layout."
+msgstr ""
+
+#: kivy.uix.relativelayout:18 of
+msgid "Coordinate Systems"
+msgstr ""
+
+#: kivy.uix.relativelayout:21 of
+msgid "Window coordinates"
+msgstr ""
+
+#: kivy.uix.relativelayout:23 of
+msgid ""
+"By default, there's only one coordinate system that defines the position "
+"of widgets and touch events dispatched to them: the window coordinate "
+"system, which places (0, 0) at the bottom left corner of the window. "
+"Although there are other coordinate systems defined, e.g. local and "
+"parent coordinates, these coordinate systems are identical to the window "
+"coordinate system as long as a relative layout type widget is not in the "
+"widget's parent stack. When widget.pos is read or a touch is received, "
+"the coordinate values are in parent coordinates, but as mentioned, these "
+"are identical to window coordinates, even in complex widget stacks."
+msgstr ""
+
+#: kivy.uix.relativelayout:33 kivy.uix.relativelayout:77 of
+msgid "For example:"
+msgstr ""
+
+#: kivy.uix.relativelayout:49 of
+msgid ""
+"When the middle button is clicked and the touch propagates through the "
+"different parent coordinate systems, it prints the following::"
+msgstr ""
+
+#: kivy.uix.relativelayout:56 of
+msgid ""
+"As claimed, the touch has identical coordinates to the window coordinates"
+" in every coordinate system. "
+":meth:`~kivy.uix.widget.Widget.collide_point` for example, takes the "
+"point in window coordinates."
+msgstr ""
+
+#: kivy.uix.relativelayout:61 of
+msgid "Parent coordinates"
+msgstr ""
+
+#: kivy.uix.relativelayout:63 of
+msgid ""
+"Other :class:`RelativeLayout` type widgets are "
+":class:`~kivy.uix.scatter.Scatter`, "
+":class:`~kivy.uix.scatterlayout.ScatterLayout`, and "
+":class:`~kivy.uix.scrollview.ScrollView`. If such a special widget is in "
+"the parent stack, only then does the parent and local coordinate system "
+"diverge from the window coordinate system. For each such widget in the "
+"stack, a coordinate system with (0, 0) of that coordinate system being at"
+" the bottom left corner of that widget is created. **Position and touch "
+"coordinates received and read by a widget are in the coordinate system of"
+" the most recent special widget in its parent stack (not including "
+"itself) or in window coordinates if there are none** (as in the first "
+"example). We call these coordinates parent coordinates."
+msgstr ""
+
+#: kivy.uix.relativelayout:93 of
+msgid "Clicking on the middle button prints::"
+msgstr ""
+
+#: kivy.uix.relativelayout:99 of
+msgid ""
+"As the touch propagates through the widgets, for each widget, the touch "
+"is received in parent coordinates. Because both the relative and middle "
+"widgets don't have these special widgets in their parent stack, the touch"
+" is the same as window coordinates. Only the right widget, which has a "
+"RelativeLayout in its parent stack, receives the touch in coordinates "
+"relative to that RelativeLayout which is different than window "
+"coordinates."
+msgstr ""
+
+#: kivy.uix.relativelayout:107 of
+msgid "Local and Widget coordinates"
+msgstr ""
+
+#: kivy.uix.relativelayout:109 of
+msgid ""
+"When expressed in parent coordinates, the position is expressed in the "
+"coordinates of the most recent special widget in its parent stack, not "
+"including itself. When expressed in local or widget coordinates, the "
+"widgets themselves are also included."
+msgstr ""
+
+#: kivy.uix.relativelayout:114 of
+msgid ""
+"Changing the above example to transform the parent coordinates into local"
+" coordinates:"
+msgstr ""
+
+#: kivy.uix.relativelayout:131 of
+msgid "Now, clicking on the middle button prints::"
+msgstr ""
+
+#: kivy.uix.relativelayout:137 of
+msgid ""
+"This is because now the relative widget also expresses the coordinates "
+"relative to itself."
+msgstr ""
+
+#: kivy.uix.relativelayout:141 of
+msgid "Coordinate transformations"
+msgstr ""
+
+#: kivy.uix.relativelayout:143 of
+msgid ""
+":class:`~kivy.uix.widget.Widget` provides 4 functions to transform "
+"coordinates between the various coordinate systems. For now, we assume "
+"that the `relative` keyword of these functions is `False`. "
+":meth:`~kivy.uix.widget.Widget.to_widget` takes the coordinates expressed"
+" in window coordinates and returns them in local (widget) coordinates. "
+":meth:`~kivy.uix.widget.Widget.to_window` takes the coordinates expressed"
+" in local coordinates and returns them in window coordinates. "
+":meth:`~kivy.uix.widget.Widget.to_parent` takes the coordinates expressed"
+" in local coordinates and returns them in parent coordinates. "
+":meth:`~kivy.uix.widget.Widget.to_local` takes the coordinates expressed "
+"in parent coordinates and returns them in local coordinates."
+msgstr ""
+
+#: kivy.uix.relativelayout:155 of
+msgid ""
+"Each of the 4 transformation functions take a `relative` parameter. When "
+"the relative parameter is True, the coordinates are returned or originate"
+" in true relative coordinates - relative to a coordinate system with its "
+"(0, 0) at the bottom left corner of the widget in question."
+msgstr ""
+
+#: kivy.uix.relativelayout:163 of
+msgid "Common Pitfalls"
+msgstr ""
+
+#: kivy.uix.relativelayout:165 of
+msgid ""
+"As all positions within a :class:`RelativeLayout` are relative to the "
+"position of the layout itself, the position of the layout should never be"
+" used in determining the position of sub-widgets or the layout's "
+":attr:`canvas`."
+msgstr ""
+
+#: kivy.uix.relativelayout:169 of
+msgid "Take the following kv code for example:"
+msgstr ""
+
+#: kivy.uix.relativelayout:176 of
+msgid "expected result"
+msgstr ""
+
+#: kivy.uix.relativelayout:181 of
+msgid "actual result"
+msgstr ""
+
+#: kivy.uix.relativelayout:210 of
+msgid ""
+"You might expect this to render a single pink rectangle; however, the "
+"content of the :class:`RelativeLayout` is already transformed, so the use"
+" of `pos: self.pos` will double that transformation. In this case, using "
+"`pos: 0, 0` or omitting `pos` completely will provide the expected "
+"result."
+msgstr ""
+
+#: kivy.uix.relativelayout:215 of
+msgid ""
+"This also applies to the position of sub-widgets. Instead of positioning "
+"a :class:`~kivy.uix.widget.Widget` based on the layout's own position:"
+msgstr ""
+
+#: kivy.uix.relativelayout:226 of
+msgid "use the :attr:`pos_hint` property:"
+msgstr ""
+
+#: kivy.uix.relativelayout:236 of
+msgid ""
+"Prior to version 1.7.0, the :class:`RelativeLayout` was implemented as a "
+":class:`~kivy.uix.floatlayout.FloatLayout` inside a "
+":class:`~kivy.uix.scatter.Scatter`. This behaviour/widget has been "
+"renamed to `ScatterLayout`. The :class:`RelativeLayout` now only supports"
+" relative positions (and can't be rotated, scaled or translated on a "
+"multitouch system using two or more fingers). This was done so that the "
+"implementation could be optimized and avoid the heavier calculations of "
+":class:`Scatter` (e.g. inverse matrix, recalculating multiple properties "
+"etc.)"
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.uix.floatlayout.FloatLayout`"
+msgstr ""
+
+#: kivy.uix.relativelayout.RelativeLayout:1 of
+msgid "RelativeLayout class, see module documentation for more information."
+msgstr ""
+
+#: kivy.uix.relativelayout.RelativeLayout.do_layout:1 of
+msgid ""
+"This function is called when a layout is called by a trigger. If you are "
+"writing a new Layout subclass, don't call this function directly but use "
+":meth:`_trigger_layout` instead."
+msgstr ""
+
+#: kivy.uix.relativelayout.RelativeLayout.do_layout:5 of
+msgid ""
+"The function is by default called *before* the next frame, therefore the "
+"layout isn't updated immediately. Anything depending on the positions of "
+"e.g. children should be scheduled for the next frame."
+msgstr ""
+
+#: kivy.uix.relativelayout.RelativeLayout.on_touch_down:1 of
+msgid "Receive a touch down event."
+msgstr ""
+
+#: kivy.uix.relativelayout.RelativeLayout.on_touch_down
+#: kivy.uix.relativelayout.RelativeLayout.to_local
+#: kivy.uix.relativelayout.RelativeLayout.to_parent of
+msgid "Parameters"
+msgstr ""
+
+#: kivy.uix.relativelayout.RelativeLayout.on_touch_down:7 of
+msgid "`touch`: :class:`~kivy.input.motionevent.MotionEvent` class"
+msgstr ""
+
+#: kivy.uix.relativelayout.RelativeLayout.on_touch_down:5 of
+msgid ""
+"Touch received. The touch is in parent coordinates. See "
+":mod:`~kivy.uix.relativelayout` for a discussion on coordinate systems."
+msgstr ""
+
+#: kivy.uix.relativelayout.RelativeLayout.on_touch_down of
+msgid "Returns"
+msgstr ""
+
+#: kivy.uix.relativelayout.RelativeLayout.on_touch_down:9 of
+msgid ""
+"bool If True, the dispatching of the touch event will stop. If False, the"
+" event will continue to be dispatched to the rest of the widget tree."
+msgstr ""
+
+#: kivy.uix.relativelayout.RelativeLayout.on_touch_move:1 of
+msgid "Receive a touch move event. The touch is in parent coordinates."
+msgstr ""
+
+#: kivy.uix.relativelayout.RelativeLayout.on_touch_move:3
+#: kivy.uix.relativelayout.RelativeLayout.on_touch_up:3 of
+msgid "See :meth:`on_touch_down` for more information."
+msgstr ""
+
+#: kivy.uix.relativelayout.RelativeLayout.on_touch_up:1 of
+msgid "Receive a touch up event. The touch is in parent coordinates."
+msgstr ""
+
+#: kivy.uix.relativelayout.RelativeLayout.to_local:1 of
+msgid ""
+"Transform parent coordinates to local coordinates. See "
+":mod:`~kivy.uix.relativelayout` for details on the coordinate systems."
+msgstr ""
+
+#: kivy.uix.relativelayout.RelativeLayout.to_local:6
+#: kivy.uix.relativelayout.RelativeLayout.to_parent:6 of
+msgid "`relative`: bool, defaults to False"
+msgstr ""
+
+#: kivy.uix.relativelayout.RelativeLayout.to_local:6 of
+msgid ""
+"Change to True if you want to translate coordinates to relative widget "
+"coordinates."
+msgstr ""
+
+#: kivy.uix.relativelayout.RelativeLayout.to_parent:1 of
+msgid ""
+"Transform local coordinates to parent coordinates. See "
+":mod:`~kivy.uix.relativelayout` for details on the coordinate systems."
+msgstr ""
+
+#: kivy.uix.relativelayout.RelativeLayout.to_parent:6 of
+msgid ""
+"Change to True if you want to translate relative positions from a widget "
+"to its parent coordinates."
+msgstr ""
+

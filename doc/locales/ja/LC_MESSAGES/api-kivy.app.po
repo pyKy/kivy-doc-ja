@@ -1,0 +1,867 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-15 00:59+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../sources/api-kivy.app.rst:3
+msgid "Application"
+msgstr ""
+
+#: kivy.app:2 of
+msgid ""
+"The :class:`App` class is the base for creating Kivy applications. Think "
+"of it as your main entry point into the Kivy run loop. In most cases, you"
+" subclass this class and make your own app. You create an instance of "
+"your specific app class and then, when you are ready to start the "
+"application's life cycle, you call your instance's :meth:`App.run` "
+"method."
+msgstr ""
+
+#: kivy.app:11 of
+msgid "Creating an Application"
+msgstr ""
+
+#: kivy.app:14 of
+msgid "Method using build() override"
+msgstr ""
+
+#: kivy.app:16 of
+msgid ""
+"To initialize your app with a widget tree, override the "
+":meth:`~App.build` method in your app class and return the widget tree "
+"you constructed."
+msgstr ""
+
+#: kivy.app:19 of
+msgid "Here's an example of a very simple application that just shows a button:"
+msgstr ""
+
+#: kivy.app:24 of
+msgid ""
+"The file is also available in the examples folder at "
+":file:`kivy/examples/application/app_with_build.py`."
+msgstr ""
+
+#: kivy.app:27 of
+msgid ""
+"Here, no widget tree was constructed (or if you will, a tree with only "
+"the root node)."
+msgstr ""
+
+#: kivy.app:32 of
+msgid "Method using kv file"
+msgstr ""
+
+#: kivy.app:34 of
+msgid ""
+"You can also use the :doc:`api-kivy.lang` for creating applications. The "
+".kv can contain rules and root widget definitions at the same time. Here "
+"is the same example as the Button one in a kv file."
+msgstr ""
+
+#: kivy.app:38 of
+msgid "Contents of 'test.kv':"
+msgstr ""
+
+#: kivy.app:43 of
+msgid "Contents of 'main.py':"
+msgstr ""
+
+#: kivy.app:48 of
+msgid "See :file:`kivy/examples/application/app_with_kv.py`."
+msgstr ""
+
+#: kivy.app:50 of
+msgid ""
+"The relationship between main.py and test.kv is explained in "
+":meth:`App.load_kv`."
+msgstr ""
+
+#: kivy.app:56 of
+msgid "Application configuration"
+msgstr ""
+
+#: kivy.app:59 of
+msgid "Use the configuration file"
+msgstr ""
+
+#: kivy.app:61 of
+msgid ""
+"Your application might need its own configuration file. The :class:`App` "
+"class handles 'ini' files automatically if you add the section key-value "
+"pair to the :meth:`App.build_config` method using the `config` parameter "
+"(an instance of :class:`~kivy.config.ConfigParser`)::"
+msgstr ""
+
+#: kivy.app:73 of
+msgid ""
+"As soon as you add one section to the config, a file is created on the "
+"disk (see :attr:`~App.get_application_config` for its location) and named"
+" based your class name. \"TestApp\" will give a config file named "
+"\"test.ini\" with the content::"
+msgstr ""
+
+#: kivy.app:82 of
+msgid ""
+"The \"test.ini\" will be automatically loaded at runtime and you can "
+"access the configuration in your :meth:`App.build` method::"
+msgstr ""
+
+#: kivy.app:99 of
+msgid "Create a settings panel"
+msgstr ""
+
+#: kivy.app:101 of
+msgid ""
+"Your application can have a settings panel to let your user configure "
+"some of your config tokens. Here is an example done in the KinectViewer "
+"example (available in the examples directory):"
+msgstr ""
+
+#: kivy.app:108 of
+msgid ""
+"You can add your own panels of settings by extending the "
+":meth:`App.build_settings` method. Check the "
+":class:`~kivy.uix.settings.Settings` about how to create a panel, because"
+" you need a JSON file / data first."
+msgstr ""
+
+#: kivy.app:113 of
+msgid ""
+"Let's take as an example the previous snippet of TestApp with custom "
+"config. We could create a JSON like this::"
+msgstr ""
+
+#: kivy.app:134 of
+msgid ""
+"Then, we can create a panel using this JSON to automatically create all "
+"the options and link them to our :attr:`App.config` ConfigParser "
+"instance::"
+msgstr ""
+
+#: kivy.app:144 of
+msgid ""
+"That's all! Now you can press F1 (default keystroke) to toggle the "
+"settings panel or press the \"settings\" key on your android device. You "
+"can manually call :meth:`App.open_settings` and "
+":meth:`App.close_settings` if you want to handle this manually. Every "
+"change in the panel is automatically saved in the config file."
+msgstr ""
+
+#: kivy.app:150 of
+msgid ""
+"You can also use :meth:`App.build_settings` to modify properties of the "
+"settings panel. For instance, the default panel has a sidebar for "
+"switching between json panels whose width defaults to 200dp. If you'd "
+"prefer this to be narrower, you could add::"
+msgstr ""
+
+#: kivy.app:157 of
+msgid "to your :meth:`build_settings` method."
+msgstr ""
+
+#: kivy.app:159 of
+msgid ""
+"You might want to know when a config value has been changed by the user "
+"in order to adapt or reload your UI. You can then overload the "
+":meth:`on_config_change` method::"
+msgstr ""
+
+#: kivy.app:173 of
+msgid ""
+"The Kivy configuration panel is added by default to the settings "
+"instance. If you don't want this panel, you can declare your Application "
+"as follows::"
+msgstr ""
+
+#: kivy.app:181 of
+msgid ""
+"This only removes the Kivy panel but does not stop the settings instance "
+"from appearing. If you want to prevent the settings instance from "
+"appearing altogether, you can do this::"
+msgstr ""
+
+#: kivy.app:192 of
+msgid "Profiling with on_start and on_stop"
+msgstr ""
+
+#: kivy.app:194 of
+msgid ""
+"It is often useful to profile python code in order to discover locations "
+"to optimise. The standard library profilers "
+"(http://docs.python.org/2/library/profile.html) provides multiple options"
+" for profiling code. For profiling the entire program, the natural "
+"approaches of using profile as a module or profile's run method does not "
+"work with Kivy. It is however, possible to use :meth:`App.on_start` and "
+":meth:`App.on_stop` methods::"
+msgstr ""
+
+#: kivy.app:213 of
+msgid "This will create a file called `myapp.profile` when you exit your app."
+msgstr ""
+
+#: kivy.app:216 of
+msgid "Customising layout"
+msgstr ""
+
+#: kivy.app:218 of
+msgid ""
+"You can choose different settings widget layouts by setting "
+":attr:`App.settings_cls`. By default, this is a "
+":class:`~kivy.uix.settings.Settings` class which provides the pictured "
+"sidebar layout, but you could set it to any of the other layouts provided"
+" in :mod:`kivy.uix.settings` or create your own. See the module "
+"documentation for :mod:`kivy.uix.settings` for more information."
+msgstr ""
+
+#: kivy.app:226 of
+msgid ""
+"You can customise how the settings panel is displayed by overriding "
+":meth:`App.display_settings` which is called before displaying the "
+"settings panel on the screen. By default, it simply draws the panel on "
+"top of the window, but you could modify it to (for instance) show the "
+"settings in a :class:`~kivy.uix.popup.Popup` or add it to your app's "
+":class:`~kivy.uix.screenmanager.ScreenManager` if you are using one. If "
+"you do so, you should also modify :meth:`App.close_settings` to exit the "
+"panel appropriately. For instance, to have the settings panel appear in a"
+" popup you can do::"
+msgstr ""
+
+#: kivy.app:256 of
+msgid ""
+"Finally, if you want to replace the current settings panel widget, you "
+"can remove the internal references to it using "
+":meth:`App.destroy_settings`. If you have modified "
+":meth:`App.display_settings`, you should be careful to detect if the "
+"settings panel has been replaced."
+msgstr ""
+
+#: kivy.app:263 of
+msgid "Pause mode"
+msgstr ""
+
+#: kivy.app:267 of
+msgid ""
+"On tablets and phones, the user can switch at any moment to another "
+"application. By default, your application will close and the "
+":meth:`App.on_stop` event will be fired."
+msgstr ""
+
+#: kivy.app:271 of
+msgid ""
+"If you support Pause mode, when switching to another application, your "
+"application will wait indefinitely until the user switches back to your "
+"application. There is an issue with OpenGL on Android devices: it is not "
+"guaranteed that the OpenGL ES Context will be restored when your app "
+"resumes. The mechanism for restoring all the OpenGL data is not yet "
+"implemented in Kivy."
+msgstr ""
+
+#: kivy.app:278 of
+msgid "The currently implemented Pause mechanism is:"
+msgstr ""
+
+#: kivy.app:280 of
+msgid ""
+"Kivy checks every frame if Pause mode is activated by the Operating "
+"System due to the user switching to another application, a phone shutdown"
+" or any other reason."
+msgstr ""
+
+#: kivy.app:283 of
+msgid ":meth:`App.on_pause` is called:"
+msgstr ""
+
+#: kivy.app:284 of
+msgid "If False is returned, then :meth:`App.on_stop` is called."
+msgstr ""
+
+#: kivy.app:285 of
+msgid ""
+"If True is returned (default case), the application will sleep until the "
+"OS resumes our App."
+msgstr ""
+
+#: kivy.app:287 of
+msgid "When the app is resumed, :meth:`App.on_resume` is called."
+msgstr ""
+
+#: kivy.app:288 of
+msgid ""
+"If our app memory has been reclaimed by the OS, then nothing will be "
+"called."
+msgstr ""
+
+#: kivy.app:291 of
+msgid "Here is a simple example of how on_pause() should be used::"
+msgstr ""
+
+#: kivy.app:305 of
+msgid ""
+"Both `on_pause` and `on_stop` must save important data because after "
+"`on_pause` is called, `on_resume` may not be called at all."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.event.EventDispatcher`"
+msgstr ""
+
+#: kivy.app.App:1 of
+msgid "Application class, see module documentation for more information."
+msgstr ""
+
+#: kivy.app.App of
+msgid "Events"
+msgstr ""
+
+#: kivy.app.App:5 of
+msgid "`on_start`:"
+msgstr ""
+
+#: kivy.app.App:5 of
+msgid ""
+"Fired when the application is being started (before the "
+":func:`~kivy.base.runTouchApp` call."
+msgstr ""
+
+#: kivy.app.App:7 of
+msgid "`on_stop`:"
+msgstr ""
+
+#: kivy.app.App:8 of
+msgid "Fired when the application stops."
+msgstr ""
+
+#: kivy.app.App:9 of
+msgid "`on_pause`:"
+msgstr ""
+
+#: kivy.app.App:10 of
+msgid "Fired when the application is paused by the OS."
+msgstr ""
+
+#: kivy.app.App:14 of
+msgid "`on_resume`:"
+msgstr ""
+
+#: kivy.app.App:12 of
+msgid ""
+"Fired when the application is resumed from pause by the OS. Beware: you "
+"have no guarantee that this event will be fired after the `on_pause` "
+"event has been called."
+msgstr ""
+
+#: kivy.app.App:16 of
+msgid "Parameter `kv_file` added."
+msgstr ""
+
+#: kivy.app.App:19 of
+msgid "Parameters `kv_file` and `kv_directory` are now properties of App."
+msgstr ""
+
+#: kivy.app.App.build:1 of
+msgid ""
+"Initializes the application; it will be called only once. If this method "
+"returns a widget (tree), it will be used as the root widget and added to "
+"the window."
+msgstr ""
+
+#: kivy.app.App.build kivy.app.App.close_settings kivy.app.App.load_config
+#: kivy.app.App.open_settings of
+msgid "Returns"
+msgstr ""
+
+#: kivy.app.App.build:5 of
+msgid ""
+"None or a root :class:`~kivy.uix.widget.Widget` instance if no self.root "
+"exists."
+msgstr ""
+
+#: kivy.app.App.build_config:3 of
+msgid ""
+"This method is called before the application is initialized to construct "
+"your :class:`~kivy.config.ConfigParser` object. This is where you can put"
+" any default section / key / value for your config. If anything is set, "
+"the configuration will be automatically saved in the file returned by "
+":meth:`get_application_config`."
+msgstr ""
+
+#: kivy.app.App.build_config kivy.app.App.build_settings
+#: kivy.app.App.display_settings of
+msgid "Parameters"
+msgstr ""
+
+#: kivy.app.App.build_config:11 of
+msgid "`config`: :class:`~kivy.config.ConfigParser`"
+msgstr ""
+
+#: kivy.app.App.build_config:12 of
+msgid "Use this to add default section / key / value items"
+msgstr ""
+
+#: kivy.app.App.build_settings:3 of
+msgid ""
+"This method is called when the user (or you) want to show the application"
+" settings. It is called once when the settings panel is first opened, "
+"after which the panel is cached. It may be called again if the cached "
+"settings panel is removed by :meth:`destroy_settings`."
+msgstr ""
+
+#: kivy.app.App.build_settings:9 of
+msgid ""
+"You can use this method to add settings panels and to customise the "
+"settings widget e.g. by changing the sidebar width. See the module "
+"documentation for full details."
+msgstr ""
+
+#: kivy.app.App.build_settings:14 kivy.app.App.display_settings:11 of
+msgid "`settings`: :class:`~kivy.uix.settings.Settings`"
+msgstr ""
+
+#: kivy.app.App.build_settings:15 of
+msgid "Settings instance for adding panels"
+msgstr ""
+
+#: kivy.app.App.close_settings:1 of
+msgid "Close the previously opened settings panel."
+msgstr ""
+
+#: kivy.app.App.close_settings:3 of
+msgid "True if the settings has been closed."
+msgstr ""
+
+#: kivy.app.App.config:1 of
+msgid ""
+"Returns an instance of the :class:`~kivy.config.ConfigParser` for the "
+"application configuration. You can use this to query some config tokens "
+"in the :meth:`build` method."
+msgstr ""
+
+#: kivy.app.App.create_settings:1 of
+msgid ""
+"Create the settings panel. This method will normally be called only one "
+"time per application life-time and the result is cached internally, but "
+"it may be called again if the cached panel is removed by "
+":meth:`destroy_settings`."
+msgstr ""
+
+#: kivy.app.App.create_settings:7 of
+msgid ""
+"By default, it will build a settings panel according to "
+":attr:`settings_cls`, call :meth:`build_settings`, add a Kivy panel if "
+":attr:`use_kivy_settings` is True, and bind to on_close/on_config_change."
+msgstr ""
+
+#: kivy.app.App.create_settings:12 of
+msgid ""
+"If you want to plug your own way of doing settings, without the Kivy "
+"panel or close/config change events, this is the method you want to "
+"overload."
+msgstr ""
+
+#: kivy.app.App.destroy_settings:3 of
+msgid ""
+"Dereferences the current settings panel if one exists. This means that "
+"when :meth:`App.open_settings` is next run, a new panel will be created "
+"and displayed. It doesn't affect any of the contents of the panel, but "
+"lets you (for instance) refresh the settings panel layout if you have "
+"changed the settings widget in response to a screen size change."
+msgstr ""
+
+#: kivy.app.App.destroy_settings:11 of
+msgid ""
+"If you have modified :meth:`~App.open_settings` or "
+":meth:`~App.display_settings`, you should be careful to correctly detect "
+"if the previous settings widget has been destroyed."
+msgstr ""
+
+#: kivy.app.App.directory:3 of
+msgid "Return the directory where the application lives."
+msgstr ""
+
+#: kivy.app.App.display_settings:3 of
+msgid ""
+"Display the settings panel. By default, the panel is drawn directly on "
+"top of the window. You can define other behaviour by overriding this "
+"method, such as adding it to a ScreenManager or Popup."
+msgstr ""
+
+#: kivy.app.App.display_settings:7 of
+msgid "You should return True if the display is successful, otherwise False."
+msgstr ""
+
+#: kivy.app.App.display_settings:11 of
+msgid "You can modify this object in order to modify the settings display."
+msgstr ""
+
+#: kivy.app.App.get_application_config:3 of
+msgid ""
+"Customized the default path for iOS and Android platforms. Added a "
+"defaultpath parameter for desktop OS's (not applicable to iOS and "
+"Android.)"
+msgstr ""
+
+#: kivy.app.App.get_application_config:8 of
+msgid ""
+"Return the filename of your application configuration. Depending on the "
+"platform, the application file will be stored in different locations:"
+msgstr ""
+
+#: kivy.app.App.get_application_config:12 of
+msgid "on iOS: <appdir>/Documents/.<appname>.ini"
+msgstr ""
+
+#: kivy.app.App.get_application_config:13 of
+msgid "on Android: /sdcard/.<appname>.ini"
+msgstr ""
+
+#: kivy.app.App.get_application_config:14 of
+msgid "otherwise: <appdir>/<appname>.ini"
+msgstr ""
+
+#: kivy.app.App.get_application_config:16 of
+msgid ""
+"When you are distributing your application on Desktops, please note that "
+"if the application is meant to be installed system-wide, the user might "
+"not have write-access to the application directory. If you want to store "
+"user settings, you should overload this method and change the default "
+"behavior to save the configuration file in the user directory. ::"
+msgstr ""
+
+#: kivy.app.App.get_application_config:28 of
+msgid "Some notes:"
+msgstr ""
+
+#: kivy.app.App.get_application_config:30 of
+msgid "The tilda '~' will be expanded to the user directory."
+msgstr ""
+
+#: kivy.app.App.get_application_config:31 of
+#, python-format
+msgid "%(appdir)s will be replaced with the application :attr:`directory`"
+msgstr ""
+
+#: kivy.app.App.get_application_config:32 of
+#, python-format
+msgid "%(appname)s will be replaced with the application :attr:`name`"
+msgstr ""
+
+#: kivy.app.App.get_application_icon:1 of
+msgid "Return the icon of the application."
+msgstr ""
+
+#: kivy.app.App.get_application_name:1 of
+msgid "Return the name of the application."
+msgstr ""
+
+#: kivy.app.App.get_running_app:1 of
+msgid "Return the currently running application instance."
+msgstr ""
+
+#: kivy.app.App.icon:1 of
+msgid ""
+"Icon of your application. The icon can be located in the same directory "
+"as your main file. You can set this as follows::"
+msgstr ""
+
+#: kivy.app.App.icon:11 of
+msgid ""
+"`icon` is now a :class:`~kivy.properties.StringProperty`. Don't set the "
+"icon in the class as previously stated in the documentation."
+msgstr ""
+
+#: kivy.app.App.icon:17 of
+msgid "For Kivy prior to 1.8.0, you need to set this as follows::"
+msgstr ""
+
+#: kivy.app.App.icon:22 of
+msgid ""
+"Recommended 256x256 or 1024x1024? for GNU/Linux and Mac OSX 32x32 for "
+"Windows7 or less. <= 256x256 for windows 8 256x256 does work (on Windows "
+"8 at least), but is scaled down and doesn't look as good as a 32x32 icon."
+msgstr ""
+
+#: kivy.app.App.kv_directory:1 of
+msgid "Path of the directory where application kv is stored, defaults to None"
+msgstr ""
+
+#: kivy.app.App.kv_directory:5 of
+msgid ""
+"If a kv_directory is set, it will be used to get the initial kv file. By "
+"default, the file is assumed to be in the same directory as the current "
+"App definition file."
+msgstr ""
+
+#: kivy.app.App.kv_file:1 of
+msgid "Filename of the Kv file to load, defaults to None."
+msgstr ""
+
+#: kivy.app.App.kv_file:5 of
+msgid ""
+"If a kv_file is set, it will be loaded when the application starts. The "
+"loading of the \"default\" kv file will be prevented."
+msgstr ""
+
+#: kivy.app.App.load_config:1 of
+msgid ""
+"(internal) This function is used for returning a ConfigParser with the "
+"application configuration. It's doing 3 things:"
+msgstr ""
+
+#: kivy.app.App.load_config:4 of
+msgid "Creating an instance of a ConfigParser"
+msgstr ""
+
+#: kivy.app.App.load_config:5 of
+msgid "Loading the default configuration by calling :meth:`build_config`, then"
+msgstr ""
+
+#: kivy.app.App.load_config:7 of
+msgid ""
+"If it exists, it loads the application configuration file, otherwise it "
+"creates one."
+msgstr ""
+
+#: kivy.app.App.load_config:10 of
+msgid ":class:`~kivy.config.ConfigParser` instance"
+msgstr ""
+
+#: kivy.app.App.load_kv:1 of
+msgid ""
+"This method is invoked the first time the app is being run if no widget "
+"tree has been constructed before for this app. This method then looks for"
+" a matching kv file in the same directory as the file that contains the "
+"application class."
+msgstr ""
+
+#: kivy.app.App.load_kv:6 of
+msgid "For example, say you have a file named main.py that contains::"
+msgstr ""
+
+#: kivy.app.App.load_kv:11 of
+msgid ""
+"This method will search for a file named `showcase.kv` in the directory "
+"that contains main.py. The name of the kv file has to be the lowercase "
+"name of the class, without the 'App' postfix at the end if it exists."
+msgstr ""
+
+#: kivy.app.App.load_kv:16 of
+msgid "You can define rules and a root widget in your kv file::"
+msgstr ""
+
+#: kivy.app.App.load_kv:24 of
+msgid ""
+"There must be only one root widget. See the :doc:`api-kivy.lang` "
+"documentation for more information on how to create kv files. If your kv "
+"file contains a root widget, it will be used as self.root, the root "
+"widget for the application."
+msgstr ""
+
+#: kivy.app.App.load_kv:31 of
+msgid ""
+"This function is called from :meth:`run`, therefore, any widget whose "
+"styling is defined in this kv file and is created before :meth:`run` is "
+"called (e.g. in `__init__`), won't have its styling applied. Note that "
+":meth:`build` is called after :attr:`load_kv` has been called."
+msgstr ""
+
+#: kivy.app.App.name:3 of
+msgid "Return the name of the application based on the class name."
+msgstr ""
+
+#: kivy.app.App.on_config_change:1 of
+msgid ""
+"Event handler fired when a configuration token has been changed by the "
+"settings page."
+msgstr ""
+
+#: kivy.app.App.on_config_change:4 of
+msgid "Added corresponding ``on_config_change`` event."
+msgstr ""
+
+#: kivy.app.App.on_pause:1 of
+msgid ""
+"Event handler called when Pause mode is requested. You should return True"
+" if your app can go into Pause mode, otherwise return False and your "
+"application will be stopped."
+msgstr ""
+
+#: kivy.app.App.on_pause:5 of
+msgid ""
+"You cannot control when the application is going to go into this mode. "
+"It's determined by the Operating System and mostly used for mobile "
+"devices (android/ios) and for resizing."
+msgstr ""
+
+#: kivy.app.App.on_pause:9 of
+msgid "The default return value is True."
+msgstr ""
+
+#: kivy.app.App.on_pause:12 of
+msgid "The default return value is now True."
+msgstr ""
+
+#: kivy.app.App.on_resume:1 of
+msgid ""
+"Event handler called when your application is resuming from the Pause "
+"mode."
+msgstr ""
+
+#: kivy.app.App.on_resume:8 of
+msgid ""
+"When resuming, the OpenGL Context might have been damaged / freed. This "
+"is where you can reconstruct some of your OpenGL state e.g. FBO content."
+msgstr ""
+
+#: kivy.app.App.on_start:1 of
+msgid ""
+"Event handler for the `on_start` event which is fired after "
+"initialization (after build() has been called) but before the application"
+" has started running."
+msgstr ""
+
+#: kivy.app.App.on_stop:1 of
+msgid ""
+"Event handler for the `on_stop` event which is fired when the application"
+" has finished running (i.e. the window is about to be closed)."
+msgstr ""
+
+#: kivy.app.App.open_settings:1 of
+msgid ""
+"Open the application settings panel. It will be created the very first "
+"time, or recreated if the previously cached panel has been removed by "
+":meth:`destroy_settings`. The settings panel will be displayed with the "
+":meth:`display_settings` method, which by default adds the settings panel"
+" to the Window attached to your application. You should override that "
+"method if you want to display the settings panel differently."
+msgstr ""
+
+#: kivy.app.App.open_settings:10 of
+msgid "True if the settings has been opened."
+msgstr ""
+
+#: kivy.app.App.options:1 of
+msgid "Options passed to the __init__ of the App"
+msgstr ""
+
+#: kivy.app.App.root:1 of
+msgid ""
+"The *root* widget returned by the :meth:`build` method or by the "
+":meth:`load_kv` method if the kv file contains a root widget."
+msgstr ""
+
+#: kivy.app.App.root_window:3 of
+msgid "Returns the root window instance used by :meth:`run`."
+msgstr ""
+
+#: kivy.app.App.run:1 of
+msgid "Launches the app in standalone mode."
+msgstr ""
+
+#: kivy.app.App.settings_cls:3 of
+msgid ""
+"The class used to construct the settings panel and the instance passed to"
+" :meth:`build_config`. You should use either "
+":class:`~kivy.uix.settings.Settings` or one of the provided subclasses "
+"with different layouts (:class:`~kivy.uix.settings.SettingsWithSidebar`, "
+":class:`~kivy.uix.settings.SettingsWithSpinner`, "
+":class:`~kivy.uix.settings.SettingsWithTabbedPanel`, "
+":class:`~kivy.uix.settings.SettingsWithNoMenu`). You can also create your"
+" own Settings subclass. See the documentation of "
+":mod:`~kivy.uix.settings.Settings` for more information."
+msgstr ""
+
+#: kivy.app.App.settings_cls:14 of
+msgid ""
+":attr:`~App.settings_cls` is an :class:`~kivy.properties.ObjectProperty` "
+"and defaults to :class:`~kivy.uix.settings.SettingsWithSpinner` which "
+"displays settings panels with a spinner to switch between them. If you "
+"set a string, the :class:`~kivy.factory.Factory` will be used to resolve "
+"the class."
+msgstr ""
+
+#: kivy.app.App.stop:1 of
+msgid "Stop the application."
+msgstr ""
+
+#: kivy.app.App.stop:3 of
+msgid ""
+"If you use this method, the whole application will stop by issuing a call"
+" to :func:`~kivy.base.stopTouchApp`."
+msgstr ""
+
+#: kivy.app.App.title:1 of
+msgid "Title of your application. You can set this as follows::"
+msgstr ""
+
+#: kivy.app.App.title:9 of
+msgid ""
+"`title` is now a :class:`~kivy.properties.StringProperty`. Don't set the "
+"title in the class as previously stated in the documentation."
+msgstr ""
+
+#: kivy.app.App.title:15 of
+msgid "For Kivy < 1.8.0, you can set this as follows::"
+msgstr ""
+
+#: kivy.app.App.title:20 of
+msgid "If you want to dynamically change the title, you can do::"
+msgstr ""
+
+#: kivy.app.App.use_kivy_settings:3 of
+msgid ""
+"If True, the application settings will also include the Kivy settings. If"
+" you don't want the user to change any kivy settings from your settings "
+"UI, change this to False."
+msgstr ""
+
+#: kivy.app.App.user_data_dir:3 of
+msgid ""
+"Returns the path to the directory in the users file system which the "
+"application can use to store additional data."
+msgstr ""
+
+#: kivy.app.App.user_data_dir:6 of
+msgid ""
+"Different platforms have different conventions with regards to where the "
+"user can store data such as preferences, saved games and settings. This "
+"function implements these conventions. The <app_name> directory is "
+"created when the property is called, unless it already exists."
+msgstr ""
+
+#: kivy.app.App.user_data_dir:11 of
+msgid ""
+"On iOS, `~/Documents/<app_name>` is returned (which is inside the app's "
+"sandbox)."
+msgstr ""
+
+#: kivy.app.App.user_data_dir:14 of
+msgid "On Android, `/sdcard/<app_name>` is returned."
+msgstr ""
+
+#: kivy.app.App.user_data_dir:16 of
+msgid "On Windows, `%APPDATA%/<app_name>` is returned."
+msgstr ""
+
+#: kivy.app.App.user_data_dir:18 of
+msgid "On OS X, `~/Library/Application Support/<app_name>` is returned."
+msgstr ""
+
+#: kivy.app.App.user_data_dir:20 of
+msgid "On Linux, `$XDG_CONFIG_HOME/<app_name>` is returned."
+msgstr ""
+

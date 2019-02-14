@@ -188,6 +188,9 @@ class WindowSDL(WindowBase):
 
         self.bind(allow_screensaver=self._set_allow_screensaver)
 
+    def get_window_info(self):
+        return self._win.get_window_info()
+
     def _set_minimum_size(self, *args):
         minimum_width = self.minimum_width
         minimum_height = self.minimum_height
@@ -205,7 +208,6 @@ class WindowSDL(WindowBase):
         from kivy.app import App
         if action == 'app_terminating':
             EventLoop.quit = True
-            self.close()
 
         elif action == 'app_lowmemory':
             self.dispatch('on_memorywarning')
@@ -386,11 +388,63 @@ class WindowSDL(WindowBase):
         self._win.flip()
         super(WindowSDL, self).flip()
 
+    def set_system_cursor(self, cursor_name):
+        result = self._win.set_system_cursor(cursor_name)
+        return result
+
     def _get_window_pos(self):
         return self._win.get_window_pos()
 
     def _set_window_pos(self, x, y):
         self._win.set_window_pos(x, y)
+
+    # Transparent Window background
+    def _is_shaped(self):
+        return self._win.is_window_shaped()
+
+    def _set_shape(self, shape_image, mode='default',
+                   cutoff=False, color_key=None):
+        modes = ('default', 'binalpha', 'reversebinalpha', 'colorkey')
+        color_key = color_key or (0, 0, 0, 1)
+        if mode not in modes:
+            Logger.warning(
+                'Window: shape mode can be only '
+                '{}'.format(', '.join(modes))
+            )
+            return
+        if not isinstance(color_key, (tuple, list)):
+            return
+        if len(color_key) not in (3, 4):
+            return
+        if len(color_key) == 3:
+            color_key = (color_key[0], color_key[1], color_key[2], 1)
+            Logger.warning(
+                'Window: Shape color_key must be only tuple or list'
+            )
+            return
+        color_key = (
+            color_key[0] * 255,
+            color_key[1] * 255,
+            color_key[2] * 255,
+            color_key[3] * 255
+        )
+
+        assert cutoff in (1, 0)
+        shape_image = shape_image or Config.get('kivy', 'window_shape')
+        shape_image = resource_find(shape_image) or shape_image
+        self._win.set_shape(shape_image, mode, cutoff, color_key)
+
+    def _get_shaped_mode(self):
+        return self._win.get_shaped_mode()
+
+    def _set_shaped_mode(self, value):
+        self._set_shape(
+            shape_image=self.shape_image,
+            mode=value, cutoff=self.shape_cutoff,
+            color_key=self.shape_color_key
+        )
+        return self._win.get_shaped_mode()
+    # twb end
 
     def _set_cursor_state(self, value):
         self._win._set_cursor_state(value)
@@ -413,7 +467,15 @@ class WindowSDL(WindowBase):
             self._win.wait_event()
             if not self._pause_loop:
                 break
-            self._win.poll()
+            event = self._win.poll()
+            if event is None:
+                continue
+            # As dropfile is send was the app is still in pause.loop
+            # we need to dispatch it
+            action, args = event[0], event[1:]
+            if action == 'dropfile':
+                dropfile = args
+                self.dispatch('on_dropfile', dropfile[0])
 
         while True:
             event = self._win.poll()
@@ -427,7 +489,6 @@ class WindowSDL(WindowBase):
                 if self.dispatch('on_request_close'):
                     continue
                 EventLoop.quit = True
-                self.close()
                 break
 
             elif action in ('fingermotion', 'fingerdown', 'fingerup'):
@@ -504,9 +565,6 @@ class WindowSDL(WindowBase):
                     self._do_resize_ev = ev
                 else:
                     ev()
-
-            elif action == 'windowresized':
-                self.canvas.ask_update()
 
             elif action == 'windowrestored':
                 self.dispatch('on_restore')
@@ -609,6 +667,10 @@ class WindowSDL(WindowBase):
                 text = args[0]
                 self.dispatch('on_textinput', text)
 
+            elif action == 'textedit':
+                text = args[0]
+                self.dispatch('on_textedit', text)
+
             # unhandled event !
             else:
                 Logger.trace('WindowSDL: Unhandled event %s' % str(event))
@@ -644,7 +706,6 @@ class WindowSDL(WindowBase):
             action, args = event[0], event[1:]
             if action == 'quit':
                 EventLoop.quit = True
-                self.close()
                 break
             elif action == 'app_willenterforeground':
                 break
@@ -669,6 +730,8 @@ class WindowSDL(WindowBase):
                     raise
                 else:
                     pass
+        Logger.info("WindowSDL: exiting mainloop and closing.")
+        self.close()
 
     #
     # Pygame wrapper

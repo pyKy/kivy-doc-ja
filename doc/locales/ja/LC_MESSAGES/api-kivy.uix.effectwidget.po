@@ -1,0 +1,486 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-15 00:59+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../sources/api-kivy.uix.effectwidget.rst:3
+msgid "EffectWidget"
+msgstr ""
+
+#: kivy.uix.effectwidget:4 of
+msgid ""
+"The :class:`EffectWidget` is able to apply a variety of fancy graphical "
+"effects to its children. It works by rendering to a series of "
+":class:`~kivy.graphics.Fbo` instances with custom opengl fragment "
+"shaders. As such, effects can freely do almost anything, from inverting "
+"the colors of the widget, to anti-aliasing, to emulating the appearance "
+"of a crt monitor!"
+msgstr ""
+
+#: kivy.uix.effectwidget:13 of
+msgid ""
+"This code is still experimental, and its API is subject to change in a "
+"future version."
+msgstr ""
+
+#: kivy.uix.effectwidget:16 of
+msgid "The basic usage is as follows::"
+msgstr ""
+
+#: kivy.uix.effectwidget:22 of
+msgid "The equivalent in kv would be::"
+msgstr ""
+
+#: kivy.uix.effectwidget:30 of
+msgid ""
+"The effects can be a list of effects of any length, and they will be "
+"applied sequentially."
+msgstr ""
+
+#: kivy.uix.effectwidget:33 of
+msgid ""
+"The module comes with a range of prebuilt effects, but the interface is "
+"designed to make it easy to create your own. Instead of writing a full "
+"glsl shader, you provide a single function that takes some inputs based "
+"on the screen (current pixel color, current widget texture etc.). See the"
+" sections below for more information."
+msgstr ""
+
+#: kivy.uix.effectwidget:40 of
+msgid "Usage Guidelines"
+msgstr ""
+
+#: kivy.uix.effectwidget:42 of
+msgid ""
+"It is not efficient to resize an :class:`EffectWidget`, as the "
+":class:`~kivy.graphics.Fbo` is recreated on each resize event. If you "
+"need to resize frequently, consider doing things a different way."
+msgstr ""
+
+#: kivy.uix.effectwidget:47 of
+msgid ""
+"Although some effects have adjustable parameters, it is *not* efficient "
+"to animate these, as the entire shader is reconstructed every time. You "
+"should use glsl uniform variables instead. The "
+":class:`AdvancedEffectBase` may make this easier."
+msgstr ""
+
+#: kivy.uix.effectwidget:53 of
+msgid ""
+"The :class:`EffectWidget` *cannot* draw outside its own widget area (pos "
+"-> pos + size). Any child widgets overlapping the boundary will be cut "
+"off at this point."
+msgstr ""
+
+#: kivy.uix.effectwidget:58 of
+msgid "Provided Effects"
+msgstr ""
+
+#: kivy.uix.effectwidget:60 of
+msgid ""
+"The module comes with several pre-written effects. Some have adjustable "
+"properties (e.g. blur radius). Please see the individual effect "
+"documentation for more details."
+msgstr ""
+
+#: kivy.uix.effectwidget:64 of
+msgid ":class:`MonochromeEffect` - makes the widget grayscale."
+msgstr ""
+
+#: kivy.uix.effectwidget:65 of
+msgid ":class:`InvertEffect` - inverts the widget colors."
+msgstr ""
+
+#: kivy.uix.effectwidget:66 of
+msgid ":class:`ChannelMixEffect` - swaps color channels."
+msgstr ""
+
+#: kivy.uix.effectwidget:67 of
+msgid ":class:`ScanlinesEffect` - displays flickering scanlines."
+msgstr ""
+
+#: kivy.uix.effectwidget:68 of
+msgid ":class:`PixelateEffect` - pixelates the image."
+msgstr ""
+
+#: kivy.uix.effectwidget:69 of
+msgid ":class:`HorizontalBlurEffect` - Gaussuan blurs horizontally."
+msgstr ""
+
+#: kivy.uix.effectwidget:70 of
+msgid ":class:`VerticalBlurEffect` - Gaussuan blurs vertically."
+msgstr ""
+
+#: kivy.uix.effectwidget:71 of
+msgid ":class:`FXAAEffect` - applies a very basic anti-aliasing."
+msgstr ""
+
+#: kivy.uix.effectwidget:74 of
+msgid "Creating Effects"
+msgstr ""
+
+#: kivy.uix.effectwidget:76 of
+msgid ""
+"Effects are designed to make it easy to create and use your own "
+"transformations. You do this by creating and using an instance of "
+":class:`EffectBase` with your own custom :attr:`EffectBase.glsl` "
+"property."
+msgstr ""
+
+#: kivy.uix.effectwidget:81 of
+msgid ""
+"The glsl property is a string representing part of a glsl fragment "
+"shader. You can include as many functions as you like (the string is "
+"simply spliced into the whole shader), but it must implement a function "
+":code:`effect` as below::"
+msgstr ""
+
+#: kivy.uix.effectwidget:92 of
+msgid ""
+"The full shader will calculate the normal pixel color at each point, then"
+" call your :code:`effect` function to transform it. The parameters are:"
+msgstr ""
+
+#: kivy.uix.effectwidget:96 of
+msgid ""
+"**color**: The normal color of the current pixel (i.e. texture sampled at"
+" tex_coords)."
+msgstr ""
+
+#: kivy.uix.effectwidget:98 of
+msgid "**texture**: The texture containing the widget's normal background."
+msgstr ""
+
+#: kivy.uix.effectwidget:99 of
+msgid "**tex_coords**: The normal texture_coords used to access texture."
+msgstr ""
+
+#: kivy.uix.effectwidget:100 of
+msgid "**coords**: The pixel indices of the current pixel."
+msgstr ""
+
+#: kivy.uix.effectwidget:102 of
+msgid ""
+"The shader code also has access to two useful uniform variables, "
+":code:`time` containing the time (in seconds) since the program start, "
+"and :code:`resolution` containing the shape (x pixels, y pixels) of the "
+"widget."
+msgstr ""
+
+#: kivy.uix.effectwidget:107 of
+msgid ""
+"For instance, the following simple string (taken from the `InvertEffect`)"
+" would invert the input color but set alpha to 1.0::"
+msgstr ""
+
+#: kivy.uix.effectwidget:115 of
+msgid ""
+"You can also set the glsl by automatically loading the string from a "
+"file, simply set the :attr:`EffectBase.source` property of an effect."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.uix.relativelayout.RelativeLayout`"
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget:1 of
+msgid ""
+"Widget with the ability to apply a series of graphical effects to its "
+"children. See the module documentation for more information on setting "
+"effects and creating your own."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.add_widget:1 of
+msgid "Add a new widget as a child of this widget."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.add_widget
+#: kivy.uix.effectwidget.EffectWidget.remove_widget of
+msgid "Parameters"
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.add_widget:4
+#: kivy.uix.effectwidget.EffectWidget.remove_widget:5 of
+msgid "`widget`: :class:`Widget`"
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.add_widget:5 of
+msgid "Widget to add to our list of children."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.add_widget:12 of
+msgid "`index`: int, defaults to 0"
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.add_widget:7 of
+msgid ""
+"Index to insert the widget in the list. Notice that the default of 0 "
+"means the widget is inserted at the beginning of the list and will thus "
+"be drawn on top of other sibling widgets. For a full discussion of the "
+"index and widget hierarchy, please see the :doc:`Widgets Programming "
+"Guide <guide/widgets>`."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.add_widget:18 of
+msgid "`canvas`: str, defaults to None"
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.add_widget:15 of
+msgid ""
+"Canvas to add widget's canvas to. Can be 'before', 'after' or None for "
+"the default canvas."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.background_color:1 of
+msgid ""
+"This defines the background color to be used for the fbo in the "
+"EffectWidget."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.background_color:4 of
+msgid ""
+":attr:`background_color` is a :class:`ListProperty` defaults to (0, 0, 0,"
+" 0)"
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.clear_widgets:1 of
+msgid ""
+"Remove all (or the specified) :attr:`~Widget.children` of this widget. If"
+" the 'children' argument is specified, it should be a list (or filtered "
+"list) of children of the current widget."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.clear_widgets:5 of
+msgid ""
+"The `children` argument can be used to specify the children you want to "
+"remove."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.effects:1 of
+msgid ""
+"List of all the effects to be applied. These should all be instances or "
+"subclasses of :class:`EffectBase`."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.effects:4 of
+msgid "effects is a :class:`ListProperty` and defaults to []."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.fbo_list:1 of
+msgid "(internal) List of all the fbos that are being used to apply the effects."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.fbo_list:4 of
+msgid "fbo_list is a :class:`ListProperty` and defaults to []."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.refresh_fbo_setup:1 of
+msgid ""
+"(internal) Creates and assigns one :class:`~kivy.graphics.Fbo` per "
+"effect, and makes sure all sizes etc. are correct and consistent."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.remove_widget:1 of
+msgid "Remove a widget from the children of this widget."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.remove_widget:5 of
+msgid "Widget to remove from our children list."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.texture:1 of
+msgid ""
+"The output texture of the final :class:`~kivy.graphics.Fbo` after all "
+"effects have been applied."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectWidget.texture:4 of
+msgid ""
+"texture is an :class:`~kivy.properties.ObjectProperty` and defaults to "
+"None."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.event.EventDispatcher`"
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectBase:1 of
+msgid "The base class for GLSL effects. It simply returns its input."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectBase:3 of
+msgid "See the module documentation for more details."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectBase.fbo:1 of
+msgid ""
+"The fbo currently using this effect. The :class:`EffectBase` "
+"automatically handles this."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectBase.fbo:4 of
+msgid ""
+":attr:`fbo` is an :class:`~kivy.properties.ObjectProperty` and defaults "
+"to None."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectBase.glsl:1 of
+msgid ""
+"The glsl string defining your effect function. See the module "
+"documentation for more details."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectBase.glsl:4 of
+msgid ""
+":attr:`glsl` is a :class:`~kivy.properties.StringProperty` and defaults "
+"to a trivial effect that returns its input."
+msgstr ""
+
+#: kivy.uix.effectwidget.AdvancedEffectBase.set_fbo_shader:1
+#: kivy.uix.effectwidget.EffectBase.set_fbo_shader:1 of
+msgid ""
+"Sets the :class:`~kivy.graphics.Fbo`'s shader by splicing the "
+":attr:`glsl` string into a full fragment shader."
+msgstr ""
+
+#: kivy.uix.effectwidget.AdvancedEffectBase.set_fbo_shader:4
+#: kivy.uix.effectwidget.EffectBase.set_fbo_shader:4 of
+msgid ""
+"The full shader is made up of :code:`shader_header + shader_uniforms + "
+"self.glsl + shader_footer_effect`."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectBase.source:1 of
+msgid "The (optional) filename from which to load the :attr:`glsl` string."
+msgstr ""
+
+#: kivy.uix.effectwidget.EffectBase.source:4 of
+msgid ""
+":attr:`source` is a :class:`~kivy.properties.StringProperty` and defaults"
+" to ''."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.uix.effectwidget.EffectBase`"
+msgstr ""
+
+#: kivy.uix.effectwidget.AdvancedEffectBase:1 of
+msgid ""
+"An :class:`EffectBase` with additional behavior to easily set and update "
+"uniform variables in your shader."
+msgstr ""
+
+#: kivy.uix.effectwidget.AdvancedEffectBase:4 of
+msgid ""
+"This class is provided for convenience when implementing your own "
+"effects: it is not used by any of those provided with Kivy."
+msgstr ""
+
+#: kivy.uix.effectwidget.AdvancedEffectBase:7 of
+msgid ""
+"In addition to your base glsl string that must be provided as normal, the"
+" :class:`AdvancedEffectBase` has an extra property :attr:`uniforms`, a "
+"dictionary of name-value pairs. Whenever a value is changed, the new "
+"value for the uniform variable is uploaded to the shader."
+msgstr ""
+
+#: kivy.uix.effectwidget.AdvancedEffectBase:13 of
+msgid ""
+"You must still manually declare your uniform variables at the top of your"
+" glsl string."
+msgstr ""
+
+#: kivy.uix.effectwidget.AdvancedEffectBase.uniforms:1 of
+msgid ""
+"A dictionary of uniform variable names and their values. These are "
+"automatically uploaded to the :attr:`fbo` shader if appropriate."
+msgstr ""
+
+#: kivy.uix.effectwidget.AdvancedEffectBase.uniforms:4 of
+msgid "uniforms is a :class:`~kivy.properties.DictProperty` and defaults to {}."
+msgstr ""
+
+#: kivy.uix.effectwidget.MonochromeEffect:1 of
+msgid "Returns its input colors in monochrome."
+msgstr ""
+
+#: kivy.uix.effectwidget.InvertEffect:1 of
+msgid "Inverts the colors in the input."
+msgstr ""
+
+#: kivy.uix.effectwidget.ChannelMixEffect:1 of
+msgid ""
+"Mixes the color channels of the input according to the order property. "
+"Channels may be arbitrarily rearranged or repeated."
+msgstr ""
+
+#: kivy.uix.effectwidget.ChannelMixEffect.order:1 of
+msgid "The new sorted order of the rgb channels."
+msgstr ""
+
+#: kivy.uix.effectwidget.ChannelMixEffect.order:3 of
+msgid ""
+"order is a :class:`~kivy.properties.ListProperty` and defaults to [1, 2, "
+"0], corresponding to (g, b, r)."
+msgstr ""
+
+#: kivy.uix.effectwidget.ScanlinesEffect:1 of
+msgid "Adds scanlines to the input."
+msgstr ""
+
+#: kivy.uix.effectwidget.PixelateEffect:1 of
+msgid "Pixelates the input according to its :attr:`~PixelateEffect.pixel_size`"
+msgstr ""
+
+#: kivy.uix.effectwidget.PixelateEffect.pixel_size:1 of
+msgid ""
+"Sets the size of a new 'pixel' in the effect, in terms of number of "
+"'real' pixels."
+msgstr ""
+
+#: kivy.uix.effectwidget.PixelateEffect.pixel_size:4 of
+msgid ""
+"pixel_size is a :class:`~kivy.properties.NumericProperty` and defaults to"
+" 10."
+msgstr ""
+
+#: kivy.uix.effectwidget.HorizontalBlurEffect:1 of
+msgid ""
+"Blurs the input horizontally, with the width given by "
+":attr:`~HorizontalBlurEffect.size`."
+msgstr ""
+
+#: kivy.uix.effectwidget.HorizontalBlurEffect.size:1
+#: kivy.uix.effectwidget.VerticalBlurEffect.size:1 of
+msgid "The blur width in pixels."
+msgstr ""
+
+#: kivy.uix.effectwidget.HorizontalBlurEffect.size:3
+#: kivy.uix.effectwidget.VerticalBlurEffect.size:3 of
+msgid "size is a :class:`~kivy.properties.NumericProperty` and defaults to 4.0."
+msgstr ""
+
+#: kivy.uix.effectwidget.VerticalBlurEffect:1 of
+msgid ""
+"Blurs the input vertically, with the width given by "
+":attr:`~VerticalBlurEffect.size`."
+msgstr ""
+
+#: kivy.uix.effectwidget.FXAAEffect:1 of
+msgid "Applies very simple anti-aliasing via fxaa."
+msgstr ""
+

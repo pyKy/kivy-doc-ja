@@ -6,33 +6,33 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="twitter:site" content="@kivyframework">
     
-    <title>Multistroke Recognition Database Demonstration(翻訳済み) &mdash; Kivy 1.10.0 ドキュメント</title>
+    <title>Multistroke Recognition Database Demonstration &mdash; Kivy 1.10.1 documentation</title>
     <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../_static/fresh.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.10.0',
+        VERSION:     '1.10.1',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
+
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/translations.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <script type="text/javascript" src="../_static/jquery-effects-core-and-slide.js"></script>
     <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
     <script type="text/javascript" src="../_static/kivy.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="../index.html" />
-    <link rel="up" title="Gallery of Examples(翻訳済み)" href="index.html" />
-    <link rel="next" title="Basic Picture Viewer(翻訳済み)" href="gen__demo__pictures__main__py.html" />
-    <link rel="prev" title="Kivy Catalog(翻訳済み)" href="gen__demo__kivycatalog__main__py.html" /> 
+    <link rel="top" title="Kivy 1.10.1 documentation" href="../index.html" />
+    <link rel="up" title="Gallery of Examples" href="index.html" />
+    <link rel="next" title="Basic Picture Viewer" href="gen__demo__pictures__main__py.html" />
+    <link rel="prev" title="Kivy Catalog" href="gen__demo__kivycatalog__main__py.html" /> 
   </head>
   <body>
 
@@ -57,6 +57,8 @@
 <div id="contentall">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+            <h3>Version</h3>
+            <select id="version_selector"></select>
             <h3>Quick search</h3>
             <form class="search" action="../search.html" method="get">
                 &nbsp;
@@ -65,17 +67,16 @@
                 <input type="text" class="text" name="q" />
             </form>
           <!--
-          <h3><a href="../index.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></h3>
+          <h3><a href="../index.html">Multistroke Recognition Database Demonstration</a></h3>
           <ul>
-<li><a class="reference internal" href="#">Multistroke Recognition Database Demonstration(翻訳済み)</a><ul>
-<li><a class="reference internal" href="#file-demo-multistroke-main-py">File <strong>demo\multistroke\main.py</strong></a></li>
-<li><a class="reference internal" href="#file-demo-multistroke-helpers-py">File <strong>demo\multistroke\helpers.py</strong></a></li>
-<li><a class="reference internal" href="#file-demo-multistroke-historymanager-py">File <strong>demo\multistroke\historymanager.py</strong></a></li>
-<li><a class="reference internal" href="#file-demo-multistroke-historymanager-kv">File <strong>demo\multistroke\historymanager.kv</strong></a></li>
-<li><a class="reference internal" href="#file-demo-multistroke-gesturedatabase-py">File <strong>demo\multistroke\gestureDatabase.py</strong></a></li>
-<li><a class="reference internal" href="#file-demo-multistroke-gesturedatabase-kv">File <strong>demo\multistroke\gestureDatabase.kv</strong></a></li>
-<li><a class="reference internal" href="#file-demo-multistroke-settings-py">File <strong>demo\multistroke\settings.py</strong></a></li>
-<li><a class="reference internal" href="#file-demo-multistroke-multistroke-kv">File <strong>demo\multistroke\multistroke.kv</strong></a></li>
+<li><a class="reference internal" href="#">Multistroke Recognition Database Demonstration</a><ul>
+<li><a class="reference internal" href="#file-demo-multistroke-main-py">File <strong>demo/multistroke/main.py</strong></a></li>
+<li><a class="reference internal" href="#file-demo-multistroke-helpers-py">File <strong>demo/multistroke/helpers.py</strong></a></li>
+<li><a class="reference internal" href="#file-demo-multistroke-historymanager-py">File <strong>demo/multistroke/historymanager.py</strong></a></li>
+<li><a class="reference internal" href="#file-demo-multistroke-historymanager-kv">File <strong>demo/multistroke/historymanager.kv</strong></a></li>
+<li><a class="reference internal" href="#file-demo-multistroke-gesturedatabase-py">File <strong>demo/multistroke/gestureDatabase.py</strong></a></li>
+<li><a class="reference internal" href="#file-demo-multistroke-gesturedatabase-kv">File <strong>demo/multistroke/gestureDatabase.kv</strong></a></li>
+<li><a class="reference internal" href="#file-demo-multistroke-multistroke-kv">File <strong>demo/multistroke/multistroke.kv</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -83,85 +84,87 @@
           <h3><a href="../index.html">Table Of Contents</a></h3>
           -->
           <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/installation.html">Installation(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/properties.html">Properties(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/events.html">Events(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/framework.html">Non-widget stuff(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/examples.html">Examples(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/first_app.html">A first App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/rules.html">Kv Design Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/events.html">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/layouts.html">Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/diving.html">Diving in</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Gallery of Examples(翻訳済み)</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="gallery.html">Gallery(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__canvas__mesh__py.html">Mesh test(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Gallery of Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__3Drendering__main__py.html">3D Rotating Monkey Head</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__animation__animate__py.html">Widget animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__application__app_suite__py.html">Suite of Application Builders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__application__app_with_build__py.html">Application example using build() + return</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__application__app_with_kv__py.html">Application built from a  .kv file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__camera__main__py.html">Camera Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__canvas__bezier__py.html">Bezier Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__canvas__canvas_stress__py.html">Canvas stress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__canvas__circle__py.html">Circle Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__canvas__fbo_canvas__py.html">FBO Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__canvas__lines__py.html">Line (SmoothLine) Experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__canvas__lines_extended__py.html">Lines Extended Demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__canvas__multitexture__py.html">Multitexture Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__canvas__repeat_texture__py.html">Repeat Texture on Resize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__canvas__rotation__py.html">Rotation Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__canvas__stencil_canvas__py.html">Stencil demo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__demo__kivycatalog__main__py.html">Kivy Catalog</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Multistroke Recognition Database Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__demo__pictures__main__py.html">Basic Picture Viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__demo__shadereditor__main__py.html">Live Shader Editor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration</a></li>
 </ul>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../user-guide.html">User’s Guide(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../installation/installation.html">Installation(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../philosophy.html">Philosophy(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contribute.html">Contributing(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../faq.html">FAQ (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contact.html">Contact Us(翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide.html">User’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/installation.html">Basic Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/installation.html#advanced-installation">Advanced Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/installation.html#uninstalling-kivy">Uninstalling Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../philosophy.html">Philosophy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contact.html">Contact Us</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../guide-index.html">Programming Guide(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../guide/basic.html">Kivy Basics(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guide/environment.html">Controlling the environment(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guide/config.html">Configure Kivy(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guide/events.html">Events and Properties (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guide/inputs.html">Input management (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guide/widgets.html">Widgets(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guide/graphics.html">Graphics (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guide/lang.html">Kv language(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guide/packaging.html">Packaging your application(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guide/licensing.html">Package licensing (翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide-index.html">Programming Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guide/basic.html">Kivy Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/environment.html">Controlling the environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/config.html">Configure Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/architecture.html">Architectural Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/events.html">Events and Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/lang.html">Kv language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/other-frameworks.html">Integrating with other Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/packaging.html">Packaging your application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/licensing.html">Package licensing</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials-index.html">Tutorials(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials-index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/pong.html">Pong Game Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/firstwidget.html">A Simple Paint App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/crashcourse.html">Crash Course</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../api-index.html">API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../api-kivy.html">Kivy framework(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.html">Kivy framework</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.adapters.html">Adapters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.adapters.adapter.html">Adapter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
@@ -169,19 +172,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.adapters.listadapter.html">ListAdapter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.adapters.models.html">SelectableDataItem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api-kivy.animation.html">Animation(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api-kivy.app.html">Application （翻訳中）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.app.html">Application</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.atlas.html">Atlas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.base.html">Kivy Base</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.cache.html">Cache manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api-kivy.clock.html">Clock object(翻訳ずみ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.clock.html">Clock object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.config.html">Configuration object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.context.html">Context</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.html">Core Abstraction(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.html">Core Abstraction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.audio.html">Audio</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.camera.html">Camera</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.clipboard.html">Clipboard(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.clipboard.html">Clipboard</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.gl.html">OpenGL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.image.html">Image</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.core.spelling.html">Spelling</a></li>
@@ -201,7 +204,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.garden.html">Garden</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.geometry.html">Geometry utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.gesture.html">Gesture recognition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.html">Graphics(翻訳中)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.html">Graphics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.compiler.html">Graphics compiler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.graphics.context.html">Context management</a></li>
@@ -245,7 +248,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.recorder.html">Input recorder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.input.shape.html">Motion Event Shape</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.interactive.html">Interactive launcher</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lang.html">Kivy Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.lang.html">Kivy Language</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.lang.builder.html">Builder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.lang.parser.html">Parser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.lib.html">External libraries</a></li>
@@ -282,7 +285,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.tools.html">Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.tools.packaging.html">Packaging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.html">Widgets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.abstractview.html">Abstract View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.accordion.html">Accordion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.actionbar.html">Action Bar</a></li>
@@ -301,18 +304,18 @@
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.bubble.html">Bubble</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.button.html">Button</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.camera.html">Camera</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.carousel.html">Carousel(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.carousel.html">Carousel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.checkbox.html">CheckBox</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.codeinput.html">Code Input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.colorpicker.html">Color Picker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.dropdown.html">Drop-Down List</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.effectwidget.html">EffectWidget</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.filechooser.html">FileChooser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.floatlayout.html">Float Layout(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.floatlayout.html">Float Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.gridlayout.html">Grid Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.image.html">Image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.label.html">Label(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.label.html">Label</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.layout.html">Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.listview.html">List View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.modalview.html">ModalView</a></li>
@@ -331,10 +334,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.sandbox.html">Sandbox</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.scatter.html">Scatter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.screenmanager.html">Screen Manager(翻訳中)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.screenmanager.html">Screen Manager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.scrollview.html">ScrollView</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.selectableview.html">SelectableView</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.settings.html">Settings （翻訳中）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.settings.html">Settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.slider.html">Slider</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.spinner.html">Spinner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api-kivy.uix.splitter.html">Splitter</a></li>
@@ -360,8 +363,8 @@
           <!--
           <h3>Related Topics</h3>
           <ul>
-              <li>Previous: <a href="gen__demo__kivycatalog__main__py.html" title="previous chapter">Kivy Catalog(翻訳済み)</a></li>
-              <li>Next: <a href="gen__demo__pictures__main__py.html" title="next chapter">Basic Picture Viewer(翻訳済み)</a></li>
+              <li>Previous: <a href="gen__demo__kivycatalog__main__py.html" title="previous chapter">Kivy Catalog</a></li>
+              <li>Next: <a href="gen__demo__pictures__main__py.html" title="next chapter">Basic Picture Viewer</a></li>
           </ul>
           -->
         </div>
@@ -372,28 +375,41 @@
         <div class="bodywrapper">
           <div class="body">
             <div class="toc"><h2>Table Of Contents</h2><ul>
-<li><a class="reference internal" href="#">Multistroke Recognition Database Demonstration(翻訳済み)</a><ul>
-<li><a class="reference internal" href="#file-demo-multistroke-main-py">File <strong>demo\multistroke\main.py</strong></a></li>
-<li><a class="reference internal" href="#file-demo-multistroke-helpers-py">File <strong>demo\multistroke\helpers.py</strong></a></li>
-<li><a class="reference internal" href="#file-demo-multistroke-historymanager-py">File <strong>demo\multistroke\historymanager.py</strong></a></li>
-<li><a class="reference internal" href="#file-demo-multistroke-historymanager-kv">File <strong>demo\multistroke\historymanager.kv</strong></a></li>
-<li><a class="reference internal" href="#file-demo-multistroke-gesturedatabase-py">File <strong>demo\multistroke\gestureDatabase.py</strong></a></li>
-<li><a class="reference internal" href="#file-demo-multistroke-gesturedatabase-kv">File <strong>demo\multistroke\gestureDatabase.kv</strong></a></li>
-<li><a class="reference internal" href="#file-demo-multistroke-settings-py">File <strong>demo\multistroke\settings.py</strong></a></li>
-<li><a class="reference internal" href="#file-demo-multistroke-multistroke-kv">File <strong>demo\multistroke\multistroke.kv</strong></a></li>
+<li><a class="reference internal" href="#">Multistroke Recognition Database Demonstration</a><ul>
+<li><a class="reference internal" href="#file-demo-multistroke-main-py">File <strong>demo/multistroke/main.py</strong></a></li>
+<li><a class="reference internal" href="#file-demo-multistroke-helpers-py">File <strong>demo/multistroke/helpers.py</strong></a></li>
+<li><a class="reference internal" href="#file-demo-multistroke-historymanager-py">File <strong>demo/multistroke/historymanager.py</strong></a></li>
+<li><a class="reference internal" href="#file-demo-multistroke-historymanager-kv">File <strong>demo/multistroke/historymanager.kv</strong></a></li>
+<li><a class="reference internal" href="#file-demo-multistroke-gesturedatabase-py">File <strong>demo/multistroke/gestureDatabase.py</strong></a></li>
+<li><a class="reference internal" href="#file-demo-multistroke-gesturedatabase-kv">File <strong>demo/multistroke/gestureDatabase.kv</strong></a></li>
+<li><a class="reference internal" href="#file-demo-multistroke-multistroke-kv">File <strong>demo/multistroke/multistroke.kv</strong></a></li>
 </ul>
 </li>
 </ul>
 </div>
             
   <div class="section" id="multistroke-recognition-database-demonstration">
-<h1>Multistroke Recognition Database Demonstration(翻訳済み)<a class="headerlink" href="#multistroke-recognition-database-demonstration" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<h1>Multistroke Recognition Database Demonstration<a class="headerlink" href="#multistroke-recognition-database-demonstration" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference internal" href="../_images/demo__multistroke__main__py1.png"><img alt="pic22" class="align-middle" src="../_images/demo__multistroke__main__py1.png" style="width: 50%;" /></a></p>
-<p>このアプリケーションは、ジェスチャーを記録し、一致させようとします。黒色の描画面と下部分にいくつかのボタンとが表示されます。描画面上でジェスチャーを行うと、ジェスチャーが履歴に追加され、一致が試みられます。 履歴タブに移動しジェスチャーに名前を付けてデータベースに追加した場合、将来的に同様のジェスチャーが認識されます。 .kgファイルのジェスチャーのデータベースにロードと保存ができます。</p>
-<p>デモのコードは、プライマリファイルであることで、多くのファイルにまたがっていますポップアップ情報は、（「No match」）ファイル: ref:<cite>helpers.py &lt;demo_multistroke_helpers.py&gt;</cite> から来ています。履歴ペインは、<span class="xref std std-ref">historymanager.kv</span> ファイルで管理され、gestureDatabase.kvファイルに記載されています。スライダーやボタンの一般的なロジックは、settings.pyファイルにあり、settings.kvで説明します。 実際の設定ペインは、<a class="reference internal" href="#demo-multistroke-settings-py"><span class="std std-ref">settings.py</span></a> ファイルに記載されており、このファイルから管理されています。</p>
+<p>This application records gestures and attempts to match them. You should see a
+black drawing surface with some buttons across the bottom. As you make a
+gesture on the drawing surface, the gesture will be added to the history and a
+match will be attempted. If you go to the history tab, name the gesture, and
+add it to the database, then similar gestures in the future will be recognized.
+You can load and save databases of gestures in .kg files.</p>
+<p>This demonstration code spans many files, with this being the primary file. The
+information pop-up (‘No match’) comes from the file <a class="reference internal" href="#demo-multistroke-helpers-py"><span class="std std-ref">helpers.py</span></a>. The history pane is managed in the file
+<a class="reference internal" href="#demo-multistroke-historymanager-py"><span class="std std-ref">historymanager.py</span></a> and described in
+the file <a class="reference internal" href="#demo-multistroke-historymanager-kv"><span class="std std-ref">historymanager.kv</span></a>. The
+database pane and storage is managed in the file <a class="reference internal" href="#demo-multistroke-gesturedatabase-py"><span class="std std-ref">gestureDatabase.py</span></a> and the described in the file
+<a class="reference internal" href="#demo-multistroke-gesturedatabase-kv"><span class="std std-ref">gestureDatabase.kv</span></a>. The general
+logic of the sliders and buttons are in the file settings.py and described in
+settings.kv. but the actual settings pane is described in the file
+<a class="reference internal" href="#demo-multistroke-multistroke-kv"><span class="std std-ref">multistroke.kv</span></a> and managed from this
+file.</p>
 <div class="section" id="file-demo-multistroke-main-py">
-<span id="demo-multistroke-main-py"></span><h2>File <strong>demo\multistroke\main.py</strong><a class="headerlink" href="#file-demo-multistroke-main-py" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span id="demo-multistroke-main-py"></span><h2>File <strong>demo/multistroke/main.py</strong><a class="headerlink" href="#file-demo-multistroke-main-py" title="Permalink to this headline">¶</a></h2>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">Multistroke Recognition Database Demonstration</span>
 <span class="sd">==============================================</span>
 
@@ -541,8 +557,8 @@
 </div>
 </div>
 <div class="section" id="file-demo-multistroke-helpers-py">
-<span id="demo-multistroke-helpers-py"></span><h2>File <strong>demo\multistroke\helpers.py</strong><a class="headerlink" href="#file-demo-multistroke-helpers-py" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;InformationPopup&#39;</span><span class="p">,</span> <span class="p">)</span>
+<span id="demo-multistroke-helpers-py"></span><h2>File <strong>demo/multistroke/helpers.py</strong><a class="headerlink" href="#file-demo-multistroke-helpers-py" title="Permalink to this headline">¶</a></h2>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;InformationPopup&#39;</span><span class="p">,</span> <span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">kivy.uix.popup</span> <span class="k">import</span> <span class="n">Popup</span>
 <span class="kn">from</span> <span class="nn">kivy.properties</span> <span class="k">import</span> <span class="n">StringProperty</span>
@@ -576,8 +592,8 @@
 </div>
 </div>
 <div class="section" id="file-demo-multistroke-historymanager-py">
-<span id="demo-multistroke-historymanager-py"></span><h2>File <strong>demo\multistroke\historymanager.py</strong><a class="headerlink" href="#file-demo-multistroke-historymanager-py" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;GestureHistoryManager&#39;</span><span class="p">,</span> <span class="s1">&#39;GestureVisualizer&#39;</span><span class="p">)</span>
+<span id="demo-multistroke-historymanager-py"></span><h2>File <strong>demo/multistroke/historymanager.py</strong><a class="headerlink" href="#file-demo-multistroke-historymanager-py" title="Permalink to this headline">¶</a></h2>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;GestureHistoryManager&#39;</span><span class="p">,</span> <span class="s1">&#39;GestureVisualizer&#39;</span><span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">kivy.app</span> <span class="k">import</span> <span class="n">App</span>
 <span class="kn">from</span> <span class="nn">kivy.clock</span> <span class="k">import</span> <span class="n">Clock</span>
@@ -857,8 +873,8 @@
 </div>
 </div>
 <div class="section" id="file-demo-multistroke-historymanager-kv">
-<span id="demo-multistroke-historymanager-kv"></span><h2>File <strong>demo\multistroke\historymanager.kv</strong><a class="headerlink" href="#file-demo-multistroke-historymanager-kv" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="code highlight-kv"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+<span id="demo-multistroke-historymanager-kv"></span><h2>File <strong>demo/multistroke/historymanager.kv</strong><a class="headerlink" href="#file-demo-multistroke-historymanager-kv" title="Permalink to this headline">¶</a></h2>
+<div class="code highlight-kv notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
   2
   3
   4
@@ -1189,808 +1205,14 @@
 </td></tr></table></div>
 </div>
 <div class="section" id="file-demo-multistroke-gesturedatabase-py">
-<span id="demo-multistroke-gesturedatabase-py"></span><h2>File <strong>demo\multistroke\gestureDatabase.py</strong><a class="headerlink" href="#file-demo-multistroke-gesturedatabase-py" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="code highlight-py"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
- 10
- 11
- 12
- 13
- 14
- 15
- 16
- 17
- 18
- 19
- 20
- 21
- 22
- 23
- 24
- 25
- 26
- 27
- 28
- 29
- 30
- 31
- 32
- 33
- 34
- 35
- 36
- 37
- 38
- 39
- 40
- 41
- 42
- 43
- 44
- 45
- 46
- 47
- 48
- 49
- 50
- 51
- 52
- 53
- 54
- 55
- 56
- 57
- 58
- 59
- 60
- 61
- 62
- 63
- 64
- 65
- 66
- 67
- 68
- 69
- 70
- 71
- 72
- 73
- 74
- 75
- 76
- 77
- 78
- 79
- 80
- 81
- 82
- 83
- 84
- 85
- 86
- 87
- 88
- 89
- 90
- 91
- 92
- 93
- 94
- 95
- 96
- 97
- 98
- 99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-152
-153
-154
-155
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165
-166
-167
-168
-169
-170
-171
-172
-173
-174
-175
-176
-177
-178
-179
-180</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;GestureDatabase&#39;</span><span class="p">,</span> <span class="s1">&#39;GestureDatabaseItem&#39;</span><span class="p">)</span>
-
-<span class="kn">from</span> <span class="nn">kivy.clock</span> <span class="kn">import</span> <span class="n">Clock</span>
-<span class="kn">from</span> <span class="nn">kivy.lang</span> <span class="kn">import</span> <span class="n">Builder</span>
-<span class="kn">from</span> <span class="nn">kivy.properties</span> <span class="kn">import</span> <span class="n">NumericProperty</span><span class="p">,</span> <span class="n">StringProperty</span>
-<span class="kn">from</span> <span class="nn">kivy.properties</span> <span class="kn">import</span> <span class="n">ListProperty</span><span class="p">,</span> <span class="n">ObjectProperty</span>
-<span class="kn">from</span> <span class="nn">kivy.uix.gridlayout</span> <span class="kn">import</span> <span class="n">GridLayout</span>
-<span class="kn">from</span> <span class="nn">kivy.uix.floatlayout</span> <span class="kn">import</span> <span class="n">FloatLayout</span>
-<span class="kn">from</span> <span class="nn">kivy.uix.popup</span> <span class="kn">import</span> <span class="n">Popup</span>
-<span class="kn">from</span> <span class="nn">kivy.graphics</span> <span class="kn">import</span> <span class="n">Rectangle</span><span class="p">,</span> <span class="n">Color</span>
-<span class="kn">from</span> <span class="nn">kivy.multistroke</span> <span class="kn">import</span> <span class="n">Recognizer</span>
-
-<span class="c1"># local libraries</span>
-<span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="n">InformationPopup</span>
-
-
-<span class="n">Builder</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="s1">&#39;gesturedatabase.kv&#39;</span><span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">GestureExportPopup</span><span class="p">(</span><span class="n">Popup</span><span class="p">):</span>
-    <span class="k">pass</span>
-
-
-<span class="k">class</span> <span class="nc">GestureImportPopup</span><span class="p">(</span><span class="n">Popup</span><span class="p">):</span>
-    <span class="k">pass</span>
-
-
-<span class="k">class</span> <span class="nc">GestureDatabaseItem</span><span class="p">(</span><span class="n">FloatLayout</span><span class="p">):</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="s1">&#39;(no name)&#39;</span><span class="p">)</span>
-    <span class="n">template_count</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">gesture_list</span> <span class="o">=</span> <span class="n">ListProperty</span><span class="p">([])</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">GestureDatabaseItem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="o">=</span> <span class="bp">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_draw_trigger</span> <span class="o">=</span> <span class="n">Clock</span><span class="o">.</span><span class="n">create_trigger</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">draw_item</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">update_template_count</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">gesture_list</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">update_template_count</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">register_event_type</span><span class="p">(</span><span class="s1">&#39;on_select&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">register_event_type</span><span class="p">(</span><span class="s1">&#39;on_deselect&#39;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">toggle_selected</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_draw_rect</span><span class="p">(</span><span class="n">clear</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">select</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">&#39;down&#39;</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="s1">&#39;on_select&#39;</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">select</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Deselect&#39;</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="s1">&#39;on_deselect&#39;</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">select</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Select&#39;</span>
-
-    <span class="k">def</span> <span class="nf">update_template_count</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
-        <span class="n">tpl_count</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">gesture_list</span><span class="p">:</span>
-            <span class="n">tpl_count</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">templates</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">template_count</span> <span class="o">=</span> <span class="n">tpl_count</span>
-
-    <span class="k">def</span> <span class="nf">draw_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">namelbl</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">namelbl</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="mi">90</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="mi">40</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">select</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_draw_rect</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">_draw_rect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">clear</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
-        <span class="n">col</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">select</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">&#39;down&#39;</span> <span class="ow">and</span> <span class="mi">1</span> <span class="ow">or</span> <span class="o">.</span><span class="mi">2</span>
-        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="p">:</span>
-            <span class="n">Color</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">15</span><span class="p">)</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="ow">or</span> <span class="n">clear</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">on_select</span><span class="p">(</span><span class="o">*</span><span class="n">l</span><span class="p">):</span>
-        <span class="k">pass</span>
-
-    <span class="k">def</span> <span class="nf">on_deselect</span><span class="p">(</span><span class="o">*</span><span class="n">l</span><span class="p">):</span>
-        <span class="k">pass</span>
-
-
-<span class="k">class</span> <span class="nc">GestureDatabase</span><span class="p">(</span><span class="n">GridLayout</span><span class="p">):</span>
-    <span class="n">selected_count</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">recognizer</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
-    <span class="n">export_popup</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="n">GestureExportPopup</span><span class="p">())</span>
-    <span class="n">import_popup</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="n">GestureImportPopup</span><span class="p">())</span>
-    <span class="n">info_popup</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="n">InformationPopup</span><span class="p">())</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">GestureDatabase</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">redraw_all</span> <span class="o">=</span> <span class="n">Clock</span><span class="o">.</span><span class="n">create_trigger</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_redraw_gesture_list</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">export_popup</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">save_btn</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_press</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">perform_export</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">import_popup</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">filechooser</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_submit</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">perform_import</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">import_gdb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">gdict</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="k">for</span> <span class="n">gesture</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">recognizer</span><span class="o">.</span><span class="n">db</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">gesture</span><span class="o">.</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">gdict</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">gdict</span><span class="p">[</span><span class="n">gesture</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">gdict</span><span class="p">[</span><span class="n">gesture</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gesture</span><span class="p">)</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">selected_count</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">gesture_list</span><span class="o">.</span><span class="n">clear_widgets</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gdict</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="n">n</span><span class="o">.</span><span class="n">lower</span><span class="p">()):</span>
-            <span class="n">gitem</span> <span class="o">=</span> <span class="n">GestureDatabaseItem</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">gesture_list</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">gdict</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
-            <span class="n">gitem</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_select</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">select_item</span><span class="p">)</span>
-            <span class="n">gitem</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_deselect</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">deselect_item</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">gesture_list</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">gitem</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">select_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">selected_count</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="k">def</span> <span class="nf">deselect_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">selected_count</span> <span class="o">-=</span> <span class="mi">1</span>
-
-    <span class="k">def</span> <span class="nf">mass_select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_count</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">gesture_list</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">select</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">&#39;down&#39;</span><span class="p">:</span>
-                    <span class="n">i</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">select</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;normal&#39;</span>
-                    <span class="n">i</span><span class="o">.</span><span class="n">draw_item</span><span class="p">()</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">gesture_list</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">select</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">&#39;normal&#39;</span><span class="p">:</span>
-                    <span class="n">i</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">select</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;down&#39;</span>
-                    <span class="n">i</span><span class="o">.</span><span class="n">draw_item</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">unload_gestures</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_count</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">recognizer</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="p">[]</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">gesture_list</span><span class="o">.</span><span class="n">clear_widgets</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">selected_count</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="k">return</span>
-
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">gesture_list</span><span class="o">.</span><span class="n">children</span><span class="p">[:]:</span>
-            <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">select</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">&#39;down&#39;</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">selected_count</span> <span class="o">-=</span> <span class="mi">1</span>
-                <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">i</span><span class="o">.</span><span class="n">gesture_list</span><span class="p">:</span>
-                    <span class="c1"># if g in self.recognizer.db:  # not needed, for testing</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">recognizer</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">gesture_list</span><span class="o">.</span><span class="n">remove_widget</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">perform_export</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
-        <span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">export_popup</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">filename</span><span class="o">.</span><span class="n">text</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">path</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">export_popup</span><span class="o">.</span><span class="n">dismiss</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">info_popup</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Missing filename&#39;</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">info_popup</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
-            <span class="k">return</span>
-        <span class="k">elif</span> <span class="ow">not</span> <span class="n">path</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.kg&#39;</span><span class="p">):</span>
-            <span class="n">path</span> <span class="o">+=</span> <span class="s1">&#39;.kg&#39;</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">save_selection_to_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">export_popup</span><span class="o">.</span><span class="n">dismiss</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">info_popup</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Gestures exported!&#39;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">info_popup</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">perform_import</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filechooser</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
-        <span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">recognizer</span><span class="o">.</span><span class="n">db</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">filechooser</span><span class="o">.</span><span class="n">selection</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">recognizer</span><span class="o">.</span><span class="n">import_gesture</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">import_gdb</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">info_popup</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Imported </span><span class="si">%d</span><span class="s2"> gestures.</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span>
-                                <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">recognizer</span><span class="o">.</span><span class="n">db</span><span class="p">)</span> <span class="o">-</span> <span class="n">count</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">import_popup</span><span class="o">.</span><span class="n">dismiss</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">info_popup</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">save_selection_to_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_count</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">recognizer</span><span class="o">.</span><span class="n">export_gesture</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">tmpgdb</span> <span class="o">=</span> <span class="n">Recognizer</span><span class="p">()</span>
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">gesture_list</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">select</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">&#39;down&#39;</span><span class="p">:</span>
-                    <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">i</span><span class="o">.</span><span class="n">gesture_list</span><span class="p">:</span>
-                        <span class="n">tmpgdb</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
-            <span class="n">tmpgdb</span><span class="o">.</span><span class="n">export_gesture</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">_redraw_gesture_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">gesture_list</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
-            <span class="n">child</span><span class="o">.</span><span class="n">_draw_trigger</span><span class="p">()</span>
-</pre></div>
-</td></tr></table></div>
+<span id="demo-multistroke-gesturedatabase-py"></span><h2>File <strong>demo/multistroke/gestureDatabase.py</strong><a class="headerlink" href="#file-demo-multistroke-gesturedatabase-py" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="file-demo-multistroke-gesturedatabase-kv">
-<span id="demo-multistroke-gesturedatabase-kv"></span><h2>File <strong>demo\multistroke\gestureDatabase.kv</strong><a class="headerlink" href="#file-demo-multistroke-gesturedatabase-kv" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="code highlight-kv"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
- 10
- 11
- 12
- 13
- 14
- 15
- 16
- 17
- 18
- 19
- 20
- 21
- 22
- 23
- 24
- 25
- 26
- 27
- 28
- 29
- 30
- 31
- 32
- 33
- 34
- 35
- 36
- 37
- 38
- 39
- 40
- 41
- 42
- 43
- 44
- 45
- 46
- 47
- 48
- 49
- 50
- 51
- 52
- 53
- 54
- 55
- 56
- 57
- 58
- 59
- 60
- 61
- 62
- 63
- 64
- 65
- 66
- 67
- 68
- 69
- 70
- 71
- 72
- 73
- 74
- 75
- 76
- 77
- 78
- 79
- 80
- 81
- 82
- 83
- 84
- 85
- 86
- 87
- 88
- 89
- 90
- 91
- 92
- 93
- 94
- 95
- 96
- 97
- 98
- 99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#:import os os</span>
-
-<span class="nn">&lt;GestureDatabaseItem&gt;</span><span class="p">:</span>
-    <span class="na">size_hint</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span>
-    <span class="na">size</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">130</span>
-    <span class="na">on_pos</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_draw_trigger</span><span class="p">()</span>
-    <span class="na">on_size</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_draw_trigger</span><span class="p">()</span>
-    <span class="nc">Label</span><span class="p">:</span>
-        <span class="na">id</span><span class="p">:</span> <span class="n">namelbl</span>
-        <span class="na">text</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">name</span>
-        <span class="na">size_hint</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">None</span>
-        <span class="na">height</span><span class="p">:</span> <span class="mi">40</span>
-        <span class="na">font_size</span><span class="p">:</span> <span class="mi">14</span>
-        <span class="na">color</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
-    <span class="nc">Label</span><span class="p">:</span>
-        <span class="na">id</span><span class="p">:</span> <span class="n">stats</span>
-        <span class="nc">text</span><span class="p">:</span>
-            <span class="err">(</span> <span class="err">str(root.template_count)</span> <span class="err">+</span> <span class="err">&quot;</span> <span class="err">templates\nin</span> <span class="err">&quot;</span> <span class="err">+</span>
-            <span class="err">str(len(root.gesture_list))</span> <span class="err">+</span> <span class="err">&#39;</span> <span class="err">gestures&#39;</span> <span class="err">)</span>
-        <span class="na">size_hint</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">None</span>
-        <span class="na">height</span><span class="p">:</span> <span class="mi">60</span>
-    <span class="nc">ToggleButton</span><span class="p">:</span>
-        <span class="na">id</span><span class="p">:</span> <span class="n">select</span>
-        <span class="na">text</span><span class="p">:</span> <span class="s1">&#39;Select&#39;</span>
-        <span class="na">size_hint</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span>
-        <span class="na">size</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">30</span>
-        <span class="na">on_state</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">toggle_selected</span><span class="p">()</span>
-
-<span class="nn">&lt;GestureDatabase&gt;</span><span class="p">:</span>
-    <span class="na">rows</span><span class="p">:</span> <span class="mi">1</span>
-    <span class="na">spacing</span><span class="p">:</span> <span class="mi">10</span>
-    <span class="na">padding</span><span class="p">:</span> <span class="mi">10</span>
-    <span class="na">cols_minimum</span><span class="p">:</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">200</span><span class="p">}</span>
-    <span class="nc">GridLayout</span><span class="p">:</span>
-        <span class="na">id</span><span class="p">:</span> <span class="n">menu</span>
-        <span class="na">cols</span><span class="p">:</span> <span class="mi">1</span>
-        <span class="na">spacing</span><span class="p">:</span> <span class="mi">10</span>
-        <span class="na">padding</span><span class="p">:</span> <span class="mi">10</span>
-        <span class="na">size_hint</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span> <span class="mi">1</span>
-        <span class="na">width</span><span class="p">:</span> <span class="mi">200</span>
-        <span class="nc">Button</span><span class="p">:</span>
-            <span class="na">text</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">selected_count</span> <span class="ow">and</span> <span class="s1">&#39;Deselect all&#39;</span> <span class="ow">or</span> <span class="s1">&#39;Select all&#39;</span>
-            <span class="na">size_hint_y</span><span class="p">:</span> <span class="bp">None</span>
-            <span class="na">height</span><span class="p">:</span> <span class="mi">100</span>
-            <span class="na">on_press</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">mass_select</span><span class="p">()</span>
-        <span class="nc">Button</span><span class="p">:</span>
-            <span class="nc">text</span><span class="p">:</span>
-                <span class="err">(root.selected_</span><span class="na">count</span>
-                <span class="err">and</span> <span class="err">&#39;Save</span> <span class="err">&#39;</span> <span class="err">+</span> <span class="err">str(root.selected_count)</span> <span class="err">+</span> <span class="err">&#39;</span> <span class="err">gestures&#39;</span>
-                <span class="err">or</span> <span class="err">&#39;Save</span> <span class="err">all&#39;)</span>
-            <span class="na">size_hint_y</span><span class="p">:</span> <span class="bp">None</span>
-            <span class="na">height</span><span class="p">:</span> <span class="mi">100</span>
-            <span class="na">on_press</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">export_popup</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
-        <span class="nc">Button</span><span class="p">:</span>
-            <span class="nc">text</span><span class="p">:</span>
-                <span class="err">(root.selected_</span><span class="na">count</span>
-                <span class="err">and</span> <span class="err">&#39;Unload</span> <span class="err">&#39;</span> <span class="err">+</span> <span class="err">str(root.selected_count)</span> <span class="err">+</span> <span class="err">&#39;</span> <span class="err">gestures&#39;</span>
-                <span class="err">or</span> <span class="err">&#39;Unload</span> <span class="err">all&#39;)</span>
-            <span class="na">size_hint_y</span><span class="p">:</span> <span class="bp">None</span>
-            <span class="na">height</span><span class="p">:</span> <span class="mi">100</span>
-            <span class="na">on_press</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">unload_gestures</span><span class="p">()</span>
-        <span class="nc">Button</span><span class="p">:</span>
-            <span class="na">text</span><span class="p">:</span> <span class="s1">&#39;Load from file&#39;</span>
-            <span class="na">size_hint_y</span><span class="p">:</span> <span class="bp">None</span>
-            <span class="na">height</span><span class="p">:</span> <span class="mi">100</span>
-            <span class="na">on_press</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">import_popup</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
-    <span class="nc">ScrollView</span><span class="p">:</span>
-        <span class="na">on_scroll_y</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">redraw_all</span><span class="p">()</span>
-        <span class="nc">StackLayout</span><span class="p">:</span>
-            <span class="na">id</span><span class="p">:</span> <span class="n">gesture_list</span>
-            <span class="na">spacing</span><span class="p">:</span> <span class="mi">10</span>
-            <span class="na">padding</span><span class="p">:</span> <span class="mi">10</span>
-            <span class="na">size_hint</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">None</span>
-            <span class="na">height</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">minimum_height</span>
-
-<span class="nn">&lt;GestureExportPopup&gt;</span><span class="p">:</span>
-    <span class="na">title</span><span class="p">:</span> <span class="s1">&#39;Specify filename&#39;</span>
-    <span class="na">auto_dismiss</span><span class="p">:</span> <span class="bp">True</span>
-    <span class="na">size_hint</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span>
-    <span class="na">size</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">400</span>
-    <span class="nc">GridLayout</span><span class="p">:</span>
-        <span class="na">cols</span><span class="p">:</span> <span class="mi">1</span>
-        <span class="na">spacing</span><span class="p">:</span> <span class="mi">10</span>
-        <span class="na">padding</span><span class="p">:</span> <span class="mi">10</span>
-        <span class="na">rows_minimum</span><span class="p">:</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">100</span><span class="p">}</span>
-        <span class="nc">Label</span><span class="p">:</span>
-            <span class="nc">text</span><span class="p">:</span>
-                <span class="err">(</span> <span class="err">&#39;The</span> <span class="err">extension</span> <span class="err">.kg</span> <span class="err">will</span> <span class="err">be</span> <span class="err">appended</span> <span class="err">automatically.\n&#39;</span> <span class="err">+</span>
-                <span class="err">&#39;The</span> <span class="err">file</span> <span class="err">is</span> <span class="err">saved</span> <span class="err">to</span> <span class="err">the</span> <span class="err">current</span> <span class="err">working</span> <span class="err">directory,</span> <span class="err">unless\n&#39;</span> <span class="err">+</span>
-                <span class="err">&#39;you</span> <span class="err">specify</span> <span class="err">an</span> <span class="err">absolute</span> <span class="err">path&#39;)</span>
-        <span class="nc">TextInput</span><span class="p">:</span>
-            <span class="na">id</span><span class="p">:</span> <span class="n">filename</span>
-            <span class="na">multiline</span><span class="p">:</span> <span class="bp">False</span>
-            <span class="na">size_hint</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">None</span>
-            <span class="na">height</span><span class="p">:</span> <span class="mi">40</span>
-        <span class="nc">Button</span><span class="p">:</span>
-            <span class="na">id</span><span class="p">:</span> <span class="n">save_btn</span>
-            <span class="na">text</span><span class="p">:</span> <span class="s1">&#39;Save&#39;</span>
-            <span class="na">size_hint</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">None</span>
-            <span class="na">height</span><span class="p">:</span> <span class="mi">45</span>
-        <span class="nc">Button</span><span class="p">:</span>
-            <span class="na">id</span><span class="p">:</span> <span class="n">cancel_btn</span>
-            <span class="na">text</span><span class="p">:</span> <span class="s1">&#39;Cancel&#39;</span>
-            <span class="na">size_hint</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">None</span>
-            <span class="na">height</span><span class="p">:</span> <span class="mi">45</span>
-            <span class="na">on_press</span><span class="p">:</span> <span class="n">root</span><span class="o">.</span><span class="n">dismiss</span><span class="p">()</span>
-
-<span class="nn">&lt;GestureImportPopup&gt;</span><span class="p">:</span>
-    <span class="na">auto_dismiss</span><span class="p">:</span> <span class="bp">True</span>
-    <span class="na">size_hint</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span>
-    <span class="na">size</span><span class="p">:</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">400</span>
-    <span class="nc">FileChooserListView</span><span class="p">:</span>
-        <span class="na">id</span><span class="p">:</span> <span class="n">filechooser</span>
-        <span class="na">size_hint</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span>
-        <span class="na">size</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">380</span>
-        <span class="na">filters</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;*.kg&#39;</span><span class="p">]</span>
-        <span class="na">path</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-</pre></div>
-</td></tr></table></div>
-</div>
-<div class="section" id="file-demo-multistroke-settings-py">
-<span id="demo-multistroke-settings-py"></span><h2>File <strong>demo\multistroke\settings.py</strong><a class="headerlink" href="#file-demo-multistroke-settings-py" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="code highlight-py"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;MultistrokeSettingsContainer&#39;</span><span class="p">,</span> <span class="s1">&#39;MultistrokeSettingItem&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;MultistrokeSettingBoolean&#39;</span><span class="p">,</span> <span class="s1">&#39;MultistrokeSettingSlider&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;MultistrokeSettingString&#39;</span><span class="p">,</span> <span class="s1">&#39;MultistrokeSettingTitle&#39;</span><span class="p">)</span>
-
-<span class="kn">from</span> <span class="nn">kivy.factory</span> <span class="kn">import</span> <span class="n">Factory</span>
-<span class="kn">from</span> <span class="nn">kivy.lang</span> <span class="kn">import</span> <span class="n">Builder</span>
-<span class="kn">from</span> <span class="nn">kivy.uix.gridlayout</span> <span class="kn">import</span> <span class="n">GridLayout</span>
-<span class="kn">from</span> <span class="nn">kivy.uix.label</span> <span class="kn">import</span> <span class="n">Label</span>
-<span class="kn">from</span> <span class="nn">kivy.properties</span> <span class="kn">import</span> <span class="p">(</span><span class="n">StringProperty</span><span class="p">,</span> <span class="n">NumericProperty</span><span class="p">,</span> <span class="n">OptionProperty</span><span class="p">,</span>
-                             <span class="n">BooleanProperty</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">kivy.uix.popup</span> <span class="kn">import</span> <span class="n">Popup</span>
-
-<span class="n">Builder</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="s1">&#39;settings.kv&#39;</span><span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">MultistrokeSettingsContainer</span><span class="p">(</span><span class="n">GridLayout</span><span class="p">):</span>
-    <span class="k">pass</span>
-
-
-<span class="k">class</span> <span class="nc">MultistrokeSettingItem</span><span class="p">(</span><span class="n">GridLayout</span><span class="p">):</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="s1">&#39;&lt;No title set&gt;&#39;</span><span class="p">)</span>
-    <span class="n">desc</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">MultistrokeSettingTitle</span><span class="p">(</span><span class="n">Label</span><span class="p">):</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="s1">&#39;&lt;No title set&gt;&#39;</span><span class="p">)</span>
-    <span class="n">desc</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">MultistrokeSettingBoolean</span><span class="p">(</span><span class="n">MultistrokeSettingItem</span><span class="p">):</span>
-    <span class="n">button_text</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-    <span class="n">value</span> <span class="o">=</span> <span class="n">BooleanProperty</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">MultistrokeSettingString</span><span class="p">(</span><span class="n">MultistrokeSettingItem</span><span class="p">):</span>
-    <span class="n">value</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">EditSettingPopup</span><span class="p">(</span><span class="n">Popup</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">EditSettingPopup</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">register_event_type</span><span class="p">(</span><span class="s1">&#39;on_validate&#39;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">on_validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
-        <span class="k">pass</span>
-
-
-<span class="k">class</span> <span class="nc">MultistrokeSettingSlider</span><span class="p">(</span><span class="n">MultistrokeSettingItem</span><span class="p">):</span>
-    <span class="nb">min</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="nb">max</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-    <span class="nb">type</span> <span class="o">=</span> <span class="n">OptionProperty</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;float&#39;</span><span class="p">,</span> <span class="s1">&#39;int&#39;</span><span class="p">])</span>
-    <span class="n">value</span> <span class="o">=</span> <span class="n">NumericProperty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">MultistrokeSettingSlider</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_popup</span> <span class="o">=</span> <span class="n">EditSettingPopup</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_popup</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_validate</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_validate</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_popup</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_dismiss</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dismiss</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">_to_numtype</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;float&#39;</span><span class="p">:</span>
-                <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">min</span>
-
-    <span class="k">def</span> <span class="nf">_dismiss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_popup</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">focus</span> <span class="o">=</span> <span class="bp">False</span>
-
-    <span class="k">def</span> <span class="nf">_validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_popup</span><span class="o">.</span><span class="n">dismiss</span><span class="p">()</span>
-        <span class="n">val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_numtype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_popup</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">val</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">min</span><span class="p">:</span>
-            <span class="n">val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">min</span>
-        <span class="k">elif</span> <span class="n">val</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max</span><span class="p">:</span>
-            <span class="n">val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">val</span>
-
-    <span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="o">.</span><span class="n">sliderlabel</span><span class="o">.</span><span class="n">collide_point</span><span class="p">(</span><span class="o">*</span><span class="n">touch</span><span class="o">.</span><span class="n">pos</span><span class="p">):</span>
-            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">MultistrokeSettingSlider</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_down</span><span class="p">(</span><span class="n">touch</span><span class="p">)</span>
-        <span class="n">ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_popup</span><span class="o">.</span><span class="n">ids</span>
-        <span class="n">ids</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-        <span class="n">ids</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_to_numtype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_popup</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
-        <span class="n">ids</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">focus</span> <span class="o">=</span> <span class="bp">True</span>
-        <span class="n">ids</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">select_all</span><span class="p">()</span>
-
-
-<span class="n">Factory</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;MultistrokeSettingsContainer&#39;</span><span class="p">,</span>
-                 <span class="bp">cls</span><span class="o">=</span><span class="n">MultistrokeSettingsContainer</span><span class="p">)</span>
-<span class="n">Factory</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;MultistrokeSettingTitle&#39;</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">MultistrokeSettingTitle</span><span class="p">)</span>
-<span class="n">Factory</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;MultistrokeSettingBoolean&#39;</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">MultistrokeSettingBoolean</span><span class="p">)</span>
-<span class="n">Factory</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;MultistrokeSettingSlider&#39;</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">MultistrokeSettingSlider</span><span class="p">)</span>
-<span class="n">Factory</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;MultistrokeSettingString&#39;</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">MultistrokeSettingString</span><span class="p">)</span>
-</pre></div>
-</td></tr></table></div>
+<span id="demo-multistroke-gesturedatabase-kv"></span><h2>File <strong>demo/multistroke/gestureDatabase.kv</strong><a class="headerlink" href="#file-demo-multistroke-gesturedatabase-kv" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="file-demo-multistroke-multistroke-kv">
-<span id="demo-multistroke-multistroke-kv"></span><h2>File <strong>demo\multistroke\multistroke.kv</strong><a class="headerlink" href="#file-demo-multistroke-multistroke-kv" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="code highlight-kv"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+<span id="demo-multistroke-multistroke-kv"></span><h2>File <strong>demo/multistroke/multistroke.kv</strong><a class="headerlink" href="#file-demo-multistroke-multistroke-kv" title="Permalink to this headline">¶</a></h2>
+<div class="code highlight-kv notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
   2
   3
   4
@@ -2201,10 +1423,10 @@
             <table>
                 <tr>
                     <td class="leftlink">
-                  <a href="gen__demo__kivycatalog__main__py.html" title="previous chapter">&laquo; Kivy Catalog(翻訳済み)</a></li>
+                  <a href="gen__demo__kivycatalog__main__py.html" title="previous chapter">&laquo; Kivy Catalog</a></li>
                   </td>
                   <td class="rightlink">
-                  <a href="gen__demo__pictures__main__py.html" title="next chapter">Basic Picture Viewer(翻訳済み) &raquo;</a>
+                  <a href="gen__demo__pictures__main__py.html" title="next chapter">Basic Picture Viewer &raquo;</a>
                       </td>
                   </tr>
               </table>
@@ -2232,13 +1454,35 @@
     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
+<script>
+  var selector = $("#version_selector");
+
+  selector.on('change', function() {
+    // replace the version part of the url with the selected version
+    document.location.pathname = document.location.pathname.replace(
+      /^(\/.*?\/).*?(\/.*)/,
+     '$1' + this.value + '$2'
+    );
+  });
+
+  var url = "/doc/versions.json";
+
+  $.getJSON(url, function(versions) {
+    versions.forEach(function(version){
+      var current = window.location.pathname.split('/')[2]
+      selector.append(
+        $("<option " + (version == current ? "selected" : "") + "/>").val(version).html(version)
+      );
+    });
+  });
+</script>
 <noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Tracking Code -->
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 10月 21, 2017.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+      Last updated on Feb 15, 2019.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.4.
 </div>
 -->
   </body>

@@ -1,0 +1,660 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-15 00:59+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../sources/api-kivy.graphics.texture.rst:3
+msgid "Texture"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:2 of
+msgid ""
+"Added support for paletted texture on OES: 'palette4_rgb8', "
+"'palette4_rgba8', 'palette4_r5_g6_b5', 'palette4_rgba4', "
+"'palette4_rgb5_a1', 'palette8_rgb8', 'palette8_rgba8', "
+"'palette8_r5_g6_b5', 'palette8_rgba4' and 'palette8_rgb5_a1'."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:8 of
+msgid ""
+":class:`Texture` is a class that handles OpenGL textures. Depending on "
+"the hardware, some OpenGL capabilities might not be available (BGRA "
+"support, NPOT support, etc.)"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:13 of
+msgid ""
+"You cannot instantiate this class yourself. You must use the function "
+":meth:`Texture.create` to create a new texture::"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:18 of
+msgid ""
+"When you create a texture, you should be aware of the default color and "
+"buffer format:"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:21 of
+msgid ""
+"the color/pixel format (:attr:`Texture.colorfmt`) that can be one of "
+"'rgb', 'rgba', 'luminance', 'luminance_alpha', 'bgr' or 'bgra'. The "
+"default value is 'rgb'"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:24 of
+msgid ""
+"the buffer format determines how a color component is stored into memory."
+" This can be one of 'ubyte', 'ushort', 'uint', 'byte', 'short', 'int' or "
+"'float'. The default value and the most commonly used is 'ubyte'."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:28 of
+msgid "So, if you want to create an RGBA texture::"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:32 of
+msgid ""
+"You can use your texture in almost all vertex instructions with the "
+":attr:`kivy.graphics.VertexIntruction.texture` parameter. If you want to "
+"use your texture in kv lang, you can save it in an "
+":class:`~kivy.properties.ObjectProperty` inside your widget."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:38 of
+msgid ""
+"Using Texture before OpenGL has been initialized will lead to a crash. If"
+" you need to create textures before the application has started, import "
+"Window first: `from kivy.core.window import Window`"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:43 of
+msgid "Blitting custom data"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:45 of
+msgid ""
+"You can create your own data and blit it to the texture using "
+":meth:`Texture.blit_buffer`."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:48 of
+msgid "For example, to blit immutable bytes data::"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:69 of
+msgid ""
+"Since 1.9.0, you can blit data stored in a instance that implements the "
+"python buffer interface, or a memoryview thereof, such as numpy arrays, "
+"python `array.array`, a `bytearray`, or a cython array. This is "
+"beneficial if you expect to blit similar data, with perhaps a few changes"
+" in the data."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:74 of
+msgid ""
+"When using a bytes representation of the data, for every change you have "
+"to regenerate the bytes instance, from perhaps a list, which is very "
+"inefficient. When using a buffer object, you can simply edit parts of the"
+" original data. Similarly, unless starting with a bytes object, "
+"converting to bytes requires a full copy, however, when using a buffer "
+"instance, no memory is copied, except to upload it to the GPU."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:81 of
+msgid "Continuing with the example above::"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:99 of
+msgid "BGR/BGRA support"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:101 of
+msgid ""
+"The first time you try to create a BGR or BGRA texture, we check whether "
+"your hardware supports BGR / BGRA textures by checking the extension "
+"'GL_EXT_bgra'."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:105 of
+msgid ""
+"If the extension is not found, the conversion to RGB / RGBA will be done "
+"in software."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:110 of
+msgid "NPOT texture"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:114 of
+msgid "If your hardware supports NPOT, no POT is created."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:116 of
+msgid ""
+"As the OpenGL documentation says, a texture must be power-of-two sized. "
+"That means your width and height can be one of 64, 32, 256... but not 3, "
+"68, 42. NPOT means non-power-of-two. OpenGL ES 2 supports NPOT textures "
+"natively but with some drawbacks. Another type of NPOT texture is called "
+"a rectangle texture. POT, NPOT and textures all have their own pro/cons."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:124 of
+msgid "Features"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:124 of
+msgid "POT"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:124 of
+msgid "NPOT"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:124 of
+msgid "Rectangle"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:126 of
+msgid "OpenGL Target"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:126 of
+msgid "GL_TEXTURE_2D"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:126 of
+msgid "GL_TEXTURE_RECTANGLE_(NV|ARB|EXT)"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:127 of
+msgid "Texture coords"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:127 of
+msgid "0-1 range"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:127 of
+msgid "width-height range"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:128 kivy.graphics.texture:160 of
+msgid "Mipmapping"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:128 kivy.graphics.texture:129 of
+msgid "Supported"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:128 of
+msgid "Partially"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:128 kivy.graphics.texture:129 of
+msgid "No"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:129 of
+msgid "Wrap mode"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:132 of
+msgid ""
+"If you create a NPOT texture, we first check whether your hardware "
+"supports it by checking the extensions GL_ARB_texture_non_power_of_two or"
+" OES_texture_npot. If none of these are available, we create the nearest "
+"POT texture that can contain your NPOT texture. The "
+":meth:`Texture.create` will return a :class:`TextureRegion` instead."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:140 of
+msgid "Texture atlas"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:142 of
+msgid ""
+"A texture atlas is a single texture that contains many images. If you "
+"want to separate the original texture into many single ones, you don't "
+"need to. You can get a region of the original texture. That will return "
+"the original texture with custom texture coordinates::"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:164 of
+msgid ""
+"Mipmapping is an OpenGL technique for enhancing the rendering of large "
+"textures to small surfaces. Without mipmapping, you might see pixelation "
+"when you render to small surfaces. The idea is to precalculate the "
+"subtexture and apply some image filter as a linear filter. Then, when you"
+" render a small surface, instead of using the biggest texture, it will "
+"use a lower filtered texture. The result can look better this way."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:172 of
+msgid ""
+"To make that happen, you need to specify mipmap=True when you create a "
+"texture. Some widgets already give you the ability to create mipmapped "
+"textures, such as the :class:`~kivy.uix.label.Label` and "
+":class:`~kivy.uix.image.Image`."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:177 of
+msgid ""
+"From the OpenGL Wiki : \"So a 64x16 2D texture can have 5 mip-maps: 32x8,"
+" 16x4, 8x2, 4x1, 2x1, and 1x1\". Check http://www.opengl.org/wiki/Texture"
+" for more information."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:183 of
+msgid ""
+"As the table in previous section said, if your texture is NPOT, we create"
+" the nearest POT texture and generate a mipmap from it. This might change"
+" in the future."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:188 of
+msgid "Reloading the Texture"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:192 of
+msgid ""
+"If the OpenGL context is lost, the Texture must be reloaded. Textures "
+"that have a source are automatically reloaded but generated textures must"
+" be reloaded by the user."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:196 of
+msgid ""
+"Use the :meth:`Texture.add_reload_observer` to add a reloading function "
+"that will be automatically called when needed::"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:212 of
+msgid "This way, you can use the same method for initialization and reloading."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture:216 of
+msgid ""
+"For all text rendering with our core text renderer, the texture is "
+"generated but we already bind a method to redo the text rendering and "
+"reupload the text to the texture. You don't have to do anything."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`builtins.object`"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture:1 of
+msgid ""
+"Handle an OpenGL texture. This class can be used to create simple "
+"textures or complex textures based on ImageData."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.add_reload_observer:1 of
+msgid ""
+"Add a callback to be called after the whole graphics context has been "
+"reloaded. This is where you can reupload your custom data into the GPU."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.add_reload_observer
+#: kivy.graphics.texture.Texture.blit_buffer
+#: kivy.graphics.texture.Texture.create of
+msgid "Parameters"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.add_reload_observer:8 of
+msgid "`callback`: func(context) -> return None"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.add_reload_observer:9 of
+msgid "The first parameter will be the context itself."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.ask_update:1
+#: kivy.graphics.texture.TextureRegion.ask_update:1 of
+msgid ""
+"Indicate that the content of the texture should be updated and the "
+"callback function needs to be called when the texture will be used."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.bind:1
+#: kivy.graphics.texture.TextureRegion.bind:1 of
+msgid "Bind the texture to the current opengl state."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.blit_buffer:1 of
+msgid "Blit a buffer into the texture."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.blit_buffer:5 of
+msgid ""
+"Unless the canvas will be updated due to other changes, "
+":meth:`~kivy.graphics.instructions.Canvas.ask_update` should be called in"
+" order to update the texture."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.blit_buffer:16 of
+msgid ""
+"`pbuffer`: bytes, or a class that implements the buffer interface "
+"(including memoryview)."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.blit_buffer:11 of
+msgid ""
+"A buffer containing the image data. It can be either a bytes object or a "
+"instance of a class that implements the python buffer interface, e.g. "
+"`array.array`, `bytearray`, numpy arrays etc. If it's not a bytes object,"
+" the underlying buffer must be contiguous, have only one dimension and "
+"must not be readonly, even though the data is not modified, due to a "
+"cython limitation. See module description for usage details."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.blit_buffer:18 of
+msgid "`size`: tuple, defaults to texture size"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.blit_buffer:19 of
+msgid "Size of the image (width, height)"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.blit_buffer:21 of
+msgid "`colorfmt`: str, defaults to 'rgb'"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.blit_buffer:21 of
+msgid ""
+"Image format, can be one of 'rgb', 'rgba', 'bgr', 'bgra', 'luminance' or "
+"'luminance_alpha'."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.blit_buffer:23 of
+msgid "`pos`: tuple, defaults to (0, 0)"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.blit_buffer:24 of
+msgid "Position to blit in the texture."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.blit_buffer:26
+#: kivy.graphics.texture.Texture.create:15 of
+msgid "`bufferfmt`: str, defaults to 'ubyte'"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.blit_buffer:26 of
+msgid ""
+"Type of the data buffer, can be one of 'ubyte', 'ushort', 'uint', 'byte',"
+" 'short', 'int' or 'float'."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.blit_buffer:28 of
+msgid "`mipmap_level`: int, defaults to 0"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.blit_buffer:29 of
+msgid "Indicate which mipmap level we are going to update."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.blit_buffer:31 of
+msgid "`mipmap_generation`: bool, defaults to True"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.blit_buffer:31 of
+msgid "Indicate if we need to regenerate the mipmap from level 0."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.blit_buffer:35 of
+msgid "added `mipmap_level` and `mipmap_generation`"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.blit_buffer:37 of
+msgid ""
+"`pbuffer` can now be any class instance that implements the python buffer"
+" interface and / or memoryviews thereof."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.blit_data:1 of
+msgid "Replace a whole texture with image data."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.bufferfmt:1 of
+msgid "Return the buffer format used in this texture (readonly)."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.colorfmt:1 of
+msgid "Return the color format used in this texture (readonly)."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.create:1 of
+msgid "Create a texture based on size."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.create:4 of
+msgid "`size`: tuple, defaults to (128, 128)"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.create:5 of
+msgid "Size of the texture."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.create:8 of
+msgid "`colorfmt`: str, defaults to 'rgba'"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.create:7 of
+msgid ""
+"Color format of the texture. Can be 'rgba' or 'rgb', 'luminance' or "
+"'luminance_alpha'. On desktop, additional values are available: 'red', "
+"'rg'."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.create:12 of
+msgid "`icolorfmt`: str, defaults to the value of `colorfmt`"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.create:11 of
+msgid ""
+"Internal format storage of the texture. Can be 'rgba' or 'rgb', "
+"'luminance' or 'luminance_alpha'. On desktop, additional values are "
+"available: 'r8', 'rg8', 'rgba8'."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.create:15 of
+msgid ""
+"Internal buffer format of the texture. Can be 'ubyte', 'ushort', 'uint', "
+"'bute', 'short', 'int' or 'float'."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.create:17 of
+msgid "`mipmap`: bool, defaults to False"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.create:18 of
+msgid "If True, it will automatically generate the mipmap texture."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.create:21 of
+msgid "`callback`: callable(), defaults to False"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.create:20 of
+msgid ""
+"If a function is provided, it will be called when data is needed in the "
+"texture."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.create:23 of
+msgid ":attr:`callback` has been added"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.create_from_data:1 of
+msgid "Create a texture from an ImageData class."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.flip_horizontal:1 of
+msgid "Flip tex_coords for horizontal display."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.flip_vertical:1 of
+msgid "Flip tex_coords for vertical display."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.get_region:1 of
+msgid ""
+"Return a part of the texture defined by the rectangular arguments (x, y, "
+"width, height). Returns a :class:`TextureRegion` instance."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.height:1 of
+msgid "Return the height of the texture (readonly)."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.id:1 of
+msgid "Return the OpenGL ID of the texture (readonly)."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.mag_filter:1 of
+msgid "Get/set the mag filter texture. Available values:"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.mag_filter:3
+#: kivy.graphics.texture.Texture.min_filter:3 of
+msgid "linear"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.mag_filter:4
+#: kivy.graphics.texture.Texture.min_filter:4 of
+msgid "nearest"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.mag_filter:6
+#: kivy.graphics.texture.Texture.min_filter:10
+#: kivy.graphics.texture.Texture.wrap:7 of
+msgid ""
+"Check the opengl documentation for more information about the behavior of"
+" these values : "
+"http://www.khronos.org/opengles/sdk/docs/man/xhtml/glTexParameter.xml."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.min_filter:1 of
+msgid "Get/set the min filter texture. Available values:"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.min_filter:5 of
+msgid "linear_mipmap_linear"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.min_filter:6 of
+msgid "linear_mipmap_nearest"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.min_filter:7 of
+msgid "nearest_mipmap_nearest"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.min_filter:8 of
+msgid "nearest_mipmap_linear"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.mipmap:1 of
+msgid "Return True if the texture has mipmap enabled (readonly)."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.pixels:1
+#: kivy.graphics.texture.TextureRegion.pixels:1 of
+msgid ""
+"Get the pixels texture, in RGBA format only, unsigned byte. The origin of"
+" the image is at bottom left."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.remove_reload_observer:1 of
+msgid ""
+"Remove a callback from the observer list, previously added by "
+":meth:`add_reload_observer`."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.save:1 of
+msgid ""
+"Save the texture content to a file. Check "
+":meth:`kivy.core.image.Image.save` for more information."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.save:4 of
+msgid ""
+"The flipped parameter flips the saved image vertically, and defaults to "
+"True."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.save:11 of
+msgid ""
+"Parameter `flipped` added, defaults to True. All the OpenGL Texture are "
+"readed from bottom / left, it need to be flipped before saving. If you "
+"don't want to flip the image, set flipped to False."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.size:1 of
+msgid "Return the (width, height) of the texture (readonly)."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.target:1 of
+msgid "Return the OpenGL target of the texture (readonly)."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.tex_coords:1 of
+msgid "Return the list of tex_coords (opengl)."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.uvpos:1 of
+msgid "Get/set the UV position inside the texture."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.uvsize:1 of
+msgid "Get/set the UV size inside the texture."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.uvsize:4 of
+msgid "The size can be negative if the texture is flipped."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.width:1 of
+msgid "Return the width of the texture (readonly)."
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.wrap:1 of
+msgid "Get/set the wrap texture. Available values:"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.wrap:3 of
+msgid "repeat"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.wrap:4 of
+msgid "mirrored_repeat"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.Texture.wrap:5 of
+msgid "clamp_to_edge"
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.graphics.texture.Texture`"
+msgstr ""
+
+#: ../../docstring kivy.graphics.texture.TextureRegion:1 of
+msgid ""
+"Handle a region of a Texture class. Useful for non power-of-2 texture "
+"handling."
+msgstr ""
+

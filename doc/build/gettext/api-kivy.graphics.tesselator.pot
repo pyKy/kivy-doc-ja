@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-15 00:59+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../sources/api-kivy.graphics.tesselator.rst:3
+msgid "Tesselator"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator:11
+msgid "This is experimental and subject to change as long as this warning notice is present. Only TYPE_POLYGONS is currently supported."
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator:14
+msgid "Tesselator is a library for tesselating polygons, based on `libtess2 <https://github.com/memononen/libtess2>`_. It renders concave filled polygons by first tesselating them into convex polygons. It also supports holes."
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator:19
+msgid "Usage"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator:21
+msgid "First, you need to create a :class:`Tesselator` object and add contours. The first one is the external contour of your shape and all of the following ones should be holes::"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator:31
+msgid "Second, call the :meth:`Tesselator.tesselate` method to compute the points. It is possible that the tesselator won't work. In that case, it can return False::"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator:39
+msgid "After the tessellation, you have multiple ways to iterate over the result. The best approach is using :data:`Tesselator.meshes` to get a format directly usable for a :class:`~kivy.graphics.Mesh`::"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator:50
+msgid "Or, you can get the \"raw\" result, with just polygons and x/y coordinates with :meth:`Tesselator.vertices`::"
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`builtins.object`"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator:1
+msgid "Tesselator class. See module for more informations about the usage."
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.add_contour:1
+msgid "Add a contour to the tesselator. It can be:"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.add_contour:3
+msgid "a list of `[x, y, x2, y2, ...]` coordinates"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.add_contour:4
+msgid "a float array: `array(\"f\", [x, y, x2, y2, ...])`"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.add_contour:5
+msgid "any buffer with floats in it."
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.element_count:1
+msgid "Returns the number of convex polygon."
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.meshes:1
+msgid "Iterate through the result of the :meth:`tesselate` to give a result that can be easily pushed into Kivy`s Mesh object."
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.meshes:4
+msgid "It's a list of: `[[vertices, indices], [vertices, indices], ...]`. The vertices in the format `[x, y, u, v, x2, y2, u2, v2]`."
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.meshes:7
+msgid "Careful, u/v coordinates are the same as x/y. You are responsible to change them for texture mapping if you need to."
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.meshes:10
+msgid "You can create Mesh objects like that::"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.tesselate:1
+msgid "Compute all the contours added with :meth:`add_contour`, and generate polygons."
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.tesselate:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.tesselate:8
+msgid "`winding_rule`: enum"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.tesselate:6
+msgid "The winding rule classifies a region as inside if its winding number belongs to the chosen category. Can be one of WINDING_ODD, WINDING_NONZERO, WINDING_POSITIVE, WINDING_NEGATIVE, WINDING_ABS_GEQ_TWO. Defaults to WINDING_ODD."
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.tesselate:12
+msgid "`element_type`: enum"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.tesselate:11
+msgid "The result type, you can generate the polygons with TYPE_POLYGONS, or the contours with TYPE_BOUNDARY_CONTOURS. Defaults to TYPE_POLYGONS."
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.tesselate:0
+msgid "Returns"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.tesselate:14
+msgid "1 if the tessellation happened, 0 otherwise."
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.tesselate:0
+msgid "Return type"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.vertex_count:1
+msgid "Returns the number of vertex generated."
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.vertex_count:3
+msgid "This is the raw result, however, because the Tesselator format the result for you with :data:`meshes` or :data:`vertices` per polygon, you'll have more vertices in the result"
+msgstr ""
+
+#: ../../docstring of kivy.graphics.tesselator.Tesselator.vertices:1
+msgid "Iterate through the result of the :meth:`tesselate` in order to give only a list of `[x, y, x2, y2, ...]` polygons."
+msgstr ""
+

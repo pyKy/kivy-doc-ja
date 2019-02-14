@@ -6,30 +6,30 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="twitter:site" content="@kivyframework">
     
-    <title>ListAdapter &mdash; Kivy 1.10.0 ドキュメント</title>
+    <title>ListAdapter &mdash; Kivy 1.10.1 documentation</title>
     <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="_static/fresh.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.10.0',
+        VERSION:     '1.10.1',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
+
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/translations.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <script type="text/javascript" src="_static/jquery-effects-core-and-slide.js"></script>
     <script type="text/javascript" src="_static/jquery.cookie.js"></script>
     <script type="text/javascript" src="_static/kivy.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="index.html" />
+    <link rel="top" title="Kivy 1.10.1 documentation" href="index.html" />
     <link rel="up" title="Adapters" href="api-kivy.adapters.html" />
     <link rel="next" title="SelectableDataItem" href="api-kivy.adapters.models.html" />
     <link rel="prev" title="List Item View Argument Converters" href="api-kivy.adapters.args_converters.html" /> 
@@ -57,6 +57,8 @@
 <div id="contentall">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+            <h3>Version</h3>
+            <select id="version_selector"></select>
             <h3>Quick search</h3>
             <form class="search" action="search.html" method="get">
                 &nbsp;
@@ -73,85 +75,87 @@
           <h3><a href="index.html">Table Of Contents</a></h3>
           -->
           <ul>
-<li class="toctree-l1"><a class="reference internal" href="gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/installation.html">Installation(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/properties.html">Properties(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/events.html">Events(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/framework.html">Non-widget stuff(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/examples.html">Examples(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/first_app.html">A first App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/rules.html">Kv Design Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/events.html">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/layouts.html">Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/diving.html">Diving in</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="examples/gallery.html">Gallery(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__mesh__py.html">Mesh test(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Gallery of Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__animation__animate__py.html">Widget animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_suite__py.html">Suite of Application Builders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_build__py.html">Application example using build() + return</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv__py.html">Application built from a  .kv file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__camera__main__py.html">Camera Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__bezier__py.html">Bezier Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__canvas_stress__py.html">Canvas stress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__circle__py.html">Circle Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__fbo_canvas__py.html">FBO Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines_extended__py.html">Lines Extended Demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__multitexture__py.html">Multitexture Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__rotation__py.html">Rotation Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__stencil_canvas__py.html">Stencil demo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__pictures__main__py.html">Basic Picture Viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__shadereditor__main__py.html">Live Shader Editor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration</a></li>
 </ul>
 </li>
 </ul>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User’s Guide(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation/installation.html">Installation(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="philosophy.html">Philosophy(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contribute.html">Contributing(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contact.html">Contact Us(翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation.html">Basic Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation.html#advanced-installation">Advanced Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation.html#uninstalling-kivy">Uninstalling Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="philosophy.html">Philosophy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contact.html">Contact Us</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="guide-index.html">Programming Guide(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="guide/basic.html">Kivy Basics(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/environment.html">Controlling the environment(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/config.html">Configure Kivy(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/events.html">Events and Properties (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/inputs.html">Input management (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/widgets.html">Widgets(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/graphics.html">Graphics (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/lang.html">Kv language(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/packaging.html">Packaging your application(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/licensing.html">Package licensing (翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide-index.html">Programming Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide/basic.html">Kivy Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/environment.html">Controlling the environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/config.html">Configure Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/architecture.html">Architectural Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/events.html">Events and Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/lang.html">Kv language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/other-frameworks.html">Integrating with other Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/packaging.html">Packaging your application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/licensing.html">Package licensing</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials-index.html">Tutorials(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials-index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/pong.html">Pong Game Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/firstwidget.html">A Simple Paint App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/crashcourse.html">Crash Course</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="api-index.html">API Reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.html">Kivy framework(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.html">Kivy framework</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="api-kivy.adapters.html">Adapters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.adapter.html">Adapter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
@@ -159,19 +163,19 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">ListAdapter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.models.html">SelectableDataItem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.animation.html">Animation(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.app.html">Application （翻訳中）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.app.html">Application</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.atlas.html">Atlas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.base.html">Kivy Base</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.cache.html">Cache manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.clock.html">Clock object(翻訳ずみ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.clock.html">Clock object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.config.html">Configuration object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.context.html">Context</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.html">Core Abstraction(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.html">Core Abstraction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.core.audio.html">Audio</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.core.camera.html">Camera</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.clipboard.html">Clipboard(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.clipboard.html">Clipboard</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.core.gl.html">OpenGL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.core.image.html">Image</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.core.spelling.html">Spelling</a></li>
@@ -191,7 +195,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.garden.html">Garden</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.geometry.html">Geometry utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.gesture.html">Gesture recognition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.html">Graphics(翻訳中)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.html">Graphics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.compiler.html">Graphics compiler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context.html">Context management</a></li>
@@ -235,7 +239,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.input.recorder.html">Input recorder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.input.shape.html">Motion Event Shape</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.interactive.html">Interactive launcher</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.html">Kivy Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.html">Kivy Language</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.builder.html">Builder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.parser.html">Parser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.html">External libraries</a></li>
@@ -272,7 +276,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.html">Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.html">Packaging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.html">Widgets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.abstractview.html">Abstract View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.accordion.html">Accordion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.actionbar.html">Action Bar</a></li>
@@ -302,7 +306,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gridlayout.html">Grid Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.image.html">Image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.label.html">Label(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.label.html">Label</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.layout.html">Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.listview.html">List View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.modalview.html">ModalView</a></li>
@@ -324,7 +328,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.screenmanager.html">Screen Manager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scrollview.html">ScrollView</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.selectableview.html">SelectableView</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.settings.html">Settings （翻訳中）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.settings.html">Settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.slider.html">Slider</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.spinner.html">Spinner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.splitter.html">Splitter</a></li>
@@ -367,37 +371,37 @@
 </div>
             
   <div class="section" id="module-kivy.adapters.listadapter">
-<span id="listadapter"></span><h1>ListAdapter<a class="headerlink" href="#module-kivy.adapters.listadapter" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<span id="listadapter"></span><h1>ListAdapter<a class="headerlink" href="#module-kivy.adapters.listadapter" title="Permalink to this headline">¶</a></h1>
 <div class="versionadded">
-<p><span class="versionmodified">バージョン 1.5 で追加.</span></p>
+<p><span class="versionmodified">New in version 1.5.</span></p>
 </div>
 <div class="deprecated">
-<p><span class="versionmodified">バージョン 1.10.0 で撤廃: </span>The feature has been deprecated.</p>
+<p><span class="versionmodified">Deprecated since version 1.10.0: </span>The feature has been deprecated.</p>
 </div>
 <div class="admonition warning">
-<p class="first admonition-title">警告</p>
+<p class="first admonition-title">Warning</p>
 <p class="last">This code is still experimental, and its API is subject to change in a
 future version.</p>
 </div>
-<p>A <a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter" title="kivy.adapters.listadapter.ListAdapter"><code class="xref py py-class docutils literal"><span class="pre">ListAdapter</span></code></a> is an adapter around a python list and adds support
+<p>A <a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter" title="kivy.adapters.listadapter.ListAdapter"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListAdapter</span></code></a> is an adapter around a python list and adds support
 for selection operations. If you wish to have a bare-bones list adapter,
 without selection, use a
-<a class="reference internal" href="api-kivy.adapters.simplelistadapter.html#kivy.adapters.simplelistadapter.SimpleListAdapter" title="kivy.adapters.simplelistadapter.SimpleListAdapter"><code class="xref py py-class docutils literal"><span class="pre">SimpleListAdapter</span></code></a>.</p>
-<p>From an <code class="xref py py-class docutils literal"><span class="pre">Adapter</span></code>, a <a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter" title="kivy.adapters.listadapter.ListAdapter"><code class="xref py py-class docutils literal"><span class="pre">ListAdapter</span></code></a> inherits cls,
+<a class="reference internal" href="api-kivy.adapters.simplelistadapter.html#kivy.adapters.simplelistadapter.SimpleListAdapter" title="kivy.adapters.simplelistadapter.SimpleListAdapter"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleListAdapter</span></code></a>.</p>
+<p>From an <code class="xref py py-class docutils literal notranslate"><span class="pre">Adapter</span></code>, a <a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter" title="kivy.adapters.listadapter.ListAdapter"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListAdapter</span></code></a> inherits cls,
 template, and args_converter properties and adds others that control selection
 behaviour:</p>
 <ul class="simple">
-<li><a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.selection" title="kivy.adapters.listadapter.ListAdapter.selection"><code class="xref py py-attr docutils literal"><span class="pre">selection</span></code></a>: a list of selected items.</li>
-<li><a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.selection_mode" title="kivy.adapters.listadapter.ListAdapter.selection_mode"><code class="xref py py-attr docutils literal"><span class="pre">selection_mode</span></code></a>: one of &#8216;single&#8217;, &#8216;multiple&#8217; or &#8216;none&#8217;.</li>
-<li><a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.allow_empty_selection" title="kivy.adapters.listadapter.ListAdapter.allow_empty_selection"><code class="xref py py-attr docutils literal"><span class="pre">allow_empty_selection</span></code></a>: a boolean. If False, a selection
+<li><a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.selection" title="kivy.adapters.listadapter.ListAdapter.selection"><code class="xref py py-attr docutils literal notranslate"><span class="pre">selection</span></code></a>: a list of selected items.</li>
+<li><a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.selection_mode" title="kivy.adapters.listadapter.ListAdapter.selection_mode"><code class="xref py py-attr docutils literal notranslate"><span class="pre">selection_mode</span></code></a>: one of ‘single’, ‘multiple’ or ‘none’.</li>
+<li><a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.allow_empty_selection" title="kivy.adapters.listadapter.ListAdapter.allow_empty_selection"><code class="xref py py-attr docutils literal notranslate"><span class="pre">allow_empty_selection</span></code></a>: a boolean. If False, a selection
 is forced. If True, and only user or programmatic action will change
 selection, it can be empty.</li>
 </ul>
-<p>A <a class="reference internal" href="api-kivy.adapters.dictadapter.html#kivy.adapters.dictadapter.DictAdapter" title="kivy.adapters.dictadapter.DictAdapter"><code class="xref py py-class docutils literal"><span class="pre">DictAdapter</span></code></a> is a subclass of a
-<a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter" title="kivy.adapters.listadapter.ListAdapter"><code class="xref py py-class docutils literal"><span class="pre">ListAdapter</span></code></a>. They both dispatch the
-<a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.on_selection_change" title="kivy.adapters.listadapter.ListAdapter.on_selection_change"><code class="xref py py-attr docutils literal"><span class="pre">on_selection_change</span></code></a> event when selection changes.</p>
+<p>A <a class="reference internal" href="api-kivy.adapters.dictadapter.html#kivy.adapters.dictadapter.DictAdapter" title="kivy.adapters.dictadapter.DictAdapter"><code class="xref py py-class docutils literal notranslate"><span class="pre">DictAdapter</span></code></a> is a subclass of a
+<a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter" title="kivy.adapters.listadapter.ListAdapter"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListAdapter</span></code></a>. They both dispatch the
+<a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.on_selection_change" title="kivy.adapters.listadapter.ListAdapter.on_selection_change"><code class="xref py py-attr docutils literal notranslate"><span class="pre">on_selection_change</span></code></a> event when selection changes.</p>
 <div class="versionchanged">
-<p><span class="versionmodified">バージョン 1.6.0 で変更: </span>Added data = ListProperty([]), which was probably inadvertently deleted at
+<p><span class="versionmodified">Changed in version 1.6.0: </span>Added data = ListProperty([]), which was probably inadvertently deleted at
 some point. This means that whenever data changes an update will fire,
 instead of having to reset the data object (Adapter has data defined as
 an ObjectProperty, so we need to reset it here to ListProperty). See also
@@ -405,42 +409,42 @@ DictAdapter and its set of data = DictProperty().</p>
 </div>
 <dl class="class">
 <dt id="kivy.adapters.listadapter.ListAdapter">
-<em class="property">class </em><code class="descclassname">kivy.adapters.listadapter.</code><code class="descname">ListAdapter</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/adapters/listadapter.html#ListAdapter"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>ベースクラス: <a class="reference internal" href="api-kivy.adapters.adapter.html#kivy.adapters.adapter.Adapter" title="kivy.adapters.adapter.Adapter"><code class="xref py py-class docutils literal"><span class="pre">kivy.adapters.adapter.Adapter</span></code></a>, <a class="reference internal" href="api-kivy.event.html#kivy.event.EventDispatcher" title="kivy.event.EventDispatcher"><code class="xref py py-class docutils literal"><span class="pre">kivy.event.EventDispatcher</span></code></a></p>
+<em class="property">class </em><code class="descclassname">kivy.adapters.listadapter.</code><code class="descname">ListAdapter</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/adapters/listadapter.html#ListAdapter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="api-kivy.adapters.adapter.html#kivy.adapters.adapter.Adapter" title="kivy.adapters.adapter.Adapter"><code class="xref py py-class docutils literal notranslate"><span class="pre">kivy.adapters.adapter.Adapter</span></code></a>, <a class="reference internal" href="api-kivy.event.html#kivy.event.EventDispatcher" title="kivy.event.EventDispatcher"><code class="xref py py-class docutils literal notranslate"><span class="pre">kivy.event.EventDispatcher</span></code></a></p>
 <p>A base class for adapters interfacing with lists, dictionaries or other
 collection type data, adding selection, view creation and management
 functionality.</p>
 <dl class="attribute">
 <dt id="kivy.adapters.listadapter.ListAdapter.allow_empty_selection">
-<code class="descname">allow_empty_selection</code><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.allow_empty_selection" title="この定義へのパーマリンク">¶</a></dt>
+<code class="descname">allow_empty_selection</code><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.allow_empty_selection" title="Permalink to this definition">¶</a></dt>
 <dd><p>The allow_empty_selection may be used for cascading selection between
 several list views, or between a list view and an observing view. Such
 automatic maintenance of the selection is important for all but simple
 list displays. Set allow_empty_selection to False and the selection is
 auto-initialized and always maintained, so any observing views
 may likewise be updated to stay in sync.</p>
-<p><a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.allow_empty_selection" title="kivy.adapters.listadapter.ListAdapter.allow_empty_selection"><code class="xref py py-attr docutils literal"><span class="pre">allow_empty_selection</span></code></a> is a
-<a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> and defaults to True.</p>
+<p><a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.allow_empty_selection" title="kivy.adapters.listadapter.ListAdapter.allow_empty_selection"><code class="xref py py-attr docutils literal notranslate"><span class="pre">allow_empty_selection</span></code></a> is a
+<a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanProperty</span></code></a> and defaults to True.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.adapters.listadapter.ListAdapter.cached_views">
-<code class="descname">cached_views</code><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.cached_views" title="この定義へのパーマリンク">¶</a></dt>
+<code class="descname">cached_views</code><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.cached_views" title="Permalink to this definition">¶</a></dt>
 <dd><p>View instances for data items are instantiated and managed by the
 adapter. Here we maintain a dictionary containing the view
 instances keyed to the indices in the data.</p>
 <p>This dictionary works as a cache. get_view() only asks for a view from
 the adapter if one is not already stored for the requested index.</p>
-<p><a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.cached_views" title="kivy.adapters.listadapter.ListAdapter.cached_views"><code class="xref py py-attr docutils literal"><span class="pre">cached_views</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.DictProperty" title="kivy.properties.DictProperty"><code class="xref py py-class docutils literal"><span class="pre">DictProperty</span></code></a> and
+<p><a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.cached_views" title="kivy.adapters.listadapter.ListAdapter.cached_views"><code class="xref py py-attr docutils literal notranslate"><span class="pre">cached_views</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.DictProperty" title="kivy.properties.DictProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">DictProperty</span></code></a> and
 defaults to {}.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="kivy.adapters.listadapter.ListAdapter.create_view">
-<code class="descname">create_view</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/adapters/listadapter.html#ListAdapter.create_view"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.create_view" title="この定義へのパーマリンク">¶</a></dt>
+<code class="descname">create_view</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/adapters/listadapter.html#ListAdapter.create_view"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.create_view" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method is more complicated than the ones in the
-<a class="reference internal" href="api-kivy.adapters.adapter.html#kivy.adapters.adapter.Adapter" title="kivy.adapters.adapter.Adapter"><code class="xref py py-class docutils literal"><span class="pre">Adapter</span></code></a> and
-<a class="reference internal" href="api-kivy.adapters.simplelistadapter.html#kivy.adapters.simplelistadapter.SimpleListAdapter" title="kivy.adapters.simplelistadapter.SimpleListAdapter"><code class="xref py py-class docutils literal"><span class="pre">SimpleListAdapter</span></code></a> classes
+<a class="reference internal" href="api-kivy.adapters.adapter.html#kivy.adapters.adapter.Adapter" title="kivy.adapters.adapter.Adapter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Adapter</span></code></a> and
+<a class="reference internal" href="api-kivy.adapters.simplelistadapter.html#kivy.adapters.simplelistadapter.SimpleListAdapter" title="kivy.adapters.simplelistadapter.SimpleListAdapter"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleListAdapter</span></code></a> classes
 because here we create bindings for the data items and their children
 back to the <em>self.handle_selection()</em> event. We also perform
 other selection-related tasks to keep item views in sync with the data.</p>
@@ -448,26 +452,26 @@ other selection-related tasks to keep item views in sync with the data.</p>
 
 <dl class="method">
 <dt id="kivy.adapters.listadapter.ListAdapter.cut_to_sel">
-<code class="descname">cut_to_sel</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/adapters/listadapter.html#ListAdapter.cut_to_sel"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.cut_to_sel" title="この定義へのパーマリンク">¶</a></dt>
+<code class="descname">cut_to_sel</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/adapters/listadapter.html#ListAdapter.cut_to_sel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.cut_to_sel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as trim_to_sel, but intervening list items within the selected
 range are also cut, leaving only list items that are selected.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.adapters.listadapter.ListAdapter.data">
-<code class="descname">data</code><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.data" title="この定義へのパーマリンク">¶</a></dt>
+<code class="descname">data</code><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.data" title="Permalink to this definition">¶</a></dt>
 <dd><p>The data list property is redefined here, overriding its definition as
 an ObjectProperty in the Adapter class. We bind to data so that any
 changes will trigger updates. See also how the
-<code class="xref py py-class docutils literal"><span class="pre">DictAdapter</span></code> redefines data as a
-<a class="reference internal" href="api-kivy.properties.html#kivy.properties.DictProperty" title="kivy.properties.DictProperty"><code class="xref py py-class docutils literal"><span class="pre">DictProperty</span></code></a>.</p>
-<p><a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.data" title="kivy.adapters.listadapter.ListAdapter.data"><code class="xref py py-attr docutils literal"><span class="pre">data</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a> and defaults
+<code class="xref py py-class docutils literal notranslate"><span class="pre">DictAdapter</span></code> redefines data as a
+<a class="reference internal" href="api-kivy.properties.html#kivy.properties.DictProperty" title="kivy.properties.DictProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">DictProperty</span></code></a>.</p>
+<p><a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.data" title="kivy.adapters.listadapter.ListAdapter.data"><code class="xref py py-attr docutils literal notranslate"><span class="pre">data</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListProperty</span></code></a> and defaults
 to [].</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="kivy.adapters.listadapter.ListAdapter.on_selection_change">
-<code class="descname">on_selection_change</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/adapters/listadapter.html#ListAdapter.on_selection_change"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.on_selection_change" title="この定義へのパーマリンク">¶</a></dt>
+<code class="descname">on_selection_change</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/adapters/listadapter.html#ListAdapter.on_selection_change"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.on_selection_change" title="Permalink to this definition">¶</a></dt>
 <dd><p>on_selection_change() is the default handler for the
 on_selection_change event. You can bind to this event to get notified
 of selection changes.</p>
@@ -476,9 +480,9 @@ of selection changes.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt>adapter: <a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter" title="kivy.adapters.listadapter.ListAdapter"><code class="xref py py-class docutils literal"><span class="pre">ListAdapter</span></code></a> or subclass</dt>
+<dt>adapter: <a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter" title="kivy.adapters.listadapter.ListAdapter"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListAdapter</span></code></a> or subclass</dt>
 <dd><p class="first last">The instance of the list adapter where the selection changed.
-Use the adapters <a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.selection" title="kivy.adapters.listadapter.ListAdapter.selection"><code class="xref py py-attr docutils literal"><span class="pre">selection</span></code></a> property to see what has
+Use the adapters <a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.selection" title="kivy.adapters.listadapter.ListAdapter.selection"><code class="xref py py-attr docutils literal notranslate"><span class="pre">selection</span></code></a> property to see what has
 been selected.</p>
 </dd>
 </dl>
@@ -490,12 +494,12 @@ been selected.</p>
 
 <dl class="attribute">
 <dt id="kivy.adapters.listadapter.ListAdapter.propagate_selection_to_data">
-<code class="descname">propagate_selection_to_data</code><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.propagate_selection_to_data" title="この定義へのパーマリンク">¶</a></dt>
+<code class="descname">propagate_selection_to_data</code><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.propagate_selection_to_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Normally, data items are not selected/deselected because the data items
-might not have an is_selected boolean property &#8211; only the item view for a
+might not have an is_selected boolean property – only the item view for a
 given data item is selected/deselected as part of the maintained selection
 list. However, if the data items do have an is_selected property, or if
-they mix in <a class="reference internal" href="api-kivy.adapters.models.html#kivy.adapters.models.SelectableDataItem" title="kivy.adapters.models.SelectableDataItem"><code class="xref py py-class docutils literal"><span class="pre">SelectableDataItem</span></code></a>, the
+they mix in <a class="reference internal" href="api-kivy.adapters.models.html#kivy.adapters.models.SelectableDataItem" title="kivy.adapters.models.SelectableDataItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">SelectableDataItem</span></code></a>, the
 selection machinery can propagate selection to data items. This can be
 useful for storing selection state in a local database or backend database
 for maintaining state in game play or other similar scenarios. It is a
@@ -518,17 +522,17 @@ the data. You could accomplish the same functionality by writing code to
 operate on list selection, but having selection stored in the data
 ListProperty might prove convenient in some cases.</p>
 <div class="admonition note">
-<p class="first admonition-title">注釈</p>
+<p class="first admonition-title">Note</p>
 <p class="last">This setting should be set to True if you wish to initialize the view
 with item views already selected.</p>
 </div>
-<p><a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.propagate_selection_to_data" title="kivy.adapters.listadapter.ListAdapter.propagate_selection_to_data"><code class="xref py py-attr docutils literal"><span class="pre">propagate_selection_to_data</span></code></a> is a
-<a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> and defaults to False.</p>
+<p><a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.propagate_selection_to_data" title="kivy.adapters.listadapter.ListAdapter.propagate_selection_to_data"><code class="xref py py-attr docutils literal notranslate"><span class="pre">propagate_selection_to_data</span></code></a> is a
+<a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanProperty</span></code></a> and defaults to False.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="kivy.adapters.listadapter.ListAdapter.select_list">
-<code class="descname">select_list</code><span class="sig-paren">(</span><em>view_list</em>, <em>extend=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/adapters/listadapter.html#ListAdapter.select_list"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.select_list" title="この定義へのパーマリンク">¶</a></dt>
+<code class="descname">select_list</code><span class="sig-paren">(</span><em>view_list</em>, <em>extend=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/adapters/listadapter.html#ListAdapter.select_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.select_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>The select call is made for the items in the provided view_list.</p>
 <p>Arguments:</p>
 <blockquote>
@@ -540,64 +544,64 @@ to add to the existing selection</p>
 
 <dl class="attribute">
 <dt id="kivy.adapters.listadapter.ListAdapter.selection">
-<code class="descname">selection</code><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.selection" title="この定義へのパーマリンク">¶</a></dt>
+<code class="descname">selection</code><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.selection" title="Permalink to this definition">¶</a></dt>
 <dd><p>The selection list property is the container for selected items.</p>
-<p><a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.selection" title="kivy.adapters.listadapter.ListAdapter.selection"><code class="xref py py-attr docutils literal"><span class="pre">selection</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a> and defaults
+<p><a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.selection" title="kivy.adapters.listadapter.ListAdapter.selection"><code class="xref py py-attr docutils literal notranslate"><span class="pre">selection</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListProperty</span></code></a> and defaults
 to [].</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.adapters.listadapter.ListAdapter.selection_limit">
-<code class="descname">selection_limit</code><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.selection_limit" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>When the <a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.selection_mode" title="kivy.adapters.listadapter.ListAdapter.selection_mode"><code class="xref py py-attr docutils literal"><span class="pre">selection_mode</span></code></a> is &#8216;multiple&#8217; and the
+<code class="descname">selection_limit</code><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.selection_limit" title="Permalink to this definition">¶</a></dt>
+<dd><p>When the <a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.selection_mode" title="kivy.adapters.listadapter.ListAdapter.selection_mode"><code class="xref py py-attr docutils literal notranslate"><span class="pre">selection_mode</span></code></a> is ‘multiple’ and the
 selection_limit is
 non-negative, this number will limit the number of selected items. It can
 be set to 1, which is equivalent to single selection. If selection_limit is
 not set, the default value is -1, meaning that no limit will be enforced.</p>
-<p><a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.selection_limit" title="kivy.adapters.listadapter.ListAdapter.selection_limit"><code class="xref py py-attr docutils literal"><span class="pre">selection_limit</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a> and
+<p><a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.selection_limit" title="kivy.adapters.listadapter.ListAdapter.selection_limit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">selection_limit</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumericProperty</span></code></a> and
 defaults to -1 (no limit).</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.adapters.listadapter.ListAdapter.selection_mode">
-<code class="descname">selection_mode</code><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.selection_mode" title="この定義へのパーマリンク">¶</a></dt>
+<code class="descname">selection_mode</code><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.selection_mode" title="Permalink to this definition">¶</a></dt>
 <dd><p>The selection_mode is a string and can be set to one of the following
 values:</p>
 <blockquote>
 <div><ul class="simple">
-<li>&#8216;none&#8217;: use the list as a simple list (no select action). This option
+<li>‘none’: use the list as a simple list (no select action). This option
 is here so that selection can be turned off, momentarily or
 permanently, for an existing list adapter.
-A <a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter" title="kivy.adapters.listadapter.ListAdapter"><code class="xref py py-class docutils literal"><span class="pre">ListAdapter</span></code></a> is not meant to be
+A <a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter" title="kivy.adapters.listadapter.ListAdapter"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListAdapter</span></code></a> is not meant to be
 used as a primary no-selection list adapter. Use a
-<a class="reference internal" href="api-kivy.adapters.simplelistadapter.html#kivy.adapters.simplelistadapter.SimpleListAdapter" title="kivy.adapters.simplelistadapter.SimpleListAdapter"><code class="xref py py-class docutils literal"><span class="pre">SimpleListAdapter</span></code></a> for that.</li>
-<li>&#8216;single&#8217;: multi-touch/click ignored. Single item selection only.</li>
-<li>&#8216;multiple&#8217;: multi-touch / incremental addition to selection allowed;
+<a class="reference internal" href="api-kivy.adapters.simplelistadapter.html#kivy.adapters.simplelistadapter.SimpleListAdapter" title="kivy.adapters.simplelistadapter.SimpleListAdapter"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleListAdapter</span></code></a> for that.</li>
+<li>‘single’: multi-touch/click ignored. Single item selection only.</li>
+<li>‘multiple’: multi-touch / incremental addition to selection allowed;
 may be limited to a count by setting the
-<a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.selection_limit" title="kivy.adapters.listadapter.ListAdapter.selection_limit"><code class="xref py py-attr docutils literal"><span class="pre">selection_limit</span></code></a>.</li>
+<a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.selection_limit" title="kivy.adapters.listadapter.ListAdapter.selection_limit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">selection_limit</span></code></a>.</li>
 </ul>
 </div></blockquote>
-<p><a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.selection_mode" title="kivy.adapters.listadapter.ListAdapter.selection_mode"><code class="xref py py-attr docutils literal"><span class="pre">selection_mode</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.OptionProperty" title="kivy.properties.OptionProperty"><code class="xref py py-class docutils literal"><span class="pre">OptionProperty</span></code></a> and
-defaults to &#8216;single&#8217;.</p>
+<p><a class="reference internal" href="#kivy.adapters.listadapter.ListAdapter.selection_mode" title="kivy.adapters.listadapter.ListAdapter.selection_mode"><code class="xref py py-attr docutils literal notranslate"><span class="pre">selection_mode</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.OptionProperty" title="kivy.properties.OptionProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptionProperty</span></code></a> and
+defaults to ‘single’.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="kivy.adapters.listadapter.ListAdapter.trim_left_of_sel">
-<code class="descname">trim_left_of_sel</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/adapters/listadapter.html#ListAdapter.trim_left_of_sel"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.trim_left_of_sel" title="この定義へのパーマリンク">¶</a></dt>
+<code class="descname">trim_left_of_sel</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/adapters/listadapter.html#ListAdapter.trim_left_of_sel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.trim_left_of_sel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cut list items with indices in sorted_keys that are less than the
 index of the first selected item if there is a selection.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="kivy.adapters.listadapter.ListAdapter.trim_right_of_sel">
-<code class="descname">trim_right_of_sel</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/adapters/listadapter.html#ListAdapter.trim_right_of_sel"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.trim_right_of_sel" title="この定義へのパーマリンク">¶</a></dt>
+<code class="descname">trim_right_of_sel</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/adapters/listadapter.html#ListAdapter.trim_right_of_sel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.trim_right_of_sel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cut list items with indices in sorted_keys that are greater than
 the index of the last selected item if there is a selection.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="kivy.adapters.listadapter.ListAdapter.trim_to_sel">
-<code class="descname">trim_to_sel</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/adapters/listadapter.html#ListAdapter.trim_to_sel"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.trim_to_sel" title="この定義へのパーマリンク">¶</a></dt>
+<code class="descname">trim_to_sel</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/adapters/listadapter.html#ListAdapter.trim_to_sel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kivy.adapters.listadapter.ListAdapter.trim_to_sel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cut list items with indices in sorted_keys that are less than or
 greater than the index of the last selected item if there is a
 selection. This preserves intervening list items within the selected
@@ -646,13 +650,35 @@ range.</p>
     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
+<script>
+  var selector = $("#version_selector");
+
+  selector.on('change', function() {
+    // replace the version part of the url with the selected version
+    document.location.pathname = document.location.pathname.replace(
+      /^(\/.*?\/).*?(\/.*)/,
+     '$1' + this.value + '$2'
+    );
+  });
+
+  var url = "/doc/versions.json";
+
+  $.getJSON(url, function(versions) {
+    versions.forEach(function(version){
+      var current = window.location.pathname.split('/')[2]
+      selector.append(
+        $("<option " + (version == current ? "selected" : "") + "/>").val(version).html(version)
+      );
+    });
+  });
+</script>
 <noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Tracking Code -->
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 10月 01, 2017.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+      Last updated on Feb 15, 2019.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.4.
 </div>
 -->
   </body>

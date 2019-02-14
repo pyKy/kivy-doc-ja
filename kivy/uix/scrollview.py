@@ -425,10 +425,35 @@ class ScrollView(StencilView):
     '''Sets the type of scrolling to use for the content of the scrollview.
     Available options are: ['content'], ['bars'], ['bars', 'content'].
 
+    +---------------------+------------------------------------------------+
+    | ['content']         | Content is scrolled by dragging or swiping the |
+    |                     | content directly.                              |
+    +---------------------+------------------------------------------------+
+    | ['bars']            | Content is scrolled by dragging or swiping the |
+    |                     | scoll bars.                                    |
+    +---------------------+------------------------------------------------+
+    | ['bars', 'content'] | Content is scrolled by either of the above     |
+    |                     | methods.                                       |
+    +---------------------+------------------------------------------------+
+
     .. versionadded:: 1.8.0
 
-    :attr:`scroll_type` is a :class:`~kivy.properties.OptionProperty`, defaults
-    to ['content'].
+    :attr:`scroll_type` is an :class:`~kivy.properties.OptionProperty` and
+    defaults to ['content'].
+    '''
+
+    smooth_scroll_end = NumericProperty(None, allownone=True)
+    '''Whether smooth scroll end should be used when scrolling with the
+    mouse-wheel and the factor of transforming the scroll distance to
+    velocity. This option also enables velocity addition meaning if you
+    scroll more, you will scroll faster and further. The recommended value
+    is `10`. The velocity is calculated as :attr:`scroll_wheel_distance` *
+    :attr:`smooth_scroll_end`.
+
+    .. versionadded:: 1.11.0
+
+    :attr:`smooth_scroll_end` is a :class:`~kivy.properties.NumericProperty`
+    and defaults to None.
     '''
 
     # private, for internal use only
@@ -634,22 +659,19 @@ class ScrollView(StencilView):
         ud = touch.ud
         scroll_bar = 'bars' in scroll_type
 
-        # check if touch is in bar_x(horizontal) or bay_y(bertical)
-        ud['in_bar_x'] = ud['in_bar_y'] = False
+        # check if touch is in bar_x(horizontal) or bar_y(vertical)
         width_scrollable = vp.width > self.width
         height_scrollable = vp.height > self.height
-        bar_pos_x = self.bar_pos_x[0]
-        bar_pos_y = self.bar_pos_y[0]
 
-        d = {'b': True if touch.y < self.y + self.bar_width else False,
-             't': True if touch.y > self.top - self.bar_width else False,
-             'l': True if touch.x < self.x + self.bar_width else False,
-             'r': True if touch.x > self.right - self.bar_width else False}
-        if scroll_bar:
-            if (width_scrollable and d[bar_pos_x]):
-                ud['in_bar_x'] = True
-            if (height_scrollable and d[bar_pos_y]):
-                ud['in_bar_y'] = True
+        d = {'bottom': touch.y - self.y - self.bar_margin,
+             'top': self.top - touch.y - self.bar_margin,
+             'left': touch.x - self.x - self.bar_margin,
+             'right': self.right - touch.x - self.bar_margin}
+
+        ud['in_bar_x'] = (scroll_bar and width_scrollable and
+                             (0 <= d[self.bar_pos_x] <= self.bar_width))
+        ud['in_bar_y'] = (scroll_bar and height_scrollable and
+                             (0 <= d[self.bar_pos_y] <= self.bar_width))
 
         if vp and 'button' in touch.profile and \
                 touch.button.startswith('scroll'):
@@ -673,11 +695,17 @@ class ScrollView(StencilView):
 
             if e:
                 if btn in ('scrolldown', 'scrollleft'):
-                    e.value = max(e.value - m, e.min)
-                    e.velocity = 0
+                    if self.smooth_scroll_end:
+                        e.velocity -= m * self.smooth_scroll_end
+                    else:
+                        e.value = max(e.value - m, e.min)
+                        e.velocity = 0
                 elif btn in ('scrollup', 'scrollright'):
-                    e.value = min(e.value + m, e.max)
-                    e.velocity = 0
+                    if self.smooth_scroll_end:
+                        e.velocity += m * self.smooth_scroll_end
+                    else:
+                        e.value = min(e.value + m, e.max)
+                        e.velocity = 0
                 touch.ud[self._get_uid('svavoid')] = True
                 e.trigger_velocity_update()
             return True
@@ -725,17 +753,22 @@ class ScrollView(StencilView):
 
     def on_touch_move(self, touch):
         if self._touch is not touch:
-            # touch is in parent
-            touch.push()
-            touch.apply_transform_2d(self.to_local)
-            super(ScrollView, self).on_touch_move(touch)
-            touch.pop()
+            # don't pass on touch to children if outside the sv
+            if self.collide_point(*touch.pos):
+                # touch is in parent
+                touch.push()
+                touch.apply_transform_2d(self.to_local)
+                super(ScrollView, self).on_touch_move(touch)
+                touch.pop()
             return self._get_uid() in touch.ud
         if touch.grab_current is not self:
             return True
 
         if touch.ud.get(self._get_uid()) is None:
-            return super(ScrollView, self).on_touch_move(touch)
+            # don't pass on touch to children if outside the sv
+            if self.collide_point(*touch.pos):
+                return super(ScrollView, self).on_touch_move(touch)
+            return False
 
         touch.ud['sv.handled'] = {'x': False, 'y': False}
         if self.dispatch('on_scroll_move', touch):
@@ -821,13 +854,15 @@ class ScrollView(StencilView):
     def on_touch_up(self, touch):
         uid = self._get_uid('svavoid')
         if self._touch is not touch and uid not in touch.ud:
-            # touch is in parents
-            touch.push()
-            touch.apply_transform_2d(self.to_local)
-            if super(ScrollView, self).on_touch_up(touch):
+            # don't pass on touch to children if outside the sv
+            if self.collide_point(*touch.pos):
+                # touch is in parents
+                touch.push()
+                touch.apply_transform_2d(self.to_local)
+                if super(ScrollView, self).on_touch_up(touch):
+                    touch.pop()
+                    return True
                 touch.pop()
-                return True
-            touch.pop()
             return False
 
         if self.dispatch('on_scroll_stop', touch):
@@ -1128,7 +1163,7 @@ if __name__ == '__main__':
                 btn = Button(text=str(i), size_hint=(None, None),
                              size=(200, 100))
                 layout1.add_widget(btn)
-            scrollview1 = ScrollView(bar_width='2dp')
+            scrollview1 = ScrollView(bar_width='2dp', smooth_scroll_end=10)
             scrollview1.add_widget(layout1)
 
             layout2 = GridLayout(cols=4, spacing=10, size_hint=(None, None))

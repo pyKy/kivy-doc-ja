@@ -1,0 +1,958 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-15 00:59+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../sources/api-kivy.multistroke.rst:3
+msgid "Multistroke gesture recognizer"
+msgstr ""
+
+#: kivy.multistroke:7 of
+msgid ""
+"This is experimental and subject to change as long as this warning notice"
+" is present."
+msgstr ""
+
+#: kivy.multistroke:10 kivy.multistroke:43 of
+msgid ""
+"See :file:`kivy/examples/demo/multistroke/main.py` for a complete "
+"application example."
+msgstr ""
+
+#: kivy.multistroke:14 of
+msgid "Conceptual Overview"
+msgstr ""
+
+#: kivy.multistroke:16 of
+msgid "This module implements the Protractor gesture recognition algorithm."
+msgstr ""
+
+#: kivy.multistroke:18 of
+msgid ""
+":class:`Recognizer` is the search/database API similar to "
+":class:`~kivy.gesture.GestureDatabase`. It maintains a list of "
+":class:`MultistrokeGesture` objects and allows you to search for a user-"
+"input gestures among them."
+msgstr ""
+
+#: kivy.multistroke:23 of
+msgid ""
+":class:`ProgressTracker` tracks the progress of a "
+":meth:`Recognizer.recognize` call. It can be used to interact with the "
+"running recognizer task, for example forcing it to stop half-way, or "
+"analyzing results as they arrive."
+msgstr ""
+
+#: kivy.multistroke:27 of
+msgid ""
+":class:`MultistrokeGesture` represents a gesture in the gesture database "
+"(:attr:`Recognizer.db`). It is a container for :class:`UnistrokeTemplate`"
+" objects, and implements the heap permute algorithm to automatically "
+"generate all possible stroke orders (if desired)."
+msgstr ""
+
+#: kivy.multistroke:32 of
+msgid ""
+":class:`UnistrokeTemplate` represents a single stroke path. It's "
+"typically instantiated automatically by :class:`MultistrokeGesture`, but "
+"sometimes you may need to create them manually."
+msgstr ""
+
+#: kivy.multistroke:36 of
+msgid ""
+":class:`Candidate` represents a user-input gesture that is used to search"
+" the gesture database for matches. It is normally instantiated "
+"automatically by calling :meth:`Recognizer.recognize`."
+msgstr ""
+
+#: kivy.multistroke:41 of
+msgid "Usage examples"
+msgstr ""
+
+#: kivy.multistroke:46 of
+msgid ""
+"You can bind to events on :class:`Recognizer` to track the state of all "
+"calls to :meth:`Recognizer.recognize`. The callback function will receive"
+" an instance of :class:`ProgressTracker` that can be used to analyze and "
+"control various aspects of the recognition process ::"
+msgstr ""
+
+#: kivy.multistroke:83 of
+msgid ""
+"On the next :class:`~kivy.clock.Clock` tick, the matching process starts "
+"(and, in this case, completes)."
+msgstr ""
+
+#: kivy.multistroke:86 of
+msgid ""
+"To track individual calls to :meth:`Recognizer.recognize`, use the return"
+" value (also a :class:`ProgressTracker` instance) ::"
+msgstr ""
+
+#: kivy.multistroke:102 of
+msgid "Algorithm details"
+msgstr ""
+
+#: kivy.multistroke:104 of
+msgid "For more information about the matching algorithm, see:"
+msgstr ""
+
+#: kivy.multistroke:107 of
+msgid "\"Protractor: A fast and accurate gesture recognizer\" by Yang Li"
+msgstr ""
+
+#: kivy.multistroke:107 of
+msgid "http://yangl.org/pdf/protractor-chi2010.pdf"
+msgstr ""
+
+#: kivy.multistroke:110 of
+msgid "\"$N-Protractor\" by Lisa Anthony and Jacob O. Wobbrock"
+msgstr ""
+
+#: kivy.multistroke:110 of
+msgid "http://depts.washington.edu/aimgroup/proj/dollar/ndollar-protractor.pdf"
+msgstr ""
+
+#: kivy.multistroke:114 of
+msgid "Some of the code is derived from the JavaScript implementation here:"
+msgstr ""
+
+#: kivy.multistroke:113 of
+msgid "http://depts.washington.edu/aimgroup/proj/dollar/ndollar.html"
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.event.EventDispatcher`"
+msgstr ""
+
+#: kivy.multistroke.Recognizer:1 of
+msgid ":class:`Recognizer` provides a gesture database with matching facilities."
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker kivy.multistroke.Recognizer of
+msgid "Events"
+msgstr ""
+
+#: kivy.multistroke.Recognizer:6 of
+msgid "`on_search_start`"
+msgstr ""
+
+#: kivy.multistroke.Recognizer:6 of
+msgid "Fired when a new search is started using this Recognizer."
+msgstr ""
+
+#: kivy.multistroke.Recognizer:10 of
+msgid "`on_search_complete`"
+msgstr ""
+
+#: kivy.multistroke.Recognizer:9 of
+msgid ""
+"Fired when a running search ends, for whatever reason. (use "
+":data:`ProgressTracker.status` to find out)"
+msgstr ""
+
+#: kivy.multistroke.Recognizer of
+msgid "Properties"
+msgstr ""
+
+#: kivy.multistroke.Recognizer:19 kivy.multistroke.Recognizer.filter:82 of
+msgid "`db`"
+msgstr ""
+
+#: kivy.multistroke.Recognizer:14 of
+msgid ""
+"A :class:`ListProperty` that contains the available "
+":class:`MultistrokeGesture` objects."
+msgstr ""
+
+#: kivy.multistroke.Recognizer:17 of
+msgid ":attr:`db` is a :class:`~kivy.properties.ListProperty` and defaults to []"
+msgstr ""
+
+#: kivy.multistroke.Recognizer.add_gesture:1 of
+msgid ""
+"Add a new gesture to the database. This will instantiate a new "
+":class:`MultistrokeGesture` with `strokes` and append it to self.db."
+msgstr ""
+
+#: kivy.multistroke.Recognizer.add_gesture:5 of
+msgid ""
+"If you already have instantiated a :class:`MultistrokeGesture` object and"
+" wish to add it, append it to :attr:`Recognizer.db` manually."
+msgstr ""
+
+#: kivy.multistroke.Recognizer.export_gesture:1 of
+msgid ""
+"Export a list of :class:`MultistrokeGesture` objects. Outputs a "
+"base64-encoded string that can be decoded to a Python list with the "
+":meth:`parse_gesture` function or imported directly to :attr:`self.db` "
+"using :meth:`Recognizer.import_gesture`. If `filename` is specified, the "
+"output is written to disk, otherwise returned."
+msgstr ""
+
+#: kivy.multistroke.Recognizer.export_gesture:8
+#: kivy.multistroke.Recognizer.prepare_templates:7
+#: kivy.multistroke.Recognizer.recognize:4
+#: kivy.multistroke.Recognizer.transfer_gesture:4 of
+msgid "This method accepts optional :meth:`Recognizer.filter` arguments."
+msgstr ""
+
+#: kivy.multistroke.Recognizer.filter:1 of
+msgid ""
+":meth:`filter` returns a subset of objects in :attr:`self.db`, according "
+"to given criteria. This is used by many other methods of the "
+":class:`Recognizer`; the arguments below can for example be used when "
+"calling :meth:`Recognizer.recognize` or "
+":meth:`Recognizer.export_gesture`. You normally don't need to call this "
+"directly."
+msgstr ""
+
+#: kivy.multistroke.Candidate kivy.multistroke.MultistrokeGesture
+#: kivy.multistroke.ProgressTracker kivy.multistroke.Recognizer.filter
+#: kivy.multistroke.Recognizer.recognize kivy.multistroke.UnistrokeTemplate of
+msgid "Arguments"
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture:11 kivy.multistroke.ProgressTracker:32
+#: kivy.multistroke.Recognizer.filter:27 kivy.multistroke.UnistrokeTemplate:7
+#: of
+msgid "`name`"
+msgstr ""
+
+#: kivy.multistroke.Recognizer.filter:11 of
+msgid ""
+"Limits the returned list to gestures where "
+":attr:`MultistrokeGesture.name` matches given regular expression(s). If "
+"re.match(name, MultistrokeGesture.name) tests true, the gesture is "
+"included in the returned list. Can be a string or an array of strings ::"
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture:34 kivy.multistroke.Recognizer.filter:48
+#: of
+msgid "`priority`"
+msgstr ""
+
+#: kivy.multistroke.Recognizer.filter:30 of
+msgid ""
+"Limits the returned list to gestures with certain "
+":attr:`MultistrokeGesture.priority` values. If specified as an integer, "
+"only gestures with a lower priority are returned. If specified as a list "
+"(min/max) ::"
+msgstr ""
+
+#: kivy.multistroke.Recognizer.filter:44 of
+msgid ""
+"When this option is used, :attr:`Recognizer.db` is automatically sorted "
+"according to priority, incurring extra cost. You can use "
+"`force_priority_sort` to override this behavior if your gestures are "
+"already sorted according to priority."
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture:46 kivy.multistroke.Recognizer.filter:54
+#: kivy.multistroke.UnistrokeTemplate:19 of
+msgid "`orientation_sensitive`"
+msgstr ""
+
+#: kivy.multistroke.Recognizer.filter:51 of
+msgid ""
+"Limits the returned list to gestures that are orientation sensitive "
+"(True), gestures that are not orientation sensitive (False) or None "
+"(ignore template sensitivity, this is the default)."
+msgstr ""
+
+#: kivy.multistroke.Recognizer.filter:59 of
+msgid "`numstrokes`"
+msgstr ""
+
+#: kivy.multistroke.Recognizer.filter:57 of
+msgid ""
+"Limits the returned list to gestures that have the specified number of "
+"strokes (in :attr:`MultistrokeGesture.strokes`). Can be a single integer "
+"or a list of integers."
+msgstr ""
+
+#: kivy.multistroke.Candidate:14 kivy.multistroke.MultistrokeGesture:37
+#: kivy.multistroke.Recognizer.filter:65 kivy.multistroke.UnistrokeTemplate:15
+#: of
+msgid "`numpoints`"
+msgstr ""
+
+#: kivy.multistroke.Recognizer.filter:62 of
+msgid ""
+"Limits the returned list to gestures that have specific "
+":attr:`MultistrokeGesture.numpoints` values. This is provided for "
+"flexibility, do not use it unless you understand what it does. Can be a "
+"single integer or a list of integers."
+msgstr ""
+
+#: kivy.multistroke.Recognizer.filter:78 of
+msgid "`force_priority_sort`"
+msgstr ""
+
+#: kivy.multistroke.Recognizer.filter:68 of
+msgid ""
+"Can be used to override the default sort behavior. Normally "
+":class:`MultistrokeGesture` objects are returned in priority order if the"
+" `priority` option is used. Setting this to True will return gestures "
+"sorted in priority order, False will return in the order gestures were "
+"added. None means decide automatically (the default)."
+msgstr ""
+
+#: kivy.multistroke.Recognizer.filter:76 of
+msgid ""
+"For improved performance, you can load your gesture database in priority "
+"order and set this to False when calling :meth:`Recognizer.recognize`"
+msgstr ""
+
+#: kivy.multistroke.Recognizer.filter:81 of
+msgid ""
+"Can be set if you want to filter a different list of objects than "
+":attr:`Recognizer.db`. You probably don't want to do this; it is used "
+"internally by :meth:`import_gesture`."
+msgstr ""
+
+#: kivy.multistroke.Recognizer.import_gesture:1 of
+msgid ""
+"Import a list of gestures as formatted by :meth:`export_gesture`. One of "
+"`data` or `filename` must be specified."
+msgstr ""
+
+#: kivy.multistroke.Recognizer.import_gesture:4 of
+msgid ""
+"This method accepts optional :meth:`Recognizer.filter` arguments, if none"
+" are specified then all gestures in specified data are imported."
+msgstr ""
+
+#: kivy.multistroke.Recognizer.parse_gesture:1 of
+msgid ""
+"Parse data formatted by export_gesture(). Returns a list of "
+":class:`MultistrokeGesture` objects. This is used internally by "
+":meth:`import_gesture`, you normally don't need to call this directly."
+msgstr ""
+
+#: kivy.multistroke.Recognizer.prepare_templates:1 of
+msgid ""
+"This method is used to prepare :class:`UnistrokeTemplate` objects within "
+"the gestures in self.db. This is useful if you want to minimize "
+"punishment of lazy resampling by preparing all vectors in advance. If you"
+" do this before a call to :meth:`Recognizer.export_gesture`, you will "
+"have the vectors computed when you load the data later."
+msgstr ""
+
+#: kivy.multistroke.Recognizer.prepare_templates:9 of
+msgid ""
+"`force_numpoints`, if specified, will prepare all templates to the given "
+"number of points (instead of each template's preferred n; ie "
+":data:`UnistrokeTemplate.numpoints`). You normally don't want to do this."
+msgstr ""
+
+#: kivy.multistroke.Recognizer.recognize:1 of
+msgid ""
+"Search for gestures matching `strokes`. Returns a "
+":class:`ProgressTracker` instance."
+msgstr ""
+
+#: kivy.multistroke.Candidate:10 kivy.multistroke.MultistrokeGesture:28
+#: kivy.multistroke.Recognizer.recognize:23 of
+msgid "`strokes`"
+msgstr ""
+
+#: kivy.multistroke.Recognizer.recognize:9 of
+msgid ""
+"A list of stroke paths (list of lists of :class:`~kivy.vector.Vector` "
+"objects) that will be matched against gestures in the database. Can also "
+"be a :class:`Candidate` instance."
+msgstr ""
+
+#: kivy.multistroke.Recognizer.recognize:16 of
+msgid ""
+"If you manually supply a :class:`Candidate` that has a skip-flag, make "
+"sure that the correct filter arguments are set. Otherwise the system will"
+" attempt to load vectors that have not been computed. For example, if you"
+" set `skip_bounded` and do not set `orientation_sensitive` to False, it "
+"will raise an exception if an orientation_sensitive "
+":class:`UnistrokeTemplate` is encountered."
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:57 kivy.multistroke.Recognizer.recognize:30
+#: of
+msgid "`goodscore`"
+msgstr ""
+
+#: kivy.multistroke.Recognizer.recognize:26 of
+msgid ""
+"If this is set (between 0.0 - 1.0) and a gesture score is equal to or "
+"higher than the specified value, the search is immediately halted and the"
+" on_search_complete event is fired (+ the on_complete event of the "
+"associated :class:`ProgressTracker` instance). Default is None "
+"(disabled)."
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:53 kivy.multistroke.Recognizer.recognize:37
+#: of
+msgid "`timeout`"
+msgstr ""
+
+#: kivy.multistroke.Recognizer.recognize:33 of
+msgid ""
+"Specifies a timeout (in seconds) for when the search is aborted and the "
+"results returned. This option applies only when `max_gpf` is not 0. "
+"Default value is 0, meaning all gestures in the database will be tested, "
+"no matter how long it takes."
+msgstr ""
+
+#: kivy.multistroke.Recognizer.recognize:51 of
+msgid "`max_gpf`"
+msgstr ""
+
+#: kivy.multistroke.Recognizer.recognize:40 of
+msgid ""
+"Specifies the maximum number of :class:`MultistrokeGesture` objects that "
+"can be processed per frame. When exceeded, will cause the search to halt "
+"and resume work in the next frame. Setting to 0 will complete the search "
+"immediately (and block the UI)."
+msgstr ""
+
+#: kivy.multistroke.Recognizer.recognize:48 of
+msgid ""
+"This does not limit the number of :class:`UnistrokeTemplate` objects "
+"matched! If a single gesture has a million templates, they will all be "
+"processed in a single frame with max_gpf=1!"
+msgstr ""
+
+#: kivy.multistroke.Recognizer.recognize:58 of
+msgid "`delay`"
+msgstr ""
+
+#: kivy.multistroke.Recognizer.recognize:54 of
+msgid ""
+"Sets an optional delay between each run of the recognizer loop. Normally,"
+" a run is scheduled for the next frame until the tasklist is exhausted. "
+"If you set this, there will be an additional delay between each run "
+"(specified in seconds). Default is 0, resume in the next frame."
+msgstr ""
+
+#: kivy.multistroke.Recognizer.recognize:63 of
+msgid "`force_numpoints`"
+msgstr ""
+
+#: kivy.multistroke.Recognizer.recognize:61 of
+msgid ""
+"forces all templates (and candidate) to be prepared to a certain number "
+"of points. This can be useful for example if you are evaluating templates"
+" for optimal n (do not use this unless you understand what it does)."
+msgstr ""
+
+#: kivy.multistroke.Recognizer.transfer_gesture:1 of
+msgid ""
+"Transfers :class:`MultistrokeGesture` objects from :attr:`Recognizer.db` "
+"to another :class:`Recognizer` instance `tgt`."
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:1 of
+msgid ""
+"Represents an ongoing (or completed) search operation. Instantiated and "
+"returned by the :meth:`Recognizer.recognize` method when it is called. "
+"The `results` attribute is a dictionary that is  updated as the "
+"recognition operation progresses."
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:7 of
+msgid "You do not need to instantiate this class."
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:10 of
+msgid "`candidate`"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:11 of
+msgid ":class:`Candidate` object to be evaluated"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:13 of
+msgid "`tasks`"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:13 of
+msgid "Total number of gestures in tasklist (to test against)"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:16 of
+msgid "`on_progress`"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:17 of
+msgid "Fired for every gesture that is processed"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:19 of
+msgid "`on_result`"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:19 of
+msgid ""
+"Fired when a new result is added, and it is the first match for the "
+"`name` so far, or a consecutive match with better score."
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:23 of
+msgid "`on_complete`"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:22 of
+msgid ""
+"Fired when the search is completed, for whatever reason. (use "
+"`ProgressTracker.status` to find out)"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker of
+msgid "Attributes"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:46 of
+msgid "`results`"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:27 of
+msgid ""
+"A dictionary of all results (so far). The key is the name of the gesture "
+"(ie :attr:`UnistrokeTemplate.name` usually inherited from "
+":class:`MultistrokeGesture`). Each item in the dictionary is a dict with "
+"the following entries:"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:33 of
+msgid "Name of the matched template (redundant)"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:34 of
+msgid "`score`"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:35 of
+msgid "Computed score from 1.0 (perfect match) to 0.0"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:36 of
+msgid "`dist`"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:37 of
+msgid "Cosine distance from candidate to template (low=closer)"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:38 of
+msgid "`gesture`"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:39 of
+msgid "The :class:`MultistrokeGesture` object that was matched"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:41 of
+msgid "`best_template`"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:41 of
+msgid ""
+"Index of the best matching template (in "
+":attr:`MultistrokeGesture.templates`)"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:46 of
+msgid "`template_results`"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:44 of
+msgid ""
+"List of distances for all templates. The list index corresponds to a "
+":class:`UnistrokeTemplate` index in gesture.templates."
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:62 of
+msgid "`status`"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:49 of
+msgid "`search`"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:50 of
+msgid "Currently working"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:51 of
+msgid "`stop`"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:52 of
+msgid "Was stopped by the user (:meth:`stop` called)"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:54 of
+msgid "A timeout occurred (specified as `timeout=` to recognize())"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:56 of
+msgid ""
+"The search was stopped early because a gesture with a high enough score "
+"was found (specified as `goodscore=` to recognize())"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:62 of
+msgid "`complete`"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker:60 of
+msgid "The search is complete (all gestures matching filters were tested)"
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker.best:1 of
+msgid ""
+"Return the best match found by recognize() so far. It returns a "
+"dictionary with three keys, 'name', 'dist' and 'score' representing the "
+"template's name, distance (from candidate path) and the computed score "
+"value. This is a Python property."
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker.progress:1 of
+#, python-format
+msgid ""
+"Returns the progress as a float, 0 is 0% done, 1 is 100%. This is a "
+"Python property."
+msgstr ""
+
+#: kivy.multistroke.ProgressTracker.stop:1 of
+msgid ""
+"Raises a stop flag that is checked by the search process. It will be "
+"stopped on the next clock tick (if it is still running)."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`builtins.object`"
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture:1 of
+msgid ""
+":class:`MultistrokeGesture` represents a gesture. It maintains a set of "
+"`strokes` and generates unistroke (ie :class:`UnistrokeTemplate`) "
+"permutations that are used for evaluating candidates against this gesture"
+" later."
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture:8 of
+msgid ""
+"Identifies the name of the gesture - it is returned to you in the results"
+" of a :meth:`Recognizer.recognize` search. You can have any number of "
+"MultistrokeGesture objects with the same name; many definitions of one "
+"gesture. The same name is given to all the generated unistroke "
+"permutations. Required, no default."
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture:14 of
+msgid ""
+"A list of paths that represents the gesture. A path is a list of Vector "
+"objects::"
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture:23 of
+msgid ""
+"For template matching purposes, all the strokes are combined to a single "
+"list (unistroke). You should still specify the strokes individually, and "
+"set `stroke_sensitive` True (whenever possible)."
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture:27 of
+msgid ""
+"Once you do this, unistroke permutations are immediately generated and "
+"stored in `self.templates` for later, unless you set the `permute` flag "
+"to False."
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture:31 of
+msgid ""
+"Determines when :func:`Recognizer.recognize` will attempt to match this "
+"template, lower priorities are evaluated first (only if a priority "
+"`filter` is used). You should use lower priority on gestures that are "
+"more likely to match. For example, set user templates at lower number "
+"than generic templates. Default is 100."
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture:37 of
+msgid ""
+"Determines the number of points this gesture should be resampled to (for "
+"matching purposes). The default is 16."
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture:42 of
+msgid "`stroke_sensitive`"
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture:40 of
+msgid ""
+"Determines if the number of strokes (paths) in this gesture is required "
+"to be the same in the candidate (user input) gesture during matching. If "
+"this is False, candidates will always be evaluated, disregarding the "
+"number of strokes. Default is True."
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture:45 of
+msgid ""
+"Determines if this gesture is orientation sensitive. If True, aligns the "
+"indicative orientation with the one of eight base orientations that "
+"requires least rotation. Default is True."
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture:51 of
+msgid "`angle_similarity`"
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture:49 of
+msgid ""
+"This is used by the :func:`Recognizer.recognize` function when a "
+"candidate is evaluated against this gesture. If the angles between them "
+"are too far off, the template is considered a non-match. Default is 30.0 "
+"(degrees)"
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture:57 of
+msgid "`permute`"
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture:54 of
+msgid ""
+"If False, do not use Heap Permute algorithm to generate different stroke "
+"orders when instantiated. If you set this to False, a single "
+"UnistrokeTemplate built from `strokes` is used."
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture.add_stroke:1 of
+msgid ""
+"Add a stroke to the self.strokes list. If `permute` is True, the "
+":meth:`permute` method is called to generate new unistroke templates"
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture.get_distance:1 of
+msgid ""
+"Compute the distance from this Candiate to a UnistrokeTemplate. Returns "
+"the Cosine distance between the stroke paths."
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture.get_distance:4 of
+msgid ""
+"`numpoints` will prepare both the UnistrokeTemplate and Candidate path to"
+" n points (when necessary), you probably don't want to do this."
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture.match_candidate:1 of
+msgid ""
+"Match a given candidate against this MultistrokeGesture object. Will test"
+" against all templates and report results as a list of four items:"
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture.match_candidate:5 of
+msgid "`index 0`"
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture.match_candidate:6 of
+msgid "Best matching template's index (in self.templates)"
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture.match_candidate:7 of
+msgid "`index 1`"
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture.match_candidate:8 of
+msgid "Computed distance from the template to the candidate path"
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture.match_candidate:11 of
+msgid "`index 2`"
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture.match_candidate:10 of
+msgid ""
+"List of distances for all templates. The list index corresponds to a "
+":class:`UnistrokeTemplate` index in self.templates."
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture.match_candidate:14 of
+msgid "`index 3`"
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture.match_candidate:14 of
+msgid ""
+"Counter for the number of performed matching operations, ie templates "
+"matched against the candidate"
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture.permute:1 of
+msgid ""
+"Generate all possible unistroke permutations from self.strokes and save "
+"the resulting list of UnistrokeTemplate objects in self.templates."
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture.permute:4 of
+msgid "Quote from http://faculty.washington.edu/wobbrock/pubs/gi-10.2.pdf ::"
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture.permute:15 of
+msgid "See section 4.1: \"$N Algorithm\" of the linked paper for details."
+msgstr ""
+
+#: kivy.multistroke.MultistrokeGesture.permute:19 of
+msgid ""
+"Using heap permute for gestures with more than 3 strokes can result in "
+"very large number of templates (a 9-stroke gesture = 38 million "
+"templates). If you are dealing with these types of gestures, you should "
+"manually compose all the desired stroke orders."
+msgstr ""
+
+#: kivy.multistroke.UnistrokeTemplate:1 of
+msgid ""
+"Represents a (uni)stroke path as a list of Vectors. Normally, this class "
+"is instantiated by MultistrokeGesture and not by the programmer directly."
+" However, it is possible to manually compose UnistrokeTemplate objects."
+msgstr ""
+
+#: kivy.multistroke.UnistrokeTemplate:7 of
+msgid ""
+"Identifies the name of the gesture. This is normally inherited from the "
+"parent MultistrokeGesture object when a template is generated."
+msgstr ""
+
+#: kivy.multistroke.UnistrokeTemplate:11 of
+msgid "`points`"
+msgstr ""
+
+#: kivy.multistroke.UnistrokeTemplate:10 of
+msgid ""
+"A list of points that represents a unistroke path. This is normally one "
+"of the possible stroke order permutations from a MultistrokeGesture."
+msgstr ""
+
+#: kivy.multistroke.UnistrokeTemplate:14 of
+msgid ""
+"The number of points this template should (ideally) be resampled to "
+"before the matching process. The default is 16, but you can use a "
+"template-specific settings if that improves results."
+msgstr ""
+
+#: kivy.multistroke.UnistrokeTemplate:18 of
+msgid ""
+"Determines if this template is orientation sensitive (True) or fully "
+"rotation invariant (False). The default is True."
+msgstr ""
+
+#: kivy.multistroke.UnistrokeTemplate:22 of
+msgid ""
+"You will get an exception if you set a skip-flag and then attempt to "
+"retrieve those vectors."
+msgstr ""
+
+#: kivy.multistroke.UnistrokeTemplate.add_point:1 of
+msgid ""
+"Add a point to the unistroke/path. This invalidates all previously "
+"computed vectors."
+msgstr ""
+
+#: kivy.multistroke.UnistrokeTemplate.prepare:1 of
+msgid ""
+"This function prepares the UnistrokeTemplate for matching given a target "
+"number of points (for resample). 16 is optimal."
+msgstr ""
+
+#: kivy.multistroke.Candidate:1 of
+msgid ""
+"Represents a set of unistroke paths of user input, ie data to be matched "
+"against a :class:`UnistrokeTemplate` object using the Protractor "
+"algorithm. By default, data is precomputed to match both rotation bounded"
+" and fully invariant :class:`UnistrokeTemplate` objects."
+msgstr ""
+
+#: kivy.multistroke.Candidate:8 of
+msgid ""
+"See :data:`MultistrokeGesture.strokes` for format example. The Candidate "
+"strokes are simply combined to a unistroke in the order given. The idea "
+"is that this will match one of the unistroke permutations in "
+"`MultistrokeGesture.templates`."
+msgstr ""
+
+#: kivy.multistroke.Candidate:13 of
+msgid ""
+"The Candidate's default N; this is only for a fallback, it is not "
+"normally used since n is driven by the UnistrokeTemplate we are being "
+"compared to."
+msgstr ""
+
+#: kivy.multistroke.Candidate:16 of
+msgid "`skip_bounded`"
+msgstr ""
+
+#: kivy.multistroke.Candidate:17 of
+msgid "If True, do not generate/store rotation bounded vectors"
+msgstr ""
+
+#: kivy.multistroke.Candidate:19 of
+msgid "`skip_invariant`"
+msgstr ""
+
+#: kivy.multistroke.Candidate:19 of
+msgid "If True, do not generate/store rotation invariant vectors"
+msgstr ""
+
+#: kivy.multistroke.Candidate:21 of
+msgid ""
+"Note that you WILL get errors if you set a skip-flag and then attempt to "
+"retrieve the data."
+msgstr ""
+
+#: kivy.multistroke.Candidate.add_stroke:1 of
+msgid ""
+"Add a stroke to the candidate; this will invalidate all previously "
+"computed vectors"
+msgstr ""
+
+#: kivy.multistroke.Candidate.get_angle_similarity:1 of
+msgid ""
+"(Internal use only) Compute the angle similarity between this Candidate "
+"and a UnistrokeTemplate object. Returns a number that represents the "
+"angle similarity (lower is more similar)."
+msgstr ""
+
+#: kivy.multistroke.Candidate.get_protractor_vector:1 of
+msgid ""
+"(Internal use only) Return vector for comparing to a UnistrokeTemplate "
+"with Protractor"
+msgstr ""
+
+#: kivy.multistroke.Candidate.get_start_unit_vector:1 of
+msgid ""
+"(Internal use only) Get the start vector for this Candidate, with the "
+"path resampled to `numpoints` points. This is the first step in the "
+"matching process. It is compared to a UnistrokeTemplate object's start "
+"vector to determine angle similarity."
+msgstr ""
+
+#: kivy.multistroke.Candidate.prepare:1 of
+msgid ""
+"Prepare the Candidate vectors. self.strokes is combined to a single "
+"unistroke (connected end-to-end), resampled to :attr:`numpoints` points, "
+"and then the vectors are calculated and stored in self.db (for use by "
+"`get_distance` and `get_angle_similarity`)"
+msgstr ""
+

@@ -1,0 +1,539 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-15 00:59+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../sources/api-kivy.uix.behaviors.compoundselection.rst:3
+msgid "Compound Selection Behavior"
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection:2 of
+msgid ""
+"The "
+":class:`~kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior` "
+"`mixin <https://en.wikipedia.org/wiki/Mixin>`_ class implements the logic"
+" behind keyboard and touch selection of selectable widgets managed by the"
+" derived widget. For example, it can be combined with a "
+":class:`~kivy.uix.gridlayout.GridLayout` to add selection to the layout."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection:9 of
+msgid "Compound selection concepts"
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection:11 of
+msgid ""
+"At its core, it keeps a dynamic list of widgets that can be selected. "
+"Then, as the touches and keyboard input are passed in, it selects one or "
+"more of the widgets based on these inputs. For example, it uses the mouse"
+" scroll and keyboard up/down buttons to scroll through the list of "
+"widgets. Multiselection can also be achieved using the keyboard shift and"
+" ctrl keys."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection:17 of
+msgid ""
+"Finally, in addition to the up/down type keyboard inputs, compound "
+"selection can also accept letters from the keyboard to be used to select "
+"nodes with associated strings that start with those letters, similar to "
+"how files are selected by a file browser."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection:23 of
+msgid "Selection mechanics"
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection:25 of
+msgid ""
+"When the controller needs to select a node, it calls :meth:`select_node` "
+"and :meth:`deselect_node`. Therefore, they must be overwritten in order "
+"alter node selection. By default, the class doesn't listen for keyboard "
+"or touch events, so the derived widget must call "
+":meth:`select_with_touch`, :meth:`select_with_key_down`, and "
+":meth:`select_with_key_up` on events that it wants to pass on for "
+"selection purposes."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection:34 of
+msgid "Example"
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection:36 of
+msgid ""
+"To add selection to a grid layout which will contain "
+":class:`~kivy.uix.Button` widgets. For each button added to the layout, "
+"you need to bind the :attr:`~kivy.uix.widget.Widget.on_touch_down` of the"
+" button to :meth:`select_with_touch` to pass on the touch events::"
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection:118 of
+msgid ""
+"This code is still experimental, and its API is subject to change in a "
+"future version."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`builtins.object`"
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior:1 of
+msgid ""
+"The Selection behavior `mixin <https://en.wikipedia.org/wiki/Mixin>`_ "
+"implements the logic behind keyboard and touch selection of selectable "
+"widgets managed by the derived widget. Please see the :mod:`compound "
+"selection behaviors module <kivy.uix.behaviors.compoundselection>` "
+"documentation for more information."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.clear_selection:1
+#: of
+msgid "Deselects all the currently selected nodes."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.deselect_node:1
+#: of
+msgid "Deselects a possibly selected node."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.deselect_node:3
+#: of
+msgid ""
+"It is called by the controller when it deselects a node and can also be "
+"called from the outside to deselect a node directly. The derived widget "
+"should overwrite this method and change the node to its unselected state "
+"when this is called"
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.deselect_node
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.goto_node
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_node
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_with_touch
+#: of
+msgid "Parameters"
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.deselect_node:10
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_node:10
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_with_touch:9
+#: of
+msgid "`node`"
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.deselect_node:10
+#: of
+msgid "The node to be deselected."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.deselect_node:14
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_node:17
+#: of
+msgid ""
+"This method must be called by the derived widget using super if it is "
+"overwritten."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.get_index_of_node:1
+#: of
+msgid ""
+"(internal) Returns the index of the `node` within the `selectable_nodes` "
+"returned by :meth:`get_selectable_nodes`."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.get_selectable_nodes:1
+#: of
+msgid ""
+"(internal) Returns a list of the nodes that can be selected. It can be "
+"overwritten by the derived widget to return the correct list."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.get_selectable_nodes:4
+#: of
+msgid ""
+"This list is used to determine which nodes to select with group "
+"selection. E.g. the last element in the list will be selected when home "
+"is pressed, pagedown will move (or add to, if shift is held) the "
+"selection from the current position by negative :attr:`page_count` nodes "
+"starting from the position of the currently selected node in this list "
+"and so on. Still, nodes can be selected even if they are not in this "
+"list."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.get_selectable_nodes:14
+#: of
+msgid ""
+"It is safe to dynamically change this list including removing, adding, or"
+" re-arranging its elements. Nodes can be selected even if they are not on"
+" this list. And selected nodes removed from the list will remain selected"
+" until :meth:`deselect_node` is called."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.get_selectable_nodes:21
+#: of
+msgid ""
+"Layouts display their children in the reverse order. That is, the "
+"contents of :attr:`~kivy.uix.widget.Widget.children` is displayed form "
+"right to left, bottom to top. Therefore, internally, the indices of the "
+"elements returned by this function are reversed to make it work by "
+"default for most layouts so that the final result is consistent e.g. "
+"home, although it will select the last element in this list visually, "
+"will select the first element when counting from top to bottom and left "
+"to right. If this behavior is not desired, a reversed list should be "
+"returned instead."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.get_selectable_nodes:31
+#: of
+msgid "Defaults to returning :attr:`~kivy.uix.widget.Widget.children`."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.goto_node:1
+#: of
+msgid ""
+"(internal) Used by the controller to get the node at the position "
+"indicated by key. The key can be keyboard inputs, e.g. pageup, or scroll "
+"inputs from the mouse scroll wheel, e.g. scrollup. 'last_node' is the "
+"last node selected and is used to find the resulting node. For example, "
+"if the key is up, the returned node is one node up from the last node."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.goto_node:8
+#: of
+msgid "It can be overwritten by the derived widget."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.goto_node:16
+#: of
+msgid "`key`"
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.goto_node:12
+#: of
+msgid ""
+"str, the string used to find the desired node. It can be any of the "
+"keyboard keys, as well as the mouse scrollup, scrolldown, scrollright, "
+"and scrollleft strings. If letters are typed in quick succession, the "
+"letters will be combined before it's passed in as key and can be used to "
+"find nodes that have an associated string that starts with those letters."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.goto_node:18
+#: of
+msgid "`last_node`"
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.goto_node:19
+#: of
+msgid "The last node that was selected."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.goto_node:24
+#: of
+msgid "`last_node_idx`"
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.goto_node:21
+#: of
+msgid ""
+"The cached index of the last node selected in the "
+":meth:`get_selectable_nodes` list. If the list hasn't changed it saves "
+"having to look up the index of `last_node` in that list."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.goto_node
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_node
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_with_key_down
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_with_key_up
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_with_touch
+#: of
+msgid "Returns"
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.goto_node:27
+#: of
+msgid ""
+"tuple, the node targeted by key and its index in the "
+":meth:`get_selectable_nodes` list. Returning `(last_node, last_node_idx)`"
+" indicates a node wasn't found."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.keyboard_select:1
+#: of
+msgid ""
+"Determines whether the keyboard can be used for selection. If False, "
+"keyboard inputs will be ignored."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.keyboard_select:4
+#: of
+msgid ""
+":attr:`keyboard_select` is a :class:`~kivy.properties.BooleanProperty` "
+"and defaults to True."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.multiselect:1
+#: of
+msgid ""
+"Determines whether multiple nodes can be selected. If enabled, keyboard "
+"shift and ctrl selection, optionally combined with touch, for example, "
+"will be able to select multiple widgets in the normally expected manner. "
+"This dominates :attr:`touch_multiselect` when False."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.multiselect:6
+#: of
+msgid ""
+":attr:`multiselect` is a :class:`~kivy.properties.BooleanProperty` and "
+"defaults to False."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.nodes_order_reversed:1
+#: of
+msgid ""
+"(Internal) Indicates whether the order of the nodes as displayed top- "
+"down is reversed compared to their order in :meth:`get_selectable_nodes` "
+"(e.g. how the children property is reversed compared to how it's "
+"displayed)."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.page_count:1
+#: of
+msgid ""
+"Determines by how much the selected node is moved up or down, relative to"
+" the position of the last selected node, when pageup (or pagedown) is "
+"pressed."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.page_count:5
+#: of
+msgid ""
+":attr:`page_count` is a :class:`~kivy.properties.NumericProperty` and "
+"defaults to 10."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.right_count:1
+#: of
+msgid ""
+"Determines by how much the selected node is moved up or down, relative to"
+" the position of the last selected node, when the right (or left) arrow "
+"on the keyboard is pressed."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.right_count:5
+#: of
+msgid ""
+":attr:`right_count` is a :class:`~kivy.properties.NumericProperty` and "
+"defaults to 1."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.scroll_count:1
+#: of
+msgid ""
+"Determines by how much the selected node is moved up or down, relative to"
+" the position of the last selected node, when the mouse scroll wheel is "
+"scrolled."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.scroll_count:5
+#: of
+msgid ""
+":attr:`right_count` is a :class:`~kivy.properties.NumericProperty` and "
+"defaults to 0."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_node:1
+#: of
+msgid "Selects a node."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_node:3
+#: of
+msgid ""
+"It is called by the controller when it selects a node and can be called "
+"from the outside to select a node directly. The derived widget should "
+"overwrite this method and change the node state to selected when called."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_node:10
+#: of
+msgid "The node to be selected."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_node:13
+#: of
+msgid "bool, True if the node was selected, False otherwise."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_with_key_down:1
+#: of
+msgid ""
+"Processes a key press. This is called when a key press is to be used for "
+"selection. Depending on the keyboard keys pressed and the configuration, "
+"it could select or deselect nodes or node ranges from the selectable "
+"nodes list, :meth:`get_selectable_nodes`."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_with_key_down:6
+#: of
+msgid ""
+"The parameters are such that it could be bound directly to the "
+"on_key_down event of a keyboard. Therefore, it is safe to be called "
+"repeatedly when the key is held down as is done by the keyboard."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_with_key_down:11
+#: of
+msgid "bool, True if the keypress was used, False otherwise."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_with_key_up:1
+#: of
+msgid ""
+"(internal) Processes a key release. This must be called by the derived "
+"widget when a key that :meth:`select_with_key_down` returned True is "
+"released."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_with_key_up:5
+#: of
+msgid ""
+"The parameters are such that it could be bound directly to the on_key_up "
+"event of a keyboard."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_with_key_up:9
+#: of
+msgid "bool, True if the key release was used, False otherwise."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_with_touch:1
+#: of
+msgid ""
+"(internal) Processes a touch on the node. This should be called by the "
+"derived widget when a node is touched and is to be used for selection. "
+"Depending on the keyboard keys pressed and the configuration, it could "
+"select or deslect this and other nodes in the selectable nodes list, "
+":meth:`get_selectable_nodes`."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_with_touch:9
+#: of
+msgid "The node that received the touch. Can be None for a scroll type touch."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_with_touch:12
+#: of
+msgid "`touch`"
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_with_touch:12
+#: of
+msgid "Optionally, the touch. Defaults to None."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.select_with_touch:15
+#: of
+msgid "bool, True if the touch was used, False otherwise."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.selected_nodes:1
+#: of
+msgid "The list of selected nodes."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.selected_nodes:5
+#: of
+msgid ""
+"Multiple nodes can be selected right after one another e.g. using the "
+"keyboard. When listening to :attr:`selected_nodes`, one should be aware "
+"of this."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.selected_nodes:9
+#: of
+msgid ""
+":attr:`selected_nodes` is a :class:`~kivy.properties.ListProperty` and "
+"defaults to the empty list, []. It is read-only and should not be "
+"modified."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.text_entry_timeout:1
+#: of
+msgid ""
+"When typing characters in rapid sucession (i.e. the time difference since"
+" the last character is less than :attr:`text_entry_timeout`), the keys "
+"get concatenated and the combined text is passed as the key argument of "
+":meth:`goto_node`."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.touch_deselect_last:1
+#: of
+msgid ""
+"Determines whether the last selected node can be deselected when "
+":attr:`multiselect` or :attr:`touch_multiselect` is False."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.touch_deselect_last:6
+#: of
+msgid ""
+":attr:`touch_deselect_last` is a "
+":class:`~kivy.properties.BooleanProperty` and defaults to True on mobile,"
+" False on desktop platforms."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.touch_multiselect:1
+#: of
+msgid ""
+"A special touch mode which determines whether touch events, as processed "
+"by :meth:`select_with_touch`, will add the currently touched node to the "
+"selection, or if it will clear the selection before adding the node. This"
+" allows the selection of multiple nodes by simply touching them."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.touch_multiselect:6
+#: of
+msgid ""
+"This is different from :attr:`multiselect` because when it is True, "
+"simply touching an unselected node will select it, even if ctrl is not "
+"pressed. If it is False, however, ctrl must be pressed in order to add to"
+" the selection when :attr:`multiselect` is True."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.touch_multiselect:13
+#: of
+msgid ":attr:`multiselect`, when False, will disable :attr:`touch_multiselect`."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.touch_multiselect:16
+#: of
+msgid ""
+":attr:`touch_multiselect` is a :class:`~kivy.properties.BooleanProperty` "
+"and defaults to False."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.up_count:1 of
+msgid ""
+"Determines by how much the selected node is moved up or down, relative to"
+" the position of the last selected node, when the up (or down) arrow on "
+"the keyboard is pressed."
+msgstr ""
+
+#: kivy.uix.behaviors.compoundselection.CompoundSelectionBehavior.up_count:5 of
+msgid ""
+":attr:`up_count` is a :class:`~kivy.properties.NumericProperty` and "
+"defaults to 1."
+msgstr ""
+

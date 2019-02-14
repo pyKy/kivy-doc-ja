@@ -1,0 +1,206 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-15 00:59+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../sources/api-kivy.atlas.rst:3
+msgid "Atlas"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:4
+msgid "Atlas manages texture atlases: packing multiple textures into one. With it, you reduce the number of images loaded and speedup the application loading. This module contains both the Atlas class and command line processing for creating an atlas from a set of individual PNG files. The command line section requires the Pillow library, or the defunct Python Imaging Library (PIL), to be installed."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:15
+msgid "An Atlas is composed of 2 or more files:"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:12
+msgid "a json file (.atlas) that contains the image file names and texture locations of the atlas."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:14
+msgid "one or multiple image files containing textures referenced by the .atlas file."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:18
+msgid "Definition of .atlas files"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:20
+msgid "A file with ``<basename>.atlas`` is a json file formatted like this::"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:31
+msgid "Example from the Kivy ``data/images/defaulttheme.atlas``::"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:43
+msgid "In this example, \"defaulttheme-0.png\" is a large image, with the pixels in the rectangle from (431, 224) to (431 + 59, 224 + 24) usable as ``atlas://data/images/defaulttheme/progressbar_background`` in any image parameter."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:49
+msgid "How to create an Atlas"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:53
+msgid "The atlas creation requires the Pillow library (or the defunct Imaging/PIL library). This requirement will be removed in the future when the Kivy core Image is able to support loading, blitting, and saving operations."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:57
+msgid "You can directly use this module to create atlas files with this command::"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:62
+msgid "Let's say you have a list of images that you want to put into an Atlas. The directory is named ``images`` with lots of 64x64 png files inside::"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:71
+msgid "You can combine all the png's into one and generate the atlas file with::"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:80
+msgid "As you can see, we get 2 new files: ``myatlas.atlas`` and ``myatlas-0.png``. ``myatlas-0.png`` is a new 256x256 .png composed of all your images."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:85
+msgid "When using this script, the ids referenced in the atlas are the base names of the images without the extension. So, if you are going to name a file ``../images/button.png``, the id for this image will be ``button``."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:89
+msgid "If you need path information included, you should include ``use_path`` as follows::"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:94
+msgid "In which case the id for ``../images/button.png`` will be ``images_button``"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:98
+msgid "How to use an Atlas"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:100
+msgid "Usually, you would specify the images by supplying the path::"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:105
+msgid "In our previous example, we have created the atlas containing both images and put them in ``images/myatlas.atlas``. You can use url notation to reference them::"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:112
+msgid "In other words, the path to the images is replaced by::"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:119
+msgid "In the atlas url, there is no need to add the ``.atlas`` extension. It will be automatically append to the filename."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas:123
+msgid "Manual usage of the Atlas"
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.event.EventDispatcher`"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas:1
+msgid "Manage texture atlas. See module documentation for more information."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.create:1
+msgid "This method can be used to create an atlas manually from a set of images."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.create:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.create:6
+msgid "`outname`: str"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.create:6
+msgid "Basename to use for ``.atlas`` creation and ``-<idx>.png`` associated images."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.create:8
+msgid "`filenames`: list"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.create:9
+msgid "List of filenames to put in the atlas."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.create:10
+msgid "`size`: int or list (width, height)"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.create:11
+msgid "Size of the atlas image."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.create:22
+msgid "`padding`: int, defaults to 2"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.create:13
+msgid "Padding to put around each image."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.create:15
+msgid "Be careful. If you're using a padding < 2, you might have issues with the borders of the images. Because of the OpenGL linearization, it might use the pixels of the adjacent image."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.create:19
+msgid "If you're using a padding >= 2, we'll automatically generate a \"border\" of 1px around your image. If you look at the result, don't be scared if the image inside is not exactly the same as yours :)."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.create:33
+msgid "`use_path`: bool, defaults to False"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.create:25
+msgid "If True, the relative path of the source png file names will be included in the atlas ids rather that just in the file names. Leading dots and slashes will be excluded and all other slashes in the path will be replaced with underscores. For example, if `use_path` is False (the default) and the file name is ``../data/tiles/green_grass.png``, the id will be ``green_grass``. If `use_path` is True, it will be ``data_tiles_green_grass``."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.create:35
+msgid "Parameter use_path added"
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.filename:1
+msgid "Filename of the current Atlas."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.filename:3
+msgid ":attr:`filename` is an :class:`~kivy.properties.AliasProperty` and defaults to None."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.original_textures:1
+msgid "List of original atlas textures (which contain the :attr:`textures`)."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.original_textures:3
+msgid ":attr:`original_textures` is a :class:`~kivy.properties.ListProperty` and defaults to []."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.textures:1
+msgid "List of available textures within the atlas."
+msgstr ""
+
+#: ../../../../venv/lib/python3.6/site-packages/kivy/atlas.py:docstring of kivy.atlas.Atlas.textures:3
+msgid ":attr:`textures` is a :class:`~kivy.properties.DictProperty` and defaults to {}."
+msgstr ""
+

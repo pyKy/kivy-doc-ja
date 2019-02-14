@@ -6,31 +6,31 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="twitter:site" content="@kivyframework">
     
-    <title>Carousel(翻訳済み) &mdash; Kivy 1.10.0 ドキュメント</title>
+    <title>Carousel &mdash; Kivy 1.10.1 documentation</title>
     <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="_static/fresh.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.10.0',
+        VERSION:     '1.10.1',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
+
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/translations.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <script type="text/javascript" src="_static/jquery-effects-core-and-slide.js"></script>
     <script type="text/javascript" src="_static/jquery.cookie.js"></script>
     <script type="text/javascript" src="_static/kivy.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="index.html" />
-    <link rel="up" title="Widgets(翻訳済み)" href="api-kivy.uix.html" />
+    <link rel="top" title="Kivy 1.10.1 documentation" href="index.html" />
+    <link rel="up" title="Widgets" href="api-kivy.uix.html" />
     <link rel="next" title="CheckBox" href="api-kivy.uix.checkbox.html" />
     <link rel="prev" title="Camera" href="api-kivy.uix.camera.html" /> 
   </head>
@@ -57,6 +57,8 @@
 <div id="contentall">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+            <h3>Version</h3>
+            <select id="version_selector"></select>
             <h3>Quick search</h3>
             <form class="search" action="search.html" method="get">
                 &nbsp;
@@ -65,93 +67,95 @@
                 <input type="text" class="text" name="q" />
             </form>
           <!--
-          <h3><a href="index.html">Carousel(翻訳済み)</a></h3>
+          <h3><a href="index.html">Carousel</a></h3>
           <ul>
-<li><a class="reference internal" href="#">Carousel(翻訳済み)</a></li>
+<li><a class="reference internal" href="#">Carousel</a></li>
 </ul>
 
           <h3><a href="index.html">Table Of Contents</a></h3>
           -->
           <ul>
-<li class="toctree-l1"><a class="reference internal" href="gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/installation.html">Installation(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/properties.html">Properties(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/events.html">Events(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/framework.html">Non-widget stuff(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/examples.html">Examples(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/first_app.html">A first App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/rules.html">Kv Design Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/events.html">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/layouts.html">Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/diving.html">Diving in</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="examples/gallery.html">Gallery(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__mesh__py.html">Mesh test(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Gallery of Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__animation__animate__py.html">Widget animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_suite__py.html">Suite of Application Builders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_build__py.html">Application example using build() + return</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv__py.html">Application built from a  .kv file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__camera__main__py.html">Camera Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__bezier__py.html">Bezier Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__canvas_stress__py.html">Canvas stress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__circle__py.html">Circle Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__fbo_canvas__py.html">FBO Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines_extended__py.html">Lines Extended Demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__multitexture__py.html">Multitexture Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__rotation__py.html">Rotation Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__stencil_canvas__py.html">Stencil demo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__pictures__main__py.html">Basic Picture Viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__shadereditor__main__py.html">Live Shader Editor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration</a></li>
 </ul>
 </li>
 </ul>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User’s Guide(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation/installation.html">Installation(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="philosophy.html">Philosophy(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contribute.html">Contributing(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contact.html">Contact Us(翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation.html">Basic Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation.html#advanced-installation">Advanced Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation.html#uninstalling-kivy">Uninstalling Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="philosophy.html">Philosophy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contact.html">Contact Us</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="guide-index.html">Programming Guide(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="guide/basic.html">Kivy Basics(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/environment.html">Controlling the environment(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/config.html">Configure Kivy(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/events.html">Events and Properties (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/inputs.html">Input management (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/widgets.html">Widgets(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/graphics.html">Graphics (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/lang.html">Kv language(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/packaging.html">Packaging your application(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/licensing.html">Package licensing (翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide-index.html">Programming Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide/basic.html">Kivy Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/environment.html">Controlling the environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/config.html">Configure Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/architecture.html">Architectural Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/events.html">Events and Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/lang.html">Kv language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/other-frameworks.html">Integrating with other Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/packaging.html">Packaging your application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/licensing.html">Package licensing</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials-index.html">Tutorials(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials-index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/pong.html">Pong Game Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/firstwidget.html">A Simple Paint App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/crashcourse.html">Crash Course</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="api-index.html">API Reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.html">Kivy framework(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.html">Kivy framework</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.html">Adapters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.adapter.html">Adapter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
@@ -159,19 +163,19 @@
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.listadapter.html">ListAdapter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.models.html">SelectableDataItem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.animation.html">Animation(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.app.html">Application （翻訳中）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.app.html">Application</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.atlas.html">Atlas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.base.html">Kivy Base</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.cache.html">Cache manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.clock.html">Clock object(翻訳ずみ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.clock.html">Clock object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.config.html">Configuration object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.context.html">Context</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.html">Core Abstraction(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.html">Core Abstraction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.core.audio.html">Audio</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.core.camera.html">Camera</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.clipboard.html">Clipboard(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.clipboard.html">Clipboard</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.core.gl.html">OpenGL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.core.image.html">Image</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.core.spelling.html">Spelling</a></li>
@@ -191,7 +195,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.garden.html">Garden</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.geometry.html">Geometry utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.gesture.html">Gesture recognition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.html">Graphics(翻訳中)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.html">Graphics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.compiler.html">Graphics compiler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context.html">Context management</a></li>
@@ -235,7 +239,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.input.recorder.html">Input recorder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.input.shape.html">Motion Event Shape</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.interactive.html">Interactive launcher</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.html">Kivy Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.html">Kivy Language</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.builder.html">Builder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.parser.html">Parser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.html">External libraries</a></li>
@@ -272,7 +276,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.html">Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.html">Packaging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="api-kivy.uix.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="api-kivy.uix.html">Widgets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.abstractview.html">Abstract View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.accordion.html">Accordion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.actionbar.html">Action Bar</a></li>
@@ -291,18 +295,18 @@
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.bubble.html">Bubble</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.button.html">Button</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.camera.html">Camera</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Carousel(翻訳済み)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Carousel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.checkbox.html">CheckBox</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.codeinput.html">Code Input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.colorpicker.html">Color Picker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.dropdown.html">Drop-Down List</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.effectwidget.html">EffectWidget</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.filechooser.html">FileChooser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.floatlayout.html">Float Layout(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.floatlayout.html">Float Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gridlayout.html">Grid Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.image.html">Image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.label.html">Label(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.label.html">Label</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.layout.html">Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.listview.html">List View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.modalview.html">ModalView</a></li>
@@ -321,10 +325,10 @@
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.sandbox.html">Sandbox</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scatter.html">Scatter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.screenmanager.html">Screen Manager(翻訳中)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.screenmanager.html">Screen Manager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scrollview.html">ScrollView</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.selectableview.html">SelectableView</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.settings.html">Settings （翻訳中）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.settings.html">Settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.slider.html">Slider</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.spinner.html">Spinner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.splitter.html">Splitter</a></li>
@@ -362,19 +366,22 @@
         <div class="bodywrapper">
           <div class="body">
             <div class="toc"><h2>Table Of Contents</h2><ul>
-<li><a class="reference internal" href="#">Carousel(翻訳済み)</a></li>
+<li><a class="reference internal" href="#">Carousel</a></li>
 </ul>
 </div>
             
   <div class="section" id="module-kivy.uix.carousel">
-<span id="carousel"></span><h1>Carousel(翻訳済み)<a class="headerlink" href="#module-kivy.uix.carousel" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<span id="carousel"></span><h1>Carousel<a class="headerlink" href="#module-kivy.uix.carousel" title="Permalink to this headline">¶</a></h1>
 <img alt="_images/carousel.gif" class="align-right" src="_images/carousel.gif" />
 <div class="versionadded">
-<p><span class="versionmodified">バージョン 1.4.0 で追加.</span></p>
+<p><span class="versionmodified">New in version 1.4.0.</span></p>
 </div>
-<p>class:<cite>Carousel</cite>  widgetはスライド間でスワイプできる古典的なモバイル向けカルーセルビューを提供します。 カルーセルに任意のコンテンツを追加して水平または垂直に移動できます。 カルーセルはページをシーケンスまたはループで表示できます。</p>
-<p>例:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.app</span> <span class="k">import</span> <span class="n">App</span>
+<p>The <a class="reference internal" href="#kivy.uix.carousel.Carousel" title="kivy.uix.carousel.Carousel"><code class="xref py py-class docutils literal notranslate"><span class="pre">Carousel</span></code></a> widget provides the classic mobile-friendly carousel view
+where you can swipe between slides.
+You can add any content to the carousel and have it move horizontally or
+vertically. The carousel can display pages in a sequence or a loop.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kivy.app</span> <span class="k">import</span> <span class="n">App</span>
 <span class="kn">from</span> <span class="nn">kivy.uix.carousel</span> <span class="k">import</span> <span class="n">Carousel</span>
 <span class="kn">from</span> <span class="nn">kivy.uix.image</span> <span class="k">import</span> <span class="n">AsyncImage</span>
 
@@ -393,161 +400,334 @@
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">バージョン 1.5.0 で変更: </span>カルーセルは <a class="reference internal" href="api-kivy.uix.scrollview.html#kivy.uix.scrollview.ScrollView" title="kivy.uix.scrollview.ScrollView"><code class="xref py py-class docutils literal"><span class="pre">ScrollView</span></code></a> のようなアクティブな子をサポートするようになりました。 <a class="reference internal" href="#kivy.uix.carousel.Carousel.scroll_timeout" title="kivy.uix.carousel.Carousel.scroll_timeout"><code class="xref py py-attr docutils literal"><span class="pre">Carousel.scroll_timeout</span></code></a> および <a class="reference internal" href="#kivy.uix.carousel.Carousel.scroll_distance" title="kivy.uix.carousel.Carousel.scroll_distance"><code class="xref py py-attr docutils literal"><span class="pre">Carousel.scroll_distance</span></code></a> プロパティに従ってスワイプジェスチャを検出します。</p>
-<p>加えて、スライドコンテナはAPIによって露出されません。 影響を受けるプロパティは、 <a class="reference internal" href="#kivy.uix.carousel.Carousel.slides" title="kivy.uix.carousel.Carousel.slides"><code class="xref py py-attr docutils literal"><span class="pre">Carousel.slides</span></code></a> 、<a class="reference internal" href="#kivy.uix.carousel.Carousel.current_slide" title="kivy.uix.carousel.Carousel.current_slide"><code class="xref py py-attr docutils literal"><span class="pre">Carousel.current_slide</span></code></a> 、 <code class="xref py py-attr docutils literal"><span class="pre">Carousel.previous_slide`および</span> <span class="pre">:attr:`Carousel.next_slide</span></code> です。</p>
+<p><span class="versionmodified">Changed in version 1.5.0: </span>The carousel now supports active children, like the
+<a class="reference internal" href="api-kivy.uix.scrollview.html#kivy.uix.scrollview.ScrollView" title="kivy.uix.scrollview.ScrollView"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScrollView</span></code></a>. It will detect a swipe gesture
+according to the <a class="reference internal" href="#kivy.uix.carousel.Carousel.scroll_timeout" title="kivy.uix.carousel.Carousel.scroll_timeout"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Carousel.scroll_timeout</span></code></a> and
+<a class="reference internal" href="#kivy.uix.carousel.Carousel.scroll_distance" title="kivy.uix.carousel.Carousel.scroll_distance"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Carousel.scroll_distance</span></code></a> properties.</p>
+<p>In addition, the slide container is no longer exposed by the API.
+The impacted properties are
+<a class="reference internal" href="#kivy.uix.carousel.Carousel.slides" title="kivy.uix.carousel.Carousel.slides"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Carousel.slides</span></code></a>, <a class="reference internal" href="#kivy.uix.carousel.Carousel.current_slide" title="kivy.uix.carousel.Carousel.current_slide"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Carousel.current_slide</span></code></a>,
+<a class="reference internal" href="#kivy.uix.carousel.Carousel.previous_slide" title="kivy.uix.carousel.Carousel.previous_slide"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Carousel.previous_slide</span></code></a> and <a class="reference internal" href="#kivy.uix.carousel.Carousel.next_slide" title="kivy.uix.carousel.Carousel.next_slide"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Carousel.next_slide</span></code></a>.</p>
 </div>
 <dl class="class">
 <dt id="kivy.uix.carousel.Carousel">
-<em class="property">class </em><code class="descclassname">kivy.uix.carousel.</code><code class="descname">Carousel</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/carousel.html#Carousel"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.carousel.Carousel" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>ベースクラス: <a class="reference internal" href="api-kivy.uix.stencilview.html#kivy.uix.stencilview.StencilView" title="kivy.uix.stencilview.StencilView"><code class="xref py py-class docutils literal"><span class="pre">kivy.uix.stencilview.StencilView</span></code></a></p>
-<p>カルーセルクラス。 詳細については、モジュールのマニュアルを参照してください。</p>
+<em class="property">class </em><code class="descclassname">kivy.uix.carousel.</code><code class="descname">Carousel</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/carousel.html#Carousel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kivy.uix.carousel.Carousel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="api-kivy.uix.stencilview.html#kivy.uix.stencilview.StencilView" title="kivy.uix.stencilview.StencilView"><code class="xref py py-class docutils literal notranslate"><span class="pre">kivy.uix.stencilview.StencilView</span></code></a></p>
+<p>Carousel class. See module documentation for more information.</p>
+<dl class="method">
+<dt id="kivy.uix.carousel.Carousel.add_widget">
+<code class="descname">add_widget</code><span class="sig-paren">(</span><em>widget</em>, <em>index=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/carousel.html#Carousel.add_widget"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kivy.uix.carousel.Carousel.add_widget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a new widget as a child of this widget.</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>widget</cite>: <code class="xref py py-class docutils literal notranslate"><span class="pre">Widget</span></code></dt>
+<dd><p class="first last">Widget to add to our list of children.</p>
+</dd>
+<dt><cite>index</cite>: int, defaults to 0</dt>
+<dd><p class="first">Index to insert the widget in the list. Notice that the default
+of 0 means the widget is inserted at the beginning of the list
+and will thus be drawn on top of other sibling widgets. For a
+full discussion of the index and widget hierarchy, please see
+the <a class="reference internal" href="guide/widgets.html"><span class="doc">Widgets Programming Guide</span></a>.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 1.0.5.</span></p>
+</div>
+</dd>
+<dt><cite>canvas</cite>: str, defaults to None</dt>
+<dd><p class="first">Canvas to add widget’s canvas to. Can be ‘before’, ‘after’ or
+None for the default canvas.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 1.9.0.</span></p>
+</div>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">kivy.uix.button</span> <span class="kn">import</span> <span class="n">Button</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">kivy.uix.slider</span> <span class="kn">import</span> <span class="n">Slider</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">Button</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">slider</span> <span class="o">=</span> <span class="n">Slider</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">slider</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="kivy.uix.carousel.Carousel.anim_cancel_duration">
-<code class="descname">anim_cancel_duration</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.anim_cancel_duration" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>スワイプ動作が受け入れられないときのアニメーションの時間を定義します。 これは一般に、ユーザーが十分に大きなスワイプを作成しないときです。 <a class="reference internal" href="#kivy.uix.carousel.Carousel.min_move" title="kivy.uix.carousel.Carousel.min_move"><code class="xref py py-attr docutils literal"><span class="pre">min_move</span></code></a> を参照してください。</p>
-<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.anim_cancel_duration" title="kivy.uix.carousel.Carousel.anim_cancel_duration"><code class="xref py py-attr docutils literal"><span class="pre">anim_cancel_duration</span></code></a> は <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a>  で、デフォルトは0.3です</p>
+<code class="descname">anim_cancel_duration</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.anim_cancel_duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the duration of the animation when a swipe movement is not
+accepted. This is generally when the user does not make a large enough
+swipe. See <a class="reference internal" href="#kivy.uix.carousel.Carousel.min_move" title="kivy.uix.carousel.Carousel.min_move"><code class="xref py py-attr docutils literal notranslate"><span class="pre">min_move</span></code></a>.</p>
+<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.anim_cancel_duration" title="kivy.uix.carousel.Carousel.anim_cancel_duration"><code class="xref py py-attr docutils literal notranslate"><span class="pre">anim_cancel_duration</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumericProperty</span></code></a>
+and defaults to 0.3.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.uix.carousel.Carousel.anim_move_duration">
-<code class="descname">anim_move_duration</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.anim_move_duration" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>ページ間のカルーセルアニメーションの時間を定義します。</p>
-<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.anim_move_duration" title="kivy.uix.carousel.Carousel.anim_move_duration"><code class="xref py py-attr docutils literal"><span class="pre">anim_move_duration</span></code></a> は <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a> で、デフォルトは0.5です</p>
+<code class="descname">anim_move_duration</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.anim_move_duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the duration of the Carousel animation between pages.</p>
+<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.anim_move_duration" title="kivy.uix.carousel.Carousel.anim_move_duration"><code class="xref py py-attr docutils literal notranslate"><span class="pre">anim_move_duration</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumericProperty</span></code></a>
+and defaults to 0.5.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.uix.carousel.Carousel.anim_type">
-<code class="descname">anim_type</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.anim_type" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>次/前のスライドにアニメートする際に使用するアニメーションのタイプ。 これは <a class="reference internal" href="api-kivy.animation.html#kivy.animation.AnimationTransition" title="kivy.animation.AnimationTransition"><code class="xref py py-class docutils literal"><span class="pre">AnimationTransition</span></code></a>  関数の名前でなければなりません。</p>
-<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.anim_type" title="kivy.uix.carousel.Carousel.anim_type"><code class="xref py py-attr docutils literal"><span class="pre">anim_type</span></code></a> は <a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal"><span class="pre">StringProperty</span></code></a>  で、デフォルトは  &#8216;out_quad&#8217; です。</p>
+<code class="descname">anim_type</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.anim_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type of animation to use while animating to the next/previous slide.
+This should be the name of an
+<a class="reference internal" href="api-kivy.animation.html#kivy.animation.AnimationTransition" title="kivy.animation.AnimationTransition"><code class="xref py py-class docutils literal notranslate"><span class="pre">AnimationTransition</span></code></a> function.</p>
+<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.anim_type" title="kivy.uix.carousel.Carousel.anim_type"><code class="xref py py-attr docutils literal notranslate"><span class="pre">anim_type</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.StringProperty" title="kivy.properties.StringProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringProperty</span></code></a> and
+defaults to ‘out_quad’.</p>
 <div class="versionadded">
-<p><span class="versionmodified">バージョン 1.8.0 で追加.</span></p>
+<p><span class="versionmodified">New in version 1.8.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.carousel.Carousel.clear_widgets">
+<code class="descname">clear_widgets</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/carousel.html#Carousel.clear_widgets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kivy.uix.carousel.Carousel.clear_widgets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove all (or the specified) <code class="xref py py-attr docutils literal notranslate"><span class="pre">children</span></code> of this widget.
+If the ‘children’ argument is specified, it should be a list (or
+filtered list) of children of the current widget.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.8.0: </span>The <cite>children</cite> argument can be used to specify the children you
+want to remove.</p>
 </div>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.uix.carousel.Carousel.current_slide">
-<code class="descname">current_slide</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.current_slide" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>現在表示されているスライドです。</p>
-<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.current_slide" title="kivy.uix.carousel.Carousel.current_slide"><code class="xref py py-attr docutils literal"><span class="pre">current_slide</span></code></a>  は  <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a> です。</p>
+<code class="descname">current_slide</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.current_slide" title="Permalink to this definition">¶</a></dt>
+<dd><p>The currently shown slide.</p>
+<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.current_slide" title="kivy.uix.carousel.Carousel.current_slide"><code class="xref py py-attr docutils literal notranslate"><span class="pre">current_slide</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">AliasProperty</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified">バージョン 1.5.0 で変更: </span>このプロパティはスライドコンテナを公開しなくなりました。あなたが 追加したwidgetを返します。</p>
+<p><span class="versionmodified">Changed in version 1.5.0: </span>The property no longer exposes the slides container. It returns
+the widget you have added.</p>
 </div>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.uix.carousel.Carousel.direction">
-<code class="descname">direction</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.direction" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>スライドが注文される方向を指定します。 これは、ユーザーが1つのスライドから次のスライドに移動するためにスワイプする方向に対応します。 <cite>right</cite>  ,  <cite>left</cite> ,  <cite>top</cite> , または <cite>bottom</cite> のいずれかになります。 たとえば、デフォルト値の <cite>right</cite> では2番目のスライドは最初のスライドの右にあり、ユーザーは2番目のスライドに移動するために右から左にスワイプします。</p>
-<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.direction" title="kivy.uix.carousel.Carousel.direction"><code class="xref py py-attr docutils literal"><span class="pre">direction</span></code></a>  は <a class="reference internal" href="api-kivy.properties.html#kivy.properties.OptionProperty" title="kivy.properties.OptionProperty"><code class="xref py py-class docutils literal"><span class="pre">OptionProperty</span></code></a> で、デフォルトは  &#8216;right&#8217; です。</p>
+<code class="descname">direction</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.direction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies the direction in which the slides are ordered. This
+corresponds to the direction from which the user swipes to go from one
+slide to the next. It
+can be <cite>right</cite>, <cite>left</cite>, <cite>top</cite>, or <cite>bottom</cite>. For example, with
+the default value of <cite>right</cite>, the second slide is to the right
+of the first and the user would swipe from the right towards the
+left to get to the second slide.</p>
+<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.direction" title="kivy.uix.carousel.Carousel.direction"><code class="xref py py-attr docutils literal notranslate"><span class="pre">direction</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.OptionProperty" title="kivy.properties.OptionProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptionProperty</span></code></a> and
+defaults to ‘right’.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.uix.carousel.Carousel.ignore_perpendicular_swipes">
-<code class="descname">ignore_perpendicular_swipes</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.ignore_perpendicular_swipes" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>垂直方向のスワイプを無視します。</p>
-<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.ignore_perpendicular_swipes" title="kivy.uix.carousel.Carousel.ignore_perpendicular_swipes"><code class="xref py py-attr docutils literal"><span class="pre">ignore_perpendicular_swipes</span></code></a>  は <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> で、デフォルトはFalseです。</p>
+<code class="descname">ignore_perpendicular_swipes</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.ignore_perpendicular_swipes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ignore swipes on axis perpendicular to direction.</p>
+<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.ignore_perpendicular_swipes" title="kivy.uix.carousel.Carousel.ignore_perpendicular_swipes"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ignore_perpendicular_swipes</span></code></a> is a
+<a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanProperty</span></code></a> and defaults to False.</p>
 <div class="versionadded">
-<p><span class="versionmodified">バージョン 1.10.0 で追加.</span></p>
+<p><span class="versionmodified">New in version 1.10.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.uix.carousel.Carousel.index">
-<code class="descname">index</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.index" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>インデックスに基づいて現在のスライドを取得や設定をします。</p>
-<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.index" title="kivy.uix.carousel.Carousel.index"><code class="xref py py-attr docutils literal"><span class="pre">index</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a> and defaults
+<code class="descname">index</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/Set the current slide based on the index.</p>
+<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.index" title="kivy.uix.carousel.Carousel.index"><code class="xref py py-attr docutils literal notranslate"><span class="pre">index</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">AliasProperty</span></code></a> and defaults
 to 0 (the first item).</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="kivy.uix.carousel.Carousel.load_next">
-<code class="descname">load_next</code><span class="sig-paren">(</span><em>mode='next'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/carousel.html#Carousel.load_next"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.carousel.Carousel.load_next" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>次のスライドに移動する。</p>
+<code class="descname">load_next</code><span class="sig-paren">(</span><em>mode='next'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/carousel.html#Carousel.load_next"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kivy.uix.carousel.Carousel.load_next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Animate to the next slide.</p>
 <div class="versionadded">
-<p><span class="versionmodified">バージョン 1.7.0 で追加.</span></p>
+<p><span class="versionmodified">New in version 1.7.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="kivy.uix.carousel.Carousel.load_previous">
-<code class="descname">load_previous</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/carousel.html#Carousel.load_previous"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.carousel.Carousel.load_previous" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>前のスライドに移動する</p>
+<code class="descname">load_previous</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/carousel.html#Carousel.load_previous"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kivy.uix.carousel.Carousel.load_previous" title="Permalink to this definition">¶</a></dt>
+<dd><p>Animate to the previous slide.</p>
 <div class="versionadded">
-<p><span class="versionmodified">バージョン 1.7.0 で追加.</span></p>
+<p><span class="versionmodified">New in version 1.7.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="kivy.uix.carousel.Carousel.load_slide">
-<code class="descname">load_slide</code><span class="sig-paren">(</span><em>slide</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/carousel.html#Carousel.load_slide"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#kivy.uix.carousel.Carousel.load_slide" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>引数として渡されたスライドに移動します。</p>
+<code class="descname">load_slide</code><span class="sig-paren">(</span><em>slide</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/carousel.html#Carousel.load_slide"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kivy.uix.carousel.Carousel.load_slide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Animate to the slide that is passed as the argument.</p>
 <div class="versionchanged">
-<p><span class="versionmodified">バージョン 1.8.0 で変更.</span></p>
+<p><span class="versionmodified">Changed in version 1.8.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.uix.carousel.Carousel.loop">
-<code class="descname">loop</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.loop" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>カルーセルを無限にループできるようにします。 Trueの場合ユーザーが最後のページを超えてスワイプしようとすると最初のページに戻ります。 Falseの場合は最後のページにとどまります。</p>
-<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.loop" title="kivy.uix.carousel.Carousel.loop"><code class="xref py py-attr docutils literal"><span class="pre">loop</span></code></a> は <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal"><span class="pre">BooleanProperty</span></code></a> でデフォルトはFalseです。</p>
+<code class="descname">loop</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.loop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allow the Carousel to loop infinitely. If True, when the user tries to
+swipe beyond last page, it will return to the first. If False, it will
+remain on the last page.</p>
+<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.loop" title="kivy.uix.carousel.Carousel.loop"><code class="xref py py-attr docutils literal notranslate"><span class="pre">loop</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.BooleanProperty" title="kivy.properties.BooleanProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanProperty</span></code></a> and
+defaults to False.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.uix.carousel.Carousel.min_move">
-<code class="descname">min_move</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.min_move" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>タッチがスワイプジェスチャーとみなされ、カルーセルのコンテンツが変更される前にカバーする最小距離を定義します。 これはカルーセルの幅の一部として表されます。 動きがこの最小値に達しない場合は動きはキャンセルされ、コンテンツは元の位置にもどります。</p>
-<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.min_move" title="kivy.uix.carousel.Carousel.min_move"><code class="xref py py-attr docutils literal"><span class="pre">min_move</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a> and
+<code class="descname">min_move</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.min_move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the minimum distance to be covered before the touch is
+considered a swipe gesture and the Carousel content changed.
+This is a expressed as a fraction of the Carousel’s width.
+If the movement doesn’t reach this minimum value, the movement is
+cancelled and the content is restored to its original position.</p>
+<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.min_move" title="kivy.uix.carousel.Carousel.min_move"><code class="xref py py-attr docutils literal notranslate"><span class="pre">min_move</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumericProperty</span></code></a> and
 defaults to 0.2.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.uix.carousel.Carousel.next_slide">
-<code class="descname">next_slide</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.next_slide" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>カルーセルの次のスライド。 現在のスライドがカルーセルの最後のスライドであればNoneになります。 この順序はスライドが追加される順序を反映しています。スライドの表示は <a class="reference internal" href="#kivy.uix.carousel.Carousel.direction" title="kivy.uix.carousel.Carousel.direction"><code class="xref py py-attr docutils literal"><span class="pre">direction</span></code></a>  プロパティによって異なります。</p>
-<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.next_slide" title="kivy.uix.carousel.Carousel.next_slide"><code class="xref py py-attr docutils literal"><span class="pre">next_slide</span></code></a>  は <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a> です。</p>
+<code class="descname">next_slide</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.next_slide" title="Permalink to this definition">¶</a></dt>
+<dd><p>The next slide in the Carousel. It is None if the current slide is
+the last slide in the Carousel. This ordering reflects the order in which
+the slides are added: their presentation varies according to the
+<a class="reference internal" href="#kivy.uix.carousel.Carousel.direction" title="kivy.uix.carousel.Carousel.direction"><code class="xref py py-attr docutils literal notranslate"><span class="pre">direction</span></code></a> property.</p>
+<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.next_slide" title="kivy.uix.carousel.Carousel.next_slide"><code class="xref py py-attr docutils literal notranslate"><span class="pre">next_slide</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">AliasProperty</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified">バージョン 1.5.0 で変更: </span>このプロパティはスライドコンテナを公開しなくなりました。あなたが 追加したwidgetを返します。</p>
+<p><span class="versionmodified">Changed in version 1.5.0: </span>The property no longer exposes the slides container.
+It returns the widget you have added.</p>
 </div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.carousel.Carousel.on_touch_down">
+<code class="descname">on_touch_down</code><span class="sig-paren">(</span><em>touch</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/carousel.html#Carousel.on_touch_down"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kivy.uix.carousel.Carousel.on_touch_down" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive a touch down event.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><cite>touch</cite>: <a class="reference internal" href="api-kivy.input.motionevent.html#kivy.input.motionevent.MotionEvent" title="kivy.input.motionevent.MotionEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">MotionEvent</span></code></a> class</dt>
+<dd><p class="first last">Touch received. The touch is in parent coordinates. See
+<a class="reference internal" href="api-kivy.uix.relativelayout.html#module-kivy.uix.relativelayout" title="kivy.uix.relativelayout"><code class="xref py py-mod docutils literal notranslate"><span class="pre">relativelayout</span></code></a> for a discussion on
+coordinate systems.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">bool
+If True, the dispatching of the touch event will stop.
+If False, the event will continue to be dispatched to the rest
+of the widget tree.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.carousel.Carousel.on_touch_move">
+<code class="descname">on_touch_move</code><span class="sig-paren">(</span><em>touch</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/carousel.html#Carousel.on_touch_move"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kivy.uix.carousel.Carousel.on_touch_move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive a touch move event. The touch is in parent coordinates.</p>
+<p>See <a class="reference internal" href="#kivy.uix.carousel.Carousel.on_touch_down" title="kivy.uix.carousel.Carousel.on_touch_down"><code class="xref py py-meth docutils literal notranslate"><span class="pre">on_touch_down()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.carousel.Carousel.on_touch_up">
+<code class="descname">on_touch_up</code><span class="sig-paren">(</span><em>touch</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/carousel.html#Carousel.on_touch_up"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kivy.uix.carousel.Carousel.on_touch_up" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive a touch up event. The touch is in parent coordinates.</p>
+<p>See <a class="reference internal" href="#kivy.uix.carousel.Carousel.on_touch_down" title="kivy.uix.carousel.Carousel.on_touch_down"><code class="xref py py-meth docutils literal notranslate"><span class="pre">on_touch_down()</span></code></a> for more information.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.uix.carousel.Carousel.previous_slide">
-<code class="descname">previous_slide</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.previous_slide" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>カルーセルの前のスライド。 現在のスライドがカルーセルの最初のスライドである場合は、Noneになります。 この順序は、スライドが追加される順序を反映しています。スライドの表示はdirectionプロパティによって異なります。</p>
-<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.previous_slide" title="kivy.uix.carousel.Carousel.previous_slide"><code class="xref py py-attr docutils literal"><span class="pre">previous_slide</span></code></a>  は <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal"><span class="pre">AliasProperty</span></code></a> です。</p>
+<code class="descname">previous_slide</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.previous_slide" title="Permalink to this definition">¶</a></dt>
+<dd><p>The previous slide in the Carousel. It is None if the current slide is
+the first slide in the Carousel. This ordering reflects the order in which
+the slides are added: their presentation varies according to the
+<a class="reference internal" href="#kivy.uix.carousel.Carousel.direction" title="kivy.uix.carousel.Carousel.direction"><code class="xref py py-attr docutils literal notranslate"><span class="pre">direction</span></code></a> property.</p>
+<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.previous_slide" title="kivy.uix.carousel.Carousel.previous_slide"><code class="xref py py-attr docutils literal notranslate"><span class="pre">previous_slide</span></code></a> is an <a class="reference internal" href="api-kivy.properties.html#kivy.properties.AliasProperty" title="kivy.properties.AliasProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">AliasProperty</span></code></a>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified">バージョン 1.5.0 で変更: </span>このプロパティは、スライドコンテナを公開しなくなりました。 あなたが追加したwidgetを返します。</p>
+<p><span class="versionmodified">Changed in version 1.5.0: </span>This property no longer exposes the slides container. It returns
+the widget you have added.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kivy.uix.carousel.Carousel.remove_widget">
+<code class="descname">remove_widget</code><span class="sig-paren">(</span><em>widget</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kivy/uix/carousel.html#Carousel.remove_widget"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kivy.uix.carousel.Carousel.remove_widget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a widget from the children of this widget.</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>widget</cite>: <code class="xref py py-class docutils literal notranslate"><span class="pre">Widget</span></code></dt>
+<dd><p class="first last">Widget to remove from our children list.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">kivy.uix.button</span> <span class="kn">import</span> <span class="n">Button</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span><span class="o">.</span><span class="n">remove_widget</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+</pre></div>
 </div>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.uix.carousel.Carousel.scroll_distance">
-<code class="descname">scroll_distance</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.scroll_distance" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>&nbsp;<a class="reference internal" href="#kivy.uix.carousel.Carousel" title="kivy.uix.carousel.Carousel"><code class="xref py py-class docutils literal"><span class="pre">Carousel</span></code></a>  をスクロールする前に移動する距離（ピクセル単位）。 距離が移動すると直ちに、 <a class="reference internal" href="#kivy.uix.carousel.Carousel" title="kivy.uix.carousel.Carousel"><code class="xref py py-class docutils literal"><span class="pre">Carousel</span></code></a>  はスクロールし始め、タッチイベントは子には行きません。 この値はターゲットデバイスの画面のdpiに基づいて設定することをお勧めします。</p>
-<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.scroll_distance" title="kivy.uix.carousel.Carousel.scroll_distance"><code class="xref py py-attr docutils literal"><span class="pre">scroll_distance</span></code></a>  は <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a>  で、デフォルトは 20dpです。</p>
+<code class="descname">scroll_distance</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.scroll_distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Distance to move before scrolling the <a class="reference internal" href="#kivy.uix.carousel.Carousel" title="kivy.uix.carousel.Carousel"><code class="xref py py-class docutils literal notranslate"><span class="pre">Carousel</span></code></a> in pixels. As
+soon as the distance has been traveled, the <a class="reference internal" href="#kivy.uix.carousel.Carousel" title="kivy.uix.carousel.Carousel"><code class="xref py py-class docutils literal notranslate"><span class="pre">Carousel</span></code></a> will start
+to scroll, and no touch event will go to children.
+It is advisable that you base this value on the dpi of your target device’s
+screen.</p>
+<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.scroll_distance" title="kivy.uix.carousel.Carousel.scroll_distance"><code class="xref py py-attr docutils literal notranslate"><span class="pre">scroll_distance</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumericProperty</span></code></a> and
+defaults to 20dp.</p>
 <div class="versionadded">
-<p><span class="versionmodified">バージョン 1.5.0 で追加.</span></p>
+<p><span class="versionmodified">New in version 1.5.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.uix.carousel.Carousel.scroll_timeout">
-<code class="descname">scroll_timeout</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.scroll_timeout" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>&nbsp;<a class="reference internal" href="#kivy.uix.carousel.Carousel.scroll_distance" title="kivy.uix.carousel.Carousel.scroll_distance"><code class="xref py py-attr docutils literal"><span class="pre">scroll_distance</span></code></a> をトリガできるタイムアウトをミリ秒単位で指定します。ユーザーがタイムアウト内に <a class="reference internal" href="#kivy.uix.carousel.Carousel.scroll_distance" title="kivy.uix.carousel.Carousel.scroll_distance"><code class="xref py py-attr docutils literal"><span class="pre">scroll_distance</span></code></a> を移動していない場合はスクロールは行われずにタッチイベントは子に移動します。</p>
-<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.scroll_timeout" title="kivy.uix.carousel.Carousel.scroll_timeout"><code class="xref py py-attr docutils literal"><span class="pre">scroll_timeout</span></code></a>  は <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal"><span class="pre">NumericProperty</span></code></a>  でデフォルトは200 （ミリセカンド）です。</p>
+<code class="descname">scroll_timeout</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.scroll_timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Timeout allowed to trigger the <a class="reference internal" href="#kivy.uix.carousel.Carousel.scroll_distance" title="kivy.uix.carousel.Carousel.scroll_distance"><code class="xref py py-attr docutils literal notranslate"><span class="pre">scroll_distance</span></code></a>, in milliseconds.
+If the user has not moved <a class="reference internal" href="#kivy.uix.carousel.Carousel.scroll_distance" title="kivy.uix.carousel.Carousel.scroll_distance"><code class="xref py py-attr docutils literal notranslate"><span class="pre">scroll_distance</span></code></a> within the timeout,
+no scrolling will occur and the touch event will go to the children.</p>
+<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.scroll_timeout" title="kivy.uix.carousel.Carousel.scroll_timeout"><code class="xref py py-attr docutils literal notranslate"><span class="pre">scroll_timeout</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.NumericProperty" title="kivy.properties.NumericProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumericProperty</span></code></a> and
+defaults to 200 (milliseconds)</p>
 <div class="versionadded">
-<p><span class="versionmodified">バージョン 1.5.0 で追加.</span></p>
+<p><span class="versionmodified">New in version 1.5.0.</span></p>
 </div>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="kivy.uix.carousel.Carousel.slides">
-<code class="descname">slides</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.slides" title="この定義へのパーマリンク">¶</a></dt>
+<code class="descname">slides</code><a class="headerlink" href="#kivy.uix.carousel.Carousel.slides" title="Permalink to this definition">¶</a></dt>
 <dd><p>List of slides inside the Carousel. The slides are the
-widgets added to the Carousel using the <code class="xref py py-attr docutils literal"><span class="pre">add_widget</span></code> method.</p>
-<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.slides" title="kivy.uix.carousel.Carousel.slides"><code class="xref py py-attr docutils literal"><span class="pre">slides</span></code></a> は <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal"><span class="pre">ListProperty</span></code></a> であり読み取り専用です。</p>
+widgets added to the Carousel using the <a class="reference internal" href="#kivy.uix.carousel.Carousel.add_widget" title="kivy.uix.carousel.Carousel.add_widget"><code class="xref py py-attr docutils literal notranslate"><span class="pre">add_widget</span></code></a> method.</p>
+<p><a class="reference internal" href="#kivy.uix.carousel.Carousel.slides" title="kivy.uix.carousel.Carousel.slides"><code class="xref py py-attr docutils literal notranslate"><span class="pre">slides</span></code></a> is a <a class="reference internal" href="api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListProperty</span></code></a> and is
+read-only.</p>
 </dd></dl>
 
 </dd></dl>
@@ -592,13 +772,35 @@ widgets added to the Carousel using the <code class="xref py py-attr docutils li
     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
+<script>
+  var selector = $("#version_selector");
+
+  selector.on('change', function() {
+    // replace the version part of the url with the selected version
+    document.location.pathname = document.location.pathname.replace(
+      /^(\/.*?\/).*?(\/.*)/,
+     '$1' + this.value + '$2'
+    );
+  });
+
+  var url = "/doc/versions.json";
+
+  $.getJSON(url, function(versions) {
+    versions.forEach(function(version){
+      var current = window.location.pathname.split('/')[2]
+      selector.append(
+        $("<option " + (version == current ? "selected" : "") + "/>").val(version).html(version)
+      );
+    });
+  });
+</script>
 <noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Tracking Code -->
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 10月 21, 2017.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+      Last updated on Feb 15, 2019.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.4.
 </div>
 -->
   </body>

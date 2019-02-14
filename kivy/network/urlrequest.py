@@ -56,11 +56,13 @@ If you want a synchronous request, you can call the wait() method.
 
 '''
 
+from base64 import b64encode
 from collections import deque
 from threading import Thread
 from json import loads
 from time import sleep
 from kivy.compat import PY2
+from kivy.config import Config
 
 if PY2:
     from httplib import HTTPConnection
@@ -176,7 +178,7 @@ class UrlRequest(Thread):
                  req_body=None, req_headers=None, chunk_size=8192,
                  timeout=None, method=None, decode=True, debug=False,
                  file_path=None, ca_file=None, verify=True, proxy_host=None,
-                 proxy_port=None, proxy_headers=None):
+                 proxy_port=None, proxy_headers=None, user_agent=None):
         super(UrlRequest, self).__init__()
         self._queue = deque()
         self._trigger_result = Clock.create_trigger(self._dispatch_result, 0)
@@ -222,7 +224,13 @@ class UrlRequest(Thread):
         q = self._queue.appendleft
         url = self.url
         req_body = self.req_body
-        req_headers = self.req_headers
+        req_headers = self.req_headers or {}
+        if (
+            Config.has_section('network')
+            and 'useragent' in Config.items('network')
+        ):
+            useragent = Config.get('network', 'useragent')
+            req_headers.setdefault('User-Agent', useragent)
 
         try:
             result, resp = self._fetch_url(url, req_body, req_headers, q)
@@ -245,6 +253,25 @@ class UrlRequest(Thread):
         if self in g_requests:
             g_requests.remove(self)
 
+    def _parse_url(self, url):
+        parse = urlparse(url)
+        host = parse.hostname
+        port = parse.port
+        userpass = None
+
+        # append user + pass to hostname if specified
+        if parse.username and parse.password:
+            userpass = {
+                "Authorization": "Basic {}".format(b64encode(
+                    "{}:{}".format(
+                        parse.username,
+                        parse.password
+                    ).encode('utf-8')
+                ).decode('utf-8'))
+            }
+
+        return host, port, userpass, parse
+
     def _fetch_url(self, url, body, headers, q):
         # Parse and fetch the current url
         trigger = self._trigger_result
@@ -264,17 +291,15 @@ class UrlRequest(Thread):
                 id(self), headers))
 
         # parse url
-        parse = urlparse(url)
+        host, port, userpass, parse = self._parse_url(url)
+        if userpass and not headers:
+            headers = userpass
+        elif userpass and headers:
+            key = list(userpass.keys())[0]
+            headers[key] = userpass[key]
 
         # translate scheme to connection class
         cls = self.get_connection_for_scheme(parse.scheme)
-
-        # correctly determine host/port
-        port = None
-        host = parse.netloc.split(':')
-        if len(host) > 1:
-            port = int(host[1])
-        host = host[0]
 
         # reconstruct path to pass on the request
         path = parse.path

@@ -1,0 +1,791 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-15 00:59+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../sources/api-kivy.uix.screenmanager.rst:3
+msgid "Screen Manager"
+msgstr ""
+
+#: kivy.uix.screenmanager:7 of
+msgid ""
+"The screen manager is a widget dedicated to managing multiple screens for"
+" your application. The default :class:`ScreenManager` displays only one "
+":class:`Screen` at a time and uses a :class:`TransitionBase` to switch "
+"from one Screen to another."
+msgstr ""
+
+#: kivy.uix.screenmanager:12 of
+msgid ""
+"Multiple transitions are supported based on changing the screen "
+"coordinates / scale or even performing fancy animation using custom "
+"shaders."
+msgstr ""
+
+#: kivy.uix.screenmanager:16 of
+msgid "Basic Usage"
+msgstr ""
+
+#: kivy.uix.screenmanager:18 of
+msgid ""
+"Let's construct a Screen Manager with 4 named screens. When you are "
+"creating a screen, **you absolutely need to give a name to it**::"
+msgstr ""
+
+#: kivy.uix.screenmanager:38 of
+msgid ""
+"The default :attr:`ScreenManager.transition` is a "
+":class:`SlideTransition` with options :attr:`~SlideTransition.direction` "
+"and :attr:`~TransitionBase.duration`."
+msgstr ""
+
+#: kivy.uix.screenmanager:42 of
+msgid ""
+"Please note that by default, a :class:`Screen` displays nothing: it's "
+"just a :class:`~kivy.uix.relativelayout.RelativeLayout`. You need to use "
+"that class as a root widget for your own screen, the best way being to "
+"subclass."
+msgstr ""
+
+#: kivy.uix.screenmanager:47 of
+msgid ""
+"As :class:`Screen` is a :class:`~kivy.uix.relativelayout.RelativeLayout`,"
+" it is important to understand the :ref:`kivy-uix-relativelayout-common-"
+"pitfalls`."
+msgstr ""
+
+#: kivy.uix.screenmanager:51 of
+msgid "Here is an example with a 'Menu Screen' and a 'Settings Screen'::"
+msgstr ""
+
+#: kivy.uix.screenmanager:100 of
+msgid "Changing Direction"
+msgstr ""
+
+#: kivy.uix.screenmanager:102 of
+msgid ""
+"A common use case for :class:`ScreenManager` involves using a "
+":class:`SlideTransition` which slides right to the next screen and slides"
+" left to the previous screen. Building on the previous example, this can "
+"be accomplished like so::"
+msgstr ""
+
+#: kivy.uix.screenmanager:131 of
+msgid "Advanced Usage"
+msgstr ""
+
+#: kivy.uix.screenmanager:133 of
+msgid ""
+"From 1.8.0, you can now switch dynamically to a new screen, change the "
+"transition options and remove the previous one by using "
+":meth:`~ScreenManager.switch_to`::"
+msgstr ""
+
+#: kivy.uix.screenmanager:144 of
+msgid ""
+"Note that this method adds the screen to the :class:`ScreenManager` "
+"instance and should not be used if your screens have already been added "
+"to this instance. To switch to a screen which is already added, you "
+"should use the :attr:`~ScreenManager.current` property."
+msgstr ""
+
+#: kivy.uix.screenmanager:151 of
+msgid "Changing transitions"
+msgstr ""
+
+#: kivy.uix.screenmanager:153 of
+msgid "You have multiple transitions available by default, such as:"
+msgstr ""
+
+#: kivy.uix.screenmanager:155 of
+msgid ":class:`NoTransition` - switches screens instantly with no animation"
+msgstr ""
+
+#: kivy.uix.screenmanager:156 of
+msgid ":class:`SlideTransition` - slide the screen in/out, from any direction"
+msgstr ""
+
+#: kivy.uix.screenmanager:157 of
+msgid ""
+":class:`CardTransition` - new screen slides on the previous or the old "
+"one slides off the new one depending on the mode"
+msgstr ""
+
+#: kivy.uix.screenmanager:159 of
+msgid ":class:`SwapTransition` - implementation of the iOS swap transition"
+msgstr ""
+
+#: kivy.uix.screenmanager:160 of
+msgid ":class:`FadeTransition` - shader to fade the screen in/out"
+msgstr ""
+
+#: kivy.uix.screenmanager:161 of
+msgid ":class:`WipeTransition` - shader to wipe the screens from right to left"
+msgstr ""
+
+#: kivy.uix.screenmanager:162 of
+msgid ""
+":class:`FallOutTransition` - shader where the old screen 'falls' and "
+"becomes transparent, revealing the new one behind it."
+msgstr ""
+
+#: kivy.uix.screenmanager:164 of
+msgid ""
+":class:`RiseInTransition` - shader where the new screen rises from the "
+"screen centre while fading from transparent to opaque."
+msgstr ""
+
+#: kivy.uix.screenmanager:167 of
+msgid ""
+"You can easily switch transitions by changing the "
+":attr:`ScreenManager.transition` property::"
+msgstr ""
+
+#: kivy.uix.screenmanager:174 of
+msgid ""
+"Currently, none of Shader based Transitions use anti-aliasing. This is "
+"because they use the FBO which doesn't have any logic to handle "
+"supersampling. This is a known issue and we are working on a transparent "
+"implementation that will give the same results as if it had been rendered"
+" on screen."
+msgstr ""
+
+#: kivy.uix.screenmanager:180 of
+msgid ""
+"To be more concrete, if you see sharp edged text during the animation, "
+"it's normal."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.uix.relativelayout.RelativeLayout`"
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen:1 of
+msgid ""
+"Screen is an element intended to be used with a :class:`ScreenManager`. "
+"Check module documentation for more information."
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen kivy.uix.screenmanager.TransitionBase of
+msgid "Events"
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen:6 of
+msgid "`on_pre_enter`: ()"
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen:6 of
+msgid ""
+"Event fired when the screen is about to be used: the entering animation "
+"is started."
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen:9 of
+msgid "`on_enter`: ()"
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen:9 of
+msgid ""
+"Event fired when the screen is displayed: the entering animation is "
+"complete."
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen:12 of
+msgid "`on_pre_leave`: ()"
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen:12 of
+msgid ""
+"Event fired when the screen is about to be removed: the leaving animation"
+" is started."
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen:16 of
+msgid "`on_leave`: ()"
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen:15 of
+msgid "Event fired when the screen is removed: the leaving animation is finished."
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen:18 of
+msgid ""
+"Events `on_pre_enter`, `on_enter`, `on_pre_leave` and `on_leave` were "
+"added."
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen.manager:1
+#: kivy.uix.screenmanager.TransitionBase.manager:1 of
+msgid ":class:`ScreenManager` object, set when the screen is added to a manager."
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen.manager:4
+#: kivy.uix.screenmanager.TransitionBase.manager:4 of
+msgid ""
+":attr:`manager` is an :class:`~kivy.properties.ObjectProperty` and "
+"defaults to None, read-only."
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen.name:1 of
+msgid ""
+"Name of the screen which must be unique within a :class:`ScreenManager`. "
+"This is the name used for :attr:`ScreenManager.current`."
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen.name:4 of
+msgid ""
+":attr:`name` is a :class:`~kivy.properties.StringProperty` and defaults "
+"to ''."
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen.transition_progress:1 of
+msgid ""
+"Value that represents the completion of the current transition, if any is"
+" occurring."
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen.transition_progress:4 of
+msgid ""
+"If a transition is in progress, whatever the mode, the value will change "
+"from 0 to 1. If you want to know if it's an entering or leaving "
+"animation, check the :attr:`transition_state`."
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen.transition_progress:8 of
+msgid ""
+":attr:`transition_progress` is a "
+":class:`~kivy.properties.NumericProperty` and defaults to 0."
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen.transition_state:1 of
+msgid "Value that represents the state of the transition:"
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen.transition_state:3 of
+msgid "'in' if the transition is going to show your screen"
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen.transition_state:4 of
+msgid "'out' if the transition is going to hide your screen"
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen.transition_state:6 of
+msgid ""
+"After the transition is complete, the state will retain it's last value "
+"(in or out)."
+msgstr ""
+
+#: kivy.uix.screenmanager.Screen.transition_state:9 of
+msgid ""
+":attr:`transition_state` is an :class:`~kivy.properties.OptionProperty` "
+"and defaults to 'out'."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.uix.floatlayout.FloatLayout`"
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager:1 of
+msgid ""
+"Screen manager. This is the main class that will control your "
+":class:`Screen` stack and memory."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager:4 of
+msgid "By default, the manager will show only one screen at a time."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.add_widget:1 of
+msgid "Add a new widget as a child of this widget."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.add_widget
+#: kivy.uix.screenmanager.ScreenManager.on_touch_down
+#: kivy.uix.screenmanager.ScreenManager.remove_widget of
+msgid "Parameters"
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.add_widget:4
+#: kivy.uix.screenmanager.ScreenManager.remove_widget:5 of
+msgid "`widget`: :class:`Widget`"
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.add_widget:5 of
+msgid "Widget to add to our list of children."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.add_widget:12 of
+msgid "`index`: int, defaults to 0"
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.add_widget:7 of
+msgid ""
+"Index to insert the widget in the list. Notice that the default of 0 "
+"means the widget is inserted at the beginning of the list and will thus "
+"be drawn on top of other sibling widgets. For a full discussion of the "
+"index and widget hierarchy, please see the :doc:`Widgets Programming "
+"Guide <guide/widgets>`."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.add_widget:18 of
+msgid "`canvas`: str, defaults to None"
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.add_widget:15 of
+msgid ""
+"Canvas to add widget's canvas to. Can be 'before', 'after' or None for "
+"the default canvas."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.clear_widgets:1 of
+msgid ""
+"Remove all (or the specified) :attr:`~Widget.children` of this widget. If"
+" the 'children' argument is specified, it should be a list (or filtered "
+"list) of children of the current widget."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.clear_widgets:5 of
+msgid ""
+"The `children` argument can be used to specify the children you want to "
+"remove."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.current:1 of
+msgid "Name of the screen currently shown, or the screen to show."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.current:15 of
+msgid ""
+":attr:`current` is a :class:`~kivy.properties.StringProperty` and "
+"defaults to None."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.current_screen:1 of
+msgid ""
+"Contains the currently displayed screen. You must not change this "
+"property manually, use :attr:`current` instead."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.current_screen:4 of
+msgid ""
+":attr:`current_screen` is an :class:`~kivy.properties.ObjectProperty` and"
+" defaults to None, read-only."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.get_screen:1 of
+msgid ""
+"Return the screen widget associated with the name or raise a "
+":class:`ScreenManagerException` if not found."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.has_screen:1 of
+msgid "Return True if a screen with the `name` has been found."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.next:1 of
+msgid "Return the name of the next screen from the screen list."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.on_touch_down:1 of
+msgid "Receive a touch down event."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.on_touch_down:7 of
+msgid "`touch`: :class:`~kivy.input.motionevent.MotionEvent` class"
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.on_touch_down:5 of
+msgid ""
+"Touch received. The touch is in parent coordinates. See "
+":mod:`~kivy.uix.relativelayout` for a discussion on coordinate systems."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.on_touch_down of
+msgid "Returns"
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.on_touch_down:9 of
+msgid ""
+"bool If True, the dispatching of the touch event will stop. If False, the"
+" event will continue to be dispatched to the rest of the widget tree."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.on_touch_move:1 of
+msgid "Receive a touch move event. The touch is in parent coordinates."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.on_touch_move:3
+#: kivy.uix.screenmanager.ScreenManager.on_touch_up:3 of
+msgid "See :meth:`on_touch_down` for more information."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.on_touch_up:1 of
+msgid "Receive a touch up event. The touch is in parent coordinates."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.previous:1 of
+msgid "Return the name of the previous screen from the screen list."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.remove_widget:1 of
+msgid "Remove a widget from the children of this widget."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.remove_widget:5 of
+msgid "Widget to remove from our children list."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.screen_names:1 of
+msgid ""
+"List of the names of all the :class:`Screen` widgets added. The list is "
+"read only."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.screen_names:4 of
+msgid ""
+":attr:`screens_names` is an :class:`~kivy.properties.AliasProperty` and "
+"is read-only. It is updated if the screen list changes or the name of a "
+"screen changes."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.screens:1 of
+msgid ""
+"List of all the :class:`Screen` widgets added. You should not change this"
+" list manually. Use the :meth:`add_widget "
+"<kivy.uix.widget.Widget.add_widget>` method instead."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.screens:5 of
+msgid ""
+":attr:`screens` is a :class:`~kivy.properties.ListProperty` and defaults "
+"to [], read-only."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.switch_to:1 of
+msgid ""
+"Add a new screen to the ScreenManager and switch to it. The previous "
+"screen will be removed from the children. `options` are the "
+":attr:`transition` options that will be changed before the animation "
+"happens."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.switch_to:6 of
+msgid ""
+"If no previous screens are available, the screen will be used as the main"
+" one::"
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.switch_to:16 of
+msgid ""
+"If any animation is in progress, it will be stopped and replaced by this "
+"one: you should avoid this because the animation will just look weird. "
+"Use either :meth:`switch_to` or :attr:`current` but not both."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.switch_to:20 of
+msgid ""
+"The `screen` name will be changed if there is any conflict with the "
+"current screen."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.transition:1 of
+msgid ""
+"Transition object to use for animating the transition from the current "
+"screen to the next one being shown."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.transition:4 of
+msgid "For example, if you want to use a :class:`WipeTransition` between slides::"
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.transition:18 of
+msgid ""
+":attr:`transition` is an :class:`~kivy.properties.ObjectProperty` and "
+"defaults to a :class:`SlideTransition`."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManager.transition:23 of
+msgid ""
+"Default transition has been changed from :class:`SwapTransition` to "
+":class:`SlideTransition`."
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManagerException:1 of
+msgid "Bases: :class:`Exception`"
+msgstr ""
+
+#: kivy.uix.screenmanager.ScreenManagerException:1 of
+msgid "Exception for the :class:`ScreenManager`."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.event.EventDispatcher`"
+msgstr ""
+
+#: kivy.uix.screenmanager.TransitionBase:1 of
+msgid ""
+"TransitionBase is used to animate 2 screens within the "
+":class:`ScreenManager`. This class acts as a base for other "
+"implementations like the :class:`SlideTransition` and "
+":class:`SwapTransition`."
+msgstr ""
+
+#: kivy.uix.screenmanager.TransitionBase:7 of
+msgid "`on_progress`: Transition object, progression float"
+msgstr ""
+
+#: kivy.uix.screenmanager.TransitionBase:8 of
+msgid "Fired during the animation of the transition."
+msgstr ""
+
+#: kivy.uix.screenmanager.TransitionBase:11 of
+msgid "`on_complete`: Transition object"
+msgstr ""
+
+#: kivy.uix.screenmanager.TransitionBase:10 of
+msgid "Fired when the transition is finished."
+msgstr ""
+
+#: kivy.uix.screenmanager.ShaderTransition.add_screen:1
+#: kivy.uix.screenmanager.SwapTransition.add_screen:1
+#: kivy.uix.screenmanager.TransitionBase.add_screen:1 of
+msgid "(internal) Used to add a screen to the :class:`ScreenManager`."
+msgstr ""
+
+#: kivy.uix.screenmanager.TransitionBase.duration:1 of
+msgid "Duration in seconds of the transition."
+msgstr ""
+
+#: kivy.uix.screenmanager.TransitionBase.duration:3 of
+msgid ""
+":class:`duration` is a :class:`~kivy.properties.NumericProperty` and "
+"defaults to .4 (= 400ms)."
+msgstr ""
+
+#: kivy.uix.screenmanager.TransitionBase.duration:8 of
+msgid "Default duration has been changed from 700ms to 400ms."
+msgstr ""
+
+#: kivy.uix.screenmanager.TransitionBase.is_active:1 of
+msgid "Indicate whether the transition is currently active or not."
+msgstr ""
+
+#: kivy.uix.screenmanager.TransitionBase.is_active:3 of
+msgid ""
+":attr:`is_active` is a :class:`~kivy.properties.BooleanProperty` and "
+"defaults to False, read-only."
+msgstr ""
+
+#: kivy.uix.screenmanager.ShaderTransition.remove_screen:1
+#: kivy.uix.screenmanager.TransitionBase.remove_screen:1 of
+msgid "(internal) Used to remove a screen from the :class:`ScreenManager`."
+msgstr ""
+
+#: kivy.uix.screenmanager.TransitionBase.screen_in:1 of
+msgid ""
+"Property that contains the screen to show. Automatically set by the "
+":class:`ScreenManager`."
+msgstr ""
+
+#: kivy.uix.screenmanager.TransitionBase.screen_in:4 of
+msgid ""
+":class:`screen_in` is an :class:`~kivy.properties.ObjectProperty` and "
+"defaults to None."
+msgstr ""
+
+#: kivy.uix.screenmanager.TransitionBase.screen_out:1 of
+msgid ""
+"Property that contains the screen to hide. Automatically set by the "
+":class:`ScreenManager`."
+msgstr ""
+
+#: kivy.uix.screenmanager.TransitionBase.screen_out:4 of
+msgid ""
+":class:`screen_out` is an :class:`~kivy.properties.ObjectProperty` and "
+"defaults to None."
+msgstr ""
+
+#: kivy.uix.screenmanager.CardTransition.start:1
+#: kivy.uix.screenmanager.SwapTransition.start:1
+#: kivy.uix.screenmanager.TransitionBase.start:1 of
+msgid ""
+"(internal) Starts the transition. This is automatically called by the "
+":class:`ScreenManager`."
+msgstr ""
+
+#: kivy.uix.screenmanager.ShaderTransition.stop:1
+#: kivy.uix.screenmanager.TransitionBase.stop:1 of
+msgid ""
+"(internal) Stops the transition. This is automatically called by the "
+":class:`ScreenManager`."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.uix.screenmanager.TransitionBase`"
+msgstr ""
+
+#: kivy.uix.screenmanager.ShaderTransition:1 of
+msgid ""
+"Transition class that uses a Shader for animating the transition between "
+"2 screens. By default, this class doesn't assign any fragment/vertex "
+"shader. If you want to create your own fragment shader for the "
+"transition, you need to declare the header yourself and include the "
+"\"t\", \"tex_in\" and \"tex_out\" uniform::"
+msgstr ""
+
+#: kivy.uix.screenmanager.ShaderTransition.clearcolor:1 of
+msgid "Sets the color of Fbo ClearColor."
+msgstr ""
+
+#: kivy.uix.screenmanager.ShaderTransition.clearcolor:5 of
+msgid ""
+":attr:`clearcolor` is a :class:`~kivy.properties.ListProperty` and "
+"defaults to [0, 0, 0, 1]."
+msgstr ""
+
+#: kivy.uix.screenmanager.ShaderTransition.fs:1 of
+msgid "Fragment shader to use."
+msgstr ""
+
+#: kivy.uix.screenmanager.ShaderTransition.fs:3 of
+msgid ""
+":attr:`fs` is a :class:`~kivy.properties.StringProperty` and defaults to "
+"None."
+msgstr ""
+
+#: kivy.uix.screenmanager.ShaderTransition.vs:1 of
+msgid "Vertex shader to use."
+msgstr ""
+
+#: kivy.uix.screenmanager.ShaderTransition.vs:3 of
+msgid ""
+":attr:`vs` is a :class:`~kivy.properties.StringProperty` and defaults to "
+"None."
+msgstr ""
+
+#: kivy.uix.screenmanager.SlideTransition:1 of
+msgid ""
+"Slide Transition, can be used to show a new screen from any direction: "
+"left, right, up or down."
+msgstr ""
+
+#: kivy.uix.screenmanager.SlideTransition.direction:1 of
+msgid "Direction of the transition."
+msgstr ""
+
+#: kivy.uix.screenmanager.SlideTransition.direction:3 of
+msgid ""
+":attr:`direction` is an :class:`~kivy.properties.OptionProperty` and "
+"defaults to 'left'. Can be one of 'left', 'right', 'up' or 'down'."
+msgstr ""
+
+#: kivy.uix.screenmanager.SwapTransition:1 of
+msgid ""
+"Swap transition that looks like iOS transition when a new window appears "
+"on the screen."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.uix.screenmanager.ShaderTransition`"
+msgstr ""
+
+#: kivy.uix.screenmanager.FadeTransition:1 of
+msgid "Fade transition, based on a fragment Shader."
+msgstr ""
+
+#: kivy.uix.screenmanager.WipeTransition:1 of
+msgid "Wipe transition, based on a fragment Shader."
+msgstr ""
+
+#: kivy.uix.screenmanager.FallOutTransition:1 of
+msgid ""
+"Transition where the new screen 'falls' from the screen centre, becoming "
+"smaller and more transparent until it disappears, and revealing the new "
+"screen behind it. Mimics the popular/standard Android transition."
+msgstr ""
+
+#: kivy.uix.screenmanager.FallOutTransition.duration:1
+#: kivy.uix.screenmanager.RiseInTransition.duration:1 of
+msgid ""
+"Duration in seconds of the transition, replacing the default of "
+":class:`TransitionBase`."
+msgstr ""
+
+#: kivy.uix.screenmanager.FallOutTransition.duration:4 of
+msgid ""
+":class:`duration` is a :class:`~kivy.properties.NumericProperty` and "
+"defaults to .15 (= 150ms)."
+msgstr ""
+
+#: kivy.uix.screenmanager.RiseInTransition:1 of
+msgid ""
+"Transition where the new screen rises from the screen centre, becoming "
+"larger and changing from transparent to opaque until it fills the screen."
+" Mimics the popular/standard Android transition."
+msgstr ""
+
+#: kivy.uix.screenmanager.RiseInTransition.duration:4 of
+msgid ""
+":class:`duration` is a :class:`~kivy.properties.NumericProperty` and "
+"defaults to .2 (= 200ms)."
+msgstr ""
+
+#: kivy.uix.screenmanager.NoTransition:1 of
+msgid ""
+"No transition, instantly switches to the next screen with no delay or "
+"animation."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.uix.screenmanager.SlideTransition`"
+msgstr ""
+
+#: kivy.uix.screenmanager.CardTransition:1 of
+msgid ""
+"Card transition that looks similar to Android 4.x application drawer "
+"interface animation."
+msgstr ""
+
+#: kivy.uix.screenmanager.CardTransition:4 of
+msgid ""
+"It supports 4 directions like SlideTransition: left, right, up and down, "
+"and two modes, pop and push. If push mode is activated, the previous "
+"screen does not move, and the new one slides in from the given direction."
+" If the pop mode is activated, the previous screen slides out, when the "
+"new screen is already on the position of the ScreenManager."
+msgstr ""
+
+#: kivy.uix.screenmanager.CardTransition.mode:1 of
+msgid ""
+"Indicates if the transition should push or pop the screen on/off the "
+"ScreenManager."
+msgstr ""
+
+#: kivy.uix.screenmanager.CardTransition.mode:4 of
+msgid "'push' means the screen slides in in the given direction"
+msgstr ""
+
+#: kivy.uix.screenmanager.CardTransition.mode:5 of
+msgid "'pop' means the screen slides out in the given direction"
+msgstr ""
+
+#: kivy.uix.screenmanager.CardTransition.mode:7 of
+msgid ""
+":attr:`mode` is an :class:`~kivy.properties.OptionProperty` and defaults "
+"to 'push'."
+msgstr ""
+

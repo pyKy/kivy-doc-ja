@@ -1,225 +1,158 @@
 # Makefile for Sphinx documentation
 #
 
+ENDUSER_BUILD	= yes
+
 # You can set these variables from the command line.
-SPHINXOPTS    =
-SPHINXBUILD   = sphinx-build
-PAPER         =
-BUILDDIR      = build
+PYTHON		= python
+SPHINXOPTS	= -Q
+SPHINXOPTS_TEST	= -W -T
+SPHINXBUILD	= sphinx-build
+PAPER		=
+
+fasthtml: SPHINXOPTS += -j4
+
+# platform independent path separator
+# only system calls need to use $(P), b/c on win system calls have issues with /
+ifdef ComSpec
+	PATHSEP2=\\
+	MKDIR=mkdir
+else
+	PATHSEP2=/
+	MKDIR=mkdir -p
+endif
+P=$(strip $(PATHSEP2))
 
 # Internal variables.
-PAPEROPT_a4     = -D latex_paper_size=a4
-PAPEROPT_letter = -D latex_paper_size=letter
-ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
-# the i18n builder cannot share the environment and doctrees with the others
-I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
+PAPEROPT_a4		= -D latex_paper_size=a4
+PAPEROPT_letter		= -D latex_paper_size=letter
+ALLSPHINXOPTS		= -d build/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) sources
+ALLSPHINXOPTS_TEST	= -d build/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS_TEST) sources
+ALLSPHINXOPTSGT		= -d build/doctrees_gettext $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) sources
+ALLSPHINXOPTSGT_TEST	= -d build/doctrees_gettext $(PAPEROPT_$(PAPER)) $(SPHINXOPTS_TEST) sources
+LATEXOPTS		= -interaction=batchmode
+LATEXOPTS_TESTS		= 
 
-.PHONY: help
+ifeq ($(ENDUSER_BUILD),yes)
+	_TESTS = 
+else
+	_TESTS = _TEST
+endif
+
+# Created in autobuild.py
+AUTOBUILD_STAMP = "autobuild.py-done"
+
+.PHONY: help clean html web pickle htmlhelp latex changes linkcheck gettext
+
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
-	@echo "  html       to make standalone HTML files"
-	@echo "  dirhtml    to make HTML files named index.html in directories"
-	@echo "  singlehtml to make a single large HTML file"
-	@echo "  pickle     to make pickle files"
-	@echo "  json       to make JSON files"
-	@echo "  htmlhelp   to make HTML files and a HTML help project"
-	@echo "  qthelp     to make HTML files and a qthelp project"
-	@echo "  applehelp  to make an Apple Help Book"
-	@echo "  devhelp    to make HTML files and a Devhelp project"
-	@echo "  epub       to make an epub"
-	@echo "  epub3      to make an epub3"
-	@echo "  latex      to make LaTeX files, you can set PAPER=a4 or PAPER=letter"
-	@echo "  latexpdf   to make LaTeX files and run them through pdflatex"
-	@echo "  latexpdfja to make LaTeX files and run them through platex/dvipdfmx"
-	@echo "  text       to make text files"
-	@echo "  man        to make manual pages"
-	@echo "  texinfo    to make Texinfo files"
-	@echo "  info       to make Texinfo files and run them through makeinfo"
-	@echo "  gettext    to make PO message catalogs"
-	@echo "  changes    to make an overview of all changed/added/deprecated items"
-	@echo "  xml        to make Docutils-native XML files"
-	@echo "  pseudoxml  to make pseudoxml-XML files for display purposes"
-	@echo "  linkcheck  to check all external links for integrity"
-	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
-	@echo "  coverage   to run coverage check of the documentation (if enabled)"
-	@echo "  dummy      to check syntax errors of document sources"
+	@echo "  build-all to build the common documentation types."
+	@echo "  changes   to make an overview over all changed/added/deprecated items"
+	@echo "  clean     to remove generated files"
+	@echo "  gettext   to make gettext pages"
+	@echo "  html      to make standalone HTML files"
+	@echo "  fasthtml  same as html, with 4 concurrent processes"
+	@echo "  htmlhelp  to make HTML files and a HTML help project"
+	@echo "  latex     to make LaTeX files, you can set PAPER=a4 or PAPER=letter"
+	@echo "  linkcheck to check through the reference linking"
+	@echo "  man       to build Man doctrees."
+	@echo "  pdf       to make standalone PDF files"
+	@echo "  pickle    to make pickle files (usable by e.g. sphinx-web)"
+	@echo "  ps        to make standalone PS files"
+	@echo "  web       same as pickle"
 
-.PHONY: clean
 clean:
-	rm -rf $(BUILDDIR)/*
+	-rm -rf sources/api-*.rst
+	-rm -rf sources/examples/gen__*.rst
+	-rm -rf sources/examples/gallery.rst
+	-rm -rf sources/examples/index.rst
+# windows just doesn't support e.g. build\*
+ifdef ComSpec
+	-rmdir /s /q build
+else
+	-rm -rf build/*
+	-rm $(AUTOBUILD_STAMP)*
+endif
 
-.PHONY: html
+fasthtml: html
+
 html:
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	$(MKDIR) build$(P)html build$(P)doctrees
+	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS$(_TESTS)) build/html
 	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+	@echo "Build finished. The HTML pages are in build/html."
 
-.PHONY: dirhtml
-dirhtml:
-	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
+gettext:
+	$(MKDIR) build$(P)html build$(P)doctrees_gettext
+	$(SPHINXBUILD) -b gettext $(ALLSPHINXOPTSGT$(_TESTS)) build/gettext
 	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml."
+	@echo "Build finished. The Gettext pages are in build/gettext."
 
-.PHONY: singlehtml
-singlehtml:
-	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
-	@echo
-	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
 
-.PHONY: pickle
 pickle:
-	$(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS) $(BUILDDIR)/pickle
+	$(MKDIR) build$(P)pickle build$(P)doctrees
+	$(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS$(_TESTS)) build/pickle
 	@echo
-	@echo "Build finished; now you can process the pickle files."
+	@echo "Build finished; now you can process the pickle files or run"
+	@echo "  sphinx-web build/pickle"
+	@echo "to start the sphinx-web server."
 
-.PHONY: json
-json:
-	$(SPHINXBUILD) -b json $(ALLSPHINXOPTS) $(BUILDDIR)/json
-	@echo
-	@echo "Build finished; now you can process the JSON files."
+web: pickle
 
-.PHONY: htmlhelp
 htmlhelp:
-	$(SPHINXBUILD) -b htmlhelp $(ALLSPHINXOPTS) $(BUILDDIR)/htmlhelp
+	$(MKDIR) build$(P)htmlhelp build$(P)doctrees
+	$(SPHINXBUILD) -b htmlhelp $(ALLSPHINXOPTS$(_TESTS)) build/htmlhelp
 	@echo
 	@echo "Build finished; now you can run HTML Help Workshop with the" \
-	      ".hhp project file in $(BUILDDIR)/htmlhelp."
+	      ".hhp project file in build/htmlhelp."
 
-.PHONY: qthelp
-qthelp:
-	$(SPHINXBUILD) -b qthelp $(ALLSPHINXOPTS) $(BUILDDIR)/qthelp
-	@echo
-	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
-	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/kivy-doc-ja.qhcp"
-	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/kivy-doc-ja.qhc"
-
-.PHONY: applehelp
-applehelp:
-	$(SPHINXBUILD) -b applehelp $(ALLSPHINXOPTS) $(BUILDDIR)/applehelp
-	@echo
-	@echo "Build finished. The help book is in $(BUILDDIR)/applehelp."
-	@echo "N.B. You won't be able to view it unless you put it in" \
-	      "~/Library/Documentation/Help or install it in your application" \
-	      "bundle."
-
-.PHONY: devhelp
-devhelp:
-	$(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(BUILDDIR)/devhelp
-	@echo
-	@echo "Build finished."
-	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/kivy-doc-ja"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/kivy-doc-ja"
-	@echo "# devhelp"
-
-.PHONY: epub
-epub:
-	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
-	@echo
-	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
-
-.PHONY: epub3
-epub3:
-	$(SPHINXBUILD) -b epub3 $(ALLSPHINXOPTS) $(BUILDDIR)/epub3
-	@echo
-	@echo "Build finished. The epub3 file is in $(BUILDDIR)/epub3."
-
-.PHONY: latex
 latex:
-	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
+	$(MKDIR) build$(P)latex build$(P)doctrees
+	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS$(_TESTS)) build/latex
 	@echo
-	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/latex."
-	@echo "Run \`make' in that directory to run these through (pdf)latex" \
-	      "(use \`make latexpdf' here to do that automatically)."
+	@echo "Build finished; the LaTeX files are in build/latex."
+	@echo "Run \`make all-pdf' or \`make all-ps' to" \
+	      "run these through (pdf)latex."
 
-.PHONY: latexpdf
-latexpdf:
-	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
-	@echo "Running LaTeX files through pdflatex..."
-	$(MAKE) -C $(BUILDDIR)/latex all-pdf
-	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
+pdf: latex
+	rm -f build$(P)latex$(P)Kivy.pdf
+	-$(MAKE) -C build$(P)latex all-pdf LATEXOPTS=$(LATEXOPTS$(_TESTS))
 
-.PHONY: latexpdfja
-latexpdfja:
-	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
-	@echo "Running LaTeX files through platex and dvipdfmx..."
-	$(MAKE) -C $(BUILDDIR)/latex all-pdf-ja
-	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
-
-.PHONY: text
-text:
-	$(SPHINXBUILD) -b text $(ALLSPHINXOPTS) $(BUILDDIR)/text
+ifneq ("$(wildcard build$(P)latex$(P)Kivy.pdf)","")
 	@echo
-	@echo "Build finished. The text files are in $(BUILDDIR)/text."
+	@echo "Build finished; the PDF file(s) are in build/latex."
+	@echo "You can safely ignore the errors which might appeared above!"
+else
+	@echo
+	@echo "Build failed; there is no PDF file(s) in build/latex."
+	exit 1
+endif
 
-.PHONY: man
+ps: latex
+	$(MAKE) -C build$(P)latex all-ps
+	@echo
+	@echo "Build finished; the PS files are in build/latex."
+
 man:
-	$(SPHINXBUILD) -b man $(ALLSPHINXOPTS) $(BUILDDIR)/man
+	$(MKDIR) build$(P)man build$(P)doctrees
+	$(SPHINXBUILD) -b man $(ALLSPHINXOPTS$(_TESTS)) build/man
 	@echo
-	@echo "Build finished. The manual pages are in $(BUILDDIR)/man."
+	@echo "Build finished. The manual pages are in build/man."
 
-.PHONY: texinfo
-texinfo:
-	$(SPHINXBUILD) -b texinfo $(ALLSPHINXOPTS) $(BUILDDIR)/texinfo
-	@echo
-	@echo "Build finished. The Texinfo files are in $(BUILDDIR)/texinfo."
-	@echo "Run \`make' in that directory to run these through makeinfo" \
-	      "(use \`make info' here to do that automatically)."
-
-.PHONY: info
-info:
-	$(SPHINXBUILD) -b texinfo $(ALLSPHINXOPTS) $(BUILDDIR)/texinfo
-	@echo "Running Texinfo files through makeinfo..."
-	make -C $(BUILDDIR)/texinfo info
-	@echo "makeinfo finished; the Info files are in $(BUILDDIR)/texinfo."
-
-.PHONY: gettext
-gettext:
-	$(SPHINXBUILD) -b gettext $(I18NSPHINXOPTS) $(BUILDDIR)/locale
-	@echo
-	@echo "Build finished. The message catalogs are in $(BUILDDIR)/locale."
-
-.PHONY: changes
 changes:
-	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) $(BUILDDIR)/changes
+	$(MKDIR) build$(P)changes build$(P)doctrees
+	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS$(_TESTS)) build/changes
 	@echo
-	@echo "The overview file is in $(BUILDDIR)/changes."
+	@echo "The overview file is in build/changes."
 
-.PHONY: linkcheck
 linkcheck:
-	$(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck
+	$(MKDIR) build$(P)linkcheck build$(P)doctrees
+	$(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS$(_TESTS)) build/linkcheck
 	@echo
 	@echo "Link check complete; look for any errors in the above output " \
-	      "or in $(BUILDDIR)/linkcheck/output.txt."
+	      "or in build/linkcheck/output.txt."
 
-.PHONY: doctest
-doctest:
-	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
-	@echo "Testing of doctests in the sources finished, look at the " \
-	      "results in $(BUILDDIR)/doctest/output.txt."
+build-all: html pickle htmlhelp pdf ps gettext
 
-.PHONY: coverage
-coverage:
-	$(SPHINXBUILD) -b coverage $(ALLSPHINXOPTS) $(BUILDDIR)/coverage
-	@echo "Testing of coverage in the sources finished, look at the " \
-	      "results in $(BUILDDIR)/coverage/python.txt."
-
-.PHONY: xml
-xml:
-	$(SPHINXBUILD) -b xml $(ALLSPHINXOPTS) $(BUILDDIR)/xml
-	@echo
-	@echo "Build finished. The XML files are in $(BUILDDIR)/xml."
-
-.PHONY: pseudoxml
-pseudoxml:
-	$(SPHINXBUILD) -b pseudoxml $(ALLSPHINXOPTS) $(BUILDDIR)/pseudoxml
-	@echo
-	@echo "Build finished. The pseudo-XML files are in $(BUILDDIR)/pseudoxml."
-
-.PHONY: dummy
-dummy:
-	$(SPHINXBUILD) -b dummy $(ALLSPHINXOPTS) $(BUILDDIR)/dummy
-	@echo
-	@echo "Build finished. Dummy builder generates no files."
+# TODO: Make test run in non-enduser-build mode 
+test: build-all

@@ -171,10 +171,6 @@ html_last_updated_fmt = '%b %d, %Y'
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'Kivydoc'
 
-locale_dirs = ['locale/']   # path is example but recommended.
-gettext_compact = False
-language = "ja"
-
 
 # Options for LaTeX output
 # ------------------------
@@ -222,13 +218,16 @@ latex_toplevel_sectioning = 'part'
 
 from kivy import setupconfig
 
+# if used in a code-block, the block has to be marked with
+# .. parse-literal::, otherwise it won't be replaced
+# !!! doesn't work for "::", ".. code::" or ".. code-block::"
 replacements = {
     'cython_install': 'Cython==' + setupconfig.CYTHON_MAX,
     'cython_note': (
-        'This version of **Kivy requires at least Cython version {0}**, '
-        'and has been tested through {1}. Later versions may work, '
+        'Kivy {0} **requires at least Cython version {1}**, '
+        'and has been tested through {2}. Later versions may work, '
         'but as they have not been tested there is no guarantee.'
-    ).format(setupconfig.CYTHON_MIN, setupconfig.CYTHON_MAX)
+    ).format(version, setupconfig.CYTHON_MIN, setupconfig.CYTHON_MAX)
 }
 
 if setupconfig.CYTHON_BAD:

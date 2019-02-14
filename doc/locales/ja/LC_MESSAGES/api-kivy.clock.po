@@ -1,0 +1,815 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-15 00:59+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../sources/api-kivy.clock.rst:3
+msgid "Clock object"
+msgstr ""
+
+#: kivy.clock:2 of
+msgid ""
+"The :class:`Clock` object allows you to schedule a function call in the "
+"future; once or repeatedly at specified intervals. You can get the time "
+"elapsed between the scheduling and the calling of the callback via the "
+"`dt` argument::"
+msgstr ""
+
+#: kivy.clock:22 of
+msgid ""
+"If the callback returns False, the schedule will be canceled and won't "
+"repeat."
+msgstr ""
+
+#: kivy.clock:25 of
+msgid ""
+"If you want to schedule a function to call with default arguments, you "
+"can use the `functools.partial "
+"<http://docs.python.org/library/functools.html#functools.partial>`_ "
+"python module::"
+msgstr ""
+
+#: kivy.clock:37 of
+msgid ""
+"Conversely, if you want to schedule a function that doesn't accept the dt"
+" argument, you can use a `lambda "
+"<http://docs.python.org/2/reference/expressions.html#lambda>`_ expression"
+" to write a short function that does accept dt. For Example::"
+msgstr ""
+
+#: kivy.clock:49 of
+msgid ""
+"You cannot unschedule an anonymous function unless you keep a reference "
+"to it. It's better to add \\*args to your function definition so that it "
+"can be called with an arbitrary number of parameters."
+msgstr ""
+
+#: kivy.clock:56 of
+msgid ""
+"The callback is weak-referenced: you are responsible for keeping a "
+"reference to your original object/callback. If you don't keep a "
+"reference, the ClockBase will never execute your callback. For example::"
+msgstr ""
+
+#: kivy.clock:83 of
+msgid "Schedule before frame"
+msgstr ""
+
+#: kivy.clock:87 of
+msgid ""
+"Sometimes you need to schedule a callback BEFORE the next frame. Starting"
+" from 1.0.5, you can use a timeout of -1::"
+msgstr ""
+
+#: kivy.clock:93 of
+msgid ""
+"The Clock will execute all the callbacks with a timeout of -1 before the "
+"next frame even if you add a new callback with -1 from a running "
+"callback. However, :class:`Clock` has an iteration limit for these "
+"callbacks: it defaults to 10."
+msgstr ""
+
+#: kivy.clock:98 of
+msgid ""
+"If you schedule a callback that schedules a callback that schedules a ..."
+" etc more than 10 times, it will leave the loop and send a warning to the"
+" console, then continue after the next frame. This is implemented to "
+"prevent bugs from hanging or crashing the application."
+msgstr ""
+
+#: kivy.clock:103 of
+msgid ""
+"If you need to increase the limit, set the :attr:`max_iteration` "
+"property::"
+msgstr ""
+
+#: kivy.clock:111 of
+msgid "Triggered Events"
+msgstr ""
+
+#: kivy.clock:115 of
+msgid ""
+"A triggered event is a way to defer a callback. It functions exactly like"
+" schedule_once() and schedule_interval() except that it doesn't "
+"immediately schedule the callback. Instead, one schedules the callback "
+"using the :class:`ClockEvent` returned by it. This ensures that you can "
+"call the event multiple times but it won't be scheduled more than once. "
+"This is not the case with :meth:`Clock.schedule_once`::"
+msgstr ""
+
+#: kivy.clock:136 of
+msgid ""
+"In addition, it is more convenient to create and bind to the triggered "
+"event than using :meth:`Clock.schedule_once` in a function::"
+msgstr ""
+
+#: kivy.clock:151 of
+msgid "Even if x and y changes within one frame, the callback is only run once."
+msgstr ""
+
+#: kivy.clock:153 of
+msgid ""
+":meth:`CyClockBase.create_trigger` has a timeout parameter that behaves "
+"exactly like :meth:`CyClockBase.schedule_once`."
+msgstr ""
+
+#: kivy.clock:158 of
+msgid ""
+":meth:`CyClockBase.create_trigger` now has a ``interval`` parameter. If "
+"False, the default, it'll create an event similar to "
+":meth:`CyClockBase.schedule_once`. Otherwise it'll create an event "
+"similar to :meth:`CyClockBase.schedule_interval`."
+msgstr ""
+
+#: kivy.clock:164 of
+msgid "Unscheduling"
+msgstr ""
+
+#: kivy.clock:166 of
+msgid ""
+"An event scheduled with :meth:`CyClockBase.schedule_once`, "
+":meth:`CyClockBase.schedule_interval`, or with "
+":meth:`CyClockBase.create_trigger` and then triggered can be unscheduled "
+"in multiple ways. E.g::"
+msgstr ""
+
+#: kivy.clock:193 of
+msgid ""
+"The best way to unschedule a callback is with :meth:`ClockEvent.cancel`. "
+":meth:`CyClockBase.unschedule` is mainly an alias for that for that "
+"function. However, if the original callback itself is passed to "
+":meth:`CyClockBase.unschedule`, it'll unschedule all instances of that "
+"callback (provided ``all`` is True, the default, other just the first "
+"match is removed)."
+msgstr ""
+
+#: kivy.clock:200 of
+msgid ""
+"Calling :meth:`CyClockBase.unschedule` on the original callback is highly"
+" discouraged because it's significantly slower than when using the event."
+msgstr ""
+
+#: kivy.clock:204 of
+msgid "Threading and Callback Order"
+msgstr ""
+
+#: kivy.clock:206 of
+msgid ""
+"Beginning with 1.10.0, all the events scheduled for the same frame, e.g. "
+"all the events scheduled in the same frame with a ``timeout`` of ``0``, "
+"well be executed in the order they were scheduled."
+msgstr ""
+
+#: kivy.clock:210 of
+msgid ""
+"Also, all the scheduling and canceling methods are fully thread safe and "
+"can be safely used from external threads."
+msgstr ""
+
+#: kivy.clock:213 of
+msgid ""
+"As a a consequence, calling :meth:`CyClockBase.unschedule` with the "
+"original callback is now significantly slower and highly discouraged. "
+"Instead, the returned events should be used to cancel. As a tradeoff, all"
+" the other methods are now significantly faster than before."
+msgstr ""
+
+#: kivy.clock:219 of
+msgid "Advanced Clock Details"
+msgstr ""
+
+#: kivy.clock:221 of
+msgid ""
+"The following section goes into the internal kivy clock details as well "
+"as the various clock options. It is meant only for advanced users."
+msgstr ""
+
+#: kivy.clock:224 of
+msgid ""
+"Fundamentally, the Kivy clock attempts to execute any scheduled callback "
+"rhythmically as determined by the specified fps (frame per second, see "
+"``maxfps`` in :mod:`~kivy.config`). That is, ideally, given e.g. a "
+"desired fps of 30, the clock will execute the callbacks at intervals of 1"
+" / 30 seconds, or every 33.33 ms. All the callbacks in a frame are given "
+"the same timestamp, i.e. the ``dt`` passed to the callback are all the "
+"same and it's the difference in time between the start of this and the "
+"previous frame."
+msgstr ""
+
+#: kivy.clock:232 of
+msgid ""
+"Because of inherent indeterminism, the frames do not actually occur "
+"exactly at intervals of the fps and ``dt`` may be under or over the "
+"desired fps. Also, once the timeout is \"close enough\" to the desired "
+"timeout, as determined internally, Kivy will execute the callback in the "
+"current frame even when the \"actual time\" has not elapsed the "
+"``timeout`` amount."
+msgstr ""
+
+#: kivy.clock:238 of
+msgid ""
+"Kivy offers now, since ``1.10.0``, multiple clocks with different "
+"behaviors."
+msgstr ""
+
+#: kivy.clock:241 of
+msgid "Default Clock"
+msgstr ""
+
+#: kivy.clock:243 of
+msgid ""
+"The default clock (``default``) behaves as described above. When a "
+"callback with a timeout of zero or non-zero is scheduled, they are "
+"executed at the frame that is near the timeout, which is a function of "
+"the fps. So a timeout of zero would still result in a delay of one frame "
+"or about 1 / fps, typically a bit less but sometimes more depending on "
+"the CPU usage of the other events scheduled for that frame."
+msgstr ""
+
+#: kivy.clock:250 of
+msgid ""
+"In a test using a fps of 30, a callback with a timeout of 0, 0.001, and "
+"0.05, resulted in a mean callback delay of 0.02487, 0.02488, and 0.05011 "
+"seconds, respectively. When tested with a fps of 600 the delay for 0.05 "
+"was similar, except the standard deviation was reduced resulting in "
+"overall better accuracy."
+msgstr ""
+
+#: kivy.clock:256 of
+msgid "Interruptible Clock"
+msgstr ""
+
+#: kivy.clock:258 of
+msgid ""
+"The default clock suffers from the quantization problem, as frames occur "
+"only on intervals and any scheduled timeouts will not be able to occur "
+"during an interval. For example, with the timeout of 0.05, while the mean"
+" was 0.05011, its values ranged between 0.02548 - 0.07348 and a standard "
+"deviation of 0.002. Also, there's the minimum timeout of about 0.02487."
+msgstr ""
+
+#: kivy.clock:264 of
+msgid ""
+"The interruptible clock (``interrupt``) will execute timeouts even during"
+" a frame. So a timeout of zero will execute as quickly as possible and "
+"similarly a non-zero timeout will be executed even during the interval."
+msgstr ""
+
+#: kivy.clock:268 of
+msgid ""
+"This clock, and all the clocks described after this have an option, "
+":attr:`ClockBaseInterruptBehavior.interupt_next_only`. When True, any of "
+"the behavior new behavior will only apply to the callbacks with a timeout"
+" of zero. Non-zero timeouts will behave like in the default clock. E.g. "
+"for this clock when True, only zero timeouts will execute during the the "
+"interval."
+msgstr ""
+
+#: kivy.clock:274 of
+msgid ""
+"In a test using a fps of 30, a callback with a timeout of 0, 0.001, and "
+"0.05, resulted in a mean callback delay of 0.00013, 0.00013, and 0.04120 "
+"seconds, respectively when "
+":attr:`ClockBaseInterruptBehavior.interupt_next_only` was False. Also, "
+"compared to the default clock the standard deviation was reduced. When "
+":attr:`ClockBaseInterruptBehavior.interupt_next_only` was True, the "
+"values were 0.00010, 0.02414, and 0.05034, respectively."
+msgstr ""
+
+#: kivy.clock:282 of
+msgid "Free Clock"
+msgstr ""
+
+#: kivy.clock:284 of
+msgid ""
+"The interruptible clock may not be ideal for all cases because all the "
+"events are executed during the intervals and events are not executed "
+"anymore rhythmically as multiples of the fps. For example, there may not "
+"be any benefit for the graphics to update in a sub-interval, so the "
+"additional accuracy wastes CPU."
+msgstr ""
+
+#: kivy.clock:290 of
+msgid ""
+"The Free clock (``free_all``) solves this by having ``Clock.xxx_free`` "
+"versions of all the Clock scheduling methods. By free, we mean the event "
+"is free from the fps because it's not fps limited. E.g. "
+":meth:`CyClockBaseFree.create_trigger_free` corresponds to "
+":meth:`CyClockBase.create_trigger`. Only when an event scheduled using "
+"the ``Clock.xxx_free`` methods is present will the clock interrupt and "
+"execute the events during the interval. So, if no ``free`` event is "
+"present the clock behaves like the ``default`` clock, otherwise it "
+"behaves like the ``interrupt`` clock."
+msgstr ""
+
+#: kivy.clock:300 of
+msgid ""
+"In a test using a fps of 30, a callback with a timeout of 0s, 0.001s, and"
+" 0.05s, resulted in a mean callback delay of 0.00012s, 0.00017s, and "
+"0.04121s seconds, respectively when it was a free event and 0.02403s, "
+"0.02405s, and 0.04829s, respectively when it wasn't."
+msgstr ""
+
+#: kivy.clock:306 of
+msgid "Free Only Clock"
+msgstr ""
+
+#: kivy.clock:308 of
+msgid ""
+"The Free clock executes all events when a free event was scheduled. This "
+"results in normal events also being execute in the middle of the interval"
+" when a free event is scheduled. For example, above, when a free event "
+"was absent, a normal event with a 0.001s timeout was delayed for "
+"0.02405s. However, if a free event happened to be also scheduled, the "
+"normal event was only delayed 0.00014s, which may be undesirable."
+msgstr ""
+
+#: kivy.clock:315 of
+msgid ""
+"The Free only clock (``free_only``) solves it by only executing free "
+"events during the interval and normal events are always executed like "
+"with the default clock. For example, in the presence of a free event, a "
+"normal event with a timeout of 0.001s still had a delay of 0.02406. So "
+"this clock, treats free and normal events independently, with normal "
+"events always being fps limited, but never the free events."
+msgstr ""
+
+#: kivy.clock:323 of
+msgid "Summary"
+msgstr ""
+
+#: kivy.clock:325 of
+msgid ""
+"The kivy clock type to use can be set with the ``kivy_clock`` option the "
+":mod:`~kivy.config`. If ``KIVY_CLOCK`` is present in the environment it "
+"overwrites the config selection. Its possible values are as follows:"
+msgstr ""
+
+#: kivy.clock:329 of
+msgid ""
+"When ``kivy_clock`` is ``default``, the normal clock, :class:`ClockBase`,"
+" which limits callbacks to the maxfps quantization - is used."
+msgstr ""
+
+#: kivy.clock:331 of
+msgid ""
+"When ``kivy_clock`` is ``interrupt``, a interruptible clock, "
+":class:`ClockBaseInterrupt`, which doesn't limit any callbacks to the "
+"maxfps - is used. Callbacks will be executed at any time."
+msgstr ""
+
+#: kivy.clock:334 of
+msgid ""
+"When ``kivy_clock`` is ``free_all``, a interruptible clock, "
+":class:`ClockBaseFreeInterruptAll`, which doesn't limit any callbacks to "
+"the maxfps in the presence of free events, but in their absence it limits"
+" events to the fps quantization interval - is used."
+msgstr ""
+
+#: kivy.clock:338 of
+msgid ""
+"When ``kivy_clock`` is ``free_only``, a interruptible clock, "
+":class:`ClockBaseFreeInterruptAll`, which treats free and normal events "
+"independently; normal events are fps limited while free events are not - "
+"is used."
+msgstr ""
+
+#: kivy.clock.Clock:1 of
+msgid "The kivy Clock instance. See module documentation for details."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`builtins.object`"
+msgstr ""
+
+#: ../../docstring kivy.clock.ClockEvent:1 of
+msgid ""
+"A class that describes a callback scheduled with kivy's :attr:`Clock`. "
+"This class is never created by the user; instead, kivy creates and "
+"returns an instance of this class when scheduling a callback."
+msgstr ""
+
+#: ../../docstring kivy.clock.ClockEvent:5 of
+msgid ""
+"An event can be triggered (scheduled) by calling it. If it's already "
+"scheduled, nothing will happen, otherwise it'll be scheduled. E.g.::"
+msgstr ""
+
+#: ../../docstring kivy.clock.ClockEvent.cancel:1 of
+msgid ""
+"Cancels the callback if it was scheduled to be called. If not scheduled, "
+"nothing happens."
+msgstr ""
+
+#: ../../docstring kivy.clock.ClockEvent.clock:1 of
+msgid "The :class:`CyClockBase` instance associated with the event."
+msgstr ""
+
+#: ../../docstring kivy.clock.ClockEvent.get_callback:1 of
+msgid ""
+"Returns the callback associated with the event. Callbacks get stored with"
+" a indirect ref so that it doesn't keep objects alive. If the callback is"
+" dead, None is returned."
+msgstr ""
+
+#: ../../docstring kivy.clock.ClockEvent.is_triggered:1 of
+msgid ""
+"Returns whether the event is scheduled to have its callback executed by "
+"the kivy thread."
+msgstr ""
+
+#: ../../docstring kivy.clock.ClockEvent.loop:1 of
+msgid "Whether this event repeats at intervals of :attr:`timeout`."
+msgstr ""
+
+#: ../../docstring kivy.clock.ClockEvent.next:1 of
+msgid "The next :class:`ClockEvent` in order they were scheduled."
+msgstr ""
+
+#: ../../docstring kivy.clock.ClockEvent.prev:1 of
+msgid "The previous :class:`ClockEvent` in order they were scheduled."
+msgstr ""
+
+#: ../../docstring kivy.clock.ClockEvent.release:1 of
+msgid "(internal method) Converts the callback into a indirect ref."
+msgstr ""
+
+#: ../../docstring kivy.clock.ClockEvent.tick:1 of
+msgid "(internal method) Processes the event for the kivy thread."
+msgstr ""
+
+#: ../../docstring kivy.clock.ClockEvent.timeout:1 of
+msgid "The duration after scheduling when the callback should be executed."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy._clock.ClockEvent`"
+msgstr ""
+
+#: ../../docstring kivy.clock.FreeClockEvent:1 of
+msgid ""
+"The event returned by the ``Clock.XXX_free`` methods of "
+":class:`CyClockBaseFree`. It stores whether the event was scheduled as a "
+"free event."
+msgstr ""
+
+#: ../../docstring kivy.clock.FreeClockEvent.free:1 of
+msgid "Whether this event was scheduled as a free event."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase:1 of
+msgid "The base clock object with event support."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.clock_resolution:1 of
+msgid ""
+"If the remaining time until the event timeout is less than "
+":attr:`clock_resolution`, the clock will execute the callback even if it "
+"hasn't exactly timed out."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.clock_resolution:4 of
+msgid ""
+"If -1, the default, the resolution will be computed from config's "
+"``maxfps``. Otherwise, the provided value is used. Defaults to -1."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.create_trigger:1
+#: kivy.clock.CyClockBaseFree.create_trigger:1 of
+msgid "Create a Trigger event. Check module documentation for more information."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.create_trigger
+#: kivy.clock.CyClockBase.schedule_interval
+#: kivy.clock.CyClockBase.schedule_once
+#: kivy.clock.CyClockBaseFree.create_trigger
+#: kivy.clock.CyClockBaseFree.schedule_interval
+#: kivy.clock.CyClockBaseFree.schedule_once of
+msgid "Returns"
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.create_trigger:4
+#: kivy.clock.CyClockBaseFree.create_trigger:4 of
+msgid ""
+"A :class:`ClockEvent` instance. To schedule the callback of this "
+"instance, you can call it."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.create_trigger:13
+#: kivy.clock.CyClockBaseFree.create_trigger:13 of
+msgid ""
+"``interval`` has been added. If True, it create a event that is called "
+"every <timeout> seconds similar to :meth:`schedule_interval`. Defaults to"
+" False."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.get_events:1 of
+msgid "Returns the list of :class:`ClockEvent` instances currently scheduled."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.get_min_timeout:1 of
+msgid ""
+"Returns the remaining time since the start of the current frame for the "
+"event with the smallest timeout."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.get_resolution:1 of
+msgid ""
+"Returns the minimum resolution the clock has. It's a function of "
+":attr:`clock_resolution` and ``maxfps`` provided at the config."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.max_iteration:1 of
+msgid ""
+"The maximum number of callback iterations at the end of the frame, before"
+" the next frame. If more iterations occur, a warning is issued."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.on_schedule:1 of
+msgid ""
+"Function that is called internally every time an event is triggered for "
+"this clock. It takes the event as a parameter."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.schedule_del_safe:1 of
+msgid "Schedule a callback. Might be called from GC and cannot be cancelled."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.schedule_del_safe:3 of
+msgid ""
+"It's unsafe to call various kinds of code, such as code with a lock, from"
+" a `__del__` or `__dealloc__` methods. Since Kivy's Clock uses a lock, "
+"it's generally unsafe to call from these methods. Instead, use this "
+"method, which is thread safe and `__del__` or `__dealloc__` safe, to "
+"schedule the callback in the kivy thread. It'll be executed in order "
+"after the normal events are processed."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.schedule_del_safe:10 of
+msgid "The callback takes no parameters and cannot be canceled."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.schedule_interval:1
+#: kivy.clock.CyClockBaseFree.schedule_interval:1 of
+msgid "Schedule an event to be called every <timeout> seconds."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.schedule_interval:3
+#: kivy.clock.CyClockBase.schedule_once:4
+#: kivy.clock.CyClockBaseFree.schedule_interval:3
+#: kivy.clock.CyClockBaseFree.schedule_once:4 of
+msgid ""
+"A :class:`ClockEvent` instance. As opposed to :meth:`create_trigger` "
+"which only creates the trigger event, this method also schedules it."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.schedule_once:1
+#: kivy.clock.CyClockBaseFree.schedule_once:1 of
+msgid ""
+"Schedule an event in <timeout> seconds. If <timeout> is unspecified or 0,"
+" the callback will be called after the next frame is rendered."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.schedule_once:10
+#: kivy.clock.CyClockBaseFree.schedule_once:10 of
+msgid ""
+"If the timeout is -1, the callback will be called before the next frame "
+"(at :meth:`tick_draw`)."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.unschedule:1 of
+msgid "Remove a previously scheduled event."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.unschedule of
+msgid "parameters"
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.unschedule:16 of
+msgid "`callback`: :class:`ClockEvent` or a callable."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.unschedule:6 of
+msgid ""
+"If it's a :class:`ClockEvent` instance, then the callback associated with"
+" this event will be canceled if it is scheduled."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.unschedule:10 of
+msgid ""
+"If it's a callable, then the callable will be unscheduled if it was "
+"scheduled."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.unschedule:15 of
+msgid ""
+"Passing the callback function rather than the returned "
+":class:`ClockEvent` will result in a significantly slower unscheduling."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.unschedule:21 of
+msgid "`all`: bool"
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.unschedule:19 of
+msgid ""
+"If True and if `callback` is a callable, all instances of this callable "
+"will be unscheduled (i.e. if this callable was scheduled multiple times)."
+" Defaults to `True`."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBase.unschedule:23 of
+msgid "The all parameter was added. Before, it behaved as if `all` was `True`."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy._clock.CyClockBase`"
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBaseFree:1 of
+msgid ""
+"A clock class that supports scheduling free events in addition to normal "
+"events."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBaseFree:4 of
+msgid ""
+"Each of the :meth:`~CyClockBase.create_trigger`, "
+":meth:`~CyClockBase.schedule_once`, and "
+":meth:`~CyClockBase.schedule_interval` methods, which create a normal "
+"event, have a corresponding method for creating a free event."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBaseFree.create_trigger_free:1 of
+msgid ""
+"Similar to :meth:`~CyClockBase.create_trigger`, but instead creates a "
+"free event."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBaseFree.get_min_free_timeout:1 of
+msgid ""
+"Returns the remaining time since the start of the current frame for the "
+"*free* event with the smallest timeout."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBaseFree.schedule_interval_free:1 of
+msgid ""
+"Similar to :meth:`~CyClockBase.schedule_interval`, but instead creates a "
+"free event."
+msgstr ""
+
+#: ../../docstring kivy.clock.CyClockBaseFree.schedule_once_free:1 of
+msgid ""
+"Similar to :meth:`~CyClockBase.schedule_once`, but instead creates a free"
+" event."
+msgstr ""
+
+#: kivy.clock.ClockBaseBehavior:1 of
+msgid "The base of the kivy clock."
+msgstr ""
+
+#: kivy.clock.ClockBaseBehavior.MIN_SLEEP:1 of
+msgid ""
+"The minimum time to sleep. If the remaining time is less than this, the "
+"event loop will continuo"
+msgstr ""
+
+#: kivy.clock.ClockBaseBehavior.frames:1 of
+msgid ""
+"Number of internal frames (not necessarily drawed) from the start of the "
+"clock."
+msgstr ""
+
+#: kivy.clock.ClockBaseBehavior.frames_displayed:1 of
+msgid "Number of displayed frames from the start of the clock."
+msgstr ""
+
+#: kivy.clock.ClockBaseBehavior.frametime:1 of
+msgid "Time spent between the last frame and the current frame (in seconds)."
+msgstr ""
+
+#: kivy.clock.ClockBaseBehavior.get_boottime:1 of
+msgid "Get the time in seconds from the application start."
+msgstr ""
+
+#: kivy.clock.ClockBaseBehavior.get_fps:1 of
+msgid "Get the current average FPS calculated by the clock."
+msgstr ""
+
+#: kivy.clock.ClockBaseBehavior.get_rfps:1 of
+msgid ""
+"Get the current \"real\" FPS calculated by the clock. This counter "
+"reflects the real framerate displayed on the screen."
+msgstr ""
+
+#: kivy.clock.ClockBaseBehavior.get_rfps:4 of
+msgid ""
+"In contrast to get_fps(), this function returns a counter of the number "
+"of frames, not the average of frames per second."
+msgstr ""
+
+#: kivy.clock.ClockBaseBehavior.get_time:1 of
+msgid "Get the last tick made by the clock."
+msgstr ""
+
+#: kivy.clock.ClockBaseBehavior.idle:1
+#: kivy.clock.ClockBaseFreeInterruptOnly.idle:1
+#: kivy.clock.ClockBaseInterruptBehavior.idle:1 of
+msgid "(internal) waits here until the next frame."
+msgstr ""
+
+#: kivy.clock.ClockBaseBehavior.tick:1 of
+msgid ""
+"Advance the clock to the next step. Must be called every frame. The "
+"default clock has a tick() function called by the core Kivy framework."
+msgstr ""
+
+#: kivy.clock.ClockBaseBehavior.tick_draw:1 of
+msgid "Tick the drawing counter."
+msgstr ""
+
+#: kivy.clock.ClockBase.usleep:1 kivy.clock.ClockBaseBehavior.usleep:1
+#: kivy.clock.ClockBaseInterruptBehavior.usleep:1 of
+msgid "Sleeps for the number of microseconds."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.clock.ClockBaseBehavior`"
+msgstr ""
+
+#: kivy.clock.ClockBaseInterruptBehavior:1 of
+msgid "A kivy clock which can be interrupted during a frame to execute events."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.clock.ClockBaseInterruptBehavior`"
+msgstr ""
+
+#: kivy.clock.ClockBaseInterruptFreeBehavior:1 of
+msgid ""
+"A base class for the clock that interrupts the sleep interval for free "
+"events."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid ""
+"Bases: :class:`kivy.clock.ClockBaseBehavior`, "
+":class:`kivy._clock.CyClockBase`"
+msgstr ""
+
+#: kivy.clock.ClockBase:1 of
+msgid "The ``default`` kivy clock. See module for details."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid ""
+"Bases: :class:`kivy.clock.ClockBaseInterruptBehavior`, "
+":class:`kivy._clock.CyClockBase`"
+msgstr ""
+
+#: kivy.clock.ClockBaseInterrupt:1 of
+msgid "The ``interrupt`` kivy clock. See module for details."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid ""
+"Bases: :class:`kivy.clock.ClockBaseInterruptFreeBehavior`, "
+":class:`kivy._clock.CyClockBaseFree`"
+msgstr ""
+
+#: kivy.clock.ClockBaseFreeInterruptAll:1 of
+msgid "The ``free_all`` kivy clock. See module for details."
+msgstr ""
+
+#: kivy.clock.ClockBaseFreeInterruptOnly:1 of
+msgid "The ``free_only`` kivy clock. See module for details."
+msgstr ""
+
+#: kivy.clock.mainthread:1 of
+msgid ""
+"Decorator that will schedule the call of the function for the next "
+"available frame in the mainthread. It can be useful when you use "
+":class:`~kivy.network.urlrequest.UrlRequest` or when you do Thread "
+"programming: you cannot do any OpenGL-related work in a thread."
+msgstr ""
+
+#: kivy.clock.mainthread:6 of
+msgid ""
+"Please note that this method will return directly and no result can be "
+"returned::"
+msgstr ""
+

@@ -30,8 +30,10 @@ class ImageLoaderPygame(ImageLoaderBase):
                 'tif', 'lbm', 'pbm', 'ppm', 'xpm')
 
     @staticmethod
-    def can_save():
-        return True
+    def can_save(fmt, is_bytesio):
+        if is_bytesio:
+            return False
+        return fmt in ('png', 'jpg')
 
     @staticmethod
     def can_load_memory():
@@ -65,7 +67,7 @@ class ImageLoaderPygame(ImageLoaderBase):
             raise
 
         fmt = ''
-        if im.get_bytesize() == 3:
+        if im.get_bytesize() == 3 and not im.get_colorkey():
             fmt = 'rgb'
         elif im.get_bytesize() == 4:
             fmt = 'rgba'
@@ -94,9 +96,10 @@ class ImageLoaderPygame(ImageLoaderBase):
                 fmt, data, source=filename)]
 
     @staticmethod
-    def save(filename, width, height, fmt, pixels, flipped):
+    def save(filename, width, height, pixelfmt, pixels, flipped,
+             imagefmt=None):
         surface = pygame.image.fromstring(
-            pixels, (width, height), fmt.upper(), flipped)
+            pixels, (width, height), pixelfmt.upper(), flipped)
         pygame.image.save(surface, filename)
         return True
 

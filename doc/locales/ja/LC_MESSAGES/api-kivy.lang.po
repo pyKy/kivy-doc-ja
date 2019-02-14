@@ -1,0 +1,949 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-15 00:59+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../sources/api-kivy.lang.rst:3
+msgid "Kivy Language"
+msgstr ""
+
+#: kivy.lang:2 of
+msgid ""
+"The Kivy language is a language dedicated to describing user interface "
+"and interactions. You could compare this language to Qt's QML "
+"(http://qt.nokia.com), but we included new concepts such as rule "
+"definitions (which are somewhat akin to what you may know from CSS), "
+"templating and so on."
+msgstr ""
+
+#: kivy.lang:9 of
+msgid ""
+"The Builder doesn't execute canvas expressions in realtime anymore. It "
+"will pack all the expressions that need to be executed first and execute "
+"them after dispatching input, just before drawing the frame. If you want "
+"to force the execution of canvas drawing, just call :meth:`Builder.sync "
+"<BuilderBase.sync>`."
+msgstr ""
+
+#: kivy.lang:15 of
+msgid ""
+"An experimental profiling tool for the kv lang is also included. You can "
+"activate it by setting the environment variable `KIVY_PROFILE_LANG=1`. It"
+" will then generate an html file named `builder_stats.html`."
+msgstr ""
+
+#: kivy.lang:20 of
+msgid "Overview"
+msgstr ""
+
+#: kivy.lang:22 of
+msgid "The language consists of several constructs that you can use:"
+msgstr ""
+
+#: kivy.lang:32 of
+msgid "Rules"
+msgstr ""
+
+#: kivy.lang:25 of
+msgid ""
+"A rule is similar to a CSS rule. A rule applies to specific widgets (or "
+"classes thereof) in your widget tree and modifies them in a certain way. "
+"You can use rules to specify interactive behaviour or use them to add "
+"graphical representations of the widgets they apply to. You can target a "
+"specific class of widgets (similar to the CSS concept of a *class*) by "
+"using the ``cls`` attribute (e.g. ``cls=MyTestWidget``)."
+msgstr ""
+
+#: kivy.lang:36 of
+msgid "A Root Widget"
+msgstr ""
+
+#: kivy.lang:35 of
+msgid ""
+"You can use the language to create your entire user interface. A kv file "
+"must contain only one root widget at most."
+msgstr ""
+
+#: kivy.lang:41 of
+msgid "Dynamic Classes"
+msgstr ""
+
+#: kivy.lang:39 of
+msgid ""
+"*(introduced in version 1.7.0)* Dynamic classes let you create new "
+"widgets and rules on-the-fly, without any Python declaration."
+msgstr ""
+
+#: kivy.lang:48 of
+msgid "Templates (deprecated)"
+msgstr ""
+
+#: kivy.lang:44 of
+msgid ""
+"*(introduced in version 1.0.5, deprecated from version 1.7.0)* Templates "
+"were used to populate parts of an application, such as styling the "
+"content of a list (e.g. icon on the left, text on the right). They are "
+"now deprecated by dynamic classes."
+msgstr ""
+
+#: kivy.lang:51 of
+msgid "Syntax of a kv File"
+msgstr ""
+
+#: kivy.lang:55 of
+msgid "A Kivy language file must have ``.kv`` as filename extension."
+msgstr ""
+
+#: kivy.lang:57 of
+msgid ""
+"The content of the file should always start with the Kivy header, where "
+"`version` must be replaced with the Kivy language version you're using. "
+"For now, use 1.0::"
+msgstr ""
+
+#: kivy.lang:65 of
+msgid ""
+"The `content` can contain rule definitions, a root widget, dynamic class "
+"definitions and templates::"
+msgstr ""
+
+#: kivy.lang:88 of
+msgid ""
+"Regardless of whether it's a rule, root widget, dynamic class or template"
+" you're defining, the definition should look like this::"
+msgstr ""
+
+#: kivy.lang:105 of
+msgid ""
+"Here `prop1` and `prop2` are the properties of `ClassName` and `prop3` is"
+" the property of `AnotherClass`. If the widget doesn't have a property "
+"with the given name, an :class:`~kivy.properties.ObjectProperty` will be "
+"automatically created and added to the widget."
+msgstr ""
+
+#: kivy.lang:110 of
+msgid ""
+"`AnotherClass` will be created and added as a child of the `ClassName` "
+"instance."
+msgstr ""
+
+#: kivy.lang:113 of
+msgid ""
+"The indentation is important and must be consistent. The spacing must be "
+"a multiple of the number of spaces used on the first indented line. "
+"Spaces are encouraged: mixing tabs and spaces is not recommended."
+msgstr ""
+
+#: kivy.lang:116 of
+msgid "The value of a property must be given on a single line (for now at least)."
+msgstr ""
+
+#: kivy.lang:117 of
+msgid ""
+"The `canvas` property is special: you can put graphics instructions in it"
+" to create a graphical representation of the current class."
+msgstr ""
+
+#: kivy.lang:121 of
+msgid "Here is a simple example of a kv file that contains a root widget::"
+msgstr ""
+
+#: kivy.lang:131 of
+msgid ""
+"The indentation is not limited to 4 spaces anymore. The spacing must be a"
+" multiple of the number of spaces used on the first indented line."
+msgstr ""
+
+#: kivy.lang:134 of
+msgid ""
+"Both the :meth:`~BuilderBase.load_file` and the "
+":meth:`~BuilderBase.load_string` methods return the root widget defined "
+"in your kv file/string. They will also add any class and template "
+"definitions to the :class:`~kivy.factory.Factory` for later usage."
+msgstr ""
+
+#: kivy.lang:141 of
+msgid "Value Expressions, on_property Expressions, ids, and Reserved Keywords"
+msgstr ""
+
+#: kivy.lang:143 of
+msgid ""
+"When you specify a property's value, the value is evaluated as a Python "
+"expression. This expression can be static or dynamic, which means that "
+"the value can use the values of other properties using reserved keywords."
+msgstr ""
+
+#: kivy.lang:151 of
+msgid "self"
+msgstr ""
+
+#: kivy.lang:148 of
+msgid "The keyword self references the \"current widget instance\"::"
+msgstr ""
+
+#: kivy.lang:160 of
+msgid "root"
+msgstr ""
+
+#: kivy.lang:154 of
+msgid ""
+"This keyword is available only in rule definitions and represents the "
+"root widget of the rule (the first instance of the rule)::"
+msgstr ""
+
+#: kivy.lang:167 of
+msgid "app"
+msgstr ""
+
+#: kivy.lang:163 of
+msgid ""
+"This keyword always refers to your app instance. It's equivalent to a "
+"call to :meth:`kivy.app.App.get_running_app` in Python. ::"
+msgstr ""
+
+#: kivy.lang:174 of
+msgid "args"
+msgstr ""
+
+#: kivy.lang:170 of
+msgid ""
+"This keyword is available in on_<action> callbacks. It refers to the "
+"arguments passed to the callback. ::"
+msgstr ""
+
+#: kivy.lang:179 of
+msgid "ids"
+msgstr ""
+
+#: kivy.lang:181 of
+msgid "Class definitions may contain ids which can be used as a keywords:::"
+msgstr ""
+
+#: kivy.lang:189 of
+msgid ""
+"Please note that the `id` will not be available in the widget instance: "
+"it is used exclusively for external references. `id` is a weakref to the "
+"widget, and not the widget itself. The widget itself can be accessed with"
+" `<id>.__self__` (`btn1.__self__` in this case)."
+msgstr ""
+
+#: kivy.lang:194 of
+msgid ""
+"When the kv file is processed, weakrefs to all the widgets tagged with "
+"ids are added to the root widget's `ids` dictionary. In other words, "
+"following on from the example above, the buttons state could also be "
+"accessed as follows:"
+msgstr ""
+
+#: kivy.lang:206 of
+msgid ""
+"Note that the outermost widget applies the kv rules to all its inner "
+"widgets before any other rules are applied. This means if an inner widget"
+" contains ids, these ids may not be available during the inner widget's "
+"`__init__` function."
+msgstr ""
+
+#: kivy.lang:211 of
+msgid "Valid expressons"
+msgstr ""
+
+#: kivy.lang:213 of
+msgid ""
+"There are two places that accept python statements in a kv file: after a "
+"property, which assigns to the property the result of the expression "
+"(such as the text of a button as shown above) and after a on_property, "
+"which executes the statement when the property is updated (such as "
+"on_state)."
+msgstr ""
+
+#: kivy.lang:218 of
+msgid ""
+"In the former case, the `expression "
+"<http://docs.python.org/2/reference/expressions.html>`_ can only span a "
+"single line, cannot be extended to multiple lines using newline escaping,"
+" and must return a value. An example of a valid expression is ``text: "
+"self.state and ('up' if self.state == 'normal' else 'down')``."
+msgstr ""
+
+#: kivy.lang:224 of
+msgid ""
+"In the latter case, multiple single line statements are valid, including "
+"those that escape their newline, as long as they don't add an indentation"
+" level."
+msgstr ""
+
+#: kivy.lang:228 of
+msgid "Examples of valid statements are:"
+msgstr ""
+
+#: kivy.lang:242 of
+msgid "An example of a invalid statement:"
+msgstr ""
+
+#: kivy.lang:251 of
+msgid "Relation Between Values and Properties"
+msgstr ""
+
+#: kivy.lang:253 of
+msgid ""
+"When you use the Kivy language, you might notice that we do some work "
+"behind the scenes to automatically make things work properly. You should "
+"know that :doc:`api-kivy.properties` implement the `Observer Design "
+"Pattern <http://en.wikipedia.org/wiki/Observer_pattern>`_. That means "
+"that you can bind your own function to be called when the value of a "
+"property changes (i.e. you passively `observe` the property for potential"
+" changes)."
+msgstr ""
+
+#: kivy.lang:261 of
+msgid ""
+"The Kivy language detects properties in your `value` expression and will "
+"create create callbacks to automatically update the property via your "
+"expression when changes occur."
+msgstr ""
+
+#: kivy.lang:265 of
+msgid "Here's a simple example that demonstrates this behaviour::"
+msgstr ""
+
+#: kivy.lang:270 of
+msgid ""
+"In this example, the parser detects that `self.state` is a dynamic value "
+"(a property). The :attr:`~kivy.uix.button.Button.state` property of the "
+"button can change at any moment (when the user touches it). We now want "
+"this button to display its own state as text, even as the state changes. "
+"To do this, we use the state property of the Button and use it in the "
+"value expression for the button's `text` property, which controls what "
+"text is displayed on the button (We also convert the state to a string "
+"representation). Now, whenever the button state changes, the text "
+"property will be updated automatically."
+msgstr ""
+
+#: kivy.lang:280 of
+msgid ""
+"Remember: The value is a python expression! That means that you can do "
+"something more interesting like::"
+msgstr ""
+
+#: kivy.lang:286 of
+msgid ""
+"The Button text changes with the state of the button. By default, the "
+"button text will be 'Plop world', but when the button is being pressed, "
+"the text will change to 'Release me!'."
+msgstr ""
+
+#: kivy.lang:290 of
+msgid ""
+"More precisely, the kivy language parser detects all substrings of the "
+"form `X.a.b` where `X` is `self` or `root` or `app` or a known id, and "
+"`a` and `b` are properties: it then adds the appropriate dependencies to "
+"cause the the constraint to be reevaluated whenever something changes. "
+"For example, this works exactly as expected::"
+msgstr ""
+
+#: kivy.lang:299 of
+msgid ""
+"However, due to limitations in the parser which hopefully may be lifted "
+"in the future, the following doesn't work::"
+msgstr ""
+
+#: kivy.lang:305 of
+msgid ""
+"indeed the `.e.f` part is not recognized because it doesn't follow the "
+"expected pattern, and so, does not result in an appropriate dependency "
+"being setup. Instead, an intermediate property should be introduced to "
+"allow the following constraint::"
+msgstr ""
+
+#: kivy.lang:316 of
+msgid "Graphical Instructions"
+msgstr ""
+
+#: kivy.lang:318 of
+msgid ""
+"The graphical instructions are a special part of the Kivy language. They "
+"are handled by the 'canvas' property definition::"
+msgstr ""
+
+#: kivy.lang:329 of
+msgid ""
+"All the classes added inside the canvas property must be derived from the"
+" :class:`~kivy.graphics.Instruction` class. You cannot put any Widget "
+"class inside the canvas property (as that would not make sense because a "
+"widget is not a graphics instruction)."
+msgstr ""
+
+#: kivy.lang:334 of
+msgid ""
+"If you want to do theming, you'll have the same question as in CSS: which"
+" rules have been executed first? In our case, the rules are executed in "
+"processing order (i.e. top-down)."
+msgstr ""
+
+#: kivy.lang:338 of
+msgid ""
+"If you want to change how Buttons are rendered, you can create your own "
+"kv file and add something like this::"
+msgstr ""
+
+#: kivy.lang:353 of
+msgid ""
+"This will result in buttons having a red background with the label in the"
+" bottom left, in addition to all the preceding rules. You can clear all "
+"the previous instructions by using the `Clear` command::"
+msgstr ""
+
+#: kivy.lang:370 of
+msgid ""
+"Then, only your rules that follow the `Clear` command will be taken into "
+"consideration."
+msgstr ""
+
+#: kivy.lang:376 of
+msgid "Dynamic classes"
+msgstr ""
+
+#: kivy.lang:378 of
+msgid ""
+"Dynamic classes allow you to create new widgets on-the-fly, without any "
+"python declaration in the first place. The syntax of the dynamic classes "
+"is similar to the Rules, but you need to specify the base classes you "
+"want to subclass."
+msgstr ""
+
+#: kivy.lang:383 of
+msgid "The syntax looks like:"
+msgstr ""
+
+#: kivy.lang:395 of
+msgid ""
+"The `@` character is used to separate your class name from the classes "
+"you want to subclass. The Python equivalent would have been:"
+msgstr ""
+
+#: kivy.lang:408 of
+msgid ""
+"Any new properties, usually added in python code, should be declared "
+"first. If the property doesn't exist in the dynamic class, it will be "
+"automatically created as an :class:`~kivy.properties.ObjectProperty` (pre"
+" 1.8.0) or as an appropriate typed property (from version 1.8.0)."
+msgstr ""
+
+#: kivy.lang:416 of
+msgid ""
+"If the property value is an expression that can be evaluated right away "
+"(no external binding), then the value will be used as default value of "
+"the property, and the type of the value will be used for the "
+"specialization of the Property class. In other terms: if you declare "
+"`hello: \"world\"`, a new :class:`~kivy.properties.StringProperty` will "
+"be instantiated, with the default value `\"world\"`. Lists, tuples, "
+"dictionaries and strings are supported."
+msgstr ""
+
+#: kivy.lang:424 of
+msgid ""
+"Let's illustrate the usage of these dynamic classes with an "
+"implementation of a basic Image button. We could derive our classes from "
+"the Button and just add a property for the image filename:"
+msgstr ""
+
+#: kivy.lang:448 of
+msgid "In Python, you can create an instance of the dynamic class as follows:"
+msgstr ""
+
+#: kivy.lang:457 of
+msgid ""
+"Using dynamic classes, a child class can be declared before it's parent. "
+"This however, leads to the unintuitive situation where the parent "
+"properties/methods override those of the child. Be careful if you choose "
+"to do this."
+msgstr ""
+
+#: kivy.lang:465 of
+msgid "Templates"
+msgstr ""
+
+#: kivy.lang:469 of
+msgid "Template usage is now deprecated. Please use Dynamic classes instead."
+msgstr ""
+
+#: kivy.lang:472 of
+msgid "Syntax of templates"
+msgstr ""
+
+#: kivy.lang:474 of
+msgid "Using a template in Kivy requires 2 things :"
+msgstr ""
+
+#: kivy.lang:476 of
+msgid "a context to pass for the context (will be ctx inside template)."
+msgstr ""
+
+#: kivy.lang:477 of
+msgid "a kv definition of the template."
+msgstr ""
+
+#: kivy.lang:479 of
+msgid "Syntax of a template:"
+msgstr ""
+
+#: kivy.lang:491 of
+msgid ""
+"For example, for a list, you'll need to create a entry with a image on "
+"the left, and a label on the right. You can create a template for making "
+"that definition easier to use. So, we'll create a template that uses 2 "
+"entries in the context: an image filename and a title:"
+msgstr ""
+
+#: kivy.lang:505 of
+msgid "Then in Python, you can instantiate the template using:"
+msgstr ""
+
+#: kivy.lang:525 of
+msgid "Template example"
+msgstr ""
+
+#: kivy.lang:527 of
+msgid ""
+"Most of time, when you are creating a screen in the kv lang, you use a "
+"lot of redefinitions. In our example, we'll create a Toolbar, based on a "
+"BoxLayout, and put in a few :class:`~kivy.uix.image.Image` widgets that "
+"will react to the *on_touch_down* event."
+msgstr ""
+
+#: kivy.lang:554 of
+msgid ""
+"We can see that the size and size_hint attribute are exactly the same. "
+"More than that, the callback in on_touch_down and the image are changing."
+" These can be the variable part of the template that we can put into a "
+"context. Let's try to create a template for the Image:"
+msgstr ""
+
+#: kivy.lang:571 of
+msgid "The template can be used directly in the MyToolbar rule:"
+msgstr ""
+
+#: kivy.lang:587 of
+msgid "That's all :)"
+msgstr ""
+
+#: kivy.lang:591 of
+msgid "Template limitations"
+msgstr ""
+
+#: kivy.lang:593 of
+msgid "When you are creating a context:"
+msgstr ""
+
+#: kivy.lang:595 of
+msgid "you cannot use references other than \"root\":"
+msgstr ""
+
+#: kivy.lang:607 of
+msgid "not all of the dynamic parts will be understood:"
+msgstr ""
+
+#: kivy.lang:617 of
+msgid ""
+"Template definitions also replace any similarly named definitions in "
+"their entirety and thus do not support inheritance."
+msgstr ""
+
+#: kivy.lang:623 of
+msgid "Redefining a widget's style"
+msgstr ""
+
+#: kivy.lang:625 of
+msgid ""
+"Sometimes we would like to inherit from a widget in order to use its "
+"Python properties without also using its .kv defined style. For example, "
+"we would like to inherit from a Label, but we would also like to define "
+"our own canvas instructions instead of automatically using the canvas "
+"instructions inherited from the Label. We can achieve this by prepending "
+"a dash (-) before the class name in the .kv style definition."
+msgstr ""
+
+#: kivy.lang:632 kivy.lang:665 of
+msgid "In myapp.py:"
+msgstr ""
+
+#: kivy.lang:639 kivy.lang:672 of
+msgid "and in my.kv:"
+msgstr ""
+
+#: kivy.lang:650 of
+msgid ""
+"MyWidget will now have a Color and Rectangle instruction in its canvas "
+"without any of the instructions inherited from the Label."
+msgstr ""
+
+#: kivy.lang:654 of
+msgid "Redefining a widget's property style"
+msgstr ""
+
+#: kivy.lang:656 of
+msgid ""
+"Similar to :ref:`redefining style <redefining-style>`, sometimes we would"
+" like to inherit from a widget, keep all its KV defined styles, except "
+"for the style applied to a specific property. For example, we would like "
+"to inherit from a :class:`~kivy.uix.button.Button`, but we would also "
+"like to set our own `state_image`, rather then relying on the "
+"`background_normal` and `background_down` values. We can achieve this by "
+"prepending a dash (-) before the `state_image` property name in the .kv "
+"style definition."
+msgstr ""
+
+#: kivy.lang:679 of
+msgid ""
+"MyWidget will now have a `state_image` background set only by "
+"`new_background`, and not by any previous styles that may have set "
+"`state_image`."
+msgstr ""
+
+#: kivy.lang:684 of
+msgid ""
+"Although the previous rules are cleared, they are still applied during "
+"widget construction and are only removed when the new rule with the dash "
+"is reached. This means that initially, previous rules could be used to "
+"set the property."
+msgstr ""
+
+#: kivy.lang:690 of
+msgid "Order of kwargs and KV rule application"
+msgstr ""
+
+#: kivy.lang:692 of
+msgid ""
+"Properties can be initialized in KV as well as in python. For example, in"
+" KV:"
+msgstr ""
+
+#: kivy.lang:701 of
+msgid ""
+"Then `MyRule()` would initialize all three kivy properties to the given "
+"KV values. Separately in python, if the properties already exist as kivy "
+"properties one can do for example `MyRule(line='Bye', side=55)`."
+msgstr ""
+
+#: kivy.lang:705 of
+msgid ""
+"However, what will be the final values of the properties when "
+"`MyRule(text='Bye', order=55)` is executed? The quick rule is that python"
+" initialization is stronger than KV initialization only for constant "
+"rules."
+msgstr ""
+
+#: kivy.lang:709 of
+msgid ""
+"Specifically, the `kwargs` provided to the python initializer are always "
+"applied first. So in the above example, `text` is set to `'Bye'` and "
+"`order` is set to `55`. Then, all the KV rules are applied, except those "
+"constant rules that overwrite a python initializer provided value."
+msgstr ""
+
+#: kivy.lang:714 of
+msgid ""
+"That is, the KV rules that do not creates bindings such as `text: "
+"'Hello'` and `ramp: 45.`, if a value for that property has been provided "
+"in python, then that rule will not be applied."
+msgstr ""
+
+#: kivy.lang:718 of
+msgid ""
+"So in the `MyRule(text='Bye', order=55)` example, `text` will be `'Bye'`,"
+" `ramp` will be `45.`, and `order`, which creates a binding, will first "
+"be set to `55`, but then when KV rules are applied will end up being "
+"whatever `self.x + 10` is."
+msgstr ""
+
+#: kivy.lang:725 of
+msgid ""
+"Before, KV rules always overwrote the python values, now, python values "
+"are not overwritten by constant rules."
+msgstr ""
+
+#: kivy.lang:730 of
+msgid "Lang Directives"
+msgstr ""
+
+#: kivy.lang:732 of
+msgid ""
+"You can use directives to add declarative commands, such as imports or "
+"constant definitions, to the lang files. Directives are added as comments"
+" in the following format:"
+msgstr ""
+
+#: kivy.lang:741 of
+msgid "import <package>"
+msgstr ""
+
+#: kivy.lang:745 kivy.lang:787 kivy.lang:811 of
+msgid "Syntax:"
+msgstr ""
+
+#: kivy.lang:751 of
+msgid "You can import a package by writing:"
+msgstr ""
+
+#: kivy.lang:761 of
+msgid "Or more complex:"
+msgstr ""
+
+#: kivy.lang:774 of
+msgid "You can directly import classes from a module:"
+msgstr ""
+
+#: kivy.lang:783 of
+msgid "set <key> <expr>"
+msgstr ""
+
+#: kivy.lang:793 of
+msgid "Set a key that will be available anywhere in the kv. For example:"
+msgstr ""
+
+#: kivy.lang:807 of
+msgid "include <file>"
+msgstr ""
+
+#: kivy.lang:817 of
+msgid ""
+"Includes an external kivy file. This allows you to split complex widgets "
+"into their own files. If the include is forced, the file will first be "
+"unloaded and then reloaded again. For example:"
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.event.ObjectWithUid`"
+msgstr ""
+
+#: ../../docstring kivy.lang.Observable:1 of
+msgid ""
+":class:`Observable` is a stub class defining the methods required for "
+"binding. :class:`EventDispatcher` is (the) one example of a class that "
+"implements the binding interface. See :class:`EventDispatcher` for "
+"details."
+msgstr ""
+
+#: ../../docstring kivy.lang.Observable.fbind:1 of
+msgid "See :meth:`EventDispatcher.fbind`."
+msgstr ""
+
+#: ../../docstring kivy.lang.Observable.fbind:5 of
+msgid ""
+"To keep backward compatibility with derived classes which may have "
+"inherited from :class:`Observable` before, the :meth:`fbind` method was "
+"added. The default implementation of :meth:`fbind` is to create a partial"
+" function that it passes to bind while saving the uid and largs/kwargs. "
+"However, :meth:`funbind` (and :meth:`unbind_uid`) are fairly inefficient "
+"since we have to first lookup this partial function using the "
+"largs/kwargs or uid and then call :meth:`unbind` on the returned "
+"function. It is recommended to overwrite these methods in derived classes"
+" to bind directly for better performance."
+msgstr ""
+
+#: ../../docstring kivy.lang.Observable.fbind:17 of
+msgid ""
+"Similarly to :meth:`EventDispatcher.fbind`, this method returns 0 on "
+"failure and a positive unique uid on success. This uid can be used with "
+":meth:`unbind_uid`."
+msgstr ""
+
+#: ../../docstring kivy.lang.Observable.funbind:1 of
+msgid "See :meth:`fbind` and :meth:`EventDispatcher.funbind`."
+msgstr ""
+
+#: ../../docstring kivy.lang.Observable.unbind_uid:1 of
+msgid "See :meth:`fbind` and :meth:`EventDispatcher.unbind_uid`."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`builtins.object`"
+msgstr ""
+
+#: kivy.lang.BuilderBase:1 of
+msgid ""
+"The Builder is responsible for creating a :class:`Parser` for parsing a "
+"kv file, merging the results into its internal rules, templates, etc."
+msgstr ""
+
+#: kivy.lang.BuilderBase:4 of
+msgid ""
+"By default, :class:`Builder` is a global Kivy instance used in widgets "
+"that you can use to load other kv files in addition to the default ones."
+msgstr ""
+
+#: kivy.lang.BuilderBase.apply:1 of
+msgid "Search all the rules that match the widget and apply them."
+msgstr ""
+
+#: kivy.lang.BuilderBase.apply:3 kivy.lang.BuilderBase.apply_rules:6 of
+msgid ""
+"`ignored_consts` is a set or list type whose elements are property names "
+"for which constant KV rules (i.e. those that don't create bindings) of "
+"that widget will not be applied. This allows e.g. skipping constant rules"
+" that overwrite a value initialized in python."
+msgstr ""
+
+#: kivy.lang.BuilderBase.apply_rules:1 of
+msgid ""
+"Search all the rules that match `rule_name` widget and apply them to "
+"`widget`."
+msgstr ""
+
+#: kivy.lang.BuilderBase.load_file:1 of
+msgid ""
+"Insert a file into the language builder and return the root widget (if "
+"defined) of the kv file."
+msgstr ""
+
+#: kivy.lang.BuilderBase.load_file of
+msgid "parameters"
+msgstr ""
+
+#: kivy.lang.BuilderBase.load_file:6 kivy.lang.BuilderBase.load_string:6 of
+msgid "`rulesonly`: bool, defaults to False"
+msgstr ""
+
+#: kivy.lang.BuilderBase.load_file:6 kivy.lang.BuilderBase.load_string:6 of
+msgid ""
+"If True, the Builder will raise an exception if you have a root widget "
+"inside the definition."
+msgstr ""
+
+#: kivy.lang.BuilderBase.load_string:1 of
+msgid ""
+"Insert a string into the Language Builder and return the root widget (if "
+"defined) of the kv string."
+msgstr ""
+
+#: kivy.lang.BuilderBase.load_string of
+msgid "Parameters"
+msgstr ""
+
+#: kivy.lang.BuilderBase.load_string:9 of
+msgid "`filename`: str, defaults to None"
+msgstr ""
+
+#: kivy.lang.BuilderBase.load_string:9 of
+msgid "If specified, the filename used to index the kv rules."
+msgstr ""
+
+#: kivy.lang.BuilderBase.load_string:11 of
+msgid ""
+"The filename parameter can be used to unload kv strings in the same way "
+"as you unload kv files. This can be achieved using pseudo file names "
+"e.g.::"
+msgstr ""
+
+#: kivy.lang.BuilderBase.load_string:21 of
+msgid "can be unloaded via::"
+msgstr ""
+
+#: kivy.lang.BuilderBase.match:1 kivy.lang.BuilderBase.match_rule_name:1 of
+msgid "Return a list of :class:`ParserRule` objects matching the widget."
+msgstr ""
+
+#: kivy.lang.BuilderBase.sync:1 of
+msgid ""
+"Execute all the waiting operations, such as the execution of all the "
+"expressions related to the canvas."
+msgstr ""
+
+#: kivy.lang.BuilderBase.template:1 of
+msgid "Create a specialized template using a specific context."
+msgstr ""
+
+#: kivy.lang.BuilderBase.template:5 of
+msgid ""
+"With templates, you can construct custom widgets from a kv lang "
+"definition by giving them a context. Check :ref:`Template usage "
+"<template_usage>`."
+msgstr ""
+
+#: kivy.lang.BuilderBase.unbind_property:1 of
+msgid ""
+"Unbind the handlers created by all the rules of the widget that set the "
+"name."
+msgstr ""
+
+#: kivy.lang.BuilderBase.unbind_property:4 of
+msgid "This effectively clears all the rules of widget that take the form::"
+msgstr ""
+
+#: kivy.lang.BuilderBase.unbind_property:8 of
+msgid "For example:"
+msgstr ""
+
+#: kivy.lang.BuilderBase.unbind_widget:1 of
+msgid ""
+"Unbind all the handlers created by the KV rules of the widget. The "
+":attr:`kivy.uix.widget.Widget.uid` is passed here instead of the widget "
+"itself, because Builder is using it in the widget destructor."
+msgstr ""
+
+#: kivy.lang.BuilderBase.unbind_widget:6 of
+msgid ""
+"This effectively clears all the KV rules associated with this widget. For"
+" example:"
+msgstr ""
+
+#: kivy.lang.BuilderBase.unload_file:1 of
+msgid "Unload all rules associated with a previously imported file."
+msgstr ""
+
+#: kivy.lang.BuilderBase.unload_file:7 of
+msgid ""
+"This will not remove rules or templates already applied/used on current "
+"widgets. It will only effect the next widgets creation or template "
+"invocation."
+msgstr ""
+
+#: kivy.lang.BuilderException:1 of
+msgid "Bases: :class:`kivy.lang.parser.ParserException`"
+msgstr ""
+
+#: kivy.lang.BuilderException:1 of
+msgid "Exception raised when the Builder failed to apply a rule on a widget."
+msgstr ""
+
+#: kivy.lang.Parser:1 of
+msgid "Create a Parser object to parse a Kivy language file or Kivy content."
+msgstr ""
+
+#: kivy.lang.Parser.parse:1 of
+msgid "Parse the contents of a Parser file and return a list of root objects."
+msgstr ""
+
+#: kivy.lang.Parser.parse_level:1 of
+msgid "Parse the current level (level * spaces) indentation."
+msgstr ""
+
+#: kivy.lang.Parser.strip_comments:1 of
+msgid ""
+"Remove all comments from all lines in-place. Comments need to be on a "
+"single line and not at the end of a line. i.e. a comment line's first "
+"non-whitespace character must be a #."
+msgstr ""
+
+#: kivy.lang.ParserException:1 of
+msgid "Bases: :class:`Exception`"
+msgstr ""
+
+#: kivy.lang.ParserException:1 of
+msgid "Exception raised when something wrong happened in a kv file."
+msgstr ""
+

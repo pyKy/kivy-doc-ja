@@ -1,0 +1,431 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-15 00:59+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../sources/api-kivy.uix.behaviors.knspace.rst:3
+msgid "Kivy Namespaces"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:5 of
+msgid ""
+"This code is still experimental, and its API is subject to change in a "
+"future version."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:8 of
+msgid ""
+"The :class:`KNSpaceBehavior` `mixin "
+"<https://en.wikipedia.org/wiki/Mixin>`_ class provides namespace "
+"functionality for Kivy objects. It allows kivy objects to be named and "
+"then accessed using namespaces."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:12 of
+msgid ""
+":class:`KNSpace` instances are the namespaces that store the named "
+"objects in Kivy :class:`~kivy.properties.ObjectProperty` instances. In "
+"addition, when inheriting from :class:`KNSpaceBehavior`, if the derived "
+"object is named, the name will automatically be added to the associated "
+"namespace and will point to a :attr:`~kivy.uix.widget.proxy_ref` of the "
+"derived object."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:20 of
+msgid "Basic examples"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:22 of
+msgid ""
+"By default, there's only a single namespace: the :attr:`knspace` "
+"namespace. The simplest example is adding a widget to the namespace:"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:31 of
+msgid ""
+"This adds a kivy :class:`~kivy.properties.ObjectProperty` with "
+"`rebind=True` and `allownone=True` to the :attr:`knspace` namespace with "
+"a property name `my_widget`. And the property now also points to this "
+"widget."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:35 of
+msgid "This can be done automatically with:"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:44 of
+msgid "Or in kv:"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:53 of
+msgid "Now, `knspace.my_widget` will point to that widget."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:55 of
+msgid ""
+"When one creates a second widget with the same name, the namespace will "
+"also change to point to the new widget. E.g.:"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:66 of
+msgid "Setting the namespace"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:68 of
+msgid ""
+"One can also create ones own namespace rather than using the default "
+":attr:`knspace` by directly setting :attr:`KNSpaceBehavior.knspace`:"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:80 of
+msgid ""
+"Initially, `my_widget` is added to the default namespace, but when the "
+"widget's namespace is changed to `my_new_namespace`, the reference to "
+"`my_widget` is moved to that namespace. We could have also of course "
+"first set the namespace to `my_new_namespace` and then have named the "
+"widget `my_widget`, thereby avoiding the initial assignment to the "
+"default namespace."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:86 of
+msgid "Similarly, in kv:"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:97 of
+msgid "Inheriting the namespace"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:99 of
+msgid ""
+"In the previous example, we directly set the namespace we wished to use. "
+"In the following example, we inherit it from the parent, so we only have "
+"to set it once:"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:115 of
+msgid "Then, we do:"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:123 of
+msgid ""
+"The rule is that if no knspace has been assigned to a widget, it looks "
+"for a namespace in its parent and parent's parent and so on until it find"
+" one to use. If none are found, it uses the default :attr:`knspace`."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:127 of
+msgid ""
+"When `MyComplexWidget` is created, it still used the default namespace. "
+"However, when we assigned the root widget its new namespace, all its "
+"children switched to using that new namespace as well. So `new_knspace` "
+"now contains `label1` and `label2` as well as `my_complex`."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:132 of
+msgid "If we had first done:"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:141 of
+msgid ""
+"Then `label1` would remain stored in the default :attr:`knspace` since it"
+" was directly set, but `label2` and `my_complex` would still be added to "
+"the new namespace."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:145 of
+msgid ""
+"One can customize the attribute used to search the parent tree by "
+"changing :attr:`KNSpaceBehavior.knspace_key`. If the desired knspace is "
+"not reachable through a widgets parent tree, e.g. in a popup that is not "
+"a widget's child, :attr:`KNSpaceBehavior.knspace_key` can be used to "
+"establish a different search order."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:152 of
+msgid "Accessing the namespace"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:154 of
+msgid ""
+"As seen in the previous example, if not directly assigned, the namespace "
+"is found by searching the parent tree. Consequently, if a namespace was "
+"assigned further up the parent tree, all its children and below could "
+"access that namespace through their :attr:`KNSpaceBehavior.knspace` "
+"property."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:159 of
+msgid ""
+"This allows the creation of multiple widgets with identically given names"
+" if each root widget instance is assigned a new namespace. For example:"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:176 of
+msgid "Now, when we do:"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:190 of
+msgid ""
+"Because each of the `MyCompositeWidget` instances have a different "
+"namespace their children also use different namespaces. Consequently, the"
+" pretty and complex widgets of each instance will have different text."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:194 of
+msgid ""
+"Further, because both the namespace "
+":class:`~kivy.properties.ObjectProperty` references, and "
+":attr:`KNSpaceBehavior.knspace` have `rebind=True`, the text of the "
+"`MyComplexWidget` label is rebound to match the text of `MyPrettyWidget` "
+"when either the root's namespace changes or when the "
+"`root.knspace.pretty` property changes, as expected."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:201 of
+msgid "Forking a namespace"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:203 of
+msgid ""
+"Forking a namespace provides the opportunity to create a new namespace "
+"from a parent namespace so that the forked namespace will contain "
+"everything in the origin namespace, but the origin namespace will not "
+"have access to anything added to the forked namespace."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:208 kivy.uix.behaviors.knspace.KNSpace.fork:5 of
+msgid "For example:"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:218 of
+msgid ""
+"Now label is accessible by both child and grandchild, but not by knspace."
+" And button is only accessible by the grandchild but not by the child or "
+"by knspace. Finally, doing `grandchild.label = Label()` will leave "
+"`grandchild.label` and `child.label` pointing to different labels."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:223 of
+msgid "A motivating example is the example from above:"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:240 of
+msgid ""
+"Notice the addition of `knspace: 'fork'`. This is identical to doing "
+"`knspace: self.knspace.fork()`. However, doing that would lead to "
+"infinite recursion as that kv rule would be executed recursively because "
+"`self.knspace` will keep on changing. However, allowing `knspace: 'fork'`"
+" cirumvents that. See :attr:`KNSpaceBehavior.knspace`."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:246 of
+msgid "Now, having forked, we just need to do:"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace:256 of
+msgid ""
+"Since by forking we automatically created a unique namespace for each "
+"`MyCompositeWidget` instance."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.event.EventDispatcher`"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpace:1 of
+msgid ""
+"Each :class:`KNSpace` instance is a namespace that stores the named Kivy "
+"objects associated with this namespace. Each named object is stored as "
+"the value of a Kivy :class:`~kivy.properties.ObjectProperty` of this "
+"instance whose property name is the object's given name. Both `rebind` "
+"and `allownone` are set to `True` for the property."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpace:7 of
+msgid ""
+"See :attr:`KNSpaceBehavior.knspace` for details on how a namespace is "
+"associated with a named object."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpace:10 of
+msgid ""
+"When storing an object in the namespace, the object's `proxy_ref` is "
+"stored if the object has such an attribute."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpace of
+msgid "Parameters"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpace:20 of
+msgid "`parent`: (internal) A :class:`KNSpace` instance or None."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpace:16 of
+msgid ""
+"If specified, it's a parent namespace, in which case, the current "
+"namespace will have in its namespace all its named objects as well as the"
+" named objects of its parent and parent's parent etc. See :meth:`fork` "
+"for more details."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpace.fork:1 of
+msgid ""
+"Returns a new :class:`KNSpace` instance which will have access to all the"
+" named objects in the current namespace but will also have a namespace of"
+" its own that is unique to it."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpace.fork:12 of
+msgid ""
+"Now, any names added to `knspace` will be accessible by the "
+"`forked_knspace1` and `forked_knspace2` namespaces by the normal means. "
+"However, any names added to `forked_knspace1` will not be accessible from"
+" `knspace` or `forked_knspace2`. Similar for `forked_knspace2`."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpace.keep_ref:1 of
+msgid ""
+"Whether a direct reference should be kept to the stored objects. If "
+"``True``, we use the direct object, otherwise we use "
+":attr:`~kivy.uix.widget.proxy_ref` when present."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpace.keep_ref:5 of
+msgid "Defaults to False."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpace.parent:1 of
+msgid ""
+"(internal) The parent namespace instance, :class:`KNSpace`, or None. See "
+":meth:`fork`."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpace.property:1 of
+msgid ""
+"Get a property instance from the property name. If quiet is True, None is"
+" returned instead of raising an exception when `name` is not a property. "
+"Defaults to `False`."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpace.property of
+msgid "Returns"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpace.property:7 of
+msgid ""
+"A :class:`~kivy.properties.Property` derived instance corresponding to "
+"the name."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpace.property:12 of
+msgid "quiet was added."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`builtins.object`"
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpaceBehavior:1 of
+msgid ""
+"Inheriting from this class allows naming of the inherited objects, which "
+"are then added to the associated namespace :attr:`knspace` and accessible"
+" through it."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpaceBehavior:5 of
+msgid ""
+"Please see the :mod:`knspace behaviors module "
+"<kivy.uix.behaviors.knspace>` documentation for more information."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpaceBehavior.knsname:1 of
+msgid ""
+"The name given to this instance. If named, the name will be added to the "
+"associated :attr:`knspace` namespace, which will then point to the "
+"`proxy_ref` of this instance."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpaceBehavior.knsname:5 of
+msgid ""
+"When named, one can access this object by e.g. self.knspace.name, where "
+"`name` is the given name of this instance. See :attr:`knspace` and the "
+"module description for more details."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpaceBehavior.knspace:1 of
+msgid ""
+"The namespace instance, :class:`KNSpace`, associated with this widget. "
+"The :attr:`knspace` namespace stores this widget when naming this widget "
+"with :attr:`knsname`."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpaceBehavior.knspace:5 of
+msgid ""
+"If the namespace has been set with a :class:`KNSpace` instance, e.g. with"
+" `self.knspace = KNSpace()`, then that instance is returned (setting with"
+" `None` doesn't count). Otherwise, if :attr:`knspace_key` is not None, we"
+" look for a namespace to use in the object that is stored in the property"
+" named :attr:`knspace_key`, of this instance. I.e. `object = "
+"getattr(self, self.knspace_key)`."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpaceBehavior.knspace:12 of
+msgid ""
+"If that object has a knspace property, then we return its value. "
+"Otherwise, we go further up, e.g. with `getattr(object, "
+"self.knspace_key)` and look for it's `knspace` property."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpaceBehavior.knspace:16 of
+msgid ""
+"Finally, if we reach a value of `None`, or :attr:`knspace_key` was "
+"`None`, the default :attr:`~kivy.uix.behaviors.knspace.knspace` namespace"
+" is returned."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpaceBehavior.knspace:20 of
+msgid ""
+"If :attr:`knspace` is set to the string `'fork'`, the current namespace "
+"in :attr:`knspace` will be forked with :meth:`KNSpace.fork` and the "
+"resulting namespace will be assigned to this instance's :attr:`knspace`. "
+"See the module examples for a motivating example."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpaceBehavior.knspace:25 of
+msgid "Both `rebind` and `allownone` are `True`."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpaceBehavior.knspace_key:1 of
+msgid ""
+"The name of the property of this instance, to use to search upwards for a"
+" namespace to use by this instance. Defaults to `'parent'` so that we'll "
+"search the parent tree. See :attr:`knspace`."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.KNSpaceBehavior.knspace_key:5 of
+msgid ""
+"When `None`, we won't search the parent tree for the namespace. "
+"`allownone` is `True`."
+msgstr ""
+
+#: kivy.uix.behaviors.knspace.knspace:1 of
+msgid ""
+"The default :class:`KNSpace` namespace. See "
+":attr:`KNSpaceBehavior.knspace` for more details."
+msgstr ""
+

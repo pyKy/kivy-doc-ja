@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-15 00:59+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../sources/api-kivy.core.text.text_layout.rst:3
+msgid "Text layout"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout:2
+msgid "An internal module for laying out text according to options and constraints. This is not part of the API and may change at any time."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:1
+msgid "Lays out text into a series of :class:`LayoutWord` and :class:`LayoutLine` instances according to the options specified."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:4
+msgid "The function is designed to be called many times, each time new text is appended to the last line (or first line if appending upwards), unless a newline is present in the text. Each text appended is described by it's own options which can change between successive calls. If the text is constrained, we stop as soon as the constraint is reached."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:0
+#: ../../docstring of kivy.core.text.text_layout.LayoutWord:0
+#: ../../docstring of kivy.core.text.text_layout.LayoutLine:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:14
+msgid "`text`: string or bytes"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:12
+msgid "the text to be broken down into lines. If lines is not empty, the text is added to the last line (or first line if `append_down` is False) until a newline is reached which creates a new line in `lines`. See :class:`LayoutLine`."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:18
+msgid "`lines`: list"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:17
+msgid "a list of :class:`LayoutLine` instances, each describing a line of the text. Calls to :func:`layout_text` append or create new :class:`LayoutLine` instances in `lines`."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:24
+msgid "`size`: 2-tuple of ints"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:21
+msgid "the size of the laid out text so far. Upon first call it should probably be (0, 0), afterwards it should be the (w, h) returned by this function in a previous call. When size reaches the constraining size, `text_size`, we stop adding lines and return True for the clipped parameter. size includes the x and y padding."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:31
+msgid "`text_size`: 2-tuple of ints or None."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:27
+msgid "the size constraint on the laid out text. If either element is None, the text is not constrained in that dimension. For example, (None, 200) will constrain the height, including padding to 200, while the width is unconstrained. The first line, and the first character of a line is always returned, even if it exceeds the constraint. The value be changed between different calls."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:38
+#: ../../docstring of kivy.core.text.text_layout.LayoutWord:8
+msgid "`options`: dict"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:34
+msgid "the label options of this `text`. The options are saved with each word allowing different words to have different options from successive calls."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:38
+msgid "Note, `options` must include a `space_width` key with a value indicating the width of a space for that set of options."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:41
+msgid "`get_extents`: callable"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:41
+msgid "a function called with a string, which returns a tuple containing the width, height of the string."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:53
+msgid "`append_down`: bool"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:44
+msgid "Whether successive calls to the function appends lines before or after the existing lines. If True, they are appended to the last line and below it. If False, it's appended at the first line and above. For example, if False, everything after the last newline in `text` is appended to the first line in lines. Everything before the last newline is inserted at the start of lines in same order as text; that is we do not invert the line order."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:53
+msgid "This allows laying out from top to bottom until the constrained is reached, or from bottom to top until the constrained is reached."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:66
+msgid "`complete`: bool"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:56
+msgid "whether this text complete lines. It use is that normally is strip in `options` is True, all leading and trailing spaces are removed from each line except from the last line (or first line if `append_down` is False) which only removes leading spaces. That's because further text can still be appended to the last line so we cannot strip them. If `complete` is True, it indicates no further text is coming and all lines will be stripped."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:64
+msgid "The function can also be called with `text` set to the empty string and `complete` set to True in order for the last (first) line to be stripped."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:0
+msgid "Returns"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:68
+msgid "3-tuple, (w, h, clipped). w and h is the width and height of the text in lines so far and includes padding. This can be larger than `text_size`, e.g. if not even a single fitted, the first line would still be returned. `clipped` is True if not all the text has been added to lines because w, h reached the constrained size."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.layout_text:76
+msgid "Following is a simple example with no padding and no stripping::"
+msgstr ""
+
+#: ../../<autodoc>:1
+#: ../../<autodoc>:1
+msgid "Bases: :class:`builtins.object`"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutWord:1
+msgid "Formally describes a word contained in a line. The name word simply means a chunk of text and can be used to describe any text."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutWord:4
+msgid "A word has some width, height and is rendered according to options saved in :attr:`options`. See :class:`LayoutLine` for its usage."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutWord:9
+msgid "the label options dictionary for this word."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutWord:10
+msgid "`lw`: int"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutWord:11
+msgid "the width of the text in pixels."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutWord:12
+msgid "`lh`: int"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutWord:13
+msgid "the height of the text in pixels."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutWord:14
+msgid "`text`: string"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutWord:15
+msgid "the text of the word."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutLine:1
+msgid "Formally describes a line of text. A line of text is composed of many :class:`LayoutWord` instances, each with it's own text, size and options."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutLine:4
+msgid "A :class:`LayoutLine` instance does not always imply that the words contained in the line ended with a newline. That is only the case if :attr:`is_last_line` is True. For example a single real line of text can be split across multiple :class:`LayoutLine` instances if the whole line doesn't fit in the constrained width."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutLine:12
+msgid "`x`: int"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutLine:12
+msgid "the location in a texture from where the left side of this line is began drawn."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutLine:15
+msgid "`y`: int"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutLine:15
+msgid "the location in a texture from where the bottom of this line is drawn."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutLine:18
+msgid "`w`: int"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutLine:18
+msgid "the width of the line. This is the sum of the individual widths of its :class:`LayoutWord` instances. Does not include any padding."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutLine:23
+msgid "`h`: int"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutLine:21
+msgid "the height of the line. This is the maximum of the individual heights of its :class:`LayoutWord` instances multiplied by the `line_height` of these instance. So this is larger then the word height."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutLine:28
+msgid "`is_last_line`: bool"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutLine:26
+msgid "whether this line was the last line in a paragraph. When True, it implies that the line was followed by a newline. Newlines should not be included in the text of words, but is implicit by setting this to True."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutLine:33
+msgid "`line_wrap`: bool"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutLine:31
+msgid "whether this line is continued from a previous line which didn't fit into a constrained width and was therefore split across multiple :class:`LayoutLine` instances. `line_wrap` can be True or False independently of `is_last_line`."
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutLine:36
+msgid "`words`: python list"
+msgstr ""
+
+#: ../../docstring of kivy.core.text.text_layout.LayoutLine:36
+msgid "a list that contains only :class:`LayoutWord` instances describing the text of the line."
+msgstr ""
+

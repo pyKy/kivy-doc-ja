@@ -323,13 +323,10 @@ from kivy.logger import Logger
 from kivy.event import EventDispatcher
 from kivy.lang import Builder
 from kivy.resources import resource_find
-from kivy.utils import platform as core_platform
+from kivy.utils import platform
 from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty, StringProperty
 from kivy.setupconfig import USE_SDL2
-
-
-platform = core_platform
 
 
 class App(EventDispatcher):
@@ -405,10 +402,10 @@ class App(EventDispatcher):
             class MyApp(App):
                 icon = 'customicon.png'
 
-         Recommended 256x256 or 1024x1024? for GNU/Linux and Mac OSX
-         32x32 for Windows7 or less. <= 256x256 for windows 8
-         256x256 does work (on Windows 8 at least), but is scaled
-         down and doesn't look as good as a 32x32 icon.
+        Recommended 256x256 or 1024x1024? for GNU/Linux and Mac OSX
+        32x32 for Windows7 or less. <= 256x256 for windows 8
+        256x256 does work (on Windows 8 at least), but is scaled
+        down and doesn't look as good as a 32x32 icon.
     '''
 
     use_kivy_settings = True
@@ -463,7 +460,11 @@ class App(EventDispatcher):
     # Return the current running App instance
     _running_app = None
 
-    __events__ = ('on_start', 'on_stop', 'on_pause', 'on_resume')
+    __events__ = ('on_start', 'on_stop', 'on_pause', 'on_resume',
+                  'on_config_change', )
+
+    # Stored so that we only need to determine this once
+    _user_data_dir = ""
 
     def __init__(self, **kwargs):
         App._running_app = self
@@ -619,19 +620,13 @@ class App(EventDispatcher):
             return resource_find(self.icon)
 
     def get_application_config(self, defaultpath='%(appdir)s/%(appname)s.ini'):
-        '''.. versionadded:: 1.0.7
-
-        .. versionchanged:: 1.4.0
-            Customized the default path for iOS and Android platforms. Added a
-            defaultpath parameter for desktop OS's (not applicable to iOS
-            and Android.)
-
+        '''
         Return the filename of your application configuration. Depending
         on the platform, the application file will be stored in
         different locations:
 
             - on iOS: <appdir>/Documents/.<appname>.ini
-            - on Android: /sdcard/.<appname>.ini
+            - on Android: <user_data_dir>/.<appname>.ini
             - otherwise: <appdir>/<appname>.ini
 
         When you are distributing your application on Desktops, please
@@ -651,12 +646,24 @@ class App(EventDispatcher):
         - The tilda '~' will be expanded to the user directory.
         - %(appdir)s will be replaced with the application :attr:`directory`
         - %(appname)s will be replaced with the application :attr:`name`
+
+        .. versionadded:: 1.0.7
+
+        .. versionchanged:: 1.4.0
+            Customized the defaultpath for iOS and Android platforms. Added a
+            defaultpath parameter for desktop OS's (not applicable to iOS
+            and Android.)
+
+        .. versionchanged:: 1.11.0
+            Changed the Android version to make use of the
+            :attr:`~App.user_data_dir` and added a missing dot to the iOS
+            config file name.
         '''
 
         if platform == 'android':
-            defaultpath = '/sdcard/.%(appname)s.ini'
+            return join(self.user_data_dir, '.{0}.ini'.format(self.name))
         elif platform == 'ios':
-            defaultpath = '~/Documents/%(appname)s.ini'
+            defaultpath = '~/Documents/.%(appname)s.ini'
         elif platform == 'win':
             defaultpath = defaultpath.replace('/', sep)
         return expanduser(defaultpath) % {
@@ -739,6 +746,29 @@ class App(EventDispatcher):
                 self._app_directory = '.'
         return self._app_directory
 
+    def _get_user_data_dir(self):
+        # Determine and return the user_data_dir.
+        data_dir = ""
+        if platform == 'ios':
+            data_dir = expanduser(join('~/Documents', self.name))
+        elif platform == 'android':
+            from jnius import autoclass, cast
+            PythonActivity = autoclass('org.kivy.android.PythonActivity')
+            context = cast('android.content.Context', PythonActivity.mActivity)
+            file_p = cast('java.io.File', context.getFilesDir())
+            data_dir = file_p.getAbsolutePath()
+        elif platform == 'win':
+            data_dir = os.path.join(os.environ['APPDATA'], self.name)
+        elif platform == 'macosx':
+            data_dir = '~/Library/Application Support/{}'.format(self.name)
+            data_dir = expanduser(data_dir)
+        else:  # _platform == 'linux' or anything else...:
+            data_dir = os.environ.get('XDG_CONFIG_HOME', '~/.config')
+            data_dir = expanduser(join(data_dir, self.name))
+        if not exists(data_dir):
+            os.mkdir(data_dir)
+        return data_dir
+
     @property
     def user_data_dir(self):
         '''
@@ -755,30 +785,27 @@ class App(EventDispatcher):
         On iOS, `~/Documents/<app_name>` is returned (which is inside the
         app's sandbox).
 
-        On Android, `/sdcard/<app_name>` is returned.
-
         On Windows, `%APPDATA%/<app_name>` is returned.
 
         On OS X, `~/Library/Application Support/<app_name>` is returned.
 
         On Linux, `$XDG_CONFIG_HOME/<app_name>` is returned.
+
+        On Android, `Context.GetFilesDir
+        <https://developer.android.com/reference/android/content/\
+Context.html#getFilesDir()>`_ is returned.
+
+        .. versionchanged:: 1.11.0
+
+            On Android, this function previously returned
+            `/sdcard/<app_name>`. This folder became read-only by default
+            in Android API 26 and the user_data_dir has therefore been moved
+            to a writeable location.
+
         '''
-        data_dir = ""
-        if platform == 'ios':
-            data_dir = join('~/Documents', self.name)
-        elif platform == 'android':
-            data_dir = join('/sdcard', self.name)
-        elif platform == 'win':
-            data_dir = os.path.join(os.environ['APPDATA'], self.name)
-        elif platform == 'macosx':
-            data_dir = '~/Library/Application Support/{}'.format(self.name)
-        else:  # _platform == 'linux' or anything else...:
-            data_dir = os.environ.get('XDG_CONFIG_HOME', '~/.config')
-            data_dir = join(data_dir, self.name)
-        data_dir = expanduser(data_dir)
-        if not exists(data_dir):
-            os.mkdir(data_dir)
-        return data_dir
+        if self._user_data_dir == "":
+            self._user_data_dir = self._get_user_data_dir()
+        return self._user_data_dir
 
     @property
     def name(self):
@@ -898,6 +925,9 @@ class App(EventDispatcher):
     def on_config_change(self, config, section, key, value):
         '''Event handler fired when a configuration token has been changed by
         the settings page.
+
+        .. versionchanged:: 1.10.1
+           Added corresponding ``on_config_change`` event.
         '''
         pass
 
@@ -1017,7 +1047,7 @@ class App(EventDispatcher):
     #
 
     def _on_config_change(self, *largs):
-        self.on_config_change(*largs[1:])
+        self.dispatch('on_config_change', *largs[1:])
 
     def _install_settings_keys(self, window):
         window.bind(on_keyboard=self._on_keyboard_settings)

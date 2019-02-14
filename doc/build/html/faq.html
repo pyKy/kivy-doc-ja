@@ -6,32 +6,32 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="twitter:site" content="@kivyframework">
     
-    <title>FAQ (翻訳済み) &mdash; Kivy 1.10.0 ドキュメント</title>
+    <title>FAQ &mdash; Kivy 1.10.1 documentation</title>
     <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="_static/fresh.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.10.0',
+        VERSION:     '1.10.1',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
+
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/translations.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <script type="text/javascript" src="_static/jquery-effects-core-and-slide.js"></script>
     <script type="text/javascript" src="_static/jquery.cookie.js"></script>
     <script type="text/javascript" src="_static/kivy.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="index.html" />
-    <link rel="up" title="User’s Guide(翻訳済み)" href="user-guide.html" />
-    <link rel="next" title="Contact Us(翻訳済み)" href="contact.html" />
+    <link rel="top" title="Kivy 1.10.1 documentation" href="index.html" />
+    <link rel="up" title="User’s Guide" href="user-guide.html" />
+    <link rel="next" title="Contact Us" href="contact.html" />
     <link rel="prev" title="Google Summer of Code - 2017" href="gsoc.html" /> 
   </head>
   <body>
@@ -57,6 +57,8 @@
 <div id="contentall">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+            <h3>Version</h3>
+            <select id="version_selector"></select>
             <h3>Quick search</h3>
             <form class="search" action="search.html" method="get">
                 &nbsp;
@@ -65,28 +67,29 @@
                 <input type="text" class="text" name="q" />
             </form>
           <!--
-          <h3><a href="index.html">FAQ (翻訳済み)</a></h3>
+          <h3><a href="index.html">FAQ</a></h3>
           <ul>
-<li><a class="reference internal" href="#">FAQ (翻訳済み)</a><ul>
-<li><a class="reference internal" href="#technical-faq">Techincal FAQ (技術面に関するFAQ)</a><ul>
+<li><a class="reference internal" href="#">FAQ</a><ul>
+<li><a class="reference internal" href="#technical-faq">Technical FAQ</a><ul>
+<li><a class="reference internal" href="#unable-to-get-a-window-abort">Unable to get a Window, abort.</a></li>
 <li><a class="reference internal" href="#fatal-python-error-pygame-parachute-segmentation-fault">Fatal Python error: (pygame parachute) Segmentation Fault</a></li>
 <li><a class="reference internal" href="#undefined-symbol-glgeneratemipmap">undefined symbol: glGenerateMipmap</a></li>
 <li><a class="reference internal" href="#importerror-no-module-named-event">ImportError: No module named event</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#android-faq">Android FAQ (Androidに関するFAQ)</a><ul>
-<li><a class="reference internal" href="#could-not-extract-public-data">could not extract public data (パブリックデータを読み込めない)</a></li>
-<li><a class="reference internal" href="#crash-on-touch-interaction-on-android-2-3-x">Crash on touch interaction on Android 2.3.x (Android 2.3.x 上の、タッチ操作によるクラッシュ)</a></li>
-<li><a class="reference internal" href="#is-it-possible-to-have-a-kiosk-app-on-android-3-0">Is it possible to have a kiosk app on android 3.0 ? (Android 3.0 上でキオスクアプリを作ることはできますか?)</a></li>
-<li><a class="reference internal" href="#what-s-the-difference-between-python-for-android-from-kivy-and-sl4a">What&#8217;s the difference between python-for-android from Kivy and SL4A? (python-for-android は、kivyとSL4Aの間で何が違うのか?)</a></li>
+<li><a class="reference internal" href="#android-faq">Android FAQ</a><ul>
+<li><a class="reference internal" href="#could-not-extract-public-data">could not extract public data</a></li>
+<li><a class="reference internal" href="#crash-on-touch-interaction-on-android-2-3-x">Crash on touch interaction on Android 2.3.x</a></li>
+<li><a class="reference internal" href="#is-it-possible-to-have-a-kiosk-app-on-android-3-0">Is it possible to have a kiosk app on android 3.0 ?</a></li>
+<li><a class="reference internal" href="#what-s-the-difference-between-python-for-android-from-kivy-and-sl4a">What’s the difference between python-for-android from Kivy and SL4A?</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#project-faq">Project FAQ (プロジェクトに関するFAQ)</a><ul>
-<li><a class="reference internal" href="#why-do-you-use-python-isn-t-it-slow">Why do you use Python? Isn&#8217;t it slow? (なぜPythonなのか? 遅くないか?)</a></li>
-<li><a class="reference internal" href="#does-kivy-support-python-3-x">Does Kivy support Python 3.x? (KivyはPython3.xをサポートしていますか?)</a></li>
-<li><a class="reference internal" href="#how-is-kivy-related-to-pymt">How is Kivy related to PyMT? (KivyはPyMTとどのような関係にありますか?)</a></li>
-<li><a class="reference internal" href="#do-you-accept-patches">Do you accept patches? (パッチは受け付けてくれますか?)</a></li>
-<li><a class="reference internal" href="#does-the-kivy-project-participate-in-google-s-summer-of-code">Does the Kivy project participate in Google&#8217;s Summer of Code? (Kivyプロジェクトは Google Summer of Code に参加しますか?)</a></li>
+<li><a class="reference internal" href="#project-faq">Project FAQ</a><ul>
+<li><a class="reference internal" href="#why-do-you-use-python-isn-t-it-slow">Why do you use Python? Isn’t it slow?</a></li>
+<li><a class="reference internal" href="#does-kivy-support-python-3-x">Does Kivy support Python 3.x?</a></li>
+<li><a class="reference internal" href="#how-is-kivy-related-to-pymt">How is Kivy related to PyMT?</a></li>
+<li><a class="reference internal" href="#do-you-accept-patches">Do you accept patches?</a></li>
+<li><a class="reference internal" href="#does-the-kivy-project-participate-in-google-s-summer-of-code">Does the Kivy project participate in Google’s Summer of Code ?</a></li>
 </ul>
 </li>
 </ul>
@@ -96,85 +99,87 @@
           <h3><a href="index.html">Table Of Contents</a></h3>
           -->
           <ul>
-<li class="toctree-l1"><a class="reference internal" href="gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/installation.html">Installation(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/properties.html">Properties(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/events.html">Events(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/framework.html">Non-widget stuff(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/examples.html">Examples(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/first_app.html">A first App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/rules.html">Kv Design Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/events.html">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/layouts.html">Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted/diving.html">Diving in</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="examples/gallery.html">Gallery(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__mesh__py.html">Mesh test(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Gallery of Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__animation__animate__py.html">Widget animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_suite__py.html">Suite of Application Builders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_build__py.html">Application example using build() + return</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv__py.html">Application built from a  .kv file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__camera__main__py.html">Camera Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__bezier__py.html">Bezier Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__canvas_stress__py.html">Canvas stress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__circle__py.html">Circle Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__fbo_canvas__py.html">FBO Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__lines_extended__py.html">Lines Extended Demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__multitexture__py.html">Multitexture Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__rotation__py.html">Rotation Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__stencil_canvas__py.html">Stencil demo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__pictures__main__py.html">Basic Picture Viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__shadereditor__main__py.html">Live Shader Editor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration</a></li>
 </ul>
 </li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="user-guide.html">User’s Guide(翻訳済み)</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="installation/installation.html">Installation(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="philosophy.html">Philosophy(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contribute.html">Contributing(翻訳済み)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">FAQ (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contact.html">Contact Us(翻訳済み)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="user-guide.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="installation/installation.html">Basic Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation.html#advanced-installation">Advanced Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation.html#uninstalling-kivy">Uninstalling Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="philosophy.html">Philosophy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute.html">Contributing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contact.html">Contact Us</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="guide-index.html">Programming Guide(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="guide/basic.html">Kivy Basics(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/environment.html">Controlling the environment(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/config.html">Configure Kivy(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/events.html">Events and Properties (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/inputs.html">Input management (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/widgets.html">Widgets(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/graphics.html">Graphics (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/lang.html">Kv language(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/packaging.html">Packaging your application(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide/licensing.html">Package licensing (翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide-index.html">Programming Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide/basic.html">Kivy Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/environment.html">Controlling the environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/config.html">Configure Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/architecture.html">Architectural Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/events.html">Events and Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/lang.html">Kv language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/other-frameworks.html">Integrating with other Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/packaging.html">Packaging your application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/licensing.html">Package licensing</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials-index.html">Tutorials(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials-index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/pong.html">Pong Game Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/firstwidget.html">A Simple Paint App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/crashcourse.html">Crash Course</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api-index.html">API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.html">Kivy framework(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.html">Kivy framework</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.html">Adapters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.adapter.html">Adapter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
@@ -182,19 +187,19 @@
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.listadapter.html">ListAdapter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.models.html">SelectableDataItem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.animation.html">Animation(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.app.html">Application （翻訳中）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.app.html">Application</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.atlas.html">Atlas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.base.html">Kivy Base</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.cache.html">Cache manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.clock.html">Clock object(翻訳ずみ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.clock.html">Clock object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.config.html">Configuration object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.context.html">Context</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.html">Core Abstraction(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.html">Core Abstraction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.core.audio.html">Audio</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.core.camera.html">Camera</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.clipboard.html">Clipboard(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.core.clipboard.html">Clipboard</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.core.gl.html">OpenGL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.core.image.html">Image</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.core.spelling.html">Spelling</a></li>
@@ -214,7 +219,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.garden.html">Garden</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.geometry.html">Geometry utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.gesture.html">Gesture recognition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.html">Graphics(翻訳中)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.html">Graphics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.compiler.html">Graphics compiler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.graphics.context.html">Context management</a></li>
@@ -258,7 +263,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.input.recorder.html">Input recorder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.input.shape.html">Motion Event Shape</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.interactive.html">Interactive launcher</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.html">Kivy Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.html">Kivy Language</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.builder.html">Builder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.lang.parser.html">Parser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.lib.html">External libraries</a></li>
@@ -295,7 +300,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.html">Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.html">Packaging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.html">Widgets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.abstractview.html">Abstract View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.accordion.html">Accordion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.actionbar.html">Action Bar</a></li>
@@ -325,7 +330,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.gridlayout.html">Grid Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.image.html">Image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.label.html">Label(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.label.html">Label</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.layout.html">Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.listview.html">List View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.modalview.html">ModalView</a></li>
@@ -347,7 +352,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.screenmanager.html">Screen Manager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.scrollview.html">ScrollView</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.selectableview.html">SelectableView</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.settings.html">Settings （翻訳中）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.settings.html">Settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.slider.html">Slider</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.spinner.html">Spinner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-kivy.uix.splitter.html">Splitter</a></li>
@@ -374,7 +379,7 @@
           <h3>Related Topics</h3>
           <ul>
               <li>Previous: <a href="gsoc.html" title="previous chapter">Google Summer of Code - 2017</a></li>
-              <li>Next: <a href="contact.html" title="next chapter">Contact Us(翻訳済み)</a></li>
+              <li>Next: <a href="contact.html" title="next chapter">Contact Us</a></li>
           </ul>
           -->
         </div>
@@ -385,26 +390,27 @@
         <div class="bodywrapper">
           <div class="body">
             <div class="toc"><h2>Table Of Contents</h2><ul>
-<li><a class="reference internal" href="#">FAQ (翻訳済み)</a><ul>
-<li><a class="reference internal" href="#technical-faq">Techincal FAQ (技術面に関するFAQ)</a><ul>
+<li><a class="reference internal" href="#">FAQ</a><ul>
+<li><a class="reference internal" href="#technical-faq">Technical FAQ</a><ul>
+<li><a class="reference internal" href="#unable-to-get-a-window-abort">Unable to get a Window, abort.</a></li>
 <li><a class="reference internal" href="#fatal-python-error-pygame-parachute-segmentation-fault">Fatal Python error: (pygame parachute) Segmentation Fault</a></li>
 <li><a class="reference internal" href="#undefined-symbol-glgeneratemipmap">undefined symbol: glGenerateMipmap</a></li>
 <li><a class="reference internal" href="#importerror-no-module-named-event">ImportError: No module named event</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#android-faq">Android FAQ (Androidに関するFAQ)</a><ul>
-<li><a class="reference internal" href="#could-not-extract-public-data">could not extract public data (パブリックデータを読み込めない)</a></li>
-<li><a class="reference internal" href="#crash-on-touch-interaction-on-android-2-3-x">Crash on touch interaction on Android 2.3.x (Android 2.3.x 上の、タッチ操作によるクラッシュ)</a></li>
-<li><a class="reference internal" href="#is-it-possible-to-have-a-kiosk-app-on-android-3-0">Is it possible to have a kiosk app on android 3.0 ? (Android 3.0 上でキオスクアプリを作ることはできますか?)</a></li>
-<li><a class="reference internal" href="#what-s-the-difference-between-python-for-android-from-kivy-and-sl4a">What&#8217;s the difference between python-for-android from Kivy and SL4A? (python-for-android は、kivyとSL4Aの間で何が違うのか?)</a></li>
+<li><a class="reference internal" href="#android-faq">Android FAQ</a><ul>
+<li><a class="reference internal" href="#could-not-extract-public-data">could not extract public data</a></li>
+<li><a class="reference internal" href="#crash-on-touch-interaction-on-android-2-3-x">Crash on touch interaction on Android 2.3.x</a></li>
+<li><a class="reference internal" href="#is-it-possible-to-have-a-kiosk-app-on-android-3-0">Is it possible to have a kiosk app on android 3.0 ?</a></li>
+<li><a class="reference internal" href="#what-s-the-difference-between-python-for-android-from-kivy-and-sl4a">What’s the difference between python-for-android from Kivy and SL4A?</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#project-faq">Project FAQ (プロジェクトに関するFAQ)</a><ul>
-<li><a class="reference internal" href="#why-do-you-use-python-isn-t-it-slow">Why do you use Python? Isn&#8217;t it slow? (なぜPythonなのか? 遅くないか?)</a></li>
-<li><a class="reference internal" href="#does-kivy-support-python-3-x">Does Kivy support Python 3.x? (KivyはPython3.xをサポートしていますか?)</a></li>
-<li><a class="reference internal" href="#how-is-kivy-related-to-pymt">How is Kivy related to PyMT? (KivyはPyMTとどのような関係にありますか?)</a></li>
-<li><a class="reference internal" href="#do-you-accept-patches">Do you accept patches? (パッチは受け付けてくれますか?)</a></li>
-<li><a class="reference internal" href="#does-the-kivy-project-participate-in-google-s-summer-of-code">Does the Kivy project participate in Google&#8217;s Summer of Code? (Kivyプロジェクトは Google Summer of Code に参加しますか?)</a></li>
+<li><a class="reference internal" href="#project-faq">Project FAQ</a><ul>
+<li><a class="reference internal" href="#why-do-you-use-python-isn-t-it-slow">Why do you use Python? Isn’t it slow?</a></li>
+<li><a class="reference internal" href="#does-kivy-support-python-3-x">Does Kivy support Python 3.x?</a></li>
+<li><a class="reference internal" href="#how-is-kivy-related-to-pymt">How is Kivy related to PyMT?</a></li>
+<li><a class="reference internal" href="#do-you-accept-patches">Do you accept patches?</a></li>
+<li><a class="reference internal" href="#does-the-kivy-project-participate-in-google-s-summer-of-code">Does the Kivy project participate in Google’s Summer of Code ?</a></li>
 </ul>
 </li>
 </ul>
@@ -413,15 +419,42 @@
 </div>
             
   <div class="section" id="faq">
-<span id="id1"></span><h1>FAQ (翻訳済み)<a class="headerlink" href="#faq" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>同じような質問を何度も受けることがあるのですが、ここではその一部に対する回答を行います。</p>
+<span id="id1"></span><h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+<p>There are a number of questions that repeatedly need to be answered.
+The following document tries to answer some of them.</p>
 <div class="section" id="technical-faq">
-<h2>Techincal FAQ (技術面に関するFAQ)<a class="headerlink" href="#technical-faq" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Technical FAQ<a class="headerlink" href="#technical-faq" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="unable-to-get-a-window-abort">
+<h3>Unable to get a Window, abort.<a class="headerlink" href="#unable-to-get-a-window-abort" title="Permalink to this headline">¶</a></h3>
+<p>If Kivy cannot instantiate a Window core provider (mostly SDL2), you’ll see
+this. The underlaying issue depends on many things:</p>
+<ul class="simple">
+<li>Check your installation. Twice.</li>
+<li>Check that your graphics driver support OpenGL 2.1 at the minimum. Otherwise, Kivy can’t run.</li>
+<li>If you use windows and ANGLE (<code class="docutils literal notranslate"><span class="pre">KIVY_GL_BACKEND=angle_sdl2</span></code>), check that you have DirectX 9 support.</li>
+<li>If your platform doesn’t supports OpenGL, SDL2 cannot initialize OpenGL.</li>
+<li>Don’t mix the architecture of the dependencies (e.g. Python 64-bit and 32-bit extensions/SDL2)</li>
+<li>Don’t mix python installation: e.g. if you have Python and Anaconda installed, the Python actually run may be different than you think. Similarly, if you have multiple Python versions available on the <code class="docutils literal notranslate"><span class="pre">PATH</span></code>, they may clash.</li>
+<li>Check your PATH to ensure that other programs in it don’t provide the same dlls as Kivy/Python, or bad stuff can happen.<ul>
+<li>This commonly happens if some other program that uses similar dependecies as Kivy adds itself to the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> so that Kivy’s dependecies clash with theirs.</li>
+<li>Please read <a class="reference external" href="https://superuser.com/questions/284342/what-are-path-and-other-environment-variables-and-how-can-i-set-or-use-them">this</a> and <a class="reference external" href="https://www.digitalcitizen.life/simple-questions-what-are-environment-variables">this</a> for more details on <code class="docutils literal notranslate"><span class="pre">PATH</span></code>.</li>
+<li>The best tool to troubleshoot this is with <a class="reference external" href="http://www.dependencywalker.com/">Dependency Walker</a> explained <a class="reference external" href="https://www.thewindowsclub.com/dependency-walker-download">here</a> and <a class="reference external" href="https://kb.froglogic.com/display/KB/Analyzing+dependencies+with+Dependency+Walker">here</a>.</li>
+<li>But ensure that you’re launching it from the identical environment that you start Python.</li>
+</ul>
+</li>
+<li>Ensure you have all dependencies installed (like <code class="docutils literal notranslate"><span class="pre">kivy.deps.sdl2</span></code>).</li>
+<li>Maybe your drivers have some missing OpenGL symbols? Try to switch to another graphics backend with <code class="docutils literal notranslate"><span class="pre">KIVY_GL_BACKEND</span></code>.</li>
+<li>Maybe your <a class="reference external" href="https://stackoverflow.com/questions/49466785/kivy-error-python-2-7-sdl2-import-error">Pycharm configuration is incorrect</a>.</li>
+</ul>
+</div>
 <div class="section" id="fatal-python-error-pygame-parachute-segmentation-fault">
-<h3>Fatal Python error: (pygame parachute) Segmentation Fault<a class="headerlink" href="#fatal-python-error-pygame-parachute-segmentation-fault" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>ほとんどの場合、この問題が発生するのは古いグラフィックドライバーを使用していることが原因です。あなたのグラフィックカードで利用可能なドライバーのうち、最新のものをインストールしてください。そうすればうまくいくに違いありません。</p>
-<p>もしうまくいかない場合は、ひょっとすると利用可能な OpenGL コンテキスト無しに、OpenGL の命令を呼び出そうとしたのではないでしょうか。もし graphics instruction を使って画像やアトラスを読み込もうとするのであれば、まず Window をスポーンしてください:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># method 1 (preferred)</span>
+<h3>Fatal Python error: (pygame parachute) Segmentation Fault<a class="headerlink" href="#fatal-python-error-pygame-parachute-segmentation-fault" title="Permalink to this headline">¶</a></h3>
+<p>Most of time, this issue is due to the usage of old graphics drivers. Install the
+latest graphics driver available for your graphics card, and it should be ok.</p>
+<p>If not, this means you have probably triggered some OpenGL code without an
+available OpenGL context. If you are loading images, atlases, using graphics
+instructions, you must spawn a Window first:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># method 1 (preferred)</span>
 <span class="kn">from</span> <span class="nn">kivy.base</span> <span class="k">import</span> <span class="n">EventLoop</span>
 <span class="n">EventLoop</span><span class="o">.</span><span class="n">ensure_window</span><span class="p">()</span>
 
@@ -429,102 +462,198 @@
 <span class="kn">from</span> <span class="nn">kivy.core.window</span> <span class="k">import</span> <span class="n">Window</span>
 </pre></div>
 </div>
-<p>それでもなおうまくいかないのであれば、 <a class="reference internal" href="contribute.html"><span class="doc">Contributing(翻訳済み)</span></a> ページの <a class="reference internal" href="contribute.html#reporting-issues"><span class="std std-ref">Reporting an Issue(問題を報告する)</span></a> セクションにある手順にしたがって、問題の詳細を github 上で報告してください。この手のエラーはデバッグするのがとても大変なので、詳細なレポートは我々にとってとても重要です。あなたの環境や実行に関して、提供可能なすべての情報を教えていただければ幸いです。</p>
+<p>If not, please report a detailed issue on github by following the instructions
+in the <a class="reference internal" href="contribute.html#reporting-issues"><span class="std std-ref">Reporting an Issue</span></a> section of the <a class="reference internal" href="contribute.html"><span class="doc">Contributing</span></a> documentation.
+This is very important for us because that kind of error can be very hard
+to debug. Give us all the information you can give about your environment and
+execution.</p>
 </div>
 <div class="section" id="undefined-symbol-glgeneratemipmap">
-<h3>undefined symbol: glGenerateMipmap<a class="headerlink" href="#undefined-symbol-glgeneratemipmap" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>あなたのグラフィックカード、もしくはそのドライバーがあまりに古いことに起因します。ドライバーを、利用可能なもののうち最新のものにアップデートした上で、もう1度試してみてください。</p>
+<h3>undefined symbol: glGenerateMipmap<a class="headerlink" href="#undefined-symbol-glgeneratemipmap" title="Permalink to this headline">¶</a></h3>
+<p>You graphics card or its drivers might be too old. Update your graphics drivers to the
+latest available version and retry.</p>
 </div>
 <div class="section" id="importerror-no-module-named-event">
-<h3>ImportError: No module named event<a class="headerlink" href="#importerror-no-module-named-event" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>もし Kivy の開発版 (development version) を使うのであれば、使用前にコンパイルする必要があります。kivy のディレクトリに行き、以下を実行してください:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">force</span>
+<h3>ImportError: No module named event<a class="headerlink" href="#importerror-no-module-named-event" title="Permalink to this headline">¶</a></h3>
+<p>If you use Kivy from our development version, you must compile it before
+using it. In the kivy directory, do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">force</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="android-faq">
-<h2>Android FAQ (Androidに関するFAQ)<a class="headerlink" href="#android-faq" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Android FAQ<a class="headerlink" href="#android-faq" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="could-not-extract-public-data">
-<h3>could not extract public data (パブリックデータを読み込めない)<a class="headerlink" href="#could-not-extract-public-data" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>このエラーは様々な状況下で発生し得ます。以下を確認してください:</p>
+<h3>could not extract public data<a class="headerlink" href="#could-not-extract-public-data" title="Permalink to this headline">¶</a></h3>
+<p>This error message can occur under various circumstances. Ensure that:</p>
 <ul class="simple">
-<li><p class="first">携帯電話にSDカードが挿入されている</p>
-</li>
-<li><p class="first">現在 &#8220;USB Mass Storage&#8221; モードにない</p>
-</li>
-<li><p class="first">SDカードへの書込み権限がある</p>
-</li>
+<li>you have a phone with an sdcard</li>
+<li>you are not currently in “USB Mass Storage” mode</li>
+<li>you have permissions to write to the sdcard</li>
 </ul>
-<p>&#8220;USB Mass Storage&#8221; モードに関するエラーの場合で、もしデバイスをつないだままにしたい場合は、USBオプションを Power にセットしてください。</p>
+<p>In the case of the “USB Mass Storage” mode error, and if you don’t want to keep
+unplugging the device, set the usb option to Power.</p>
 </div>
 <div class="section" id="crash-on-touch-interaction-on-android-2-3-x">
-<h3>Crash on touch interaction on Android 2.3.x (Android 2.3.x 上の、タッチ操作によるクラッシュ)<a class="headerlink" href="#crash-on-touch-interaction-on-android-2-3-x" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Adreno 200/205 を用いたデバイスでのクラッシュが報告されています。うまく動くアプリでも、スクリーンを通じたインタラクションによってクラッシュします。</p>
-<p>これらの報告では、ICSや高度なROMに変えることで問題が解決したことについても触れられています。</p>
+<h3>Crash on touch interaction on Android 2.3.x<a class="headerlink" href="#crash-on-touch-interaction-on-android-2-3-x" title="Permalink to this headline">¶</a></h3>
+<p>There have been reports of crashes on Adreno 200/205 based devices.
+Apps otherwise run fine but crash when interacted with/through the screen.</p>
+<p>These reports also mentioned the issue being resolved when moving to an ICS or
+higher ROM.</p>
 </div>
 <div class="section" id="is-it-possible-to-have-a-kiosk-app-on-android-3-0">
-<h3>Is it possible to have a kiosk app on android 3.0 ? (Android 3.0 上でキオスクアプリを作ることはできますか?)<a class="headerlink" href="#is-it-possible-to-have-a-kiosk-app-on-android-3-0" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>トーマス・ハンセン (Thomas Hansen) が kivy-users メーリングリスト上で詳しい回答を寄せています:</p>
+<h3>Is it possible to have a kiosk app on android 3.0 ?<a class="headerlink" href="#is-it-possible-to-have-a-kiosk-app-on-android-3-0" title="Permalink to this headline">¶</a></h3>
+<p>Thomas Hansen have wrote a detailed answer on the kivy-users mailing list:</p>
 <blockquote>
 <div><a class="reference external" href="https://groups.google.com/d/msg/kivy-users/QKoCekAR1c0/yV-85Y_iAwoJ">https://groups.google.com/d/msg/kivy-users/QKoCekAR1c0/yV-85Y_iAwoJ</a></div></blockquote>
-<p>基本的には、デバイスをルート化し、SystemUIパッケージを削除し、xml設定に数行を書き加えれば、事は成ります。</p>
+<p>Basically, you need to root the device, remove the SystemUI package, add some
+lines to the xml configuration, and you’re done.</p>
 </div>
 <div class="section" id="what-s-the-difference-between-python-for-android-from-kivy-and-sl4a">
-<h3>What&#8217;s the difference between python-for-android from Kivy and SL4A? (python-for-android は、kivyとSL4Aの間で何が違うのか?)<a class="headerlink" href="#what-s-the-difference-between-python-for-android-from-kivy-and-sl4a" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>同じ名前を持つにもかかわらず、Kivyのpython-for-androidはSL4A, Py4A あるいは android-python27 の python-for-android プロジェクトと関係はありません。それらは相異なる目的を持った、まったく別のプロジェクトなのです。Py4AをKivyで使うことはできるかもしれませんが、そのためのコードの開発あるいは努力は、これまでなされたことがありません。Kivyチームとしては我々のpython-for-androidこそが前に進むための最良解であり、Py4Aを組み込んだりサポートしたりするための試みは、有効な時間の使い方ではないと感じています。</p>
+<h3>What’s the difference between python-for-android from Kivy and SL4A?<a class="headerlink" href="#what-s-the-difference-between-python-for-android-from-kivy-and-sl4a" title="Permalink to this headline">¶</a></h3>
+<p>Despite having the same name, Kivy’s python-for-android is not related to the
+python-for-android project from SL4A, Py4A, or android-python27. They are
+distinctly different projects with different goals. You may be able to use
+Py4A with Kivy, but no code or effort has been made to do so. The Kivy team
+feels that our python-for-android is the best solution for us going forward,
+and attempts to integrate with and support Py4A is not a good use of our time.</p>
 </div>
 </div>
 <div class="section" id="project-faq">
-<h2>Project FAQ (プロジェクトに関するFAQ)<a class="headerlink" href="#project-faq" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Project FAQ<a class="headerlink" href="#project-faq" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="why-do-you-use-python-isn-t-it-slow">
-<h3>Why do you use Python? Isn&#8217;t it slow? (なぜPythonなのか? 遅くないか?)<a class="headerlink" href="#why-do-you-use-python-isn-t-it-slow" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>徹底的に回答しましょう。少々お付き合いください。</p>
-<p>Python はとても機敏な言語です。比較的短い時間で、たくさんのものを書くことができます。多くの開発の現場では、Python のような高級言語を使ってさくっとアプリを書き、テストし、条件によっては最適化することが強く好まれます。</p>
-<p>しかし実行速度となるとどうでしょうか? もし、いくつかのアルゴリズム (特に複雑な計算など) を実装し、実行速度を比較したとすると、Pythonは、たとえば C++ などよりもきわめて遅いことがわかるでしょう。しかし次の例を出せば、アプリを作るのにPythonを使うのが良いアイディアではないということに、より一層納得してしまうかもしれません。それはグラフィックの描画です。洗練されたグラフィックを描画するのは&#8221;とても重たい計算ですが (2世代前などの古いOpenGLの話をしているのではありません)、ユーザーエクスペリエンスの向上のためにしばしば行いたくなりますので、公平な根拠でありましょう。&#8221; <strong>しかし</strong> 見た目には、すべての場合、アプリはコードの同じ部分を実行することに、ほとんどの時間を費やして終わります。Kivyにおいては、それはイベントディスパッチやグラフィックの描画です。Pythonでは、こういった部分を速く走らせるためのコードを書くことができます。&#8221;</p>
-<p>Cythonを使うことで、コードをCのレベルにまでコンパイルすることができます。そしてさらに、特別でない一般のCコンパイラが、諸々を最適化してくれるのです。これはまったく痛みを伴わないプロセスで、もしあなたがコードに何かしらのヒントを加えれば、アプリはより高速に動くことになるでしょう。我々は少なくとも1倍以上、最大で1000倍を超えるパフォーマンスの高速化について話していますが、その度合はあなたのコードに大きく依存します。Kivyでは、我々があなたの代わりにこれを行います。我々は、効率性がきわめて重要なコードの一部をCで書いています。</p>
-<p>グラフィックの描画に関して、我々は今日のGPUをおおいに活用しています。ラスタライズのようなタスクについては、GPUはCPUよりはるかに効率が良いのです。KivyはGPUのパフォーマンスを、ほとんど最大限に活用します。もし Canvas API を使って描画するのであれば、描画に関するコードを自動的に最適化してくれるコンパイラ (我々が開発しました) を搭載しています。もし描画をほとんどGPUの上でキープするのであれば、プログラムの実行速度の大部分は、プログラミング言語ではなく、グラフィックのハードウェア環境によって決まります。</p>
-<p>Kivyが行う最適化だけをもってしても、アプリは十分高速に動くものと信じています。資源を浪費しないように、アプリの実行速度を制限したくなるかもしれません。しかし、制限した結果、実行速度が十分なものでなくなったとしても、また Cython という選択肢があります。あなた自身のコードに Cython を適用することで、 <em>大幅な</em> スピードアップが見込めるでしょう。</p>
-<p>我々を信じてください。我々は多くのベンチマークテストを行い、あなたのアプリを円滑に動かすための、いくつかのクレバーな最適化にたどりついたのです。</p>
+<h3>Why do you use Python? Isn’t it slow?<a class="headerlink" href="#why-do-you-use-python-isn-t-it-slow" title="Permalink to this headline">¶</a></h3>
+<p>Let us try to give a thorough answer; please bear with us.</p>
+<p>Python is a very agile language that allows you to do many things
+in a (by comparison) short time.
+For many development scenarios, we strongly prefer writing our
+application quickly in a high-level language such as Python, testing
+it, then optionally optimizing it.</p>
+<p>But what about speed?
+If you compare execution speeds of implementations for a certain set of
+algorithms (esp. number crunching) you will find that Python is a lot
+slower than say, C++.
+Now you may be even more convinced that it’s not a good idea in our
+case to use Python. Drawing sophisticated graphics (and we are
+not talking about your grandmother’s OpenGL here) is computationally
+quite expensive and given that we often want to do that for rich user
+experiences, that would be a fair argument.
+<strong>But</strong>, in virtually every case your application ends up spending
+most of the time (by far) executing the same part of the code.
+In Kivy, for example, these parts are event dispatching and graphics
+drawing. Now Python allows you to do something to make these parts
+much faster.</p>
+<p>By using Cython, you can compile your code down to the C level,
+and from there your usual C compiler optimizes things. This is
+a pretty pain free process and if you add some hints to your
+code, the result becomes even faster. We are talking about a speed up
+in performance by a factor of anything between 1x and up to more
+than 1000x (greatly depends on your code). In Kivy, we did this for
+you and implemented the portions of our code, where efficiency really
+is critical, on the C level.</p>
+<p>For graphics drawing, we also leverage today’s GPUs which are, for
+some tasks such as graphics rasterization, much more efficient than a
+CPU. Kivy does as much as is reasonable on the GPU to maximize
+performance. If you use our Canvas API to do the drawing, there is
+even a compiler that we invented which optimizes your drawing code
+automatically. If you keep your drawing mostly on the GPU,
+much of your program’s execution speed is not determined by the
+programming language used, but by the graphics hardware you throw at
+it.</p>
+<p>We believe that these (and other) optimizations that Kivy does for you
+already make most applications fast enough by far. Often you will even
+want to limit the speed of the application in order not to waste
+resources.
+But even if this is not sufficient, you still have the option of using
+Cython for your own code to <em>greatly</em> speed it up.</p>
+<p>Trust us when we say that we have given this very careful thought.
+We have performed many different benchmarks and come up with some
+clever optimizations to make your application run smoothly.</p>
 </div>
 <div class="section" id="does-kivy-support-python-3-x">
-<h3>Does Kivy support Python 3.x? (KivyはPython3.xをサポートしていますか?)<a class="headerlink" href="#does-kivy-support-python-3-x" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>もちろんです! バージョン1.8.0の時点で、Kivy は同じコードベースで Python &gt;= 2.7 と Python &gt;= 3.3 をサポートしています。Python 3 はまた、python-for-androidでも現在サポートされています。</p>
-<p>しかしわかっておいてもらいたいのは、Kivy は Python 3.3+ でも走りますが、我々の提供する iOS用のビルドツールにはなお Python 2.7 が必要であるということです。</p>
+<h3>Does Kivy support Python 3.x?<a class="headerlink" href="#does-kivy-support-python-3-x" title="Permalink to this headline">¶</a></h3>
+<p>Yes! As of version 1.8.0 Kivy supports both Python &gt;= 2.7 and Python
+&gt;= 3.4 with the same codebase. Python 3 is also now supported by
+python-for-android.</p>
+<p>However, be aware that while Kivy will run in Python 3.4+, our iOS
+build tools still require Python 2.7.</p>
 </div>
 <div class="section" id="how-is-kivy-related-to-pymt">
-<h3>How is Kivy related to PyMT? (KivyはPyMTとどのような関係にありますか?)<a class="headerlink" href="#how-is-kivy-related-to-pymt" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>我々の開発者はプロフェッショナルで、専門領域の知識や技術にとても精通しています。しかしKivyの前には、PyMTというプロジェクトがありました。(今もありますが。)このPyMTは、我々の開発者のうち、中核を担う者たちによって進められてきました。開発中、我々はその PyMT プロジェクトから非常に多くのことを学びました。2年以上にわたって研究と開発を行いましたが、フレームワークのデザインを改善するための興味深い手法を数多く発見しました。数多くのベンチマークテストを行った結果、(現在Kivyが実現しているような) スピードと柔軟性を達成するには、コードベースの大部分を書き換えなければならなくなりました。これによりPyMTは上位非互換となりましたが、しかし将来性のある決定です。もっとも特筆すべきことはパフォーマンスの向上で，それは信じられないようなものです。上で述べたような数々の最適化により、Kivyは圧倒的に速く起動し、オペレーションを行います。我々には PyMT を使ってビジネスや団体との仕事に従事する機会がありました。非常に様々な要求の下で製品を試すことができましたし、それらのすべてに対して PyMT を動かしてきました。Kivy や PyMT でシステムを書くことと、すべての異なる環境下で動くようにすることはまた別の話です。我々にはこのような素晴らしい背景があり、そこで得られた知識を Kivy に持ち込んでいるのです。</p>
-<p>さらに、中核を担う開発者たちのうち何人かは、常勤で働いていた仕事を辞め、このプロジェクトに完全に携わるという決断をしました。そのため、よりプロフェッショナルな財団を設立する必要が生じました。Kivyが、その財団なのです。Kivyは安定して動作し、プロフェッショナルな製品であることが期待されています。技術的には、Kivy は PyMT の後継ではありません。なぜなら両者を容易に移植する手段が存在しないからです。しかしその目的とするところは同じです: それは新しいユーザーインターフェースを設計するための、高品質なアプリケーションのプロデュースです。以上が、なぜPyMTではなくKivyを使ってプロジェクト開発を行うことを人に勧めるのか、その理由となります。PyMTの積極的な開発は行わなくなりましたが、メンテナンス・パッチは今でも受け付けています。</p>
+<h3>How is Kivy related to PyMT?<a class="headerlink" href="#how-is-kivy-related-to-pymt" title="Permalink to this headline">¶</a></h3>
+<p>Our developers are professionals and are pretty savvy in their
+area of expertise. However, before Kivy came around there was (and
+still is) a project named PyMT that was led by our core developers.
+We learned a great deal from that project during the time that we
+developed it. In the more than two years of research and development
+we found many interesting ways to improve the design of our
+framework. We have performed numerous benchmarks and as it turns out,
+to achieve the great speed and flexibility that Kivy has, we had to
+rewrite quite a big portion of the codebase, making this a
+backwards-incompatible but future-proof decision.
+Most notable are the performance increases, which are just incredible.
+Kivy starts and operates just so much faster, due to these heavy
+optimizations.
+We also had the opportunity to work with businesses and associations
+using PyMT. We were able to test our product on a large diversity of
+setups and made PyMT work on all of them. Writing a system such as
+Kivy or PyMT is one thing. Making it work under all these different
+conditions is another. We have a good background here, and brought our
+knowledge to Kivy.</p>
+<p>Furthermore, since some of our core developers decided to drop their full-time
+jobs and turn to this project completely, it was decided that a more
+professional foundation had to be laid. Kivy is that foundation. It is
+supposed to be a stable and professional product.
+Technically, Kivy is not really a successor to PyMT because there is
+no easy migration path between them. However, the goal is the same:
+Producing high-quality applications for novel user interfaces.
+This is why we encourage everyone to base new projects on Kivy instead
+of PyMT.
+Active development of PyMT has stalled. Maintenance patches are still
+accepted.</p>
 </div>
 <div class="section" id="do-you-accept-patches">
-<h3>Do you accept patches? (パッチは受け付けてくれますか?)<a class="headerlink" href="#do-you-accept-patches" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>はい、喜んで。ただし、あなたの貴重な修正を円滑に組み込めるように、コントリビューションに関するガイドラインを必ず読んでおいてください。もちろん、パッチなら何でもかんでも受け取るわけではありません。パッチは我々のスタイルガイドと調和していなければなりませんし、より重要なのは、有意義なパッチであるということです。大きな変更、とりわけ新しい特徴を思いついたら我々に連絡をください。</p>
+<h3>Do you accept patches?<a class="headerlink" href="#do-you-accept-patches" title="Permalink to this headline">¶</a></h3>
+<p>Yes, we love patches. In order to ensure a smooth integration of your
+precious changes however, please make sure to read our contribution
+guidelines.
+Obviously we don’t accept every patch. Your patch has to be consistent
+with our styleguide and, more importantly, make sense.
+It does make sense to talk to us before you come up with bigger
+changes, especially new features.</p>
 </div>
 <div class="section" id="does-the-kivy-project-participate-in-google-s-summer-of-code">
-<h3>Does the Kivy project participate in Google&#8217;s Summer of Code? (Kivyプロジェクトは Google Summer of Code に参加しますか?)<a class="headerlink" href="#does-the-kivy-project-participate-in-google-s-summer-of-code" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>GSoC への参加を検討している人たちから、我々も参加するかどうかを尋ねられます。はっきり答えましょう。イエスです。:-)</p>
-<p>もし受講者としての参加を望んでいて、かつアクセプトの可能性を高めたいのであれば、今すぐにでも我々とコンタクトを取り、我々のワークフローに慣れるために、いくつかの小さな問題の解決に取り組んでみてください。(可能なら大きな問題でも構いませんが。) もし、あなたは我々とうまくやれそうだということを我々が知れば、それはあなたにとって大きなプラスになるでしょう。</p>
-<p>チェックリストです:</p>
+<h3>Does the Kivy project participate in Google’s Summer of Code ?<a class="headerlink" href="#does-the-kivy-project-participate-in-google-s-summer-of-code" title="Permalink to this headline">¶</a></h3>
+<p>Potential students ask whether we participate in GSoC.
+The clear answer is: Indeed. :-)</p>
+<p>If you want to participate as a student and want to maximize your
+chances of being accepted, start talking to us today and try fixing
+some smaller (or larger, if you can ;-) problems to get used to our
+workflow. If we know you can work well with us, that’d be a big plus.</p>
+<p>Here’s a checklist:</p>
 <ul class="simple">
-<li><p class="first">ウェブサイトを読み通してください。少なくとも、ドキュメンテーションは目を通しておいてください。</p>
-</li>
-<li><p class="first">ソースコードを眺めてください。</p>
-</li>
-<li><p class="first">コントリビューションに関するガイドラインを読んでください。</p>
-</li>
-<li><p class="first">アイディアリスト (上のリンクをたどってください) から面白いと思ったものを拾うか、もしくは自分でアイディアを考えてください。</p>
-</li>
-<li><p class="first"><strong>自分で</strong> 研究に取り組んでみてください。GSoCは，我々が受講生であるあなたに何かを教え、それに対してあなたが対価を支払う場ではありません。あなた自身が、我々のサポートを得て、あなたの目標を成し遂げる場なのです。その原動力は、もちろんあなた自身です。多くの受講生がやって来ては何をやればいいのかを尋ねてきます。そんなのは知ったことではありません。なぜなら我々は、あなたの興味もスキルも知らないからです。あなたが真剣で、イニシアチブをとって問題解決に挑むところを見せてください。</p>
-</li>
-<li><p class="first">あなたがやりたいことに関する草案を作ってください。現在の状況について何を理解しているか (とても大雑把でもかまいません)、何を、どう改善したいのかなどを含めるようにしてください。</p>
-</li>
-<li><p class="first">その草案について適当なときに我々とディスカッションをしましょう。そこでフィードバックを得てください。</p>
-</li>
-<li><p class="first">辛抱強くやってください。特にIRC (Internet Relay Chat) の場合はそうです。我々は都合のつけられるときにあなたへの連絡を試みます。もし連絡が無い場合はメールをください。そして待っていてください。ほとんどの質問は、ドキュメンテーションか何かで既に答えられているものであり、リサーチによって見つかるものです。もしあなたの質問が、あなたが本当にたずねたいことを反映していないのであれば、我々はそれをうまく受け取らないかもしれません。</p>
-</li>
+<li>Make sure to read through the website and at least skim the documentation.</li>
+<li>Look at the source code.</li>
+<li>Read our contribution guidelines.</li>
+<li>Pick an idea that you think is interesting from the ideas list (see link
+above) or come up with your own idea.</li>
+<li>Do some research <strong>yourself</strong>. GSoC is not about us teaching you something
+and you getting paid for that. It is about you trying to achieve agreed upon
+goals by yourself with our support. The main driving force in this should be,
+obviously, yourself.  Many students come up and ask what they should
+do. Well, we don’t know because we know neither your interests nor your
+skills. Show us you’re serious about it and take initiative.</li>
+<li>Write a draft proposal about what you want to do. Include what you understand
+the current state is (very roughly), what you would like to improve and how,
+etc.</li>
+<li>Discuss that proposal with us in a timely manner. Get feedback.</li>
+<li>Be patient! Especially on Discord. We will try to get to you if we’re available.
+If not, send an email and just wait. Most questions are already answered in
+the docs or somewhere else and can be found with some research. If your
+questions don’t reflect that you’ve actually thought through what you’re
+asking, it might not be well received.</li>
 </ul>
-<p>グッドラック! :-)</p>
+<p>Good luck! :-)</p>
 </div>
 </div>
 </div>
@@ -537,7 +666,7 @@
                   <a href="gsoc.html" title="previous chapter">&laquo; Google Summer of Code - 2017</a></li>
                   </td>
                   <td class="rightlink">
-                  <a href="contact.html" title="next chapter">Contact Us(翻訳済み) &raquo;</a>
+                  <a href="contact.html" title="next chapter">Contact Us &raquo;</a>
                       </td>
                   </tr>
               </table>
@@ -565,13 +694,35 @@
     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
+<script>
+  var selector = $("#version_selector");
+
+  selector.on('change', function() {
+    // replace the version part of the url with the selected version
+    document.location.pathname = document.location.pathname.replace(
+      /^(\/.*?\/).*?(\/.*)/,
+     '$1' + this.value + '$2'
+    );
+  });
+
+  var url = "/doc/versions.json";
+
+  $.getJSON(url, function(versions) {
+    versions.forEach(function(version){
+      var current = window.location.pathname.split('/')[2]
+      selector.append(
+        $("<option " + (version == current ? "selected" : "") + "/>").val(version).html(version)
+      );
+    });
+  });
+</script>
 <noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Tracking Code -->
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 10月 01, 2017.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+      Last updated on Feb 15, 2019.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.4.
 </div>
 -->
   </body>

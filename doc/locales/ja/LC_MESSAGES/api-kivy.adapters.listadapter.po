@@ -1,0 +1,329 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-15 00:59+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../sources/api-kivy.adapters.listadapter.rst:3
+msgid "ListAdapter"
+msgstr ""
+
+#: kivy.adapters.listadapter:4 of
+msgid "The feature has been deprecated."
+msgstr ""
+
+#: kivy.adapters.listadapter:9 of
+msgid ""
+"This code is still experimental, and its API is subject to change in a "
+"future version."
+msgstr ""
+
+#: kivy.adapters.listadapter:12 of
+msgid ""
+"A :class:`ListAdapter` is an adapter around a python list and adds "
+"support for selection operations. If you wish to have a bare-bones list "
+"adapter, without selection, use a "
+":class:`~kivy.adapters.simplelistadapter.SimpleListAdapter`."
+msgstr ""
+
+#: kivy.adapters.listadapter:17 of
+msgid ""
+"From an :class:`~kivy.adapters.Adapter`, a :class:`ListAdapter` inherits "
+"cls, template, and args_converter properties and adds others that control"
+" selection behaviour:"
+msgstr ""
+
+#: kivy.adapters.listadapter:21 of
+msgid ":attr:`~ListAdapter.selection`: a list of selected items."
+msgstr ""
+
+#: kivy.adapters.listadapter:23 of
+msgid ""
+":attr:`~ListAdapter.selection_mode`: one of 'single', 'multiple' or "
+"'none'."
+msgstr ""
+
+#: kivy.adapters.listadapter:25 of
+msgid ""
+":attr:`~ListAdapter.allow_empty_selection`: a boolean. If False, a "
+"selection is forced. If True, and only user or programmatic action will "
+"change selection, it can be empty."
+msgstr ""
+
+#: kivy.adapters.listadapter:29 of
+msgid ""
+"A :class:`~kivy.adapters.dictadapter.DictAdapter` is a subclass of a "
+":class:`~kivy.adapters.listadapter.ListAdapter`. They both dispatch the "
+":attr:`~ListAdapter.on_selection_change` event when selection changes."
+msgstr ""
+
+#: kivy.adapters.listadapter:33 of
+msgid ""
+"Added data = ListProperty([]), which was probably inadvertently deleted "
+"at some point. This means that whenever data changes an update will fire,"
+" instead of having to reset the data object (Adapter has data defined as "
+"an ObjectProperty, so we need to reset it here to ListProperty). See also"
+" DictAdapter and its set of data = DictProperty()."
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid ""
+"Bases: :class:`kivy.adapters.adapter.Adapter`, "
+":class:`kivy.event.EventDispatcher`"
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter:1 of
+msgid ""
+"A base class for adapters interfacing with lists, dictionaries or other "
+"collection type data, adding selection, view creation and management "
+"functionality."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.allow_empty_selection:1 of
+msgid ""
+"The allow_empty_selection may be used for cascading selection between "
+"several list views, or between a list view and an observing view. Such "
+"automatic maintenance of the selection is important for all but simple "
+"list displays. Set allow_empty_selection to False and the selection is "
+"auto-initialized and always maintained, so any observing views may "
+"likewise be updated to stay in sync."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.allow_empty_selection:8 of
+msgid ""
+":attr:`allow_empty_selection` is a "
+":class:`~kivy.properties.BooleanProperty` and defaults to True."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.cached_views:1 of
+msgid ""
+"View instances for data items are instantiated and managed by the "
+"adapter. Here we maintain a dictionary containing the view instances "
+"keyed to the indices in the data."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.cached_views:5 of
+msgid ""
+"This dictionary works as a cache. get_view() only asks for a view from "
+"the adapter if one is not already stored for the requested index."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.cached_views:8 of
+msgid ""
+":attr:`cached_views` is a :class:`~kivy.properties.DictProperty` and "
+"defaults to {}."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.create_view:1 of
+msgid ""
+"This method is more complicated than the ones in the "
+":class:`~kivy.adapters.adapter.Adapter` and "
+":class:`~kivy.adapters.simplelistadapter.SimpleListAdapter` classes "
+"because here we create bindings for the data items and their children "
+"back to the *self.handle_selection()* event. We also perform other "
+"selection-related tasks to keep item views in sync with the data."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.cut_to_sel:1 of
+msgid ""
+"Same as trim_to_sel, but intervening list items within the selected range"
+" are also cut, leaving only list items that are selected."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.data:1 of
+msgid ""
+"The data list property is redefined here, overriding its definition as an"
+" ObjectProperty in the Adapter class. We bind to data so that any changes"
+" will trigger updates. See also how the "
+":class:`~kivy.adapters.DictAdapter` redefines data as a "
+":class:`~kivy.properties.DictProperty`."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.data:7 of
+msgid ""
+":attr:`data` is a :class:`~kivy.properties.ListProperty` and defaults to "
+"[]."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.on_selection_change:1 of
+msgid ""
+"on_selection_change() is the default handler for the on_selection_change "
+"event. You can bind to this event to get notified of selection changes."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.on_selection_change of
+msgid "Parameters"
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.on_selection_change:8 of
+msgid "adapter: :class:`~ListAdapter` or subclass"
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.on_selection_change:7 of
+msgid ""
+"The instance of the list adapter where the selection changed. Use the "
+"adapters :attr:`selection` property to see what has been selected."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.propagate_selection_to_data:1 of
+msgid ""
+"Normally, data items are not selected/deselected because the data items "
+"might not have an is_selected boolean property -- only the item view for "
+"a given data item is selected/deselected as part of the maintained "
+"selection list. However, if the data items do have an is_selected "
+"property, or if they mix in "
+":class:`~kivy.adapters.models.SelectableDataItem`, the selection "
+"machinery can propagate selection to data items. This can be useful for "
+"storing selection state in a local database or backend database for "
+"maintaining state in game play or other similar scenarios. It is a "
+"convenience function."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.propagate_selection_to_data:11 of
+msgid "To propagate selection or not?"
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.propagate_selection_to_data:13 of
+msgid ""
+"Consider a shopping list application for shopping for fruits at the "
+"market. The app allows for the selection of fruits to buy for each day of"
+" the week, presenting seven lists: one for each day of the week. Each "
+"list is loaded with all the available fruits, but the selection for each "
+"is a subset. There is only one set of fruit data shared between the "
+"lists, so it would not make sense to propagate selection to the data "
+"because selection in any of the seven lists would clash and mix with that"
+" of the others."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.propagate_selection_to_data:22 of
+msgid ""
+"However, consider a game that uses the same fruits data for selecting "
+"fruits available for fruit-tossing. A given round of play could have a "
+"full fruits list, with fruits available for tossing shown selected. If "
+"the game is saved and rerun, the full fruits list, with selection marked "
+"on each item, would be reloaded correctly if selection is always "
+"propagated to the data. You could accomplish the same functionality by "
+"writing code to operate on list selection, but having selection stored in"
+" the data ListProperty might prove convenient in some cases."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.propagate_selection_to_data:33 of
+msgid ""
+"This setting should be set to True if you wish to initialize the view "
+"with item views already selected."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.propagate_selection_to_data:36 of
+msgid ""
+":attr:`propagate_selection_to_data` is a "
+":class:`~kivy.properties.BooleanProperty` and defaults to False."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.select_list:1 of
+msgid "The select call is made for the items in the provided view_list."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.select_list:3 of
+msgid "Arguments:"
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.select_list:5 of
+msgid ""
+"view_list: the list of item views to become the new selection, or to add "
+"to the existing selection"
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.select_list:8 of
+msgid "extend: boolean for whether or not to extend the existing list"
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.selection:1 of
+msgid "The selection list property is the container for selected items."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.selection:3 of
+msgid ""
+":attr:`selection` is a :class:`~kivy.properties.ListProperty` and "
+"defaults to []."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.selection_limit:1 of
+msgid ""
+"When the :attr:`~ListAdapter.selection_mode` is 'multiple' and the "
+"selection_limit is non-negative, this number will limit the number of "
+"selected items. It can be set to 1, which is equivalent to single "
+"selection. If selection_limit is not set, the default value is -1, "
+"meaning that no limit will be enforced."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.selection_limit:7 of
+msgid ""
+":attr:`selection_limit` is a :class:`~kivy.properties.NumericProperty` "
+"and defaults to -1 (no limit)."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.selection_mode:1 of
+msgid ""
+"The selection_mode is a string and can be set to one of the following "
+"values:"
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.selection_mode:4 of
+msgid ""
+"'none': use the list as a simple list (no select action). This option is "
+"here so that selection can be turned off, momentarily or permanently, for"
+" an existing list adapter. A "
+":class:`~kivy.adapters.listadapter.ListAdapter` is not meant to be used "
+"as a primary no-selection list adapter. Use a "
+":class:`~kivy.adapters.simplelistadapter.SimpleListAdapter` for that."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.selection_mode:11 of
+msgid "'single': multi-touch/click ignored. Single item selection only."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.selection_mode:13 of
+msgid ""
+"'multiple': multi-touch / incremental addition to selection allowed; may "
+"be limited to a count by setting the "
+":attr:`~ListAdapter.selection_limit`."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.selection_mode:17 of
+msgid ""
+":attr:`selection_mode` is an :class:`~kivy.properties.OptionProperty` and"
+" defaults to 'single'."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.trim_left_of_sel:1 of
+msgid ""
+"Cut list items with indices in sorted_keys that are less than the index "
+"of the first selected item if there is a selection."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.trim_right_of_sel:1 of
+msgid ""
+"Cut list items with indices in sorted_keys that are greater than the "
+"index of the last selected item if there is a selection."
+msgstr ""
+
+#: kivy.adapters.listadapter.ListAdapter.trim_to_sel:1 of
+msgid ""
+"Cut list items with indices in sorted_keys that are less than or greater "
+"than the index of the last selected item if there is a selection. This "
+"preserves intervening list items within the selected range."
+msgstr ""
+

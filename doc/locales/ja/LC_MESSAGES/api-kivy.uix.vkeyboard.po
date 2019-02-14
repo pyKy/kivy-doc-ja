@@ -1,0 +1,476 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-15 00:59+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../sources/api-kivy.uix.vkeyboard.rst:3
+msgid "VKeyboard"
+msgstr ""
+
+#: kivy.uix.vkeyboard:8 of
+msgid ""
+"VKeyboard is an onscreen keyboard for Kivy. Its operation is intended to "
+"be transparent to the user. Using the widget directly is NOT recommended."
+" Read the section `Request keyboard`_ first."
+msgstr ""
+
+#: kivy.uix.vkeyboard:13 of
+msgid "Modes"
+msgstr ""
+
+#: kivy.uix.vkeyboard:15 of
+msgid "This virtual keyboard has a docked and free mode:"
+msgstr ""
+
+#: kivy.uix.vkeyboard:17 of
+msgid ""
+"docked mode (:attr:`VKeyboard.docked` = True) Generally used when only "
+"one person is using the computer, like a tablet or personal computer etc."
+msgstr ""
+
+#: kivy.uix.vkeyboard:20 of
+msgid ""
+"free mode: (:attr:`VKeyboard.docked` = False) Mostly for multitouch "
+"surfaces. This mode allows multiple virtual keyboards to be used on the "
+"screen."
+msgstr ""
+
+#: kivy.uix.vkeyboard:24 of
+msgid ""
+"If the docked mode changes, you need to manually call "
+":meth:`VKeyboard.setup_mode` otherwise the change will have no impact. "
+"During that call, the VKeyboard, implemented on top of a "
+":class:`~kivy.uix.scatter.Scatter`, will change the behavior of the "
+"scatter and position the keyboard near the target (if target and docked "
+"mode is set)."
+msgstr ""
+
+#: kivy.uix.vkeyboard:33 of
+msgid "Layouts"
+msgstr ""
+
+#: kivy.uix.vkeyboard:35 of
+msgid ""
+"The virtual keyboard is able to load a custom layout. If you create a new"
+" layout and put the JSON in "
+":file:`<kivy_data_dir>/keyboards/<layoutid>.json`, you can load it by "
+"setting :attr:`VKeyboard.layout` to your layoutid."
+msgstr ""
+
+#: kivy.uix.vkeyboard:39 of
+msgid "The JSON must be structured like this::"
+msgstr ""
+
+#: kivy.uix.vkeyboard:50 of
+msgid ""
+"Then, you need to describe the keys in each row, for either a \"normal\","
+" \"shift\" or a \"special\" (added in version 1.9.0) mode. Keys for this "
+"row data must be named `normal_<row>`, `shift_<row>` and `special_<row>`."
+" Replace `row` with the row number. Inside each row, you will describe "
+"the key. A key is a 4 element list in the format::"
+msgstr ""
+
+#: kivy.uix.vkeyboard:60 of
+msgid "Here are example keys::"
+msgstr ""
+
+#: kivy.uix.vkeyboard:67 of
+msgid "Finally, complete the JSON::"
+msgstr ""
+
+#: kivy.uix.vkeyboard:87 of
+msgid "Request Keyboard"
+msgstr ""
+
+#: kivy.uix.vkeyboard:89 of
+msgid ""
+"The instantiation of the virtual keyboard is controlled by the "
+"configuration. Check `keyboard_mode` and `keyboard_layout` in the :doc"
+":`api-kivy.config`."
+msgstr ""
+
+#: kivy.uix.vkeyboard:92 of
+msgid ""
+"If you intend to create a widget that requires a keyboard, do not use the"
+" virtual keyboard directly, but prefer to use the best method available "
+"on the platform. Check the "
+":meth:`~kivy.core.window.WindowBase.request_keyboard` method in the :doc"
+":`api-kivy.core.window`."
+msgstr ""
+
+#: kivy.uix.vkeyboard:97 of
+msgid ""
+"If you want a specific layout when you request the keyboard, you should "
+"write something like this (from 1.8.0, numeric.json can be in the same "
+"directory as your main.py)::"
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.uix.scatter.Scatter`"
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard:1 of
+msgid ""
+"VKeyboard is an onscreen keyboard with multitouch support. Its layout is "
+"entirely customizable and you can switch between available layouts using "
+"a button in the bottom right of the widget."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard of
+msgid "Events"
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard:6 of
+msgid "`on_key_down`: keycode, internal, modifiers"
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard:7 of
+msgid "Fired when the keyboard received a key down event (key press)."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard:10 of
+msgid "`on_key_up`: keycode, internal, modifiers"
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard:9 of
+msgid "Fired when the keyboard received a key up event (key release)."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.available_layouts:1 of
+msgid ""
+"Dictionary of all available layouts. Keys are the layout ID, and the "
+"value is the JSON (translated into a Python object)."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.available_layouts:4 of
+msgid ""
+":attr:`available_layouts` is a :class:`~kivy.properties.DictProperty` and"
+" defaults to {}."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.background:1 of
+msgid "Filename of the background image."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.background:3 of
+msgid ""
+":attr:`background` is a :class:`~kivy.properties.StringProperty` and "
+"defaults to "
+":file:`atlas://data/images/defaulttheme/vkeyboard_background`."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.background_border:1 of
+msgid ""
+"Background image border. Used for controlling the "
+":attr:`~kivy.graphics.vertex_instructions.BorderImage.border` property of"
+" the background."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.background_border:5 of
+msgid ""
+":attr:`background_border` is a :class:`~kivy.properties.ListProperty` and"
+" defaults to [16, 16, 16, 16]"
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.background_color:1 of
+msgid ""
+"Background color, in the format (r, g, b, a). If a background is set, the"
+" color will be combined with the background texture."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.background_color:4 of
+msgid ""
+":attr:`background_color` is a :class:`~kivy.properties.ListProperty` and "
+"defaults to [1, 1, 1, 1]."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.background_disabled:1 of
+msgid "Filename of the background image when the vkeyboard is disabled."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.background_disabled:5 of
+msgid ""
+":attr:`background_disabled` is a :class:`~kivy.properties.StringProperty`"
+" and defaults to "
+":file:`atlas://data/images/defaulttheme/vkeyboard__disabled_background`."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.callback:1 of
+msgid ""
+"Callback can be set to a function that will be called if the VKeyboard is"
+" closed by the user."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.callback:4
+#: kivy.uix.vkeyboard.VKeyboard.target:5 of
+msgid ""
+":attr:`target` is an :class:`~kivy.properties.ObjectProperty` instance "
+"and defaults to None."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.collide_margin:1 of
+msgid ""
+"Do a collision test, and return True if the (x, y) is inside the "
+"vkeyboard margin."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.docked:1 of
+msgid ""
+"Indicate whether the VKeyboard is docked on the screen or not. If you "
+"change it, you must manually call :meth:`setup_mode` otherwise it will "
+"have no impact. If the VKeyboard is created by the Window, the docked "
+"mode will be automatically set by the configuration, using the "
+"`keyboard_mode` token in `[kivy]` section."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.docked:7 of
+msgid ""
+":attr:`docked` is a :class:`~kivy.properties.BooleanProperty` and "
+"defaults to False."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.font_size:1 of
+msgid ""
+"font_size, specifies the size of the text on the virtual keyboard keys. "
+"It should be kept within limits to ensure the text does not extend beyond"
+" the bounds of the key or become too small to read."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.font_size:7 of
+msgid ""
+":attr:`font_size` is a :class:`~kivy.properties.NumericProperty` and "
+"defaults to 20."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.key_background_color:1 of
+msgid ""
+"Key background color, in the format (r, g, b, a). If a key background is "
+"set, the color will be combined with the key background texture."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.key_background_color:4 of
+msgid ""
+":attr:`key_background_color` is a :class:`~kivy.properties.ListProperty` "
+"and defaults to [1, 1, 1, 1]."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.key_background_down:1 of
+msgid ""
+"Filename of the key background image for use when a touch is active on "
+"the widget."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.key_background_down:4 of
+msgid ""
+":attr:`key_background_down` is a :class:`~kivy.properties.StringProperty`"
+" and defaults to "
+":file:`atlas://data/images/defaulttheme/vkeyboard_key_down`."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.key_background_normal:1 of
+msgid ""
+"Filename of the key background image for use when no touches are active "
+"on the widget."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.key_background_normal:4 of
+msgid ""
+":attr:`key_background_normal` is a "
+":class:`~kivy.properties.StringProperty` and defaults to "
+":file:`atlas://data/images/defaulttheme/vkeyboard_key_normal`."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.key_border:1 of
+msgid ""
+"Key image border. Used for controlling the "
+":attr:`~kivy.graphics.vertex_instructions.BorderImage.border` property of"
+" the key."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.key_border:5 of
+msgid ""
+":attr:`key_border` is a :class:`~kivy.properties.ListProperty` and "
+"defaults to [16, 16, 16, 16]"
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.key_disabled_background_normal:1 of
+msgid ""
+"Filename of the key background image for use when no touches are active "
+"on the widget and vkeyboard is disabled."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.key_disabled_background_normal:6 of
+msgid ""
+":attr:`key_disabled_background_normal` is a "
+":class:`~kivy.properties.StringProperty` and defaults to "
+":file:`atlas://data/images/defaulttheme/vkeyboard_disabled_key_normal`."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.key_margin:1 of
+msgid ""
+"Key margin, used to create space between keys. The margin is composed of "
+"four values, in pixels::"
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.key_margin:6 of
+msgid ""
+":attr:`key_margin` is a :class:`~kivy.properties.ListProperty` and "
+"defaults to [2, 2, 2, 2]"
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.layout:1 of
+msgid ""
+"Layout to use for the VKeyboard. By default, it will be the layout set in"
+" the configuration, according to the `keyboard_layout` in `[kivy]` "
+"section."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.layout:5 of
+msgid ""
+"If layout is a .json filename, it will loaded and added to the "
+"available_layouts."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.layout:9 of
+msgid ""
+":attr:`layout` is a :class:`~kivy.properties.StringProperty` and defaults"
+" to None."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.layout_path:1 of
+msgid "Path from which layouts are read."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.layout_path:3 of
+msgid ""
+":attr:`layout` is a :class:`~kivy.properties.StringProperty` and defaults"
+" to :file:`<kivy_data_dir>/keyboards/`"
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.margin_hint:1 of
+msgid ""
+"Margin hint, used as spacing between keyboard background and keys "
+"content. The margin is composed of four values, between 0 and 1::"
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.margin_hint:6 of
+msgid ""
+"The margin hints will be multiplied by width and height, according to "
+"their position."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.margin_hint:9 of
+msgid ""
+":attr:`margin_hint` is a :class:`~kivy.properties.ListProperty` and "
+"defaults to [.05, .06, .05, .06]"
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.on_touch_down:1 of
+msgid "Receive a touch down event."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.on_touch_down of
+msgid "Parameters"
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.on_touch_down:7 of
+msgid "`touch`: :class:`~kivy.input.motionevent.MotionEvent` class"
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.on_touch_down:5 of
+msgid ""
+"Touch received. The touch is in parent coordinates. See "
+":mod:`~kivy.uix.relativelayout` for a discussion on coordinate systems."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.on_touch_down of
+msgid "Returns"
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.on_touch_down:9 of
+msgid ""
+"bool If True, the dispatching of the touch event will stop. If False, the"
+" event will continue to be dispatched to the rest of the widget tree."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.on_touch_up:1 of
+msgid "Receive a touch up event. The touch is in parent coordinates."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.on_touch_up:3 of
+msgid "See :meth:`on_touch_down` for more information."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.refresh:1 of
+msgid ""
+"(internal) Recreate the entire widget and graphics according to the "
+"selected layout."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.setup_mode:1 of
+msgid ""
+"Call this method when you want to readjust the keyboard according to "
+"options: :attr:`docked` or not, with attached :attr:`target` or not:"
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.setup_mode:4 of
+msgid "If :attr:`docked` is True, it will call :meth:`setup_mode_dock`"
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.setup_mode:5 of
+msgid "If :attr:`docked` is False, it will call :meth:`setup_mode_free`"
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.setup_mode:7 of
+msgid "Feel free to overload these methods to create new positioning behavior."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.setup_mode_dock:1 of
+msgid "Setup the keyboard in docked mode."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.setup_mode_dock:3 of
+msgid ""
+"Dock mode will reset the rotation, disable translation, rotation and "
+"scale. Scale and position will be automatically adjusted to attach the "
+"keyboard to the bottom of the screen."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.setup_mode_dock:8
+#: kivy.uix.vkeyboard.VKeyboard.setup_mode_free:10 of
+msgid "Don't call this method directly, use :meth:`setup_mode` instead."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.setup_mode_free:1 of
+msgid "Setup the keyboard in free mode."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.setup_mode_free:3 of
+msgid ""
+"Free mode is designed to let the user control the position and "
+"orientation of the keyboard. The only real usage is for a multiuser "
+"environment, but you might found other ways to use it. If a "
+":attr:`target` is set, it will place the vkeyboard under the target."
+msgstr ""
+
+#: kivy.uix.vkeyboard.VKeyboard.target:1 of
+msgid ""
+"Target widget associated with the VKeyboard. If set, it will be used to "
+"send keyboard events. If the VKeyboard mode is \"free\", it will also be "
+"used to set the initial position."
+msgstr ""
+

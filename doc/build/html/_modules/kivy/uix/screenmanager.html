@@ -6,30 +6,30 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="twitter:site" content="@kivyframework">
     
-    <title>kivy.uix.screenmanager &mdash; Kivy 1.10.0 ドキュメント</title>
+    <title>kivy.uix.screenmanager &mdash; Kivy 1.10.1 documentation</title>
     <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../../../_static/fresh.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.10.0',
+        VERSION:     '1.10.1',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
+
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/translations.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
     <script type="text/javascript" src="../../../_static/jquery-effects-core-and-slide.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.cookie.js"></script>
     <script type="text/javascript" src="../../../_static/kivy.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="top" title="Kivy 1.10.0 ドキュメント" href="../../../index.html" />
+    <link rel="top" title="Kivy 1.10.1 documentation" href="../../../index.html" />
     <link rel="up" title="kivy" href="../../kivy.html" /> 
   </head>
   <body>
@@ -55,6 +55,8 @@
 <div id="contentall">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+            <h3>Version</h3>
+            <select id="version_selector"></select>
             <h3>Quick search</h3>
             <form class="search" action="../../../search.html" method="get">
                 &nbsp;
@@ -68,85 +70,87 @@
           <h3><a href="../../../index.html">Table Of Contents</a></h3>
           -->
           <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted/index.html">Getting Started(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/intro.html">Introduction (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/installation.html">Installation(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/first_app.html">A first App(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/properties.html">Properties(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/rules.html">Kv Design Language(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/events.html">Events(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/framework.html">Non-widget stuff(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/layouts.html">Layouts(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/drawing.html">Drawing(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/packaging.html">Packaging(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/examples.html">Examples(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/diving.html">Diving in(翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/first_app.html">A first App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/rules.html">Kv Design Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/events.html">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/framework.html">Non-widget stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/layouts.html">Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/drawing.html">Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/packaging.html">Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../gettingstarted/diving.html">Diving in</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Gallery of Examples(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gallery.html">Gallery(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__animation__animate__py.html">Widget animation(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_suite__py.html">Suite of Application Builders(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_build__py.html">Application example using build() + return(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv__py.html">Application built from a  .kv fil(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__camera__main__py.html">Camera Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__bezier__py.html">Bezier Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__canvas_stress__py.html">Canvas stress(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__circle__py.html">Circle Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__fbo_canvas__py.html">FBO Canvas(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines_extended__py.html">Lines Extended Demo(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__mesh__py.html">Mesh test(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__multitexture__py.html">Multitexture Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__rotation__py.html">Rotation Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__stencil_canvas__py.html">Stencil demo(翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/index.html">Gallery of Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gallery.html">Gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__3Drendering__main__py.html">3D Rotating Monkey Head</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__animation__animate__py.html">Widget animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_suite__py.html">Suite of Application Builders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_build__py.html">Application example using build() + return</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv__py.html">Application built from a  .kv file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__application__app_with_kv_in_template1__py.html">Application from a .kv in a Template Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__camera__main__py.html">Camera Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__bezier__py.html">Bezier Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__canvas_stress__py.html">Canvas stress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__circle__py.html">Circle Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__fbo_canvas__py.html">FBO Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines__py.html">Line (SmoothLine) Experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__lines_extended__py.html">Lines Extended Demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__mesh__py.html">Mesh test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__multitexture__py.html">Multitexture Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__repeat_texture__py.html">Repeat Texture on Resize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__rotation__py.html">Rotation Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__stencil_canvas__py.html">Stencil demo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__tesselate__py.html">Tesselate Demonstration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__pictures__main__py.html">Basic Picture Viewer(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__shadereditor__main__py.html">Live Shader Editor(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__canvas__texture__py.html">Texture Wrapping and Coordinates Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__camera_puzzle__py.html">Shuffled Camera Feed Puzzle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__kivycatalog__main__py.html">Kivy Catalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__multistroke__main__py.html">Multistroke Recognition Database Demonstration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__pictures__main__py.html">Basic Picture Viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__shadereditor__main__py.html">Live Shader Editor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__showcase__main__py.html">Showcase of Kivy Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gen__demo__touchtracer__main__py.html">Touch Tracer Line Drawing Demonstration</a></li>
 </ul>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../user-guide.html">User’s Guide(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../installation/installation.html">Installation(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../philosophy.html">Philosophy(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../contribute.html">Contributing(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../faq.html">FAQ (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../contact.html">Contact Us(翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user-guide.html">User’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation/installation.html">Basic Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation/installation.html#advanced-installation">Advanced Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation/installation.html#uninstalling-kivy">Uninstalling Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../philosophy.html">Philosophy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contribute.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contact.html">Contact Us</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../guide-index.html">Programming Guide(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../guide/basic.html">Kivy Basics(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../guide/environment.html">Controlling the environment(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../guide/config.html">Configure Kivy(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../guide/architecture.html">Architectural Overview(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../guide/events.html">Events and Properties (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../guide/inputs.html">Input management (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../guide/widgets.html">Widgets(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../guide/graphics.html">Graphics (翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../guide/lang.html">Kv language(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../guide/other-frameworks.html">Integrating with other Frameworks(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../guide/packaging.html">Packaging your application(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../guide/licensing.html">Package licensing (翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide-index.html">Programming Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/basic.html">Kivy Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/environment.html">Controlling the environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/config.html">Configure Kivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/architecture.html">Architectural Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/events.html">Events and Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/inputs.html">Input management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/graphics.html">Graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/lang.html">Kv language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/other-frameworks.html">Integrating with other Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/packaging.html">Packaging your application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../guide/licensing.html">Package licensing</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../tutorials-index.html">Tutorials(翻訳済み)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/pong.html">Pong Game Tutorial(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/firstwidget.html">A Simple Paint App(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/crashcourse.html">Crash Course(翻訳済み)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials-index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/pong.html">Pong Game Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/firstwidget.html">A Simple Paint App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/crashcourse.html">Crash Course</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../api-index.html">API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.html">Kivy framework(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.html">Kivy framework</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.html">Adapters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.adapter.html">Adapter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.args_converters.html">List Item View Argument Converters</a></li>
@@ -154,19 +158,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.listadapter.html">ListAdapter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.models.html">SelectableDataItem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.adapters.simplelistadapter.html">SimpleListAdapter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.animation.html">Animation(翻訳済み)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.app.html">Application （翻訳中）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.animation.html">Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.app.html">Application</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.atlas.html">Atlas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.base.html">Kivy Base</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.cache.html">Cache manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.clock.html">Clock object(翻訳ずみ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.clock.html">Clock object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.compat.html">Compatibility module for Python 2.7 and &gt; 3.3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.config.html">Configuration object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.context.html">Context</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.html">Core Abstraction(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.html">Core Abstraction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.audio.html">Audio</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.camera.html">Camera</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.clipboard.html">Clipboard(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.clipboard.html">Clipboard</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.gl.html">OpenGL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.image.html">Image</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.core.spelling.html">Spelling</a></li>
@@ -186,7 +190,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.garden.html">Garden</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.geometry.html">Geometry utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.gesture.html">Gesture recognition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.html">Graphics(翻訳中)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.html">Graphics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.cgl.html">CGL: standard C interface for OpenGL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.compiler.html">Graphics compiler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.graphics.context.html">Context management</a></li>
@@ -230,7 +234,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.recorder.html">Input recorder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.input.shape.html">Motion Event Shape</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.interactive.html">Interactive launcher</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.html">Kivy Language(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.html">Kivy Language</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.builder.html">Builder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lang.parser.html">Parser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.lib.html">External libraries</a></li>
@@ -267,7 +271,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.html">Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.html">Packaging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.tools.packaging.pyinstaller_hooks.html">Pyinstaller hooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.html">Widgets(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.html">Widgets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.abstractview.html">Abstract View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.accordion.html">Accordion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.actionbar.html">Action Bar</a></li>
@@ -286,18 +290,18 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.bubble.html">Bubble</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.button.html">Button</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.camera.html">Camera</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.carousel.html">Carousel(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.carousel.html">Carousel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.checkbox.html">CheckBox</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.codeinput.html">Code Input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.colorpicker.html">Color Picker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.dropdown.html">Drop-Down List</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.effectwidget.html">EffectWidget</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.filechooser.html">FileChooser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.floatlayout.html">Float Layout(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.floatlayout.html">Float Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gesturesurface.html">Gesture Surface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.gridlayout.html">Grid Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.image.html">Image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.label.html">Label(翻訳済み)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.label.html">Label</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.layout.html">Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.listview.html">List View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.modalview.html">ModalView</a></li>
@@ -316,10 +320,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.sandbox.html">Sandbox</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatter.html">Scatter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scatterlayout.html">Scatter Layout</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.screenmanager.html">Screen Manager(翻訳中)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.screenmanager.html">Screen Manager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.scrollview.html">ScrollView</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.selectableview.html">SelectableView</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.settings.html">Settings （翻訳中）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.settings.html">Settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.slider.html">Slider</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.spinner.html">Spinner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api-kivy.uix.splitter.html">Splitter</a></li>
@@ -356,7 +360,7 @@
           <div class="body">
             <div class="toc"><h2>Table Of Contents</h2></div>
             
-  <h1>kivy.uix.screenmanager のソースコード</h1><div class="highlight"><pre>
+  <h1>Source code for kivy.uix.screenmanager</h1><div class="highlight"><pre>
 <span></span><span class="sd">&#39;&#39;&#39;Screen Manager</span>
 <span class="sd">==============</span>
 
@@ -476,7 +480,7 @@
 <span class="sd">            Button:</span>
 <span class="sd">                text: &#39;Quit&#39;</span>
 
-<span class="sd">    &lt;SettingScreen&gt;:</span>
+<span class="sd">    &lt;SettingsScreen&gt;:</span>
 <span class="sd">        BoxLayout:</span>
 <span class="sd">            Button:</span>
 <span class="sd">                text: &#39;My settings button&#39;</span>
@@ -565,13 +569,13 @@
                            <span class="n">PopMatrix</span><span class="p">,</span> <span class="n">Translate</span><span class="p">,</span> <span class="n">Callback</span><span class="p">,</span> <span class="n">Scale</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="ScreenManagerException"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManagerException">[ドキュメント]</a><span class="k">class</span> <span class="nc">ScreenManagerException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<div class="viewcode-block" id="ScreenManagerException"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManagerException">[docs]</a><span class="k">class</span> <span class="nc">ScreenManagerException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Exception for the :class:`ScreenManager`.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">pass</span></div>
 
 
-<div class="viewcode-block" id="Screen"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.Screen">[ドキュメント]</a><span class="k">class</span> <span class="nc">Screen</span><span class="p">(</span><span class="n">RelativeLayout</span><span class="p">):</span>
+<div class="viewcode-block" id="Screen"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.Screen">[docs]</a><span class="k">class</span> <span class="nc">Screen</span><span class="p">(</span><span class="n">RelativeLayout</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Screen is an element intended to be used with a :class:`ScreenManager`.</span>
 <span class="sd">    Check module documentation for more information.</span>
 
@@ -655,7 +659,7 @@
         <span class="k">return</span> <span class="s1">&#39;&lt;Screen name=</span><span class="si">%r</span><span class="s1">&gt;&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span></div>
 
 
-<div class="viewcode-block" id="TransitionBase"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.TransitionBase">[ドキュメント]</a><span class="k">class</span> <span class="nc">TransitionBase</span><span class="p">(</span><span class="n">EventDispatcher</span><span class="p">):</span>
+<div class="viewcode-block" id="TransitionBase"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.TransitionBase">[docs]</a><span class="k">class</span> <span class="nc">TransitionBase</span><span class="p">(</span><span class="n">EventDispatcher</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;TransitionBase is used to animate 2 screens within the</span>
 <span class="sd">    :class:`ScreenManager`. This class acts as a base for other</span>
 <span class="sd">    implementations like the :class:`SlideTransition` and</span>
@@ -717,7 +721,7 @@
 
     <span class="n">__events__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;on_progress&#39;</span><span class="p">,</span> <span class="s1">&#39;on_complete&#39;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="TransitionBase.start"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.TransitionBase.start">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manager</span><span class="p">):</span>
+<div class="viewcode-block" id="TransitionBase.start"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.TransitionBase.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manager</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;(internal) Starts the transition. This is automatically</span>
 <span class="sd">        called by the :class:`ScreenManager`.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
@@ -740,7 +744,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_anim</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="s1">&#39;on_progress&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TransitionBase.stop"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.TransitionBase.stop">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TransitionBase.stop"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.TransitionBase.stop">[docs]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;(internal) Stops the transition. This is automatically called by the</span>
 <span class="sd">        :class:`ScreenManager`.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
@@ -750,12 +754,12 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_anim</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">is_active</span> <span class="o">=</span> <span class="kc">False</span></div>
 
-<div class="viewcode-block" id="TransitionBase.add_screen"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.TransitionBase.add_screen">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">add_screen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+<div class="viewcode-block" id="TransitionBase.add_screen"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.TransitionBase.add_screen">[docs]</a>    <span class="k">def</span> <span class="nf">add_screen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;(internal) Used to add a screen to the :class:`ScreenManager`.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">real_add_widget</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TransitionBase.remove_screen"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.TransitionBase.remove_screen">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">remove_screen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+<div class="viewcode-block" id="TransitionBase.remove_screen"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.TransitionBase.remove_screen">[docs]</a>    <span class="k">def</span> <span class="nf">remove_screen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;(internal) Used to remove a screen from the :class:`ScreenManager`.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">real_remove_widget</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span></div>
@@ -780,7 +784,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_anim</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
-<div class="viewcode-block" id="ShaderTransition"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ShaderTransition">[ドキュメント]</a><span class="k">class</span> <span class="nc">ShaderTransition</span><span class="p">(</span><span class="n">TransitionBase</span><span class="p">):</span>
+<div class="viewcode-block" id="ShaderTransition"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ShaderTransition">[docs]</a><span class="k">class</span> <span class="nc">ShaderTransition</span><span class="p">(</span><span class="n">TransitionBase</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Transition class that uses a Shader for animating the transition between</span>
 <span class="sd">    2 screens. By default, this class doesn&#39;t assign any fragment/vertex</span>
 <span class="sd">    shader. If you want to create your own fragment shader for the transition,</span>
@@ -828,7 +832,7 @@
 <span class="sd">    and defaults to [0, 0, 0, 1].&#39;&#39;&#39;</span>
 
     <span class="k">def</span> <span class="nf">make_screen_fbo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
-        <span class="n">fbo</span> <span class="o">=</span> <span class="n">Fbo</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">screen</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="n">fbo</span> <span class="o">=</span> <span class="n">Fbo</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">screen</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">with_stencilbuffer</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="k">with</span> <span class="n">fbo</span><span class="p">:</span>
             <span class="n">ClearColor</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">clearcolor</span><span class="p">)</span>
             <span class="n">ClearBuffers</span><span class="p">()</span>
@@ -853,7 +857,7 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">screen_out</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">children</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">screen_out</span><span class="o">.</span><span class="n">canvas</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">add_screen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+<div class="viewcode-block" id="ShaderTransition.add_screen"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ShaderTransition.add_screen">[docs]</a>    <span class="k">def</span> <span class="nf">add_screen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">screen_in</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">screen_out</span><span class="o">.</span><span class="n">pos</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">screen_in</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">screen_out</span><span class="o">.</span><span class="n">size</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">real_remove_widget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">screen_out</span><span class="p">)</span>
@@ -881,21 +885,21 @@
             <span class="n">Callback</span><span class="p">(</span><span class="n">remove_screen_out</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">render_ctx</span><span class="p">[</span><span class="s1">&#39;tex_out&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">render_ctx</span><span class="p">[</span><span class="s1">&#39;tex_in&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">render_ctx</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">render_ctx</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">remove_screen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+<div class="viewcode-block" id="ShaderTransition.remove_screen"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ShaderTransition.remove_screen">[docs]</a>    <span class="k">def</span> <span class="nf">remove_screen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fbo_in</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fbo_out</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">render_ctx</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_remove_out_canvas</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">real_add_widget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">screen_in</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">real_add_widget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">screen_in</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ShaderTransition.stop"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ShaderTransition.stop">[docs]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_remove_out_canvas</span><span class="p">()</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">ShaderTransition</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></div>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ShaderTransition</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></div></div>
 
 
-<div class="viewcode-block" id="NoTransition"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.NoTransition">[ドキュメント]</a><span class="k">class</span> <span class="nc">NoTransition</span><span class="p">(</span><span class="n">TransitionBase</span><span class="p">):</span>
+<div class="viewcode-block" id="NoTransition"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.NoTransition">[docs]</a><span class="k">class</span> <span class="nc">NoTransition</span><span class="p">(</span><span class="n">TransitionBase</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;No transition, instantly switches to the next screen with no delay or</span>
 <span class="sd">    animation.</span>
 
@@ -910,7 +914,7 @@
         <span class="nb">super</span><span class="p">(</span><span class="n">NoTransition</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_complete</span><span class="p">()</span></div>
 
 
-<div class="viewcode-block" id="SlideTransition"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.SlideTransition">[ドキュメント]</a><span class="k">class</span> <span class="nc">SlideTransition</span><span class="p">(</span><span class="n">TransitionBase</span><span class="p">):</span>
+<div class="viewcode-block" id="SlideTransition"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.SlideTransition">[docs]</a><span class="k">class</span> <span class="nc">SlideTransition</span><span class="p">(</span><span class="n">TransitionBase</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Slide Transition, can be used to show a new screen from any direction:</span>
 <span class="sd">    left, right, up or down.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -954,7 +958,7 @@
         <span class="nb">super</span><span class="p">(</span><span class="n">SlideTransition</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_complete</span><span class="p">()</span></div>
 
 
-<div class="viewcode-block" id="CardTransition"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.CardTransition">[ドキュメント]</a><span class="k">class</span> <span class="nc">CardTransition</span><span class="p">(</span><span class="n">SlideTransition</span><span class="p">):</span>
+<div class="viewcode-block" id="CardTransition"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.CardTransition">[docs]</a><span class="k">class</span> <span class="nc">CardTransition</span><span class="p">(</span><span class="n">SlideTransition</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Card transition that looks similar to Android 4.x application drawer</span>
 <span class="sd">    interface animation.</span>
 
@@ -978,7 +982,7 @@
 <span class="sd">    defaults to &#39;push&#39;.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
-<div class="viewcode-block" id="CardTransition.start"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.CardTransition.start">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manager</span><span class="p">):</span>
+<div class="viewcode-block" id="CardTransition.start"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.CardTransition.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manager</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;(internal) Starts the transition. This is automatically</span>
 <span class="sd">        called by the :class:`ScreenManager`.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
@@ -1026,7 +1030,7 @@
                 <span class="n">b</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">height</span> <span class="o">*</span> <span class="n">progression</span></div>
 
 
-<div class="viewcode-block" id="SwapTransition"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.SwapTransition">[ドキュメント]</a><span class="k">class</span> <span class="nc">SwapTransition</span><span class="p">(</span><span class="n">TransitionBase</span><span class="p">):</span>
+<div class="viewcode-block" id="SwapTransition"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.SwapTransition">[docs]</a><span class="k">class</span> <span class="nc">SwapTransition</span><span class="p">(</span><span class="n">TransitionBase</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Swap transition that looks like iOS transition when a new window</span>
 <span class="sd">    appears on the screen.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -1034,7 +1038,7 @@
         <span class="nb">super</span><span class="p">(</span><span class="n">SwapTransition</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">scales</span> <span class="o">=</span> <span class="p">{}</span>
 
-    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manager</span><span class="p">):</span>
+<div class="viewcode-block" id="SwapTransition.start"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.SwapTransition.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manager</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">screen</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">screen_in</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">screen_out</span><span class="p">:</span>
             <span class="k">with</span> <span class="n">screen</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">before</span><span class="p">:</span>
                 <span class="n">PushMatrix</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;swaptransition_scale&#39;</span><span class="p">)</span>
@@ -1044,13 +1048,13 @@
 
             <span class="n">screen</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">update_scale</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">scales</span><span class="p">[</span><span class="n">screen</span><span class="p">]</span> <span class="o">=</span> <span class="n">scale</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">SwapTransition</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">manager</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">SwapTransition</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">manager</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">update_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">,</span> <span class="n">center</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">scales</span><span class="p">[</span><span class="n">screen</span><span class="p">]</span><span class="o">.</span><span class="n">origin</span> <span class="o">=</span> <span class="n">center</span>
 
-    <span class="k">def</span> <span class="nf">add_screen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">real_add_widget</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="viewcode-block" id="SwapTransition.add_screen"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.SwapTransition.add_screen">[docs]</a>    <span class="k">def</span> <span class="nf">add_screen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">real_add_widget</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">on_complete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">screen_in</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">pos</span>
@@ -1088,7 +1092,7 @@
             <span class="n">b</span><span class="o">.</span><span class="n">center_x</span> <span class="o">=</span> <span class="n">manager</span><span class="o">.</span><span class="n">center_x</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p2</span><span class="p">)</span> <span class="o">*</span> <span class="n">widthb</span> <span class="o">/</span> <span class="mf">2.</span></div>
 
 
-<div class="viewcode-block" id="WipeTransition"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.WipeTransition">[ドキュメント]</a><span class="k">class</span> <span class="nc">WipeTransition</span><span class="p">(</span><span class="n">ShaderTransition</span><span class="p">):</span>
+<div class="viewcode-block" id="WipeTransition"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.WipeTransition">[docs]</a><span class="k">class</span> <span class="nc">WipeTransition</span><span class="p">(</span><span class="n">ShaderTransition</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Wipe transition, based on a fragment Shader.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
@@ -1107,7 +1111,7 @@
     <span class="n">fs</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="n">WIPE_TRANSITION_FS</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="FadeTransition"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.FadeTransition">[ドキュメント]</a><span class="k">class</span> <span class="nc">FadeTransition</span><span class="p">(</span><span class="n">ShaderTransition</span><span class="p">):</span>
+<div class="viewcode-block" id="FadeTransition"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.FadeTransition">[docs]</a><span class="k">class</span> <span class="nc">FadeTransition</span><span class="p">(</span><span class="n">ShaderTransition</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Fade transition, based on a fragment Shader.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
@@ -1126,7 +1130,7 @@
     <span class="n">fs</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="n">FADE_TRANSITION_FS</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="FallOutTransition"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.FallOutTransition">[ドキュメント]</a><span class="k">class</span> <span class="nc">FallOutTransition</span><span class="p">(</span><span class="n">ShaderTransition</span><span class="p">):</span>
+<div class="viewcode-block" id="FallOutTransition"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.FallOutTransition">[docs]</a><span class="k">class</span> <span class="nc">FallOutTransition</span><span class="p">(</span><span class="n">ShaderTransition</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Transition where the new screen &#39;falls&#39; from the screen centre,</span>
 <span class="sd">    becoming smaller and more transparent until it disappears, and</span>
 <span class="sd">    revealing the new screen behind it. Mimics the popular/standard</span>
@@ -1183,7 +1187,7 @@
     <span class="n">fs</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="n">FALLOUT_TRANSITION_FS</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="RiseInTransition"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.RiseInTransition">[ドキュメント]</a><span class="k">class</span> <span class="nc">RiseInTransition</span><span class="p">(</span><span class="n">ShaderTransition</span><span class="p">):</span>
+<div class="viewcode-block" id="RiseInTransition"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.RiseInTransition">[docs]</a><span class="k">class</span> <span class="nc">RiseInTransition</span><span class="p">(</span><span class="n">ShaderTransition</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Transition where the new screen rises from the screen centre,</span>
 <span class="sd">    becoming larger and changing from transparent to opaque until it</span>
 <span class="sd">    fills the screen. Mimics the popular/standard Android transition.</span>
@@ -1238,7 +1242,7 @@
     <span class="n">fs</span> <span class="o">=</span> <span class="n">StringProperty</span><span class="p">(</span><span class="n">RISEIN_TRANSITION_FS</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="ScreenManager"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManager">[ドキュメント]</a><span class="k">class</span> <span class="nc">ScreenManager</span><span class="p">(</span><span class="n">FloatLayout</span><span class="p">):</span>
+<div class="viewcode-block" id="ScreenManager"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManager">[docs]</a><span class="k">class</span> <span class="nc">ScreenManager</span><span class="p">(</span><span class="n">FloatLayout</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Screen manager. This is the main class that will control your</span>
 <span class="sd">    :class:`Screen` stack and memory.</span>
 
@@ -1265,7 +1269,7 @@
 <span class="sd">    to None.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
-    <span class="n">transition</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="n">SlideTransition</span><span class="p">(),</span> <span class="n">baseclass</span><span class="o">=</span><span class="n">TransitionBase</span><span class="p">)</span>
+    <span class="n">transition</span> <span class="o">=</span> <span class="n">ObjectProperty</span><span class="p">(</span><span class="n">baseclass</span><span class="o">=</span><span class="n">TransitionBase</span><span class="p">)</span>
     <span class="sd">&#39;&#39;&#39;Transition object to use for animating the transition from the current</span>
 <span class="sd">    screen to the next one being shown.</span>
 
@@ -1323,6 +1327,8 @@
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s1">&#39;transition&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">transition</span> <span class="o">=</span> <span class="n">SlideTransition</span><span class="p">()</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">ScreenManager</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fbind</span><span class="p">(</span><span class="s1">&#39;pos&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_pos</span><span class="p">)</span>
 
@@ -1331,7 +1337,7 @@
         <span class="k">if</span> <span class="n">screen</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_screen</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">=</span> <span class="n">name</span>
 
-    <span class="k">def</span> <span class="nf">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+<div class="viewcode-block" id="ScreenManager.add_widget"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManager.add_widget">[docs]</a>    <span class="k">def</span> <span class="nf">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">Screen</span><span class="p">):</span>
             <span class="k">raise</span> <span class="n">ScreenManagerException</span><span class="p">(</span>
                 <span class="s1">&#39;ScreenManager accepts only Screen widget.&#39;</span><span class="p">)</span>
@@ -1347,9 +1353,9 @@
         <span class="n">screen</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_screen_name_changed</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">screens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">=</span> <span class="n">screen</span><span class="o">.</span><span class="n">name</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">=</span> <span class="n">screen</span><span class="o">.</span><span class="n">name</span></div>
 
-    <span class="k">def</span> <span class="nf">remove_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
+<div class="viewcode-block" id="ScreenManager.remove_widget"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManager.remove_widget">[docs]</a>    <span class="k">def</span> <span class="nf">remove_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">l</span><span class="p">):</span>
         <span class="n">screen</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">Screen</span><span class="p">):</span>
             <span class="k">raise</span> <span class="n">ScreenManagerException</span><span class="p">(</span>
@@ -1368,14 +1374,14 @@
 
         <span class="n">screen</span><span class="o">.</span><span class="n">manager</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">screen</span><span class="o">.</span><span class="n">unbind</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_screen_name_changed</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">screens</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">screens</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">clear_widgets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screens</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="ScreenManager.clear_widgets"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManager.clear_widgets">[docs]</a>    <span class="k">def</span> <span class="nf">clear_widgets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screens</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">screens</span><span class="p">:</span>
             <span class="n">screens</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">screens</span>
         <span class="n">remove_widget</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">remove_widget</span>
         <span class="k">for</span> <span class="n">screen</span> <span class="ow">in</span> <span class="n">screens</span><span class="p">:</span>
-            <span class="n">remove_widget</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+            <span class="n">remove_widget</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">real_add_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
         <span class="c1"># ensure screen is removed from its previous parent</span>
@@ -1412,7 +1418,7 @@
             <span class="n">screen</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="s1">&#39;on_pre_enter&#39;</span><span class="p">)</span>
             <span class="n">screen</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="s1">&#39;on_enter&#39;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="ScreenManager.get_screen"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManager.get_screen">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">get_screen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<div class="viewcode-block" id="ScreenManager.get_screen"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManager.get_screen">[docs]</a>    <span class="k">def</span> <span class="nf">get_screen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Return the screen widget associated with the name or raise a</span>
 <span class="sd">        :class:`ScreenManagerException` if not found.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
@@ -1424,7 +1430,7 @@
             <span class="n">Logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Multiple screens named &quot;</span><span class="si">%s</span><span class="s1">&quot;: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">matches</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">matches</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="ScreenManager.has_screen"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManager.has_screen">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">has_screen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<div class="viewcode-block" id="ScreenManager.has_screen"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManager.has_screen">[docs]</a>    <span class="k">def</span> <span class="nf">has_screen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Return True if a screen with the `name` has been found.</span>
 
 <span class="sd">        .. versionadded:: 1.6.0</span>
@@ -1444,11 +1450,11 @@
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
             <span class="k">return</span>
 
-<div class="viewcode-block" id="ScreenManager.next"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManager.next">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ScreenManager.next"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManager.next">[docs]</a>    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Return the name of the next screen from the screen list.&#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__next__</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="ScreenManager.previous"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManager.previous">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">previous</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ScreenManager.previous"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManager.previous">[docs]</a>    <span class="k">def</span> <span class="nf">previous</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Return the name of the previous screen from the screen list.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">screens</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">screens</span>
@@ -1461,7 +1467,7 @@
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
             <span class="k">return</span></div>
 
-<div class="viewcode-block" id="ScreenManager.switch_to"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManager.switch_to">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">switch_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+<div class="viewcode-block" id="ScreenManager.switch_to"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManager.switch_to">[docs]</a>    <span class="k">def</span> <span class="nf">switch_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Add a new screen to the ScreenManager and switch to it. The previous</span>
 <span class="sd">        screen will be removed from the children. `options` are the</span>
 <span class="sd">        :attr:`transition` options that will be changed before the animation</span>
@@ -1542,20 +1548,20 @@
                     <span class="k">continue</span>
             <span class="n">child</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">value</span>
 
-    <span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+<div class="viewcode-block" id="ScreenManager.on_touch_down"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManager.on_touch_down">[docs]</a>    <span class="k">def</span> <span class="nf">on_touch_down</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transition</span><span class="o">.</span><span class="n">is_active</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
-        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ScreenManager</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_down</span><span class="p">(</span><span class="n">touch</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ScreenManager</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_down</span><span class="p">(</span><span class="n">touch</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">on_touch_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+<div class="viewcode-block" id="ScreenManager.on_touch_move"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManager.on_touch_move">[docs]</a>    <span class="k">def</span> <span class="nf">on_touch_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transition</span><span class="o">.</span><span class="n">is_active</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
-        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ScreenManager</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_move</span><span class="p">(</span><span class="n">touch</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ScreenManager</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_move</span><span class="p">(</span><span class="n">touch</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">on_touch_up</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
+<div class="viewcode-block" id="ScreenManager.on_touch_up"><a class="viewcode-back" href="../../../api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManager.on_touch_up">[docs]</a>    <span class="k">def</span> <span class="nf">on_touch_up</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">touch</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transition</span><span class="o">.</span><span class="n">is_active</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
-        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ScreenManager</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_up</span><span class="p">(</span><span class="n">touch</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ScreenManager</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">on_touch_up</span><span class="p">(</span><span class="n">touch</span><span class="p">)</span></div></div>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
@@ -1638,13 +1644,35 @@
     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'pw.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
+<script>
+  var selector = $("#version_selector");
+
+  selector.on('change', function() {
+    // replace the version part of the url with the selected version
+    document.location.pathname = document.location.pathname.replace(
+      /^(\/.*?\/).*?(\/.*)/,
+     '$1' + this.value + '$2'
+    );
+  });
+
+  var url = "/doc/versions.json";
+
+  $.getJSON(url, function(versions) {
+    versions.forEach(function(version){
+      var current = window.location.pathname.split('/')[2]
+      selector.append(
+        $("<option " + (version == current ? "selected" : "") + "/>").val(version).html(version)
+      );
+    });
+  });
+</script>
 <noscript><p><img src="//pw.kivy.org/pw.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Tracking Code -->
     <!--
     <div class="footer">
       &copy; Copyright 2010, The Kivy Authors.
-      Last updated on 10月 21, 2017.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8.
+      Last updated on Feb 15, 2019.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.4.
 </div>
 -->
   </body>

@@ -1,0 +1,263 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2010, The Kivy Authors
+# This file is distributed under the same license as the Kivy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kivy 1.10.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-15 00:59+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../sources/api-kivy.atlas.rst:3
+msgid "Atlas"
+msgstr ""
+
+#: kivy.atlas:4 of
+msgid ""
+"Atlas manages texture atlases: packing multiple textures into one. With "
+"it, you reduce the number of images loaded and speedup the application "
+"loading. This module contains both the Atlas class and command line "
+"processing for creating an atlas from a set of individual PNG files. The "
+"command line section requires the Pillow library, or the defunct Python "
+"Imaging Library (PIL), to be installed."
+msgstr ""
+
+#: kivy.atlas:15 of
+msgid "An Atlas is composed of 2 or more files:"
+msgstr ""
+
+#: kivy.atlas:12 of
+msgid ""
+"a json file (.atlas) that contains the image file names and texture "
+"locations of the atlas."
+msgstr ""
+
+#: kivy.atlas:14 of
+msgid ""
+"one or multiple image files containing textures referenced by the .atlas "
+"file."
+msgstr ""
+
+#: kivy.atlas:18 of
+msgid "Definition of .atlas files"
+msgstr ""
+
+#: kivy.atlas:20 of
+msgid "A file with ``<basename>.atlas`` is a json file formatted like this::"
+msgstr ""
+
+#: kivy.atlas:31 of
+msgid "Example from the Kivy ``data/images/defaulttheme.atlas``::"
+msgstr ""
+
+#: kivy.atlas:43 of
+msgid ""
+"In this example, \"defaulttheme-0.png\" is a large image, with the pixels"
+" in the rectangle from (431, 224) to (431 + 59, 224 + 24) usable as "
+"``atlas://data/images/defaulttheme/progressbar_background`` in any image "
+"parameter."
+msgstr ""
+
+#: kivy.atlas:49 of
+msgid "How to create an Atlas"
+msgstr ""
+
+#: kivy.atlas:53 of
+msgid ""
+"The atlas creation requires the Pillow library (or the defunct "
+"Imaging/PIL library). This requirement will be removed in the future when"
+" the Kivy core Image is able to support loading, blitting, and saving "
+"operations."
+msgstr ""
+
+#: kivy.atlas:57 of
+msgid "You can directly use this module to create atlas files with this command::"
+msgstr ""
+
+#: kivy.atlas:62 of
+msgid ""
+"Let's say you have a list of images that you want to put into an Atlas. "
+"The directory is named ``images`` with lots of 64x64 png files inside::"
+msgstr ""
+
+#: kivy.atlas:71 of
+msgid "You can combine all the png's into one and generate the atlas file with::"
+msgstr ""
+
+#: kivy.atlas:80 of
+msgid ""
+"As you can see, we get 2 new files: ``myatlas.atlas`` and "
+"``myatlas-0.png``. ``myatlas-0.png`` is a new 256x256 .png composed of "
+"all your images."
+msgstr ""
+
+#: kivy.atlas:85 of
+msgid ""
+"When using this script, the ids referenced in the atlas are the base "
+"names of the images without the extension. So, if you are going to name a"
+" file ``../images/button.png``, the id for this image will be ``button``."
+msgstr ""
+
+#: kivy.atlas:89 of
+msgid ""
+"If you need path information included, you should include ``use_path`` as"
+" follows::"
+msgstr ""
+
+#: kivy.atlas:94 of
+msgid ""
+"In which case the id for ``../images/button.png`` will be "
+"``images_button``"
+msgstr ""
+
+#: kivy.atlas:98 of
+msgid "How to use an Atlas"
+msgstr ""
+
+#: kivy.atlas:100 of
+msgid "Usually, you would specify the images by supplying the path::"
+msgstr ""
+
+#: kivy.atlas:105 of
+msgid ""
+"In our previous example, we have created the atlas containing both images"
+" and put them in ``images/myatlas.atlas``. You can use url notation to "
+"reference them::"
+msgstr ""
+
+#: kivy.atlas:112 of
+msgid "In other words, the path to the images is replaced by::"
+msgstr ""
+
+#: kivy.atlas:119 of
+msgid ""
+"In the atlas url, there is no need to add the ``.atlas`` extension. It "
+"will be automatically append to the filename."
+msgstr ""
+
+#: kivy.atlas:123 of
+msgid "Manual usage of the Atlas"
+msgstr ""
+
+#: ../../<autodoc>:1
+msgid "Bases: :class:`kivy.event.EventDispatcher`"
+msgstr ""
+
+#: kivy.atlas.Atlas:1 of
+msgid "Manage texture atlas. See module documentation for more information."
+msgstr ""
+
+#: kivy.atlas.Atlas.create:1 of
+msgid "This method can be used to create an atlas manually from a set of images."
+msgstr ""
+
+#: kivy.atlas.Atlas.create of
+msgid "Parameters"
+msgstr ""
+
+#: kivy.atlas.Atlas.create:6 of
+msgid "`outname`: str"
+msgstr ""
+
+#: kivy.atlas.Atlas.create:6 of
+msgid ""
+"Basename to use for ``.atlas`` creation and ``-<idx>.png`` associated "
+"images."
+msgstr ""
+
+#: kivy.atlas.Atlas.create:8 of
+msgid "`filenames`: list"
+msgstr ""
+
+#: kivy.atlas.Atlas.create:9 of
+msgid "List of filenames to put in the atlas."
+msgstr ""
+
+#: kivy.atlas.Atlas.create:10 of
+msgid "`size`: int or list (width, height)"
+msgstr ""
+
+#: kivy.atlas.Atlas.create:11 of
+msgid "Size of the atlas image."
+msgstr ""
+
+#: kivy.atlas.Atlas.create:22 of
+msgid "`padding`: int, defaults to 2"
+msgstr ""
+
+#: kivy.atlas.Atlas.create:13 of
+msgid "Padding to put around each image."
+msgstr ""
+
+#: kivy.atlas.Atlas.create:15 of
+msgid ""
+"Be careful. If you're using a padding < 2, you might have issues with the"
+" borders of the images. Because of the OpenGL linearization, it might use"
+" the pixels of the adjacent image."
+msgstr ""
+
+#: kivy.atlas.Atlas.create:19 of
+msgid ""
+"If you're using a padding >= 2, we'll automatically generate a \"border\""
+" of 1px around your image. If you look at the result, don't be scared if "
+"the image inside is not exactly the same as yours :)."
+msgstr ""
+
+#: kivy.atlas.Atlas.create:33 of
+msgid "`use_path`: bool, defaults to False"
+msgstr ""
+
+#: kivy.atlas.Atlas.create:25 of
+msgid ""
+"If True, the relative path of the source png file names will be included "
+"in the atlas ids rather that just in the file names. Leading dots and "
+"slashes will be excluded and all other slashes in the path will be "
+"replaced with underscores. For example, if `use_path` is False (the "
+"default) and the file name is ``../data/tiles/green_grass.png``, the id "
+"will be ``green_grass``. If `use_path` is True, it will be "
+"``data_tiles_green_grass``."
+msgstr ""
+
+#: kivy.atlas.Atlas.create:35 of
+msgid "Parameter use_path added"
+msgstr ""
+
+#: kivy.atlas.Atlas.filename:1 of
+msgid "Filename of the current Atlas."
+msgstr ""
+
+#: kivy.atlas.Atlas.filename:3 of
+msgid ""
+":attr:`filename` is an :class:`~kivy.properties.AliasProperty` and "
+"defaults to None."
+msgstr ""
+
+#: kivy.atlas.Atlas.original_textures:1 of
+msgid "List of original atlas textures (which contain the :attr:`textures`)."
+msgstr ""
+
+#: kivy.atlas.Atlas.original_textures:3 of
+msgid ""
+":attr:`original_textures` is a :class:`~kivy.properties.ListProperty` and"
+" defaults to []."
+msgstr ""
+
+#: kivy.atlas.Atlas.textures:1 of
+msgid "List of available textures within the atlas."
+msgstr ""
+
+#: kivy.atlas.Atlas.textures:3 of
+msgid ""
+":attr:`textures` is a :class:`~kivy.properties.DictProperty` and defaults"
+" to {}."
+msgstr ""
+

@@ -117,7 +117,7 @@ example, this can be accomplished like so::
             Button:
                 text: 'Quit'
 
-    <SettingScreen>:
+    <SettingsScreen>:
         BoxLayout:
             Button:
                 text: 'My settings button'
@@ -469,7 +469,7 @@ class ShaderTransition(TransitionBase):
     and defaults to [0, 0, 0, 1].'''
 
     def make_screen_fbo(self, screen):
-        fbo = Fbo(size=screen.size)
+        fbo = Fbo(size=screen.size, with_stencilbuffer=True)
         with fbo:
             ClearColor(*self.clearcolor)
             ClearBuffers()
@@ -906,7 +906,7 @@ class ScreenManager(FloatLayout):
     to None.
     '''
 
-    transition = ObjectProperty(SlideTransition(), baseclass=TransitionBase)
+    transition = ObjectProperty(baseclass=TransitionBase)
     '''Transition object to use for animating the transition from the current
     screen to the next one being shown.
 
@@ -964,6 +964,8 @@ class ScreenManager(FloatLayout):
     '''
 
     def __init__(self, **kwargs):
+        if 'transition' not in kwargs:
+            self.transition = SlideTransition()
         super(ScreenManager, self).__init__(**kwargs)
         self.fbind('pos', self._update_pos)
 
